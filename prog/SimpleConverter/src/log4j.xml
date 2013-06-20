@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+
+ <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+     <param name="Target" value="System.out" />
+    <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+   </layout>
+   <filter class="org.apache.log4j.varia.LevelRangeFilter" >
+       <param name="levelMin" value="ERROR"/>
+       <param name="levelMax" value="ERROR"/>
+   </filter>
+ </appender>
+
+<appender name="Converter" class="org.apache.log4j.FileAppender">
+    <param name="File" value="C:/MYCAT/logs/SimpleConverter_log.txt" />
+    <param name="Append" value="true" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+   </layout>
+ </appender>
+
+ <appender name="Statistics" class="org.apache.log4j.FileAppender">
+    <param name="File" value="C:/MYCAT/logs/Statistics_log.txt" />
+    <param name="Append" value="true" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} | %m%n"/>
+   </layout>
+ </appender>
+
+ <appender name="BadFiles" class="org.apache.log4j.FileAppender">
+    <param name="File" value="C:/MYCAT/logs/BadFiles_log.txt" />
+    <param name="Append" value="true" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} - %m%n"/>
+   </layout>
+ </appender>
+
+ <appender name="NotSupportedFiles" class="org.apache.log4j.FileAppender">
+    <param name="File" value="C:/MYCAT/logs/NotSupportedFiles_log.txt" />
+    <param name="Append" value="true" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} - %m%n"/>
+   </layout>
+ </appender>
+
+ <appender name="ConvertedFiles" class="org.apache.log4j.FileAppender">
+    <param name="File" value="C:/MYCAT/logs/ConvertedFiles_log.txt" />
+    <param name="Append" value="true" />
+   <layout class="org.apache.log4j.PatternLayout">
+     <param name="ConversionPattern" value="%d{ABSOLUTE} - %m%n"/>
+   </layout>
+ </appender>
+
+
+<logger name="com.simple.converter">
+    <level value="INFO" />
+    <appender-ref ref="Converter" />
+</logger>
+
+<logger name="Statistics">
+    <level value="INFO" />
+    <appender-ref ref="Statistics" />
+</logger>
+
+<logger name="BadFiles">
+    <level value="INFO" />
+    <appender-ref ref="BadFiles" />
+</logger>
+
+<logger name="NotSupportedFiles">
+    <level value="INFO" />
+    <appender-ref ref="NotSupportedFiles" />
+</logger>
+
+<logger name="ConvertedFiles">
+    <level value="INFO" />
+    <appender-ref ref="ConvertedFiles" />
+</logger>
+
+<root>
+    <priority value="ERROR" />
+    <appender-ref ref="Console"/>
+</root>
+
+</log4j:configuration>
+
