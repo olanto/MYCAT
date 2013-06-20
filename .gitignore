@@ -4,7 +4,7 @@ corpus/*
 template/data_empty/*
 TEMP/*
 SAVE/*
-##GWT/*
+GWT/*
 logs/*
 private/*
 
