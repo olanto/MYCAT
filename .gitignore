@@ -8,6 +8,18 @@ SAVE/*
 logs/*
 private/*
 
+#################
+## Netbeans
+#################
+
+prog/*/nbproject/private/
+prog/*/build/
+prog/*/nbbuild/
+prog/*/dist/
+prog/*/store/
+prog/*/nbdist/
+prog/*/nbactions.xml
+prog/*/nb-configuration.xml
 
 #################
 ## Eclipse

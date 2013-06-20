@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+	<!--The Olanto Foundation-->
+	<!--This is the parameter file for the Graphic User Interface of the Text Aligner, the Quote Detector and the Self-Quote Detector-->
+<properties>   
+    
+	<!--GUI Parameters--> 
+	<!--ORIGINAL_ON: true = activates the Original button-->
+    <entry key="ORIGINAL_ON">true</entry> 
+	<!--PATH_ON: true = displays the complete document path in the Hit List-->
+    <entry key="PATH_ON">true</entry>
+	<!--AUTO_ON: true = -->
+	<entry key="AUTO_ON">false</entry>
+	<!--FILE_NAME_RIGHT: true = displays the file name after the path-->
+	<entry key="FILE_NAME_RIGHT">false</entry>
+	<!--ONLY_ON_FILE_NAME: true = limits the browse function to the file names (not on full paths)-->
+	<entry key="ONLY_ON_FILE_NAME">false</entry>
+	<!--BITEXT_ONLY: true = checks that there is a target version before displaying a reference document in the Hit List-->
+	<entry key="BITEXT_ONLY">true</entry>
+	<!--SAVE_ON: true = activates the Save buttons for source and target reference documents-->
+	<entry key="SAVE_ON">true</entry>
+	<!--Graphic and size parameters-->
+    <entry key="CHARACTER_WIDTH">10</entry>
+	<entry key="TA_TEXTAREA_WIDTH">65</entry>
+    <entry key="TA_TEXTAREA_HEIGHT">33</entry>
+    <entry key="QD_HTMLAREA_HEIGHT">200</entry>
+    <entry key="QD_TEXTAREA_HEIGHT">19</entry>
+    <entry key="DOC_LIST_WIDTH">250</entry>
+    <entry key="DOC_LIST_HEIGHT">565</entry>
+    <entry key="QD_DOC_LIST_HEIGHT">360</entry>
+	<!--MAX_RESPONSE: Maximum number of reference documents in the Hit List when using the Search function (must be identical to the same parameter name in the IDX_fix.xml file)-->
+	<entry key="MAX_RESPONSE">200</entry>
+	<!--MAX_BROWSE: Maximum number of reference documents in the Hit List when using the Browse function (must be identical to the same parameter name in the IDX_fix.xml file)-->
+    <entry key="MAX_BROWSE">1000</entry>
+	<!--MAX_SEARCH_SIZE: -->
+	<entry key="MAX_SEARCH_SIZE">1000</entry>
+	<!--EXP_DAYS: Validity duration of a cookie -->
+    <entry key="EXP_DAYS">365</entry>
+	<!--Default values of the Frequency and Occurrences parameters in the Quote Detector and the Self-Quote Detector -->
+	<entry key="MIN_FREQ">2</entry>
+	<entry key="MAX_FREQ">10</entry>
+	<entry key="MIN_OCCU">3</entry>
+	<entry key="MAX_OCCU">10</entry>
+	
+	<!--Factors used to calculate the size of the search field for the highlight in the Quote Detector-->
+	<entry key="REF_FACTOR">1.7</entry>
+	<entry key="REF_MIN_LN">20</entry>
+	
+	<!--Minimum and maximum size of the blue bars-->
+	<entry key="PP_H_MIN">4</entry>
+	<entry key="PP_H_MAX">12</entry>
+	
+	<!--Name suffix added to the saved files in the QD and SQD-->
+	<entry key="SELFQD_FILE_EXT">_Parsedoc.html</entry>
+	<entry key="QD_FILE_EXT">_Refdoc.html</entry>
+	<!--path and names of the Help files -->
+	<entry key="TA_HELP_URL">/documentation/howto_TA.pdf</entry>
+	<entry key="QD_HELP_URL">/documentation/howto_QD.pdf</entry>
+	<entry key="SQD_HELP_URL">/documentation/howto_SQD.pdf</entry>
+	<!--Content of the status bar-->
+	<entry key="OLANTO_URL">Powered by Olanto|http://olanto.org|_blank</entry>
+	<entry key="LOGO_PATH"></entry>
+	<entry key="LOGO_URL"></entry>
+	<entry key="FEEDBACK_MAIL">Feedback|info@olanto.org</entry>
+	<!--GWT parameters-->
+	<entry key="W_OPEN_FEATURES">menubar=no, location=no, resizable=yes, scrollbars=yes, status=no</entry>
+	<!--Name of the applications in the GUI-->
+	<entry key="TEXT_ALIGNER_LBL">Text Aligner</entry>
+	<entry key="QUOTE_DETECTOR_LBL">Quote Detector</entry>
+	<entry key="SELF_QD_LBL">Self-Quote Detector</entry>
+	<!--Display order for the Sort By function (DO NOT MODIFY)-->
+	<entry key="TA_DL_SORTBY">NAME;DATE</entry>
+	<!--Path to the file containing all the GUI messages and button labels-->
+	<entry key="INTERFACE_MESSAGE_PATH">/config/messages/interface/initclient</entry>
+	<entry key="INTERFACE_MESSAGE_LANG">en</entry>
+	<!--Tab labels and content-->
+	<entry key="JOBS_ITEMS">Text Aligner|/TranslationText|_self;Self-Quote Detector|/mySelfQD|_self</entry>
+	<!-- Regular expression for search = -->
+	<entry key="REGEX_BEFORE_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\(\{\[\)\}\]]|^)</entry>
+	<entry key="REGEX_AFTER_TOKEN">([^a-zA-Z0-9\-\_\/]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
+	<!--MAXIMIZE_ON: true = -->
+	<entry key="MAXIMIZE_ON">true</entry>
+	<!--RELOAD_PARAM_ON: true = -->
+	<entry key="RELOAD_PARAM_ON">true</entry>
+</properties>

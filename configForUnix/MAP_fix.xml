@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+	<!--The Olanto Foundation-->
+	<!--This is the parameter file for the map builder-->
+<properties>   
+	<!--Constant Parameters. If this is modified, the index structure must be entirely rebuilt.--> 
+
+	<!--Maximum number of documents allowed (=2^DOC_MAXBIT) THIS PARAMETER MUST BE IDENTICAL TO THE DOC_MAXBIT PARAMETER IN IDX_fix.xml-->
+   <entry key="DOC_MAXBIT">17</entry>
+  <!--Supported languages (this list must include at least the same languages as the ROOT_CORPUS_LANG list in the IDX_fix.xml file. As a total it must contain exactly 32 languages (in this version). -->
+   <entry key="LIST_OF_MAP_LANG">EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??</entry>
+
+	<!--Internal mapping parameters (DO NOT CHANGE) -->   
+   <entry key="OBJ_IMPLEMENTATION">FAST</entry>
+    <entry key="MAP_COMPRESSION">YES</entry>
+    
+    <!--Dynamic Parameters. Index rebuilding not required-->
+    <entry key="COMLOG_FILE">/home/olanto/MYCAT/data/MAP_ARCH/common.log</entry>   
+    <entry key="DETLOG_FILE">/home/olanto/MYCAT/data/MAP_ARCH/detail.log</entry>
+    <entry key="COMMON_ROOT">/home/olanto/MYCAT/data/MAP_ARCH</entry>
+    <entry key="OBJ_ROOT_0">/home/olanto/MYCAT/data/MAP_ARCH/map0</entry>
+     <entry key="IDX_DONTINDEXTHIS">/home/olanto/MYCAT/config/dontindexthiswords.txt</entry>
+ 
+</properties>
