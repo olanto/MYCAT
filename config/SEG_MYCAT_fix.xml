@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+	<!--The Olanto Foundation-->
+	<!--This is the parameter file for the map builder-->
+<properties>   
+<!--
+ Below are the fix parameters of the segmentation configuration
+-->    
+<!--Remove file from source-->  
+ <entry key="REMOVE_FILE">NO</entry>
+<!--A Glossaries folder can be used for multilingual documents-->  
+ <entry key="GLOSSARIES">NO</entry>
+<!--An BY_EXT folder can be used for documents with a language suffix when the corpus is organized BY_FOLDER.
+    This allows processing hybrid collections where documents are organized both by language suffix and by language folder. The BY_EXT folder must not be used if the corpus is organized BY_EXT-->
+ <entry key="EXTRA_SOURCE">NO</entry>
+<!--list of languages to be used in the segmentation process-->  
+ <entry key="LIST_OF_SEG_LANG">EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH FA</entry>
+<!-- defines the type of corpus organization:
+      - BY_EXT: documents are organized by folders/sub-folders and their name has a 2-letter language suffix before the format extension (ex: budget_EN.doc)
+      - BY_FOLDER: All the documents are grouped by language in a folder with a 2-letter language name. The document names have no language suffix (ex: /EN/budget.doc)
+ -->   
+  <entry key="FILE_ORGANISATION">BY_EXT</entry>
+ <!--Folder for the original files-->      
+  <entry key="FOLDER_ORIGINAL">C:/MYCAT/corpus/docs</entry>
+ <!--Folder for the converted files-->      
+  <entry key="FOLDER_CONVERTED">C:/MYCAT/corpus/source</entry>
+ <!--Folder for the glossaries (if activated)-->      
+  <entry key="FOLDER_CONVERTED_GLOSSARIES">C:/MYCAT/corpus/source/Glossaries</entry>
+ <!--Folder for the segmented files-->
+  <entry key="FOLDER_SEGMENTED">C:/MYCAT/corpus/txt</entry>
+</properties>
