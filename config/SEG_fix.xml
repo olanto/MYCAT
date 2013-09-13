@@ -13,7 +13,7 @@
 
 <!-- OBJ_FILE_ORGANISATION definit le type d'implementation BY_EXT, BY_FOLDER-->   
   <entry key="FILE_ORGANISATION">BY_EXT</entry>
-      
+  <entry key="REMOVE_FILE">YES</entry>     
   <entry key="FOLDER_ORIGINAL">C:/MYCAT/corpus/docs</entry>
   <entry key="FOLDER_CONVERTED">C:/MYCAT/corpus/source</entry>
   <entry key="FOLDER_SEGMENTED">C:/MYCAT/corpus/txt</entry>

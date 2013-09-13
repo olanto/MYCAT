@@ -106,9 +106,9 @@ public class MapProcess implements Runnable {
                     if (GET_TXT_FROM_ZIP_CACHE) { // par le zip
                         String fromContent = is.getDoc(alignThis);
                         String toContent = is.getDoc(is.getDocId(targetName));
-                        d = new BiSentence(true, 5, 10, false, fromContent, toContent, 200, 3, s2t);
+                        d = new BiSentence(true, 10, 10, false, fromContent, toContent, 4000, 3, s2t);
                     } else { // par les fichiers
-                        d = new BiSentence(true, 5, 10, false, pivotName, targetName, "UTF-8", 200, 3, s2t);
+                        d = new BiSentence(true, 10, 10, false, pivotName, targetName, "UTF-8", 4000, 3, s2t);
                     }
                     ms.addMap(new IntMap(d.buildIntegerMapSO2TA(), d.buildIntegerMapTA2SO()), alignThis, source, target);
                     newmap.incrementAndGet();

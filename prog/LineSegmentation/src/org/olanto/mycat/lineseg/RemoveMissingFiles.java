@@ -61,6 +61,11 @@ public class RemoveMissingFiles {
             }
         } else {
             System.out.println(path + "->");
+            String[] lf = f.list();
+            int ilf = Array.getLength(lf);
+            for (int i = 0; i < ilf; i++) {
+                indexdir(path + "/" + lf[i]);
+            }
             if (path != root) {
                 String fdirname = docs + "/" + path.substring(root.length() + 1, path.length());
                 System.out.println(f + "->" + fdirname);
@@ -72,19 +77,13 @@ public class RemoveMissingFiles {
                     return;
                 }
             }
-            String[] lf = f.list();
-            int ilf = Array.getLength(lf);
-            for (int i = 0; i < ilf; i++) {
-                indexdir(path + "/" + lf[i]);
-
-            }
         }
     }
 
     public static void indexdoc(String name, File f) {
 
         String fdocname = docs + "/" + name.substring(root.length() + 1, name.length() - 4);
-//        System.out.println(f+"->"+fdirname);
+        System.out.println(f + "->" + fdocname);
         File fdocs = new File(fdocname);
         if (!fdocs.exists()) {
             System.err.println("delete file:" + f);

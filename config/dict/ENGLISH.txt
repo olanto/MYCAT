@@ -2,3 +2,7 @@
 Mr
 Mrs
 Ms
+paras
+para
+p
+Art

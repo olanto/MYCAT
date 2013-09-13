@@ -106,12 +106,12 @@ public class AlignASetOfBiTexts {
             BiSentence bc = null;
 //            try {
                 bc = new BiSentence(
-                        auto, 10, 10,
+                        auto, 5, 10,
                         verbose,
                         fromfile + "/" + name,
                         tofile + "/" + name,
                         "UTF-8",
-                        1000,
+                        4000,
                         3,
                         s2t);
                 if (!bc.error) {

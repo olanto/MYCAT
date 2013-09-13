@@ -1,22 +1,24 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.zahir.align.bitext;
 
 import static org.olanto.util.Messages.*;
@@ -29,8 +31,8 @@ import org.olanto.zahir.align.SimInformation;
 import org.olanto.zahir.align.WriteTMX;
 
 /**
- * Classe stockant la carte des positions entre deux traductions.
- * init -> add wordpos -> compact -> translate charpos
+ * Classe stockant la carte des positions entre deux traductions. init -> add
+ * wordpos -> compact -> translate charpos
  */
 public class BiSentence {
 
@@ -60,12 +62,12 @@ public class BiSentence {
     public long counttested;
 
     public BiSentence(
-            boolean _auto,  // taille automatique de la fenêtre d'exploration
-            int autopct,    // en pour cent de la taille du document (4%)
-            int minauto,    // minimum taille en mode auto
+            boolean _auto, // taille automatique de la fenêtre d'exploration
+            int autopct, // en pour cent de la taille du document (4%)
+            int minauto, // minimum taille en mode auto
             boolean _verbose,
-            String fromfile, 
-            String tofile, 
+            String fromfile,
+            String tofile,
             String encoding,
             int windows, // taille manuelle du premier passage (ou maximum si auto)
             int windows2, // taille manuelle du deuxième passage
@@ -87,12 +89,16 @@ public class BiSentence {
         fromnblines = fromdoc.nblines;
         tonblines = todoc.nblines;
         if (todoc.lines.length == 0) {
-            if(verbose)msg("not a bitext : " + tofile);
+            if (verbose) {
+                msg("not a bitext : " + tofile);
+            }
             error = true;
             return;
         }
         if (fromdoc.lines.length == 0) {
-            if(verbose)msg("source text is empty : " + tofile);
+            if (verbose) {
+                msg("source text is empty : " + tofile);
+            }
             error = true;
             return;
         }
@@ -111,7 +117,6 @@ public class BiSentence {
     }
 
 //
-
     public void getInfo() {
         msg("___________________________________");
         msg("From:" + fromfile + " #line:" + fromnblines);
@@ -243,8 +248,10 @@ public class BiSentence {
         if (maxecart < windows) {  // écart plus petit
             if (fromnblines > 100) {   // un bon nombre de lign
                 if (nbmeasure > 10) {   // assez de mesure
-                    if(verbose)msg("new windows:" + windows + " -> " + Math.max(Math.min(maxecart, windows),minauto));
-                    windows = Math.max(Math.min(maxecart + 3, windows),minauto);
+                    if (verbose) {
+                        msg("new windows:" + windows + " -> " + Math.max(Math.min(maxecart, windows), minauto));
+                    }
+                    windows = Math.max(Math.min(maxecart + 3, windows), minauto);
 
                 }
             }
@@ -310,6 +317,9 @@ public class BiSentence {
             if (similarlength(fromline, i)) {
                 // float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i));
                 SimInformation sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, false, s2t);
+                if (sim.similarity == 0) {
+                    System.out.println("from" + fromline + " to " + i + ": " + todoc.lines[i].s);
+                }
                 if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;
                     maxline = i;
@@ -470,7 +480,7 @@ public class BiSentence {
         Global.REDUCE = true;
         Global.NUMBERS = true;
         Global.FILTERS = false;
-        Global.TEST_IDENT_LIMIT=0;
+        Global.TEST_IDENT_LIMIT = 0;
 
     }
 }
