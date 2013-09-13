@@ -5,7 +5,7 @@
 <properties>   
 	<!--Constant Parameters. If this is modified, the index structure must be entirely rebuilt.--> 
 	<!--Maximum number of documents allowed (=2^DOC_MAXBIT) THIS PARAMETER MUST BE IDENTICAL TO THE DOC_MAXBIT PARAMETER IN MAP_fix.xml--> 
-    <entry key="DOC_MAXBIT">17</entry>
+    <entry key="DOC_MAXBIT">16</entry>
 	<!--Maximum number of words allowed (=2^WORD_MAXBIT) --> 
     <entry key="WORD_MAXBIT">20</entry>
     <!--Internal indexing parameters (DO NOT CHANGE) --> 
@@ -15,6 +15,7 @@
     <entry key="IDX_WITHDOCBAG">false</entry>
     <entry key="IDX_MORE_INFO">false</entry>
     <entry key="IDX_SAVE_POSITION">true</entry>
+    <entry key="IDX_ZIP_CACHE">true</entry>
 
 	<!--Number of independants disks (2^OBJ_PW2)-->     
     <entry key="OBJ_PW2">0</entry> 
@@ -51,6 +52,8 @@
     <entry key="MAX_RESPONSE">200</entry>
 	<!--MAX_BROWSE: Maximum number of reference documents in the Hit List when using the Browse function (must be identical to the same parameter name in the GUI_fix.xml file)-->
 	<entry key="DOCNAME_MAX_BROWSE">1000</entry>
+	<!--DOCNAME_BROWSE_INSENSITIVE:  case_insensitive when using the Browse function -->
+	<entry key="DOCNAME_BROWSE_INSENSITIVE">true</entry>
  
 	<!--Number of words for the NEAR operator -->
     <entry key="NEAR_DISTANCE">8</entry>
@@ -61,8 +64,8 @@
      <entry key="ORG_FILE">/home/olanto/MYCAT/dict/organisation.dic</entry>
      <entry key="ROOT_CORPUS_SOURCE">/home/olanto/MYCAT/corpus/source</entry>
      <entry key="ROOT_CORPUS_TXT">/home/olanto/MYCAT/corpus/txt</entry>
-		 <entry key="TEMP_FOLDER">/home/olanto/MYCAT/TEMP</entry>
-<entry key="COMLOG_FILE">/home/olanto/MYCAT/data/CM_IDX/common.log</entry>   
+	 <entry key="TEMP_FOLDER">/home/olanto/MYCAT/TEMP</entry>
+	<entry key="COMLOG_FILE">/home/olanto/MYCAT/data/CM_IDX/common.log</entry>   
     <entry key="DETLOG_FILE">/home/olanto/MYCAT/data/CM_IDX/detail.log</entry>
     <entry key="COMMON_ROOT">/home/olanto/MYCAT/data/CM_IDX</entry>
 	<entry key="OBJ_ROOT_0">/home/olanto/MYCAT/data/CM_IDX/idx0</entry>
@@ -75,16 +78,17 @@
     <entry key="------OBJ_ROOT_7"></entry>
 	
 	 <!--Supported languages (they appear in the GUI drop menus in the following order:) -->
-     <entry key="ROOT_CORPUS_LANG">EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH FA</entry>
+     <entry key="ROOT_CORPUS_LANG">EN FR DE BG CS DA EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH FA</entry>
 	 
 	 <!--Limit marks and highlight parameters for the Quote Detector -->
 	 <entry key="OPEN_REF_BEG">&lt;FONT style="BACKGROUND-COLOR: yellow">[R</entry>
 	 <entry key="OPEN_REF_END">&gt;</entry>
 	 <entry key="CLOSE_REF_BEG">&amp;lt;E</entry>
 	 <entry key="CLOSE_REF_END">]&lt;/FONT></entry>
-	
+	 <entry key="SKIP_LINE_QUOTE_DECTECTOR">true</entry>
+
 	<!--parameters to get the Original documents -->  
-	 <entry key="ORIGINAL_FULL_URL">/original/</entry>
+	<entry key="ORIGINAL_FULL_URL">/original/</entry>
 	 <entry key="ORIGINAL_HOST">localhost</entry>
 	 <entry key="ORIGINAL_PORT">8080</entry>
      
@@ -107,4 +111,5 @@
 	  <!--Path to the file containing all the SERVER messages -->
         <entry key="SERVER_MESSAGE_PATH">/home/olanto/MYCAT/config/messages/interface/initserver</entry> 
         <entry key="SERVER_MESSAGE_LANG"></entry>
+
 </properties>
