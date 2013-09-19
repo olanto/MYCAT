@@ -53,7 +53,8 @@ public class MapProcess implements Runnable {
     static String source;
     static String target;
     private int alignThis;
-   /**
+
+    /**
      * utiliser cette méthode pour lancer un alignement (celui de iddoc)
      */
     public MapProcess(int iddoc) {
@@ -68,16 +69,16 @@ public class MapProcess implements Runnable {
         ms = _ms;
         source = _source;
         target = _target;
-        newmap=new AtomicInteger(0);
-        oldmap=new AtomicInteger(0);
-        nomap=new AtomicInteger(0);
+        newmap = new AtomicInteger(0);
+        oldmap = new AtomicInteger(0);
+        nomap = new AtomicInteger(0);
         try {
             //System.out.println("Map from " + source + " to " + target);
             lastdoc = is.getSize(); // taille du corpus
             pivotLanguage = is.satisfyThisProperty("SOURCE." + source);
             targetLanguage = is.satisfyThisProperty("TARGET." + target);
             rootTxt = is.getROOT_CORPUS_TXT();
-             try {
+            try {
                 s2t = new LexicalTranslation(SenseOS.getMYCAT_HOME() + "/map/" + source + target + "/lex.e2f", "UTF-8", 0.1f);
             } catch (Exception ex) {
                 System.out.println(" !!! no Dictionnary from " + source + " to " + target);
@@ -89,7 +90,6 @@ public class MapProcess implements Runnable {
         }
     }
 
- 
     public static void statistic() {
         System.out.println("\nnew:" + newmap.intValue() + " old:" + oldmap.intValue() + " nomap:" + nomap.intValue());
     }
@@ -99,21 +99,24 @@ public class MapProcess implements Runnable {
         //  for (int i = 0; i < lastdoc; i++) {
         if (pivotLanguage.get(alignThis) && targetLanguage.get(alignThis)) {
             try {
-                if (!ms.existMap(alignThis, source, target)) {
-                    //System.out.print("alignThis:"+alignThis);
-                    String pivotName = is.getDocName(alignThis);
-                    String targetName = getNameOfDocForThisLang(pivotName, target);
-                    if (GET_TXT_FROM_ZIP_CACHE) { // par le zip
-                        String fromContent = is.getDoc(alignThis);
-                        String toContent = is.getDoc(is.getDocId(targetName));
-                        d = new BiSentence(true, 10, 10, false, fromContent, toContent, 4000, 3, s2t);
-                    } else { // par les fichiers
-                        d = new BiSentence(true, 10, 10, false, pivotName, targetName, "UTF-8", 4000, 3, s2t);
+                String pivotName = is.getDocName(alignThis);
+                if (!pivotName.contains("/XX/Glossaries¦")) {  // not a glossary
+                    if (!ms.existMap(alignThis, source, target)) {
+                        //System.out.print("alignThis:"+alignThis);
+                        String targetName = getNameOfDocForThisLang(pivotName, target);
+                        //System.out.println("pivotName:"+pivotName+"targetName:"+targetName);
+                        if (GET_TXT_FROM_ZIP_CACHE) { // par le zip
+                            String fromContent = is.getDoc(alignThis);
+                            String toContent = is.getDoc(is.getDocId(targetName));
+                            d = new BiSentence(true, 10, 10, false, fromContent, toContent, 4000, 3, s2t);
+                        } else { // par les fichiers
+                            d = new BiSentence(true, 10, 10, false, pivotName, targetName, "UTF-8", 4000, 3, s2t);
+                        }
+                        ms.addMap(new IntMap(d.buildIntegerMapSO2TA(), d.buildIntegerMapTA2SO()), alignThis, source, target);
+                        newmap.incrementAndGet();
+                    } else {
+                        oldmap.incrementAndGet();
                     }
-                    ms.addMap(new IntMap(d.buildIntegerMapSO2TA(), d.buildIntegerMapTA2SO()), alignThis, source, target);
-                    newmap.incrementAndGet();
-                } else {
-                    oldmap.incrementAndGet();
                 }
             } catch (RemoteException ex) {
                 Logger.getLogger(MapProcess.class.getName()).log(Level.SEVERE, null, ex);

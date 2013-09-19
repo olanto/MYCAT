@@ -36,7 +36,7 @@ public class SetLanguageProperties {
 
     static String rootTxt;
     static IndexService_MyCat is;
- static boolean verbose=true;
+ static boolean verbose=false;
     public static void updateLanguageProperties(IndexService_MyCat ispar) {
 
         is = ispar;
