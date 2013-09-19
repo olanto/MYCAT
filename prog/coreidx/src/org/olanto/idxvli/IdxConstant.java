@@ -33,7 +33,7 @@ import org.olanto.idxvli.server.PreProcessingService_Default;
 
  */
 public class IdxConstant {
-
+    public static final String VERSION="2.3.03";
     // constante pour être compatible avec la version du classifieur
     /** nom du fichier pour les documents non-indexables*/
     public static String IDX_DONTINDEXTHISDOC = "C:/JG/gigaversion/data/dontindexthisdocuments.txt";
@@ -334,7 +334,8 @@ public class IdxConstant {
      */
     public static void show() {
         COMLOG.info(
-                "HOSTS"
+                "VERSION "+VERSION
+                +"\nHOSTS"
                 + "\n    ORIGINAL_FULL_URL: " + ORIGINAL_FULL_URL
                 + "\n    ORIGINAL_HOST: " + ORIGINAL_HOST
                 + "\n    ORIGINAL_PORT: " + ORIGINAL_PORT
