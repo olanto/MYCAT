@@ -42,6 +42,7 @@ import org.olanto.idxvli.ref.UploadedFile;
 import org.olanto.idxvli.util.SetOfBits;
 import static org.olanto.util.Messages.error;
 import static org.olanto.util.Messages.msg;
+import static org.olanto.idxvli.util.BytesAndFiles.*;
 import org.olanto.util.TimerNano;
 import org.olanto.idxvli.ref.UtilsFiles;
 
@@ -370,6 +371,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     @Override
     public String getDoc(int docId) throws RemoteException {
         if (IDX_ZIP_CACHE) {
+//           msg("Zip decompress id doc: " + docId );
             serverR.lock();
             try {             
                 return id.zipCache.get(docId);
@@ -377,8 +379,8 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                 serverR.unlock();
             }
         } else {
-            msg("not implemented");
-            return "no text!";
+//           msg("Read from disk id doc: " + docId );
+           return file2String(id.getFileNameForDocument(docId), "UTF-8");
         }
     }
 

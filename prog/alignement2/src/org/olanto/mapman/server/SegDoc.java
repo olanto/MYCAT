@@ -24,7 +24,10 @@ package org.olanto.mapman.server;
 import java.io.BufferedReader;
 import java.io.Reader;
 import java.io.StringReader;
-import static org.olanto.idxvli.util.BytesAndFiles.*;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.olanto.idxvli.server.IndexService_MyCat;
 import static org.olanto.util.Messages.*;
 
 /**
@@ -60,20 +63,38 @@ public class SegDoc {
         }
     }
 
-    public SegDoc(String fname, String lang) {
+        public SegDoc( IndexService_MyCat is, String fname, String lang) {
         uri = fname;
         this.lang = lang;
-//        System.out.println("Building from segdoc from file:" + fname);
-        content = file2String(fname, txt_encoding);
+        try {
+            //        System.out.println("Building from segdoc from file:" + fname);
+                    content = is.getDoc(is.getDocId(fname));
+        } catch (RemoteException ex) {
+            Logger.getLogger(SegDoc.class.getName()).log(Level.SEVERE, null, ex);
+            content=null;
+        }
+         normalizeContent();
+    }
+
+    
+//    public SegDoc(String fname, String lang) {
+//        uri = fname;
+//        this.lang = lang;
+////        System.out.println("Building from segdoc from file:" + fname);
+//        content = file2String(fname, txt_encoding);
+//        normalizeContent();
+//    }
+    
+    private void normalizeContent(){
         if ((content != null) && (AlignBiText.skipLine)) {
             //msg("skipline");
             content = content.replace("\n", "\n\n");
         }
         if (content == null) {
-            content = "file source:" + fname + " language:" + lang + "\n*** ERROR :no file\n";
+            content = "file source:" + uri + " language:" + lang + "\n*** ERROR :no file\n";
         }
         if (content.length() == 0) {
-            content = "file source:" + fname + " language:" + lang + "\n*** ERROR :file is empty\n";
+            content = "file source:" + uri + " language:" + lang + "\n*** ERROR :file is empty\n";
         }
 //        System.out.println("File Content:" + content);
         init(content);

@@ -86,7 +86,7 @@ public class AlignBiText {
         String filepivot = getNameOfDocForThisLang(fileso, "EN");
         String fileta = getNameOfDocForThisLang(fileso, langta);
         //System.out.println("fileso"+fileso+"\n"+"fileta"+fileta+"\n"+"filepivot"+filepivot);
-        source = new SegDoc(fileso, langso);
+        source = new SegDoc(is, fileso, langso);
         if (source.lines[1].startsWith("*** ERROR")) {
             System.out.println("no source file");
             return; //stop processing
@@ -94,7 +94,7 @@ public class AlignBiText {
         Timer t = new Timer("GetLineStat_Source");
         source.positions = getLineStat(source.lines, w, h, source.content.length());
         t.stop();
-        target = new SegDoc(fileta, langta);
+        target = new SegDoc(is,fileta, langta);
         if (target.lines[1] != null && target.lines[1].startsWith("*** ERROR")) {
             System.out.println("no target file");
             return; //stop processing

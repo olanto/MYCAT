@@ -188,12 +188,15 @@ public class ZipVector_InMemory implements ZipVector {
      */
     @Override
     public final String get(int pos) {
+        if (pos == -1) {
+            return null;
+        }
         if (zipSize[pos] == 0) {
             return null;
         }
         String res;
         try {
-            res = new String(decompress(zipSize[pos], v[pos]), CONTENT_ENCODING);
+             res = new String(decompress(zipSize[pos], v[pos]), CONTENT_ENCODING);
             return res;
         } catch (UnsupportedEncodingException ex) {
             Logger.getLogger(ZipVector_InMemory.class.getName()).log(Level.SEVERE, null, ex);
