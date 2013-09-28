@@ -93,6 +93,7 @@ public class QuoteBitextWidget extends Composite {
     private static final int PP_H_MIN = GuiConstant.PP_H_MIN;
     private static final int PP_H_MAX = GuiConstant.PP_H_MAX;
     private int pos = 0;
+    private float magicS, magicT;
 
     public QuoteBitextWidget(Label msg) {
         rpcS = RpcInit.initRpc();
@@ -298,6 +299,15 @@ public class QuoteBitextWidget extends Composite {
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - pixS;
         pposT = targetTextArea.getOffsetWidth() - pixS;
+
+        int scrollines = height / pixS;
+        int totlinesS = (resultS[resultS.length - 1][3] + resultS[resultS.length - 1][0]);
+        magicS = (float) ((float) (scrollines - totlinesS) / (float) (scrollines)) + 1f;
+
+        int scrollines1 = height1 / pixS;
+        int totlinesT = (resultT[resultT.length - 1][3] + resultT[resultT.length - 1][0]);
+        magicT = (float) ((float) (scrollines1 - totlinesT) / (float) (scrollines1)) + 1f;
+
     }
 
     public void showpanel(boolean source, int hight, int index) {
@@ -365,9 +375,11 @@ public class QuoteBitextWidget extends Composite {
     public void setNetScapePos(int idxS, int idxT, int h) {
         int lin = resultS[idxS][3] - h + resultS[idxS][0] / 2;
         int lin1 = resultT[idxT][3] - h + resultT[idxT][0] / 2;
+        lin = (lin > 0) ? lin : 0;
+        lin1 = (lin1 > 0) ? lin1 : 0;
 
-        float frtop1 = lin1 * pixS;
-        float frtop = lin * pixS;
+        float frtop1 = lin1 * pixS * magicT;
+        float frtop = lin * pixS * magicS;
         int posf = (frtop > height) ? height : (int) frtop;
         int posf1 = (frtop1 > height1) ? height1 : (int) frtop1;
         sourceTextArea.setFocus(true);
@@ -378,9 +390,11 @@ public class QuoteBitextWidget extends Composite {
     public void setNetScapePosT(int idxS, int idxT, int h) {
         int lin = resultS[idxS][3] - h + resultS[idxS][0] / 2;
         int lin1 = resultT[idxT][3] - h + resultT[idxT][0] / 2;
+        lin = (lin > 0) ? lin : 0;
+        lin1 = (lin1 > 0) ? lin1 : 0;
 
-        float frtop1 = lin1 * pixS;
-        float frtop = lin * pixS;
+        float frtop1 = lin1 * pixS * magicT;
+        float frtop = lin * pixS * magicS;
         int posf = (frtop > height) ? height : (int) frtop;
         int posf1 = (frtop1 > height1) ? height1 : (int) frtop1;
         targetTextArea.setFocus(true);
