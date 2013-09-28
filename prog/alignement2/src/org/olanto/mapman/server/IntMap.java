@@ -57,10 +57,10 @@ public class IntMap implements Serializable {
         from = new int[sizefrom];
         to = new int[sizeto];
         for (int i = 0; i < from.length; i++) {
-            from[i] = ((i + 1) * sizeto) / sizefrom;
+            from[i] = (int)(((long)i * (long)sizeto) / (long)sizefrom);
         }
         for (int i = 0; i < to.length; i++) {
-            to[i] = ((i + 1) * sizefrom) / sizeto;
+            to[i] = (int)(((long)i * (long)sizefrom) / (long)sizeto);
         }
     }
 

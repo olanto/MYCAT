@@ -94,7 +94,7 @@ public class AlignBiText {
         Timer t = new Timer("GetLineStat_Source");
         source.positions = getLineStat(source.lines, w, h, source.content.length());
         t.stop();
-        target = new SegDoc(is,fileta, langta);
+        target = new SegDoc(is, fileta, langta);
         if (target.lines[1] != null && target.lines[1].startsWith("*** ERROR")) {
             System.out.println("no target file");
             return; //stop processing
@@ -116,7 +116,10 @@ public class AlignBiText {
                 map = null;
             }
             if (map == null) {
+//                System.out.println("Source size after skip: " + source.lines.length);
+//                System.out.println("Target size after skip: " + target.lines.length);
                 map = new IntMap(source.lines.length, target.lines.length);
+//                map.dump("just constructed");
             }
 
         } catch (RemoteException ex) {
@@ -157,6 +160,7 @@ public class AlignBiText {
 //            System.out.println("treating line :" + i);
             //ajouter et simuler le comportement du contenu dans un textArea.
             pos += lines[i - 1].length() + 1;
+//            System.out.println("start calculating for line number :" + i);
             curLines = getLineNumbers(lines[i], w, " ");
 
             calc[i][0] = curLines;// nombre de lignes dans la textarea de la phrase courante
@@ -196,6 +200,7 @@ public class AlignBiText {
     }
 
     public static int getLineNumbers(String line, int taWidth, String Split) {
+        boolean verbose = false;
         int curLine = 0;
 
         // if line length is strictly less than the textarea width it means that
@@ -204,24 +209,36 @@ public class AlignBiText {
             return 1;
         }
 //        System.out.println("start split");
-        // get all the words in the line
+        // Get all the words in the line, check if the line starts already with a character
         int count;
         if (line.startsWith(Split)) {
             count = 1;
         } else {
             count = 0;
         }
+        // Split the words of each line
         String[] words = line.split(Split);
 
-        // calculate the sum of the word length one by one if it is still under
-        // the textarea width it means it is still a line 
+        // calculate the sum of the word's lengths one by one if it is still under
+        // the textarea width it means it is still in one line
         if (words != null) {
-            int i = 0, stay = 0, idx;
+            int i = 0, idx; // stay = 0;
             String rest;
-//            System.out.println("start calculating for words length :" + words.length);
+            if (verbose) {
+                System.out.println("start calculating for words length :" + words.length);
+                for (int k = 0; k < words.length; k++) {
+                    System.out.print(words[k] + "|");
+                }
+            }
+            if (verbose) {
+                System.out.println();
+            }
+
             while (i < words.length) {
-//                System.out.println("treating word :" + i);
-                // add the characters of the current word and the space
+                if (verbose) {
+                    System.out.println("treating word number : " + i + " content : " + words[i] + " position: " + count);
+                }
+                // Treat the case of hyphened words, treat them in case of wrapping
                 if ((words[i].contains("-")) && ((count + words[i].length() + 1) > taWidth)) {
                     rest = words[i];
                     idx = 0;
@@ -235,50 +252,75 @@ public class AlignBiText {
                         count += idx;
                     }
                     curLine++;
-                    count = words[i].substring(idx).length() + 1;
+                    count = words[i].length() + 1;
+                    if (verbose) {
+                        System.out.println("Case: hyphen, new line at word: " + words[i] + " On position: " + count);
+                    }
                     i++;
-                } else {
-                    if (i == words.length - 1) {
+                } else { // Non hyphened words
+                    if (i == words.length - 1) {// last word of the line
                         count += words[i].length();
-                    } else {
+                    } else {// a words in the middle of the line
                         count += words[i].length() + 1;
                     }
-                    if ((words[i].startsWith("...."))) {
+                    if ((words[i].startsWith("...."))) {// for these kind of characters the word before is added in front
                         count = words[i].length();
-                        if (i > 0) {
+                        if (i > 0) {// if not the first word
                             count += words[i - 1].length();
                         }
-                        if (i > 1) {
+                        if (i > 1) {// if the word is not the first then skip a line
                             curLine++;
+                            if (verbose) {
+                                System.out.println("Case: points, new line at word: " + words[i] + " On position: " + count);
+                            }
                         }
-                        while (count >= taWidth) {
+                        while (count >= taWidth) {// compare the number of chars with the textarea width
                             curLine++;
                             count -= taWidth;
+                            if (verbose) {
+                                System.out.println("Case: too small, new line at word: " + words[i] + " On position: " + count);
+                            }
                         }
                     }
-                    if (count < taWidth) {
+                    if (count < taWidth) {// if the number of chars is still inferior than the width
                         i++;
-                        stay = 0;
-                    } else if (count == taWidth) {
+//                        stay = 0;
+                    } else if (count == taWidth) {// if the number is equal then skip and start from next word
                         curLine++;
+                        if (verbose) {
+                            System.out.println("Case: equal, new line at word: " + words[i]);
+                        }
                         count = 0;
                         i++;
-                        stay = 0;
-                    } else if (count > taWidth) {
+//                        stay = 0;
+                    } else if (count > taWidth) {//  if the number of chars is more than skip a line and then restart conting
                         curLine++;
-                        count = 0;
-                        stay++;
-                    }
-                    if (stay > 1) {
-                        curLine++;
+                        count = words[i].length() + 1;
+                        if (verbose) {
+                            System.out.println("Case: word at the end of the line, new line at word: " + words[i]);
+                        }
                         i++;
+//                        count = 0;
+//                        stay++;
                     }
+//                    if (stay > 1) {
+//                        curLine++;
+//                        if (verbose) {
+//                            System.out.println("Case: rest of line, new line at word: " + words[i]);
+//                        }
+//                        i++;
+//                    }
                 }
             }
-            if (count > 0) {
+            if (count > 0) {// if there is any rest askip a line
                 curLine++;
+                if (verbose) {
+                    System.out.println("Case: all the rest, new line at the end");
+                }
             }
-//            System.out.println("end calculating");
+            if (verbose) {
+                System.out.println("end calculating, result : " + curLine);
+            }
         } else {
             curLine = 2;
         }
