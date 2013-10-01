@@ -121,6 +121,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
      * processus.
      */
     public void InitConfiguration() {
+        CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
         DOC_ENCODING = prop.getProperty("DOC_ENCODING", "UTF-8");
         IDX_MFLF_ENCODING = prop.getProperty("IDX_MFLF_ENCODING", "UTF-8");

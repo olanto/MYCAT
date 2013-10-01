@@ -32,6 +32,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Pattern;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
+import org.olanto.idxli.consistent.CheckConsistency;
 import static org.olanto.idxvli.IdxConstant.*;
 import org.olanto.idxvli.IdxInit;
 import org.olanto.idxvli.IdxStructure;
@@ -67,6 +68,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     private ContentService cs;  // service associï¿½
     private String modeForRestart;
     private IdxInit clientForRestart;
+    private CheckConsistency CheckOpenClose;
 
     public Server_MyCat() throws RemoteException {
         super();
@@ -99,12 +101,18 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             if (id != null) {
                 error("already init: -> bad usage");
             } else {
-                id = new IdxStructure("NEW", client);
-                id.Statistic.global();
-                id.close();
+                CheckOpenClose = new CheckConsistency(COMMON_ROOT, "NOT_CLOSED");
+                if (CheckOpenClose.isConsistent()) {
+                    CheckOpenClose.markSomeChange();
+                    id = new IdxStructure("NEW", client);
+                    id.Statistic.global();
+                    id.close();
+                    CheckOpenClose.clearMark();
+                    msg("wait a little and start server ");
 
-                msg("wait a little and start server ");
-
+                } else {
+                    msg("ERROR-INCONSISTENT CLOSE --> clean file or rebuild index");
+                }
             }
         } finally {
             serverW.unlock();
@@ -121,36 +129,23 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             if (id != null) {
                 error("already init: getAndInit");
             } else {
-
                 msg("current indexer is opening ...");
-
                 id = new IdxStructure(mode, client);
-                if (!mode.equals("NEW")) {
-                    id.Statistic.global();
-                }
-                msg("current indexer is opened ...");
-                if (OpenCM) {
-                    cs = getServiceCM("rmi://localhost/CM_CLEAN");
+                CheckOpenClose = new CheckConsistency(COMMON_ROOT, "NOT_CLOSED");
+                if (CheckOpenClose.isConsistent()) {
+                    CheckOpenClose.markSomeChange();
+                    if (!mode.equals("NEW")) {
+                        id.Statistic.global();
+                    }
+                    msg("current indexer is opened ...");
+                    if (OpenCM) {
+                        cs = getServiceCM("rmi://localhost/CM_CLEAN");
+                    } else {
+                        msg("No Content Manager in this configuration (CM_CLEAN)");
+                    }
                 } else {
-                    msg("No Content Manager in this configuration (CM_CLEAN)");
-//            if (mfl!=null){
-//                // init mfl
-//                documents=new MFL(id);
-//                documents.openManyFile(mfl, 1, IdxConstant.IDX_MFL_ENCODING);
-//                msg("IndexService_BASIC:open mfl OK");
-//            }
-                    // init knn
-//            Timer t2=new Timer("init KNN");
-//            KNN=new TFxIDF_ONE();
-//            KNN.initialize(id,    // Indexeur
-//                    5,     // Min occurence d'un mot dans le corpus (nbr de documents)
-//                    50,    // Max en o/oo d'apparition dans le corpus (par mille!)
-//                    true,   // montre les dï¿½tails
-//                    1,        // formule IDF (1,2)
-//                    1       // formule TF (1,2,3) toujours 1
-//                    );
-//            t2.stop();
-//            msg("IndexService_BASIC:open knn OK");
+                    msg("FATAL_ERROR-INCONSISTENT CLOSE --> clean file or rebuild index");
+                    System.exit(0);
                 }
             }
         } finally {
@@ -191,6 +186,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                 msg("current indexer is closing ...");
                 id.Statistic.global();
                 id.close();
+                CheckOpenClose.clearMark();
                 msg("current indexer is closed");
                 msg("server must be stopped  & restarted ...");
                 id = null;
@@ -373,14 +369,14 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         if (IDX_ZIP_CACHE) {
 //           msg("Zip decompress id doc: " + docId );
             serverR.lock();
-            try {             
+            try {
                 return id.zipCache.get(docId);
             } finally {
                 serverR.unlock();
             }
         } else {
 //           msg("Read from disk id doc: " + docId );
-           return file2String(id.getFileNameForDocument(docId), "UTF-8");
+            return file2String(id.getFileNameForDocument(docId), "UTF-8");
         }
     }
 
