@@ -32,7 +32,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Pattern;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
-import org.olanto.idxli.consistent.CheckConsistency;
+import org.olanto.idxvli.consistent.CheckConsistency;
 import static org.olanto.idxvli.IdxConstant.*;
 import org.olanto.idxvli.IdxInit;
 import org.olanto.idxvli.IdxStructure;

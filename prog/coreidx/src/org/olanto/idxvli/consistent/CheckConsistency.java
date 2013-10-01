@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.idxli.consistent;
+package org.olanto.idxvli.consistent;
 
 import java.io.File;
 import java.io.IOException;
