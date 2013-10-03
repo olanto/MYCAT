@@ -41,6 +41,8 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class MainEntryPoint implements EntryPoint {
 
+    public static final String VERSION = "2.3.05";
+    
     // This is the component of the head of the interface
     // where we can put the query of the TextAligner
     private ParseWidget myParseWidget;

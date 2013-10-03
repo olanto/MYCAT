@@ -58,10 +58,10 @@ public class UploadServlet extends UploadAction {
             if (false == item.isFormField()) {
                 try {
                     if ((item.getName().toLowerCase().endsWith(".txt")) || (item.getName().toLowerCase().endsWith(".html"))) { // charge sous forme de txt
-                        response += UtilsFiles.file2String(item.getInputStream(), "UTF-8");
+                        response += cleanConvertedFile(UtilsFiles.file2String(item.getInputStream(), "UTF-8"));
                     } else {
                         // need conversion
-                        response += convertFileWithRMI(item.get(), item.getName());
+                        response += cleanConvertedFile(convertFileWithRMI(item.get(), item.getName()));
                     }
                     System.out.println("File converted successfully");
                 } catch (Exception ex2) {
@@ -98,5 +98,46 @@ public class UploadServlet extends UploadAction {
             _logger.error(ex);
         }
         return ret;
+    }
+    
+          public static String cleanConvertedFile(String s) {
+//        System.out.println("-------cst:"+s);
+//        for (int i=0; i<s.length();i++){
+//            int v=s.charAt(i);
+//             System.out.println(i+":"+s.substring(i, i+1)+":"+v);
+//        }
+//        s = s.replace("\t", " ");
+//        char x20 = 0x20;
+//        char xa0 = 0xa0;
+//        System.out.println("nbsp")
+//            System.out.println("nbsp:" + s);
+//        s = s.replace("" + xa0 + x20, " ");
+//        System.out.println("1e");
+        char x1e = 0x1e;
+        s = s.replace("" + x1e, " ");
+//        System.out.println("1f");
+        char x1f = 0x1f;
+        s = s.replace("" + x1f, "");
+//         System.out.println("02");
+        char x02 = 0x02;
+        s = s.replace("" + x02, " ");
+//          System.out.println("13");
+        char x13 = 0x13;
+        s = s.replace("" + x13, " ");
+//          System.out.println("15");
+        char x15 = 0x15;
+        s = s.replace("" + x15, " ");
+//          System.out.println("00");
+        char x00 = 0x00;
+        s = s.replace("" + x00, " ");
+//          System.out.println("0b");
+        char x0b = 0x0b;
+        s = s.replace("" + x0b, " ");
+//          System.out.println("0c");
+        char x0c = 0x0c;
+        s = s.replace("" + x0c, " ");
+//          System.out.println("double blanc");
+//        s = s.replace("  ", " ");
+        return s;
     }
 }
