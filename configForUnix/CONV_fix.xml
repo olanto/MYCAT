@@ -5,7 +5,7 @@
         <badPath>/home/olanto/MYCAT/corpus/bad</badPath>
         <docPath>/home/olanto/MYCAT/corpus/docs</docPath>
         <sourcePath>/home/olanto/MYCAT/corpus/source</sourcePath>
-        <tempPath>/home/olanto/MYCAT/temp</tempPath>
+        <tempPath>/home/olanto/MYCAT/TEMP</tempPath>
         <maxRetry>2</maxRetry>
         <keepExtension>true</keepExtension>
         <outputEncoding>UTF-8</outputEncoding>

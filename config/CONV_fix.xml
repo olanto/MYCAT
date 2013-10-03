@@ -5,7 +5,7 @@
         <badPath>C:/MYCAT/corpus/bad</badPath>
         <docPath>C:/MYCAT/corpus/docs</docPath>
         <sourcePath>C:/MYCAT/corpus/source</sourcePath>
-        <tempPath>C:/MYCAT/temp</tempPath>
+        <tempPath>C:/MYCAT/TEMP</tempPath>
         <maxRetry>2</maxRetry>
         <keepExtension>true</keepExtension>
         <outputEncoding>UTF-8</outputEncoding>
