@@ -341,21 +341,26 @@ public class QuoteWidget extends Composite {
         @Override
         public void onFinish(IUploader uploader) {
             if (uploader.getStatus() == Status.SUCCESS) {
-                canGo = true;
                 // need gwtupload version 0.6.3 to use this feature
                 final IUploader.UploadedInfo info = uploader.getServerInfo();
                 fileName = info.name;
                 fileContent = info.message;
-                setMessage("info", GuiMessageConst.MSG_42 + fileName);
-                fileUpload.setTitle(GuiMessageConst.MSG_42 + fileName);
-                if (fileName.endsWith(GuiConstant.QD_FILE_EXT)) {
-                    drawReferences(null);
-                } else if (fileName.endsWith(GuiConstant.QD_GENERAL_EXT)) {
-                    setMessage("error", GuiMessageConst.MSG_58);
-                    Window.alert("Ereur: " + GuiMessageConst.MSG_58);
+                if (fileName == null) {
+                    canGo = false;
+                    setMessage("error", GuiMessageConst.MSG_44);
                 } else {
-                    setMessage("info", GuiMessageConst.MSG_43);
-                    GoSrch.enable();
+                    canGo = true;
+                    setMessage("info", GuiMessageConst.MSG_42 + fileName);
+                    fileUpload.setTitle(GuiMessageConst.MSG_42 + fileName);
+                    if (fileName.endsWith(GuiConstant.QD_FILE_EXT)) {
+                        drawReferences(null);
+                    } else if (fileName.endsWith(GuiConstant.QD_GENERAL_EXT)) {
+                        setMessage("error", GuiMessageConst.MSG_58);
+                        Window.alert("Ereur: " + GuiMessageConst.MSG_58);
+                    } else {
+                        setMessage("info", GuiMessageConst.MSG_43);
+                        GoSrch.enable();
+                    }
                 }
             } else {
                 canGo = false;

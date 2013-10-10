@@ -305,32 +305,36 @@ public class ParseWidget extends Composite {
                 final IUploader.UploadedInfo info = uploader.getServerInfo();
                 fileName = info.name;
                 fileContent = info.message;
-                setMessage("info", GuiConstant.MSG_2 + fileName);
-                fileUpload.setTitle(GuiConstant.MSG_2 + fileName);
-                if (fileName.endsWith(GuiConstant.SELFQD_FILE_EXT)) {
-                    setMessage("info", GuiConstant.MSG_4 + fileName);
-                    ref = fileContent;
-                    setMessage("info", GuiConstant.MSG_3);
-                    refArea.setHtml(ref);
-                    refs = refArea.getElement().getElementsByTagName("a");
-                    save.removeAllListeners();
-                    save.addListener(Events.OnClick, new Listener<BaseEvent>() {
-                        @Override
-                        public void handleEvent(BaseEvent be) {
-                            MyParseDownload.downloadFileFromServer(getSavedFileName() + GuiConstant.SELFQD_FILE_EXT, ref);
-                            setMessage("info", GuiConstant.MSG_7 + fileName + GuiConstant.MSG_8 + getSavedFileName() + GuiConstant.SELFQD_FILE_EXT);
-                        }
-                    });
+                if (fileName == null) {
+                    setMessage("error", GuiConstant.MSG_10);
                 } else {
-                    GoSrch.enable();
-                    GoSrch.removeAllListeners();
-                    GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
-                        @Override
-                        public void handleEvent(BaseEvent be) {
-                            GoSrch.disable();
-                            drawReferences();
-                        }
-                    });
+                    setMessage("info", GuiConstant.MSG_2 + fileName);
+                    fileUpload.setTitle(GuiConstant.MSG_2 + fileName);
+                    if (fileName.endsWith(GuiConstant.SELFQD_FILE_EXT)) {
+                        setMessage("info", GuiConstant.MSG_4 + fileName);
+                        ref = fileContent;
+                        setMessage("info", GuiConstant.MSG_3);
+                        refArea.setHtml(ref);
+                        refs = refArea.getElement().getElementsByTagName("a");
+                        save.removeAllListeners();
+                        save.addListener(Events.OnClick, new Listener<BaseEvent>() {
+                            @Override
+                            public void handleEvent(BaseEvent be) {
+                                MyParseDownload.downloadFileFromServer(getSavedFileName() + GuiConstant.SELFQD_FILE_EXT, ref);
+                                setMessage("info", GuiConstant.MSG_7 + fileName + GuiConstant.MSG_8 + getSavedFileName() + GuiConstant.SELFQD_FILE_EXT);
+                            }
+                        });
+                    } else {
+                        GoSrch.enable();
+                        GoSrch.removeAllListeners();
+                        GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
+                            @Override
+                            public void handleEvent(BaseEvent be) {
+                                GoSrch.disable();
+                                drawReferences();
+                            }
+                        });
+                    }
                 }
             } else {
                 setMessage("error", GuiConstant.MSG_5);
