@@ -99,8 +99,8 @@ public class UploadServlet extends UploadAction {
         }
         return ret;
     }
-    
-          public static String cleanConvertedFile(String s) {
+
+    public static String cleanConvertedFile(String s) {
 //        System.out.println("-------cst:"+s);
 //        for (int i=0; i<s.length();i++){
 //            int v=s.charAt(i);

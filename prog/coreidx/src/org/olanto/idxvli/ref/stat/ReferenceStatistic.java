@@ -86,15 +86,18 @@ public class ReferenceStatistic {
 
     public String getHeaderSat(String fileName, String Collections, int min) {
         StringBuilder res = new StringBuilder("");
-        res.append("</p> "+MSG.get("server.qd.MSG_1")+" " + fileName);
-        res.append("</p> "+MSG.get("server.qd.MSG_2")+" " + totword);
-        res.append("</p> "+MSG.get("server.qd.MSG_3")+" " + alldoc.length);
-        res.append("</p> "+MSG.get("server.qd.MSG_4")+" " + totwordref
+        res.append("</p> " + MSG.get("server.qd.MSG_1") + " " + fileName);
+        res.append("</p> " + MSG.get("server.qd.MSG_2") + " " + totword);
+        res.append("</p> " + MSG.get("server.qd.MSG_3") + " " + alldoc.length);
+        res.append("</p> " + MSG.get("server.qd.MSG_4") + " " + totwordref
                 + " (" + formatter.format((float) totwordref * 100.0f / (float) totword + 0.0000001f) + "%)");
-        res.append("</p> "+MSG.get("server.qd.MSG_5")+" "+min);
-        if (Collections.equals(""))res.append("</p> "+MSG.get("server.qd.MSG_6"));
-                else res.append("</p> "+MSG.get("server.qd.MSG_7")+" " + Collections);
-        res.append("</p> "+MSG.get("server.qd.MSG_8")+" " + Calendar.getInstance().getTime());
+        res.append("</p> " + MSG.get("server.qd.MSG_5") + " " + min);
+        if (Collections.equals("")) {
+            res.append("</p> " + MSG.get("server.qd.MSG_6"));
+        } else {
+            res.append("</p> " + MSG.get("server.qd.MSG_7") + " " + Collections);
+        }
+        res.append("</p> " + MSG.get("server.qd.MSG_8") + " " + Calendar.getInstance().getTime());
         return res.toString();
     }
 
@@ -102,11 +105,11 @@ public class ReferenceStatistic {
         //computeStatByRef();
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
-        res.append("<caption><b>"+MSG.get("server.qd.MSG_9")+"</b></caption>\n"); // titre
+        res.append("<caption><b>" + MSG.get("server.qd.MSG_9") + "</b></caption>\n"); // titre
         res.append("<tr>\n" //entête
-                + "<th>"+MSG.get("server.qd.MSG_10")+"</br>"+MSG.get("server.qd.MSG_11")+"</th>\n"
-                + "<th>"+"%"+"</th>\n"
-                + "<th>"+MSG.get("server.qd.MSG_12")+"</th>\n"
+                + "<th>" + MSG.get("server.qd.MSG_10") + "</br>" + MSG.get("server.qd.MSG_11") + "</th>\n"
+                + "<th>" + "%" + "</th>\n"
+                + "<th>" + MSG.get("server.qd.MSG_12") + "</th>\n"
                 + "</tr>\n");
         for (int i = 0; i < alldoc.length; i++) {
             InverseRef current = alldoc[i];
@@ -119,7 +122,7 @@ public class ReferenceStatistic {
             }
             res.append("<td>"); // bloc des références
             for (int j = 0; j < current.ref.size(); j++) {
-                res.append((Integer.parseInt(current.ref.get(j))+1) + ", ");
+                res.append((Integer.parseInt(current.ref.get(j)) + 1) + ", ");
             }
             res.append("</td>"); // fin de bloc des références
             res.append("</tr>\n");
@@ -133,11 +136,11 @@ public class ReferenceStatistic {
     public String getStatByQuote() {
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
-        res.append("<caption><b>"+MSG.get("server.qd.MSG_13")+"</b></caption>\n"); // titre
+        res.append("<caption><b>" + MSG.get("server.qd.MSG_13") + "</b></caption>\n"); // titre
         res.append("<tr>\n" //entête
-                + "<th>"+MSG.get("server.qd.MSG_14")+"</br>"+MSG.get("server.qd.MSG_15")+"</th>\n"
-                + "<th>"+MSG.get("server.qd.MSG_16")+"</th>\n"
-                + "<th>"+MSG.get("server.qd.MSG_17")+"</th>\n"
+                + "<th>" + MSG.get("server.qd.MSG_14") + "</br>" + MSG.get("server.qd.MSG_15") + "</th>\n"
+                + "<th>" + MSG.get("server.qd.MSG_16") + "</th>\n"
+                + "<th>" + MSG.get("server.qd.MSG_17") + "</th>\n"
                 + "</tr>\n");
 
         for (int i = 0; i < txt.length; i++) {

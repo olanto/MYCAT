@@ -48,8 +48,10 @@ public class myParseServiceImpl extends RemoteServiceServlet implements myParseS
     public static String home = SenseOS.getMYCAT_HOME();
     public static Properties prop;
     public static ConstStringManager stringMan;
+    public static ConstStringManager serverMan;
     public static GwtProp CONST = null;
     public static boolean RELOAD_PARAM_ON = true;
+    private String interLang;
 
     @Override
     public String myMethod(String s) {
@@ -133,14 +135,12 @@ public class myParseServiceImpl extends RemoteServiceServlet implements myParseS
         /**
          * **********************************************************************************
          */
-        String interLang;
-
         if (CONST.CHOOSE_GUI_LANG) {
             interLang = lastLang;
         } else {
             interLang = prop.getProperty("INTERFACE_MESSAGE_LANG");
         }
-        String messagesPropFile;
+        String messagesPropFile, serverPropFile;
         try {
             if ((interLang == null)) {
                 messagesPropFile = home + propPath + ".properties";
@@ -172,6 +172,17 @@ public class myParseServiceImpl extends RemoteServiceServlet implements myParseS
             CONST.MSG_13 = stringMan.get("widget.sqd.MSG_13");
             CONST.MSG_14 = stringMan.get("widget.sqd.MSG_14");
             CONST.MSG_15 = stringMan.get("widget.sqd.MSG_15");
+            if ((interLang == null)) {
+                serverPropFile = home + "/config/messages/interface/initserver.properties";
+            } else {
+                serverPropFile = home + "/config/messages/interface/initserver_" + interLang + ".properties";
+                File prp = new File(serverPropFile);
+                if (!(prp.exists())) {
+                    serverPropFile = home + "/config/messages/interface/initserver.properties";
+                }
+            }
+            serverMan = new ConstStringManager(serverPropFile);
+            System.out.println(serverMan.get("server.qd.MSG_9"));
         } catch (IOException ex) {
             Logger.getLogger(myParseServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -183,7 +194,7 @@ public class myParseServiceImpl extends RemoteServiceServlet implements myParseS
             return Content;
         } else {
             UploadedFile up = new UploadedFile(Content, fileName);
-            return new MySelfQuoteDetection(up.getFileName(), up.getContentString(), minOcc, minCons, false, stringMan).getHTML();
+            return new MySelfQuoteDetection(up.getFileName(), up.getContentString(), minOcc, minCons, false, serverMan).getHTML();
         }
     }
 }

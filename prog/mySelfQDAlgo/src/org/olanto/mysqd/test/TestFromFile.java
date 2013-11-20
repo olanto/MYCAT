@@ -41,8 +41,8 @@ public class TestFromFile {
 
 //        String FN = "C:/MYCAT/test/bug/Final_Act_FR.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/bug/Final_Act_FR.doc.res.html");
-        String FN = "C:/MYCAT/test/bug/HR_Declaration_RU.html";
-        test(FN, 2, 6, "C:/MYCAT/test/bug/HR_Declaration_RU.html.res.html");
+        String FN = "C:/Users/simple/Desktop/g245_e.doc";
+        test(FN, 2, 6, "C:/Users/simple/Desktop/docxprobleme/g245_e.doc");
 //        String FN = "C:/MYCAT/test/G245-UTF8.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/G245-UTF8.res.html");
 //              String FN = "C:/MYCAT/test/test simple.html";
