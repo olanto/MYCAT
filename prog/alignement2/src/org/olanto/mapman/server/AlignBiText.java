@@ -25,6 +25,7 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.olanto.idxvli.server.IndexService_MyCat;
+import org.olanto.util.StringManipulation;
 import org.olanto.util.Timer;
 
 /**
@@ -43,8 +44,8 @@ public class AlignBiText {
     static MapService ms;
     static String rootTxt;
     static boolean skipLine;
-
-    public AlignBiText(String fileso, String langso, String langta, String query, int w, int h) {
+    
+    public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
 
         // initialisisation en cas d'erreur
         System.out.println("file source:" + fileso);
@@ -86,7 +87,7 @@ public class AlignBiText {
         String filepivot = getNameOfDocForThisLang(fileso, "EN");
         String fileta = getNameOfDocForThisLang(fileso, langta);
         //System.out.println("fileso"+fileso+"\n"+"fileta"+fileta+"\n"+"filepivot"+filepivot);
-        source = new SegDoc(is, fileso, langso);
+        source = new SegDoc(is, fileso, langso, false);
         if (source.lines[1].startsWith("*** ERROR")) {
             System.out.println("no source file");
             return; //stop processing
@@ -94,7 +95,7 @@ public class AlignBiText {
         Timer t = new Timer("GetLineStat_Source");
         source.positions = getLineStat(source.lines, w, h, source.content.length());
         t.stop();
-        target = new SegDoc(is, fileta, langta);
+        target = new SegDoc(is, fileta, langta, remSpace);
         if (target.lines[1] != null && target.lines[1].startsWith("*** ERROR")) {
             System.out.println("no target file");
             return; //stop processing

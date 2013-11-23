@@ -122,9 +122,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public GwtAlignBiText getContent(String file, String langS, String langT, String Query, int w, int h) {
+    public GwtAlignBiText getContent(String file, String langS, String langT, String Query, int w, int h, Boolean remSpace) {
 //        System.out.println("calling the server getContent. File = " + file);
-        Align = new AlignBiText(file, langS, langT, Query, w, h);
+        Align = new AlignBiText(file, langS, langT, Query, w, h, remSpace);
         GwtSegDoc src = SetGwtSegDoc(Align.source.positions, Align.source.nblines, Align.source.content, Align.source.uri, Align.source.lang);
         GwtSegDoc tgt = SetGwtSegDoc(Align.target.positions, Align.target.nblines, Align.target.content, Align.target.uri, Align.target.lang);
         GwtIntMap map = SetGwtIntMap(Align.map.from, Align.map.to);
@@ -1042,7 +1042,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.MAXIMIZE_ON = Boolean.valueOf(prop.getProperty("MAXIMIZE_ON", "true"));
         CONST.TA_HILITE_OVER_CR = Boolean.valueOf(prop.getProperty("TA_HILITE_OVER_CR", "false"));
         CONST.CHOOSE_GUI_LANG = Boolean.valueOf(prop.getProperty("CHOOSE_GUI_LANG", "false"));
+        CONST.REMOVE_AGLUTINATED_SPACE = Boolean.valueOf(prop.getProperty("REMOVE_AGLUTINATED_SPACE", "false"));
         CONST.CHOOSE_GUI_LANG_LIST = prop.getProperty("CHOOSE_GUI_LANG_LIST", "en;fr");
+        CONST.AGLUTINATED_LANG_LIST = prop.getProperty("AGLUTINATED_LANG_LIST", "ZH");
         CONST.EXP_DAYS = Integer.parseInt(prop.getProperty("EXP_DAYS"));
         CONST.MAX_RESPONSE = Integer.parseInt(prop.getProperty("MAX_RESPONSE"));
         CONST.MAX_BROWSE = Integer.parseInt(prop.getProperty("MAX_BROWSE"));

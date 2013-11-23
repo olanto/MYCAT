@@ -40,6 +40,7 @@ import com.google.gwt.user.client.ui.*;
 import com.smartgwt.client.widgets.events.ResizedEvent;
 import com.smartgwt.client.widgets.events.ResizedHandler;
 import java.util.ArrayList;
+import org.olanto.util.StringManipulation;
 
 /**
  * Main entry point.
@@ -49,7 +50,6 @@ import java.util.ArrayList;
 public class MainEntryPoint implements EntryPoint {
 
     public static final String VERSION = "2.3.05";
-    
     // This is the component of the head of the interface
     // where we can put the query of the TextAligner
     private ResearchWidget textAlignerWidget;
@@ -385,6 +385,9 @@ public class MainEntryPoint implements EntryPoint {
             textAlignerWidget.msg.setText(GuiMessageConst.MSG_24);
             tS.reset();
             tS.DrawEffects();
+            if (GuiConstant.REMOVE_AGLUTINATED_SPACE) {
+                QUERY = Utility.addSpace(QUERY);
+            }
             if ((QUERY.length() == 0) || (QUERY.startsWith("/"))) {
                 GuiConstant.EXACT_FLG = false;
                 GuiConstant.EXACT_NBR_FLG = false;
@@ -672,7 +675,9 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.MAXIMIZE_ON = CONST.MAXIMIZE_ON;
         GuiConstant.TA_HILITE_OVER_CR = CONST.TA_HILITE_OVER_CR;
         GuiConstant.CHOOSE_GUI_LANG = CONST.CHOOSE_GUI_LANG;
+        GuiConstant.REMOVE_AGLUTINATED_SPACE = CONST.REMOVE_AGLUTINATED_SPACE;
         GuiConstant.CHOOSE_GUI_LANG_LIST = CONST.CHOOSE_GUI_LANG_LIST;
+        GuiConstant.AGLUTINATED_LANG_LIST = CONST.AGLUTINATED_LANG_LIST;
         GuiConstant.TA_LINE_HEIGHT = CONST.TA_LINE_HEIGHT;
         GuiConstant.TA_TEXTAREA_WIDTH = CONST.TA_TEXTAREA_WIDTH;
         GuiConstant.TA_TEXTAREA_HEIGHT = CONST.TA_TEXTAREA_HEIGHT;

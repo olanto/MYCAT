@@ -41,7 +41,7 @@ public class Test_getMap {
 
     static void test(String fn, String langso, String langta) {
         Timer t1 = new Timer("test " + fn + ":");
-        AlignBiText ab = new AlignBiText(fn, langso, langta, "transmission", 10, 10);
+        AlignBiText ab = new AlignBiText(fn, langso, langta, "transmission", 10, 10, false);
         t1.stop();
         System.out.println("source " + ab.source.nblines + "\n");
         System.out.println("target " + ab.target.nblines + "\n");

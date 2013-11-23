@@ -37,7 +37,7 @@ public interface TranslateService extends RemoteService {
 
     public ArrayList<String> getDocumentBrowseList(String request, String LangS, ArrayList<String> collections, boolean PATH_ON, int maxBrowse, String order, boolean ONLY_ON_FILE_NAME);
 
-    public GwtAlignBiText getContent(String File1, String langS, String langT, String Query, int w, int h);
+    public GwtAlignBiText getContent(String File1, String langS, String langT, String Query, int w, int h, Boolean remSpace);
 
     public CollectionTree SetCollection();
 

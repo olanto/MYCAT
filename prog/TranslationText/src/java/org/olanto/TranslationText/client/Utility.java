@@ -347,4 +347,22 @@ public class Utility {
 
         return query + IN;
     }
+    public static ArrayList<String> getAgLang(String agLang) {
+        ArrayList<String> agList = new ArrayList<String>();
+        String[] words = agLang.split("\\;");
+        agList.addAll(Arrays.asList(words));
+//        Window.alert("Agl Langs : "+agList.size());
+        return agList;
+    }
+     public static String addSpace(String s) {
+        StringBuilder res = new StringBuilder("");
+        for (int i = 0; i < s.length(); i++) {
+            res.append(s.charAt(i));
+            if (s.charAt(i) > 0x0370) {
+                res.append(" ");
+            }
+        }
+//        Window.alert(res.toString());
+        return res.toString();
+    }
 }

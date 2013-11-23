@@ -44,7 +44,9 @@ public class GwtProp implements IsSerializable {
     public boolean MAXIMIZE_ON;
     public boolean TA_HILITE_OVER_CR;
     public boolean CHOOSE_GUI_LANG;
+    public boolean REMOVE_AGLUTINATED_SPACE;
     public String CHOOSE_GUI_LANG_LIST;
+    public String AGLUTINATED_LANG_LIST;
     public int TA_LINE_HEIGHT;
     public int TA_TEXTAREA_WIDTH;
     public int TA_TEXTAREA_HEIGHT;

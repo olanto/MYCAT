@@ -36,6 +36,7 @@ import java.util.List;
 //import java.util.Locale;
 import java.util.Vector;
 import org.olanto.senseos.SenseOS;
+import org.olanto.util.StringManipulation;
 
 /**
  * pour segmenter un fichier txt en phrases.
@@ -47,6 +48,7 @@ public class FileSegmentation {
     static List<String> abreviation = new Vector<String>();
     static String language;
     static SetOfReplacements replace;
+    static StringManipulation stringManip = new StringManipulation();
 
     public static void init(String _language) {
         if (replace == null) {
@@ -131,7 +133,7 @@ public class FileSegmentation {
                     if (!s.equals("")) {
                         if (language.equals("CHINESE")) {
                             //System.out.println("add-space");
-                            s = addSpace(s);
+                            s = stringManip.addSpace(s);
                         }
                         res.add(s);
                     }
@@ -149,20 +151,7 @@ public class FileSegmentation {
         }
         return res;
     }
-
-    public static String addSpace(String s) {
-        String res = "";
-
-        for (int i = 0; i < s.length(); i++) {
-
-            res += s.charAt(i);
-            if (s.charAt(i) > 0x0370) {
-                res += " ";
-            }
-        }
-        return res;
-    }
-
+    
     public static void readAbreviation(String path) {
         try {
 

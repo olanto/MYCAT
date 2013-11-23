@@ -32,6 +32,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * panneau du concordancier
@@ -94,6 +95,7 @@ public class BitextWidget extends Composite {
     private static final int PP_H_MAX = GuiConstant.PP_H_MAX;
     private int pos = 0;
     private float magicS, magicT;
+    private boolean remSpace = false;
 
     public BitextWidget(Label msg) {
         rpcS = RpcInit.initRpc();
@@ -299,7 +301,7 @@ public class BitextWidget extends Composite {
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - pixS;
         pposT = targetTextArea.getOffsetWidth() - pixS;
-        
+
         int scrollines = height / pixS;
         int totlinesS = (resultS[resultS.length - 1][3] + resultS[resultS.length - 1][0]);
         magicS = (float) ((float) (scrollines - totlinesS) / (float) (scrollines)) + 1f;
@@ -404,7 +406,7 @@ public class BitextWidget extends Composite {
         int lin1 = resultT[idxT][3] - h + resultT[idxT][0] / 2;
         lin = (lin > 0) ? lin : 0;
         lin1 = (lin1 > 0) ? lin1 : 0;
-        
+
         float frtop1 = lin1 * pixS * magicT;
         float frtop = lin * pixS * magicS;
         int posf = (frtop > height) ? height : (int) frtop;
@@ -1314,9 +1316,14 @@ public class BitextWidget extends Composite {
         if (langS.contains("AR")) {
             sourceTextArea.setDirection(Direction.RTL);
         }
-
+        if ((GuiConstant.REMOVE_AGLUTINATED_SPACE) && (GuiConstant.AGLUTINATED_LANG_LIST.contains(langT))) {
+            remSpace = true;
+        } else {
+            remSpace = false;
+        }
+//        Window.alert("" + remSpace);
         // remote procedure call to the server to get the content of the text areas
-        rpcS.getContent(file, langS, langT, Query, sourceTextArea.getCharacterWidth(), sourceTextArea.getVisibleLines(), new AsyncCallback<GwtAlignBiText>() {
+        rpcS.getContent(file, langS, langT, Query, sourceTextArea.getCharacterWidth(), sourceTextArea.getVisibleLines(), remSpace, new AsyncCallback<GwtAlignBiText>() {
             @Override
             public void onFailure(Throwable caught) {
                 setMessage("error", GuiMessageConst.MSG_56);

@@ -29,7 +29,7 @@ import java.util.ArrayList;
  */
 public interface TranslateServiceAsync {
 
-    public void getContent(String File1, String langS, String langT, String Query, int w, int h, AsyncCallback<GwtAlignBiText> asyncCallback);
+    public void getContent(String File1, String langS, String langT, String Query, int w, int h, Boolean remSpace, AsyncCallback<GwtAlignBiText> asyncCallback);
 
     public void myMethod(String s, AsyncCallback<String> callback);
 

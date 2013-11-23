@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.olanto.idxvli.server.IndexService_MyCat;
 import static org.olanto.util.Messages.*;
+import org.olanto.util.StringManipulation;
 
 /**
  * Une classe pour stocker un document sous forme de phrase.
@@ -44,6 +45,7 @@ public class SegDoc {
     public String uri;
     public String lang;
     public String txt_encoding = "UTF-8";
+    static StringManipulation stringManip = new StringManipulation();
 
     public void dump(String s) {
         System.out.println("--------------------------------------------");
@@ -63,20 +65,22 @@ public class SegDoc {
         }
     }
 
-        public SegDoc( IndexService_MyCat is, String fname, String lang) {
+    public SegDoc(IndexService_MyCat is, String fname, String lang, boolean remSpace) {
         uri = fname;
         this.lang = lang;
         try {
             //        System.out.println("Building from segdoc from file:" + fname);
-                    content = is.getDoc(is.getDocId(fname));
+            content = is.getDoc(is.getDocId(fname));
+            if (remSpace) {
+                content = stringManip.removeSpace(content);
+            }
         } catch (RemoteException ex) {
             Logger.getLogger(SegDoc.class.getName()).log(Level.SEVERE, null, ex);
-            content=null;
+            content = null;
         }
-         normalizeContent();
+        normalizeContent();
     }
 
-    
 //    public SegDoc(String fname, String lang) {
 //        uri = fname;
 //        this.lang = lang;
@@ -84,8 +88,7 @@ public class SegDoc {
 //        content = file2String(fname, txt_encoding);
 //        normalizeContent();
 //    }
-    
-    private void normalizeContent(){
+    private void normalizeContent() {
         if ((content != null) && (AlignBiText.skipLine)) {
             //msg("skipline");
             content = content.replace("\n", "\n\n");
