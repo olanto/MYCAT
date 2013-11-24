@@ -41,28 +41,32 @@ public class StringManipulation {
     }
 
     public String removeSpace(String s) {
-        if (s.length() < 3) {
-            return s;
-        }
-        StringBuilder res = new StringBuilder("");
-        if (s.charAt(0) > 0x0370) {
-            res.append(s.charAt(0));
-        } else if (!(s.charAt(0) == ' ')) {
-            res.append(s.charAt(0));
-        }
-        for (int i = 0; i < s.length() - 1; i++) {
-            if (s.charAt(i) > 0x0370) {
-                res.append(s.charAt(i));
-            } else {
-                if (s.charAt(i) == ' ') {
-                    if (((s.charAt(i - 1) <= 0x0370) && (s.charAt(i + 1) > 0x0370)) || ((s.charAt(i - 1) > 0x0370) && (s.charAt(i + 1) <= 0x0370))) {
+        if ((!(s == null)) && (!s.isEmpty())) {
+            if (s.length() < 3) {
+                return s;
+            }
+            StringBuilder res = new StringBuilder("");
+            if (s.charAt(0) > 0x0370) {
+                res.append(s.charAt(0));
+            } else if (!(s.charAt(0) == ' ')) {
+                res.append(s.charAt(0));
+            }
+            for (int i = 0; i < s.length() - 1; i++) {
+                if (s.charAt(i) > 0x0370) {
+                    res.append(s.charAt(i));
+                } else {
+                    if (s.charAt(i) == ' ') {
+                        if (((s.charAt(i - 1) <= 0x0370) && (s.charAt(i + 1) > 0x0370)) || ((s.charAt(i - 1) > 0x0370) && (s.charAt(i + 1) <= 0x0370))) {
+                            res.append(s.charAt(i));
+                        }
+                    } else {
                         res.append(s.charAt(i));
                     }
-                } else {
-                    res.append(s.charAt(i));
                 }
             }
+            return res.toString();
+        } else {
+            return null;
         }
-        return res.toString();
     }
 }
