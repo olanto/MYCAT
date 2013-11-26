@@ -6,7 +6,7 @@
 <!-- Below are the fix parameters of the segmentation configuration -->
  
 <!--Remove file from source-->
- <entry key="REMOVE_FILE">NO</entry> 
+ <entry key="REMOVE_FILE">YES</entry> 
 <!--A Glossaries folder can be used for multilingual documents-->
  <entry key="GLOSSARIES">YES</entry> 
 <!--An BY_EXT folder can be used for documents with a language suffix when the corpus is organized BY_FOLDER. This allows processing hybrid collections where documents are organized both by language suffix and by language folder. The BY_EXT folder must not be used if the corpus is organized BY_EXT-->
