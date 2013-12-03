@@ -30,6 +30,17 @@
     <entry key="DOC_LIST_WIDTH">250</entry>
     <entry key="DOC_LIST_HEIGHT">560</entry>
     <entry key="QD_DOC_LIST_HEIGHT">345</entry>
+	
+	<!-- Min values of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+	<entry key="TA_LINE_HEIGHT_MIN">20</entry>
+	<entry key="TA_TEXTAREA_WIDTH_MIN">58</entry>
+    <entry key="TA_TEXTAREA_HEIGHT_MIN">26</entry>
+    <entry key="QD_HTMLAREA_HEIGHT_MIN">200</entry>
+    <entry key="QD_TEXTAREA_HEIGHT_MIN">15</entry>
+    <entry key="DOC_LIST_WIDTH_MIN">250</entry>
+    <entry key="DOC_LIST_HEIGHT_MIN">560</entry>
+    <entry key="QD_DOC_LIST_HEIGHT_MIN">345</entry>
+	
 	<!--MAX_RESPONSE: Maximum number of reference documents in the Hit List when using the Search function (must be identical to the same parameter name in the IDX_fix.xml file)-->
 	<entry key="MAX_RESPONSE">200</entry>
 	<!--MAX_BROWSE: Maximum number of reference documents in the Hit List when using the Browse function (must be identical to the same parameter name in the IDX_fix.xml file)-->
