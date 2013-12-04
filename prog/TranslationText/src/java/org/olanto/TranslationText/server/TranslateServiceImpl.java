@@ -1032,6 +1032,13 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.DOC_LIST_WIDTH = Integer.parseInt(prop.getProperty("DOC_LIST_WIDTH"));
         CONST.DOC_LIST_HEIGHT = Integer.parseInt(prop.getProperty("DOC_LIST_HEIGHT"));
         CONST.QD_DOC_LIST_HEIGHT = Integer.parseInt(prop.getProperty("QD_DOC_LIST_HEIGHT"));
+        CONST.TA_TEXTAREA_WIDTH_MIN = Integer.parseInt(prop.getProperty("TA_TEXTAREA_WIDTH_MIN"));
+        CONST.TA_TEXTAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("TA_TEXTAREA_HEIGHT_MIN"));
+        CONST.QD_TEXTAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_TEXTAREA_HEIGHT_MIN"));
+        CONST.QD_HTMLAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_HTMLAREA_HEIGHT_MIN"));
+        CONST.DOC_LIST_WIDTH_MIN = Integer.parseInt(prop.getProperty("DOC_LIST_WIDTH_MIN"));
+        CONST.DOC_LIST_HEIGHT_MIN = Integer.parseInt(prop.getProperty("DOC_LIST_HEIGHT_MIN"));
+        CONST.QD_DOC_LIST_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_DOC_LIST_HEIGHT_MIN"));
         CONST.ORIGINAL_ON = Boolean.valueOf(prop.getProperty("ORIGINAL_ON", "true"));
         CONST.PATH_ON = Boolean.valueOf(prop.getProperty("PATH_ON", "true"));
         CONST.AUTO_ON = Boolean.valueOf(prop.getProperty("AUTO_ON", "false"));

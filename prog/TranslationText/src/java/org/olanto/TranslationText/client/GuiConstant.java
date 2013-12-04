@@ -53,6 +53,13 @@ public class GuiConstant {
     public static int DOC_LIST_WIDTH;
     public static int DOC_LIST_HEIGHT;
     public static int QD_DOC_LIST_HEIGHT;
+    public static int TA_TEXTAREA_WIDTH_MIN;
+    public static int TA_TEXTAREA_HEIGHT_MIN;
+    public static int QD_HTMLAREA_HEIGHT_MIN;
+    public static int QD_TEXTAREA_HEIGHT_MIN;
+    public static int DOC_LIST_WIDTH_MIN;
+    public static int DOC_LIST_HEIGHT_MIN;
+    public static int QD_DOC_LIST_HEIGHT_MIN;
     public static int MAX_RESPONSE;
     public static int MAX_BROWSE;
     public static int MAX_SEARCH_SIZE;

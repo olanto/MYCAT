@@ -55,6 +55,13 @@ public class GwtProp implements IsSerializable {
     public int DOC_LIST_WIDTH;
     public int DOC_LIST_HEIGHT;
     public int QD_DOC_LIST_HEIGHT;
+    public int TA_TEXTAREA_WIDTH_MIN;
+    public int TA_TEXTAREA_HEIGHT_MIN;
+    public int QD_HTMLAREA_HEIGHT_MIN;
+    public int QD_TEXTAREA_HEIGHT_MIN;
+    public int DOC_LIST_WIDTH_MIN;
+    public int DOC_LIST_HEIGHT_MIN;
+    public int QD_DOC_LIST_HEIGHT_MIN;
     public int MAX_RESPONSE;
     public int MAX_BROWSE;
     public int MAX_SEARCH_SIZE;
