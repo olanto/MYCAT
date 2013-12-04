@@ -91,6 +91,7 @@ public class GwtProp implements IsSerializable {
      * client interface parameters
      * **********************************************************************************
      */
+    public String BTN_RESIZE;
     public String TA_BTN_SRCH;
     public String TA_BTN_NXT;
     public String TA_BTN_PVS;

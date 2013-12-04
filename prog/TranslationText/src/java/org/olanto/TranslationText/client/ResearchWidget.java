@@ -77,6 +77,7 @@ public class ResearchWidget extends Composite {
     public Button coll = new Button(GuiMessageConst.WIDGET_BTN_COLL_OFF);
     public Button myQuote = new Button(GuiMessageConst.WIDGET_BTN_QD);
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
+    private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
     // Height and width units for buttons and text labels
     private final int H_Unit = 30;
     private final int W_Unit = 20;
@@ -123,6 +124,9 @@ public class ResearchWidget extends Composite {
             headerPanel.add(chooseLang);
             headerPanel.add(langInterface);
         }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
 
         headerPanel.setStylePrimaryName("searchHeader");
 
@@ -155,7 +159,6 @@ public class ResearchWidget extends Composite {
         statusContainer.add(statusPanel);
         statusPanel.setHeight(H_Unit + "px");
         statusPanel.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
-        statusPanel.add(new HTML("&nbsp;"));
         statusPanel.add(msg);
         statusPanel.setCellHorizontalAlignment(msg, HorizontalPanel.ALIGN_LEFT);
         statusPanel.add(contact);
@@ -246,11 +249,13 @@ public class ResearchWidget extends Composite {
         setbuttonstyle(GoSrch, GoSrch.getText().length() * 2 * CHAR_W, H_Unit);
         setbuttonstyle(myQuote, myQuote.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(coll, coll.getText().length() * CHAR_W, H_Unit);
-        setbuttonstyle(help, help.getText().length() * (CHAR_W + 2), H_Unit);
+        setbuttonstyle(help, help.getText().length() * CHAR_W, H_Unit);
+        setbuttonstyle(resize, resize.getText().length() * CHAR_W, H_Unit);
         GoSrch.setAutoWidth(true);
         myQuote.setAutoWidth(true);
         coll.setAutoWidth(true);
         help.setAutoWidth(true);
+        resize.setAutoWidth(true);
 
         search.setWidth("300px");
         search.setStyleName("x-form-text");
@@ -273,11 +278,11 @@ public class ResearchWidget extends Composite {
         langInterface.setWidth(2 * W_Unit + "px");
         langInterface.setSelectedIndex(Utility.getIndex(INT_LANG, Cookies.getCookie(CookiesNamespace.InterfaceLanguage)));
 
-        docListContainer.setSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.DOC_LIST_HEIGHT);
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
         staticDecorator.setStyleName("doclist");
         staticDecorator.setWidget(staticTreeWrapper);
         staticTreeWrapper.setAlwaysShowScrollBars(true);
-        staticTreeWrapper.setPixelSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.DOC_LIST_HEIGHT - H_Unit);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT - H_Unit);
         if ((GuiConstant.JOBS_ITEMS != null) && (GuiConstant.JOBS_ITEMS.length() > 1)) {
             String jobs = GuiConstant.JOBS_ITEMS;
             String[] tablist = jobs.split("\\;");
@@ -361,7 +366,7 @@ public class ResearchWidget extends Composite {
 
     public void DrawDocumentList(final String Query, final BitextWidget tS, final ArrayList<String> collections) {
         staticTreeWrapper.clear();
-        adaptSize();
+//        adaptSize();
         // remote procedure call to the server to get the document list that satisfies the query
         rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
             @Override
@@ -436,9 +441,9 @@ public class ResearchWidget extends Composite {
     }
 
     private int getMaximumWidth() {
-        int max = resultsPanel.getOffsetWidth();
-        if (statusPanel.getOffsetWidth() > max) {
-            max = statusPanel.getOffsetWidth();
+        int max = statusPanel.getOffsetWidth();
+        if (resultsPanel.getOffsetWidth() > max) {
+            max = resultsPanel.getOffsetWidth();
         }
         if (headPanel.getOffsetWidth() > max) {
             max = headPanel.getOffsetWidth();

@@ -10,7 +10,7 @@
 	<!--PATH_ON: true = displays the complete document path in the Hit List-->
     <entry key="PATH_ON">true</entry>
 	<!--AUTO_ON: true = -->
-	<entry key="AUTO_ON">false</entry>
+	<entry key="AUTO_ON">true</entry>
 	<!--FILE_NAME_RIGHT: true = displays the file name after the path-->
 	<entry key="FILE_NAME_RIGHT">false</entry>
 	<!--ONLY_ON_FILE_NAME: true = limits the browse function to the file names (not on full paths)-->
@@ -20,7 +20,7 @@
 	<!--SAVE_ON: true = activates the Save buttons for source and target reference documents-->
 	<entry key="SAVE_ON">true</entry>
 	<!--Graphic and size parameters-->
-    <entry key="CHARACTER_WIDTH">9</entry>
+    <entry key="CHARACTER_WIDTH">8</entry>
 	<!-- TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
 	<entry key="TA_LINE_HEIGHT">20</entry>
 	<entry key="TA_TEXTAREA_WIDTH">58</entry>

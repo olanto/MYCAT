@@ -169,7 +169,7 @@ public class MainEntryPoint implements EntryPoint {
                     Window.alert(GuiMessageConst.MSG_63);
                 }
                 initCookies();
-                if (MyCatCookies.areInterfaceMeasuresSaved()) {
+                if (MyCatCookies.areInterfaceMeasuresSaved() && GuiConstant.AUTO_ON) {
                     IMeasures.setMeasuresfromCookies();
                 } else {
                     IMeasures.setDefaultMeasures();
@@ -738,6 +738,7 @@ public class MainEntryPoint implements EntryPoint {
          * client interface parameters
          * **********************************************************************************
          */
+        GuiMessageConst.BTN_RESIZE = CONST.BTN_RESIZE;
         GuiMessageConst.TA_BTN_SRCH = CONST.TA_BTN_SRCH;
         GuiMessageConst.TA_BTN_NXT = CONST.TA_BTN_NXT;
         GuiMessageConst.TA_BTN_PVS = CONST.TA_BTN_PVS;

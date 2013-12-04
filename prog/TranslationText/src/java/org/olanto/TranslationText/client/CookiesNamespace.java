@@ -34,4 +34,11 @@ public class CookiesNamespace {
     public static String MyQuotelangT = "MyQuotelangT";
     public static String MyQuoteMinLength = "MyQuoteMinLength";
     public static String InterfaceLanguage = "InterfaceLanguage";
+    public static String TA_TEXTAREA_WIDTH = "TaWidth";
+    public static String TA_TEXTAREA_HEIGHT = "TaHeight";
+    public static String QD_HTMLAREA_HEIGHT = "QdHaHeight";
+    public static String QD_TEXTAREA_HEIGHT = "QdTaHeight";
+    public static String DOC_LIST_WIDTH = "DlWidth";
+    public static String DOC_LIST_HEIGHT = "DlHeight";
+    public static String QD_DOC_LIST_HEIGHT = "QdDlHeight";
 }

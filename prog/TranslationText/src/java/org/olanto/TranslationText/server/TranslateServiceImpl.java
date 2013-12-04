@@ -1100,6 +1100,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 }
             }
             stringMan = new ConstStringManager(messagesPropFile);
+            CONST.BTN_RESIZE = stringMan.get("ta.btn.resize");
             CONST.TA_BTN_SRCH = stringMan.get("ta.btn.srch");
             CONST.TA_BTN_NXT = stringMan.get("ta.btn.nxt");
             CONST.TA_BTN_PVS = stringMan.get("ta.btn.pvs");

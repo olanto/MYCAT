@@ -85,6 +85,7 @@ public class QuoteWidget extends Composite {
     private Button next = new Button(GuiMessageConst.WIDGET_BTN_QD_NXT);
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
     private Button save = new Button(GuiMessageConst.WIDGET_BTN_QD_SAVE);
+    private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
     private String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
@@ -140,6 +141,9 @@ public class QuoteWidget extends Composite {
         headerPanel.add(help);
         if (GuiConstant.SAVE_ON) {
             headerPanel.add(save);
+        }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
         }
         headerPanel.setStylePrimaryName("searchHeader");
 
@@ -273,10 +277,11 @@ public class QuoteWidget extends Composite {
         setbuttonstyle(GoSrch, GoSrch.getText().length() * 2 * CHAR_W, H_Unit);
         setbuttonstyle(TextAligner, TextAligner.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(coll, coll.getText().length() * CHAR_W, H_Unit);
-        setbuttonstyle(help, help.getText().length() * (CHAR_W + 2), H_Unit);
-        setbuttonstyle(save, save.getText().length() * (CHAR_W + 2), H_Unit);
+        setbuttonstyle(help, help.getText().length() * CHAR_W, H_Unit);
+        setbuttonstyle(resize, resize.getText().length() * CHAR_W, H_Unit);
+        setbuttonstyle(save, save.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(prev, prev.getText().length() * CHAR_W, H_Unit);
-        setbuttonstyle(next, next.getText().length() * (CHAR_W + 1), H_Unit);
+        setbuttonstyle(next, next.getText().length() * CHAR_W, H_Unit);
 
         GoSrch.setAutoWidth(true);
         TextAligner.setAutoWidth(true);
@@ -285,6 +290,7 @@ public class QuoteWidget extends Composite {
         save.setAutoWidth(true);
         prev.setAutoWidth(true);
         next.setAutoWidth(true);
+        resize.setAutoWidth(true);
 
         langS.setWidth((int) (2.5 * W_Unit) + "px");
         langT.setWidth((int) (2.5 * W_Unit) + "px");

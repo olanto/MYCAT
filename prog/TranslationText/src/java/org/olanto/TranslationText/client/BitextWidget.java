@@ -32,7 +32,6 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * panneau du concordancier
@@ -153,9 +152,9 @@ public class BitextWidget extends Composite {
         sourceTextArea.setReadOnly(true);
         sourceTextArea.setStyleName("gwt-Textarea");
         sourceTextArea.getElement().setAttribute("spellCheck", "false");
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
-        sourceTextArea.setHeight("" + pixS * GuiConstant.TA_TEXTAREA_HEIGHT + "px");
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT + "px");
 
 
         targetTextArea.setCursorPos(0);
@@ -164,9 +163,9 @@ public class BitextWidget extends Composite {
         targetTextArea.setReadOnly(true);
         targetTextArea.setStyleName("gwt-Textarea");
         targetTextArea.getElement().setAttribute("spellCheck", "false");
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
-        targetTextArea.setHeight("" + pixS * GuiConstant.TA_TEXTAREA_HEIGHT + "px");
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT + "px");
 
         pp.setAnimationEnabled(true);
         pp.setAutoHideEnabled(true);
