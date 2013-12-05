@@ -347,7 +347,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn) {
+    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact) {
         ArrayList<String> Pos = new ArrayList<>();
         ArrayList<Integer> startPos = new ArrayList<>();
         ArrayList<Integer> lastPos = new ArrayList<>();
@@ -356,7 +356,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Pattern p;
         Matcher m;
         boolean allfound;
-//        System.out.println("Query: " + Query.size());
+        System.out.println("Query: " + Query.size());
         for (int i = 0; i < positions.length; i++) {
             allfound = true;
             begin = positions[i][1];
@@ -367,16 +367,19 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
             sentence = content.substring(begin, end);
 
-//            System.out.println("looking into sentence # " + i);
+            System.out.println("looking into sentence # " + i);
             int j = 0, start, len;
             startPos.clear();
             lastPos.clear();
             while ((allfound) && (j < Query.size())) {
-
                 curHit = Query.get(j);
                 len = curHit.length();
                 regex = REGEX_BEFORE_TOKEN + curHit + REGEX_AFTER_TOKEN;
-                p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                if (exact) {
+                    p = Pattern.compile(regex);
+                } else {
+                    p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                }
                 m = p.matcher(sentence);
                 if (m.find()) {
                     start = m.start();
@@ -551,10 +554,13 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public int[][] getRefWordsPos(String content, ArrayList<String> query, int queryLn, float reFactor, int minRefLn) {
+    public int[][] getRefWordsPos(String content, ArrayList<String> query, int queryLn, float reFactor, int minRefLn, boolean exact) {
         ArrayList<String> Query;
         String regex;
-        int refLength = (int) (((reFactor * queryLn) > minRefLn) ? (reFactor * queryLn) : minRefLn);
+        int refLength = queryLn;
+        if (!exact) {
+            refLength = (int) (((reFactor * queryLn) > minRefLn) ? (reFactor * queryLn) : minRefLn);
+        }
         if (query.size() > 1000) {
             System.out.println("word list bigger than 1000, looking or the first 1000 words");
             Query = GetSubList(query, 1000);
@@ -573,7 +579,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         first = Query.get(0);
         last = Query.get(Query.size() - 1);
         regex = REGEX_BEFORE_TOKEN + first + REGEX_AFTER_TOKEN;
-        p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        if (exact) {
+            p = Pattern.compile(regex);
+        } else {
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        }
         m = p.matcher(content);
         if (m.find()) {
 //            System.out.println("start found at : " + m.start());
@@ -584,7 +594,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
         }
         regex = REGEX_BEFORE_TOKEN + last + REGEX_AFTER_TOKEN;
-        p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        if (exact) {
+            p = Pattern.compile(regex);
+        } else {
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        }
         m = p.matcher(content);
         if (m.find()) {
 //            System.out.println("last found at : " + m.start());

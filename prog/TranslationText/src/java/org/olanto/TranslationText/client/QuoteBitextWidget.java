@@ -1352,7 +1352,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsS(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1377,7 +1377,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsT(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1454,7 +1454,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsMono(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1505,7 +1505,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsSCR(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1533,7 +1533,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsTCR(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1728,12 +1728,8 @@ public class QuoteBitextWidget extends Composite {
     }
 
     public void getPositionsMonoCR(String content, ArrayList<String> Query, int queryLn) {
-        float factor = GuiConstant.REF_FACTOR;
-        if (GuiConstant.EXACT_FLG) {
-            factor = 1.1f;
-        }
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, factor, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);

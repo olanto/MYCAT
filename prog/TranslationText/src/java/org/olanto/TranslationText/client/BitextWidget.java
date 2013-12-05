@@ -293,9 +293,14 @@ public class BitextWidget extends Composite {
         // Matrice (nombre de lignes, position du top, correction, position en pixel)
         resultS = Align.source.positions;
         resultT = Align.target.positions;
-        contentS = Align.source.content.toLowerCase();
-        contentT = Align.target.content.toLowerCase();
-
+        if (GuiConstant.EXACT_FLG) {
+            contentS = Align.source.content;
+            contentT = Align.target.content;
+        } else {
+            contentS = Align.source.content.toLowerCase();
+            contentT = Align.target.content.toLowerCase();
+        }
+// check for the case of having the overall in case sensitive and the inside without case sensitive
         height1 = targetTextArea.getElement().getScrollHeight();
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - pixS;
@@ -1413,7 +1418,7 @@ public class BitextWidget extends Composite {
 
     public void getPositionsS(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1438,7 +1443,7 @@ public class BitextWidget extends Composite {
 
     public void getPositionsT(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1516,7 +1521,7 @@ public class BitextWidget extends Composite {
     public void getPositionsMono(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
 //        Window.alert("gestMono PositionsS");
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1566,12 +1571,8 @@ public class BitextWidget extends Composite {
     }
 
     public void getPositionsSCR(String content, ArrayList<String> Query, int queryLn) {
-        float factor = GuiConstant.REF_FACTOR;
-        if (GuiConstant.EXACT_FLG) {
-            factor = 1.1f;
-        }
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, factor, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1598,12 +1599,8 @@ public class BitextWidget extends Composite {
     }
 
     public void getPositionsTCR(String content, ArrayList<String> Query, int queryLn) {
-        float factor = GuiConstant.REF_FACTOR;
-        if (GuiConstant.EXACT_FLG) {
-            factor = 1.1f;
-        }
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, factor, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1798,12 +1795,8 @@ public class BitextWidget extends Composite {
     }
 
     public void getPositionsMonoCR(String content, ArrayList<String> Query, int queryLn) {
-        float factor = GuiConstant.REF_FACTOR;
-        if (GuiConstant.EXACT_FLG) {
-            factor = 1.1f;
-        }
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, factor, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, GuiConstant.EXACT_FLG, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);

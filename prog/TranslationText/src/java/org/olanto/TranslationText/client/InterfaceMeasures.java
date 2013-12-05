@@ -61,6 +61,9 @@ public class InterfaceMeasures implements IsSerializable {
         this.DOC_LIST_HEIGHT = (this.DOC_LIST_HEIGHT > GuiConstant.DOC_LIST_HEIGHT_MIN) ? this.DOC_LIST_HEIGHT : GuiConstant.DOC_LIST_HEIGHT_MIN;
         this.QD_DOC_LIST_HEIGHT = (this.QD_DOC_LIST_HEIGHT > GuiConstant.QD_DOC_LIST_HEIGHT_MIN) ? this.QD_DOC_LIST_HEIGHT : GuiConstant.QD_DOC_LIST_HEIGHT_MIN;
     }
+    
+    public void recalculate(int clientWidth, int clientheight, int charWidth, int lineHeight, int qdDlHeight) {
+    }
 
     public void setDefaultMeasures() {
         this.TA_TEXTAREA_WIDTH = GuiConstant.TA_TEXTAREA_WIDTH;
