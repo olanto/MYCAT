@@ -613,7 +613,8 @@ public class QuoteWidget extends Composite {
     }
 
     public void adaptSize() {
-        int width = getMaximumWidth();
+        int width = resultsPanel.getOffsetWidth();
+        mainContainer.setWidth(resultsPanel.getOffsetWidth());
         statusPanel.setWidth(width + "px");
         headPanel.setWidth(width + "px");
         resultsPanel.setWidth(width + "px");
@@ -622,18 +623,7 @@ public class QuoteWidget extends Composite {
         refArea.setWidth(width - 2 * W_Unit);
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
     }
-
-    private int getMaximumWidth() {
-        int max = resultsPanel.getOffsetWidth();
-        if (statusPanel.getOffsetWidth() > max) {
-            max = statusPanel.getOffsetWidth();
-        }
-        if (headPanel.getOffsetWidth() > max) {
-            max = headPanel.getOffsetWidth();
-        }
-        return max;
-    }
-
+    
     private String getSavedFileName() {
         int idx = fileName.lastIndexOf("/") + 1;
         if (idx == 0) {

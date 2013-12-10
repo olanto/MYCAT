@@ -1070,6 +1070,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.ORIGINAL_ON = Boolean.valueOf(prop.getProperty("ORIGINAL_ON", "true"));
         CONST.PATH_ON = Boolean.valueOf(prop.getProperty("PATH_ON", "true"));
         CONST.AUTO_ON = Boolean.valueOf(prop.getProperty("AUTO_ON", "false"));
+        CONST.DEBUG_ON = Boolean.valueOf(prop.getProperty("DEBUG_ON", "false"));
         CONST.FILE_NAME_RIGHT = Boolean.valueOf(prop.getProperty("FILE_NAME_RIGHT", "false"));
         CONST.ONLY_ON_FILE_NAME = Boolean.valueOf(prop.getProperty("ONLY_ON_FILE_NAME", "false"));
         CONST.BITEXT_ONLY = Boolean.valueOf(prop.getProperty("BITEXT_ONLY", "false"));

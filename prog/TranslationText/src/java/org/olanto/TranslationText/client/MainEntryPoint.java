@@ -693,6 +693,7 @@ public class MainEntryPoint implements EntryPoint {
 
     private void InitProperties(GwtProp CONST) {
         GuiConstant.ORIGINAL_ON = CONST.ORIGINAL_ON;
+        GuiConstant.DEBUG_ON = CONST.DEBUG_ON;
         GuiConstant.PATH_ON = CONST.PATH_ON;
         GuiConstant.AUTO_ON = CONST.AUTO_ON;
         GuiConstant.SAVE_ON = CONST.SAVE_ON;

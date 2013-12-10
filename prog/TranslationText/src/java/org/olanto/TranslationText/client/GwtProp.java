@@ -34,6 +34,7 @@ public class GwtProp implements IsSerializable {
      * **********************************************************************************
      */
     public boolean AUTO_ON;
+    public boolean DEBUG_ON;
     public int EXP_DAYS;
     public boolean ORIGINAL_ON;
     public boolean PATH_ON;

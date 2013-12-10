@@ -84,13 +84,13 @@ public class InterfaceMeasures implements IsSerializable {
     }
 
     public void saveMeasuresInCookies() {
-        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_WIDTH, "" + GuiConstant.TA_TEXTAREA_WIDTH);
-        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT, "" + GuiConstant.TA_TEXTAREA_HEIGHT);
-        MyCatCookies.updateCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT, "" + GuiConstant.QD_TEXTAREA_HEIGHT);
-        MyCatCookies.updateCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT, "" + GuiConstant.QD_HTMLAREA_HEIGHT);
-        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + GuiConstant.DOC_LIST_WIDTH);
-        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
-        MyCatCookies.updateCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_WIDTH, "" + this.TA_TEXTAREA_WIDTH);
+        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT, "" + this.TA_TEXTAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT, "" + this.QD_TEXTAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT, "" + this.QD_HTMLAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + this.DOC_LIST_WIDTH);
+        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + this.DOC_LIST_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + this.QD_DOC_LIST_HEIGHT);
     }
 
     public void calculateMeasures(int wHeight, int wWidth) {
@@ -105,17 +105,18 @@ public class InterfaceMeasures implements IsSerializable {
         this.QD_HTMLAREA_HEIGHT = QDutilHeight * GuiConstant.PER_QD_HTMLAREA_H / 100;
         this.QD_DOC_LIST_HEIGHT = QDutilHeight - this.QD_HTMLAREA_HEIGHT;
         this.QD_TEXTAREA_HEIGHT = (this.QD_DOC_LIST_HEIGHT - GuiConstant.TA_OVERHEAD_H) / GuiConstant.TA_LINE_HEIGHT;
-
-        Window.alert("TA_TEXTAREA_WIDTH = " + this.TA_TEXTAREA_WIDTH
-                + "\n TA_TEXTAREA_HEIGHT  = " + this.TA_TEXTAREA_HEIGHT
-                + "\n QD_HTMLAREA_HEIGHT  = " + this.QD_HTMLAREA_HEIGHT
-                + "\n QD_TEXTAREA_HEIGHT = " + this.QD_TEXTAREA_HEIGHT
-                + "\n DOC_LIST_WIDTH  = " + this.DOC_LIST_WIDTH
-                + "\n DOC_LIST_HEIGHT  = " + this.DOC_LIST_HEIGHT
-                + "\n QD_DOC_LIST_HEIGHT = " + this.QD_DOC_LIST_HEIGHT
-                + "\n Util Height  = " + TAutilHeight
-                + "\n Util Width  = " + utilWidth);
         checkAndSetMaxMeasures();
         checkAndSetMinMeasures();
+         if (GuiConstant.DEBUG_ON) {
+            Window.alert("TA_TEXTAREA_WIDTH = " + this.TA_TEXTAREA_WIDTH
+                    + "\n TA_TEXTAREA_HEIGHT  = " + this.TA_TEXTAREA_HEIGHT
+                    + "\n QD_HTMLAREA_HEIGHT  = " + this.QD_HTMLAREA_HEIGHT
+                    + "\n QD_TEXTAREA_HEIGHT = " + this.QD_TEXTAREA_HEIGHT
+                    + "\n DOC_LIST_WIDTH  = " + this.DOC_LIST_WIDTH
+                    + "\n DOC_LIST_HEIGHT  = " + this.DOC_LIST_HEIGHT
+                    + "\n QD_DOC_LIST_HEIGHT = " + this.QD_DOC_LIST_HEIGHT
+                    + "\n Util Height  = " + TAutilHeight
+                    + "\n Util Width  = " + utilWidth);
+        }
     }
 }

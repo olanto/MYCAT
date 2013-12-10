@@ -442,22 +442,12 @@ public class ResearchWidget extends Composite {
     }
 
     public void adaptSize() {
-        int width = getMaximumWidth();
+        int width = resultsPanel.getOffsetWidth();
+        mainContainer.setWidth(resultsPanel.getOffsetWidth());
         statusPanel.setWidth(width + "px");
         headPanel.setWidth(width + "px");
         resultsPanel.setWidth(width + "px");
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
-    }
-
-    private int getMaximumWidth() {
-        int max = statusPanel.getOffsetWidth();
-        if (resultsPanel.getOffsetWidth() > max) {
-            max = resultsPanel.getOffsetWidth();
-        }
-        if (headPanel.getOffsetWidth() > max) {
-            max = headPanel.getOffsetWidth();
-        }
-        return max;
     }
 
     public void updateSize() {

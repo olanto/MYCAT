@@ -30,6 +30,7 @@ public class GuiConstant {
     // Boolean variable for setting automatically
     // the size of areas wrt the screen size, not implemented yet.
     public static boolean AUTO_ON;
+    public static boolean DEBUG_ON;
     public static int EXP_DAYS;
     public static boolean ORIGINAL_ON;
     public static boolean PATH_ON;
