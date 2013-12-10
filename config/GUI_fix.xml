@@ -31,14 +31,14 @@
     <entry key="DOC_LIST_HEIGHT">560</entry>
     <entry key="QD_DOC_LIST_HEIGHT">345</entry>
 	
-	<!-- Min values of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
-	<entry key="TA_TEXTAREA_WIDTH_MIN">30</entry>
-    <entry key="TA_TEXTAREA_HEIGHT_MIN">15</entry>
-    <entry key="QD_HTMLAREA_HEIGHT_MIN">200</entry>
-    <entry key="QD_TEXTAREA_HEIGHT_MIN">5</entry>
-    <entry key="DOC_LIST_WIDTH_MIN">150</entry>
-    <entry key="DOC_LIST_HEIGHT_MIN">300</entry>
-    <entry key="QD_DOC_LIST_HEIGHT_MIN">100</entry>
+	<!-- Min values (based on 1024x768) of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+	<entry key="TA_TEXTAREA_WIDTH_MIN">40</entry>
+    <entry key="TA_TEXTAREA_HEIGHT_MIN">24</entry>
+    <entry key="QD_HTMLAREA_HEIGHT_MIN">280</entry>
+    <entry key="QD_TEXTAREA_HEIGHT_MIN">8</entry>
+    <entry key="DOC_LIST_WIDTH_MIN">170</entry>
+    <entry key="DOC_LIST_HEIGHT_MIN">210</entry>
+    <entry key="QD_DOC_LIST_HEIGHT_MIN">180</entry>
 		
 	<!-- Max values of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
 	<entry key="TA_TEXTAREA_WIDTH_MAX">100</entry>
