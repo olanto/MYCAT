@@ -22,6 +22,7 @@
 package org.olanto.TranslationText.client;
 
 import com.google.gwt.user.client.Cookies;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.IsSerializable;
 
 /**
@@ -42,16 +43,6 @@ public class InterfaceMeasures implements IsSerializable {
     public int DOC_LIST_HEIGHT;
     public int QD_DOC_LIST_HEIGHT;
 
-    public void updateMeasures(int taWidth, int taHeight, int qdHaHeight, int qdTaHeigt, int dlWidth, int dlHeight, int qdDlHeight) {
-        this.TA_TEXTAREA_WIDTH = taWidth;
-        this.TA_TEXTAREA_HEIGHT = taHeight;
-        this.QD_HTMLAREA_HEIGHT = qdHaHeight;
-        this.QD_TEXTAREA_HEIGHT = qdTaHeigt;
-        this.DOC_LIST_WIDTH = dlWidth;
-        this.DOC_LIST_HEIGHT = dlHeight;
-        this.QD_DOC_LIST_HEIGHT = qdDlHeight;
-    }
-
     public void checkAndSetMinMeasures() {
         this.TA_TEXTAREA_WIDTH = (this.TA_TEXTAREA_WIDTH > GuiConstant.TA_TEXTAREA_WIDTH_MIN) ? this.TA_TEXTAREA_WIDTH : GuiConstant.TA_TEXTAREA_WIDTH_MIN;
         this.TA_TEXTAREA_HEIGHT = (this.TA_TEXTAREA_HEIGHT > GuiConstant.TA_TEXTAREA_HEIGHT_MIN) ? this.TA_TEXTAREA_HEIGHT : GuiConstant.TA_TEXTAREA_HEIGHT_MIN;
@@ -61,8 +52,15 @@ public class InterfaceMeasures implements IsSerializable {
         this.DOC_LIST_HEIGHT = (this.DOC_LIST_HEIGHT > GuiConstant.DOC_LIST_HEIGHT_MIN) ? this.DOC_LIST_HEIGHT : GuiConstant.DOC_LIST_HEIGHT_MIN;
         this.QD_DOC_LIST_HEIGHT = (this.QD_DOC_LIST_HEIGHT > GuiConstant.QD_DOC_LIST_HEIGHT_MIN) ? this.QD_DOC_LIST_HEIGHT : GuiConstant.QD_DOC_LIST_HEIGHT_MIN;
     }
-    
-    public void recalculate(int clientWidth, int clientheight, int charWidth, int lineHeight, int qdDlHeight) {
+
+    public void checkAndSetMaxMeasures() {
+        this.TA_TEXTAREA_WIDTH = (this.TA_TEXTAREA_WIDTH < GuiConstant.TA_TEXTAREA_WIDTH_MAX) ? this.TA_TEXTAREA_WIDTH : GuiConstant.TA_TEXTAREA_WIDTH_MAX;
+        this.TA_TEXTAREA_HEIGHT = (this.TA_TEXTAREA_HEIGHT < GuiConstant.TA_TEXTAREA_HEIGHT_MAX) ? this.TA_TEXTAREA_HEIGHT : GuiConstant.TA_TEXTAREA_HEIGHT_MAX;
+        this.QD_HTMLAREA_HEIGHT = (this.QD_HTMLAREA_HEIGHT < GuiConstant.QD_HTMLAREA_HEIGHT_MAX) ? this.QD_HTMLAREA_HEIGHT : GuiConstant.QD_HTMLAREA_HEIGHT_MAX;
+        this.QD_TEXTAREA_HEIGHT = (this.QD_TEXTAREA_HEIGHT < GuiConstant.QD_TEXTAREA_HEIGHT_MAX) ? this.QD_TEXTAREA_HEIGHT : GuiConstant.QD_TEXTAREA_HEIGHT_MAX;
+        this.DOC_LIST_WIDTH = (this.DOC_LIST_WIDTH < GuiConstant.DOC_LIST_WIDTH_MAX) ? this.DOC_LIST_WIDTH : GuiConstant.DOC_LIST_WIDTH_MAX;
+        this.DOC_LIST_HEIGHT = (this.DOC_LIST_HEIGHT < GuiConstant.DOC_LIST_HEIGHT_MAX) ? this.DOC_LIST_HEIGHT : GuiConstant.DOC_LIST_HEIGHT_MAX;
+        this.QD_DOC_LIST_HEIGHT = (this.QD_DOC_LIST_HEIGHT < GuiConstant.QD_DOC_LIST_HEIGHT_MAX) ? this.QD_DOC_LIST_HEIGHT : GuiConstant.QD_DOC_LIST_HEIGHT_MAX;
     }
 
     public void setDefaultMeasures() {
@@ -83,5 +81,41 @@ public class InterfaceMeasures implements IsSerializable {
         this.DOC_LIST_WIDTH = Integer.parseInt(Cookies.getCookie(CookiesNamespace.DOC_LIST_WIDTH));
         this.DOC_LIST_HEIGHT = Integer.parseInt(Cookies.getCookie(CookiesNamespace.DOC_LIST_HEIGHT));
         this.QD_DOC_LIST_HEIGHT = Integer.parseInt(Cookies.getCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT));
+    }
+
+    public void saveMeasuresInCookies() {
+        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_WIDTH, "" + GuiConstant.TA_TEXTAREA_WIDTH);
+        MyCatCookies.updateCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT, "" + GuiConstant.TA_TEXTAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT, "" + GuiConstant.QD_TEXTAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT, "" + GuiConstant.QD_HTMLAREA_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + GuiConstant.DOC_LIST_WIDTH);
+        MyCatCookies.updateCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
+        MyCatCookies.updateCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
+    }
+
+    public void calculateMeasures(int wHeight, int wWidth) {
+        int utilWidth, TAutilHeight, QDutilHeight;
+        utilWidth = wWidth - GuiConstant.TA_OVERHEAD_MAX_L;
+        TAutilHeight = wHeight - GuiConstant.TA_OVERHEAD_MAX_H;
+        QDutilHeight = wHeight - GuiConstant.QD_OVERHEAD_MAX_H;
+        this.DOC_LIST_WIDTH = utilWidth * GuiConstant.PER_DOC_LIST_W / 100;
+        this.DOC_LIST_HEIGHT = TAutilHeight;
+        this.TA_TEXTAREA_WIDTH = (utilWidth - this.DOC_LIST_WIDTH) / (2 * GuiConstant.TA_CHAR_WIDTH);
+        this.TA_TEXTAREA_HEIGHT = (this.DOC_LIST_HEIGHT - GuiConstant.TA_OVERHEAD_H) / GuiConstant.TA_LINE_HEIGHT;
+        this.QD_HTMLAREA_HEIGHT = QDutilHeight * GuiConstant.PER_QD_HTMLAREA_H / 100;
+        this.QD_DOC_LIST_HEIGHT = QDutilHeight - this.QD_HTMLAREA_HEIGHT;
+        this.QD_TEXTAREA_HEIGHT = (this.QD_DOC_LIST_HEIGHT - GuiConstant.TA_OVERHEAD_H) / GuiConstant.TA_LINE_HEIGHT;
+
+        Window.alert("TA_TEXTAREA_WIDTH = " + this.TA_TEXTAREA_WIDTH
+                + "\n TA_TEXTAREA_HEIGHT  = " + this.TA_TEXTAREA_HEIGHT
+                + "\n QD_HTMLAREA_HEIGHT  = " + this.QD_HTMLAREA_HEIGHT
+                + "\n QD_TEXTAREA_HEIGHT = " + this.QD_TEXTAREA_HEIGHT
+                + "\n DOC_LIST_WIDTH  = " + this.DOC_LIST_WIDTH
+                + "\n DOC_LIST_HEIGHT  = " + this.DOC_LIST_HEIGHT
+                + "\n QD_DOC_LIST_HEIGHT = " + this.QD_DOC_LIST_HEIGHT
+                + "\n Util Height  = " + TAutilHeight
+                + "\n Util Width  = " + utilWidth);
+        checkAndSetMaxMeasures();
+        checkAndSetMinMeasures();
     }
 }

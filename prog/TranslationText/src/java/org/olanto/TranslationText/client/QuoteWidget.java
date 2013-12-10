@@ -89,9 +89,10 @@ public class QuoteWidget extends Composite {
     private String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
-    private ScrollPanel htmlWrapper = new ScrollPanel(refArea);
+    private ScrollPanel htmlWrapper = new ScrollPanel();
     private DecoratorPanel staticDecorator = new DecoratorPanel();
     private ScrollPanel staticTreeWrapper = new ScrollPanel();
+    private Tree staticTree = new Tree();
     private GwtRef refDoc;
     private int refIdx = 1;
     private ArrayList<String> docList;
@@ -198,6 +199,7 @@ public class QuoteWidget extends Composite {
         refpanel.setBodyBorder(true);
         refpanel.setHeaderVisible(false);
         refpanel.add(htmlWrapper);
+        htmlWrapper.add(refArea);
 
         docListContainer.setBodyBorder(true);
         resultsPanel.add(docListContainer);
@@ -214,6 +216,15 @@ public class QuoteWidget extends Composite {
             @Override
             public void handleEvent(BaseEvent be) {
                 Window.open(GuiConstant.QD_HELP_URL, "", GuiConstant.W_OPEN_FEATURES);
+            }
+        });
+        resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
+            @Override
+            public void handleEvent(BaseEvent be) {
+                MainEntryPoint.IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
+                updateSize();
+                adaptSize();
+                MainEntryPoint.IMeasures.saveMeasuresInCookies();
             }
         });
         staticDecorator.setStyleName("doclist");
@@ -299,13 +310,14 @@ public class QuoteWidget extends Composite {
         refIndic.setStyleName("gwt-w-label");
         refIndic.setWidth("40px");
         QDText.setStyleName("gwt-im-text");
-        htmlWrapper.setPixelSize(Window.getClientWidth() - 3 * W_Unit, (Window.getClientHeight() - (H_Unit + GuiConstant.QD_DOC_LIST_HEIGHT + htmlWrapper.getAbsoluteTop())));
+        htmlWrapper.setAlwaysShowScrollBars(true);
+        htmlWrapper.setPixelSize(Window.getClientWidth() - 3 * W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
         refArea.setWidth(Window.getClientWidth() - 5 * W_Unit);
         setMessage("warning", GuiMessageConst.MSG_60);
         docListContainer.setHeading(GuiMessageConst.MSG_60);
         staticTreeWrapper.setAlwaysShowScrollBars(true);
-        staticTreeWrapper.setPixelSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.QD_DOC_LIST_HEIGHT - H_Unit);
-        docListContainer.setSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.QD_DOC_LIST_HEIGHT);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT - H_Unit);
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT);
         if ((GuiConstant.JOBS_ITEMS != null) && (GuiConstant.JOBS_ITEMS.length() > 1)) {
             String jobs = GuiConstant.JOBS_ITEMS;
             String[] tablist = jobs.split("\\;");
@@ -540,7 +552,7 @@ public class QuoteWidget extends Composite {
         final String lT = langT.getItemText(langT.getSelectedIndex());
 
         // Create the tree
-        Tree staticTree = new Tree();
+        staticTree.clear();
         String docName, longName, listElem;
         final String racine = lS + "/";
         int k, l;
@@ -584,6 +596,17 @@ public class QuoteWidget extends Composite {
         staticTreeWrapper.add(staticTree);
     }
 
+    public void reselectDocument() {
+        final String lS = langS.getItemText(langS.getSelectedIndex());
+        final String lT = langT.getItemText(langT.getSelectedIndex());
+        final String racine = lS + "/";
+        setMessage("info", GuiMessageConst.MSG_51 + staticTree.getSelectedItem().getTitle());
+        tS.reset();
+        tS.words = Utility.getRefWords(refDoc.reftext[refIdx - 1] + " ");
+        tS.queryLength = refDoc.reftext[refIdx - 1].length();
+        tS.getTextContent(racine + staticTree.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, refDoc.reftext[refIdx - 1]);
+    }
+
     public void setMessage(String type, String message) {
         msg.setStyleName("gwt-TA-" + type.toLowerCase());
         msg.setText(message);
@@ -591,11 +614,11 @@ public class QuoteWidget extends Composite {
 
     public void adaptSize() {
         int width = getMaximumWidth();
-        resultsPanel.setPixelSize(width, resultsPanel.getOffsetHeight());
-        statusPanel.setPixelSize(width, statusPanel.getOffsetHeight());
-        headPanel.setPixelSize(width, headPanel.getOffsetHeight());
-        refpanel.setPixelSize(width, refpanel.getOffsetHeight());
-        htmlWrapper.setPixelSize(width, htmlWrapper.getOffsetHeight());
+        statusPanel.setWidth(width + "px");
+        headPanel.setWidth(width + "px");
+        resultsPanel.setWidth(width + "px");
+        refpanel.setWidth(width + "px");
+        htmlWrapper.setWidth(width + "px");
         refArea.setWidth(width - 2 * W_Unit);
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
     }
@@ -623,5 +646,15 @@ public class QuoteWidget extends Composite {
             return fileName.substring(idx);
         }
         return fileName;
+    }
+
+    public void updateSize() {
+        htmlWrapper.setPixelSize(Window.getClientWidth() - 3 * W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
+        refArea.setWidth(Window.getClientWidth() - 5 * W_Unit);
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT - H_Unit);
+        tS.updateSize();
+        adaptSize();
+        reselectDocument();
     }
 }

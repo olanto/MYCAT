@@ -533,6 +533,18 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
 
+        textAlignerWidget.resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
+            @Override
+            public void handleEvent(BaseEvent be) {
+                IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
+                tS.updateSize();
+                textAlignerWidget.updateSize();
+                textAlignerWidget.adaptSize();
+                IMeasures.saveMeasuresInCookies();
+                textAlignerWidget.reselectDocument(tS, QUERY);
+            }
+        });
+
         textAlignerWidget.search.addKeyPressHandler(new KeyPressHandler() {
             @Override
             public void onKeyPress(KeyPressEvent event) {
@@ -632,7 +644,7 @@ public class MainEntryPoint implements EntryPoint {
                 getcontentlistMyQuote();
             }
         });
-
+        
         quoteDetectorWidget.TextAligner.removeAllListeners();
         quoteDetectorWidget.TextAligner.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -705,6 +717,20 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.DOC_LIST_WIDTH_MIN = CONST.DOC_LIST_WIDTH_MIN;
         GuiConstant.DOC_LIST_HEIGHT_MIN = CONST.DOC_LIST_HEIGHT_MIN;
         GuiConstant.QD_DOC_LIST_HEIGHT_MIN = CONST.QD_DOC_LIST_HEIGHT_MIN;
+        GuiConstant.TA_TEXTAREA_WIDTH_MAX = CONST.TA_TEXTAREA_WIDTH_MAX;
+        GuiConstant.TA_TEXTAREA_HEIGHT_MAX = CONST.TA_TEXTAREA_HEIGHT_MAX;
+        GuiConstant.QD_TEXTAREA_HEIGHT_MAX = CONST.QD_TEXTAREA_HEIGHT_MAX;
+        GuiConstant.QD_HTMLAREA_HEIGHT_MAX = CONST.QD_HTMLAREA_HEIGHT_MAX;
+        GuiConstant.DOC_LIST_WIDTH_MAX = CONST.DOC_LIST_WIDTH_MAX;
+        GuiConstant.DOC_LIST_HEIGHT_MAX = CONST.DOC_LIST_HEIGHT_MAX;
+        GuiConstant.QD_DOC_LIST_HEIGHT_MAX = CONST.QD_DOC_LIST_HEIGHT_MAX;
+        GuiConstant.TA_OVERHEAD_MAX_H = CONST.TA_OVERHEAD_MAX_H;
+        GuiConstant.TA_OVERHEAD_MAX_L = CONST.TA_OVERHEAD_MAX_L;
+        GuiConstant.QD_OVERHEAD_MAX_H = CONST.QD_OVERHEAD_MAX_H;
+        GuiConstant.TA_OVERHEAD_H = CONST.TA_OVERHEAD_H;
+        GuiConstant.TA_CHAR_WIDTH = CONST.TA_CHAR_WIDTH;
+        GuiConstant.PER_DOC_LIST_W = CONST.PER_DOC_LIST_W;
+        GuiConstant.PER_QD_HTMLAREA_H = CONST.PER_QD_HTMLAREA_H;
         GuiConstant.EXP_DAYS = CONST.EXP_DAYS;
         GuiConstant.MAX_RESPONSE = CONST.MAX_RESPONSE;
         GuiConstant.MAX_BROWSE = CONST.MAX_BROWSE;

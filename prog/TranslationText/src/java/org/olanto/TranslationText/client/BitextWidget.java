@@ -156,7 +156,6 @@ public class BitextWidget extends Composite {
         sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
         sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT + "px");
 
-
         targetTextArea.setCursorPos(0);
         targetTextArea.setVisible(true);
         targetTextArea.setEnabled(true);
@@ -265,20 +264,18 @@ public class BitextWidget extends Composite {
         CclBtn.removeAllListeners();
         SchBtn.removeAllListeners();
 
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
-
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
 
     }
 
     public void setVariables() {
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
-
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
         targetTextArea.setEnabled(true);
         PreviousHitT.enable();
         NextHitT.enable();
@@ -1023,8 +1020,9 @@ public class BitextWidget extends Composite {
 
     public void setVariablesMono() {
 
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+
         sourceTextArea.setText(Align.source.content);
 
         targetTextArea.setEnabled(false);
@@ -2131,5 +2129,14 @@ public class BitextWidget extends Composite {
     public void setMessage(String type, String message) {
         msg.setStyleName("gwt-TA-" + type.toLowerCase());
         msg.setText(message);
+    }
+
+    public void updateSize() {
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT + "px");
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.TA_TEXTAREA_HEIGHT + "px");
     }
 }

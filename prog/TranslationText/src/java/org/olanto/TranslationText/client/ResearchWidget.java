@@ -77,7 +77,8 @@ public class ResearchWidget extends Composite {
     public Button coll = new Button(GuiMessageConst.WIDGET_BTN_COLL_OFF);
     public Button myQuote = new Button(GuiMessageConst.WIDGET_BTN_QD);
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
-    private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
+    public Button resize = new Button(GuiMessageConst.BTN_RESIZE);
+    private Tree staticTree = new Tree();
     // Height and width units for buttons and text labels
     private final int H_Unit = 30;
     private final int W_Unit = 20;
@@ -127,7 +128,6 @@ public class ResearchWidget extends Composite {
         if (GuiConstant.AUTO_ON) {
             headerPanel.add(resize);
         }
-
         headerPanel.setStylePrimaryName("searchHeader");
 
         headPanel.add(leftheadPanel);
@@ -323,7 +323,7 @@ public class ResearchWidget extends Composite {
         final String lS = langS.getItemText(langS.getSelectedIndex());
         final String lT = langT.getItemText(langT.getSelectedIndex());
         // Create the tree
-        Tree staticTree = new Tree();
+        staticTree.clear();
         String docName, longName, listElem;
         final String racine = lS + "/";
         int k, l;
@@ -364,9 +364,18 @@ public class ResearchWidget extends Composite {
         staticTreeWrapper.add(staticTree);
     }
 
+    public void reselectDocument(final BitextWidget tS, final String Query) {
+        final String lS = langS.getItemText(langS.getSelectedIndex());
+        final String lT = langT.getItemText(langT.getSelectedIndex());
+        final String racine = lS + "/";
+        setMessage("info", GuiMessageConst.MSG_51 + staticTree.getSelectedItem().getTitle());
+        tS.reset();
+        tS.words = MainEntryPoint.words;
+        tS.getTextContent(racine + staticTree.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, Query);
+    }
+
     public void DrawDocumentList(final String Query, final BitextWidget tS, final ArrayList<String> collections) {
         staticTreeWrapper.clear();
-//        adaptSize();
         // remote procedure call to the server to get the document list that satisfies the query
         rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
             @Override
@@ -434,9 +443,9 @@ public class ResearchWidget extends Composite {
 
     public void adaptSize() {
         int width = getMaximumWidth();
-        statusPanel.setPixelSize(width, statusPanel.getOffsetHeight());
-        headPanel.setPixelSize(width, headPanel.getOffsetHeight());
-        resultsPanel.setPixelSize(width, resultsPanel.getOffsetHeight());
+        statusPanel.setWidth(width + "px");
+        headPanel.setWidth(width + "px");
+        resultsPanel.setWidth(width + "px");
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
     }
 
@@ -449,5 +458,10 @@ public class ResearchWidget extends Composite {
             max = headPanel.getOffsetWidth();
         }
         return max;
+    }
+
+    public void updateSize() {
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT - H_Unit);
     }
 }
