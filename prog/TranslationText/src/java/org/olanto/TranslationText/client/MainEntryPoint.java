@@ -536,11 +536,8 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
-                tS.updateSize();
-                textAlignerWidget.updateSize();
-                textAlignerWidget.adaptSize();
-                IMeasures.saveMeasuresInCookies();
+                resizeAll();
+                resizeAll();
                 textAlignerWidget.reselectDocument(tS, QUERY);
             }
         });
@@ -644,7 +641,7 @@ public class MainEntryPoint implements EntryPoint {
                 getcontentlistMyQuote();
             }
         });
-        
+
         quoteDetectorWidget.TextAligner.removeAllListeners();
         quoteDetectorWidget.TextAligner.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -659,6 +656,14 @@ public class MainEntryPoint implements EntryPoint {
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
+    }
+
+    public void resizeAll() {
+        IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
+        tS.updateSize();
+        textAlignerWidget.updateSize();
+        textAlignerWidget.adaptSize();
+        IMeasures.saveMeasuresInCookies();
     }
 
     // initialise all cookies in the client navigator if not existing

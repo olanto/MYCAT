@@ -42,6 +42,9 @@ public class InterfaceMeasures implements IsSerializable {
     public int DOC_LIST_WIDTH;
     public int DOC_LIST_HEIGHT;
     public int QD_DOC_LIST_HEIGHT;
+    public int utilWidth;
+    private int TAutilHeight;
+    private int QDutilHeight;
 
     public void checkAndSetMinMeasures() {
         this.TA_TEXTAREA_WIDTH = (this.TA_TEXTAREA_WIDTH > GuiConstant.TA_TEXTAREA_WIDTH_MIN) ? this.TA_TEXTAREA_WIDTH : GuiConstant.TA_TEXTAREA_WIDTH_MIN;
@@ -71,6 +74,7 @@ public class InterfaceMeasures implements IsSerializable {
         this.DOC_LIST_WIDTH = GuiConstant.DOC_LIST_WIDTH;
         this.DOC_LIST_HEIGHT = GuiConstant.DOC_LIST_HEIGHT;
         this.QD_DOC_LIST_HEIGHT = GuiConstant.QD_DOC_LIST_HEIGHT;
+        this.utilWidth = Window.getClientWidth();
     }
 
     public void setMeasuresfromCookies() {
@@ -81,6 +85,7 @@ public class InterfaceMeasures implements IsSerializable {
         this.DOC_LIST_WIDTH = Integer.parseInt(Cookies.getCookie(CookiesNamespace.DOC_LIST_WIDTH));
         this.DOC_LIST_HEIGHT = Integer.parseInt(Cookies.getCookie(CookiesNamespace.DOC_LIST_HEIGHT));
         this.QD_DOC_LIST_HEIGHT = Integer.parseInt(Cookies.getCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT));
+        this.utilWidth = Window.getClientWidth();
     }
 
     public void saveMeasuresInCookies() {
@@ -94,7 +99,6 @@ public class InterfaceMeasures implements IsSerializable {
     }
 
     public void calculateMeasures(int wHeight, int wWidth) {
-        int utilWidth, TAutilHeight, QDutilHeight;
         utilWidth = wWidth - GuiConstant.TA_OVERHEAD_MAX_L;
         TAutilHeight = wHeight - GuiConstant.TA_OVERHEAD_MAX_H;
         QDutilHeight = wHeight - GuiConstant.QD_OVERHEAD_MAX_H;
@@ -107,7 +111,7 @@ public class InterfaceMeasures implements IsSerializable {
         this.QD_TEXTAREA_HEIGHT = (this.QD_DOC_LIST_HEIGHT - GuiConstant.TA_OVERHEAD_H) / GuiConstant.TA_LINE_HEIGHT;
         checkAndSetMaxMeasures();
         checkAndSetMinMeasures();
-         if (GuiConstant.DEBUG_ON) {
+        if (GuiConstant.DEBUG_ON) {
             Window.alert("TA_TEXTAREA_WIDTH = " + this.TA_TEXTAREA_WIDTH
                     + "\n TA_TEXTAREA_HEIGHT  = " + this.TA_TEXTAREA_HEIGHT
                     + "\n QD_HTMLAREA_HEIGHT  = " + this.QD_HTMLAREA_HEIGHT

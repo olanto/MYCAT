@@ -221,10 +221,9 @@ public class QuoteWidget extends Composite {
         resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                MainEntryPoint.IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
-                updateSize();
-                adaptSize();
-                MainEntryPoint.IMeasures.saveMeasuresInCookies();
+                resizeAll();
+                resizeAll();
+                reselectDocument();
             }
         });
         staticDecorator.setStyleName("doclist");
@@ -282,9 +281,6 @@ public class QuoteWidget extends Composite {
     }
 
     public void draWidget() {
-//        headPanel.setWidth((Window.getClientWidth() - 2 * W_Unit) + "px");
-//        statusPanel.setWidth((Window.getClientWidth() - 2 * W_Unit) + "px");
-//        msg.setWidth((statusPanel.getOffsetWidth() - contact.getOffsetWidth()) + "px");
         setbuttonstyle(GoSrch, GoSrch.getText().length() * 2 * CHAR_W, H_Unit);
         setbuttonstyle(TextAligner, TextAligner.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(coll, coll.getText().length() * CHAR_W, H_Unit);
@@ -311,8 +307,8 @@ public class QuoteWidget extends Composite {
         refIndic.setWidth("40px");
         QDText.setStyleName("gwt-im-text");
         htmlWrapper.setAlwaysShowScrollBars(true);
-        htmlWrapper.setPixelSize(Window.getClientWidth() - 3 * W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
-        refArea.setWidth(Window.getClientWidth() - 5 * W_Unit);
+        htmlWrapper.setPixelSize(Window.getClientWidth() - W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
+        refArea.setWidth(Window.getClientWidth() - 2 * W_Unit);
         setMessage("warning", GuiMessageConst.MSG_60);
         docListContainer.setHeading(GuiMessageConst.MSG_60);
         staticTreeWrapper.setAlwaysShowScrollBars(true);
@@ -353,7 +349,47 @@ public class QuoteWidget extends Composite {
             leftheadPanel.remove(topJobsSet);
         }
         GoSrch.disable();
-        adaptSize();
+        qualibrateSize();
+    }
+
+    public void reinitHeaderStatusWidgets() {
+        headPanel.clear();
+        headPanel.add(leftheadPanel);
+        headPanel.add(QDText);
+        headPanel.setCellHorizontalAlignment(QDText, HorizontalPanel.ALIGN_RIGHT);
+        if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
+            if ((!GuiConstant.LOGO_PATH.equalsIgnoreCase(" ")) && (!GuiConstant.LOGO_PATH.equalsIgnoreCase(" "))) {
+                headPanel.add(im);
+                headPanel.setCellHorizontalAlignment(im, HorizontalPanel.ALIGN_RIGHT);
+            }
+        }
+        statusPanel.clear();
+        statusPanel.add(msg);
+        statusPanel.setCellHorizontalAlignment(msg, HorizontalPanel.ALIGN_LEFT);
+        statusPanel.add(contact);
+
+        headerPanel.clear();
+        headerPanel.add(fileUpload);
+        headerPanel.add(GoSrch);
+        headerPanel.add(langS);
+        headerPanel.add(langT);
+        headerPanel.add(coll);
+        headerPanel.add(minLn);
+        headerPanel.add(minLength);
+        headerPanel.add(prev);
+        headerPanel.add(next);
+        headerPanel.add(refIndic);
+        headerPanel.add(TextAligner);
+        headerPanel.add(help);
+        if (GuiConstant.SAVE_ON) {
+            headerPanel.add(save);
+        }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
+        leftheadPanel.clear();
+        leftheadPanel.add(topJobsSet);
+        leftheadPanel.add(headerPanel);
     }
     private IUploader.OnFinishUploaderHandler onFinishUploaderHandler = new IUploader.OnFinishUploaderHandler() {
         @Override
@@ -536,7 +572,7 @@ public class QuoteWidget extends Composite {
 
     private void DrawDocumentList() {
         tS.reset();
-        adaptSize();
+        qualibrateSize();
         if ((!docList.isEmpty()) && (docList != null) && (refDoc.nbref > 0)) {
             docListContainer.setHeading(GuiMessageConst.MSG_41 + refIdx);
             createSourceTree();
@@ -612,18 +648,6 @@ public class QuoteWidget extends Composite {
         msg.setText(message);
     }
 
-    public void adaptSize() {
-        int width = resultsPanel.getOffsetWidth();
-        mainContainer.setWidth(resultsPanel.getOffsetWidth());
-        statusPanel.setWidth(width + "px");
-        headPanel.setWidth(width + "px");
-        resultsPanel.setWidth(width + "px");
-        refpanel.setWidth(width + "px");
-        htmlWrapper.setWidth(width + "px");
-        refArea.setWidth(width - 2 * W_Unit);
-        msg.setWidth((width - contact.getOffsetWidth()) + "px");
-    }
-    
     private String getSavedFileName() {
         int idx = fileName.lastIndexOf("/") + 1;
         if (idx == 0) {
@@ -638,13 +662,59 @@ public class QuoteWidget extends Composite {
         return fileName;
     }
 
+    private void resizeAll() {
+        MainEntryPoint.IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
+        updateSize();
+        adaptSize();
+        MainEntryPoint.IMeasures.saveMeasuresInCookies();
+    }
+
+    public void qualibrateSize() {
+        int width = getMaximumWidth();
+        statusPanel.setWidth(width + "px");
+        headPanel.setWidth(width + "px");
+        resultsPanel.setWidth(width + "px");
+        refpanel.setWidth(width);
+        htmlWrapper.setWidth(width + "px");
+        refArea.setWidth(width - 2 * W_Unit);
+        msg.setWidth((width - contact.getOffsetWidth()) + "px");
+    }
+
+    public void adaptSize() {
+        int width = getMaximumWidth();
+        statusPanel.setWidth(width + "px");
+        headPanel.setWidth(width + "px");
+        resultsPanel.setWidth(width + "px");
+        headerContainer.setWidth(width);
+        statusContainer.setWidth(width);
+        mainContainer.setWidth(width);
+        refpanel.setWidth(width);
+        htmlWrapper.setWidth(width + "px");
+        refArea.setWidth(width - 2 * W_Unit);
+        msg.setWidth((width - contact.getOffsetWidth()) + "px");
+    }
+
+    private int getMaximumWidth() {
+        int max = statusPanel.getOffsetWidth();
+        if (resultsPanel.getOffsetWidth() > max) {
+            max = resultsPanel.getOffsetWidth();
+        }
+        if (headPanel.getOffsetWidth() > max) {
+            max = headPanel.getOffsetWidth();
+        }
+        return max;
+    }
+
     public void updateSize() {
-        htmlWrapper.setPixelSize(Window.getClientWidth() - 3 * W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
-        refArea.setWidth(Window.getClientWidth() - 5 * W_Unit);
+        htmlWrapper.setPixelSize(MainEntryPoint.IMeasures.utilWidth - W_Unit, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
         docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT);
         staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT - H_Unit);
         tS.updateSize();
-        adaptSize();
-        reselectDocument();
+        headPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, headPanel.getOffsetHeight());
+        statusPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, statusPanel.getOffsetHeight());
+        resultsPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, MainEntryPoint.IMeasures.QD_DOC_LIST_HEIGHT);
+        refpanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, MainEntryPoint.IMeasures.QD_HTMLAREA_HEIGHT);
+        msg.setWidth((MainEntryPoint.IMeasures.utilWidth - contact.getOffsetWidth()) + "px");
+        reinitHeaderStatusWidgets();
     }
 }

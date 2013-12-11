@@ -133,8 +133,6 @@ public class ResearchWidget extends Composite {
         headPanel.add(leftheadPanel);
         headPanel.add(TAText);
         headPanel.setCellHorizontalAlignment(TAText, HorizontalPanel.ALIGN_RIGHT);
-        headPanel.add(new HTML("&nbsp;"));
-
         if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
             if ((!GuiConstant.LOGO_PATH.equalsIgnoreCase(" ")) && (!GuiConstant.LOGO_PATH.equalsIgnoreCase(" "))) {
                 headPanel.add(new HTML("&nbsp;"));
@@ -243,6 +241,45 @@ public class ResearchWidget extends Composite {
     public void setbuttonstyle(Button b, int w, int h) {
         b.setStyleName("x-btn-click");
         b.setPixelSize(w, h);
+    }
+
+    public void reinitHeaderStatusWidgets() {
+        headPanel.clear();
+        headPanel.add(leftheadPanel);
+        headPanel.add(TAText);
+        headPanel.setCellHorizontalAlignment(TAText, HorizontalPanel.ALIGN_RIGHT);
+        if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
+            if ((!GuiConstant.LOGO_PATH.equalsIgnoreCase(" ")) && (!GuiConstant.LOGO_PATH.equalsIgnoreCase(" "))) {
+                headPanel.add(new HTML("&nbsp;"));
+                headPanel.add(im);
+                headPanel.setCellHorizontalAlignment(im, HorizontalPanel.ALIGN_RIGHT);
+            }
+        }
+        statusPanel.clear();
+        statusPanel.add(msg);
+        statusPanel.setCellHorizontalAlignment(msg, HorizontalPanel.ALIGN_LEFT);
+        statusPanel.add(contact);
+        statusPanel.setCellHorizontalAlignment(contact, HorizontalPanel.ALIGN_RIGHT);
+
+        headerPanel.clear();
+        headerPanel.add(search);
+        headerPanel.add(GoSrch);
+        headerPanel.add(langS);
+        headerPanel.add(langT);
+        headerPanel.add(coll);
+        headerPanel.add(sortBy);
+        headerPanel.add(myQuote);
+        headerPanel.add(help);
+        if (GuiConstant.CHOOSE_GUI_LANG) {
+            headerPanel.add(chooseLang);
+            headerPanel.add(langInterface);
+        }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
+        leftheadPanel.clear();
+        leftheadPanel.add(topJobsSet);
+        leftheadPanel.add(headerPanel);
     }
 
     public void draWidget() {
@@ -442,16 +479,34 @@ public class ResearchWidget extends Composite {
     }
 
     public void adaptSize() {
-        int width = resultsPanel.getOffsetWidth();
-        mainContainer.setWidth(resultsPanel.getOffsetWidth());
+        int width = getMaximumWidth();
         statusPanel.setWidth(width + "px");
         headPanel.setWidth(width + "px");
         resultsPanel.setWidth(width + "px");
+        headerContainer.setWidth(width);
+        statusContainer.setWidth(width);
+        mainContainer.setPixelSize(width, resultsPanel.getOffsetHeight());
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
+    }
+
+    private int getMaximumWidth() {
+        int max = statusPanel.getOffsetWidth();
+        if (resultsPanel.getOffsetWidth() > max) {
+            max = resultsPanel.getOffsetWidth();
+        }
+        if (headPanel.getOffsetWidth() > max) {
+            max = headPanel.getOffsetWidth();
+        }
+        return max;
     }
 
     public void updateSize() {
         docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
         staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT - H_Unit);
+        headPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, headPanel.getOffsetHeight());
+        statusPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, statusPanel.getOffsetHeight());
+        resultsPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
+        msg.setWidth((MainEntryPoint.IMeasures.utilWidth - contact.getOffsetWidth()) + "px");
+        reinitHeaderStatusWidgets();
     }
 }
