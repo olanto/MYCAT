@@ -155,6 +155,7 @@ de la liste des documents*/
     background-color: #dcdcdc;
     width: 100%;
     height:100%;
+    font-size: 40px !important;
 }
 /* cette classe pour la background des boutons 
 de navigation et recherche dans les textArea*/

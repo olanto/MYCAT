@@ -420,7 +420,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                     k = lastPos.get(s);
                     for (int n = 0; n < startPos.size(); n++) {
                         r = startPos.get(n);
-                        if (((k - r) <= 2 * queryLn) && ((k - r) >= 0)) {
+                        if (((k - r) <= queryLn) && ((k - r) >= 0)) {
                             done = true;
                             break;
                         }
@@ -614,7 +614,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             for (int l = 0; l < lastPos.size(); l++) {
                 lastp = lastPos.get(l);
 //                System.out.println("refLength: " + refLength);
-                if (((lastp - startp) >= (queryLn / 2)) && ((lastp - startp) <= refLength)) {
+                if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
                     if (getAllWords(content.substring(startp, lastp + 1), Query)) {
                         res = startp + "¦" + (lastp - startp);
                         Pos.add(res);

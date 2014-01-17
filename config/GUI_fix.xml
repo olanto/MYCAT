@@ -33,7 +33,8 @@
     <entry key="DOC_LIST_HEIGHT">560</entry>
     <entry key="QD_DOC_LIST_HEIGHT">345</entry>
 	
-	<!-- Min values (based on 1024x768) of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+	<!-- Min values (based on 1024x768) of interface elements in case of AUTO_ON TextArea line height in pixels,
+	must be the same as in the .gwt-Textarea CSS class attribute line-height-->
     <!-- Min value of the textarea number of columns-->
 	<entry key="TA_TEXTAREA_WIDTH_MIN">43</entry>
 	<!-- Min value of the textarea number of lines in text aligner-->
@@ -49,7 +50,8 @@
 	<!-- Min value of the document list container pixel height in quote detector -->
     <entry key="QD_DOC_LIST_HEIGHT_MIN">190</entry>
 		
-	<!-- Max values of interface elements in case of AUTO_ON TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+	<!-- Max values of interface elements in case of AUTO_ON TextArea line height in pixels,
+	must be the same as in the .gwt-Textarea CSS class attribute line-height-->
 	<!-- Min value of the textarea number of columns-->
 	<entry key="TA_TEXTAREA_WIDTH_MAX">100</entry>
 	<!-- Min value of the textarea number of lines in text aligner-->
