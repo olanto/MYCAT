@@ -26,8 +26,6 @@ import java.rmi.Remote;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.olanto.idxvli.server.IndexService_MyCat;
-import org.olanto.mapman.server.MapService;
-import static org.olanto.util.Messages.msg;
 
 /**
  * arrêter les services
