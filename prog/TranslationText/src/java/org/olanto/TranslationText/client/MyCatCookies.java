@@ -45,4 +45,17 @@ public class MyCatCookies {
         Cookies.removeCookie(name);
         Cookies.setCookie(name, value, expires);
     }
+
+    public static boolean areInterfaceMeasuresSaved() {
+        if (((Cookies.getCookie(CookiesNamespace.TA_TEXTAREA_WIDTH) != null) || !(Cookies.getCookie(CookiesNamespace.TA_TEXTAREA_WIDTH).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT) != null) || !(Cookies.getCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT) != null) || !(Cookies.getCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT) != null) || !(Cookies.getCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.DOC_LIST_WIDTH) != null) || !(Cookies.getCookie(CookiesNamespace.DOC_LIST_WIDTH).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.DOC_LIST_HEIGHT) != null) || !(Cookies.getCookie(CookiesNamespace.DOC_LIST_HEIGHT).equalsIgnoreCase("null")))
+                && ((Cookies.getCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT) != null) || !(Cookies.getCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT).equalsIgnoreCase("null")))) {
+            return true;
+        }
+        return false;
+    }
 }

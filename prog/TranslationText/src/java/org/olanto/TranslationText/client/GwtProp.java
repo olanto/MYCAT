@@ -34,6 +34,7 @@ public class GwtProp implements IsSerializable {
      * **********************************************************************************
      */
     public boolean AUTO_ON;
+    public boolean DEBUG_ON;
     public int EXP_DAYS;
     public boolean ORIGINAL_ON;
     public boolean PATH_ON;
@@ -55,6 +56,27 @@ public class GwtProp implements IsSerializable {
     public int DOC_LIST_WIDTH;
     public int DOC_LIST_HEIGHT;
     public int QD_DOC_LIST_HEIGHT;
+    public int TA_TEXTAREA_WIDTH_MIN;
+    public int TA_TEXTAREA_HEIGHT_MIN;
+    public int QD_HTMLAREA_HEIGHT_MIN;
+    public int QD_TEXTAREA_HEIGHT_MIN;
+    public int DOC_LIST_WIDTH_MIN;
+    public int DOC_LIST_HEIGHT_MIN;
+    public int QD_DOC_LIST_HEIGHT_MIN;
+    public int TA_TEXTAREA_WIDTH_MAX;
+    public int TA_TEXTAREA_HEIGHT_MAX;
+    public int QD_HTMLAREA_HEIGHT_MAX;
+    public int QD_TEXTAREA_HEIGHT_MAX;
+    public int DOC_LIST_WIDTH_MAX;
+    public int DOC_LIST_HEIGHT_MAX;
+    public int QD_DOC_LIST_HEIGHT_MAX;
+    public int TA_OVERHEAD_MAX_H;
+    public int TA_OVERHEAD_MAX_L;
+    public int QD_OVERHEAD_MAX_H;
+    public int TA_OVERHEAD_H;
+    public int TA_CHAR_WIDTH;
+    public int PER_DOC_LIST_W;
+    public int PER_QD_HTMLAREA_H;
     public int MAX_RESPONSE;
     public int MAX_BROWSE;
     public int MAX_SEARCH_SIZE;
@@ -84,6 +106,7 @@ public class GwtProp implements IsSerializable {
      * client interface parameters
      * **********************************************************************************
      */
+    public String BTN_RESIZE;
     public String TA_BTN_SRCH;
     public String TA_BTN_NXT;
     public String TA_BTN_PVS;

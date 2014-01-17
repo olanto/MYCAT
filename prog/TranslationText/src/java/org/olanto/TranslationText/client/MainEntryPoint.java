@@ -40,7 +40,6 @@ import com.google.gwt.user.client.ui.*;
 import com.smartgwt.client.widgets.events.ResizedEvent;
 import com.smartgwt.client.widgets.events.ResizedHandler;
 import java.util.ArrayList;
-import org.olanto.util.StringManipulation;
 
 /**
  * Main entry point.
@@ -74,6 +73,7 @@ public class MainEntryPoint implements EntryPoint {
     private final int H_Unit = 30;
     private static String[] languages;
     public static ArrayList<String> words;
+    public static InterfaceMeasures IMeasures = new InterfaceMeasures();
 
     /**
      * The entry point method, called automatically by loading a module that
@@ -169,6 +169,11 @@ public class MainEntryPoint implements EntryPoint {
                     Window.alert(GuiMessageConst.MSG_63);
                 }
                 initCookies();
+                if (MyCatCookies.areInterfaceMeasuresSaved() && GuiConstant.AUTO_ON) {
+                    IMeasures.setMeasuresfromCookies();
+                } else {
+                    IMeasures.setDefaultMeasures();
+                }
                 setSettingsColMycat();
                 setSettingsColMyQuote();
                 getLanguages();
@@ -461,9 +466,9 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.draWidget();
         tS = new BitextWidget(textAlignerWidget.msg);
         textAlignerWidget.resultsPanel.add(tS);
-        textAlignerWidget.adaptSize();
         textAlignerWidget.search.setFocus(true);
         setLanguagesTA();
+        textAlignerWidget.adaptSize();
         textAlignerWidget.coll.removeAllListeners();
         textAlignerWidget.coll.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -525,6 +530,15 @@ public class MainEntryPoint implements EntryPoint {
             public void handleEvent(BaseEvent be) {
                 textAlignerWidget.GoSrch.disable();
                 getcontentlistMyCat();
+            }
+        });
+
+        textAlignerWidget.resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
+            @Override
+            public void handleEvent(BaseEvent be) {
+                resizeAll();
+                resizeAll();
+                textAlignerWidget.reselectDocument(tS, QUERY);
             }
         });
 
@@ -644,6 +658,14 @@ public class MainEntryPoint implements EntryPoint {
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
     }
 
+    public void resizeAll() {
+        IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
+        tS.updateSize();
+        textAlignerWidget.updateSize();
+        textAlignerWidget.adaptSize();
+        IMeasures.saveMeasuresInCookies();
+    }
+
     // initialise all cookies in the client navigator if not existing
     private void initCookies() {
         MyCatCookies.initCookie(CookiesNamespace.MyCatlangS, "EN");
@@ -653,6 +675,13 @@ public class MainEntryPoint implements EntryPoint {
         MyCatCookies.initCookie(CookiesNamespace.MyQuotelangT, "FR");
         MyCatCookies.initCookie(CookiesNamespace.MyQuoteMinLength, "3");
         MyCatCookies.initCookie(CookiesNamespace.InterfaceLanguage, "en");
+        MyCatCookies.initCookie(CookiesNamespace.TA_TEXTAREA_WIDTH, "" + GuiConstant.TA_TEXTAREA_WIDTH);
+        MyCatCookies.initCookie(CookiesNamespace.TA_TEXTAREA_HEIGHT, "" + GuiConstant.TA_TEXTAREA_HEIGHT);
+        MyCatCookies.initCookie(CookiesNamespace.QD_TEXTAREA_HEIGHT, "" + GuiConstant.QD_TEXTAREA_HEIGHT);
+        MyCatCookies.initCookie(CookiesNamespace.QD_HTMLAREA_HEIGHT, "" + GuiConstant.QD_HTMLAREA_HEIGHT);
+        MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + GuiConstant.DOC_LIST_WIDTH);
+        MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
+        MyCatCookies.initCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
     }
 
     public static void download(String fileDownloadURL, final Label msg) {
@@ -669,6 +698,7 @@ public class MainEntryPoint implements EntryPoint {
 
     private void InitProperties(GwtProp CONST) {
         GuiConstant.ORIGINAL_ON = CONST.ORIGINAL_ON;
+        GuiConstant.DEBUG_ON = CONST.DEBUG_ON;
         GuiConstant.PATH_ON = CONST.PATH_ON;
         GuiConstant.AUTO_ON = CONST.AUTO_ON;
         GuiConstant.SAVE_ON = CONST.SAVE_ON;
@@ -686,6 +716,27 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.DOC_LIST_WIDTH = CONST.DOC_LIST_WIDTH;
         GuiConstant.DOC_LIST_HEIGHT = CONST.DOC_LIST_HEIGHT;
         GuiConstant.QD_DOC_LIST_HEIGHT = CONST.QD_DOC_LIST_HEIGHT;
+        GuiConstant.TA_TEXTAREA_WIDTH_MIN = CONST.TA_TEXTAREA_WIDTH_MIN;
+        GuiConstant.TA_TEXTAREA_HEIGHT_MIN = CONST.TA_TEXTAREA_HEIGHT_MIN;
+        GuiConstant.QD_TEXTAREA_HEIGHT_MIN = CONST.QD_TEXTAREA_HEIGHT_MIN;
+        GuiConstant.QD_HTMLAREA_HEIGHT_MIN = CONST.QD_HTMLAREA_HEIGHT_MIN;
+        GuiConstant.DOC_LIST_WIDTH_MIN = CONST.DOC_LIST_WIDTH_MIN;
+        GuiConstant.DOC_LIST_HEIGHT_MIN = CONST.DOC_LIST_HEIGHT_MIN;
+        GuiConstant.QD_DOC_LIST_HEIGHT_MIN = CONST.QD_DOC_LIST_HEIGHT_MIN;
+        GuiConstant.TA_TEXTAREA_WIDTH_MAX = CONST.TA_TEXTAREA_WIDTH_MAX;
+        GuiConstant.TA_TEXTAREA_HEIGHT_MAX = CONST.TA_TEXTAREA_HEIGHT_MAX;
+        GuiConstant.QD_TEXTAREA_HEIGHT_MAX = CONST.QD_TEXTAREA_HEIGHT_MAX;
+        GuiConstant.QD_HTMLAREA_HEIGHT_MAX = CONST.QD_HTMLAREA_HEIGHT_MAX;
+        GuiConstant.DOC_LIST_WIDTH_MAX = CONST.DOC_LIST_WIDTH_MAX;
+        GuiConstant.DOC_LIST_HEIGHT_MAX = CONST.DOC_LIST_HEIGHT_MAX;
+        GuiConstant.QD_DOC_LIST_HEIGHT_MAX = CONST.QD_DOC_LIST_HEIGHT_MAX;
+        GuiConstant.TA_OVERHEAD_MAX_H = CONST.TA_OVERHEAD_MAX_H;
+        GuiConstant.TA_OVERHEAD_MAX_L = CONST.TA_OVERHEAD_MAX_L;
+        GuiConstant.QD_OVERHEAD_MAX_H = CONST.QD_OVERHEAD_MAX_H;
+        GuiConstant.TA_OVERHEAD_H = CONST.TA_OVERHEAD_H;
+        GuiConstant.TA_CHAR_WIDTH = CONST.TA_CHAR_WIDTH;
+        GuiConstant.PER_DOC_LIST_W = CONST.PER_DOC_LIST_W;
+        GuiConstant.PER_QD_HTMLAREA_H = CONST.PER_QD_HTMLAREA_H;
         GuiConstant.EXP_DAYS = CONST.EXP_DAYS;
         GuiConstant.MAX_RESPONSE = CONST.MAX_RESPONSE;
         GuiConstant.MAX_BROWSE = CONST.MAX_BROWSE;
@@ -719,6 +770,7 @@ public class MainEntryPoint implements EntryPoint {
          * client interface parameters
          * **********************************************************************************
          */
+        GuiMessageConst.BTN_RESIZE = CONST.BTN_RESIZE;
         GuiMessageConst.TA_BTN_SRCH = CONST.TA_BTN_SRCH;
         GuiMessageConst.TA_BTN_NXT = CONST.TA_BTN_NXT;
         GuiMessageConst.TA_BTN_PVS = CONST.TA_BTN_PVS;

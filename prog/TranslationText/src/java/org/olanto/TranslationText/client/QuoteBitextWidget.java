@@ -32,7 +32,6 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * panneau du concordancier
@@ -153,10 +152,9 @@ public class QuoteBitextWidget extends Composite {
         sourceTextArea.setReadOnly(true);
         sourceTextArea.setStyleName("gwt-Textarea");
         sourceTextArea.getElement().setAttribute("spellCheck", "false");
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
-        sourceTextArea.setHeight("" + pixS * GuiConstant.QD_TEXTAREA_HEIGHT + "px");
-
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
 
         targetTextArea.setCursorPos(0);
         targetTextArea.setVisible(true);
@@ -164,10 +162,9 @@ public class QuoteBitextWidget extends Composite {
         targetTextArea.setReadOnly(true);
         targetTextArea.setStyleName("gwt-Textarea");
         targetTextArea.getElement().setAttribute("spellCheck", "false");
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
-        targetTextArea.setHeight("" + pixS * GuiConstant.QD_TEXTAREA_HEIGHT + "px");
-
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
         pp.setAnimationEnabled(true);
         pp.setAutoHideEnabled(true);
         pp.setStyleName("focusPanel");
@@ -266,20 +263,21 @@ public class QuoteBitextWidget extends Composite {
         CclBtn.removeAllListeners();
         SchBtn.removeAllListeners();
 
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
-
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
-
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
     }
 
     public void setVariables() {
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
-
-        targetTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        targetTextArea.setVisibleLines(GuiConstant.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
         targetTextArea.setEnabled(true);
         PreviousHitT.enable();
         NextHitT.enable();
@@ -1004,8 +1002,10 @@ public class QuoteBitextWidget extends Composite {
 
     public void setVariablesMono() {
 
-        sourceTextArea.setCharacterWidth(GuiConstant.TA_TEXTAREA_WIDTH);
-        sourceTextArea.setVisibleLines(GuiConstant.TA_TEXTAREA_HEIGHT);
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
+
         sourceTextArea.setText(Align.source.content);
 
         targetTextArea.setEnabled(false);
@@ -1353,7 +1353,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsS(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1378,7 +1378,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsT(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1455,7 +1455,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsMono(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getQueryWordsPos(posit, content, Query, queryLn, new AsyncCallback<int[][]>() {
+            rpcS.getQueryWordsPos(posit, content, Query, queryLn, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1506,7 +1506,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsSCR(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1534,7 +1534,7 @@ public class QuoteBitextWidget extends Composite {
 
     public void getPositionsTCR(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1729,12 +1729,8 @@ public class QuoteBitextWidget extends Composite {
     }
 
     public void getPositionsMonoCR(String content, ArrayList<String> Query, int queryLn) {
-        float factor = GuiConstant.REF_FACTOR;
-        if (GuiConstant.EXACT_FLG) {
-            factor = 1.1f;
-        }
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getRefWordsPos(content, Query, queryLn, factor, GuiConstant.REF_MIN_LN, new AsyncCallback<int[][]>() {
+            rpcS.getRefWordsPos(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.REF_MIN_LN, false, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -2069,5 +2065,14 @@ public class QuoteBitextWidget extends Composite {
     public void setMessage(String type, String message) {
         msg.setStyleName("gwt-TA-" + type.toLowerCase());
         msg.setText(message);
+    }
+
+    public void updateSize() {
+        sourceTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        sourceTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        targetTextArea.setCharacterWidth(MainEntryPoint.IMeasures.TA_TEXTAREA_WIDTH);
+        targetTextArea.setVisibleLines(MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT);
+        sourceTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
+        targetTextArea.setHeight("" + pixS * MainEntryPoint.IMeasures.QD_TEXTAREA_HEIGHT + "px");
     }
 }

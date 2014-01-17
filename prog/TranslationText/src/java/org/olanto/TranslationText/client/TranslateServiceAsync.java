@@ -43,7 +43,7 @@ public interface TranslateServiceAsync {
 
     public void getOriginalUrl(String docName, AsyncCallback<String> asyncCallback);
 
-    public void getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, AsyncCallback<int[][]> asyncCallback);
+    public void getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
     public void getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
 
@@ -51,7 +51,7 @@ public interface TranslateServiceAsync {
 
     public void getQueryWordsPosAO(int[][] positions, String content, ArrayList<String> Query, int queryLn, AsyncCallback<int[][]> asyncCallback);
 
-    public void getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, AsyncCallback<int[][]> asyncCallback);
+    public void getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
     public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, AsyncCallback<GwtRef> asyncCallback);
 

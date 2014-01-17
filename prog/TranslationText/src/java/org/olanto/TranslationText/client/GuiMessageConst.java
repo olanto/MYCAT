@@ -30,6 +30,7 @@ public class GuiMessageConst {
     /**
      * *****************************BUTTONS**********************************************
      */
+    public static String BTN_RESIZE;
     public static String TA_BTN_SRCH;
     public static String TA_BTN_NXT;
     public static String TA_BTN_PVS;
@@ -127,6 +128,7 @@ public class GuiMessageConst {
     public static String MSG_68;
     public static String MSG_69;
     public static String MSG_70;
+
     /**
      * **********************************************************************************
      */

@@ -30,6 +30,7 @@ public class GuiConstant {
     // Boolean variable for setting automatically
     // the size of areas wrt the screen size, not implemented yet.
     public static boolean AUTO_ON;
+    public static boolean DEBUG_ON;
     public static int EXP_DAYS;
     public static boolean ORIGINAL_ON;
     public static boolean PATH_ON;
@@ -53,6 +54,27 @@ public class GuiConstant {
     public static int DOC_LIST_WIDTH;
     public static int DOC_LIST_HEIGHT;
     public static int QD_DOC_LIST_HEIGHT;
+    public static int TA_TEXTAREA_WIDTH_MIN;
+    public static int TA_TEXTAREA_HEIGHT_MIN;
+    public static int QD_HTMLAREA_HEIGHT_MIN;
+    public static int QD_TEXTAREA_HEIGHT_MIN;
+    public static int DOC_LIST_WIDTH_MIN;
+    public static int DOC_LIST_HEIGHT_MIN;
+    public static int QD_DOC_LIST_HEIGHT_MIN;
+    public static int TA_TEXTAREA_WIDTH_MAX;
+    public static int TA_TEXTAREA_HEIGHT_MAX;
+    public static int QD_HTMLAREA_HEIGHT_MAX;
+    public static int QD_TEXTAREA_HEIGHT_MAX;
+    public static int DOC_LIST_WIDTH_MAX;
+    public static int DOC_LIST_HEIGHT_MAX;
+    public static int QD_DOC_LIST_HEIGHT_MAX;
+    public static int TA_OVERHEAD_MAX_H;
+    public static int TA_OVERHEAD_MAX_L;
+    public static int QD_OVERHEAD_MAX_H;
+    public static int TA_OVERHEAD_H;
+    public static int TA_CHAR_WIDTH;
+    public static int PER_DOC_LIST_W;
+    public static int PER_QD_HTMLAREA_H;
     public static int MAX_RESPONSE;
     public static int MAX_BROWSE;
     public static int MAX_SEARCH_SIZE;

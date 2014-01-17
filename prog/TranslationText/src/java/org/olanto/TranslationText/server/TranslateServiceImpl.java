@@ -347,7 +347,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn) {
+    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact) {
         ArrayList<String> Pos = new ArrayList<>();
         ArrayList<Integer> startPos = new ArrayList<>();
         ArrayList<Integer> lastPos = new ArrayList<>();
@@ -356,7 +356,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Pattern p;
         Matcher m;
         boolean allfound;
-//        System.out.println("Query: " + Query.size());
+        System.out.println("Query: " + Query.size());
         for (int i = 0; i < positions.length; i++) {
             allfound = true;
             begin = positions[i][1];
@@ -367,16 +367,19 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
             sentence = content.substring(begin, end);
 
-//            System.out.println("looking into sentence # " + i);
+            System.out.println("looking into sentence # " + i);
             int j = 0, start, len;
             startPos.clear();
             lastPos.clear();
             while ((allfound) && (j < Query.size())) {
-
                 curHit = Query.get(j);
                 len = curHit.length();
                 regex = REGEX_BEFORE_TOKEN + curHit + REGEX_AFTER_TOKEN;
-                p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                if (exact) {
+                    p = Pattern.compile(regex);
+                } else {
+                    p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                }
                 m = p.matcher(sentence);
                 if (m.find()) {
                     start = m.start();
@@ -417,7 +420,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                     k = lastPos.get(s);
                     for (int n = 0; n < startPos.size(); n++) {
                         r = startPos.get(n);
-                        if (((k - r) <= 2 * queryLn) && ((k - r) >= 0)) {
+                        if (((k - r) <= queryLn) && ((k - r) >= 0)) {
                             done = true;
                             break;
                         }
@@ -551,10 +554,13 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public int[][] getRefWordsPos(String content, ArrayList<String> query, int queryLn, float reFactor, int minRefLn) {
+    public int[][] getRefWordsPos(String content, ArrayList<String> query, int queryLn, float reFactor, int minRefLn, boolean exact) {
         ArrayList<String> Query;
         String regex;
-        int refLength = (int) (((reFactor * queryLn) > minRefLn) ? (reFactor * queryLn) : minRefLn);
+        int refLength = queryLn;
+        if (!exact) {
+            refLength = (int) (((reFactor * queryLn) > minRefLn) ? (reFactor * queryLn) : minRefLn);
+        }
         if (query.size() > 1000) {
             System.out.println("word list bigger than 1000, looking or the first 1000 words");
             Query = GetSubList(query, 1000);
@@ -573,7 +579,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         first = Query.get(0);
         last = Query.get(Query.size() - 1);
         regex = REGEX_BEFORE_TOKEN + first + REGEX_AFTER_TOKEN;
-        p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        if (exact) {
+            p = Pattern.compile(regex);
+        } else {
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        }
         m = p.matcher(content);
         if (m.find()) {
 //            System.out.println("start found at : " + m.start());
@@ -584,7 +594,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
         }
         regex = REGEX_BEFORE_TOKEN + last + REGEX_AFTER_TOKEN;
-        p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        if (exact) {
+            p = Pattern.compile(regex);
+        } else {
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        }
         m = p.matcher(content);
         if (m.find()) {
 //            System.out.println("last found at : " + m.start());
@@ -600,7 +614,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             for (int l = 0; l < lastPos.size(); l++) {
                 lastp = lastPos.get(l);
 //                System.out.println("refLength: " + refLength);
-                if (((lastp - startp) >= (queryLn / 2)) && ((lastp - startp) <= refLength)) {
+                if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
                     if (getAllWords(content.substring(startp, lastp + 1), Query)) {
                         res = startp + "¦" + (lastp - startp);
                         Pos.add(res);
@@ -1032,9 +1046,31 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.DOC_LIST_WIDTH = Integer.parseInt(prop.getProperty("DOC_LIST_WIDTH"));
         CONST.DOC_LIST_HEIGHT = Integer.parseInt(prop.getProperty("DOC_LIST_HEIGHT"));
         CONST.QD_DOC_LIST_HEIGHT = Integer.parseInt(prop.getProperty("QD_DOC_LIST_HEIGHT"));
+        CONST.TA_TEXTAREA_WIDTH_MIN = Integer.parseInt(prop.getProperty("TA_TEXTAREA_WIDTH_MIN"));
+        CONST.TA_TEXTAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("TA_TEXTAREA_HEIGHT_MIN"));
+        CONST.QD_TEXTAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_TEXTAREA_HEIGHT_MIN"));
+        CONST.QD_HTMLAREA_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_HTMLAREA_HEIGHT_MIN"));
+        CONST.DOC_LIST_WIDTH_MIN = Integer.parseInt(prop.getProperty("DOC_LIST_WIDTH_MIN"));
+        CONST.DOC_LIST_HEIGHT_MIN = Integer.parseInt(prop.getProperty("DOC_LIST_HEIGHT_MIN"));
+        CONST.QD_DOC_LIST_HEIGHT_MIN = Integer.parseInt(prop.getProperty("QD_DOC_LIST_HEIGHT_MIN"));
+        CONST.TA_TEXTAREA_WIDTH_MAX = Integer.parseInt(prop.getProperty("TA_TEXTAREA_WIDTH_MAX"));
+        CONST.TA_TEXTAREA_HEIGHT_MAX = Integer.parseInt(prop.getProperty("TA_TEXTAREA_HEIGHT_MAX"));
+        CONST.QD_TEXTAREA_HEIGHT_MAX = Integer.parseInt(prop.getProperty("QD_TEXTAREA_HEIGHT_MAX"));
+        CONST.QD_HTMLAREA_HEIGHT_MAX = Integer.parseInt(prop.getProperty("QD_HTMLAREA_HEIGHT_MAX"));
+        CONST.DOC_LIST_WIDTH_MAX = Integer.parseInt(prop.getProperty("DOC_LIST_WIDTH_MAX"));
+        CONST.DOC_LIST_HEIGHT_MAX = Integer.parseInt(prop.getProperty("DOC_LIST_HEIGHT_MAX"));
+        CONST.QD_DOC_LIST_HEIGHT_MAX = Integer.parseInt(prop.getProperty("QD_DOC_LIST_HEIGHT_MAX"));
+        CONST.TA_OVERHEAD_MAX_H = Integer.parseInt(prop.getProperty("TA_OVERHEAD_MAX_H"));
+        CONST.TA_OVERHEAD_MAX_L = Integer.parseInt(prop.getProperty("TA_OVERHEAD_MAX_L"));
+        CONST.QD_OVERHEAD_MAX_H = Integer.parseInt(prop.getProperty("QD_OVERHEAD_MAX_H"));
+        CONST.TA_OVERHEAD_H = Integer.parseInt(prop.getProperty("TA_OVERHEAD_H"));
+        CONST.TA_CHAR_WIDTH = Integer.parseInt(prop.getProperty("TA_CHAR_WIDTH"));
+        CONST.PER_DOC_LIST_W = Integer.parseInt(prop.getProperty("PER_DOC_LIST_W"));
+        CONST.PER_QD_HTMLAREA_H = Integer.parseInt(prop.getProperty("PER_QD_HTMLAREA_H"));
         CONST.ORIGINAL_ON = Boolean.valueOf(prop.getProperty("ORIGINAL_ON", "true"));
         CONST.PATH_ON = Boolean.valueOf(prop.getProperty("PATH_ON", "true"));
         CONST.AUTO_ON = Boolean.valueOf(prop.getProperty("AUTO_ON", "false"));
+        CONST.DEBUG_ON = Boolean.valueOf(prop.getProperty("DEBUG_ON", "false"));
         CONST.FILE_NAME_RIGHT = Boolean.valueOf(prop.getProperty("FILE_NAME_RIGHT", "false"));
         CONST.ONLY_ON_FILE_NAME = Boolean.valueOf(prop.getProperty("ONLY_ON_FILE_NAME", "false"));
         CONST.BITEXT_ONLY = Boolean.valueOf(prop.getProperty("BITEXT_ONLY", "false"));
@@ -1093,6 +1129,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 }
             }
             stringMan = new ConstStringManager(messagesPropFile);
+            CONST.BTN_RESIZE = stringMan.get("ta.btn.resize");
             CONST.TA_BTN_SRCH = stringMan.get("ta.btn.srch");
             CONST.TA_BTN_NXT = stringMan.get("ta.btn.nxt");
             CONST.TA_BTN_PVS = stringMan.get("ta.btn.pvs");

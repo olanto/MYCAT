@@ -47,7 +47,7 @@ public interface TranslateService extends RemoteService {
 
     public GwtProp InitPropertiesFromFile(String cookieLang);
 
-    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn);
+    public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact);
 
     public int[][] getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn);
 
@@ -55,7 +55,7 @@ public interface TranslateService extends RemoteService {
 
     public int[][] getQueryWordsPosAO(int[][] positions, String content, ArrayList<String> Query, int queryLn);
 
-    public int[][] getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn);
+    public int[][] getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, boolean exact);
 
     public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension);
 

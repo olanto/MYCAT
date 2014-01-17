@@ -77,6 +77,8 @@ public class ResearchWidget extends Composite {
     public Button coll = new Button(GuiMessageConst.WIDGET_BTN_COLL_OFF);
     public Button myQuote = new Button(GuiMessageConst.WIDGET_BTN_QD);
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
+    public Button resize = new Button(GuiMessageConst.BTN_RESIZE);
+    private Tree staticTree = new Tree();
     // Height and width units for buttons and text labels
     private final int H_Unit = 30;
     private final int W_Unit = 20;
@@ -123,14 +125,14 @@ public class ResearchWidget extends Composite {
             headerPanel.add(chooseLang);
             headerPanel.add(langInterface);
         }
-
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
         headerPanel.setStylePrimaryName("searchHeader");
 
         headPanel.add(leftheadPanel);
         headPanel.add(TAText);
         headPanel.setCellHorizontalAlignment(TAText, HorizontalPanel.ALIGN_RIGHT);
-        headPanel.add(new HTML("&nbsp;"));
-
         if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
             if ((!GuiConstant.LOGO_PATH.equalsIgnoreCase(" ")) && (!GuiConstant.LOGO_PATH.equalsIgnoreCase(" "))) {
                 headPanel.add(new HTML("&nbsp;"));
@@ -155,7 +157,6 @@ public class ResearchWidget extends Composite {
         statusContainer.add(statusPanel);
         statusPanel.setHeight(H_Unit + "px");
         statusPanel.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
-        statusPanel.add(new HTML("&nbsp;"));
         statusPanel.add(msg);
         statusPanel.setCellHorizontalAlignment(msg, HorizontalPanel.ALIGN_LEFT);
         statusPanel.add(contact);
@@ -242,15 +243,56 @@ public class ResearchWidget extends Composite {
         b.setPixelSize(w, h);
     }
 
+    public void reinitHeaderStatusWidgets() {
+        headPanel.clear();
+        headPanel.add(leftheadPanel);
+        headPanel.add(TAText);
+        headPanel.setCellHorizontalAlignment(TAText, HorizontalPanel.ALIGN_RIGHT);
+        if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
+            if ((!GuiConstant.LOGO_PATH.equalsIgnoreCase(" ")) && (!GuiConstant.LOGO_PATH.equalsIgnoreCase(" "))) {
+                headPanel.add(new HTML("&nbsp;"));
+                headPanel.add(im);
+                headPanel.setCellHorizontalAlignment(im, HorizontalPanel.ALIGN_RIGHT);
+            }
+        }
+        statusPanel.clear();
+        statusPanel.add(msg);
+        statusPanel.setCellHorizontalAlignment(msg, HorizontalPanel.ALIGN_LEFT);
+        statusPanel.add(contact);
+        statusPanel.setCellHorizontalAlignment(contact, HorizontalPanel.ALIGN_RIGHT);
+
+        headerPanel.clear();
+        headerPanel.add(search);
+        headerPanel.add(GoSrch);
+        headerPanel.add(langS);
+        headerPanel.add(langT);
+        headerPanel.add(coll);
+        headerPanel.add(sortBy);
+        headerPanel.add(myQuote);
+        headerPanel.add(help);
+        if (GuiConstant.CHOOSE_GUI_LANG) {
+            headerPanel.add(chooseLang);
+            headerPanel.add(langInterface);
+        }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
+        leftheadPanel.clear();
+        leftheadPanel.add(topJobsSet);
+        leftheadPanel.add(headerPanel);
+    }
+
     public void draWidget() {
         setbuttonstyle(GoSrch, GoSrch.getText().length() * 2 * CHAR_W, H_Unit);
         setbuttonstyle(myQuote, myQuote.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(coll, coll.getText().length() * CHAR_W, H_Unit);
-        setbuttonstyle(help, help.getText().length() * (CHAR_W + 2), H_Unit);
+        setbuttonstyle(help, help.getText().length() * CHAR_W, H_Unit);
+        setbuttonstyle(resize, resize.getText().length() * CHAR_W, H_Unit);
         GoSrch.setAutoWidth(true);
         myQuote.setAutoWidth(true);
         coll.setAutoWidth(true);
         help.setAutoWidth(true);
+        resize.setAutoWidth(true);
 
         search.setWidth("300px");
         search.setStyleName("x-form-text");
@@ -273,11 +315,11 @@ public class ResearchWidget extends Composite {
         langInterface.setWidth(2 * W_Unit + "px");
         langInterface.setSelectedIndex(Utility.getIndex(INT_LANG, Cookies.getCookie(CookiesNamespace.InterfaceLanguage)));
 
-        docListContainer.setSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.DOC_LIST_HEIGHT);
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
         staticDecorator.setStyleName("doclist");
         staticDecorator.setWidget(staticTreeWrapper);
         staticTreeWrapper.setAlwaysShowScrollBars(true);
-        staticTreeWrapper.setPixelSize(GuiConstant.DOC_LIST_WIDTH, GuiConstant.DOC_LIST_HEIGHT - H_Unit);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT - H_Unit);
         if ((GuiConstant.JOBS_ITEMS != null) && (GuiConstant.JOBS_ITEMS.length() > 1)) {
             String jobs = GuiConstant.JOBS_ITEMS;
             String[] tablist = jobs.split("\\;");
@@ -318,7 +360,7 @@ public class ResearchWidget extends Composite {
         final String lS = langS.getItemText(langS.getSelectedIndex());
         final String lT = langT.getItemText(langT.getSelectedIndex());
         // Create the tree
-        Tree staticTree = new Tree();
+        staticTree.clear();
         String docName, longName, listElem;
         final String racine = lS + "/";
         int k, l;
@@ -359,9 +401,18 @@ public class ResearchWidget extends Composite {
         staticTreeWrapper.add(staticTree);
     }
 
+    public void reselectDocument(final BitextWidget tS, final String Query) {
+        final String lS = langS.getItemText(langS.getSelectedIndex());
+        final String lT = langT.getItemText(langT.getSelectedIndex());
+        final String racine = lS + "/";
+        setMessage("info", GuiMessageConst.MSG_51 + staticTree.getSelectedItem().getTitle());
+        tS.reset();
+        tS.words = MainEntryPoint.words;
+        tS.getTextContent(racine + staticTree.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, Query);
+    }
+
     public void DrawDocumentList(final String Query, final BitextWidget tS, final ArrayList<String> collections) {
         staticTreeWrapper.clear();
-        adaptSize();
         // remote procedure call to the server to get the document list that satisfies the query
         rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
             @Override
@@ -429,20 +480,33 @@ public class ResearchWidget extends Composite {
 
     public void adaptSize() {
         int width = getMaximumWidth();
-        statusPanel.setPixelSize(width, statusPanel.getOffsetHeight());
-        headPanel.setPixelSize(width, headPanel.getOffsetHeight());
-        resultsPanel.setPixelSize(width, resultsPanel.getOffsetHeight());
+        statusPanel.setWidth(width + "px");
+        headPanel.setWidth(width + "px");
+        resultsPanel.setWidth(width + "px");
+        headerContainer.setWidth(width);
+        statusContainer.setWidth(width);
+        mainContainer.setPixelSize(width, resultsPanel.getOffsetHeight());
         msg.setWidth((width - contact.getOffsetWidth()) + "px");
     }
 
     private int getMaximumWidth() {
-        int max = resultsPanel.getOffsetWidth();
-        if (statusPanel.getOffsetWidth() > max) {
-            max = statusPanel.getOffsetWidth();
+        int max = statusPanel.getOffsetWidth();
+        if (resultsPanel.getOffsetWidth() > max) {
+            max = resultsPanel.getOffsetWidth();
         }
         if (headPanel.getOffsetWidth() > max) {
             max = headPanel.getOffsetWidth();
         }
         return max;
+    }
+
+    public void updateSize() {
+        docListContainer.setSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
+        staticTreeWrapper.setPixelSize(MainEntryPoint.IMeasures.DOC_LIST_WIDTH, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT - H_Unit);
+        headPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, headPanel.getOffsetHeight());
+        statusPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, statusPanel.getOffsetHeight());
+        resultsPanel.setPixelSize(MainEntryPoint.IMeasures.utilWidth, MainEntryPoint.IMeasures.DOC_LIST_HEIGHT);
+        msg.setWidth((MainEntryPoint.IMeasures.utilWidth - contact.getOffsetWidth()) + "px");
+        reinitHeaderStatusWidgets();
     }
 }
