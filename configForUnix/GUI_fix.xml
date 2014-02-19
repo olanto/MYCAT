@@ -7,10 +7,12 @@
 	<!--GUI Parameters--> 
 	<!--ORIGINAL_ON: true = activates the Original button-->
     <entry key="ORIGINAL_ON">true</entry> 
+	<!--DEBUG_ON: true = activates the Original button-->
+    <entry key="DEBUG_ON">false</entry> 
 	<!--PATH_ON: true = displays the complete document path in the Hit List-->
     <entry key="PATH_ON">true</entry>
 	<!--AUTO_ON: true = -->
-	<entry key="AUTO_ON">false</entry>
+	<entry key="AUTO_ON">true</entry>
 	<!--FILE_NAME_RIGHT: true = displays the file name after the path-->
 	<entry key="FILE_NAME_RIGHT">false</entry>
 	<!--ONLY_ON_FILE_NAME: true = limits the browse function to the file names (not on full paths)-->
@@ -20,7 +22,7 @@
 	<!--SAVE_ON: true = activates the Save buttons for source and target reference documents-->
 	<entry key="SAVE_ON">true</entry>
 	<!--Graphic and size parameters-->
-    <entry key="CHARACTER_WIDTH">9</entry>
+    <entry key="CHARACTER_WIDTH">8</entry>
 	<!-- TextArea line height in pixels, must be the same as in the .gwt-Textarea CSS class attribute line-height-->
 	<entry key="TA_LINE_HEIGHT">20</entry>
 	<entry key="TA_TEXTAREA_WIDTH">58</entry>
@@ -30,6 +32,57 @@
     <entry key="DOC_LIST_WIDTH">250</entry>
     <entry key="DOC_LIST_HEIGHT">560</entry>
     <entry key="QD_DOC_LIST_HEIGHT">345</entry>
+	
+	<!-- Min values (based on 1024x768) of interface elements in case of AUTO_ON TextArea line height in pixels,
+	must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+    <!-- Min value of the textarea number of columns-->
+	<entry key="TA_TEXTAREA_WIDTH_MIN">43</entry>
+	<!-- Min value of the textarea number of lines in text aligner-->
+    <entry key="TA_TEXTAREA_HEIGHT_MIN">24</entry>
+    <!-- Min value of the html area pixel height in quote detector based on its percentage -->
+    <entry key="QD_HTMLAREA_HEIGHT_MIN">280</entry>
+	<!-- Min value of the textare number of lines in quote detector -->
+    <entry key="QD_TEXTAREA_HEIGHT_MIN">8</entry>
+	<!-- Min value of the document list container pixel width based on its percentage -->
+    <entry key="DOC_LIST_WIDTH_MIN">200</entry>
+	<!-- Min value of the document list container pixel height in text aligner -->
+    <entry key="DOC_LIST_HEIGHT_MIN">520</entry>
+	<!-- Min value of the document list container pixel height in quote detector -->
+    <entry key="QD_DOC_LIST_HEIGHT_MIN">190</entry>
+		
+	<!-- Max values of interface elements in case of AUTO_ON TextArea line height in pixels,
+	must be the same as in the .gwt-Textarea CSS class attribute line-height-->
+	<!-- Min value of the textarea number of columns-->
+	<entry key="TA_TEXTAREA_WIDTH_MAX">100</entry>
+	<!-- Min value of the textarea number of lines in text aligner-->
+    <entry key="TA_TEXTAREA_HEIGHT_MAX">50</entry>
+    <!-- Min value of the html area pixel height in quote detector based on its percentage -->
+    <entry key="QD_HTMLAREA_HEIGHT_MAX">500</entry>
+	<!-- Min value of the textare number of lines in quote detector -->
+    <entry key="QD_TEXTAREA_HEIGHT_MAX">25</entry>
+	<!-- Min value of the document list container pixel width based on its percentage -->
+    <entry key="DOC_LIST_WIDTH_MAX">500</entry>
+	<!-- Min value of the document list container pixel height in text aligner -->
+    <entry key="DOC_LIST_HEIGHT_MAX">1000</entry>
+	<!-- Min value of the document list container pixel height in quote detector -->
+    <entry key="QD_DOC_LIST_HEIGHT_MAX">500</entry>
+	
+	<!-- Values of external parameters to calculate automatically interface change -->
+	<!-- Value of the overhead height in pixel of the upper header of text aligner -->
+	<entry key="TA_OVERHEAD_MAX_H">100</entry>
+	<!-- Value of the overhead width in pixel of the whole window -->
+    <entry key="TA_OVERHEAD_MAX_L">50</entry>
+	<!-- Value of the overhead in pixel of the upper header from quote detector -->
+    <entry key="QD_OVERHEAD_MAX_H">103</entry>
+	<!-- Value of the overhead in pixel of the upper header from text area (container of buttons in over teh text areas) -->
+    <entry key="TA_OVERHEAD_H">30</entry>
+	<!-- Value of character width of the text area, should be the same in the css Class .gwt-Textarea if added font weight or size-->
+    <entry key="TA_CHAR_WIDTH">8</entry>
+   	<!-- Percentage of the document list width in the results panel -->
+    <entry key="PER_DOC_LIST_W">20</entry>
+	<!-- Percentage of the Html Area height in the results panel from quote detector -->
+    <entry key="PER_QD_HTMLAREA_H">60</entry>
+	
 	<!--MAX_RESPONSE: Maximum number of reference documents in the Hit List when using the Search function (must be identical to the same parameter name in the IDX_fix.xml file)-->
 	<entry key="MAX_RESPONSE">200</entry>
 	<!--MAX_BROWSE: Maximum number of reference documents in the Hit List when using the Browse function (must be identical to the same parameter name in the IDX_fix.xml file)-->
@@ -94,6 +147,8 @@
 	<entry key="TA_HILITE_OVER_CR">true</entry>
 	<entry key="CHOOSE_GUI_LANG">true</entry>
 	<entry key="CHOOSE_GUI_LANG_LIST">en;fr;ar;es;ru</entry>
+    <!-- Controle parameter for the aglutinated space (case of chinese) -->
 	<entry key="REMOVE_AGLUTINATED_SPACE">true</entry>
+	<!-- List of languages where to remove the space between it items separated by ";"(case of chinese) -->
 	<entry key="AGLUTINATED_LANG_LIST">ZH</entry>
 </properties>

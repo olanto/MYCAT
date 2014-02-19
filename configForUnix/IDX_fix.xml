@@ -2,7 +2,9 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 	<!--The Olanto Foundation-->
 	<!--This is the parameter file for the indexing server-->
-<properties>   
+<properties>
+	<!-- check a nice cycle open, modify, save, close--> 
+    <entry key="CHECK_CONSISTENT">no</entry>   
 	<!--Constant Parameters. If this is modified, the index structure must be entirely rebuilt.--> 
 	<!--Maximum number of documents allowed (=2^DOC_MAXBIT) THIS PARAMETER MUST BE IDENTICAL TO THE DOC_MAXBIT PARAMETER IN MAP_fix.xml--> 
     <entry key="DOC_MAXBIT">16</entry>

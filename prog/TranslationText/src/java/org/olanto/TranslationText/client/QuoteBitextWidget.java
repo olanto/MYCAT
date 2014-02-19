@@ -53,7 +53,7 @@ public class QuoteBitextWidget extends Composite {
     public Button save = new Button(GuiMessageConst.TA_BTN_SAVE);
     private Button NextHitT = new Button(GuiMessageConst.TA_BTN_NXT);
     private Button PreviousHitT = new Button(GuiMessageConst.TA_BTN_PVS);
-    private TextArea sourceTextArea = new TextArea();
+    public TextArea sourceTextArea = new TextArea();
     private TextArea targetTextArea = new TextArea();
     private Label msg;
     public int indexHS = 0;
@@ -382,9 +382,9 @@ public class QuoteBitextWidget extends Composite {
         float frtop = lin * pixS * magicS;
         int posf = (frtop > height) ? height : (int) frtop;
         int posf1 = (frtop1 > height1) ? height1 : (int) frtop1;
-        sourceTextArea.setFocus(true);
         sourceTextArea.getElement().setScrollTop(posf);
         targetTextArea.getElement().setScrollTop(posf1);
+        sourceTextArea.setFocus(true);
     }
 
     public void setNetScapePosT(int idxS, int idxT, int h) {
@@ -397,9 +397,9 @@ public class QuoteBitextWidget extends Composite {
         float frtop = lin * pixS * magicS;
         int posf = (frtop > height) ? height : (int) frtop;
         int posf1 = (frtop1 > height1) ? height1 : (int) frtop1;
-        targetTextArea.setFocus(true);
         targetTextArea.getElement().setScrollTop(posf1);
         sourceTextArea.getElement().setScrollTop(posf);
+        targetTextArea.setFocus(true);
     }
 
     public void nextHitS() {
