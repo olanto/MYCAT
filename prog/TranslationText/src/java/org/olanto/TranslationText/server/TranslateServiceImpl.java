@@ -356,7 +356,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Pattern p;
         Matcher m;
         boolean allfound;
-        System.out.println("Query: " + Query.size());
+//        System.out.println("Query: " + Query.size());
         for (int i = 0; i < positions.length; i++) {
             allfound = true;
             begin = positions[i][1];
@@ -367,14 +367,16 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
             sentence = content.substring(begin, end);
 
-            System.out.println("looking into sentence # " + i);
+//            System.out.println("looking into sentence # " + i);
             int j = 0, start, len;
             startPos.clear();
             lastPos.clear();
             while ((allfound) && (j < Query.size())) {
                 curHit = Query.get(j);
+//                System.out.println("Looking for hit: " + curHit);
+
                 len = curHit.length();
-                regex = REGEX_BEFORE_TOKEN + curHit + REGEX_AFTER_TOKEN;
+                regex = Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
                 if (exact) {
                     p = Pattern.compile(regex);
                 } else {
@@ -453,12 +455,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 k = curr.length();
                 pos = Integer.parseInt(curr.substring(0, i));
                 ln = Integer.parseInt(curr.substring(i + 1, j));
-                ln = (ln > 0) ? ln + 1 : ln;
                 len = Integer.parseInt(curr.substring(j + 1, k));
 
                 posit[s][0] = pos; // index de la ligne qui contient le mot
                 posit[s][1] = ln; // index du mot dans la phrase
-                posit[s][2] = len - ln + 1; // longueur à highlighter
+                posit[s][2] = len - ln; // longueur à highlighter
             }
 //            System.out.println(" All Found Occurrences# 2: " + posit.length);
 //            for (int ls = 0; ls < posit.length; ls++) {
@@ -578,7 +579,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 
         first = Query.get(0);
         last = Query.get(Query.size() - 1);
-        regex = REGEX_BEFORE_TOKEN + first + REGEX_AFTER_TOKEN;
+        regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
         if (exact) {
             p = Pattern.compile(regex);
         } else {
@@ -593,7 +594,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //                System.out.println("Start found at : " + m.start());
             }
         }
-        regex = REGEX_BEFORE_TOKEN + last + REGEX_AFTER_TOKEN;
+        regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
         if (exact) {
             p = Pattern.compile(regex);
         } else {
@@ -661,9 +662,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 r = Integer.parseInt(curr.substring(i + 1, k));
                 posit[s][0] = l;
                 if (l == 0) {
-                    posit[s][1] = r + 2;
-                } else {
                     posit[s][1] = r + 1;
+                } else {
+                    posit[s][1] = r;
                 }
             }
 //            System.out.println(" All Found Occurrences# 2: " + posit.length);
@@ -700,7 +701,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             while (j < Query.size()) {
                 hit = Query.get(j);
 //                System.out.println("looking for: " + hit);
-                regex = REGEX_BEFORE_TOKEN + hit + REGEX_AFTER_TOKEN;
+                regex = REGEX_BEFORE_TOKEN + Pattern.quote(hit) + REGEX_AFTER_TOKEN;
                 p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
                 m = p.matcher(sentence);
                 while (m.find()) {
@@ -782,7 +783,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         last = Query.get(Query.size() - 1);
 //        System.out.println("First: " + first);
 //        System.out.println("Last: " + last);
-        regex = REGEX_BEFORE_TOKEN + first + REGEX_AFTER_TOKEN;
+        regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
         p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         m = p.matcher(content);
         if (m.find()) {
@@ -793,7 +794,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //                System.out.println("Start found at : " + m.start());
             }
         }
-        regex = REGEX_BEFORE_TOKEN + last + REGEX_AFTER_TOKEN;
+        regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
         p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         m = p.matcher(content);
         if (m.find()) {
@@ -852,7 +853,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             startPos.clear();
             lastPos.clear();
 
-            regex = REGEX_BEFORE_TOKEN + first + REGEX_AFTER_TOKEN;
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
             m = p.matcher(sentence);
             if (m.find()) {
@@ -864,7 +865,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 }
             }
 
-            regex = REGEX_BEFORE_TOKEN + last + REGEX_AFTER_TOKEN;
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
             m = p.matcher(sentence);
             if (m.find()) {
@@ -1020,7 +1021,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 prop.loadFromXML(f);
                 RELOAD_PARAM_ON = Boolean.valueOf(prop.getProperty("RELOAD_PARAM_ON", "false"));
                 REGEX_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\(\\{\\[\\)\\}\\]]|^)");
-                REGEX_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^a-zA-Z0-9\\-\\_\\/]|[\\s\\p{Punct}\\r\\n\\)\\}\\]\\(\\{\\[]|$)");
+                REGEX_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\)\\}\\]\\(\\{\\[]|$)");
 //                prop.list(System.out);
                 InitProperties(cookieLang);
             } catch (Exception e) {
@@ -1081,6 +1082,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.REMOVE_AGLUTINATED_SPACE = Boolean.valueOf(prop.getProperty("REMOVE_AGLUTINATED_SPACE", "false"));
         CONST.CHOOSE_GUI_LANG_LIST = prop.getProperty("CHOOSE_GUI_LANG_LIST", "en;fr");
         CONST.AGLUTINATED_LANG_LIST = prop.getProperty("AGLUTINATED_LANG_LIST", "ZH");
+        CONST.TOKENIZE_LIST = prop.getProperty("TOKENIZE_LIST", "/_-");
         CONST.EXP_DAYS = Integer.parseInt(prop.getProperty("EXP_DAYS"));
         CONST.MAX_RESPONSE = Integer.parseInt(prop.getProperty("MAX_RESPONSE"));
         CONST.MAX_BROWSE = Integer.parseInt(prop.getProperty("MAX_BROWSE"));

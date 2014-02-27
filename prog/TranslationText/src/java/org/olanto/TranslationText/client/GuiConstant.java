@@ -44,6 +44,7 @@ public class GuiConstant {
     public static String CHOOSE_GUI_LANG_LIST;
     public static boolean REMOVE_AGLUTINATED_SPACE;
     public static String AGLUTINATED_LANG_LIST;
+    public static String TOKENIZE_LIST;
     public static boolean EXACT_FLG = false;
     public static boolean EXACT_NBR_FLG = false;
     public static int TA_LINE_HEIGHT;

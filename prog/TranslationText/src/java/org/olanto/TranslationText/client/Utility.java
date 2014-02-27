@@ -32,6 +32,30 @@ public class Utility {
 
     public Utility() {
     }
+    public static String filterQuery(String Query) {
+        char r;
+        StringBuilder res = new StringBuilder("");
+        for (int i = 0; i < Query.length(); i++) {
+            r = Query.charAt(i);
+            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ')) {
+                res.append(r);
+            }
+        }
+//        Window.alert(res.toString());
+        return res.toString();
+    }
+    public static String filterWildCard(String Query) {
+        char r;
+        StringBuilder res = new StringBuilder("");
+        for (int i = 0; i < Query.length(); i++) {
+            r = Query.charAt(i);
+            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
+                res.append(r);
+            }
+        }
+//        Window.alert(res.toString());
+        return res.toString();
+    }
 
     public static int getInd(int curpos, int[][] lines) {
         boolean notfound = true;
@@ -55,19 +79,8 @@ public class Utility {
     }
 
     public static ArrayList<String> getQueryWords(String query, ArrayList<String> stopWords) {
-        String Query = query;
+        String Query = filterQuery(query.trim());
         ArrayList<String> hits = new ArrayList<String>();
-        Query = Query.replace("\"", "");
-        Query = Query.replace("(", "");
-        Query = Query.replace(")", "");
-        Query = Query.replace(",", "");
-        Query = Query.replace("'", " ");
-        Query = Query.replace("`", " ");
-        Query = Query.replace("’", " ");
-        Query = Query.replace("‘", " ");
-        Query = Query.replace("#", " ");
-        Query = Query.replace("“", " ");
-        Query = Query.replace("”", " ");
 
         if (Query.startsWith("QL(")) { // complex query
             hits.add("xxx$$$xxx"); // pas de recherche
@@ -142,20 +155,10 @@ public class Utility {
 
     public static ArrayList<String> getexactWords(String Query) {
         Query = Query.replace("\"", "");
-        Query = Query.replace("(", "");
-        Query = Query.replace(")", "");
-        Query = Query.replace(",", "");
-        Query = Query.replace("'", " ");
-        Query = Query.replace("`", " ");
-        Query = Query.replace("’", " ");
-        Query = Query.replace("‘", " ");
-        Query = Query.replace("#", " ");
-        Query = Query.replace("“", " ");
-        Query = Query.replace("”", " ");
         ArrayList<String> hits = new ArrayList<String>();
         String[] words = Query.split("\\s+");
         hits.addAll(Arrays.asList(words));
-//        Window.alert("Hits : "+hits.get(0));
+        Window.alert("Hits : "+hits.get(0));
         return hits;
     }
 
@@ -179,7 +182,8 @@ public class Utility {
             int l = Query.lastIndexOf(")");
             int f = Query.indexOf("(") + 1;
             query = Query.substring(f, l);
-        } else if ((qt.contains(" AND ")) || (qt.contains(" OR ")) || (qt.startsWith("\""))) {
+        } else if ((qt.contains(" AND ")) || (qt.contains(" OR "))) {
+            Query = filterQuery(Query);
             String[] words = Query.split("\\s+");
             String q = "";
             for (int i = 0; i < words.length; i++) {
@@ -191,6 +195,7 @@ public class Utility {
             int k = q.length() - 1;
             query = q.substring(0, k);
         } else if (qt.contains(" NEAR ")) { // normalement deux arguments
+            Query = filterQuery(Query);
             String q = "NEAR (";
             String[] words = Query.split("\\s+");
             int i = 0, j = 0;
@@ -207,6 +212,7 @@ public class Utility {
             int k = q.length() - 1;
             query = q.substring(0, k) + ")";
         } else {
+            Query = filterQuery(Query);
             String q = "QUOTATION(\"";
             String[] words = Query.split("\\s+");
             for (int i = 0; i < words.length; i++) {
@@ -235,39 +241,7 @@ public class Utility {
         }
         return query + IN_Monotext;
     }
-
-// unused replaced by the general method above
-    public static String queryQuoteParser(String Quote, String langS, String langT, ArrayList<String> stopWords, ArrayList<String> collections) {
-        String query;
-        String q = "QUOTATION(\"";
-        String[] words = Quote.split("\\s+");
-        for (int i = 0; i < words.length; i++) {
-            if (!stopWords.contains(words[i].toLowerCase())) {
-                q += words[i] + " ";
-            }
-        }
-        int i = q.length() - 1;
-        query = q.substring(0, i) + "\")";
-
-        String seleColl = "";
-        if (!collections.isEmpty()) {
-            seleColl = "\"COLLECTION." + collections.get(0) + "\"";
-            for (int k = 1; k < collections.size(); k++) {
-                seleColl += " ORL \"COLLECTION." + collections.get(k) + "\"";
-            }
-            seleColl += " ANDL ";
-        }
-        String IN_Bitext = " IN[" + seleColl + "\"SOURCE." + langS + "\""
-                + " ANDL \"TARGET." + langT + "\"]";
-
-        String IN_Monotext = " IN[" + seleColl + "\"SOURCE." + langS + "\"" + "]";
-
-        if (GuiConstant.BITEXT_ONLY) {
-            return query + IN_Bitext;
-        }
-        return query + IN_Monotext;
-    }
-
+    
     public static String[] getCollections(ArrayList<String> collections) {
         String[] selectedColls = new String[collections.size()];
         for (int k = 0; k < collections.size(); k++) {
@@ -346,6 +320,7 @@ public class Utility {
 
         return query + IN;
     }
+
     public static ArrayList<String> getAgLang(String agLang) {
         ArrayList<String> agList = new ArrayList<String>();
         String[] words = agLang.split("\\;");
@@ -353,7 +328,8 @@ public class Utility {
 //        Window.alert("Agl Langs : "+agList.size());
         return agList;
     }
-     public static String addSpace(String s) {
+
+    public static String addSpace(String s) {
         StringBuilder res = new StringBuilder("");
         for (int i = 0; i < s.length(); i++) {
             res.append(s.charAt(i));

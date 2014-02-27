@@ -74,6 +74,7 @@ public class MainEntryPoint implements EntryPoint {
     private static String[] languages;
     public static ArrayList<String> words;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
+    public static ArrayList<Character> charList = new ArrayList<Character>();
 
     /**
      * The entry point method, called automatically by loading a module that
@@ -106,6 +107,9 @@ public class MainEntryPoint implements EntryPoint {
                 @Override
                 public void onSuccess(GwtProp result) {
                     InitProperties(result);
+                    for (char c : GuiConstant.TOKENIZE_LIST.toCharArray()) {
+                        charList.add(c);
+                    }
 //                    Window.alert(GuiConstant.show());
 //                    Window.alert(GuiMessageConst.show());
                     if (GuiConstant.MAXIMIZE_ON) {
@@ -158,6 +162,9 @@ public class MainEntryPoint implements EntryPoint {
             @Override
             public void onSuccess(GwtProp result) {
                 InitProperties(result);
+                for (char c : GuiConstant.TOKENIZE_LIST.toCharArray()) {
+                    charList.add(c);
+                }
 //                Window.alert(GuiConstant.show());
 //                Window.alert(GuiMessageConst.show());
                 if (GuiConstant.MAXIMIZE_ON) {
@@ -406,7 +413,7 @@ public class MainEntryPoint implements EntryPoint {
                 if ((QUERY.contains("*"))) {
                     GuiConstant.EXACT_FLG = false;
                     GuiConstant.EXACT_NBR_FLG = false;
-                    rpcM.getExpandTerms(QUERY.toLowerCase(), new AsyncCallback<String[]>() {
+                    rpcM.getExpandTerms(Utility.filterWildCard(QUERY.toLowerCase()), new AsyncCallback<String[]>() {
                         @Override
                         public void onFailure(Throwable caught) {
                             Window.alert(GuiMessageConst.MSG_26);
@@ -708,6 +715,7 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.REMOVE_AGLUTINATED_SPACE = CONST.REMOVE_AGLUTINATED_SPACE;
         GuiConstant.CHOOSE_GUI_LANG_LIST = CONST.CHOOSE_GUI_LANG_LIST;
         GuiConstant.AGLUTINATED_LANG_LIST = CONST.AGLUTINATED_LANG_LIST;
+        GuiConstant.TOKENIZE_LIST = CONST.TOKENIZE_LIST;
         GuiConstant.TA_LINE_HEIGHT = CONST.TA_LINE_HEIGHT;
         GuiConstant.TA_TEXTAREA_WIDTH = CONST.TA_TEXTAREA_WIDTH;
         GuiConstant.TA_TEXTAREA_HEIGHT = CONST.TA_TEXTAREA_HEIGHT;
