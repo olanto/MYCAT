@@ -28,7 +28,10 @@ import java.io.Writer;
 import javax.xml.transform.stream.StreamResult;
 import org.apache.log4j.Logger;
 import org.docx4j.convert.out.html.AbstractHtmlExporter;
+import org.docx4j.convert.out.html.AbstractHtmlExporter.HtmlSettings;
 import org.docx4j.convert.out.html.HtmlExporterNG2;
+//import org.docx4j.convert.out.html.AbstractHtmlExporter;
+//import org.docx4j.convert.out.html.HtmlExporterNG2;
 import org.docx4j.openpackaging.exceptions.Docx4JException;
 import org.docx4j.openpackaging.packages.WordprocessingMLPackage;
 import org.docx4j.openpackaging.parts.WordprocessingML.MainDocumentPart;
@@ -59,9 +62,11 @@ public class ConverterFactoryDOCX4J extends AbstractConverterFactory {
                 org.docx4j.TextUtils.extractText(wmlDocumentEl, out);
                 success = true;
             } else if (outputFormat.equalsIgnoreCase(Constants.HTML)) {
+                HtmlSettings htmlSetting=new HtmlSettings(); // version 3.0
                 AbstractHtmlExporter exporter = new HtmlExporterNG2();
                 StreamResult result = new StreamResult(new FileOutputStream(target));
-                exporter.html(wordMLPackage, result, target.getName() + "_files");
+        //        exporter.html(wordMLPackage, result, target.getName() + "_files");
+               exporter.html(wordMLPackage, result, htmlSetting);  // version 3.0
                 success = true;
             }
 
