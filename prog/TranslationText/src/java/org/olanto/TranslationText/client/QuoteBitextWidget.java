@@ -300,13 +300,13 @@ public class QuoteBitextWidget extends Composite {
         pposS = sourceTextArea.getOffsetWidth() - pixS;
         pposT = targetTextArea.getOffsetWidth() - pixS;
 
-        int scrollines = height / pixS;
+        float scrollines = (float) ((float) height) / pixS;
         int totlinesS = (resultS[resultS.length - 1][3] + resultS[resultS.length - 1][0]);
-        magicS = (float) ((float) (scrollines - totlinesS) / (float) (scrollines)) + 1f;
+        magicS = (float) ((float) (scrollines - totlinesS) / scrollines) + 1f;
 
-        int scrollines1 = height1 / pixS;
+        float scrollines1 = (float) ((float) height1) / pixS;
         int totlinesT = (resultT[resultT.length - 1][3] + resultT[resultT.length - 1][0]);
-        magicT = (float) ((float) (scrollines1 - totlinesT) / (float) (scrollines1)) + 1f;
+        magicT = (float) ((float) (scrollines1 - totlinesT) / scrollines1) + 1f;
 
     }
 
@@ -1022,6 +1022,10 @@ public class QuoteBitextWidget extends Composite {
 
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - (int) pixS;
+         
+        float scrollines = (float) ((float) height) / pixS;
+        int totlinesS = (resultS[resultS.length - 1][3] + resultS[resultS.length - 1][0]);
+        magicS = (float) ((float) (scrollines - totlinesS) / scrollines) + 1f;
     }
 
     public void setNetScapePosMono(int idxS, int h) {

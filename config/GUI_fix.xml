@@ -139,16 +139,17 @@
 	<entry key="JOBS_ITEMS">Text Aligner|/TranslationText|_blanck;Self-Quote Detector|/mySelfQD|_blanck</entry>
 	<!-- Regular expression for search = -->
 	<entry key="REGEX_BEFORE_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\(\{\[\)\}\]]|^)</entry>
-	<entry key="REGEX_AFTER_TOKEN">([^a-zA-Z0-9\-\_\/]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
+	<entry key="REGEX_AFTER_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
 	<!--MAXIMIZE_ON: to expand the browser window = -->
 	<entry key="MAXIMIZE_ON">true</entry>
 	<!--RELOAD_PARAM_ON: true = -->
 	<entry key="RELOAD_PARAM_ON">true</entry>
-	<entry key="TA_HILITE_OVER_CR">true</entry>
+	<entry key="TA_HILITE_OVER_CR">false</entry>
 	<entry key="CHOOSE_GUI_LANG">true</entry>
 	<entry key="CHOOSE_GUI_LANG_LIST">en;fr;ar;es;ru</entry>
     <!-- Controle parameter for the aglutinated space (case of chinese) -->
 	<entry key="REMOVE_AGLUTINATED_SPACE">true</entry>
 	<!-- List of languages where to remove the space between it items separated by ";"(case of chinese) -->
 	<entry key="AGLUTINATED_LANG_LIST">ZH</entry>
+	<entry key="TOKENIZE_LIST">/_-</entry>
 </properties>

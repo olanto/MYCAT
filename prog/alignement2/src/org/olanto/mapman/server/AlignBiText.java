@@ -25,7 +25,6 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.olanto.idxvli.server.IndexService_MyCat;
-import org.olanto.util.StringManipulation;
 import org.olanto.util.Timer;
 
 /**
@@ -44,7 +43,7 @@ public class AlignBiText {
     static MapService ms;
     static String rootTxt;
     static boolean skipLine;
-    
+
     public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
 
         // initialisisation en cas d'erreur
@@ -147,6 +146,7 @@ public class AlignBiText {
 // Matrice (nombre de lignes, position du top, correction, position en pixel)
 
     public static int[][] getLineStat(String[] lines, int w, int h, int length) {
+        boolean verbose = false;
         int[][] calc = new int[lines.length][5];
         int curLines;
 
@@ -156,18 +156,22 @@ public class AlignBiText {
         calc[0][2] = 0;// correction pour la position du curseur pour IE afin de mettre au milieu la phrase
         calc[0][3] = 0;// nombre de lignes avant la phrase courante
         int pos = 0, corr, j, ln;
-//        System.out.println("total line numbers: " + lines.length);
+        if (verbose) {
+            System.out.println("total line numbers: " + lines.length);
+        }
         for (int i = 1; i < lines.length; i++) {
-//            System.out.println("treating line :" + i);
             //ajouter et simuler le comportement du contenu dans un textArea.
             pos += lines[i - 1].length() + 1;
-//            System.out.println("start calculating for line number :" + i);
             curLines = getLineNumbers(lines[i], w, " ");
 
             calc[i][0] = curLines;// nombre de lignes dans la textarea de la phrase courante
             calc[i][1] = pos;
             calc[i][3] = calc[i - 1][0] + calc[i - 1][3]; // nombre de lignes avant la phrase courante
-//            System.out.println("lines before " + i + " :" + calc[i][3] + " line height " + i + " :" + calc[i][0]);
+            if (verbose) {
+                if ((i % 2) == 0) {
+                    System.out.println("line: " + i + " :" + calc[i][0]);
+                }
+            }
         }
 
         for (int i = 1; i < lines.length; i++) {
@@ -223,7 +227,7 @@ public class AlignBiText {
         // calculate the sum of the word's lengths one by one if it is still under
         // the textarea width it means it is still in one line
         if (words != null) {
-            int i = 0, idx; // stay = 0;
+            int i = 0, idx = 0;
             String rest;
             if (verbose) {
                 System.out.println("start calculating for words length :" + words.length);
@@ -239,81 +243,130 @@ public class AlignBiText {
                 if (verbose) {
                     System.out.println("treating word number : " + i + " content : " + words[i] + " position: " + count);
                 }
-                // Treat the case of hyphened words, treat them in case of wrapping
-                if ((words[i].contains("-")) && ((count + words[i].length() + 1) > taWidth)) {
-                    rest = words[i];
-                    idx = 0;
-                    while ((rest.contains("-")) && (count < taWidth)) {
-                        idx = rest.indexOf("-") + 1;
-                        if (idx < rest.length() - 1) {
-                            rest = rest.substring(idx);
-                        } else {
-                            rest = "";
-                        }
-                        count += idx;
+                if ((words[i].contains("/")) && ((count + words[i].length() + 1) > taWidth)) {
+                    if ((words[i].length() + 1) >= taWidth) {
+                        curLine++;
+                        count = 0;
                     }
-                    curLine++;
-                    count = words[i].length() + 1;
-                    if (verbose) {
-                        System.out.println("Case: hyphen, new line at word: " + words[i] + " On position: " + count);
+                    if ((words[i].contains("-")) && ((count + words[i].length() + 1) >= taWidth)) {
+                        rest = words[i];
+                        while (((count + rest.length() + 1) > taWidth) && (rest.contains("-"))) {
+                            while ((rest.contains("-")) && (count <= taWidth)) {
+                                idx = rest.indexOf("-") + 1;
+                                count += idx;
+                                if ((idx < rest.length() - 1) && (count <= taWidth)) {
+                                    rest = rest.substring(idx);
+                                } else {
+                                    break;
+                                }
+                            }
+                            curLine++;
+                            if ((idx >= taWidth) && (taWidth < rest.length() - 1)) {
+                                rest = rest.substring(taWidth);
+                            } else{
+                                rest="";
+                            }
+                            count = 0;
+                        }
+                        count = words[i].length() + 1 - words[i].lastIndexOf("-");
+                        if (verbose) {
+                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
+                        }
+                    } else {
+                        curLine++;
+                        count += words[i].length() + 1 - taWidth;
+                        if (verbose) {
+                            System.out.println("Case: url, new line at word: " + words[i] + " On position: " + count);
+                        }
                     }
                     i++;
-                } else { // Non hyphened words
-                    if (i == words.length - 1) {// last word of the line
-                        count += words[i].length();
-                    } else {// a words in the middle of the line
-                        count += words[i].length() + 1;
-                    }
-                    if ((words[i].startsWith("...."))) {// for these kind of characters the word before is added in front
-                        count = words[i].length();
-                        if (i > 0) {// if not the first word
-                            count += words[i - 1].length();
-                        }
-                        if (i > 1) {// if the word is not the first then skip a line
+                } else {
+                    // Treat the case of hyphened words, treat them in case of wrapping
+                    if ((words[i].contains("-")) && ((count + words[i].length() + 1) > taWidth)) {
+                        if ((words[i].length() + 1) >= taWidth) {
                             curLine++;
-                            if (verbose) {
-                                System.out.println("Case: points, new line at word: " + words[i] + " On position: " + count);
+                            count = 0;
+                        }
+                        rest = words[i];
+                        while (((count + rest.length() + 1) > taWidth) && (rest.contains("-"))) {
+                            while ((rest.contains("-")) && (count <= taWidth)) {
+                                idx = rest.indexOf("-") + 1;
+                                count += idx;
+                                if ((idx < rest.length() - 1) && (count <= taWidth)) {
+                                    rest = rest.substring(idx);
+                                } else {
+                                    break;
+                                }
+                            }
+                            curLine++;
+                            if ((idx >= taWidth) && (taWidth < rest.length() - 1)) {
+                                rest = rest.substring(taWidth);
+                            } else{
+                                rest="";
+                            }
+                            count = 0;
+                        }
+                        count = words[i].length() + 1 - words[i].lastIndexOf("-");
+                        if (verbose) {
+                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
+                        }
+                        i++;
+                    } else { // Non hyphened words
+                        if (i == words.length - 1) {// last word of the line
+                            count += words[i].length();
+                        } else {// a words in the middle of the line
+                            count += words[i].length() + 1;
+                        }
+                        if ((words[i].startsWith("...."))) {// for these kind of characters the word before is added in front
+                            count = words[i].length();
+                            if (i > 0) {// if not the first word
+                                count += words[i - 1].length();
+                            }
+                            if (i > 1) {// if the word is not the first then skip a line
+                                curLine++;
+                                if (verbose) {
+                                    System.out.println("Case: points, new line at word: " + words[i] + " On position: " + count);
+                                }
+                            }
+                            while (count >= taWidth) {// compare the number of chars with the textarea width
+                                curLine++;
+                                count -= taWidth;
+                                if (verbose) {
+                                    System.out.println("Case: too small, new line at word: " + words[i] + " On position: " + count);
+                                }
                             }
                         }
-                        while (count >= taWidth) {// compare the number of chars with the textarea width
+                        if (count < taWidth) {// if the number of chars is still inferior than the width
+                            i++;
+//                        stay = 0;
+                        } else if (count == taWidth) {// if the number is equal then skip and start from next word
                             curLine++;
-                            count -= taWidth;
                             if (verbose) {
-                                System.out.println("Case: too small, new line at word: " + words[i] + " On position: " + count);
+                                System.out.println("Case: equal, new line at word: " + words[i]);
                             }
+                            count = 0;
+                            i++;
+                        } else if (count > taWidth) {//  if the number of chars is more than skip a line and then restart conting
+                            curLine++;
+                            count = words[i].length() + 1;
+                            if (verbose) {
+                                System.out.println("Case: word at the end of the line, new line at word: " + words[i]);
+                            }
+                            i++;
                         }
                     }
-                    if (count < taWidth) {// if the number of chars is still inferior than the width
-                        i++;
-//                        stay = 0;
-                    } else if (count == taWidth) {// if the number is equal then skip and start from next word
-                        curLine++;
-                        if (verbose) {
-                            System.out.println("Case: equal, new line at word: " + words[i]);
-                        }
-                        count = 0;
-                        i++;
-//                        stay = 0;
-                    } else if (count > taWidth) {//  if the number of chars is more than skip a line and then restart conting
-                        curLine++;
-                        count = words[i].length() + 1;
-                        if (verbose) {
-                            System.out.println("Case: word at the end of the line, new line at word: " + words[i]);
-                        }
-                        i++;
-//                        count = 0;
-//                        stay++;
-                    }
-//                    if (stay > 1) {
-//                        curLine++;
-//                        if (verbose) {
-//                            System.out.println("Case: rest of line, new line at word: " + words[i]);
-//                        }
-//                        i++;
-//                    }
                 }
             }
-            if (count > 0) {// if there is any rest askip a line
+            if (count >= taWidth) {// if there is any rest askip a line
+                while (count >= taWidth) {// compare the number of chars with the textarea width
+                    curLine++;
+                    count -= taWidth;
+                    if (verbose) {
+                        System.out.println("Case: rest of last word larger than the textarea");
+                    }
+                }
+            }
+            if (count > 0) {// if there is any rest skip a line
                 curLine++;
                 if (verbose) {
                     System.out.println("Case: all the rest, new line at the end");

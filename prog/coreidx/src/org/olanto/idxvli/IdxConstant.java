@@ -33,7 +33,7 @@ import org.olanto.idxvli.server.PreProcessingService_Default;
 
  */
 public class IdxConstant {
-    public static final String VERSION="2.3.06";
+    public static final String VERSION="3.1.0";
  
     public static  boolean CHECK_CONSISTENT=false;
     // constante pour être compatible avec la version du classifieur
