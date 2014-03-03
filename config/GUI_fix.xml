@@ -140,6 +140,8 @@
 	<!-- Regular expression for search = -->
 	<entry key="REGEX_BEFORE_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\(\{\[\)\}\]]|^)</entry>
 	<entry key="REGEX_AFTER_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
+	<entry key="REGEX_EXACT_BEFORE_TOKEN">[^a-zA-Z0-9]</entry>
+	<entry key="REGEX_EXACT_AFTER_TOKEN">[^a-zA-Z0-9]</entry>
 	<!--MAXIMIZE_ON: to expand the browser window = -->
 	<entry key="MAXIMIZE_ON">true</entry>
 	<!--RELOAD_PARAM_ON: true = -->

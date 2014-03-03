@@ -58,6 +58,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public static ConstStringManager stringMan;
     public static String REGEX_BEFORE_TOKEN;
     public static String REGEX_AFTER_TOKEN;
+    public static String REGEX_EXACT_BEFORE_TOKEN;
+    public static String REGEX_EXACT_AFTER_TOKEN;
     public static GwtProp CONST = null;
     public static boolean RELOAD_PARAM_ON = true;
 
@@ -376,10 +378,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //                System.out.println("Looking for hit: " + curHit);
 
                 len = curHit.length();
-                regex = Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
                 if (exact) {
+                    regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
                     p = Pattern.compile(regex);
                 } else {
+                    regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
                     p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
                 }
                 m = p.matcher(sentence);
@@ -454,12 +457,12 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 j = curr.lastIndexOf("¦");
                 k = curr.length();
                 pos = Integer.parseInt(curr.substring(0, i));
-                ln = Integer.parseInt(curr.substring(i + 1, j));
+                ln = Integer.parseInt(curr.substring(i + 1, j)) + 1;
                 len = Integer.parseInt(curr.substring(j + 1, k));
 
                 posit[s][0] = pos; // index de la ligne qui contient le mot
                 posit[s][1] = ln; // index du mot dans la phrase
-                posit[s][2] = len - ln; // longueur à highlighter
+                posit[s][2] = len - ln + 1; // longueur à highlighter
             }
 //            System.out.println(" All Found Occurrences# 2: " + posit.length);
 //            for (int ls = 0; ls < posit.length; ls++) {
@@ -579,10 +582,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 
         first = Query.get(0);
         last = Query.get(Query.size() - 1);
-        regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
         if (exact) {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
             p = Pattern.compile(regex);
         } else {
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         }
         m = p.matcher(content);
@@ -594,10 +598,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //                System.out.println("Start found at : " + m.start());
             }
         }
-        regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
         if (exact) {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
             p = Pattern.compile(regex);
         } else {
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         }
         m = p.matcher(content);
@@ -1022,6 +1027,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 RELOAD_PARAM_ON = Boolean.valueOf(prop.getProperty("RELOAD_PARAM_ON", "false"));
                 REGEX_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\(\\{\\[\\)\\}\\]]|^)");
                 REGEX_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\)\\}\\]\\(\\{\\[]|$)");
+                REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_EXACT_BEFORE_TOKEN", "[^a-zA-Z0-9]");
+                REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_EXACT_AFTER_TOKEN", "[^a-zA-Z0-9]");
+
 //                prop.list(System.out);
                 InitProperties(cookieLang);
             } catch (Exception e) {

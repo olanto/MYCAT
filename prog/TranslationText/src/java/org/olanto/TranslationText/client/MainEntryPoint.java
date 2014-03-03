@@ -101,7 +101,7 @@ public class MainEntryPoint implements EntryPoint {
             rpcM.InitPropertiesFromFile("en", new AsyncCallback<GwtProp>() {
                 @Override
                 public void onFailure(Throwable caught) {
-                    Window.alert("Couldn't get properties List:" + caught.getMessage());
+                    Window.alert("Couldn't get properties List, problem loading the properties files. Check if all the services are started." + caught.getMessage());
                 }
 
                 @Override
@@ -123,7 +123,7 @@ public class MainEntryPoint implements EntryPoint {
                     rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
                         @Override
                         public void onFailure(Throwable caught) {
-                            Window.alert("Warning: Could not get the list of stopwords");
+                            Window.alert("Warning: Could not get the list of stopwords. If the problem persists then restart the servers.");
                         }
 
                         @Override
@@ -244,7 +244,7 @@ public class MainEntryPoint implements EntryPoint {
         rpcM.SetCollection(new AsyncCallback<CollectionTree>() {
             @Override
             public void onFailure(Throwable caught) {
-                Window.alert("Warning: Could not get the list of collections");
+                Window.alert("Warning: Could not get the list of collections. If the problem persists then restart the servers");
             }
 
             @Override

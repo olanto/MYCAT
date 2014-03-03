@@ -158,7 +158,7 @@ public class Utility {
         ArrayList<String> hits = new ArrayList<String>();
         String[] words = Query.split("\\s+");
         hits.addAll(Arrays.asList(words));
-        Window.alert("Hits : "+hits.get(0));
+//        Window.alert("Hits : "+hits.get(0));
         return hits;
     }
 
