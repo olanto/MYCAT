@@ -69,7 +69,7 @@ public class SegDoc {
         uri = fname;
         this.lang = lang;
         try {
-            //        System.out.println("Building from segdoc from file:" + fname);
+            System.out.println("get file:" + fname);
             content = is.getDoc(is.getDocId(fname));
             if (remSpace) {
                 content = stringManip.removeSpace(content);

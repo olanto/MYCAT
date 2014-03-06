@@ -47,7 +47,7 @@ public class AlignBiText {
     public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
 
         // initialisisation en cas d'erreur
-        System.out.println("file source:" + fileso);
+        System.out.println("file source:" + fileso+" ta:"+langta+" query:"+query);
         if (fileso.contains("/Glossaries") && fileso.contains("_" + langso)) {
             fileso = fileso.replace(langso + "/", "XX/");
             System.out.println("Glossaries -> new file source:" + fileso);
