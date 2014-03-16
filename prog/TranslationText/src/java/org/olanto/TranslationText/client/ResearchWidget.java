@@ -84,7 +84,6 @@ public class ResearchWidget extends Composite {
     public Button myQuote = new Button(GuiMessageConst.WIDGET_BTN_QD);
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
     public Button resize = new Button(GuiMessageConst.BTN_RESIZE);
-    private Tree staticTree = new Tree();
     // Height and width units for buttons and text labels
     private final int H_Unit = 30;
     private final int W_Unit = 20;
@@ -95,6 +94,7 @@ public class ResearchWidget extends Composite {
     private TabSet topJobsSet = new TabSet();
     private Label chooseLang = new Label(GuiMessageConst.MSG_64);
     private ListBox langInterface = new ListBox();
+    private String lastSelected="";
 
     public ResearchWidget() {
         rpcSch = RpcInit.initRpc();
@@ -184,9 +184,6 @@ public class ResearchWidget extends Composite {
 
         statusContainer.setStylePrimaryName("statusPanel");
         statusPanel.setStylePrimaryName("statusPanel");
-        staticTree.ensureDebugId("cwTree-staticTree");
-        staticTree.setStyleName("gwt-Tree");
-
 
         docListContainer.setBodyBorder(true);
         docListContainer.setHeading(GuiMessageConst.MSG_41);
@@ -369,7 +366,9 @@ public class ResearchWidget extends Composite {
         final String lS = langS.getItemText(langS.getSelectedIndex());
         final String lT = langT.getItemText(langT.getSelectedIndex());
         // Create the tree
-        staticTree.clear();
+        Tree staticTree = new Tree();
+        staticTree.ensureDebugId("cwTree-staticTree");
+        staticTree.setStyleName("gwt-Tree");
         String docName, longName, listElem;
         final String racine = lS + "/";
         int k, l;
@@ -418,6 +417,7 @@ public class ResearchWidget extends Composite {
             public void onSelection(SelectionEvent<TreeItem> event) {
                 if (event.getSelectedItem().getText() != null) {
                     setMessage("info", GuiMessageConst.MSG_51 + event.getSelectedItem().getTitle());
+                    lastSelected = event.getSelectedItem().getTitle();
                     tS.reset();
                     tS.words = MainEntryPoint.words;
                     tS.getTextContent(racine + event.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, Query);
@@ -432,14 +432,15 @@ public class ResearchWidget extends Composite {
         final String lS = langS.getItemText(langS.getSelectedIndex());
         final String lT = langT.getItemText(langT.getSelectedIndex());
         final String racine = lS + "/";
-        setMessage("info", GuiMessageConst.MSG_51 + staticTree.getSelectedItem().getTitle());
+        setMessage("info", GuiMessageConst.MSG_51 + lastSelected);
         tS.reset();
         tS.words = MainEntryPoint.words;
-        tS.getTextContent(racine + staticTree.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, Query);
+        tS.getTextContent(racine + lastSelected.replace("/", "¦"), lS, lT, Query);
     }
 
     public void DrawDocumentList(final String Query, final BitextWidget tS, final ArrayList<String> collections) {
         staticTreeWrapper.clear();
+//        Window.alert("Document list for query: " + Query);
         // remote procedure call to the server to get the document list that satisfies the query
         rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
             @Override

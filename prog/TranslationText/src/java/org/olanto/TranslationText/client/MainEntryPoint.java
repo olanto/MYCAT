@@ -545,7 +545,9 @@ public class MainEntryPoint implements EntryPoint {
             public void handleEvent(BaseEvent be) {
                 resizeAll();
                 resizeAll();
+                if(!QUERY.isEmpty()){
                 textAlignerWidget.reselectDocument(tS, QUERY);
+                }
             }
         });
 

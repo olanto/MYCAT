@@ -153,11 +153,11 @@ public class Utility {
         return hits;
     }
 
-    public static ArrayList<String> getexactWords(String Query) {
-        Query = Query.replace("\"", "");
+    public static ArrayList<String> getexactWords(String queryo) {
+        String Query = queryo.replace("\"", "");
+        Query = Query.trim();
         ArrayList<String> hits = new ArrayList<String>();
-        String[] words = Query.split("\\s+");
-        hits.addAll(Arrays.asList(words));
+        hits.add(Query);
 //        Window.alert("Hits : "+hits.get(0));
         return hits;
     }

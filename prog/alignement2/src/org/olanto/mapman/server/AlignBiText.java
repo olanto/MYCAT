@@ -47,7 +47,7 @@ public class AlignBiText {
     public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
 
         // initialisisation en cas d'erreur
-        System.out.println("file source:" + fileso+" ta:"+langta+" query:"+query);
+//        System.out.println("file source:" + fileso+" ta:"+langta+" query:"+query);
         if (fileso.contains("/Glossaries") && fileso.contains("_" + langso)) {
             fileso = fileso.replace(langso + "/", "XX/");
             System.out.println("Glossaries -> new file source:" + fileso);
@@ -156,9 +156,9 @@ public class AlignBiText {
         calc[0][2] = 0;// correction pour la position du curseur pour IE afin de mettre au milieu la phrase
         calc[0][3] = 0;// nombre de lignes avant la phrase courante
         int pos = 0, corr, j, ln;
-        if (verbose) {
-            System.out.println("total line numbers: " + lines.length);
-        }
+//        if (verbose) {
+//           if (verbose) System.out.println("total line numbers: " + lines.length);
+//        }
         for (int i = 1; i < lines.length; i++) {
             //ajouter et simuler le comportement du contenu dans un textArea.
             pos += lines[i - 1].length() + 1;
@@ -167,11 +167,11 @@ public class AlignBiText {
             calc[i][0] = curLines;// nombre de lignes dans la textarea de la phrase courante
             calc[i][1] = pos;
             calc[i][3] = calc[i - 1][0] + calc[i - 1][3]; // nombre de lignes avant la phrase courante
-            if (verbose) {
-                if ((i % 2) == 0) {
-                    System.out.println("line: " + i + " :" + calc[i][0]);
-                }
-            }
+//            if (verbose) {
+//                if ((i % 2) == 0) {
+//                    System.out.println("line: " + i + " :" + calc[i][0]);
+//                }
+//            }
         }
 
         for (int i = 1; i < lines.length; i++) {
@@ -229,20 +229,20 @@ public class AlignBiText {
         if (words != null) {
             int i = 0, idx = 0;
             String rest;
-            if (verbose) {
-                System.out.println("start calculating for words length :" + words.length);
-                for (int k = 0; k < words.length; k++) {
-                    System.out.print(words[k] + "|");
-                }
-            }
-            if (verbose) {
-                System.out.println();
-            }
+//            if (verbose) {
+//                System.out.println("start calculating for words length :" + words.length);
+//                for (int k = 0; k < words.length; k++) {
+//                    System.out.print(words[k] + "|");
+//                }
+//            }
+//            if (verbose) {
+//                System.out.println();
+//            }
 
             while (i < words.length) {
-                if (verbose) {
-                    System.out.println("treating word number : " + i + " content : " + words[i] + " position: " + count);
-                }
+//                if (verbose) {
+//                    System.out.println("treating word number : " + i + " content : " + words[i] + " position: " + count);
+//                }
                 if ((words[i].contains("/")) && ((count + words[i].length() + 1) > taWidth)) {
                     if ((words[i].length() + 1) >= taWidth) {
                         curLine++;
@@ -269,15 +269,15 @@ public class AlignBiText {
                             count = 0;
                         }
                         count = words[i].length() + 1 - words[i].lastIndexOf("-");
-                        if (verbose) {
-                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
-                        }
+//                        if (verbose) {
+//                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
+//                        }
                     } else {
                         curLine++;
                         count += words[i].length() + 1 - taWidth;
-                        if (verbose) {
-                            System.out.println("Case: url, new line at word: " + words[i] + " On position: " + count);
-                        }
+//                        if (verbose) {
+//                            System.out.println("Case: url, new line at word: " + words[i] + " On position: " + count);
+//                        }
                     }
                     i++;
                 } else {
@@ -307,9 +307,9 @@ public class AlignBiText {
                             count = 0;
                         }
                         count = words[i].length() + 1 - words[i].lastIndexOf("-");
-                        if (verbose) {
-                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
-                        }
+//                        if (verbose) {
+//                            System.out.println("Case: url with hyphen, new line at word: " + words[i] + " On position: " + count);
+//                        }
                         i++;
                     } else { // Non hyphened words
                         if (i == words.length - 1) {// last word of the line
@@ -324,16 +324,16 @@ public class AlignBiText {
                             }
                             if (i > 1) {// if the word is not the first then skip a line
                                 curLine++;
-                                if (verbose) {
-                                    System.out.println("Case: points, new line at word: " + words[i] + " On position: " + count);
-                                }
+//                                if (verbose) {
+//                                    System.out.println("Case: points, new line at word: " + words[i] + " On position: " + count);
+//                                }
                             }
                             while (count >= taWidth) {// compare the number of chars with the textarea width
                                 curLine++;
                                 count -= taWidth;
-                                if (verbose) {
-                                    System.out.println("Case: too small, new line at word: " + words[i] + " On position: " + count);
-                                }
+//                                if (verbose) {
+//                                    System.out.println("Case: too small, new line at word: " + words[i] + " On position: " + count);
+//                                }
                             }
                         }
                         if (count < taWidth) {// if the number of chars is still inferior than the width
@@ -341,17 +341,17 @@ public class AlignBiText {
 //                        stay = 0;
                         } else if (count == taWidth) {// if the number is equal then skip and start from next word
                             curLine++;
-                            if (verbose) {
-                                System.out.println("Case: equal, new line at word: " + words[i]);
-                            }
+//                            if (verbose) {
+//                                System.out.println("Case: equal, new line at word: " + words[i]);
+//                            }
                             count = 0;
                             i++;
                         } else if (count > taWidth) {//  if the number of chars is more than skip a line and then restart conting
                             curLine++;
                             count = words[i].length() + 1;
-                            if (verbose) {
-                                System.out.println("Case: word at the end of the line, new line at word: " + words[i]);
-                            }
+//                            if (verbose) {
+//                                System.out.println("Case: word at the end of the line, new line at word: " + words[i]);
+//                            }
                             i++;
                         }
                     }
@@ -361,20 +361,20 @@ public class AlignBiText {
                 while (count >= taWidth) {// compare the number of chars with the textarea width
                     curLine++;
                     count -= taWidth;
-                    if (verbose) {
-                        System.out.println("Case: rest of last word larger than the textarea");
-                    }
+//                    if (verbose) {
+//                        System.out.println("Case: rest of last word larger than the textarea");
+//                    }
                 }
             }
             if (count > 0) {// if there is any rest skip a line
                 curLine++;
-                if (verbose) {
-                    System.out.println("Case: all the rest, new line at the end");
-                }
+//                if (verbose) {
+//                    System.out.println("Case: all the rest, new line at the end");
+//                }
             }
-            if (verbose) {
-                System.out.println("end calculating, result : " + curLine);
-            }
+//            if (verbose) {
+//                System.out.println("end calculating, result : " + curLine);
+//            }
         } else {
             curLine = 2;
         }

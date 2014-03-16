@@ -98,7 +98,6 @@ public class QuoteWidget extends Composite {
     private ScrollPanel htmlWrapper = new ScrollPanel();
     private DecoratorPanel staticDecorator = new DecoratorPanel();
     private ScrollPanel staticTreeWrapper = new ScrollPanel();
-    private Tree staticTree = new Tree();
     private GwtRef refDoc;
     private int refIdx = 1;
     private ArrayList<String> docList;
@@ -108,6 +107,7 @@ public class QuoteWidget extends Composite {
     private static final int CHAR_W = GuiConstant.CHARACTER_WIDTH;
     private TabSet topJobsSet = new TabSet();
     private boolean canGo = false;
+    private String lastSelected = "";
 
     public QuoteWidget() {
         rpcRef = RpcInit.initRpc();
@@ -594,7 +594,7 @@ public class QuoteWidget extends Composite {
         final String lT = langT.getItemText(langT.getSelectedIndex());
 
         // Create the tree
-        staticTree.clear();
+        Tree staticTree = new Tree();
         String docName, longName, listElem;
         final String racine = lS + "/";
         int k, l;
@@ -622,7 +622,7 @@ public class QuoteWidget extends Composite {
         staticTree.addFocusHandler(new FocusHandler() {
             @Override
             public void onFocus(FocusEvent event) {
-               Scheduler.get().scheduleDeferred(new Command() {
+                Scheduler.get().scheduleDeferred(new Command() {
                     @Override
                     public void execute() {
                         tS.sourceTextArea.setFocus(true);
@@ -646,6 +646,7 @@ public class QuoteWidget extends Composite {
             public void onSelection(SelectionEvent<TreeItem> event) {
                 if (event.getSelectedItem().getText() != null) {
                     setMessage("info", GuiMessageConst.MSG_51 + event.getSelectedItem().getTitle());
+                    lastSelected = event.getSelectedItem().getTitle();
                     tS.reset();
                     tS.words = Utility.getRefWords(refDoc.reftext[refIdx - 1] + " ");
                     tS.queryLength = refDoc.reftext[refIdx - 1].length();
@@ -664,11 +665,11 @@ public class QuoteWidget extends Composite {
         final String lS = langS.getItemText(langS.getSelectedIndex());
         final String lT = langT.getItemText(langT.getSelectedIndex());
         final String racine = lS + "/";
-        setMessage("info", GuiMessageConst.MSG_51 + staticTree.getSelectedItem().getTitle());
+        setMessage("info", GuiMessageConst.MSG_51 + lastSelected);
         tS.reset();
         tS.words = Utility.getRefWords(refDoc.reftext[refIdx - 1] + " ");
         tS.queryLength = refDoc.reftext[refIdx - 1].length();
-        tS.getTextContent(racine + staticTree.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, refDoc.reftext[refIdx - 1]);
+        tS.getTextContent(racine + lastSelected.replace("/", "¦"), lS, lT, refDoc.reftext[refIdx - 1]);
     }
 
     public void setMessage(String type, String message) {

@@ -389,7 +389,7 @@ public class BitextWidget extends Composite {
         sourceTextArea.setFocus(true);
         if (GuiConstant.DEBUG_ON) {
             Window.alert("-------- Source Area--------"
-                     + "\nNumber of lines to remove (h/2)= " + h
+                    + "\nNumber of lines to remove (h/2)= " + h
                     + "\nNumber of previous lines = " + resultS[idxS][3]
                     + "\nLineNum = " + idxS
                     + "\nPixel height practical = " + height
@@ -1038,7 +1038,11 @@ public class BitextWidget extends Composite {
 
         // Matrice (nombre de lignes, position du top, correction, position en pixel)
         resultS = Align.source.positions;
-        contentS = Align.source.content.toLowerCase();
+         if (GuiConstant.EXACT_FLG) {
+            contentS = Align.source.content;
+        } else {
+            contentS = Align.source.content.toLowerCase();
+        }
 
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - (int) pixS;
@@ -1321,9 +1325,13 @@ public class BitextWidget extends Composite {
 //        Window.alert("getting the content of the file: "+file);
         if (langT.contains("AR")) {
             targetTextArea.setDirection(Direction.RTL);
+        } else {
+            targetTextArea.setDirection(Direction.LTR);
         }
         if (langS.contains("AR")) {
             sourceTextArea.setDirection(Direction.RTL);
+        } else {
+            sourceTextArea.setDirection(Direction.LTR);
         }
         if ((GuiConstant.REMOVE_AGLUTINATED_SPACE) && (GuiConstant.AGLUTINATED_LANG_LIST.contains(langT))) {
             remSpace = true;
@@ -1342,7 +1350,7 @@ public class BitextWidget extends Composite {
             public void onSuccess(GwtAlignBiText result) {
                 Align = result;
                 setMessage("info", GuiMessageConst.MSG_9 + Align.source.uri);
-                if (Align.target.content.contains("** ERROR")) {
+                if ((Align.target.content.contains("** ERROR")) || (Align.target == null)) {
                     SetMonoTextBehaviour();
                     sourceTextArea.setFocus(true);
                 } else {
@@ -1365,14 +1373,7 @@ public class BitextWidget extends Composite {
         PositionsS = null;
         PositionsT = null;
 
-        if (GuiConstant.EXACT_FLG) {
-//            Window.alert("exact matching search: " + words.toString());
-            if (words.size() > 1) {
-                getPositionsSCR(contentS, words, queryLength);
-            } else {
-                getPositionsS(resultS, contentS, words, queryLength);
-            }
-        } else if ((MainEntryPoint.QUERY.contains(" AND "))
+        if ((MainEntryPoint.QUERY.contains(" AND "))
                 || (MainEntryPoint.QUERY.contains(" OR "))
                 || (MainEntryPoint.QUERY.contains("*"))) {
             getPositionsSAO(resultS, contentS, words, queryLength);
@@ -1398,13 +1399,7 @@ public class BitextWidget extends Composite {
 
         curIndS = 0;
         PositionsS = null;
-        if (GuiConstant.EXACT_FLG) {
-            if (words.size() > 1) {
-                getPositionsMonoCR(contentS, words, queryLength);
-            } else {
-                getPositionsMono(resultS, contentS, words, queryLength);
-            }
-        } else if ((MainEntryPoint.QUERY.contains(" AND "))
+        if ((MainEntryPoint.QUERY.contains(" AND "))
                 || (MainEntryPoint.QUERY.contains(" OR "))
                 || (MainEntryPoint.QUERY.contains("*"))) {
             getPositionsMonoAO(resultS, contentS, words, queryLength);

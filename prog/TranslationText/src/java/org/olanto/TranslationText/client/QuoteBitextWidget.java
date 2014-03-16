@@ -1022,7 +1022,7 @@ public class QuoteBitextWidget extends Composite {
 
         height = sourceTextArea.getElement().getScrollHeight();
         pposS = sourceTextArea.getOffsetWidth() - (int) pixS;
-         
+
         float scrollines = (float) ((float) height) / pixS;
         int totlinesS = (resultS[resultS.length - 1][3] + resultS[resultS.length - 1][0]);
         magicS = (float) ((float) (scrollines - totlinesS) / scrollines) + 1f;
@@ -1301,9 +1301,13 @@ public class QuoteBitextWidget extends Composite {
 //        Window.alert("getting the content of the file: "+file);
         if (langT.contains("AR")) {
             targetTextArea.setDirection(Direction.RTL);
+        } else {
+            targetTextArea.setDirection(Direction.LTR);
         }
         if (langS.contains("AR")) {
             sourceTextArea.setDirection(Direction.RTL);
+        } else {
+            sourceTextArea.setDirection(Direction.LTR);
         }
         if ((GuiConstant.REMOVE_AGLUTINATED_SPACE) && (GuiConstant.AGLUTINATED_LANG_LIST.contains(langT))) {
             remSpace = true;
@@ -1322,7 +1326,7 @@ public class QuoteBitextWidget extends Composite {
             public void onSuccess(GwtAlignBiText result) {
                 Align = result;
                 setMessage("info", GuiMessageConst.MSG_9 + Align.source.uri);
-                if (Align.target.content.contains("** ERROR")) {
+                if ((Align.target.content.contains("** ERROR")) || (Align.target == null)) {
                     SetMonoTextBehaviour();
                 } else {
                     SetBiTextBehaviour();

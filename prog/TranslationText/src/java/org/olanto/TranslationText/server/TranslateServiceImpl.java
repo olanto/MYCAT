@@ -358,83 +358,85 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Pattern p;
         Matcher m;
         boolean allfound;
+        if (!Query.isEmpty()) {
 //        System.out.println("Query: " + Query.size());
-        for (int i = 0; i < positions.length; i++) {
-            allfound = true;
-            begin = positions[i][1];
-            if (i == (positions.length - 1)) {
-                end = content.length();
-            } else {
-                end = positions[i + 1][1] + 1;
-            }
-            sentence = content.substring(begin, end);
+            for (int i = 0; i < positions.length; i++) {
+                allfound = true;
+                begin = positions[i][1];
+                if (i == (positions.length - 1)) {
+                    end = content.length();
+                } else {
+                    end = positions[i + 1][1] + 1;
+                }
+                sentence = content.substring(begin, end);
 
 //            System.out.println("looking into sentence # " + i);
-            int j = 0, start, len;
-            startPos.clear();
-            lastPos.clear();
-            while ((allfound) && (j < Query.size())) {
-                curHit = Query.get(j);
+                int j = 0, start, len;
+                startPos.clear();
+                lastPos.clear();
+                while ((allfound) && (j < Query.size())) {
+                    curHit = Query.get(j);
 //                System.out.println("Looking for hit: " + curHit);
 
-                len = curHit.length();
-                if (exact) {
-                    regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
-                    p = Pattern.compile(regex);
-                } else {
-                    regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
-                    p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-                }
-                m = p.matcher(sentence);
-                if (m.find()) {
-                    start = m.start();
-                    if (Query.size() > 1) {
-                        if (j == 0) {
+                    len = curHit.length();
+                    if (exact) {
+                        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                        p = Pattern.compile(regex);
+                    } else {
+                        regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
+                        p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                    }
+                    m = p.matcher(sentence);
+                    if (m.find()) {
+                        start = m.start();
+                        if (Query.size() > 1) {
+                            if (j == 0) {
 //                            System.out.println("start found at : " + start);
-                            startPos.add(start);
-                            while (m.find()) {
-                                start = m.start();
                                 startPos.add(start);
+                                while (m.find()) {
+                                    start = m.start();
+                                    startPos.add(start);
 //                                System.out.println("Start found at : " + start);
+                                }
                             }
-                        }
-                        if (j == Query.size() - 1) {
+                            if (j == Query.size() - 1) {
 //                            System.out.println("last found at : " + start);
-                            lastPos.add(start + len);
-                            while (m.find()) {
-                                start = m.start();
                                 lastPos.add(start + len);
+                                while (m.find()) {
+                                    start = m.start();
+                                    lastPos.add(start + len);
 //                                System.out.println("last found at : " + start);
+                                }
                             }
+                        } else {
+                            startPos.add(start);
+//                        System.out.println("Start found at : " + start);
+                            lastPos.add(start + len);
+//                        System.out.println("Last found at : " + start);
                         }
                     } else {
-                        startPos.add(start);
-//                        System.out.println("Start found at : " + start);
-                        lastPos.add(start + len);
-//                        System.out.println("Last found at : " + start);
+                        allfound = false;
                     }
-                } else {
-                    allfound = false;
+                    j++;
                 }
-                j++;
-            }
-            if (allfound) {
-                boolean done = false;
-                int s = 0, k = 0, r = 0;
-                while ((!done) && (s < lastPos.size())) {
-                    k = lastPos.get(s);
-                    for (int n = 0; n < startPos.size(); n++) {
-                        r = startPos.get(n);
-                        if (((k - r) <= queryLn) && ((k - r) >= 0)) {
-                            done = true;
-                            break;
+                if (allfound) {
+                    boolean done = false;
+                    int s = 0, k = 0, r = 0;
+                    while ((!done) && (s < lastPos.size())) {
+                        k = lastPos.get(s);
+                        for (int n = 0; n < startPos.size(); n++) {
+                            r = startPos.get(n);
+                            if (((k - r) <= queryLn) && ((k - r) >= 0)) {
+                                done = true;
+                                break;
+                            }
                         }
+                        s++;
                     }
-                    s++;
-                }
-                if (done) {
-                    res = i + "¦" + r + "¦" + k;
-                    Pos.add(res);
+                    if (done) {
+                        res = i + "¦" + r + "¦" + k;
+                        Pos.add(res);
+                    }
                 }
             }
         }
@@ -457,7 +459,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 j = curr.lastIndexOf("¦");
                 k = curr.length();
                 pos = Integer.parseInt(curr.substring(0, i));
-                ln = Integer.parseInt(curr.substring(i + 1, j)) + 1;
+                ln = Integer.parseInt(curr.substring(i + 1, j));
+                ln = (ln > 0) ? ln + 1 : ln;
                 len = Integer.parseInt(curr.substring(j + 1, k));
 
                 posit[s][0] = pos; // index de la ligne qui contient le mot
@@ -579,51 +582,60 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Matcher m;
         startPos.clear();
         lastPos.clear();
-
-        first = Query.get(0);
-        last = Query.get(Query.size() - 1);
-        if (exact) {
-            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
-            p = Pattern.compile(regex);
-        } else {
-            regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
-            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        }
-        m = p.matcher(content);
-        if (m.find()) {
-//            System.out.println("start found at : " + m.start());
-            startPos.add(m.start());
-            while (m.find()) {
-                startPos.add(m.start());
-//                System.out.println("Start found at : " + m.start());
-            }
-        }
-        if (exact) {
-            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
-            p = Pattern.compile(regex);
-        } else {
-            regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
-            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-        }
-        m = p.matcher(content);
-        if (m.find()) {
-//            System.out.println("last found at : " + m.start());
-            lastPos.add(m.start() + last.length());
-            while (m.find()) {
-                lastPos.add(m.start() + last.length());
-//                System.out.println("last found at : " + m.start());
-            }
-        }
-        int startp, lastp;
-        for (int s = 0; s < startPos.size(); s++) {
-            startp = startPos.get(s);
-            for (int l = 0; l < lastPos.size(); l++) {
-                lastp = lastPos.get(l);
-//                System.out.println("refLength: " + refLength);
-                if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
-                    if (getAllWords(content.substring(startp, lastp + 1), Query)) {
-                        res = startp + "¦" + (lastp - startp);
+        if (!Query.isEmpty()) {
+            if (exact) {
+                int start;
+                regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(Query.get(0)) + REGEX_EXACT_AFTER_TOKEN;
+                p = Pattern.compile(regex);
+                m = p.matcher(content);
+                if (m.find()) {
+                    start = m.start();
+                    res = start + "¦" + (Query.get(0).length());
+                    Pos.add(res);
+                    while (m.find()) {
+                        res = start + "¦" + (Query.get(0).length());
                         Pos.add(res);
+                    }
+                }
+
+            } else {
+                first = Query.get(0);
+                last = Query.get(Query.size() - 1);
+                regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
+                p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                m = p.matcher(content);
+                if (m.find()) {
+//            System.out.println("start found at : " + m.start());
+                    startPos.add(m.start());
+                    while (m.find()) {
+                        startPos.add(m.start());
+//                System.out.println("Start found at : " + m.start());
+                    }
+                }
+                regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
+                p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+                m = p.matcher(content);
+
+                if (m.find()) {
+//            System.out.println("last found at : " + m.start());
+                    lastPos.add(m.start() + last.length());
+                    while (m.find()) {
+                        lastPos.add(m.start() + last.length());
+//                System.out.println("last found at : " + m.start());
+                    }
+                }
+                int startp, lastp;
+                for (int s = 0; s < startPos.size(); s++) {
+                    startp = startPos.get(s);
+                    for (int l = 0; l < lastPos.size(); l++) {
+                        lastp = lastPos.get(l);
+//                System.out.println("refLength: " + refLength);
+                        if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
+                            if (getAllWords(content.substring(startp, lastp + 1), Query)) {
+                                res = startp + "¦" + (lastp - startp);
+                                Pos.add(res);
+                            }
+                        }
                     }
                 }
             }
