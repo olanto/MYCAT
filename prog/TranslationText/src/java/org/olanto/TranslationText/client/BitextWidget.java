@@ -85,7 +85,7 @@ public class BitextWidget extends Composite {
     private int pposT = 0;
     private boolean SchS = true;
     public int queryLength = 0;
-    public String search = "";
+    public String search = "", langsrc = "", langtgt ="";
     private static String features = "menubar=no, location=no, resizable=yes, scrollbars=yes, status=no";
     private Utility Utility = new Utility();
     private static final int H_Unit = 30;
@@ -336,7 +336,12 @@ public class BitextWidget extends Composite {
                     }
                 }
             }
-            pp.setPopupPosition(sourceTextArea.getAbsoluteLeft() - 2, (int) (lineNum * pixS) + sourceTextArea.getAbsoluteTop());
+
+            if (langsrc.contains("AR")) {
+                pp.setPopupPosition(sourceTextArea.getAbsoluteLeft() + pixS, (int) (lineNum * pixS) + sourceTextArea.getAbsoluteTop());
+            } else {
+                pp.setPopupPosition(sourceTextArea.getAbsoluteLeft() - 2, (int) (lineNum * pixS) + sourceTextArea.getAbsoluteTop());
+            }
             if (((lineNum + hight) * pixS) < sourceTextArea.getOffsetHeight()) {
                 pp.setPixelSize(pposS, (int) pixS * hight);
             } else {
@@ -363,7 +368,11 @@ public class BitextWidget extends Composite {
 //                    + "\nsourceTextArea.getAbsoluteTop() = " + targetTextArea.getAbsoluteTop()
 //                    + "\nPixT = " + pixS
 //                    + "\n(lineNum * pixS) + targetTextArea.getAbsoluteTop() = " + ((lineNum * pixS) + targetTextArea.getAbsoluteTop()));
-            pp.setPopupPosition(targetTextArea.getAbsoluteLeft() - 2, (int) (lineNum * pixS) + targetTextArea.getAbsoluteTop());
+            if (langtgt.contains("AR")) {
+                pp.setPopupPosition(targetTextArea.getAbsoluteLeft() + pixS, (int) (lineNum * pixS) + targetTextArea.getAbsoluteTop());
+            } else {
+                pp.setPopupPosition(targetTextArea.getAbsoluteLeft() - 2, (int) (lineNum * pixS) + targetTextArea.getAbsoluteTop());
+            }
 
             if (((lineNum + hight) * pixS) < targetTextArea.getOffsetHeight()) {
                 pp.setPixelSize(pposT, (int) pixS * hight);
@@ -1038,7 +1047,7 @@ public class BitextWidget extends Composite {
 
         // Matrice (nombre de lignes, position du top, correction, position en pixel)
         resultS = Align.source.positions;
-         if (GuiConstant.EXACT_FLG) {
+        if (GuiConstant.EXACT_FLG) {
             contentS = Align.source.content;
         } else {
             contentS = Align.source.content.toLowerCase();
@@ -1322,6 +1331,8 @@ public class BitextWidget extends Composite {
     }
 
     public void getTextContent(String file, String langS, String langT, String Query) {
+        langtgt = langT;
+        langsrc = langS;
 //        Window.alert("getting the content of the file: "+file);
         if (langT.contains("AR")) {
             targetTextArea.setDirection(Direction.RTL);
