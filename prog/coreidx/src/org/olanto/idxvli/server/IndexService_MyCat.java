@@ -190,6 +190,18 @@ public interface IndexService_MyCat extends Remote {
      */
     public QLResultNice evalQLNice(String request, int start, int size, String order, boolean exact, boolean orderbyocc) throws RemoteException;
 
+      /**
+     * évaluation d'une requête
+     * @param request requête
+     * @param start depuis
+     * @param size taille du résultat 
+     * @param order critère d'ordre
+     * @return résultat étendu avec snippet
+     * @throws java.rmi.RemoteException
+     */
+    public QLResultNice evalQLNice(String request1, String request2, int start, int size, String order, int chardist, boolean orderbyocc) throws RemoteException;
+  
+    
     /**
      * évaluation d'une requête
      * @param request requête
