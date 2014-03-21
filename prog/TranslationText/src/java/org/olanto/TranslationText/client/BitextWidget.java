@@ -85,7 +85,7 @@ public class BitextWidget extends Composite {
     private int pposT = 0;
     private boolean SchS = true;
     public int queryLength = 0;
-    public String search = "", langsrc = "", langtgt ="";
+    public String search = "", langsrc = "", langtgt = "";
     private static String features = "menubar=no, location=no, resizable=yes, scrollbars=yes, status=no";
     private Utility Utility = new Utility();
     private static final int H_Unit = 30;
@@ -846,7 +846,7 @@ public class BitextWidget extends Composite {
                     public void onSuccess(String result) {
 //                        Window.alert("request : " + result);
                         Window.open(result, "Original", features);
-                    }
+                        }
                 });
             }
         });

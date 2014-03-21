@@ -593,7 +593,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                     res = start + "¦" + (Query.get(0).length());
                     Pos.add(res);
                     while (m.find()) {
-                        res = start + "¦" + (Query.get(0).length());
+                        res = m.start() + "¦" + (Query.get(0).length());
                         Pos.add(res);
                     }
                 }
