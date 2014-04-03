@@ -29,8 +29,8 @@ import org.olanto.senseos.SenseOS;
 public class testSeg {
 
     public static void main(String[] args) {
-        FileSegmentation.init("ENGLISH");
-        List<String> seg = FileSegmentation.readFile(SenseOS.getMYCAT_HOME()+"/corpus/source/small-collection/WIPO/PLT/plt_ce_v_5_FR.doc.txt", "UTF-8", true);
+        FileSegmentation2.init("ENGLISH");
+        List<String> seg = FileSegmentation2.readFile(SenseOS.getMYCAT_HOME()+"/corpus/source/small-collection/WIPO/PLT/plt_ce_v_5_FR.doc.txt", "UTF-8", true);
         for (String s : seg) {
             System.out.println(s);
         }

@@ -83,6 +83,10 @@ public class SetOfReplacements {
         }
     }
 
+    public void add(String replace, String by){
+        entryToReplace.put(replace, by);
+    }
+    
     /**
      * applique tous les remplacements
      *
@@ -104,16 +108,21 @@ public class SetOfReplacements {
         StringBuilder res = new StringBuilder(w);
         for (int i = 0; i < toberep.length; i++) {
             String rep = entryToReplace.get(toberep[i]);
-            System.out.println("process: " + toberep[i] + " -> " + rep);
+            //System.out.println("process: " + toberep[i] + " -> " + rep);
             repBuilder(res, toberep[i], rep);
         }
         return res.toString();
     }
 
+     public final String replace(String w, String from, String to) { // pas si performant ?
+        StringBuilder res = new StringBuilder(w);
+             repBuilder(res, from, to);
+        return res.toString();
+    }
+
+    
     public static void repBuilder(StringBuilder builder, String from, String to) {
-        // plus lent que String.replace
-        // sans doute en calculant tous les remplacements à l'avance, on peut tout transformer en un append ... à explorer
-        int idx = builder.lastIndexOf(from);
+         int idx = builder.lastIndexOf(from);
         while (idx != -1) {
             builder.replace(idx, idx + from.length(), to);
             idx += to.length();

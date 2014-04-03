@@ -110,7 +110,7 @@ public class BY_EXT_glossaries {
             if (verbose)System.out.println("new:   " + target);
             copyFile(f, target, "UTF-8");
             //System.out.println((new SimpleDateFormat("dd/MM/yyyy")).format(FileSegmentation.getLastModified(f)));
-            FileSegmentation.setLastModified(target, FileSegmentation.getLastModified(f));  // progagation des dates
+            FileSegmentation2.setLastModified(target, FileSegmentation2.getLastModified(f));  // progagation des dates
             news++;
         }
         count++;
@@ -148,7 +148,7 @@ public class BY_EXT_glossaries {
             if (verbose)System.out.println("new:   " + target);
             copyFile(f, target, "UTF-8");
             //System.out.println((new SimpleDateFormat("dd/MM/yyyy")).format(FileSegmentation.getLastModified(f)));
-            FileSegmentation.setLastModified(target, FileSegmentation.getLastModified(f));  // progagation des dates
+            FileSegmentation2.setLastModified(target, FileSegmentation2.getLastModified(f));  // progagation des dates
             news++;
         }
         count++;

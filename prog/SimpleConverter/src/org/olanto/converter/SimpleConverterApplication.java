@@ -128,7 +128,7 @@ public class SimpleConverterApplication {
         // Do not convert if target file already exist
         if (target.exists() && source.lastModified() == target.lastModified()) {
             _logger.info("(stopped because already converted) file: " + source.getName());
-            ConverterReport.convertedFiles.info(source.getAbsolutePath());
+            ConverterReport.convertedFiles.info(source.getAbsolutePath()+" already done");
             statisticConvertedFiles++;
             return;
         }
@@ -137,7 +137,8 @@ public class SimpleConverterApplication {
         long startTime = System.currentTimeMillis();
 
         _logger.debug("converting file: " + source.getName());
-        ConverterControler converterControler = ConverterControler.getInstance();
+       ConverterReport.convertedFiles.info("process: " + source.getAbsolutePath());
+       ConverterControler converterControler = ConverterControler.getInstance();
         converterControler.setMaxRetry(iMaxRetry);
         try {
             converterControler.init(source, target);
@@ -145,7 +146,8 @@ public class SimpleConverterApplication {
             converterControler.run();
 
             if (converterControler.isConverted()) {
-                ConverterReport.convertedFiles.info(source.getAbsolutePath());
+//                ConverterReport.convertedFiles.info(source.getAbsolutePath());
+                ConverterReport.convertedFiles.info("OK");
                 statisticConvertedFiles++;
                 source.removeBadfile();
             } else {
@@ -162,7 +164,8 @@ public class SimpleConverterApplication {
                         source.copyToBadfile();
                         break;
                     } else if (converterControler.isConverted()) {
-                        ConverterReport.convertedFiles.info(source.getAbsolutePath());
+//                ConverterReport.convertedFiles.info(source.getAbsolutePath());
+                ConverterReport.convertedFiles.info("OK");
                         statisticConvertedFiles++;
                         source.removeBadfile();
                         break;

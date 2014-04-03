@@ -1,5 +1,4 @@
-@echo on
+call  C:\MYCAT\run\SetFileName.bat
 
-java -Xmx512m -jar "C:\MYCAT\dist\SimpleConverter.jar" "C:\MYCAT\config\CONV_fix.xml"
+java -Xmx2048m -jar "C:\MYCAT\dist\SimpleConverter.jar" "C:\MYCAT\config\CONV_fix.xml" > "C:\MYCAT\logs\v-cats_conversion_logs-%filename%.txt"
 
-@echo on

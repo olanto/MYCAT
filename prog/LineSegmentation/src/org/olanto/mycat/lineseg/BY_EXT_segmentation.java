@@ -41,7 +41,7 @@ public class BY_EXT_segmentation {
         targetRoot = _targetRoot + "/" + LANG + "/";
         System.out.println("____________________________________________________________________");
         System.out.println(sourceRoot + " -> " + targetRoot);
-        FileSegmentation.init(LANGUAGE);
+        FileSegmentation2.init(LANGUAGE);
         indexdir(sourceRoot);
 
         System.out.println("Total already Segmented:" + already);
@@ -90,10 +90,10 @@ public class BY_EXT_segmentation {
             ;
         } else {
             //System.out.println("new:   " + target);
-            List<String> seg = FileSegmentation.readFile(f, "UTF-8", false);
+            List<String> seg = FileSegmentation2.readFile(f, "UTF-8", false);
             copy(seg, target, "UTF-8");
              //System.out.println((new SimpleDateFormat("dd/MM/yyyy")).format(FileSegmentation.getLastModified(f)));
-             FileSegmentation.setLastModified(target,FileSegmentation.getLastModified(f));  // progagation des dates
+             FileSegmentation2.setLastModified(target,FileSegmentation2.getLastModified(f));  // progagation des dates
            news++;
         }
         count++;

@@ -60,7 +60,7 @@ public class RemoveMissingFiles {
                 indexdoc(path, f);
             }
         } else {
-            System.out.println(path + "->");
+            //System.out.println(path + "->");
             String[] lf = f.list();
             int ilf = Array.getLength(lf);
             for (int i = 0; i < ilf; i++) {
@@ -68,7 +68,7 @@ public class RemoveMissingFiles {
             }
             if (path != root) {
                 String fdirname = docs + "/" + path.substring(root.length() + 1, path.length());
-                System.out.println(f + "->" + fdirname);
+                //System.out.println(f + "->" + fdirname);
                 File fdocs = new File(fdirname);
                 if (!fdocs.exists()) {
                     System.err.println("delete folder:" + f);  // toujours avec un coup de retard
@@ -83,7 +83,7 @@ public class RemoveMissingFiles {
     public static void indexdoc(String name, File f) {
 
         String fdocname = docs + "/" + name.substring(root.length() + 1, name.length() - 4);
-        System.out.println(f + "->" + fdocname);
+        //System.out.println(f + "->" + fdocname);
         File fdocs = new File(fdocname);
         if (!fdocs.exists()) {
             System.err.println("delete file:" + f);
