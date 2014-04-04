@@ -24,6 +24,7 @@ package org.olanto.idxvli.server;
 import org.olanto.util.Timer;
 import java.io.*;
 import java.util.Arrays;
+import java.util.List;
 import org.olanto.idxvli.*;
 import org.olanto.idxvli.extra.*;
 import org.olanto.conman.server.*;
@@ -58,8 +59,9 @@ public class QLResultNice implements Serializable {
     /*  exact filtering */
     private long durationExactFiltering;  // en ms
     private int lastexact;
+    private int lastjoin;
     private int countcheckfile;
-    private boolean[] exact;
+    private boolean[] selected;
     private boolean exactDone;
 
     /**
@@ -101,6 +103,13 @@ public class QLResultNice implements Serializable {
         this.alternative = alternative;
     }
 
+    public void dump(String s) {
+        System.out.println("--- dump QLResult at :" + s);
+        for (int i = 0; i < result.length; i++) {
+            System.out.println(i + " - " + result[i] + " - " + docname[i]);
+        }
+    }
+
     public void hilite(int entry) {
         for (int i = 0; i < termsOfQuery.length; i++) {
             //     docname[entry]=showTerm(docname[entry],voc[i]);
@@ -117,12 +126,112 @@ public class QLResultNice implements Serializable {
         return s;
     }
 
-    public void checkExact(IdxStructure id, int size) {
-        if (!exactDone){ // dont do this many times !!
-          exactDone=true;  
-        
+    public void fusionResult(int[] tobejoined) {
         boolean verbose = true;
-        Timer time = new Timer(query, true);
+        if (verbose) {
+            System.out.println("fusion two request");
+        }
+        if (result.length == 0 || tobejoined.length == 0) {  // no result
+            if (verbose) {
+                System.out.println("empty join");
+            }
+            return;
+        }
+
+        selected = new boolean[result.length];
+        lastjoin = 0;
+        int lastJ = 0;
+        for (int i = 0; i < result.length; i++) {
+            for (int j = lastJ; j < tobejoined.length; j++) {
+                if (result[i] == tobejoined[j]) {
+                    System.out.println(i + "," + j + " - " + result[i] + "=" + tobejoined[j]);
+                    selected[i] = true; // mark ok
+                    lastjoin++;
+                    lastJ = j;
+                    break;
+                }
+                if (result[i] < tobejoined[j]) {
+                    System.out.println(i + "," + j + " - " + result[i] + "<" + tobejoined[j]);
+                    lastJ = j;
+                    break;
+                }
+                System.out.println(i + "," + j + " - " + result[i] + ">" + tobejoined[j]);
+            }
+        }
+        // compress result
+        int[] newResult = new int[lastjoin];
+        String[] newDocname = new String[lastjoin];
+        String[] newTitle = new String[lastjoin];
+        String[] newClue = new String[lastjoin];
+        if (lastjoin != 0) {// exist exact to be copied
+            int current = 0;
+            for (int i = 0; i < result.length; i++) {
+                if (selected[i]) {
+                    // System.out.println("i: " + i+", current: " + current);
+                    newResult[current] = result[i];
+                    newDocname[current] = docname[i];
+                    newTitle[current] = title[i];
+                    newClue[current] = clue[i];
+                    current++;
+                }
+            }
+        }
+        // replace 
+        result = newResult;
+        docname = newDocname;
+        title = newTitle;
+        clue = newClue;
+
+
+
+    }
+
+      public void checkIfRealyNear(IdxStructure id, int size, int chardist) {
+          
+    String close1=getExactExp(query);
+    String close2=getExactExp(query2);
+    countcheckfile=0;
+    lastexact=0;
+              for (int i = 0; i < result.length; i++) {
+            countcheckfile++;
+            List<Integer> idx1=id.idxOfExpInDoc( close1,result[i], docname[i]);
+            List<Integer> idx2=id.idxOfExpInDoc( close2,result[i], docname[i]);
+             System.out.print("close1=");
+            for (int j = 0; j< idx1.size(); j++) {
+                 System.out.print(idx1.get(j)+" ");
+             }
+            System.out.print("\n");
+           System.out.print("close2=");
+            for (int j = 0; j< idx2.size(); j++) {
+                 System.out.print(idx2.get(j)+" ");
+             }
+            System.out.print("\n");
+      }
+      }
+  
+    
+     public void checkExactClose(IdxStructure id, int size, String close2) {
+        if (!exactDone) { // dont do this many times !!
+            exactDone = true;
+            query2=close2;
+            checkExactInternal(id, Integer.MAX_VALUE, query);  // first expression
+            checkExactInternal(id, Integer.MAX_VALUE, query2);  // second expression
+                    
+        }
+    }
+    
+    public void checkExact(IdxStructure id, int size) {
+        if (!exactDone) { // dont do this many times !!
+            exactDone = true;
+            checkExactInternal(id, size,query);
+        }
+    }
+    
+
+    private void checkExactInternal(IdxStructure id, int size, String exactexp) {
+
+        boolean verbose = true;
+        Timer time = new Timer(exactexp, true);
         if (verbose) {
             System.out.println("check exact expression");
         }
@@ -132,34 +241,33 @@ public class QLResultNice implements Serializable {
             }
             return;
         }
-        String exactExpression = "";
-        int beg = query.indexOf("QUOTATION(\"");
-        int end = query.indexOf("\")");
-        if (end == -1 || beg == -1) {  // no result
-            System.out.println("Error: Query is not QUOTATION(\"....\") no filtering for exact matching");
+        String exactExpression = getExactExp(exactexp);
+       if (exactExpression==null) {  // no result
+            System.out.println("Error: Query is not QUOTATION(\"....\") no filtering for exact matching: "+exactexp);
             return;
         }
-        exactExpression = query.substring(beg + 11, end);
         if (verbose) {
             System.out.println("Exact expression is \"" + exactExpression + "\"");
         }
-        exact = new boolean[result.length];
+        selected = new boolean[result.length];
+        lastexact=0;
+        countcheckfile=0;
         for (int i = 0; i < result.length; i++) {
             countcheckfile++;
             if (id.isExactExpInDoc(exactExpression, result[i], docname[i])) {
-              //  System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
-                exact[i] = true; // mark ok
+                  System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
+                selected[i] = true; // mark ok
                 lastexact++;
             } else {
-              //  System.out.println(exactExpression + "\" is not in " + docname[i]);
-           }
+                  System.out.println(exactExpression + "\" is not in " + docname[i]);
+            }
             if (lastexact == size) {// enough results
                 break;
             }
         }
 
         // compress result
- 
+        System.out.println("lastExact" + lastexact);
         int[] exactResult = new int[lastexact];
         String[] exactDocname = new String[lastexact];
         String[] exactTitle = new String[lastexact];
@@ -167,15 +275,15 @@ public class QLResultNice implements Serializable {
         if (lastexact != 0) {// exist exact to be copied
             int current = 0;
             for (int i = 0; i < countcheckfile; i++) {
-                if (exact[i]) {
-                   // System.out.println("i: " + i+", current: " + current);
+                if (selected[i]) {
+                    // System.out.println("i: " + i+", current: " + current);
                     exactResult[current] = result[i];
                     exactDocname[current] = docname[i];
                     exactTitle[current] = title[i];
                     exactClue[current] = clue[i];
                     current++;
                 }
-                
+
             }
         }
         // replace fuzzy result by exact result
@@ -183,17 +291,27 @@ public class QLResultNice implements Serializable {
         docname = exactDocname;
         title = exactTitle;
         clue = exactClue;
-        
+
         // finish
-        
+
         durationExactFiltering = time.getstop();
         if (verbose) {
-            System.out.println("duration of check exact expression: " + durationExactFiltering + " (ms)"+
-                    " #checkfile: " + countcheckfile+" #exact: " + lastexact+" for:\"" + exactExpression + "\"");
-       }
+            System.out.println("duration of check exact expression: " + durationExactFiltering + " (ms)"
+                    + " #checkfile: " + countcheckfile + " #exact: " + lastexact + " for:\"" + exactExpression + "\"");
         }
 
+
     }
+private String getExactExp(String exactexp){
+        
+        int beg = exactexp.indexOf("QUOTATION(\"");
+        int end = exactexp.indexOf("\")");
+        if (end == -1 || beg == -1) {  // no result
+            System.out.println("Error: Query is not QUOTATION(\"....\") no filtering for exact matching");
+            return null;
+        }
+        return exactexp.substring(beg + 11, end);
+}
 
     public void orderBy(IdxStructure id, String kind) {
         System.out.println("orderBy: " + kind);
@@ -246,45 +364,45 @@ public class QLResultNice implements Serializable {
     }
 
     public void update(IdxStructure id, ContentService cs, String request, int start, int size, boolean fullresult) { // pour le search engine
-        if(!fullresult){
-        boolean contentservice = cs != null;
-        Timer time = new Timer(request, true);
-        if (result == null) {// rien � faire
-            return;
-        } else { // il a des r�sultats
-            //msg("nb res:"+result.length);
-            for (int i = Math.max(0, start); i < Math.min(start + size, result.length); i++) {
-                if (docname[i] == null) { // par encore �valu�
-                    String currentRef = id.getFileNameForDocument(result[i]);
-                    if (contentservice) {
-                        try {
-                            docname[i] = cs.getRefName(currentRef);
-                            title[i] = cs.getTitle(currentRef);
-                        } catch (Exception ex) {
-                            ex.printStackTrace();
+        if (!fullresult) {
+            boolean contentservice = cs != null;
+            Timer time = new Timer(request, true);
+            if (result == null) {// rien � faire
+                return;
+            } else { // il a des r�sultats
+                //msg("nb res:"+result.length);
+                for (int i = Math.max(0, start); i < Math.min(start + size, result.length); i++) {
+                    if (docname[i] == null) { // par encore �valu�
+                        String currentRef = id.getFileNameForDocument(result[i]);
+                        if (contentservice) {
+                            try {
+                                docname[i] = cs.getRefName(currentRef);
+                                title[i] = cs.getTitle(currentRef);
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
                         }
-                    }
-                    clue[i] = "";
-                    for (int j = 0; j < termsOfQuery.length; j++) {
-                        if (termsOfQuery[j].length() > 2) { // marque pas les trop petits
-                            // on doit aussi �liminer les termes des la requ�te AND .... � faire !!!!!!!!!!!!!!!!!!!!!
-                            FromTo fromto = DocPosChar.extractIntervalForW(result[i], id, termsOfQuery[j], 4);
-                            if (fromto != null) {
-                                if (contentservice) {
-                                    try {
-                                        clue[i] += cs.getCleanText(currentRef, fromto.from, fromto.to) + "...";
-                                    } catch (Exception ex) {
-                                        ex.printStackTrace();
+                        clue[i] = "";
+                        for (int j = 0; j < termsOfQuery.length; j++) {
+                            if (termsOfQuery[j].length() > 2) { // marque pas les trop petits
+                                // on doit aussi �liminer les termes des la requ�te AND .... � faire !!!!!!!!!!!!!!!!!!!!!
+                                FromTo fromto = DocPosChar.extractIntervalForW(result[i], id, termsOfQuery[j], 4);
+                                if (fromto != null) {
+                                    if (contentservice) {
+                                        try {
+                                            clue[i] += cs.getCleanText(currentRef, fromto.from, fromto.to) + "...";
+                                        } catch (Exception ex) {
+                                            ex.printStackTrace();
+                                        }
                                     }
                                 }
                             }
                         }
                     }
+                    hilite(i);
+                    this.duration = time.getstop(); //update time
                 }
-                hilite(i);
-                this.duration = time.getstop(); //update time
             }
-        }
         }
     }
 

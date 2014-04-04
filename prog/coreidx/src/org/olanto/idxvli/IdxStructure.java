@@ -79,7 +79,8 @@ public class IdxStructure {
      */
     public static final int OCC = 1;
     /**
-     * ordre dans le vecteur d'indexation pour les indices du VECteur de positions
+     * ordre dans le vecteur d'indexation pour les indices du VECteur de
+     * positions
      */
     public static final int VEC = 2;
     /**
@@ -108,7 +109,8 @@ public class IdxStructure {
      */
     public CacheWrite indexpos;
     /**
-     * permet la translation des num�ros des mots vers les num�ros d'un cache restreint
+     * permet la translation des num�ros des mots vers les num�ros d'un cache
+     * restreint
      */
     public CacheTranslate idxtrans;
     /**
@@ -157,7 +159,7 @@ public class IdxStructure {
     /**
      * dictionnaire de documents (document->indice) (indice->document)
      */
-    public ZipVector zipCache ;
+    public ZipVector zipCache;
     /**
      * la structure comprend un indexer
      */
@@ -1023,15 +1025,36 @@ public class IdxStructure {
      * check if a expression is content in a document
      */
     public boolean isExactExpInDoc(String exactExpression, int docid, String fname) {
-        if (IDX_ZIP_CACHE){
+        if (IDX_ZIP_CACHE) {
             return zipCache.get(docid).contains(exactExpression);
-        }
-        else{ // pas de cache doit lire dans les fichiers
+        } else { // pas de cache doit lire dans les fichiers
             String content = file2String(fname, DOC_ENCODING);
-        if (content == null) {
-            return false;
-        }       
-        return content.contains(exactExpression);
+            if (content == null) {
+                return false;
+            }
+            return content.contains(exactExpression);
         }
+    }
+
+    /**
+     * check if a expression is content in a document
+     */
+    public List<Integer> idxOfExpInDoc(String exactExpression, int docid, String fname) {
+        String content;
+        Vector<Integer> res = new Vector<Integer>();
+        if (IDX_ZIP_CACHE) {
+            content = zipCache.get(docid);
+        } else { // pas de cache doit lire dans les fichiers
+            content = file2String(fname, DOC_ENCODING);
+        }
+        if (content == null) {
+            return res;
+        }
+        int nextpos = content.indexOf(exactExpression, 0);
+        while (nextpos != -1) {
+            res.add(nextpos);
+            nextpos = content.indexOf(exactExpression, nextpos + 1);
+        }
+        return res;
     }
 }
