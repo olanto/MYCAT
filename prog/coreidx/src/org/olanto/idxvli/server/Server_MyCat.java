@@ -340,7 +340,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             res1.dump("res1 after fusion");
             res1.orderBy(id, order);
             res1.dump("res1 after order");
-            res1.checkExactClose(id, size, request2);
+            res1.checkExactClose(id, Integer.MAX_VALUE, request2);
             res1.dump("res1 after check EXACT");
             res1.checkIfRealyNear(id, size, chardist);
             res1.dump("res1 after check RealyNear");

@@ -48,7 +48,9 @@ public class TestClientQueryClose {
 
 
 //        testnice("QUOTATION(\"Session\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]","QUOTATION(\"September\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"Session\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]","QUOTATION(\"United Nations\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//      testnice("QUOTATION(\"Session\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]","QUOTATION(\"United Nations\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"legal\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]","QUOTATION(\"instruments\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+       testnice("QUOTATION(\"trade\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]","QUOTATION(\"relations\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
 
     }
 

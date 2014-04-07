@@ -186,47 +186,92 @@ public class QLResultNice implements Serializable {
 
     }
 
-      public void checkIfRealyNear(IdxStructure id, int size, int chardist) {
-          
-    String close1=getExactExp(query);
-    String close2=getExactExp(query2);
-    countcheckfile=0;
-    lastexact=0;
-              for (int i = 0; i < result.length; i++) {
+    public void checkIfRealyNear(IdxStructure id, int size, int chardist) {
+
+        String close1 = getExactExp(query);
+        String close2 = getExactExp(query2);
+        countcheckfile = 0;
+        lastexact = 0;
+        selected = new boolean[result.length];
+        for (int i = 0; i < result.length; i++) {
             countcheckfile++;
-            List<Integer> idx1=id.idxOfExpInDoc( close1,result[i], docname[i]);
-            List<Integer> idx2=id.idxOfExpInDoc( close2,result[i], docname[i]);
-             System.out.print("close1=");
-            for (int j = 0; j< idx1.size(); j++) {
-                 System.out.print(idx1.get(j)+" ");
-             }
+            List<Integer> idx1 = id.idxOfExpInDoc(close1, result[i], docname[i]);
+            System.out.print("close1=");
+            for (int j = 0; j < idx1.size(); j++) {
+                System.out.print(idx1.get(j) + " ");
+            }
             System.out.print("\n");
-           System.out.print("close2=");
-            for (int j = 0; j< idx2.size(); j++) {
-                 System.out.print(idx2.get(j)+" ");
-             }
+            List<Integer> idx2 = id.idxOfExpInDoc(close2, result[i], docname[i]);
+            System.out.print("close2=");
+            for (int j = 0; j < idx2.size(); j++) {
+                System.out.print(idx2.get(j) + " ");
+            }
             System.out.print("\n");
-      }
-      }
-  
-    
-     public void checkExactClose(IdxStructure id, int size, String close2) {
+            // check close validity
+            boolean nearOK = false;
+            for (int j = 0; j < idx1.size(); j++) {
+                for (int k = 0; k < idx2.size(); k++) {
+                    if ((idx2.get(k)>idx1.get(j)&& idx2.get(k) - (idx1.get(j) + close1.length()) < chardist)
+                            || (idx1.get(j)>idx2.get(k)&& idx1.get(j) - (idx2.get(k) + close2.length()) < chardist)) {
+                        selected[i] = true;
+                        lastexact++;
+                        nearOK = true;
+                        break;
+                    }
+                    if (nearOK = true) {
+                        break;
+                    }
+                }
+            }
+            if (lastexact == size) {// enough results
+                break;
+            }
+        }
+        // compress result
+        System.out.println("lastExact" + lastexact);
+        int[] exactResult = new int[lastexact];
+        String[] exactDocname = new String[lastexact];
+        String[] exactTitle = new String[lastexact];
+        String[] exactClue = new String[lastexact];
+        if (lastexact != 0) {// exist exact to be copied
+            int current = 0;
+            for (int i = 0; i < countcheckfile; i++) {
+                if (selected[i]) {
+                    // System.out.println("i: " + i+", current: " + current);
+                    exactResult[current] = result[i];
+                    exactDocname[current] = docname[i];
+                    exactTitle[current] = title[i];
+                    exactClue[current] = clue[i];
+                    current++;
+                }
+
+            }
+        }
+        // replace  by close result
+        result = exactResult;
+        docname = exactDocname;
+        title = exactTitle;
+        clue = exactClue;
+
+        // finish
+    }
+
+    public void checkExactClose(IdxStructure id, int size, String close2) {
         if (!exactDone) { // dont do this many times !!
             exactDone = true;
-            query2=close2;
+            query2 = close2;
             checkExactInternal(id, Integer.MAX_VALUE, query);  // first expression
             checkExactInternal(id, Integer.MAX_VALUE, query2);  // second expression
-                    
+
         }
     }
-    
+
     public void checkExact(IdxStructure id, int size) {
         if (!exactDone) { // dont do this many times !!
             exactDone = true;
-            checkExactInternal(id, size,query);
+            checkExactInternal(id, size, query);
         }
     }
-    
 
     private void checkExactInternal(IdxStructure id, int size, String exactexp) {
 
@@ -242,24 +287,24 @@ public class QLResultNice implements Serializable {
             return;
         }
         String exactExpression = getExactExp(exactexp);
-       if (exactExpression==null) {  // no result
-            System.out.println("Error: Query is not QUOTATION(\"....\") no filtering for exact matching: "+exactexp);
+        if (exactExpression == null) {  // no result
+            System.out.println("Error: Query is not QUOTATION(\"....\") no filtering for exact matching: " + exactexp);
             return;
         }
         if (verbose) {
             System.out.println("Exact expression is \"" + exactExpression + "\"");
         }
         selected = new boolean[result.length];
-        lastexact=0;
-        countcheckfile=0;
+        lastexact = 0;
+        countcheckfile = 0;
         for (int i = 0; i < result.length; i++) {
             countcheckfile++;
             if (id.isExactExpInDoc(exactExpression, result[i], docname[i])) {
-                  System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
+                System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
                 selected[i] = true; // mark ok
                 lastexact++;
             } else {
-                  System.out.println(exactExpression + "\" is not in " + docname[i]);
+                System.out.println(exactExpression + "\" is not in " + docname[i]);
             }
             if (lastexact == size) {// enough results
                 break;
@@ -302,8 +347,9 @@ public class QLResultNice implements Serializable {
 
 
     }
-private String getExactExp(String exactexp){
-        
+
+    private String getExactExp(String exactexp) {
+
         int beg = exactexp.indexOf("QUOTATION(\"");
         int end = exactexp.indexOf("\")");
         if (end == -1 || beg == -1) {  // no result
@@ -311,7 +357,7 @@ private String getExactExp(String exactexp){
             return null;
         }
         return exactexp.substring(beg + 11, end);
-}
+    }
 
     public void orderBy(IdxStructure id, String kind) {
         System.out.println("orderBy: " + kind);
