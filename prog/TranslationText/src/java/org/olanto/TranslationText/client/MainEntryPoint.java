@@ -432,24 +432,35 @@ public class MainEntryPoint implements EntryPoint {
                     });
                 } else {
                     words = null;
-                    String Query = Utility.queryParser(QUERY, textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
-                    if (QUERY.startsWith("\"")) {
-                        GuiConstant.EXACT_FLG = true;
-                        words = Utility.getexactWords(QUERY);
-//                        GuiConstant.EXACT_NBR_FLG = false;
-                    } else if (QUERY.startsWith("#\"")) {
-                        GuiConstant.EXACT_FLG = true;
-                        words = Utility.getexactWords(QUERY);
-//                        GuiConstant.EXACT_NBR_FLG = true;
+                    if ((QUERY.startsWith("\"")) && (QUERY.contains(" CLOSE "))) {
+                        GuiConstant.EXACT_CLOSE = true;
+                        words = Utility.getexactClose(QUERY);
+                        String Query1 = Utility.ExactCloseQueryBuilder(words.get(0), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
+                        String Query2 = Utility.ExactCloseQueryBuilder(words.get(1), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
+                        tS.queryLength = QUERY.length();
+                        tS.words = words;
+                        textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query1 + " CLOSE " + Query2);
+                        textAlignerWidget.DrawDocumentList(Query1 + "---CLOSE---" + Query2, tS, collectionWidgetTA.Selection);
                     } else {
-                        GuiConstant.EXACT_FLG = false;
-                        GuiConstant.EXACT_NBR_FLG = false;
-                        words = Utility.getQueryWords(QUERY + " ", stopWords);
+                        String Query = Utility.queryParser(QUERY, textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
+                        if (QUERY.startsWith("\"")) {
+                            GuiConstant.EXACT_FLG = true;
+                            words = Utility.getexactWords(QUERY);
+//                        GuiConstant.EXACT_NBR_FLG = false;
+                        } else if (QUERY.startsWith("#\"")) {
+                            GuiConstant.EXACT_FLG = true;
+                            words = Utility.getexactWords(QUERY);
+//                        GuiConstant.EXACT_NBR_FLG = true;
+                        } else {
+                            GuiConstant.EXACT_FLG = false;
+                            GuiConstant.EXACT_NBR_FLG = false;
+                            words = Utility.getQueryWords(QUERY + " ", stopWords);
+                        }
+                        tS.queryLength = QUERY.length();
+                        tS.words = words;
+                        textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
+                        textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
                     }
-                    tS.queryLength = QUERY.length();
-                    tS.words = words;
-                    textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
-                    textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
                 }
             }
         }
@@ -545,8 +556,8 @@ public class MainEntryPoint implements EntryPoint {
             public void handleEvent(BaseEvent be) {
                 resizeAll();
                 resizeAll();
-                if(!QUERY.isEmpty()){
-                textAlignerWidget.reselectDocument(tS, QUERY);
+                if (!QUERY.isEmpty()) {
+                    textAlignerWidget.reselectDocument(tS, QUERY);
                 }
             }
         });

@@ -142,8 +142,15 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
         }
         try {
+            QLResultNice res;
+            if (GuiConstant.EXACT_CLOSE) {
+                String[] Queries = query.split("---CLOSE---");
+                //            Timer t1 = new Timer("------------- " + query);
+                res = is.evalQLNice(Queries[0], Queries[1], 0, maxSize, order, (GuiConstant.NEAR_DISTANCE * GuiConstant.TA_NEAR_AVG_TERM_CHAR), number);
+            } else {
 //            Timer t1 = new Timer("------------- " + query);
-            QLResultNice res = is.evalQLNice(query, 0, maxSize, order, exact, number);
+                res = is.evalQLNice(query, 0, maxSize, order, exact, number);
+            }
             if (res.docname != null) {
 //                System.out.println("List of documents retrieved");
                 if (!collections.isEmpty()) {
