@@ -32,6 +32,7 @@ public class Utility {
 
     public Utility() {
     }
+
     public static String filterQuery(String Query) {
         char r;
         StringBuilder res = new StringBuilder("");
@@ -44,6 +45,7 @@ public class Utility {
 //        Window.alert(res.toString());
         return res.toString();
     }
+
     public static String filterWildCard(String Query) {
         char r;
         StringBuilder res = new StringBuilder("");
@@ -153,6 +155,21 @@ public class Utility {
         return hits;
     }
 
+    public static boolean validateExact(String Query) {
+        String queryo = Query.trim();
+        if ((queryo.length() > 2) && (queryo.startsWith("\"")) && (queryo.endsWith("\""))) {
+            queryo = queryo.substring(1, queryo.length() - 2);
+            if (queryo.contains("\"")) {
+                Window.alert("Malformed EXACT query\n SYNTAX = \"expression\"");
+                return false;
+            }
+        } else {
+            Window.alert("Malformed EXACT query\n SYNTAX = \"expression\"");
+            return false;
+        }
+        return true;
+    }
+
     public static ArrayList<String> getexactWords(String queryo) {
         String Query = queryo.replace("\"", "");
         Query = Query.trim();
@@ -162,67 +179,49 @@ public class Utility {
         return hits;
     }
 
-    public static String queryParser(String queryo, String langS, String langT, ArrayList<String> stopWords, ArrayList<String> collections) {
-        String Query = queryo.trim();
-        String query;
-        String qt = Query;
-        if (qt.startsWith("\"")) {
-            if (qt.endsWith("\"")) {
-                query = "QUOTATION(" + qt + ")";
-            } else {
-                query = "QUOTATION(" + qt + "\")";
+    public static boolean validateClose(String Query) {
+        String queryo = Query.trim();
+        if ((queryo.startsWith("\"")) && (queryo.endsWith("\""))) {
+            int idx = queryo.indexOf("\" CLOSE \"");
+            if (idx < 1) {
+                Window.alert("Error1: Misplaced Keyword. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
+                return false;
             }
-        } else if (qt.startsWith("#\"")) {
-            if (qt.endsWith("\"")) {
-                query = "QUOTATION(" + qt.substring(1) + ")";
-            } else {
-                query = "QUOTATION(" + qt.substring(1) + "\")";
+            String exact1 = queryo.substring(0, idx + 1);
+//            Window.alert(exact1);
+            String exact2 = queryo.substring(idx + 8);
+//            Window.alert(exact2);
+            if ((!validateExact(exact1)) || (!validateExact(exact2))) {
+                Window.alert("Error 2: Non exact expression. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
+                return false;
             }
-        } else if ((qt.contains("QL(")) || (qt.contains("QL ("))) {
-            int l = Query.lastIndexOf(")");
-            int f = Query.indexOf("(") + 1;
-            query = Query.substring(f, l);
-        } else if ((qt.contains(" AND ")) || (qt.contains(" OR "))) {
-            Query = filterQuery(Query);
-            String[] words = Query.split("\\s+");
-            String q = "";
-            for (int i = 0; i < words.length; i++) {
-                if ((words[i].equals("AND")) || (words[i].equals("OR"))
-                        || (!stopWords.contains(words[i].toLowerCase())) || (words[i].endsWith("\""))) {
-                    q += " " + words[i] + " ";
-                }
-            }
-            int k = q.length() - 1;
-            query = q.substring(0, k);
-        } else if (qt.contains(" NEAR ")) { // normalement deux arguments
-            Query = filterQuery(Query);
-            String q = "NEAR (";
-            String[] words = Query.split("\\s+");
-            int i = 0, j = 0;
-            while ((i < words.length) && (j < 2)) {
-                if (words[i].equalsIgnoreCase("NEAR")) {
-                } else {
-                    if (!stopWords.contains(words[i].toLowerCase())) {
-                        q += "\"" + words[i] + "\",";
-                        j++;
-                    }
-                }
-                i++;
-            }
-            int k = q.length() - 1;
-            query = q.substring(0, k) + ")";
         } else {
-            Query = filterQuery(Query);
-            String q = "QUOTATION(\"";
-            String[] words = Query.split("\\s+");
-            for (int i = 0; i < words.length; i++) {
-                if (!stopWords.contains(words[i].toLowerCase())) {
-                    q += words[i] + " ";
-                }
-            }
-            int k = q.length() - 1;
-            query = q.substring(0, k) + "\")";
+            Window.alert("Error 3: Missing quotes. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
+            return false;
         }
+        return true;
+    }
+
+    public static ArrayList<String> getexactClose(String queryo) {
+        if (validateClose(queryo)) {
+            String Query = queryo.replace("\"", "");
+            Query = Query.trim();
+            ArrayList<String> hits = new ArrayList<String>();
+            String[] words = Query.split(" CLOSE ");
+            hits.addAll(Arrays.asList(words));
+            if (hits.size() > 2) {
+                Window.alert("Error 4: More than Two expressions. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
+                return null;
+            }
+            return hits;
+        }
+        return null;
+    }
+
+    public static String ExactCloseQueryBuilder(String queryo, String langS, String langT, ArrayList<String> stopWords, ArrayList<String> collections) {
+        String qt = queryo.trim();
+        String query;
+        query = "QUOTATION(\"" + qt + "\")";
         String seleColl = "";
         if (!collections.isEmpty()) {
             seleColl = "\"COLLECTION." + collections.get(0) + "\"";
@@ -241,7 +240,96 @@ public class Utility {
         }
         return query + IN_Monotext;
     }
-    
+
+    public static String queryParser(String queryo, String langS, String langT, ArrayList<String> stopWords, ArrayList<String> collections) {
+        String Query = queryo.trim();
+        String query;
+        String qt = Query;
+        if (qt.contains("\" CLOSE \"")) {
+            Window.alert("Error 5: Missing first quote. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
+            return "";
+        } else {
+            if (qt.startsWith("\"")) {
+                if (qt.endsWith("\"")) {
+                    if (validateExact(qt)) {
+                        query = "QUOTATION(" + qt + ")";
+                    } else {
+                        query = "";
+                    }
+                } else {
+                    query = "QUOTATION(" + qt + "\")";
+                }
+            } else if (qt.startsWith("#\"")) {
+                if (qt.endsWith("\"")) {
+                    query = "QUOTATION(" + qt.substring(1) + ")";
+                } else {
+                    query = "QUOTATION(" + qt.substring(1) + "\")";
+                }
+            } else if ((qt.contains("QL(")) || (qt.contains("QL ("))) {
+                int l = Query.lastIndexOf(")");
+                int f = Query.indexOf("(") + 1;
+                query = Query.substring(f, l);
+            } else if ((qt.contains(" AND ")) || (qt.contains(" OR "))) {
+                Query = filterQuery(Query);
+                String[] words = Query.split("\\s+");
+                String q = "";
+                for (int i = 0; i < words.length; i++) {
+                    if ((words[i].equals("AND")) || (words[i].equals("OR"))
+                            || (!stopWords.contains(words[i].toLowerCase())) || (words[i].endsWith("\""))) {
+                        q += " " + words[i] + " ";
+                    }
+                }
+                int k = q.length() - 1;
+                query = q.substring(0, k);
+            } else if (qt.contains(" NEAR ")) { // normalement deux arguments
+                Query = filterQuery(Query);
+                String q = "NEAR (";
+                String[] words = Query.split("\\s+");
+                int i = 0, j = 0;
+                while ((i < words.length) && (j < 2)) {
+                    if (words[i].equalsIgnoreCase("NEAR")) {
+                    } else {
+                        if (!stopWords.contains(words[i].toLowerCase())) {
+                            q += "\"" + words[i] + "\",";
+                            j++;
+                        }
+                    }
+                    i++;
+                }
+                int k = q.length() - 1;
+                query = q.substring(0, k) + ")";
+            } else {
+                Query = filterQuery(Query);
+                String q = "QUOTATION(\"";
+                String[] words = Query.split("\\s+");
+                for (int i = 0; i < words.length; i++) {
+                    if (!stopWords.contains(words[i].toLowerCase())) {
+                        q += words[i] + " ";
+                    }
+                }
+                int k = q.length() - 1;
+                query = q.substring(0, k) + "\")";
+            }
+            String seleColl = "";
+            if (!collections.isEmpty()) {
+                seleColl = "\"COLLECTION." + collections.get(0) + "\"";
+                for (int k = 1; k < collections.size(); k++) {
+                    seleColl += " ORL \"COLLECTION." + collections.get(k) + "\"";
+                }
+                seleColl += " ANDL ";
+            }
+            String IN_Bitext = " IN[" + seleColl + "\"SOURCE." + langS + "\""
+                    + " ANDL \"TARGET." + langT + "\"]";
+
+            String IN_Monotext = " IN[" + seleColl + "\"SOURCE." + langS + "\"" + "]";
+
+            if (GuiConstant.BITEXT_ONLY) {
+                return query + IN_Bitext;
+            }
+            return query + IN_Monotext;
+        }
+    }
+
     public static String[] getCollections(ArrayList<String> collections) {
         String[] selectedColls = new String[collections.size()];
         for (int k = 0; k < collections.size(); k++) {
