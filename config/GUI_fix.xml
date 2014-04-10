@@ -138,10 +138,10 @@
 	<!--Tab labels and content-->
 	<entry key="JOBS_ITEMS">Text Aligner|/TranslationText|_blanck;Self-Quote Detector|/mySelfQD|_blanck</entry>
 	<!-- Regular expression for search = -->
-	<entry key="REGEX_BEFORE_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\(\{\[\)\}\]]|^)</entry>
-	<entry key="REGEX_AFTER_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
-	<entry key="REGEX_EXACT_BEFORE_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\(\{\[\)\}\]]|^)</entry>
-	<entry key="REGEX_EXACT_AFTER_TOKEN">([^a-zA-Z0-9]|[\s\p{Punct}\r\n\)\}\(\{\[\]]|$)</entry>
+	<entry key="REGEX_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>
+	<entry key="REGEX_AFTER_TOKEN">([^\p{L}\p{N}]|$)</entry>
+	<entry key="REGEX_EXACT_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>
+	<entry key="REGEX_EXACT_AFTER_TOKEN">([^\p{L}\p{N}]|$)</entry>
 	<!--MAXIMIZE_ON: to expand the browser window = -->
 	<entry key="MAXIMIZE_ON">true</entry>
 	<!--RELOAD_PARAM_ON: true = -->
