@@ -48,6 +48,7 @@ public class GuiConstant {
     public static boolean EXACT_FLG = false;
     public static boolean EXACT_CLOSE = false;
     public static boolean EXACT_NBR_FLG = false;
+    public static boolean MULTI_WILD_CARD_FLG = false;
     public static int TA_LINE_HEIGHT;
     public static int TA_TEXTAREA_WIDTH;
     public static int TA_TEXTAREA_HEIGHT;

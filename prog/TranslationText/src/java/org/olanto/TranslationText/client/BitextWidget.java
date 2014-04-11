@@ -290,7 +290,7 @@ public class BitextWidget extends Composite {
         // Matrice (nombre de lignes, position du top, correction, position en pixel)
         resultS = Align.source.positions;
         resultT = Align.target.positions;
-        if (GuiConstant.EXACT_FLG) {
+        if (((GuiConstant.EXACT_FLG) || (GuiConstant.EXACT_CLOSE)) || (GuiConstant.EXACT_CLOSE)) {
             contentS = Align.source.content;
             contentT = Align.target.content;
         } else {
@@ -797,7 +797,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearS(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -846,7 +846,7 @@ public class BitextWidget extends Composite {
                     public void onSuccess(String result) {
 //                        Window.alert("request : " + result);
                         Window.open(result, "Original", features);
-                        }
+                    }
                 });
             }
         });
@@ -906,7 +906,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearT(resultT, contentT, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -958,7 +958,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearS(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -1000,7 +1000,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearT(resultT, contentT, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -1047,7 +1047,7 @@ public class BitextWidget extends Composite {
 
         // Matrice (nombre de lignes, position du top, correction, position en pixel)
         resultS = Align.source.positions;
-        if (GuiConstant.EXACT_FLG) {
+        if ((GuiConstant.EXACT_FLG) || (GuiConstant.EXACT_CLOSE)) {
             contentS = Align.source.content;
         } else {
             contentS = Align.source.content.toLowerCase();
@@ -1218,7 +1218,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearMono(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -1300,7 +1300,7 @@ public class BitextWidget extends Composite {
                             getPositionsNearMono(resultS, contentS, words, queryLength);
                         }
                     } else if ((search.contains("*"))) {
-                        rpcS.getExpandTerms(search, new AsyncCallback<String[]>() {
+                        rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
                             @Override
                             public void onFailure(Throwable caught) {
                                 setMessage("error", GuiMessageConst.MSG_3);
@@ -1398,7 +1398,11 @@ public class BitextWidget extends Composite {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsSCR(contentS, words, queryLength);
             } else {
-                getPositionsS(resultS, contentS, words, queryLength);
+                if ((GuiConstant.EXACT_CLOSE) || (GuiConstant.MULTI_WILD_CARD_FLG)) {
+                    getPositionsSCR(contentS, words, queryLength);
+                } else {
+                    getPositionsS(resultS, contentS, words, queryLength);
+                }
             }
         }
     }
@@ -1424,7 +1428,11 @@ public class BitextWidget extends Composite {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsMonoCR(contentS, words, queryLength);
             } else {
-                getPositionsMono(resultS, contentS, words, queryLength);
+                if ((GuiConstant.EXACT_CLOSE) || (GuiConstant.MULTI_WILD_CARD_FLG)) {
+                    getPositionsMonoCR(contentS, words, queryLength);
+                } else {
+                    getPositionsMono(resultS, contentS, words, queryLength);
+                }
             }
         }
     }

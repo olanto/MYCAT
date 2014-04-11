@@ -138,6 +138,7 @@
 	<!--Tab labels and content-->
 	<entry key="JOBS_ITEMS">Text Aligner|/TranslationText|_blanck;Self-Quote Detector|/mySelfQD|_blanck</entry>
 	<!-- Regular expression for search = -->
+	<!-- Modified on April 10th, 2014 = -->
 	<entry key="REGEX_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>
 	<entry key="REGEX_AFTER_TOKEN">([^\p{L}\p{N}]|$)</entry>
 	<entry key="REGEX_EXACT_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>

@@ -48,7 +48,7 @@ import java.util.ArrayList;
  */
 public class MainEntryPoint implements EntryPoint {
 
-    public static final String VERSION = "3.1.0";
+    public static final String VERSION = "3.1.1";
     // This is the component of the head of the interface
     // where we can put the query of the TextAligner
     private ResearchWidget textAlignerWidget;
@@ -73,6 +73,8 @@ public class MainEntryPoint implements EntryPoint {
     private final int H_Unit = 30;
     private static String[] languages;
     public static ArrayList<String> words;
+    public static String beforeWildTerm;
+    public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
     public static ArrayList<Character> charList = new ArrayList<Character>();
 
@@ -403,6 +405,8 @@ public class MainEntryPoint implements EntryPoint {
             if ((QUERY.length() == 0) || (QUERY.startsWith("/"))) {
                 GuiConstant.EXACT_FLG = false;
                 GuiConstant.EXACT_NBR_FLG = false;
+                GuiConstant.EXACT_CLOSE = false;
+                GuiConstant.MULTI_WILD_CARD_FLG = false;
                 String Query = Utility.browseRequest(QUERY);
                 tS.words = null;
                 words = null;
@@ -413,7 +417,9 @@ public class MainEntryPoint implements EntryPoint {
                 if ((QUERY.contains("*"))) {
                     GuiConstant.EXACT_FLG = false;
                     GuiConstant.EXACT_NBR_FLG = false;
-                    rpcM.getExpandTerms(Utility.filterWildCard(QUERY.toLowerCase()), new AsyncCallback<String[]>() {
+                    GuiConstant.EXACT_CLOSE = false;
+                    GuiConstant.MULTI_WILD_CARD_FLG = false;
+                    rpcM.getExpandTerms(Utility.filterWildCard(QUERY), new AsyncCallback<String[]>() {
                         @Override
                         public void onFailure(Throwable caught) {
                             Window.alert(GuiMessageConst.MSG_26);
@@ -434,6 +440,7 @@ public class MainEntryPoint implements EntryPoint {
                     words = null;
                     if ((QUERY.startsWith("\"")) && (QUERY.contains(" CLOSE "))) {
                         GuiConstant.EXACT_CLOSE = true;
+                        GuiConstant.MULTI_WILD_CARD_FLG = false;
                         words = Utility.getexactClose(QUERY);
                         String Query1 = Utility.ExactCloseQueryBuilder(words.get(0), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
                         String Query2 = Utility.ExactCloseQueryBuilder(words.get(1), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
@@ -444,16 +451,22 @@ public class MainEntryPoint implements EntryPoint {
                     } else {
                         String Query = Utility.queryParser(QUERY, textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
                         if (QUERY.startsWith("\"")) {
+                            GuiConstant.EXACT_CLOSE = false;
                             GuiConstant.EXACT_FLG = true;
+                            GuiConstant.MULTI_WILD_CARD_FLG = false;
                             words = Utility.getexactWords(QUERY);
 //                        GuiConstant.EXACT_NBR_FLG = false;
                         } else if (QUERY.startsWith("#\"")) {
                             GuiConstant.EXACT_FLG = true;
+                            GuiConstant.EXACT_CLOSE = false;
+                            GuiConstant.MULTI_WILD_CARD_FLG = false;
                             words = Utility.getexactWords(QUERY);
 //                        GuiConstant.EXACT_NBR_FLG = true;
                         } else {
                             GuiConstant.EXACT_FLG = false;
                             GuiConstant.EXACT_NBR_FLG = false;
+                            GuiConstant.EXACT_CLOSE = false;
+                            GuiConstant.MULTI_WILD_CARD_FLG = false;
                             words = Utility.getQueryWords(QUERY + " ", stopWords);
                         }
                         tS.queryLength = QUERY.length();

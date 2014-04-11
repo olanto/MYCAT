@@ -47,16 +47,28 @@ public class Utility {
     }
 
     public static String filterWildCard(String Query) {
+        String query = Query.trim();
         char r;
         StringBuilder res = new StringBuilder("");
-        for (int i = 0; i < Query.length(); i++) {
-            r = Query.charAt(i);
+        for (int i = 0; i < query.length(); i++) {
+            r = query.charAt(i);
             if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
                 res.append(r);
             }
         }
-//        Window.alert(res.toString());
-        return res.toString();
+        query = res.toString();
+        String[] words = query.split("\\s+");
+        if (words.length > 1) {
+            GuiConstant.MULTI_WILD_CARD_FLG = true;
+            query = filterWildCharExpression(words, MainEntryPoint.stopWords);
+            if (GuiConstant.DEBUG_ON) {
+                Window.alert("Wild Term : " + query + "\n Before expression " + MainEntryPoint.beforeWildTerm
+                        + "\n after expression " + MainEntryPoint.afterWildTerm);
+            }
+        } else {
+            GuiConstant.MULTI_WILD_CARD_FLG = false;
+        }
+        return query;
     }
 
     public static int getInd(int curpos, int[][] lines) {
@@ -123,31 +135,61 @@ public class Utility {
         return i;
     }
 
-    public static ArrayList<String> getPatternWords(String Query, ArrayList<String> stopWords) {
-        ArrayList<String> hits = new ArrayList<String>();
-
-        //Sinon requête avec des mots, donc enlever les mots clés et les mots vides
-        String[] words = Query.split("\\s+");
-        hits.addAll(Arrays.asList(words));
-        return hits;
+    public static String filterWildCharExpression(String[] words, ArrayList<String> stopWords) {
+        String wildTerm = "";
+        boolean found = false;
+        StringBuilder before = new StringBuilder("");
+        StringBuilder after = new StringBuilder("");
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].contains("*")) {
+                if (!found) {
+                    found = true;
+                    wildTerm = words[i];
+                } else {
+                    Window.alert("Error: Too many ** in one query: SYNTAX : term1 term2 wildcardexp .. term N");
+                    return null;
+                }
+            } else {
+                if ((!stopWords.contains(words[i].toLowerCase()))
+                        && !(words[i].equalsIgnoreCase("NEAR"))
+                        && !(words[i].equalsIgnoreCase("AND"))
+                        && !(words[i].equalsIgnoreCase("OR"))
+                        && !(words[i].equalsIgnoreCase("QUOTATION"))) {
+                    if (!found) {
+                        before.append(words[i]).append(" ");
+                    } else {
+                        after.append(words[i]).append(" ");
+                    }
+                }
+            }
+        }
+        MainEntryPoint.beforeWildTerm = before.toString().trim();
+        MainEntryPoint.afterWildTerm = after.toString().trim();
+        return wildTerm;
     }
 
     public static ArrayList<String> getWildCharQueryWords(String[] words, ArrayList<String> stopWords) {
         ArrayList<String> hits = new ArrayList<String>();
-        for (int i = 0; i < words.length; i++) {
-            if ((!stopWords.contains(words[i].toLowerCase()))
-                    && !(words[i].equalsIgnoreCase("NEAR"))
-                    && !(words[i].equalsIgnoreCase("AND"))
-                    && !(words[i].equalsIgnoreCase("OR"))
-                    && !(words[i].equalsIgnoreCase("QUOTATION"))) {
-                hits.add(words[i]);
+        if (GuiConstant.MULTI_WILD_CARD_FLG) {
+            for (int i = 0; i < words.length; i++) {
+                hits.add(MainEntryPoint.beforeWildTerm + " " + words[i] + " " + MainEntryPoint.afterWildTerm);
+            }
+        } else {
+            for (int i = 0; i < words.length; i++) {
+                if ((!stopWords.contains(words[i].toLowerCase()))
+                        && !(words[i].equalsIgnoreCase("NEAR"))
+                        && !(words[i].equalsIgnoreCase("AND"))
+                        && !(words[i].equalsIgnoreCase("OR"))
+                        && !(words[i].equalsIgnoreCase("QUOTATION"))) {
+                    hits.add(words[i]);
+                }
             }
         }
         return hits;
     }
 
     public static ArrayList<String> getRefWords(String refText) {
-        refText = refText.toLowerCase();// may be origin of a problem in the MyRef
+        refText = refText.toLowerCase();// not case sensitive (might be origin of a problem in MyRef)
         ArrayList<String> hits = new ArrayList<String>();
         String[] words = refText.split("\\s+");
         hits.addAll(Arrays.asList(words));
@@ -209,12 +251,11 @@ public class Utility {
             ArrayList<String> hits = new ArrayList<String>();
             String[] words = Query.split(" CLOSE ");
             hits.addAll(Arrays.asList(words));
-            if (hits.size() > 2) {
-                Window.alert("Error 4: More than Two expressions. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
-                return null;
+            if (hits.size() == 2) {
+                return hits;
             }
-            return hits;
         }
+        Window.alert("Error 4: More than Two expressions. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
         return null;
     }
 
@@ -388,9 +429,17 @@ public class Utility {
 
     public static String wildCharQueryParser(String[] words, String langS, String langT, ArrayList<String> stopWords, ArrayList<String> collections) {
         String query, q = "";
-        for (int i = 0; i < words.length; i++) {
-            if (!stopWords.contains(words[i].toLowerCase())) {
-                q += "\"" + words[i] + "\" OR ";
+        if (GuiConstant.MULTI_WILD_CARD_FLG) {
+            for (int i = 0; i < words.length; i++) {
+                if (!stopWords.contains(words[i].toLowerCase())) {
+                    q += "\"" + MainEntryPoint.beforeWildTerm + " " + words[i] + " " + MainEntryPoint.afterWildTerm + "\" OR ";
+                }
+            }
+        } else {
+            for (int i = 0; i < words.length; i++) {
+                if (!stopWords.contains(words[i].toLowerCase())) {
+                    q += "\"" + words[i] + "\" OR ";
+                }
             }
         }
         int k = q.length() - 4;
