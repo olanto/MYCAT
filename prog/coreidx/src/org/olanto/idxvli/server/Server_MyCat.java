@@ -344,7 +344,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             res1.dump("res1 after check EXACT");
             res1.checkIfRealyNear(id, size, chardist);
             res1.dump("res1 after check RealyNear");
-            return null;
+            return res1;
 
         } finally {
             serverR.unlock();

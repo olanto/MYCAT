@@ -805,7 +805,7 @@ public class BitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsSAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -914,7 +914,7 @@ public class BitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsTAO(resultT, contentT, words, queryLength);
                                 }
                             });
@@ -966,7 +966,7 @@ public class BitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsSAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -1008,7 +1008,7 @@ public class BitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsTAO(resultT, contentT, words, queryLength);
                                 }
                             });
@@ -1226,7 +1226,7 @@ public class BitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsMonoAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -1308,7 +1308,7 @@ public class BitextWidget extends Composite {
 
                             @Override
                             public void onSuccess(String[] result) {
-                                words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                 getPositionsMonoAO(resultS, contentS, words, queryLength);
                             }
                         });
@@ -1394,15 +1394,16 @@ public class BitextWidget extends Composite {
             } else {
                 getPositionsNearS(resultS, contentS, words, queryLength);
             }
+        } else if (GuiConstant.EXACT_CLOSE) {
+//            Window.alert("Lookinf for close: " + words.get(0) + " " + words.get(1));
+            getPositionsClose(contentS, words, queryLength);
+        } else if (GuiConstant.MULTI_WILD_CARD_FLG) {
+            getPositionsWildCardExpr(contentS, words, queryLength);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsSCR(contentS, words, queryLength);
             } else {
-                if ((GuiConstant.EXACT_CLOSE) || (GuiConstant.MULTI_WILD_CARD_FLG)) {
-                    getPositionsSCR(contentS, words, queryLength);
-                } else {
-                    getPositionsS(resultS, contentS, words, queryLength);
-                }
+                getPositionsS(resultS, contentS, words, queryLength);
             }
         }
     }
@@ -1424,15 +1425,16 @@ public class BitextWidget extends Composite {
             } else {
                 getPositionsNearMono(resultS, contentS, words, queryLength);
             }
+        }  else if (GuiConstant.EXACT_CLOSE) {
+//            Window.alert("Lookinf for close: " + words.get(0) + " " + words.get(1));
+            getPositionsClose(contentS, words, queryLength);
+        } else if (GuiConstant.MULTI_WILD_CARD_FLG) {
+            getPositionsWildCardExpr(contentS, words, queryLength);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsMonoCR(contentS, words, queryLength);
             } else {
-                if ((GuiConstant.EXACT_CLOSE) || (GuiConstant.MULTI_WILD_CARD_FLG)) {
-                    getPositionsMonoCR(contentS, words, queryLength);
-                } else {
-                    getPositionsMono(resultS, contentS, words, queryLength);
-                }
+                getPositionsMono(resultS, contentS, words, queryLength);
             }
         }
     }
@@ -1650,6 +1652,62 @@ public class BitextWidget extends Composite {
     public void getPositionsNearSCR(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
             rpcS.getHitPosNearCR(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_10);
+                }
+
+                @Override
+                public void onSuccess(int[][] result) {
+                    ClearHitsEvents();
+                    PositionsS = result;
+                    if (PositionsS[0][0] > -1) {
+                        if (words.size() > GuiConstant.MAX_SEARCH_SIZE) {
+                            setMessage("warning", GuiMessageConst.MSG_34);
+                        }
+                        pSch.hide();
+                        AddHitsEventsSCR();
+                        nextHitSCR();
+                        sourceTextArea.setFocus(true);
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_33);
+                    }
+                }
+            });
+        }
+    }
+
+    public void getPositionsClose(String content, ArrayList<String> Query, int queryLn) {
+        if ((!Query.isEmpty()) && !(Query == null)) {
+            rpcS.getHitPosExactClose(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_10);
+                }
+
+                @Override
+                public void onSuccess(int[][] result) {
+                    ClearHitsEvents();
+                    PositionsS = result;
+                    if (PositionsS[0][0] > -1) {
+                        if (words.size() > GuiConstant.MAX_SEARCH_SIZE) {
+                            setMessage("warning", GuiMessageConst.MSG_34);
+                        }
+                        pSch.hide();
+                        AddHitsEventsSCR();
+                        nextHitSCR();
+                        sourceTextArea.setFocus(true);
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_33);
+                    }
+                }
+            });
+        }
+    }
+    
+    public void getPositionsWildCardExpr(String content, ArrayList<String> Query, int queryLn) {
+        if ((!Query.isEmpty()) && !(Query == null)) {
+            rpcS.getHitPosWildCardExpr(content, Query, GuiConstant.REF_FACTOR, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);

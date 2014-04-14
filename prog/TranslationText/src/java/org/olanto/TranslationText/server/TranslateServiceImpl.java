@@ -143,14 +143,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         }
         try {
             QLResultNice res;
-            if (GuiConstant.EXACT_CLOSE) {
-                String[] Queries = query.split("---CLOSE---");
-                //            Timer t1 = new Timer("------------- " + query);
-                res = is.evalQLNice(Queries[0], Queries[1], 0, maxSize, order, (GuiConstant.NEAR_DISTANCE * GuiConstant.TA_NEAR_AVG_TERM_CHAR), number);
-            } else {
 //            Timer t1 = new Timer("------------- " + query);
-                res = is.evalQLNice(query, 0, maxSize, order, exact, number);
-            }
+            res = is.evalQLNice(query, 0, maxSize, order, exact, number);
             if (res.docname != null) {
 //                System.out.println("List of documents retrieved");
                 if (!collections.isEmpty()) {
@@ -790,6 +784,72 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
+    public int[][] getHitPosExactClose(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn) {
+        int refLength = (int) (reFactor * (queryLn + sepNumber * avgTokenLn));
+        int startp, lastp;
+//        System.out.println("Searching for near on a wondow of: " + refLength);
+        ArrayList<String> Pos = new ArrayList<>();
+        ArrayList<Integer> startPos = new ArrayList<>();
+        ArrayList<Integer> lastPos = new ArrayList<>();
+        String first, res, last, regex;
+        Pattern p;
+        Matcher m;
+        startPos.clear();
+        lastPos.clear();
+
+        first = Query.get(0);
+        last = Query.get(Query.size() - 1);
+//        System.out.println("First: " + first);
+//        System.out.println("Last: " + last);
+        System.out.println("Exact CLOSE: " + Pattern.quote(first));
+        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
+        p = Pattern.compile(regex);
+        m = p.matcher(content);
+
+        if (m.find()) {
+//            System.out.println("start found at : " + m.start());
+            startPos.add(m.start());
+            while (m.find()) {
+                startPos.add(m.start());
+//                System.out.println("Start found at : " + m.start());
+            }
+        }
+        System.out.println("Exact CLOSE: " + Pattern.quote(last));
+        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
+        p = Pattern.compile(regex);
+        m = p.matcher(content);
+
+        if (m.find()) {
+//            System.out.println("last found at : " + m.start());
+            lastPos.add(m.start());
+            while (m.find()) {
+                lastPos.add(m.start());
+//                System.out.println("last found at : " + m.start());
+            }
+        }
+        for (int s = 0; s < startPos.size(); s++) {
+            startp = startPos.get(s);
+            for (int l = 0; l < lastPos.size(); l++) {
+                lastp = lastPos.get(l);
+                if (Math.abs(lastp - startp) <= refLength) {
+                    if (lastp > startp) {
+                        res = startp + "¦" + (lastp + last.length() - startp);
+                        Pos.add(res);
+                    } else {
+                        res = lastp + "¦" + (startp + first.length() - lastp);
+                        Pos.add(res);
+                    }
+                }
+            }
+        }
+
+//        for (int i = 0; i < Pos.size(); i++) {
+//            System.out.println("Positions found in Line: " + Pos.get(i));
+//        }
+        return getPositionsRef(Pos);
+    }
+
+    @Override
     public int[][] getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn) {
         int refLength = (int) (reFactor * (queryLn + sepNumber * avgTokenLn));
         int startp, lastp;
@@ -1044,10 +1104,10 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 prop = new Properties();
                 prop.loadFromXML(f);
                 RELOAD_PARAM_ON = Boolean.valueOf(prop.getProperty("RELOAD_PARAM_ON", "false"));
-                REGEX_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\(\\{\\[\\)\\}\\]]|^)");
-                REGEX_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\)\\}\\]\\(\\{\\[]|$)");
-                REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_EXACT_BEFORE_TOKEN", "[^a-zA-Z0-9]");
-                REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_EXACT_AFTER_TOKEN", "[^a-zA-Z0-9]");
+                REGEX_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^\\p{L}\\p{N}]|^)");
+                REGEX_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^\\p{L}\\p{N}]|$)");
+                REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_EXACT_BEFORE_TOKEN", "([^\\p{L}\\p{N}]|^)");
+                REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_EXACT_AFTER_TOKEN", "([^\\p{L}\\p{N}]|$)");
 
 //                prop.list(System.out);
                 InitProperties(cookieLang);
@@ -1330,5 +1390,123 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         String zipPath;
         zipPath = fName.substring(3, fName.length() - 4).replace("¦", "_") + ".zip";   //JG modif
         return zipPath;
+    }
+
+    @Override
+    public ArrayList<String> getDocumentCloseList(String query, ArrayList<String> collections, boolean PATH_ON, int maxSize, String order, boolean exact, boolean number) {
+        ArrayList<String> documents = new ArrayList<>();
+        String longName, docName, listElem;
+//        System.out.println("Before calling the server for documents with the query: " + query);
+        if (is == null) {
+            is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
+        }
+        try {
+            QLResultNice res;
+            System.out.println("Exact close query: " + query);
+            String[] Queries = query.split("---CLOSE---");
+            System.out.println("part 1: " + Queries[0] + " part 2: " + Queries[1] + " ");
+
+//            Timer t1 = new Timer("------------- " + query);
+            res = is.evalQLNice(Queries[0], Queries[1], 0, maxSize, order, (CONST.NEAR_DISTANCE * CONST.TA_NEAR_AVG_TERM_CHAR), number);
+            if (res.docname != null) {
+//                System.out.println("List of documents retrieved");
+                if (!collections.isEmpty()) {
+//                    System.out.println("____________________Triés par collections & "+order+"____________________");
+                    for (int s = 0; s < collections.size(); s++) {
+//                        System.out.println("Collection: " + collections.get(s));
+                        for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
+                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                            longName = res.docname[i].substring(lastslash);
+                            if (longName.contains(collections.get(s))) {
+//                                System.out.println("Docname: " + res.docname[i]);
+                                docName = getDocListElement(longName.substring(3), PATH_ON);
+                                listElem = docName + "¦]" + "[¦" + longName;
+                                if (!documents.contains(listElem)) {
+                                    documents.add(listElem);
+                                }
+                            }
+                        }
+                    }
+                } else {
+//                    System.out.println("____________________ Sorted by " + order + "____________________");
+                    for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
+                        int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                        longName = res.docname[i].substring(lastslash);
+                        docName = getDocListElement(longName.substring(3), PATH_ON);
+                        listElem = docName + "¦]" + "[¦" + longName;
+                        documents.add(listElem);
+//                        System.out.println("Docname: " + res.docname[i]);
+                    }
+                }
+            }
+//            t1.stop();
+        } catch (RemoteException ex) {
+            Logger.getLogger(TranslateServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return documents;
+    }
+
+    @Override
+    public int[][] getHitPosWildCardExpr(String content, ArrayList<String> query, float reFactor) {
+        ArrayList<String> Query = new ArrayList<String>();
+        String regex;
+        int refLength;
+        ArrayList<String> Pos = new ArrayList<>();
+        ArrayList<Integer> startPos = new ArrayList<>();
+        ArrayList<Integer> lastPos = new ArrayList<>();
+        String first, res, last;
+        Pattern p;
+        Matcher m;
+        startPos.clear();
+        lastPos.clear();
+        for (int k = 0; k < query.size(); k++) {
+            refLength = (int) (query.get(k).length() * reFactor);
+            String[] words = query.get(k).split("\\s+");
+            Query.addAll(Arrays.asList(words));
+            first = Query.get(0);
+            last = Query.get(Query.size() - 1);
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+            m = p.matcher(content);
+            if (m.find()) {
+//            System.out.println("start found at : " + m.start());
+                startPos.add(m.start());
+                while (m.find()) {
+                    startPos.add(m.start());
+//                System.out.println("Start found at : " + m.start());
+                }
+            }
+            regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
+            p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+            m = p.matcher(content);
+
+            if (m.find()) {
+//            System.out.println("last found at : " + m.start());
+                lastPos.add(m.start() + last.length());
+                while (m.find()) {
+                    lastPos.add(m.start() + last.length());
+//                System.out.println("last found at : " + m.start());
+                }
+            }
+            int startp, lastp;
+            for (int s = 0; s < startPos.size(); s++) {
+                startp = startPos.get(s);
+                for (int l = 0; l < lastPos.size(); l++) {
+                    lastp = lastPos.get(l);
+//                System.out.println("refLength: " + refLength);
+                    if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
+                        if (getAllWords(content.substring(startp, lastp + 1), Query)) {
+                            res = startp + "¦" + (lastp - startp);
+                            Pos.add(res);
+                        }
+                    }
+                }
+            }
+        }
+
+//        for (int i = 0; i < Pos.size(); i++) {
+//            System.out.println("Positions found in Line: " + Pos.get(i));
+//        }
+        return getPositionsRef(Pos);
     }
 }

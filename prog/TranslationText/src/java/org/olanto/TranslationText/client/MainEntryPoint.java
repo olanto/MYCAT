@@ -47,7 +47,7 @@ import java.util.ArrayList;
  *
  */
 public class MainEntryPoint implements EntryPoint {
-
+    
     public static final String VERSION = "3.1.1";
     // This is the component of the head of the interface
     // where we can put the query of the TextAligner
@@ -99,13 +99,13 @@ public class MainEntryPoint implements EntryPoint {
             final String query = Window.Location.getParameter("query");
             final String lS = Window.Location.getParameter("LSrc");
             final String lT = Window.Location.getParameter("LTgt");
-
+            
             rpcM.InitPropertiesFromFile("en", new AsyncCallback<GwtProp>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     Window.alert("Couldn't get properties List, problem loading the properties files. Check if all the services are started." + caught.getMessage());
                 }
-
+                
                 @Override
                 public void onSuccess(GwtProp result) {
                     InitProperties(result);
@@ -127,7 +127,7 @@ public class MainEntryPoint implements EntryPoint {
                         public void onFailure(Throwable caught) {
                             Window.alert("Warning: Could not get the list of stopwords. If the problem persists then restart the servers.");
                         }
-
+                        
                         @Override
                         public void onSuccess(ArrayList<String> result) {
 //                            Window.alert("Size of List :" + result.size());
@@ -136,31 +136,31 @@ public class MainEntryPoint implements EntryPoint {
                     });
                 }
             });
-
+            
         }
     }
-
+    
     private void getStopWdMyCat() {
         rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Warning: Could not get the list of stopwords");
             }
-
+            
             @Override
             public void onSuccess(ArrayList<String> result) {
                 stopWords = result;
             }
         });
     }
-
+    
     private void getPropertiesMyCat() {
         rpcM.InitPropertiesFromFile(Cookies.getCookie(CookiesNamespace.InterfaceLanguage), new AsyncCallback<GwtProp>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Warning: Could not get the list of properties: " + caught.getMessage());
             }
-
+            
             @Override
             public void onSuccess(GwtProp result) {
                 InitProperties(result);
@@ -189,14 +189,14 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
     }
-
+    
     private void getLanguages() {
         rpcM.getCorpusLanguages(new AsyncCallback<String[]>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Warning: Could not get the list of languages");
             }
-
+            
             @Override
             public void onSuccess(String[] result) {
                 languages = result;
@@ -204,7 +204,7 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
     }
-
+    
     private void setLanguagesQD() {
         int s = 0, t = 0;
         quoteDetectorWidget.langS.clear();
@@ -221,9 +221,9 @@ public class MainEntryPoint implements EntryPoint {
         }
         quoteDetectorWidget.langS.setSelectedIndex(s);
         quoteDetectorWidget.langT.setSelectedIndex(t);
-
+        
     }
-
+    
     private void setLanguagesTA() {
         int s = 0, t = 0;
         textAlignerWidget.langS.clear();
@@ -241,14 +241,14 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.langS.setSelectedIndex(s);
         textAlignerWidget.langT.setSelectedIndex(t);
     }
-
+    
     private void getCollections() {
         rpcM.SetCollection(new AsyncCallback<CollectionTree>() {
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert("Warning: Could not get the list of collections. If the problem persists then restart the servers");
             }
-
+            
             @Override
             public void onSuccess(CollectionTree result) {
                 collectionWidgetTA.Draw(result);
@@ -256,7 +256,7 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
     }
-
+    
     public void setSettingsColMycat() {
         collTreeContainerTA.setHeight("30px");
         collPopupWindowTA.setHeight(500);
@@ -264,7 +264,7 @@ public class MainEntryPoint implements EntryPoint {
         setColl = new Button(GuiMessageConst.WIDGET_COLL_SET);
         closeColl = new Button(GuiMessageConst.WIDGET_COLL_CLOSE);
         clearColl = new Button(GuiMessageConst.WIDGET_COLL_CLEAR);
-
+        
         collPopupWindowTA.setTitle(GuiMessageConst.WIDGET_COLL_WND);
         collPopupWindowTA.setCanDragReposition(true);
         collPopupWindowTA.setCanDragResize(true);
@@ -286,7 +286,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetTA.collectionTreeGrid.setWidth(collPopupWindowTA.getWidth() - 25);
             }
         });
-
+        
         collTreeContainerTA.setWidth(collPopupWindowTA.getWidthAsString());
         collectionWidgetTA.collectionTreeGrid.setHeight(collPopupWindowTA.getHeight() - 2 * H_Unit - 10);
         collectionWidgetTA.collectionTreeGrid.setWidth(collPopupWindowTA.getWidth() - 25);
@@ -296,12 +296,12 @@ public class MainEntryPoint implements EntryPoint {
         collTreeContainerTA.setCellHorizontalAlignment(closeColl, HorizontalPanel.ALIGN_CENTER);
         collTreeContainerTA.add(clearColl);
         collTreeContainerTA.setCellHorizontalAlignment(clearColl, HorizontalPanel.ALIGN_RIGHT);
-
+        
         setbuttonstyle(setColl);
         setbuttonstyle(clearColl);
         setbuttonstyle(closeColl);
     }
-
+    
     public void setSettingsColMyQuote() {
         collTreeContainerQD.setHeight("30px");
         collPopupWindowQD.setHeight(500);
@@ -309,7 +309,7 @@ public class MainEntryPoint implements EntryPoint {
         setColl1 = new Button(GuiMessageConst.WIDGET_COLL_SET);
         closeColl1 = new Button(GuiMessageConst.WIDGET_COLL_CLOSE);
         clearColl1 = new Button(GuiMessageConst.WIDGET_COLL_CLEAR);
-
+        
         collPopupWindowQD.setTitle(GuiMessageConst.WIDGET_COLL_WND);
         collPopupWindowQD.setCanDragReposition(true);
         collPopupWindowQD.setCanDragResize(true);
@@ -331,7 +331,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetQD.collectionTreeGrid.setWidth(collPopupWindowQD.getWidth() - 25);
             }
         });
-
+        
         collTreeContainerQD.setWidth(collPopupWindowQD.getWidthAsString());
         collectionWidgetQD.collectionTreeGrid.setHeight(collPopupWindowQD.getHeight() - 2 * H_Unit - 10);
         collectionWidgetQD.collectionTreeGrid.setWidth(collPopupWindowQD.getWidth() - 25);
@@ -341,17 +341,17 @@ public class MainEntryPoint implements EntryPoint {
         collTreeContainerQD.setCellHorizontalAlignment(closeColl1, HorizontalPanel.ALIGN_CENTER);
         collTreeContainerQD.add(clearColl1);
         collTreeContainerQD.setCellHorizontalAlignment(clearColl1, HorizontalPanel.ALIGN_RIGHT);
-
+        
         setbuttonstyle(setColl1);
         setbuttonstyle(clearColl1);
         setbuttonstyle(closeColl1);
     }
-
+    
     public void setbuttonstyle(Button b) {
         b.setStyleName("x-btn-click");
         b.setPixelSize(b.getText().length() * GuiConstant.CHARACTER_WIDTH, H_Unit);
     }
-
+    
     public void getcontentlistMyCat() {
         textAlignerWidget.msg.setStyleName("gwt-TA-warning");
         QUERY = textAlignerWidget.search.getText().trim();
@@ -424,13 +424,14 @@ public class MainEntryPoint implements EntryPoint {
                         public void onFailure(Throwable caught) {
                             Window.alert(GuiMessageConst.MSG_26);
                         }
-
+                        
                         @Override
                         public void onSuccess(String[] result) {
                             words = null;
                             String Query = Utility.wildCharQueryParser(result, textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
-                            words = Utility.getWildCharQueryWords(result, stopWords);
+                            words = Utility.getWildCardQueryWords(result, stopWords);
                             tS.words = words;
+                            tS.queryLength = QUERY.length() + 20;
                             QUERY = Query.substring(0, Query.indexOf("IN"));
                             textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
                             textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
@@ -438,14 +439,15 @@ public class MainEntryPoint implements EntryPoint {
                     });
                 } else {
                     words = null;
-                    if ((QUERY.startsWith("\"")) && (QUERY.contains(" CLOSE "))) {
+                    if ((QUERY.startsWith("\"")) && ((QUERY.contains("\" CLOSE \"")) || (QUERY.contains("\" close \"")))) {
                         GuiConstant.EXACT_CLOSE = true;
                         GuiConstant.MULTI_WILD_CARD_FLG = false;
                         words = Utility.getexactClose(QUERY);
                         String Query1 = Utility.ExactCloseQueryBuilder(words.get(0), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
                         String Query2 = Utility.ExactCloseQueryBuilder(words.get(1), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
-                        tS.queryLength = QUERY.length();
+                        tS.queryLength = QUERY.length() - 9;
                         tS.words = words;
+//                        Window.alert(tS.words.get(0) + " " + tS.words.get(1));
                         textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query1 + " CLOSE " + Query2);
                         textAlignerWidget.DrawDocumentList(Query1 + "---CLOSE---" + Query2, tS, collectionWidgetTA.Selection);
                     } else {
@@ -478,7 +480,7 @@ public class MainEntryPoint implements EntryPoint {
             }
         }
     }
-
+    
     private void clearAll() {
         textAlignerWidget.search.setText("");
         textAlignerWidget.search.setFocus(true);
@@ -487,7 +489,7 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.GoSrch.enable();
         textAlignerWidget.docListContainer.setHeading(GuiMessageConst.MSG_59);
     }
-
+    
     public void setMyCatWidget() {
         initCookies();
         Document.get().setTitle(GuiConstant.TEXT_ALIGNER_LBL);
@@ -504,7 +506,7 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.coll.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-
+                
                 collectionWidgetTA.collectionTreeGrid.setHeight(collPopupWindowTA.getHeight() - 2 * H_Unit - 10);
                 collectionWidgetTA.collectionTreeGrid.setWidth(collPopupWindowTA.getWidth() - 25);
                 collPopupWindowTA.addItem(collectionWidgetTA.collectionTreeGrid);
@@ -512,7 +514,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetTA.setCurrentSelection();
             }
         });
-
+        
         setColl.removeAllListeners();
         setColl.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -532,7 +534,7 @@ public class MainEntryPoint implements EntryPoint {
                 }
             }
         });
-
+        
         clearColl.removeAllListeners();
         clearColl.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -546,7 +548,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetTA.collectionTreeGrid.deselectAllRecords();
             }
         });
-
+        
         closeColl.removeAllListeners();
         closeColl.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -554,7 +556,7 @@ public class MainEntryPoint implements EntryPoint {
                 collPopupWindowTA.hide();
             }
         });
-
+        
         textAlignerWidget.GoSrch.removeAllListeners();
         textAlignerWidget.GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -563,7 +565,7 @@ public class MainEntryPoint implements EntryPoint {
                 getcontentlistMyCat();
             }
         });
-
+        
         textAlignerWidget.resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
@@ -574,7 +576,7 @@ public class MainEntryPoint implements EntryPoint {
                 }
             }
         });
-
+        
         textAlignerWidget.search.addKeyPressHandler(new KeyPressHandler() {
             @Override
             public void onKeyPress(KeyPressEvent event) {
@@ -595,7 +597,7 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
     }
-
+    
     public void setMyQuoteWidget(final String[] languages) {
         initCookies();
         Document.get().setTitle(GuiConstant.QUOTE_DETECTOR_LBL);
@@ -609,7 +611,7 @@ public class MainEntryPoint implements EntryPoint {
         quoteDetectorWidget.coll.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-
+                
                 collectionWidgetQD.collectionTreeGrid.setHeight(collPopupWindowQD.getHeight() - 2 * H_Unit - 10);
                 collectionWidgetQD.collectionTreeGrid.setWidth(collPopupWindowQD.getWidth() - 25);
                 collPopupWindowQD.addItem(collectionWidgetQD.collectionTreeGrid);
@@ -617,7 +619,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetQD.setCurrentSelection();
             }
         });
-
+        
         History.addValueChangeHandler(new ValueChangeHandler<String>() {
             @Override
             public void onValueChange(ValueChangeEvent<String> event) {
@@ -625,7 +627,7 @@ public class MainEntryPoint implements EntryPoint {
                 quoteDetectorWidget.getRefHitContent(Integer.parseInt(event.getValue()));
             }
         });
-
+        
         setColl1.removeAllListeners();
         setColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -643,7 +645,7 @@ public class MainEntryPoint implements EntryPoint {
                 }
             }
         });
-
+        
         clearColl1.removeAllListeners();
         clearColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -657,7 +659,7 @@ public class MainEntryPoint implements EntryPoint {
                 collectionWidgetQD.collectionTreeGrid.deselectAllRecords();
             }
         });
-
+        
         closeColl1.removeAllListeners();
         closeColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -665,7 +667,7 @@ public class MainEntryPoint implements EntryPoint {
                 collPopupWindowQD.hide();
             }
         });
-
+        
         quoteDetectorWidget.GoSrch.removeAllListeners();
         quoteDetectorWidget.GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -674,7 +676,7 @@ public class MainEntryPoint implements EntryPoint {
                 getcontentlistMyQuote();
             }
         });
-
+        
         quoteDetectorWidget.TextAligner.removeAllListeners();
         quoteDetectorWidget.TextAligner.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
@@ -683,14 +685,14 @@ public class MainEntryPoint implements EntryPoint {
             }
         });
     }
-
+    
     public void getcontentlistMyQuote() {
-
+        
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
     }
-
+    
     public void resizeAll() {
         IMeasures.calculateMeasures(Window.getClientHeight(), Window.getClientWidth());
         tS.updateSize();
@@ -716,7 +718,7 @@ public class MainEntryPoint implements EntryPoint {
         MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
         MyCatCookies.initCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
     }
-
+    
     public static void download(String fileDownloadURL, final Label msg) {
         Frame fileDownloadFrame = new Frame(fileDownloadURL);
         fileDownloadFrame.setSize("0px", "0px");
@@ -728,7 +730,7 @@ public class MainEntryPoint implements EntryPoint {
         panel.add(fileDownloadFrame);
         msg.setText(GuiMessageConst.MSG_32);
     }
-
+    
     private void InitProperties(GwtProp CONST) {
         GuiConstant.ORIGINAL_ON = CONST.ORIGINAL_ON;
         GuiConstant.DEBUG_ON = CONST.DEBUG_ON;
@@ -903,7 +905,7 @@ public class MainEntryPoint implements EntryPoint {
         GuiMessageConst.MSG_69 = CONST.MSG_69;
         GuiMessageConst.MSG_70 = CONST.MSG_70;
     }
-
+    
     public static native void fixGwtNav() /*-{
      $wnd.gwtnav = function(a) {
      var realhref = decodeURI(a.href.split("#")[1].split("?")[0]);
@@ -917,11 +919,11 @@ public class MainEntryPoint implements EntryPoint {
      top.window.moveTo(0,0);
      top.window.resizeTo(screen.availWidth, screen.availHeight);
      }-*/;
-
+    
     public static native int getScreenWidth() /*-{
      return screen.availWidth;
      }-*/;
-
+    
     public static native int getScreenHeight() /*-{
      return screen.availHeight;
      }-*/;

@@ -35,6 +35,8 @@ public interface TranslateServiceAsync {
 
     public void getDocumentList(String Query, ArrayList<String> collections, boolean PATH_ON, int maxSize, String order, boolean exact, boolean number, AsyncCallback<ArrayList<String>> asyncCallback);
 
+    public void getDocumentCloseList(String Query, ArrayList<String> collections, boolean PATH_ON, int maxSize, String order, boolean exact, boolean number, AsyncCallback<ArrayList<String>> asyncCallback);
+
     public void getDocumentBrowseList(String request, String LangS, ArrayList<String> collections, boolean PATH_ON, int maxBrowse, String order, boolean ONLY_ON_FILE_NAME, AsyncCallback<ArrayList<String>> asyncCallback);
 
     public void SetCollection(AsyncCallback<CollectionTree> asyncCallback);
@@ -44,6 +46,10 @@ public interface TranslateServiceAsync {
     public void getOriginalUrl(String docName, AsyncCallback<String> asyncCallback);
 
     public void getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
+
+    public void getHitPosExactClose(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
+   
+    public void getHitPosWildCardExpr(String content, ArrayList<String> query, float reFactor, AsyncCallback<int[][]> asyncCallback);
 
     public void getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
 

@@ -94,7 +94,7 @@ public class ResearchWidget extends Composite {
     private TabSet topJobsSet = new TabSet();
     private Label chooseLang = new Label(GuiMessageConst.MSG_64);
     private ListBox langInterface = new ListBox();
-    private String lastSelected="";
+    private String lastSelected = "";
 
     public ResearchWidget() {
         rpcSch = RpcInit.initRpc();
@@ -442,32 +442,61 @@ public class ResearchWidget extends Composite {
         staticTreeWrapper.clear();
 //        Window.alert("Document list for query: " + Query);
         // remote procedure call to the server to get the document list that satisfies the query
-        rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
-            @Override
-            public void onFailure(Throwable caught) {
-                Window.alert(GuiMessageConst.MSG_53 + Query);
-                GoSrch.enable();
-            }
-
-            @Override
-            public void onSuccess(ArrayList<String> doclist) {
-                docList = doclist;
-                if (docList.size() > 0) {
-                    docListContainer.setHeading(GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
-                    createSourceTree(docList, tS, Query);
-                    GoSrch.enable();
-                    if (docList.size() >= GuiConstant.MAX_RESPONSE) {
-                        setMessage("warning", GuiMessageConst.MSG_54 + " (>" + GuiConstant.MAX_RESPONSE + ")");
-                    } else {
-                        setMessage("info", GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
-                    }
-                } else {
-                    docListContainer.setHeading(GuiMessageConst.MSG_59);
-                    setMessage("warning", GuiMessageConst.MSG_59);
+        if (GuiConstant.EXACT_CLOSE) {
+            rpcSch.getDocumentCloseList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    Window.alert(GuiMessageConst.MSG_53 + " " + Query);
                     GoSrch.enable();
                 }
-            }
-        });
+
+                @Override
+                public void onSuccess(ArrayList<String> doclist) {
+                    docList = doclist;
+                    if (docList.size() > 0) {
+                        docListContainer.setHeading(GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
+                        createSourceTree(docList, tS, Query);
+                        GoSrch.enable();
+                        if (docList.size() >= GuiConstant.MAX_RESPONSE) {
+                            setMessage("warning", GuiMessageConst.MSG_54 + " (>" + GuiConstant.MAX_RESPONSE + ")");
+                        } else {
+                            setMessage("info", GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
+                        }
+                    } else {
+                        docListContainer.setHeading(GuiMessageConst.MSG_59);
+                        setMessage("warning", GuiMessageConst.MSG_59);
+                        GoSrch.enable();
+                    }
+                }
+            });
+        } else {
+            rpcSch.getDocumentList(Query, collections, GuiConstant.PATH_ON, GuiConstant.MAX_RESPONSE, SORT_BY_Eff[sortBy.getSelectedIndex()], GuiConstant.EXACT_FLG, GuiConstant.EXACT_NBR_FLG, new AsyncCallback<ArrayList<String>>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    Window.alert(GuiMessageConst.MSG_53 + Query);
+                    GoSrch.enable();
+                }
+
+                @Override
+                public void onSuccess(ArrayList<String> doclist) {
+                    docList = doclist;
+                    if (docList.size() > 0) {
+                        docListContainer.setHeading(GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
+                        createSourceTree(docList, tS, Query);
+                        GoSrch.enable();
+                        if (docList.size() >= GuiConstant.MAX_RESPONSE) {
+                            setMessage("warning", GuiMessageConst.MSG_54 + " (>" + GuiConstant.MAX_RESPONSE + ")");
+                        } else {
+                            setMessage("info", GuiMessageConst.MSG_41 + docList.size() + GuiMessageConst.MSG_52);
+                        }
+                    } else {
+                        docListContainer.setHeading(GuiMessageConst.MSG_59);
+                        setMessage("warning", GuiMessageConst.MSG_59);
+                        GoSrch.enable();
+                    }
+                }
+            });
+        }
     }
 
     public void DrawDocumentBrowseList(final String Query, final BitextWidget tS, final ArrayList<String> collections) {
