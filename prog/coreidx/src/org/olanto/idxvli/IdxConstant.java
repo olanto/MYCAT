@@ -237,8 +237,13 @@ public class IdxConstant {
     public static int DOCNAME_MAX_EXPANSION = 1000;
     /** maximum de nom collecter avant tri  */
     public static int DOCNAME_MAX_BROWSE = 5000;
+    /** longueur max des check pour les reférences trouvées  */
+    public static int REALREF_MAX_CHECK = 20;
     /** search expression are insensitive by default  */
     public static boolean DOCNAME_BROWSE_INSENSITIVE = true;
+        /** only to test new feature not for production  */
+    public static boolean PRODUCTION_MODE = true;
+
     /*************************************************************************************/
     /** ajoute les statisques dans myQuote  */
     public static boolean SKIP_LINE_QUOTE_DECTECTOR= false;
@@ -338,10 +343,11 @@ public class IdxConstant {
         COMLOG.info(
                 "VERSION "+VERSION
                 +"\nHOSTS" 
+                + "\n    EXPERIMENT_NOTFORPROD: " + CHECK_CONSISTENT
                 + "\n    CHECK_CONSISTENT: " + CHECK_CONSISTENT
                 + "\n    ORIGINAL_FULL_URL: " + ORIGINAL_FULL_URL
                 + "\n    ORIGINAL_HOST: " + ORIGINAL_HOST
-                + "\n    ORIGINAL_PORT: " + ORIGINAL_PORT
+                + "\n    PRODUCTION_MODE: " + PRODUCTION_MODE
                 + "\nMESSAGES"
                 + "\n    SERVER_MESSAGE_PATH: " + SERVER_MESSAGE_PATH
                 + "\n    SERVER_MESSAGE_LANG: " + SERVER_MESSAGE_LANG
@@ -380,6 +386,8 @@ public class IdxConstant {
                 + "\n         STEM_CACHE_COUNT: " + STEM_CACHE_COUNT
                 + "\n         STEM_KEEP_LIST: " + STEM_KEEP_LIST
                 + "\n         ACTUAL_LANGUAGE: " + ACTUAL_LANGUAGE
+                + "\n     QUOTEREF"
+                 + "\n         REALREF_MAX_CHECK: " + REALREF_MAX_CHECK               
                 + "\n     WILDCHAR"
                 + "\n         WORD_EXPANSION: " + WORD_EXPANSION
                 + "\n         WORD_EXPANSION_RELOAD: " + WORD_EXPANSION_RELOAD

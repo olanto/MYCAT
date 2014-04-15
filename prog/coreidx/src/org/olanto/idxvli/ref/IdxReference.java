@@ -31,6 +31,7 @@ import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.idxvli.util.SetOfBits;
 import org.olanto.util.Timer;
 import static org.olanto.idxvli.IdxConstant.*;
+import org.olanto.idxvli.ql.QRes;
 
 /**
  * Une classe pour référencer un string (pour la version de référence).
@@ -52,7 +53,7 @@ public class IdxReference {
     static final int NoMark = -1;
     private int currentMark = 0;
     private int seqmax = 6;   // borne du seq
-    private int seqn = 6 - 1;   // borne pour les boucles
+    private int seqn = seqmax - 1;   // borne pour les boucles
     public int[] idxW;     // les  mots indexés (numéros)
     public String[] word;  // les mots tokenisés
     public int[] idxpos;   //les positions dans le documents
@@ -92,7 +93,7 @@ public class IdxReference {
         minlength = min;
         if (minlength < 6) { // alors on utilise le seq3
             seqmax = 3;   // borne du seq
-            int seqn = 3 - 1;   // borne pour les boucles
+            seqn = seqmax - 1;   // borne pour les boucles
         }
         idxW = new int[MaxIndexedW];
         idxpos = new int[MaxIndexedW];
@@ -225,6 +226,35 @@ public class IdxReference {
         }
     }
 
+    private SparseBitSet getOnlyRealRef(SparseBitSet b, int from, int to) {
+        if (from == to || !b.notEmpty()) { // initial ref 3 or 6 is ok
+            return b;
+        }
+        if (REALREF_MAX_CHECK < to + seqmax - from) { // too long
+            return b;
+        }
+        //System.out.print("check: ");
+        //Timer t = new Timer("getOnlyRealRef");
+        int[] evalseq = new int[to + seqmax - from];
+        for (int i = from; i < to + seqmax; i++) {
+            evalseq[i - from] = cpW[i];
+            //System.out.print(glue.getStringforW(cpW[i])+" ");
+        }
+        //System.out.print("\n"); 
+        int[] resD = getDocforWseqWN(glue, evalseq).doc;
+        //System.out.println("check:" + (to + seqmax - from) + ", res size:" + resD.length);
+   
+        // transform the result into a sparse ...
+        SparseBitSet qres = new SparseBitSet();
+        for (int j = 0; j < resD.length; j++) {
+            qres.insertbit(resD[j]);
+        }       
+        b = b.and(qres);
+        //System.out.println("check after and:" + (to + seqmax - from) + ", res size:" + b.length());
+    //t.stop();
+        return b;
+    }
+
     private final void markString() {
         begM = new int[lastscan];
         for (int i = 0; i < lastscan; i++) {
@@ -243,11 +273,15 @@ public class IdxReference {
         int markdoc = 0;
         int[] multidoc = null;
         for (int i = 0; i < lastcp - seqn; i++) {
+            //Timer t0 = new Timer("collect ref at i="+i);
             SparseBitSet b = doc[i];
             if (b.notEmpty()) { // ok look for the next
                 mark = i;
+                
                 for (int j = i; j < lastcp - seqn; j++) {
                     b = b.and(doc[j]);
+                    // here we need to check the references
+                    if (!PRODUCTION_MODE)b = getOnlyRealRef(b, i, j); // need to be tested before production mode
                     if (b.notEmpty()) {
                         mark = j;
                         b.resetcursor();
@@ -257,6 +291,7 @@ public class IdxReference {
                         break;
                     } // not in the same doc
                 }
+                
                 if ((mark > maxmarked) && ((mark - i) >= minlength - seqmax)) { // not included in a bigger ref
                     maxmarked = mark; // new max
                     newMark();
@@ -265,7 +300,7 @@ public class IdxReference {
                     b.resetcursor();
                     docM[i] = markdoc; // get the first ref (if many)
                     nbref++;
-
+/*
                     String dlist = glue.getFileNameForDocument(multidoc[0]); // liste des références
                     for (int k = 1; k < multidoc.length; k++) {
                         dlist += REFResultNice.DOC_REF_SEPARATOR + glue.getFileNameForDocument(multidoc[k]);
@@ -275,12 +310,30 @@ public class IdxReference {
                     for (int k = i + 1; k < maxmarked + seqmax; k++) {
                         tlist += " " + glue.getStringforW(cpW[k]);
                     }
-                    txtRef.add(tlist);
+*/
+                    //Timer t1 = new Timer("collect fname");
+                    StringBuilder dlist = new StringBuilder(glue.getFileNameForDocument(multidoc[0])); // liste des références
+                    for (int k = 1; k < multidoc.length; k++) {
+                        dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(glue.getFileNameForDocument(multidoc[k]));
+                    }
+                    docMultiRef.add(dlist.toString());
+                    //t1.stop();
+                    //Timer t2 = new Timer("collect word");
+                    StringBuilder tlist = new StringBuilder(glue.getStringforW(cpW[i])); // texte des références
+                    for (int k = i + 1; k < maxmarked + seqmax; k++) {
+                        tlist.append(" ").append(glue.getStringforW(cpW[k]));
+                    }
+                   
+                    txtRef.add(tlist.toString());
+                    //t2.stop();
+                    //Timer t3 = new Timer("add noref part");
                     txtRefOrigin.add(
                             textforhtml.substring(idxpos[idxorig[i]] - word[idxorig[i]].length() - 1,
                             idxpos[idxorig[maxmarked + seqmax - 1]] - 1));
+                     //t3.stop();
                 }
             }// if
+            //t0.stop();
         }// for
         System.out.println("nbref: " + nbref);
 //        for (int i = 0; i < nbref; i++) {
@@ -406,7 +459,9 @@ public class IdxReference {
         } // if
         s.append("</P>\n");
         //timing.stop();
-        if (SKIP_LINE_QUOTE_DECTECTOR) return s.toString().replace("\n", "<br/><br/>");
+        if (SKIP_LINE_QUOTE_DECTECTOR) {
+            return s.toString().replace("\n", "<br/><br/>");
+        }
         return s.toString().replace("\n", "<br/>");
     }
 

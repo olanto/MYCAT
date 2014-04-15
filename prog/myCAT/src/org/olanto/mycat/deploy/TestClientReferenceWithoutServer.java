@@ -52,7 +52,8 @@ public class TestClientReferenceWithoutServer {
 
 //        testref(SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.txt", SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.res.html", null , 3);
 //       testref(SenseOS.getMYCAT_HOME() + "/test/g245_e.txt", SenseOS.getMYCAT_HOME() + "/test/g245_e.res.html", null , 3);
-       testref(SenseOS.getMYCAT_HOME() + "/test/0000188336_EN.doc.txt", SenseOS.getMYCAT_HOME() + "/test/0000188336_EN.doc.txt.res.html", null , 3);
+       testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
+ //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
 //       testref(SenseOS.getMYCAT_HOME() + "/test/testcdt.txt", SenseOS.getMYCAT_HOME() + "/test/testcdt.res.html", null , 5);
 
     }
