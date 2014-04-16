@@ -354,7 +354,7 @@ public class MainEntryPoint implements EntryPoint {
     
     public void getcontentlistMyCat() {
         textAlignerWidget.msg.setStyleName("gwt-TA-warning");
-        QUERY = textAlignerWidget.search.getText().trim();
+        QUERY = Utility.replaceAll2(textAlignerWidget.search.getText()).trim();
         if (textAlignerWidget.search.getText().equals("AUTO_ON")) {
             textAlignerWidget.msg.setText(GuiMessageConst.MSG_15);
             GuiConstant.AUTO_ON = true;
@@ -802,6 +802,7 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.PP_H_MAX = CONST.PP_H_MAX;
         GuiConstant.TA_NEAR_AVG_TERM_CHAR = CONST.TA_NEAR_AVG_TERM_CHAR;
         GuiConstant.NEAR_DISTANCE = CONST.NEAR_DISTANCE;
+        GuiConstant.entryToReplace = CONST.entryToReplace;
         /**
          * client interface parameters
          * **********************************************************************************

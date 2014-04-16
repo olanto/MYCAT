@@ -22,6 +22,7 @@
 package org.olanto.TranslationText.client;
 
 import com.google.gwt.user.client.rpc.IsSerializable;
+import java.util.HashMap;
 
 /**
  *
@@ -103,6 +104,7 @@ public class GwtProp implements IsSerializable {
     public String LOGO_URL;
     public String TA_DL_SORTBY;
     public String FEEDBACK_MAIL;
+    public HashMap<String, String> entryToReplace = new HashMap<String, String>();
     /**
      * client interface parameters
      * **********************************************************************************

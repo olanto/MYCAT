@@ -21,6 +21,8 @@
  */
 package org.olanto.TranslationText.client;
 
+import java.util.HashMap;
+
 /**
  * Class for declaring the constants of the client
  *
@@ -103,6 +105,7 @@ public class GuiConstant {
     public static String LOGO_URL;
     public static String TA_DL_SORTBY;
     public static String FEEDBACK_MAIL;
+    public static HashMap<String, String> entryToReplace = new HashMap<String, String>();
 
     /**
      * **********************************************************************************

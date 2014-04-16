@@ -61,8 +61,8 @@ public class Utility {
             GuiConstant.MULTI_WILD_CARD_FLG = true;
             query = filterWildCardExpression(words, MainEntryPoint.stopWords);
             if (GuiConstant.DEBUG_ON) {
-            Window.alert("Wild Term : " + query + "\n Before expression " + MainEntryPoint.beforeWildTerm
-                    + "\n after expression " + MainEntryPoint.afterWildTerm);
+                Window.alert("Wild Term : " + query + "\n Before expression " + MainEntryPoint.beforeWildTerm
+                        + "\n after expression " + MainEntryPoint.afterWildTerm);
             }
         } else {
             GuiConstant.MULTI_WILD_CARD_FLG = false;
@@ -477,5 +477,62 @@ public class Utility {
         }
 //        Window.alert(res.toString());
         return res.toString();
+    }
+
+    public static void add(String replace, String by) {
+        GuiConstant.entryToReplace.put(replace, by);
+    }
+
+    /**
+     * applique tous les remplacements
+     *
+     * @param w à traiter
+     * @return remplacement effectuer
+     */
+    public static String replaceAll(String w) {
+        String[] toberep = getListOfEntry();
+        for (int i = 0; i < toberep.length; i++) {
+            String rep = GuiConstant.entryToReplace.get(toberep[i]);
+            //System.out.println("process: " + toberep[i] + " -> " + rep);
+            w = w.replace(toberep[i], rep);
+        }
+        return w;
+    }
+
+    public static String replaceAll2(String w) {
+        String[] toberep = getListOfEntry();
+        StringBuilder res = new StringBuilder(w);
+        for (int i = 0; i < toberep.length; i++) {
+            String rep = GuiConstant.entryToReplace.get(toberep[i]);
+            //System.out.println("process: " + toberep[i] + " -> " + rep);
+            repBuilder(res, toberep[i], rep);
+        }
+        return res.toString();
+    }
+
+    public static String replace(String w, String from, String to) { // pas si performant ?
+        StringBuilder res = new StringBuilder(w);
+        repBuilder(res, from, to);
+        return res.toString();
+    }
+
+    public static void repBuilder(StringBuilder builder, String from, String to) {
+        int idx = builder.lastIndexOf(from);
+        while (idx != -1) {
+            builder.replace(idx, idx + from.length(), to);
+            idx += to.length();
+            idx = builder.lastIndexOf(from, idx);
+        }
+    }
+
+    /**
+     * liste des termes à remplacer.
+     *
+     * @return la liste
+     */
+    public static String[] getListOfEntry() {
+        String[] result = new String[GuiConstant.entryToReplace.size()];
+        GuiConstant.entryToReplace.keySet().toArray(result);
+        return result;
     }
 }

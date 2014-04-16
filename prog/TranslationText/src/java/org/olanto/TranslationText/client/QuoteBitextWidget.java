@@ -761,7 +761,7 @@ public class QuoteBitextWidget extends Composite {
                         ClearHitsEvents();
                         words = null;
 
-                        search = SchArea.getText().trim();
+                        search = Utility.replaceAll2(SchArea.getText().trim());
                         queryLength = search.length();
                         if ((search.contains(" AND "))
                                 || (search.contains(" OR "))) {
@@ -870,7 +870,7 @@ public class QuoteBitextWidget extends Composite {
                         ClearHitsEvents();
                         words = null;
 
-                        search = SchArea.getText().trim();
+                        search = Utility.replaceAll2(SchArea.getText().trim());
                         queryLength = search.length();
                         if ((search.contains(" AND "))
                                 || (search.contains(" OR "))) {
@@ -922,7 +922,7 @@ public class QuoteBitextWidget extends Composite {
                         ClearHitsEvents();
                         words = null;
 
-                        search = SchArea.getText().trim();
+                        search = Utility.replaceAll2(SchArea.getText().trim());
                         queryLength = search.length();
                         if ((search.contains(" AND "))
                                 || (search.contains(" OR "))) {
@@ -964,7 +964,7 @@ public class QuoteBitextWidget extends Composite {
                         ClearHitsEvents();
                         words = null;
 
-                        search = SchArea.getText().trim();
+                        search = Utility.replaceAll2(SchArea.getText().trim());
                         queryLength = search.length();
                         if ((search.contains(" AND "))
                                 || (search.contains(" OR "))) {
@@ -1179,7 +1179,7 @@ public class QuoteBitextWidget extends Composite {
                         ClearHitsEvents();
                         words = null;
 
-                        search = SchArea.getText().trim();
+                        search = Utility.replaceAll2(SchArea.getText().trim());
                         queryLength = search.length();
                         if ((search.contains(" AND "))
                                 || (search.contains(" OR "))) {
@@ -1261,7 +1261,7 @@ public class QuoteBitextWidget extends Composite {
                 if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {
                     ClearHitsEvents();
                     words = null;
-                    search = SchArea.getText().trim();
+                    search = Utility.replaceAll2(SchArea.getText().trim());
                     queryLength = search.length();
                     if ((search.contains(" AND "))
                             || (search.contains(" OR "))) {

@@ -22,10 +22,12 @@
 package org.olanto.TranslationText.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -102,7 +104,6 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //            System.out.println("TGT phrase: " + i + " --> " + to[i]);
 //        }
         return result;
-
     }
 
     GwtSegDoc SetGwtSegDoc(int[][] lines, int nblines, String content, String uri, String lang) {
@@ -1124,6 +1125,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 
     private void InitProperties(String lastLang) {
         CONST = new GwtProp();
+        getSetOfReplacements();
         String propPath = prop.getProperty("INTERFACE_MESSAGE_PATH");
 
         CONST.TA_LINE_HEIGHT = Integer.parseInt(prop.getProperty("TA_LINE_HEIGHT"));
@@ -1510,5 +1512,29 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //            System.out.println("Positions found in Line: " + Pos.get(i));
 //        }
         return getPositionsRef(Pos);
+    }
+
+    public void getSetOfReplacements() {
+        String fname = home + "/config/ReplaceChar.txt";
+        Pattern ps = Pattern.compile("[\\t]");  // le tab
+        System.out.println("load list of replace from:" + fname);
+        try {
+            InputStreamReader isr = new InputStreamReader(new FileInputStream(fname), "UTF-8");
+            BufferedReader in = new BufferedReader(isr);
+            String w = in.readLine();
+            while (w != null) {
+                //System.out.println("dont index:"+w);
+                String[] s = ps.split(w);
+                if (s.length != 2) {
+                    System.out.println("error in list of replacements:" + w);
+                } else {
+                    CONST.entryToReplace.put(s[0], s[1]);
+                    System.out.println("add to list:" + w);
+                }
+                w = in.readLine();
+            }
+        } catch (Exception e) {
+            System.err.println("IO error in SetOfReplacements (missing file ?)");
+        }
     }
 }
