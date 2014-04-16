@@ -1457,23 +1457,25 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         String first, res, last;
         Pattern p;
         Matcher m;
-        startPos.clear();
-        lastPos.clear();
         for (int k = 0; k < query.size(); k++) {
+//            System.out.println("looking for words in expression : " + query.get(k));
+            startPos.clear();
+            lastPos.clear();
             refLength = (int) (query.get(k).length() * reFactor);
             String[] words = query.get(k).split("\\s+");
             Query.addAll(Arrays.asList(words));
+//            System.out.println("looking for words in expression : " + Query.toString());
             first = Query.get(0);
             last = Query.get(Query.size() - 1);
             regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
             m = p.matcher(content);
             if (m.find()) {
-//            System.out.println("start found at : " + m.start());
+//                System.out.println("start found at : " + m.start());
                 startPos.add(m.start());
                 while (m.find()) {
                     startPos.add(m.start());
-//                System.out.println("Start found at : " + m.start());
+//                    System.out.println("Start found at : " + m.start());
                 }
             }
             regex = REGEX_BEFORE_TOKEN + Pattern.quote(last) + REGEX_AFTER_TOKEN;
@@ -1481,11 +1483,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             m = p.matcher(content);
 
             if (m.find()) {
-//            System.out.println("last found at : " + m.start());
+//                System.out.println("last found at : " + m.start());
                 lastPos.add(m.start() + last.length());
                 while (m.find()) {
                     lastPos.add(m.start() + last.length());
-//                System.out.println("last found at : " + m.start());
+//                    System.out.println("last found at : " + m.start());
                 }
             }
             int startp, lastp;
@@ -1493,7 +1495,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 startp = startPos.get(s);
                 for (int l = 0; l < lastPos.size(); l++) {
                     lastp = lastPos.get(l);
-//                System.out.println("refLength: " + refLength);
+//                    System.out.println("refLength: " + refLength);
                     if (((lastp - startp) >= 0) && ((lastp - startp) <= refLength)) {
                         if (getAllWords(content.substring(startp, lastp + 1), Query)) {
                             res = startp + "¦" + (lastp - startp);

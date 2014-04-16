@@ -56,17 +56,17 @@ public class Utility {
                 res.append(r);
             }
         }
-        query = res.toString();
         String[] words = query.split("\\s+");
         if (words.length > 1) {
             GuiConstant.MULTI_WILD_CARD_FLG = true;
-            query = filterWildCharExpression(words, MainEntryPoint.stopWords);
+            query = filterWildCardExpression(words, MainEntryPoint.stopWords);
             if (GuiConstant.DEBUG_ON) {
-                Window.alert("Wild Term : " + query + "\n Before expression " + MainEntryPoint.beforeWildTerm
-                        + "\n after expression " + MainEntryPoint.afterWildTerm);
+            Window.alert("Wild Term : " + query + "\n Before expression " + MainEntryPoint.beforeWildTerm
+                    + "\n after expression " + MainEntryPoint.afterWildTerm);
             }
         } else {
             GuiConstant.MULTI_WILD_CARD_FLG = false;
+            query = res.toString();
         }
         return query;
     }
@@ -135,7 +135,7 @@ public class Utility {
         return i;
     }
 
-    public static String filterWildCharExpression(String[] words, ArrayList<String> stopWords) {
+    public static String filterWildCardExpression(String[] words, ArrayList<String> stopWords) {
         String wildTerm = "";
         boolean found = false;
         StringBuilder before = new StringBuilder("");
@@ -168,12 +168,13 @@ public class Utility {
         return wildTerm;
     }
 
-    public static ArrayList<String> getWildCharQueryWords(String[] words, ArrayList<String> stopWords) {
+    public static ArrayList<String> getWildCardQueryWords(String[] words, ArrayList<String> stopWords) {
         ArrayList<String> hits = new ArrayList<String>();
         if (GuiConstant.MULTI_WILD_CARD_FLG) {
             for (int i = 0; i < words.length; i++) {
-                hits.add(MainEntryPoint.beforeWildTerm + " " + words[i] + " " + MainEntryPoint.afterWildTerm);
+                hits.add((MainEntryPoint.beforeWildTerm + " " + words[i] + " " + MainEntryPoint.afterWildTerm).trim());
             }
+//            Window.alert(hits.toString());
         } else {
             for (int i = 0; i < words.length; i++) {
                 if ((!stopWords.contains(words[i].toLowerCase()))
@@ -181,7 +182,7 @@ public class Utility {
                         && !(words[i].equalsIgnoreCase("AND"))
                         && !(words[i].equalsIgnoreCase("OR"))
                         && !(words[i].equalsIgnoreCase("QUOTATION"))) {
-                    hits.add(words[i]);
+                    hits.add(words[i].trim());
                 }
             }
         }

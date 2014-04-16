@@ -1387,7 +1387,12 @@ public class BitextWidget extends Composite {
         if ((MainEntryPoint.QUERY.contains(" AND "))
                 || (MainEntryPoint.QUERY.contains(" OR "))
                 || (MainEntryPoint.QUERY.contains("*"))) {
-            getPositionsSAO(resultS, contentS, words, queryLength);
+            if (GuiConstant.MULTI_WILD_CARD_FLG) {
+//                Window.alert("Looking for close: " + words.get(0) + " " + words.get(1));
+                getPositionsWildCardExpr(contentS, words, queryLength);
+            } else {
+                getPositionsSAO(resultS, contentS, words, queryLength);
+            }
         } else if (MainEntryPoint.QUERY.contains(" NEAR ")) {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsNearSCR(contentS, words, queryLength);
@@ -1395,10 +1400,8 @@ public class BitextWidget extends Composite {
                 getPositionsNearS(resultS, contentS, words, queryLength);
             }
         } else if (GuiConstant.EXACT_CLOSE) {
-//            Window.alert("Lookinf for close: " + words.get(0) + " " + words.get(1));
+//            Window.alert("Looking for close: " + words.get(0) + " " + words.get(1));
             getPositionsClose(contentS, words, queryLength);
-        } else if (GuiConstant.MULTI_WILD_CARD_FLG) {
-            getPositionsWildCardExpr(contentS, words, queryLength);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsSCR(contentS, words, queryLength);
@@ -1418,18 +1421,21 @@ public class BitextWidget extends Composite {
         if ((MainEntryPoint.QUERY.contains(" AND "))
                 || (MainEntryPoint.QUERY.contains(" OR "))
                 || (MainEntryPoint.QUERY.contains("*"))) {
-            getPositionsMonoAO(resultS, contentS, words, queryLength);
+            if (GuiConstant.MULTI_WILD_CARD_FLG) {
+//                Window.alert("Looking for close: " + words.get(0) + " " + words.get(1));
+                getPositionsWildCardExprMono(contentS, words, queryLength);
+            } else {
+                getPositionsMonoAO(resultS, contentS, words, queryLength);
+            }
         } else if (MainEntryPoint.QUERY.contains(" NEAR ")) {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsNearMonoCR(contentS, words, queryLength);
             } else {
                 getPositionsNearMono(resultS, contentS, words, queryLength);
             }
-        }  else if (GuiConstant.EXACT_CLOSE) {
+        } else if (GuiConstant.EXACT_CLOSE) {
 //            Window.alert("Lookinf for close: " + words.get(0) + " " + words.get(1));
-            getPositionsClose(contentS, words, queryLength);
-        } else if (GuiConstant.MULTI_WILD_CARD_FLG) {
-            getPositionsWildCardExpr(contentS, words, queryLength);
+            getPositionsCloseMono(contentS, words, queryLength);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsMonoCR(contentS, words, queryLength);
@@ -1704,7 +1710,7 @@ public class BitextWidget extends Composite {
             });
         }
     }
-    
+
     public void getPositionsWildCardExpr(String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
             rpcS.getHitPosWildCardExpr(content, Query, GuiConstant.REF_FACTOR, new AsyncCallback<int[][]>() {
@@ -1732,7 +1738,7 @@ public class BitextWidget extends Composite {
             });
         }
     }
-
+    
     public void getPositionsNearS(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
             rpcS.getHitPosNear(posit, content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
@@ -1809,6 +1815,62 @@ public class BitextWidget extends Composite {
                         AddHitsEventsT();
                         nextHitT();
                         targetTextArea.setFocus(true);
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_33);
+                    }
+                }
+            });
+        }
+    }
+    
+    public void getPositionsCloseMono(String content, ArrayList<String> Query, int queryLn) {
+        if ((!Query.isEmpty()) && !(Query == null)) {
+            rpcS.getHitPosExactClose(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_10);
+                }
+
+                @Override
+                public void onSuccess(int[][] result) {
+                    ClearHitsEvents();
+                    PositionsS = result;
+                    if (PositionsS[0][0] > -1) {
+                        if (words.size() > GuiConstant.MAX_SEARCH_SIZE) {
+                            setMessage("warning", GuiMessageConst.MSG_34);
+                        }
+                        pSch.hide();
+                        AddHitsEventsMonoCR();
+                        nextHitMonoCR();
+                        sourceTextArea.setFocus(true);
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_33);
+                    }
+                }
+            });
+        }
+    }
+
+    public void getPositionsWildCardExprMono(String content, ArrayList<String> Query, int queryLn) {
+        if ((!Query.isEmpty()) && !(Query == null)) {
+            rpcS.getHitPosWildCardExpr(content, Query, GuiConstant.REF_FACTOR, new AsyncCallback<int[][]>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_10);
+                }
+
+                @Override
+                public void onSuccess(int[][] result) {
+                    ClearHitsEvents();
+                    PositionsS = result;
+                    if (PositionsS[0][0] > -1) {
+                        if (words.size() > GuiConstant.MAX_SEARCH_SIZE) {
+                            setMessage("warning", GuiMessageConst.MSG_34);
+                        }
+                        pSch.hide();
+                        AddHitsEventsMonoCR();
+                        nextHitMonoCR();
+                        sourceTextArea.setFocus(true);
                     } else {
                         setMessage("error", GuiMessageConst.MSG_33);
                     }

@@ -419,7 +419,8 @@ public class MainEntryPoint implements EntryPoint {
                     GuiConstant.EXACT_NBR_FLG = false;
                     GuiConstant.EXACT_CLOSE = false;
                     GuiConstant.MULTI_WILD_CARD_FLG = false;
-                    rpcM.getExpandTerms(Utility.filterWildCard(QUERY), new AsyncCallback<String[]>() {
+                    String wildCard = Utility.filterWildCard(QUERY.toLowerCase());
+                    rpcM.getExpandTerms(wildCard, new AsyncCallback<String[]>() {
                         @Override
                         public void onFailure(Throwable caught) {
                             Window.alert(GuiMessageConst.MSG_26);
@@ -432,7 +433,6 @@ public class MainEntryPoint implements EntryPoint {
                             words = Utility.getWildCardQueryWords(result, stopWords);
                             tS.words = words;
                             tS.queryLength = QUERY.length() + 20;
-                            QUERY = Query.substring(0, Query.indexOf("IN"));
                             textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
                             textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
                         }

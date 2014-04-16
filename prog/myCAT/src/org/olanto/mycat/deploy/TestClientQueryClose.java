@@ -58,7 +58,7 @@ public class TestClientQueryClose {
         try {
             Timer t1 = new Timer("------------- " + close1);
             QLResultNice res = is.evalQLNice(close1,close2, 0, 1000, "NAME",  48, false);
-/*            msg("time:" + res.duration);
+            msg("time:" + res.duration);
             msg("nbres:" + res.result.length);
             msg("query:" + res.query);
             msg("query2:" + res.query2);
@@ -69,7 +69,7 @@ public class TestClientQueryClose {
                 msg("  clue: " + res.clue[i]);
                 msg("");
             }
-*/
+
             t1.stop();
         } catch (RemoteException ex) {
             ex.printStackTrace();

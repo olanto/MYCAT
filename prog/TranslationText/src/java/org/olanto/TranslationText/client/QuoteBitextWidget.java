@@ -783,7 +783,7 @@ public class QuoteBitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsSAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -892,7 +892,7 @@ public class QuoteBitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsTAO(resultT, contentT, words, queryLength);
                                 }
                             });
@@ -944,7 +944,7 @@ public class QuoteBitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsSAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -986,7 +986,7 @@ public class QuoteBitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsTAO(resultT, contentT, words, queryLength);
                                 }
                             });
@@ -1201,7 +1201,7 @@ public class QuoteBitextWidget extends Composite {
 
                                 @Override
                                 public void onSuccess(String[] result) {
-                                    words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                    words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                     getPositionsMonoAO(resultS, contentS, words, queryLength);
                                 }
                             });
@@ -1283,7 +1283,7 @@ public class QuoteBitextWidget extends Composite {
 
                             @Override
                             public void onSuccess(String[] result) {
-                                words = Utility.getWildCharQueryWords(result, MainEntryPoint.stopWords);
+                                words = Utility.getWildCardQueryWords(result, MainEntryPoint.stopWords);
                                 getPositionsMonoAO(resultS, contentS, words, queryLength);
                             }
                         });

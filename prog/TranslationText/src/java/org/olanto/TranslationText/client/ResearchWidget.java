@@ -420,6 +420,7 @@ public class ResearchWidget extends Composite {
                     lastSelected = event.getSelectedItem().getTitle();
                     tS.reset();
                     tS.words = MainEntryPoint.words;
+//                    Window.alert(tS.words.toString());
                     tS.getTextContent(racine + event.getSelectedItem().getTitle().replace("/", "¦"), lS, lT, Query);
                 }
             }
