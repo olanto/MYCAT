@@ -19,11 +19,9 @@ along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
  **********/
 package org.olanto.zahir.create.bitext;
 
-import org.olanto.zahir.run.bitext.*;
 import org.olanto.senseos.SenseOS;
 import org.olanto.util.Timer;
 import org.olanto.zahir.align.LexicalTranslation;
-import org.olanto.zahir.align.bitext.AlignASetOfBiTexts;
 import static org.olanto.zahir.create.bitext.CreateBiTextConstant.*;
 import static org.olanto.mapman.MapArchiveConstant.SOF;
 import org.olanto.mapman.ParseSetOfWords;
@@ -38,7 +36,7 @@ public class CreateBITEXT_classic {
     private static Timer t1 = new Timer("global time");
     static String SO_Folder, EXT, TA_Folder, TMX_SOTA;
     private static LexicalTranslation s2t;
-    private static AlignASetOfBiTexts alignSet;
+    private static CreateASetOfBiTexts alignSet;
 
     public static void main(String[] args) {
 
@@ -62,7 +60,7 @@ public class CreateBITEXT_classic {
             EXT = ".txt";
             SOF=new ParseSetOfWords(IDX_DONTINDEXTHIS);
             s2t = new LexicalTranslation(SenseOS.getMYCAT_HOME() + "/map/" + SO + TA + "/lex.e2f", "UTF-8", MIN_DICT_LEVEL);
-            alignSet = new AlignASetOfBiTexts(
+            alignSet = new CreateASetOfBiTexts(
                     SO,
                     TA,
                     true,

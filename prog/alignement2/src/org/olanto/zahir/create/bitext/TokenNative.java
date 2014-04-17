@@ -18,7 +18,6 @@
 
 **********/
 package org.olanto.zahir.create.bitext;
-import org.olanto.zahir.run.bitext.*;
 import org.olanto.idxvli.DoParse;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.idxvli.TokenDefinition;

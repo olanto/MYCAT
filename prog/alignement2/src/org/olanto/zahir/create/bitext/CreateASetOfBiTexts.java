@@ -19,9 +19,8 @@
  *
  *********
  */
-package org.olanto.zahir.align.bitext;
+package org.olanto.zahir.create.bitext;
 
-import org.olanto.idxvli.IdxStructure;
 import org.olanto.zahir.align.LexicalTranslation;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -35,7 +34,7 @@ import static org.olanto.util.Messages.*;
  *
  * @author jg
  */
-public class AlignASetOfBiTexts {
+public class CreateASetOfBiTexts {
 
     static Vector<String> fileList;
     public int begin;
@@ -52,7 +51,7 @@ public class AlignASetOfBiTexts {
     static String SO, TA;
     private static OutputStreamWriter out;
 
-    public AlignASetOfBiTexts(String _SO, String _TA, boolean _auto, boolean _verbose,  String _fromfile, String _tofile, String _encoding,
+    public CreateASetOfBiTexts(String _SO, String _TA, boolean _auto, boolean _verbose,  String _fromfile, String _tofile, String _encoding,
             float _limit, LexicalTranslation _s2t, String _TMX, boolean _writefile, String _EXT) {
         SO = _SO;
         TA = _TA;
@@ -80,14 +79,15 @@ public class AlignASetOfBiTexts {
         }
     }
 
-    public AlignASetOfBiTexts(Vector<String> fileList, int _begin, int _end) {
+    public CreateASetOfBiTexts(Vector<String> fileList, int _begin, int _end) {
         //fileList = fileList;
         begin = _begin;
         end = _end;
         size = end - begin + 1;
     }
 
-    public void alignSeqMethod() {
+
+     public void createBiTextMethod() {
         //System.out.println("align SEQ:" + begin + ".." + end);
         for (int i = begin; i <= end; i++) {
             if (count % 100 == 0) {
@@ -103,9 +103,9 @@ public class AlignASetOfBiTexts {
 
             String name = fileList.get(i);
             // System.out.println("align:" + i + " file:" + fromfile + "/" + name);
-            BiSentence bc = null;
+            CreateBiSentence bc = null;
 //            try {
-                bc = new BiSentence(
+                bc = new CreateBiSentence(
                         auto, 5, 10,
                         verbose,
                         fromfile + "/" + name,
@@ -125,9 +125,8 @@ public class AlignASetOfBiTexts {
 //                msg("error for: " + fromfile+ "/" + name + " <-> " + tofile+ "/" + name);
 //        }
     }
-    }
-
-     
+    }   
+    
     
     public synchronized void updateCount(long counttested, int countTMX) {
         totcounttested += counttested;
@@ -143,8 +142,8 @@ public class AlignASetOfBiTexts {
 
     }
 
-    public AlignASetOfBiTexts subProblem(int subbegin, int subend) {
-        return new AlignASetOfBiTexts(fileList, subbegin, subend);
+    public CreateASetOfBiTexts subProblem(int subbegin, int subend) {
+        return new CreateASetOfBiTexts(fileList, subbegin, subend);
     }
 
     void init(String f) {

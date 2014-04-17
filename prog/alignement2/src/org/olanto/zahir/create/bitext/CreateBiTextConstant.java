@@ -19,7 +19,6 @@ along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
  **********/
 package org.olanto.zahir.create.bitext;
 
-import org.olanto.zahir.run.bitext.*;
 import org.olanto.senseos.SenseOS;
 
 /**

@@ -20,8 +20,6 @@
 
 package org.olanto.zahir.create.bitext;
 
-import org.olanto.zahir.run.bitext.*;
-
 /**
  * Une classe pour déclarer les types énumérés.
  * 

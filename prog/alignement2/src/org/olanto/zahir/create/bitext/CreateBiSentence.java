@@ -19,10 +19,9 @@
  *
  *********
  */
-package org.olanto.zahir.align.bitext;
+package org.olanto.zahir.create.bitext;
 
 import static org.olanto.util.Messages.*;
-import org.olanto.idxvli.IdxStructure;
 import org.olanto.zahir.align.DocumentSentence;
 import org.olanto.zahir.align.Global;
 import org.olanto.zahir.align.LexicalTranslation;
@@ -34,7 +33,7 @@ import org.olanto.zahir.align.WriteTMX;
  * Classe stockant la carte des positions entre deux traductions. init -> add
  * wordpos -> compact -> translate charpos
  */
-public class BiSentence {
+public class CreateBiSentence {
 
     public String encoding;
     public int windows, windows2, minauto, autopct;
@@ -61,7 +60,7 @@ public class BiSentence {
     static LexicalTranslation s2t;
     public long counttested;
 
-    public BiSentence(
+    public CreateBiSentence(
             boolean _auto, // taille automatique de la fenêtre d'exploration
             int autopct, // en pour cent de la taille du document (4%)
             int minauto, // minimum taille en mode auto
@@ -439,9 +438,9 @@ public class BiSentence {
             //msg("max for,"+toline+" to "+i+ ": "+ fromdoc.lines[i].s);
             counttested += fromdoc.lines[i].iw.length * todoc.lines[toline].iw.length;
             if (similarlength(i, toline)) {
-                //   float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[i].iw, todoc.lines[toline].iw, ratioLength(i, toline));
                 SimInformation sim = new SimInformation(fromdoc.lines[i].iw, todoc.lines[toline].iw, fromdoc.lines[i].id, todoc.lines[toline].id, todoc.lines[toline].score, false, s2t);
-                if (sim.similarity > lastsim) {
+                 msg("search max for,"+toline+" to "+i+ " sim: "+ sim+" - "+ fromdoc.lines[i].s);
+               if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;
                     maxline = i;
                 }
