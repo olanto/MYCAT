@@ -71,7 +71,8 @@ public class BiSentence {
             String encoding,
             int windows, // taille manuelle du premier passage (ou maximum si auto)
             int windows2, // taille manuelle du deuxième passage
-            LexicalTranslation _s2t) {
+            LexicalTranslation _s2t,
+            boolean createBiText) {
         verbose = _verbose;
         this.fromfile = fromfile;
         this.tofile = tofile;
@@ -318,7 +319,7 @@ public class BiSentence {
                 // float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i));
                 SimInformation sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, false, s2t);
                 if (sim.similarity == 0) {
-                    System.out.println("from" + fromline + " to " + i + ": " + todoc.lines[i].s);
+                    //System.out.println("from " + fromline + " to " + i + ": " + todoc.lines[i].s);
                 }
                 if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;

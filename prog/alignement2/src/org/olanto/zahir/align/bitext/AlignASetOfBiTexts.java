@@ -127,6 +127,47 @@ public class AlignASetOfBiTexts {
     }
     }
 
+     public void createBiTextMethod() {
+        //System.out.println("align SEQ:" + begin + ".." + end);
+        for (int i = begin; i <= end; i++) {
+            if (count % 100 == 0) {
+                if (count == 0) {
+                    start = System.currentTimeMillis();
+                } else {
+                    long stop = System.currentTimeMillis();
+                    System.out.println("count:" + count + " time ms:" + (stop - start)
+                            + " tested K/s:" + (totcounttested / (stop - start)));
+                }
+            }
+            count++;
+
+            String name = fileList.get(i);
+            // System.out.println("align:" + i + " file:" + fromfile + "/" + name);
+            BiSentence bc = null;
+//            try {
+                bc = new BiSentence(
+                        auto, 5, 10,
+                        verbose,
+                        fromfile + "/" + name,
+                        tofile + "/" + name,
+                        "UTF-8",
+                        4000,
+                        3,
+                        s2t);
+                if (!bc.error) {
+                    bc.buildCertainMap(TMX + "/" + name, SO, TA);
+                    log(bc.getInformation());
+                    updateCount(bc.counttested, bc.countTMX);
+                    // System.out.println("align:"+i+" count:"+bc.countalign+" loop1:"+bc.countloop1);
+                }
+
+//            } catch (Exception ex) {
+//                msg("error for: " + fromfile+ "/" + name + " <-> " + tofile+ "/" + name);
+//        }
+    }
+    }   
+    
+    
     public synchronized void updateCount(long counttested, int countTMX) {
         totcounttested += counttested;
         totcountTMX += countTMX;
