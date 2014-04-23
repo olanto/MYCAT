@@ -1463,6 +1463,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //            System.out.println("looking for words in expression : " + query.get(k));
             startPos.clear();
             lastPos.clear();
+            Query.clear();
             refLength = (int) (query.get(k).length() * reFactor);
             String[] words = query.get(k).split("\\s+");
             Query.addAll(Arrays.asList(words));
