@@ -1530,7 +1530,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                     System.out.println("error in list of replacements:" + w);
                 } else {
                     CONST.entryToReplace.put(s[0], s[1]);
-                    System.out.println("add to list:" + w);
+//                    System.out.println("add to list:" + w);
                 }
                 w = in.readLine();
             }
