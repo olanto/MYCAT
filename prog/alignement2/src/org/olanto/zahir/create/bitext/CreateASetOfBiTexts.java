@@ -102,7 +102,7 @@ public class CreateASetOfBiTexts {
             count++;
 
             String name = fileList.get(i);
-            // System.out.println("align:" + i + " file:" + fromfile + "/" + name);
+            System.out.println("create bitext :" + i + " file:" + fromfile + "/" + name);
             CreateBiSentence bc = null;
 //            try {
                 bc = new CreateBiSentence(

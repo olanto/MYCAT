@@ -56,7 +56,7 @@ public class CreateBITEXT_classic {
             SO_Folder = FOLDER_SEGMENTED + "/" + SO;
             TA_Folder = FOLDER_SEGMENTED + "/" + TA;
             TMX_SOTA = FOLDER_BITEXT + "/" + SO + TA;
-
+ System.out.println("create into :"+TMX_SOTA);
             EXT = ".txt";
             SOF=new ParseSetOfWords(IDX_DONTINDEXTHIS);
             s2t = new LexicalTranslation(SenseOS.getMYCAT_HOME() + "/map/" + SO + TA + "/lex.e2f", "UTF-8", MIN_DICT_LEVEL);

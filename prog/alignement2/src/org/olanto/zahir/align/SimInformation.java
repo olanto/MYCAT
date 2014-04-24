@@ -1,23 +1,24 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
-
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.zahir.align;
 
 import static org.olanto.util.Messages.*;
@@ -34,51 +35,6 @@ public final class SimInformation {
     public int countIdent;
     public int countNoIdent;
 
-//    public SimInformation(LexicalTranslation lex, String[] fromSeq, String[] toSeq) {
-//        float sum = 0;
-//        int countident = 0;
-//        int countnoident = 0;
-//        if (fromSeq.length < 3 || toSeq.length < 3) { // trop petit
-//            this.sourceCnt = fromSeq.length;
-//            this.targetCnt = toSeq.length;
-//            return;
-//        }
-//        float ratio = (float) Math.max(fromSeq.length, toSeq.length) / (float) Math.min(fromSeq.length, toSeq.length);
-//        if (ratio > 2.0) { // trop différent
-//            this.sourceCnt = fromSeq.length;
-//            this.targetCnt = toSeq.length;
-//            return;
-//        }
-//        for (int i = 0; i < fromSeq.length; i++) {
-//            if (lex.lexentryso.get(fromSeq[i]) != null) { // évite de faire des comparaisons si l'entrée n'est pas dans le dictionnaire
-//                for (int j = 0; j < toSeq.length; j++) {
-//                    Float val = lex.lexmap.get(fromSeq[i] + " " + toSeq[j]);
-//                    if (val != null) {
-//                        sum += val;
-//                        countnoident++;
-//                    }
-//                }
-//            }
-//        }
-////        if (countnoident >= 2) { // éviter de faire du travail inutile
-////            for (int i = 0; i < fromSeq.length; i++) {
-////                for (int j = 0; j < toSeq.length; j++) {
-////                    if (fromSeq[i].equals(toSeq[j])) {
-////                        sum += 0.5;
-////                        countident++;
-////                        break;
-////                    }
-////                }
-////            }
-////        }
-//        float sim = 2 * sum / (float) (fromSeq.length + toSeq.length);
-//        this.similarity = sim;
-//        this.sourceCnt = fromSeq.length;
-//        this.targetCnt = toSeq.length;
-//        this.countIdent = countident;
-//        this.countNoIdent = countnoident;
-//
-//    }
     public SimInformation(String[] fromSeq, String[] toSeq, int[] fromId, int[] toId, float[] score, boolean verbose, LexicalTranslation s2t) {
 
         float sum = 0;
@@ -157,5 +113,18 @@ public final class SimInformation {
         this.countIdent = countident;
         this.countNoIdent = countnoident;
 
+    }
+
+    public void addSimilarityOnNumbers(String s, String t) {
+      //  System.out.println(s + ", " + t);
+        if (s.equals(t)) {
+            similarity += 0.1;
+        }
+    }
+        public void addSimilarityOnSentence(String s, String t) {
+      //  System.out.println(s + ", " + t);
+        if (s.equals(t)) {
+            similarity += 0.2;
+        }
     }
 }

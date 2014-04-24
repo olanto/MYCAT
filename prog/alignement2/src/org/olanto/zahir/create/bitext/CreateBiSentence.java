@@ -22,12 +22,12 @@
 package org.olanto.zahir.create.bitext;
 
 import static org.olanto.util.Messages.*;
+import org.olanto.util.Timer;
 import org.olanto.zahir.align.DocumentSentence;
 import org.olanto.zahir.align.Global;
 import org.olanto.zahir.align.LexicalTranslation;
 import org.olanto.zahir.align.Map;
 import org.olanto.zahir.align.SimInformation;
-import org.olanto.zahir.align.WriteTMX;
 
 /**
  * Classe stockant la carte des positions entre deux traductions. init -> add
@@ -49,8 +49,8 @@ public class CreateBiSentence {
     public boolean error = false;
 //    public static float RATIOMAX=1.6f;
 //    public static float RATIOMIN=1/RATIOMAX;
-    public static float RATIOMAX = 1.5f;  //english
-    public static float RATIOMIN = 0.66f;
+    public static float RATIOMAX = 2.5f;  //english
+    public static float RATIOMIN = 0.57f;
 //    public static float RATIOMAX = 100.0f;  //english
 //    public static float RATIOMIN = 0.1f;
     public static int MIN_LENGTH_TORATIO = 20;
@@ -70,8 +70,7 @@ public class CreateBiSentence {
             String encoding,
             int windows, // taille manuelle du premier passage (ou maximum si auto)
             int windows2, // taille manuelle du deuxième passage
-            LexicalTranslation _s2t
-//            ,boolean createBiText
+            LexicalTranslation _s2t //            ,boolean createBiText
             ) {
         verbose = _verbose;
         this.fromfile = fromfile;
@@ -146,6 +145,9 @@ public class CreateBiSentence {
         buildMap2From();
         buildMap2To();
         map2.compute();
+        map2.computeFullMap();
+
+        map2.dump();
         if (verbose) {
             map2.dump();
         }
@@ -153,62 +155,32 @@ public class CreateBiSentence {
 
     public void buildCertainMap(String fname, String _srcLanguage, String _targetLanguage) {
 
-
-
-        WriteTMX tmx = new WriteTMX(fname, _srcLanguage, _targetLanguage);
+        WriteBITEXT tmx = new WriteBITEXT(fname, _srcLanguage, _targetLanguage);
 
         for (int i = 0; i < fromnblines; i++) {
-            if (map2.fromCertainMap[i]) {
-                countTMX++;
-                int toline = map2.fromMap[i];
-
-                if (verbose) {
-                    msg("ok for," + i + ": " + fromdoc.lines[i].s + "\n"
-                            + "-->," + toline + ": " + todoc.lines[toline].s + "\n");
+            if (map2.fromMap[i] != -1) { //
+                if (map2.start[i] == 1 && map2.end[i] == 1) {
+                    int toline = map2.fromMap[i];
+                    tmx.add2Sentence(fromdoc.lines[i].s, todoc.lines[toline].s, map2.start[i], map2.end[i]);
+                } else {
+                    String src = "";
+                    for (int j = i; j < i + map2.start[i]; j++) {
+                        src += fromdoc.lines[j].s + "$$$$$$";
+                    }
+                    String tgt = "";
+                    for (int j = map2.fromMap[i]; j < map2.fromMap[i] + map2.end[i]; j++) {
+                        tgt += todoc.lines[j].s + "$$$$$$";
+                    }
+                    tmx.add2Sentence(src, tgt, map2.start[i], map2.end[i]);
                 }
-                tmx.add2Sentence(fromdoc.lines[i].s, todoc.lines[toline].s);
             }
         }
-        tmx.tmxClose();
-    }
-
-    public void findHoleMap2(String fname, String _srcLanguage, String _targetLanguage) {
-
-        WriteTMX tmx = new WriteTMX(fname, _srcLanguage, _targetLanguage);
-
-        for (int i = 2; i < fromnblines - 2; i++) {
-            if (map2.fromMap[i] == 0
-                    && map2.fromShift[i - 1] == map2.fromShift[i - 2]
-                    && map2.fromShift[i + 1] == map2.fromShift[i - 2]
-                    && map2.fromShift[i + 2] == map2.fromShift[i - 2]) {
-                int toline = map2.fromMap[i - 1] + 1;
-
-                msg("could be ok for," + i + ": " + fromdoc.lines[i].s + "\n"
-                        + "-->," + toline + ": " + todoc.lines[toline].s + "\n");
-                tmx.add2Sentence(fromdoc.lines[i].s, todoc.lines[toline].s);
-
-            }
+            tmx.tmxClose();
         }
-        tmx.tmxClose();
-    }
 
-    public void findHoleMap(String fname, String _srcLanguage, String _targetLanguage) {
-
-        WriteTMX tmx = new WriteTMX(fname, _srcLanguage, _targetLanguage);
-
-        for (int i = 2; i < fromnblines - 2; i++) {
-            if (map2.fromMap[i] == 0
-                    && map2.fromShift[i - 1] == map2.fromShift[i + 1]) {
-                int toline = map2.fromMap[i - 1] + 1;
-
-                msg("could be ok for," + i + ": " + fromdoc.lines[i].s + "\n"
-                        + "-->," + toline + ": " + todoc.lines[toline].s + "\n");
-                tmx.add2Sentence(fromdoc.lines[i].s, todoc.lines[toline].s);
-
-            }
-        }
-        tmx.tmxClose();
-    }
+ 
+ 
+    
 
     public void adjustWindow() {
 
@@ -318,6 +290,8 @@ public class CreateBiSentence {
             if (similarlength(fromline, i)) {
                 // float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i));
                 SimInformation sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, false, s2t);
+                sim.addSimilarityOnNumbers(fromdoc.lines[fromline].numbers, todoc.lines[i].numbers);
+                sim.addSimilarityOnSentence(fromdoc.lines[fromline].s, todoc.lines[i].s);
                 if (sim.similarity == 0) {
                     //System.out.println("from " + fromline + " to " + i + ": " + todoc.lines[i].s);
                 }
@@ -348,12 +322,9 @@ public class CreateBiSentence {
             counttested += fromdoc.lines[fromline].iw.length * todoc.lines[i].iw.length;
             if (similarlength(fromline, i)) {
                 SimInformation sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, false, s2t);
-//                float simprodcart = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i), false);
-//                if (Math.abs(simprodcart - sim.similarity) > 0.001) {
-//                    msg("simprodcart:" + simprodcart + " new sim:" + sim.similarity);
-//                    simprodcart = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i), true);
-//                    sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, true, s2t);
-//                }
+                sim.addSimilarityOnNumbers(fromdoc.lines[fromline].numbers, todoc.lines[i].numbers);
+                sim.addSimilarityOnSentence(fromdoc.lines[fromline].s, todoc.lines[i].s);
+//                msg("search max from-to," + fromline + " to " + i + " sim: " + sim.similarity + " - " + fromdoc.lines[fromline].s + " - " + todoc.lines[i].s);
                 if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;
                     maxline = i;
@@ -386,7 +357,7 @@ public class CreateBiSentence {
 
     public void buildMap2To() {
 
-        //Timer t1 = new Timer("build map2 TO-->FROM");
+        Timer t1 = new Timer("build map2 TO-->FROM");
         for (int i = 0; i < tonblines; i++) {
             //   for(int i=0;i<40;i++){
             int fromline = getmaxto(i, i - map1.toMapping[i]);
@@ -400,7 +371,7 @@ public class CreateBiSentence {
                     todoc.lines[i].s.length(), todoc.lines[i].iw.length,
                     fromdoc.lines[fromline].s.length(), fromdoc.lines[fromline].iw.length);
         }
-        //t1.stop();
+        t1.stop();
         //StatSimilarity.statistic();
     }
 
@@ -416,6 +387,8 @@ public class CreateBiSentence {
             if (similarlength(i, toline)) {
                 //   float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[i].iw, todoc.lines[toline].iw, ratioLength(i, toline));
                 SimInformation sim = new SimInformation(fromdoc.lines[i].iw, todoc.lines[toline].iw, fromdoc.lines[i].id, todoc.lines[toline].id, todoc.lines[toline].score, false, s2t);
+                sim.addSimilarityOnNumbers(fromdoc.lines[i].numbers, todoc.lines[toline].numbers);
+                sim.addSimilarityOnSentence(fromdoc.lines[i].s, todoc.lines[toline].s);
                 if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;
                     maxline = i;
@@ -439,8 +412,10 @@ public class CreateBiSentence {
             counttested += fromdoc.lines[i].iw.length * todoc.lines[toline].iw.length;
             if (similarlength(i, toline)) {
                 SimInformation sim = new SimInformation(fromdoc.lines[i].iw, todoc.lines[toline].iw, fromdoc.lines[i].id, todoc.lines[toline].id, todoc.lines[toline].score, false, s2t);
-                 msg("search max for,"+toline+" to "+i+ " sim: "+ sim+" - "+ fromdoc.lines[i].s);
-               if (sim.similarity > lastsim) {
+                sim.addSimilarityOnNumbers(fromdoc.lines[i].numbers, todoc.lines[toline].numbers);
+                sim.addSimilarityOnSentence(fromdoc.lines[i].s, todoc.lines[toline].s);
+//                msg("search max to-from," + toline + " to " + i + " sim: " + sim.similarity + " - " + todoc.lines[toline].s + " - " + fromdoc.lines[i].s);
+                if (sim.similarity > lastsim) {
                     lastsim = sim.similarity;
                     maxline = i;
                 }
@@ -454,7 +429,7 @@ public class CreateBiSentence {
 
     public boolean similarlength(int linesrc, int linetarget) {
 
-        if (fromdoc.lines[linesrc].iw.length < MIN_LENGTH_TORATIO && todoc.lines[linetarget].iw.length < MIN_LENGTH_TORATIO) {  // trop petit pour un ratio
+        if (fromdoc.lines[linesrc].s.length() < MIN_LENGTH_TORATIO && todoc.lines[linetarget].s.length() < MIN_LENGTH_TORATIO) {  // trop petit pour un ratio
             return true;
         } else {
             float ratioline = ratioLength(linesrc, linetarget);
@@ -464,12 +439,13 @@ public class CreateBiSentence {
             if (ratioline > RATIOMIN && ratioline < RATIOMAX) {
                 return true;
             }
+            //      msg("ratioline:" + ratioline + " from:" + fromdoc.lines[linesrc].s.length() + " from:" + todoc.lines[linetarget].s.length());
             return false;
         }
     }
 
     public float ratioLength(int linesrc, int linetarget) {
-        float ratioline = (float) fromdoc.lines[linesrc].iw.length / (float) todoc.lines[linetarget].iw.length;
+        float ratioline = (float) fromdoc.lines[linesrc].s.length() / (float) todoc.lines[linetarget].s.length();
         if (ratioline > 1.0) {
             return ratioline;
         } else {
