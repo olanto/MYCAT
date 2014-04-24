@@ -211,16 +211,17 @@ public class QLResultNice implements Serializable {
             boolean nearOK = false;
             for (int j = 0; j < idx1.size(); j++) {
                 for (int k = 0; k < idx2.size(); k++) {
-                    if ((idx2.get(k)>idx1.get(j)&& idx2.get(k) - (idx1.get(j) + close1.length()) < chardist)
-                            || (idx1.get(j)>idx2.get(k)&& idx1.get(j) - (idx2.get(k) + close2.length()) < chardist)) {
+                    if ((idx2.get(k) > idx1.get(j) && idx2.get(k) - (idx1.get(j) + close1.length()) < chardist)
+                            || (idx1.get(j) > idx2.get(k) && idx1.get(j) - (idx2.get(k) + close2.length()) < chardist)) {
                         selected[i] = true;
                         lastexact++;
                         nearOK = true;
                         break;
                     }
-                    if (nearOK = true) {
-                        break;
-                    }
+
+                }
+                if (nearOK) {
+                    break;
                 }
             }
             if (lastexact == size) {// enough results
@@ -300,11 +301,11 @@ public class QLResultNice implements Serializable {
         for (int i = 0; i < result.length; i++) {
             countcheckfile++;
             if (id.isExactExpInDoc(exactExpression, result[i], docname[i])) {
-                System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
+//                System.out.println("\"" + exactExpression + "\" is in " + docname[i]);
                 selected[i] = true; // mark ok
                 lastexact++;
             } else {
-                System.out.println(exactExpression + "\" is not in " + docname[i]);
+//                System.out.println(exactExpression + "\" is not in " + docname[i]);
             }
             if (lastexact == size) {// enough results
                 break;
@@ -312,7 +313,7 @@ public class QLResultNice implements Serializable {
         }
 
         // compress result
-        System.out.println("lastExact" + lastexact);
+//        System.out.println("lastExact" + lastexact);
         int[] exactResult = new int[lastexact];
         String[] exactDocname = new String[lastexact];
         String[] exactTitle = new String[lastexact];

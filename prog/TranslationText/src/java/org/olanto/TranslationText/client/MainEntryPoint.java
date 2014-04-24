@@ -434,6 +434,7 @@ public class MainEntryPoint implements EntryPoint {
                                 public void onFailure(Throwable caught) {
                                     Window.alert(GuiMessageConst.MSG_26);
                                 }
+
                                 @Override
                                 public void onSuccess(String[] result) {
                                     words = null;
@@ -602,6 +603,7 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
+                textAlignerWidget.docListContainer.setHeading(GuiMessageConst.MSG_41 + "0" + GuiMessageConst.MSG_52);
                 textAlignerWidget.GoSrch.disable();
                 getcontentlistMyCat();
             }
@@ -621,6 +623,7 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.search.addKeyPressHandler(new KeyPressHandler() {
             @Override
             public void onKeyPress(KeyPressEvent event) {
+                textAlignerWidget.docListContainer.setHeading(GuiMessageConst.MSG_41 + "0" + GuiMessageConst.MSG_52);
                 textAlignerWidget.GoSrch.disable();
                 QUERY = textAlignerWidget.search.getText();
                 if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {

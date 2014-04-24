@@ -146,21 +146,23 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             QLResultNice res;
 //            Timer t1 = new Timer("------------- " + query);
             res = is.evalQLNice(query, 0, maxSize, order, exact, number);
-            if (res.docname != null) {
+            if (((res != null)) && (res.docname != null)) {
 //                System.out.println("List of documents retrieved");
                 if (!collections.isEmpty()) {
 //                    System.out.println("____________________Triés par collections & "+order+"____________________");
                     for (int s = 0; s < collections.size(); s++) {
 //                        System.out.println("Collection: " + collections.get(s));
                         for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                            longName = res.docname[i].substring(lastslash);
-                            if (longName.contains(collections.get(s))) {
+                            if (res.docname[i] != null) {
+                                int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                                longName = res.docname[i].substring(lastslash);
+                                if (longName.contains(collections.get(s))) {
 //                                System.out.println("Docname: " + res.docname[i]);
-                                docName = getDocListElement(longName.substring(3), PATH_ON);
-                                listElem = docName + "¦]" + "[¦" + longName;
-                                if (!documents.contains(listElem)) {
-                                    documents.add(listElem);
+                                    docName = getDocListElement(longName.substring(3), PATH_ON);
+                                    listElem = docName + "¦]" + "[¦" + longName;
+                                    if (!documents.contains(listElem)) {
+                                        documents.add(listElem);
+                                    }
                                 }
                             }
                         }
@@ -168,12 +170,14 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 } else {
 //                    System.out.println("____________________ Sorted by " + order + "____________________");
                     for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                        int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                        longName = res.docname[i].substring(lastslash);
-                        docName = getDocListElement(longName.substring(3), PATH_ON);
-                        listElem = docName + "¦]" + "[¦" + longName;
-                        documents.add(listElem);
+                        if (res.docname[i] != null) {
+                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                            longName = res.docname[i].substring(lastslash);
+                            docName = getDocListElement(longName.substring(3), PATH_ON);
+                            listElem = docName + "¦]" + "[¦" + longName;
+                            documents.add(listElem);
 //                        System.out.println("Docname: " + res.docname[i]);
+                        }
                     }
                 }
             }
@@ -788,7 +792,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public int[][] getHitPosExactClose(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn) {
         int refLength = (int) (reFactor * (queryLn + sepNumber * avgTokenLn));
         int startp, lastp;
-//        System.out.println("Searching for near on a wondow of: " + refLength);
+//        System.out.println("Searching for close on a window of: " + refLength);
         ArrayList<String> Pos = new ArrayList<>();
         ArrayList<Integer> startPos = new ArrayList<>();
         ArrayList<Integer> lastPos = new ArrayList<>();
@@ -854,7 +858,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public int[][] getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn) {
         int refLength = (int) (reFactor * (queryLn + sepNumber * avgTokenLn));
         int startp, lastp;
-//        System.out.println("Searching for near on a wondow of: " + refLength);
+//        System.out.println("Searching for near on a window of: " + refLength);
         ArrayList<String> Pos = new ArrayList<>();
         ArrayList<Integer> startPos = new ArrayList<>();
         ArrayList<Integer> lastPos = new ArrayList<>();
@@ -1058,28 +1062,32 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //            Timer t1 = new Timer("------------- " + query);
             QLResultNice res = is.browseNice(request, LangS, 0, maxBrowse, getCollections(collections), order, ONLY_ON_FILE_NAME);
 
-            if (res.docname != null) {
+            if (((res != null)) && (res.docname != null)) {
                 if (!collections.isEmpty()) {
                     for (int s = 0; s < collections.size(); s++) {
                         for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                            longName = res.docname[i].substring(lastslash);
-                            if (longName.contains(collections.get(s))) {
-                                docName = getDocListElement(longName.substring(3), PATH_ON);
-                                listElem = docName + "¦]" + "[¦" + longName;
-                                if (!documents.contains(listElem)) {
-                                    documents.add(listElem);
+                            if (res.docname[i] != null) {
+                                int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                                longName = res.docname[i].substring(lastslash);
+                                if (longName.contains(collections.get(s))) {
+                                    docName = getDocListElement(longName.substring(3), PATH_ON);
+                                    listElem = docName + "¦]" + "[¦" + longName;
+                                    if (!documents.contains(listElem)) {
+                                        documents.add(listElem);
+                                    }
                                 }
                             }
                         }
                     }
                 } else {
                     for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                        int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                        longName = res.docname[i].substring(lastslash);
-                        docName = getDocListElement(longName.substring(3), PATH_ON);
-                        listElem = docName + "¦]" + "[¦" + longName;
-                        documents.add(listElem);
+                        if (res.docname[i] != null) {
+                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                            longName = res.docname[i].substring(lastslash);
+                            docName = getDocListElement(longName.substring(3), PATH_ON);
+                            listElem = docName + "¦]" + "[¦" + longName;
+                            documents.add(listElem);
+                        }
                     }
                 }
             }
@@ -1410,21 +1418,23 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 
 //            Timer t1 = new Timer("------------- " + query);
             res = is.evalQLNice(Queries[0], Queries[1], 0, maxSize, order, (CONST.NEAR_DISTANCE * CONST.TA_NEAR_AVG_TERM_CHAR), number);
-            if (res.docname != null) {
+            if (((res != null)) && (res.docname != null)) {
 //                System.out.println("List of documents retrieved");
                 if (!collections.isEmpty()) {
 //                    System.out.println("____________________Triés par collections & "+order+"____________________");
                     for (int s = 0; s < collections.size(); s++) {
 //                        System.out.println("Collection: " + collections.get(s));
                         for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                            longName = res.docname[i].substring(lastslash);
-                            if (longName.contains(collections.get(s))) {
+                            if (res.docname[i] != null) {
+                                int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                                longName = res.docname[i].substring(lastslash);
+                                if (longName.contains(collections.get(s))) {
 //                                System.out.println("Docname: " + res.docname[i]);
-                                docName = getDocListElement(longName.substring(3), PATH_ON);
-                                listElem = docName + "¦]" + "[¦" + longName;
-                                if (!documents.contains(listElem)) {
-                                    documents.add(listElem);
+                                    docName = getDocListElement(longName.substring(3), PATH_ON);
+                                    listElem = docName + "¦]" + "[¦" + longName;
+                                    if (!documents.contains(listElem)) {
+                                        documents.add(listElem);
+                                    }
                                 }
                             }
                         }
@@ -1432,12 +1442,14 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 } else {
 //                    System.out.println("____________________ Sorted by " + order + "____________________");
                     for (int i = 0; i < res.docname.length; i++) {//res.result or res.docname
-                        int lastslash = res.docname[i].lastIndexOf("/") - 2;
-                        longName = res.docname[i].substring(lastslash);
-                        docName = getDocListElement(longName.substring(3), PATH_ON);
-                        listElem = docName + "¦]" + "[¦" + longName;
-                        documents.add(listElem);
+                        if (res.docname[i] != null) {
+                            int lastslash = res.docname[i].lastIndexOf("/") - 2;
+                            longName = res.docname[i].substring(lastslash);
+                            docName = getDocListElement(longName.substring(3), PATH_ON);
+                            listElem = docName + "¦]" + "[¦" + longName;
+                            documents.add(listElem);
 //                        System.out.println("Docname: " + res.docname[i]);
+                        }
                     }
                 }
             }
@@ -1547,14 +1559,15 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             r = Query.charAt(i);
             if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ')) {
                 res.append(r);
-            }else {
-                 res.append(" ");
+            } else {
+                res.append(" ");
             }
         }
 //        Window.alert(res.toString());
         return res.toString();
     }
-     @Override
+
+    @Override
     public String filterWildCardQuery(String Query) {
         char r;
         StringBuilder res = new StringBuilder("");
@@ -1563,7 +1576,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
                 res.append(r);
             } else {
-                 res.append(" ");
+                res.append(" ");
             }
         }
 //        Window.alert(res.toString());
