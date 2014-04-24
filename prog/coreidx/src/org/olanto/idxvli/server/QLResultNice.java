@@ -144,18 +144,18 @@ public class QLResultNice implements Serializable {
         for (int i = 0; i < result.length; i++) {
             for (int j = lastJ; j < tobejoined.length; j++) {
                 if (result[i] == tobejoined[j]) {
-                    System.out.println(i + "," + j + " - " + result[i] + "=" + tobejoined[j]);
+//                    System.out.println(i + "," + j + " - " + result[i] + "=" + tobejoined[j]);
                     selected[i] = true; // mark ok
                     lastjoin++;
                     lastJ = j;
                     break;
                 }
                 if (result[i] < tobejoined[j]) {
-                    System.out.println(i + "," + j + " - " + result[i] + "<" + tobejoined[j]);
+//                    System.out.println(i + "," + j + " - " + result[i] + "<" + tobejoined[j]);
                     lastJ = j;
                     break;
                 }
-                System.out.println(i + "," + j + " - " + result[i] + ">" + tobejoined[j]);
+//                System.out.println(i + "," + j + " - " + result[i] + ">" + tobejoined[j]);
             }
         }
         // compress result
@@ -196,17 +196,17 @@ public class QLResultNice implements Serializable {
         for (int i = 0; i < result.length; i++) {
             countcheckfile++;
             List<Integer> idx1 = id.idxOfExpInDoc(close1, result[i], docname[i]);
-            System.out.print("close1=");
-            for (int j = 0; j < idx1.size(); j++) {
-                System.out.print(idx1.get(j) + " ");
-            }
-            System.out.print("\n");
+//            System.out.print("close1=");
+//            for (int j = 0; j < idx1.size(); j++) {
+//                System.out.print(idx1.get(j) + " ");
+//            }
+//            System.out.print("\n");
             List<Integer> idx2 = id.idxOfExpInDoc(close2, result[i], docname[i]);
-            System.out.print("close2=");
-            for (int j = 0; j < idx2.size(); j++) {
-                System.out.print(idx2.get(j) + " ");
-            }
-            System.out.print("\n");
+//            System.out.print("close2=");
+//            for (int j = 0; j < idx2.size(); j++) {
+//                System.out.print(idx2.get(j) + " ");
+//            }
+//            System.out.print("\n");
             // check close validity
             boolean nearOK = false;
             for (int j = 0; j < idx1.size(); j++) {
@@ -228,7 +228,7 @@ public class QLResultNice implements Serializable {
             }
         }
         // compress result
-        System.out.println("lastExact" + lastexact);
+//        System.out.println("lastExact" + lastexact);
         int[] exactResult = new int[lastexact];
         String[] exactDocname = new String[lastexact];
         String[] exactTitle = new String[lastexact];
@@ -360,7 +360,7 @@ public class QLResultNice implements Serializable {
     }
 
     public void orderBy(IdxStructure id, String kind) {
-        System.out.println("orderBy: " + kind);
+//        System.out.println("orderBy: " + kind);
         if (kind.equals("DATE")) { // by date
             docdate = new long[result.length];
             for (int i = 0; i < result.length; i++) { // charge les noms pour le tri

@@ -1404,9 +1404,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         }
         try {
             QLResultNice res;
-            System.out.println("Exact close query: " + query);
+//            System.out.println("Exact close query: " + query);
             String[] Queries = query.split("---CLOSE---");
-            System.out.println("part 1: " + Queries[0] + " part 2: " + Queries[1] + " ");
+//            System.out.println("part 1: " + Queries[0] + " part 2: " + Queries[1] + " ");
 
 //            Timer t1 = new Timer("------------- " + query);
             res = is.evalQLNice(Queries[0], Queries[1], 0, maxSize, order, (CONST.NEAR_DISTANCE * CONST.TA_NEAR_AVG_TERM_CHAR), number);

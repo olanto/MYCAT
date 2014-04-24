@@ -333,17 +333,17 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         serverR.lock();
         try {
             QLResultNice res1 = id.evalQLNice(cs, request1, start, Integer.MAX_VALUE, true); // pas de limite
-            res1.dump("res1");
+//            res1.dump("res1");
             QLResultNice res2 = id.evalQLNice(cs, request2, start, Integer.MAX_VALUE, true); // pas de limite
-            res2.dump("res2");
+//            res2.dump("res2");
             res1.fusionResult(res2.result);
-            res1.dump("res1 after fusion");
+//            res1.dump("res1 after fusion");
             res1.orderBy(id, order);
-            res1.dump("res1 after order");
+//            res1.dump("res1 after order");
             res1.checkExactClose(id, Integer.MAX_VALUE, request2);
-            res1.dump("res1 after check EXACT");
+//            res1.dump("res1 after check EXACT");
             res1.checkIfRealyNear(id, size, chardist);
-            res1.dump("res1 after check RealyNear");
+//            res1.dump("res1 after check RealyNear");
             return res1;
 
         } finally {
