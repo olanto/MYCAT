@@ -265,7 +265,7 @@ public class Utility {
         String Query = queryo.trim();
         String query;
         String qt = Query;
-        if (qt.contains("\" CLOSE \"")) {
+        if (qt.contains(" CLOSE ")) {
             Window.alert("Error 5: Missing first quote. Malformed CLOSE query\n SYNTAX = \"expr1\" CLOSE \"expr2\"");
             return "";
         } else {
