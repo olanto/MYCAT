@@ -802,7 +802,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         last = Query.get(Query.size() - 1);
 //        System.out.println("First: " + first);
 //        System.out.println("Last: " + last);
-        System.out.println("Exact CLOSE: " + Pattern.quote(first));
+//        System.out.println("Exact CLOSE: " + Pattern.quote(first));
         regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
         p = Pattern.compile(regex);
         m = p.matcher(content);
@@ -815,7 +815,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //                System.out.println("Start found at : " + m.start());
             }
         }
-        System.out.println("Exact CLOSE: " + Pattern.quote(last));
+//        System.out.println("Exact CLOSE: " + Pattern.quote(last));
         regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
         p = Pattern.compile(regex);
         m = p.matcher(content);
