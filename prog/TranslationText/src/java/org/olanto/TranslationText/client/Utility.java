@@ -32,30 +32,9 @@ public class Utility {
 
     public Utility() {
     }
-
-    public static String filterQuery(String Query) {
-        char r;
-        StringBuilder res = new StringBuilder("");
-        for (int i = 0; i < Query.length(); i++) {
-            r = Query.charAt(i);
-            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ')) {
-                res.append(r);
-            }
-        }
-//        Window.alert(res.toString());
-        return res.toString();
-    }
-
-    public static String filterWildCard(String Query) {
-        String query = Query.trim();
-        char r;
-        StringBuilder res = new StringBuilder("");
-        for (int i = 0; i < query.length(); i++) {
-            r = query.charAt(i);
-            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
-                res.append(r);
-            }
-        }
+    
+    public static String processWildCard(String Query) {
+        String query = Query.trim();   
         String[] words = query.split("\\s+");
         if (words.length > 1) {
             GuiConstant.MULTI_WILD_CARD_FLG = true;
@@ -66,7 +45,6 @@ public class Utility {
             }
         } else {
             GuiConstant.MULTI_WILD_CARD_FLG = false;
-            query = res.toString();
         }
         return query;
     }
@@ -93,7 +71,7 @@ public class Utility {
     }
 
     public static ArrayList<String> getQueryWords(String query, ArrayList<String> stopWords) {
-        String Query = filterQuery(query.trim());
+        String Query = query.trim();
         ArrayList<String> hits = new ArrayList<String>();
 
         if (Query.startsWith("QL(")) { // complex query
@@ -312,7 +290,6 @@ public class Utility {
                 int f = Query.indexOf("(") + 1;
                 query = Query.substring(f, l);
             } else if ((qt.contains(" AND ")) || (qt.contains(" OR "))) {
-                Query = filterQuery(Query);
                 String[] words = Query.split("\\s+");
                 String q = "";
                 for (int i = 0; i < words.length; i++) {
@@ -324,7 +301,6 @@ public class Utility {
                 int k = q.length() - 1;
                 query = q.substring(0, k);
             } else if (qt.contains(" NEAR ")) { // normalement deux arguments
-                Query = filterQuery(Query);
                 String q = "NEAR (";
                 String[] words = Query.split("\\s+");
                 int i = 0, j = 0;
@@ -341,7 +317,6 @@ public class Utility {
                 int k = q.length() - 1;
                 query = q.substring(0, k) + ")";
             } else {
-                Query = filterQuery(Query);
                 String q = "QUOTATION(\"";
                 String[] words = Query.split("\\s+");
                 for (int i = 0; i < words.length; i++) {

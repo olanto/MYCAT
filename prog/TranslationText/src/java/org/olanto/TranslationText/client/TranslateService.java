@@ -34,7 +34,7 @@ public interface TranslateService extends RemoteService {
     public String myMethod(String s);
 
     public ArrayList<String> getDocumentList(String Query, ArrayList<String> collections, boolean PATH_ON, int maxSize, String order, boolean exact, boolean number);
-   
+
     public ArrayList<String> getDocumentCloseList(String Query, ArrayList<String> collections, boolean PATH_ON, int maxSize, String order, boolean exact, boolean number);
 
     public ArrayList<String> getDocumentBrowseList(String request, String LangS, ArrayList<String> collections, boolean PATH_ON, int maxBrowse, String order, boolean ONLY_ON_FILE_NAME);
@@ -52,9 +52,9 @@ public interface TranslateService extends RemoteService {
     public int[][] getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact);
 
     public int[][] getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn);
-    
+
     public int[][] getHitPosExactClose(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn);
-    
+
     public int[][] getHitPosWildCardExpr(String content, ArrayList<String> query, float reFactor);
 
     public int[][] getHitPosNear(int[][] positions, String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn);
@@ -72,4 +72,8 @@ public interface TranslateService extends RemoteService {
     public String createTempFile(String FileName, String Content);
 
     public String createTempZip(String FileName);
+
+    public String filterQuery(String Query);
+    
+    public String filterWildCardQuery(String Query);
 }

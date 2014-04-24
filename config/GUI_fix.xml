@@ -18,7 +18,7 @@
 	<!--ONLY_ON_FILE_NAME: true = limits the browse function to the file names (not on full paths)-->
 	<entry key="ONLY_ON_FILE_NAME">false</entry>
 	<!--BITEXT_ONLY: true = checks that there is a target version before displaying a reference document in the Hit List-->
-	<entry key="BITEXT_ONLY">false</entry>
+	<entry key="BITEXT_ONLY">true</entry>
 	<!--SAVE_ON: true = activates the Save buttons for source and target reference documents-->
 	<entry key="SAVE_ON">true</entry>
 	<!--Graphic and size parameters-->

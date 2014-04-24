@@ -1538,4 +1538,35 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             System.err.println("IO error in SetOfReplacements (missing file ?)");
         }
     }
+
+    @Override
+    public String filterQuery(String Query) {
+        char r;
+        StringBuilder res = new StringBuilder("");
+        for (int i = 0; i < Query.length(); i++) {
+            r = Query.charAt(i);
+            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ')) {
+                res.append(r);
+            }else {
+                 res.append(" ");
+            }
+        }
+//        Window.alert(res.toString());
+        return res.toString();
+    }
+     @Override
+    public String filterWildCardQuery(String Query) {
+        char r;
+        StringBuilder res = new StringBuilder("");
+        for (int i = 0; i < Query.length(); i++) {
+            r = Query.charAt(i);
+            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
+                res.append(r);
+            } else {
+                 res.append(" ");
+            }
+        }
+//        Window.alert(res.toString());
+        return res.toString();
+    }
 }

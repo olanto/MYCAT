@@ -797,7 +797,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearS(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -906,7 +906,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearT(resultT, contentT, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -957,7 +957,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearS(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -998,7 +998,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearT(resultT, contentT, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -1216,7 +1216,7 @@ public class BitextWidget extends Composite {
                                 getPositionsNearMono(resultS, contentS, words, queryLength);
                             }
                         } else if ((search.contains("*"))) {
-                            rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                            rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                                 @Override
                                 public void onFailure(Throwable caught) {
                                     setMessage("error", GuiMessageConst.MSG_3);
@@ -1298,7 +1298,7 @@ public class BitextWidget extends Composite {
                             getPositionsNearMono(resultS, contentS, words, queryLength);
                         }
                     } else if ((search.contains("*"))) {
-                        rpcS.getExpandTerms(Utility.filterWildCard(search), new AsyncCallback<String[]>() {
+                        rpcS.getExpandTerms(Utility.processWildCard(search), new AsyncCallback<String[]>() {
                             @Override
                             public void onFailure(Throwable caught) {
                                 setMessage("error", GuiMessageConst.MSG_3);

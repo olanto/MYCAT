@@ -70,4 +70,8 @@ public interface TranslateServiceAsync {
     public void createTempFile(String FileName, String Content, AsyncCallback<String> asyncCallback);
 
     public void createTempZip(String FileName, AsyncCallback<String> asyncCallback);
+    
+    public void filterQuery(String Query, AsyncCallback<String> asyncCallback);
+    
+    public void filterWildCardQuery(String Query, AsyncCallback<String> asyncCallback);
 }
