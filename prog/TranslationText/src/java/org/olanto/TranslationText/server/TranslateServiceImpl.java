@@ -673,16 +673,16 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         String curHit;
         for (int j = 1; j < Query.size() - 1; j++) {
             curHit = Query.get(j);
-            System.out.println("test if: " + curHit + " is in :" + content);
+//            System.out.println("test if: " + curHit + " is in :" + content);
             String regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
             Pattern p = Pattern.compile(regex);
             Matcher m = p.matcher(content);
             if (!m.find()) {
-                System.out.println("Not Found");
+//                System.out.println("Not Found");
                 return false;
             }
         }
-        System.out.println("All found");
+//        System.out.println("All found");
         return true;
     }
 
