@@ -111,7 +111,12 @@
       <entry key="QUERY_CACHE_SIZE">1000</entry>
       <entry key="QUERY_CACHE_COUNT">256</entry>
 	  <!--Path to the file containing all the SERVER messages -->
-        <entry key="SERVER_MESSAGE_PATH">C:/MYCAT/config/messages/interface/initserver</entry> 
-        <entry key="SERVER_MESSAGE_LANG"></entry>
+      <entry key="SERVER_MESSAGE_PATH">C:/MYCAT/config/messages/interface/initserver</entry> 
+      <entry key="SERVER_MESSAGE_LANG"></entry>
+	<!-- Regular expression for search = -->
+	<!-- Modified on April 30th, 2014 = -->
+	<entry key="REGEX_EXACT_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>
+	<entry key="REGEX_EXACT_AFTER_TOKEN">([^\p{L}\p{N}]|$)</entry>
+	<!--MAXIMIZE_ON: to expand the browser window = -->
 
 </properties>

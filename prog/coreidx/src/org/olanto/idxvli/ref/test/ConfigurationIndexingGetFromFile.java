@@ -1,23 +1,24 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
-
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.idxvli.ref.test;
 
 import org.olanto.idxvli.*;
@@ -35,13 +36,15 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
     String fileName = "to be initialised";
     Properties prop;
 
-    /** cr�e l'attache de cette classe.
+    /**
+     * cr�e l'attache de cette classe.
      */
     public ConfigurationIndexingGetFromFile() {
     }
 
     /**
      * charge la configuration depuis un fichier de properties
+     *
      * @param fileName nom du fichier
      */
     public ConfigurationIndexingGetFromFile(String fileName) {
@@ -63,8 +66,9 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         prop.list(System.out);
     }
 
-    /** initialisation permanante des constantes.
-     * Ces constantes choisies d�finitivement pour toute la dur�e de la vie de l'index.
+    /**
+     * initialisation permanante des constantes. Ces constantes choisies
+     * d�finitivement pour toute la dur�e de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -102,8 +106,10 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
 
     }
 
-    /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies d�finitivement pour toute la dur�e de la vie du processus.
+    /**
+     * initialisation des constantes de configuration (modifiable). Ces
+     * constantes choisies d�finitivement pour toute la dur�e de la vie du
+     * processus.
      */
     public void InitConfiguration() {
 
@@ -129,6 +135,10 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         } catch (IllegalAccessException ex) {
             error_fatal("IllegalAccessException - try to load: " + TOKEN_DEFINITION);
         }
+
+        REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^\\p{L}\\p{N}]|^)");
+
+        REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^\\p{L}\\p{N}]|$)");
 
         WORD_USE_STEMMER = Boolean.parseBoolean(prop.getProperty("WORD_USE_STEMMER", "false"));
 

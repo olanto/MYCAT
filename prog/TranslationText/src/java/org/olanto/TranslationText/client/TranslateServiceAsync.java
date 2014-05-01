@@ -47,7 +47,7 @@ public interface TranslateServiceAsync {
 
     public void getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
-    public void getHitPosExactClose(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
+    public void getHitPosExactClose(String content, ArrayList<String> Query, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
    
     public void getHitPosWildCardExpr(String content, ArrayList<String> query, float reFactor, AsyncCallback<int[][]> asyncCallback);
 

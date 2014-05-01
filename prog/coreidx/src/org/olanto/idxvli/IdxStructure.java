@@ -23,6 +23,8 @@ package org.olanto.idxvli;
 
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.olanto.util.Timer;
 import org.olanto.idxvli.util.*;
 import org.olanto.idxvli.ql.*;
@@ -1032,8 +1034,19 @@ public class IdxStructure {
             if (content == null) {
                 return false;
             }
-            return content.contains(exactExpression);
+            return matchExact(exactExpression, content);
         }
+    }
+
+    public boolean matchExact(String exactExpression, String content) {
+        String regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(exactExpression) + REGEX_EXACT_AFTER_TOKEN;
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(content);
+
+        if (m.find()) {
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -1050,11 +1063,23 @@ public class IdxStructure {
         if (content == null) {
             return res;
         }
-        int nextpos = content.indexOf(exactExpression, 0);
-        while (nextpos != -1) {
-            res.add(nextpos);
-            nextpos = content.indexOf(exactExpression, nextpos + 1);
+//        int nextpos = content.indexOf(exactExpression, 0);
+//        while (nextpos != -1) {
+//            res.add(nextpos);
+//            nextpos = content.indexOf(exactExpression, nextpos + 1);
+//        }
+
+        String regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(exactExpression) + REGEX_EXACT_AFTER_TOKEN;
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(content);
+
+        if (m.find()) {
+            res.add(m.start());
+            while (m.find()) {
+                res.add(m.start());
+            }
         }
         return res;
+
     }
 }

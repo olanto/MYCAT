@@ -177,7 +177,10 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         } catch (IllegalAccessException ex) {
             error_fatal("IllegalAccessException - try to load: " + PRE_PROCESSING_CODE);
         }
-
+        REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^\\p{L}\\p{N}]|^)");
+        
+        REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^\\p{L}\\p{N}]|$)");
+        
         PRE_PROCESSING_INTERVAL = Integer.parseInt(prop.getProperty("PRE_PROCESSING_INTERVAL", "3600"));
 
         WORD_USE_STEMMER = Boolean.parseBoolean(prop.getProperty("WORD_USE_STEMMER", "false"));
@@ -190,8 +193,8 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
 
         DOCNAME_MAX_BROWSE = Integer.parseInt(prop.getProperty("DOCNAME_MAX_BROWSE", "5000"));
 
-        DOCNAME_BROWSE_INSENSITIVE = Boolean.parseBoolean(prop.getProperty("DOCNAME_BROWSE_INSENSITIVE", "true"));      
-        
+        DOCNAME_BROWSE_INSENSITIVE = Boolean.parseBoolean(prop.getProperty("DOCNAME_BROWSE_INSENSITIVE", "true"));
+
         NEAR_DISTANCE = Integer.parseInt(prop.getProperty("NEAR_DISTANCE", "8"));
 
 
@@ -222,7 +225,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         ORIGINAL_HOST = prop.getProperty("ORIGINAL_HOST", "localhost");
         ORIGINAL_PORT = prop.getProperty("ORIGINAL_PORT", "80");
 
-SKIP_LINE_QUOTE_DECTECTOR=Boolean.parseBoolean(prop.getProperty("SKIP_LINE_QUOTE_DECTECTOR", "false"));
+        SKIP_LINE_QUOTE_DECTECTOR = Boolean.parseBoolean(prop.getProperty("SKIP_LINE_QUOTE_DECTECTOR", "false"));
         OPEN_REF_BEG = prop.getProperty("OPEN_REF_BEG", "[R");
         OPEN_REF_END = prop.getProperty("OPEN_REF_END", "]");
         CLOSE_REF_BEG = prop.getProperty("CLOSE_REF_BEG", "[E");

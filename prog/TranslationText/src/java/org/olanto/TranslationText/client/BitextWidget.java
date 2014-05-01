@@ -1399,7 +1399,7 @@ public class BitextWidget extends Composite {
             }
         } else if (GuiConstant.EXACT_CLOSE) {
 //            Window.alert("Looking for close: " + words.get(0) + " " + words.get(1));
-            getPositionsClose(contentS, words, queryLength);
+            getPositionsClose(contentS, words);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsSCR(contentS, words, queryLength);
@@ -1433,7 +1433,7 @@ public class BitextWidget extends Composite {
             }
         } else if (GuiConstant.EXACT_CLOSE) {
 //            Window.alert("Lookinf for close: " + words.get(0) + " " + words.get(1));
-            getPositionsCloseMono(contentS, words, queryLength);
+            getPositionsCloseMono(contentS, words);
         } else {
             if (GuiConstant.TA_HILITE_OVER_CR) {
                 getPositionsMonoCR(contentS, words, queryLength);
@@ -1681,9 +1681,9 @@ public class BitextWidget extends Composite {
         }
     }
 
-    public void getPositionsClose(String content, ArrayList<String> Query, int queryLn) {
+    public void getPositionsClose(String content, ArrayList<String> Query) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getHitPosExactClose(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
+            rpcS.getHitPosExactClose(content, Query, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);
@@ -1821,9 +1821,9 @@ public class BitextWidget extends Composite {
         }
     }
     
-    public void getPositionsCloseMono(String content, ArrayList<String> Query, int queryLn) {
+    public void getPositionsCloseMono(String content, ArrayList<String> Query) {
         if ((!Query.isEmpty()) && !(Query == null)) {
-            rpcS.getHitPosExactClose(content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
+            rpcS.getHitPosExactClose(content, Query, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_10);

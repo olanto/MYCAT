@@ -32,9 +32,9 @@ public class Utility {
 
     public Utility() {
     }
-    
+
     public static String processWildCard(String Query) {
-        String query = Query.trim();   
+        String query = Query.trim();
         String[] words = query.split("\\s+");
         if (words.length > 1) {
             GuiConstant.MULTI_WILD_CARD_FLG = true;
@@ -86,9 +86,10 @@ public class Utility {
                     && !(words[i].equalsIgnoreCase("AND"))
                     && !(words[i].equalsIgnoreCase("OR"))
                     && !(words[i].equalsIgnoreCase("QUOTATION"))) {
-                hits.add(words[i].toLowerCase());
+                hits.add(words[i].toLowerCase().trim());
             }
         }
+//        Window.alert(hits.toString());
         return hits;
     }
 
@@ -196,7 +197,6 @@ public class Utility {
         Query = Query.trim();
         ArrayList<String> hits = new ArrayList<String>();
         hits.add(Query);
-//        Window.alert("Hits : "+hits.get(0));
         return hits;
     }
 
@@ -303,14 +303,10 @@ public class Utility {
             } else if (qt.contains(" NEAR ")) { // normalement deux arguments
                 String q = "NEAR (";
                 String[] words = Query.split("\\s+");
-                int i = 0, j = 0;
-                while ((i < words.length) && (j < 2)) {
-                    if (words[i].equalsIgnoreCase("NEAR")) {
-                    } else {
-                        if (!stopWords.contains(words[i].toLowerCase())) {
-                            q += "\"" + words[i] + "\",";
-                            j++;
-                        }
+                int i = 0;
+                while ((i < words.length)) {
+                    if ((!words[i].equalsIgnoreCase("NEAR")) && (!stopWords.contains(words[i].toLowerCase()))) {
+                        q += "\"" + words[i] + "\",";
                     }
                     i++;
                 }
@@ -328,6 +324,7 @@ public class Utility {
                 query = q.substring(0, k) + "\")";
             }
             String seleColl = "";
+
             if (!collections.isEmpty()) {
                 seleColl = "\"COLLECTION." + collections.get(0) + "\"";
                 for (int k = 1; k < collections.size(); k++) {
@@ -337,9 +334,7 @@ public class Utility {
             }
             String IN_Bitext = " IN[" + seleColl + "\"SOURCE." + langS + "\""
                     + " ANDL \"TARGET." + langT + "\"]";
-
             String IN_Monotext = " IN[" + seleColl + "\"SOURCE." + langS + "\"" + "]";
-
             if (GuiConstant.BITEXT_ONLY) {
                 return query + IN_Bitext;
             }
