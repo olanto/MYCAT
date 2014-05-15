@@ -441,12 +441,19 @@ public class Utility {
         StringBuilder res = new StringBuilder("");
         for (int i = 0; i < s.length(); i++) {
             res.append(s.charAt(i));
-            if (s.charAt(i) > 0x0370) {
-                res.append(" ");
+            if (isCJKChar(s.charAt(i))) {
+                    res.append(" ");
             }
         }
 //        Window.alert(res.toString());
         return res.toString();
+    }
+
+    public static boolean isCJKChar(char s) {
+        if ((s > 0x4E00) && (s < 0x9FFF)) {
+            return true;
+        }
+        return false;
     }
 
     public static void add(String replace, String by) {

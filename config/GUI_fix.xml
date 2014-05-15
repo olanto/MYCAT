@@ -152,7 +152,7 @@
 	<entry key="CHOOSE_GUI_LANG_LIST">en;fr;ar;es;ru</entry>
     <!-- Controle parameter for the aglutinated space (case of chinese) -->
 	<entry key="REMOVE_AGLUTINATED_SPACE">true</entry>
-	<!-- List of languages where to remove the space between it items separated by ";"(case of chinese) -->
+	<!-- List of languages where to remove the space between its items separated by ";"(case of chinese) -->
 	<entry key="AGLUTINATED_LANG_LIST">ZH</entry>
 	<entry key="TOKENIZE_LIST">/_-</entry>
 </properties>
