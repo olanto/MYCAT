@@ -33,11 +33,18 @@ public class StringManipulation {
 
         for (int i = 0; i < s.length(); i++) {
             res.append(s.charAt(i));
-            if (s.charAt(i) > 0x0370) {
+            if (isCJKChar(s.charAt(i))) {
                 res.append(" ");
             }
         }
         return res.toString();
+    }
+    
+    public static boolean isCJKChar(char s) {
+        if (s > 0x0370) {
+            return true;
+        }
+        return false;
     }
 
     public String removeSpace(String s) {
@@ -46,17 +53,17 @@ public class StringManipulation {
                 return s;
             }
             StringBuilder res = new StringBuilder("");
-            if (s.charAt(0) > 0x0370) {
+            if (isCJKChar(s.charAt(0))) {
                 res.append(s.charAt(0));
             } else if (!(s.charAt(0) == ' ')) {
                 res.append(s.charAt(0));
             }
             for (int i = 0; i < s.length() - 1; i++) {
-                if (s.charAt(i) > 0x0370) {
+                if (isCJKChar(s.charAt(i))) {
                     res.append(s.charAt(i));
                 } else {
                     if (s.charAt(i) == ' ') {
-                        if (((s.charAt(i - 1) <= 0x0370) && (s.charAt(i + 1) > 0x0370)) || ((s.charAt(i - 1) > 0x0370) && (s.charAt(i + 1) <= 0x0370))) {
+                        if (((s.charAt(i - 1) <= 0x0370) && (isCJKChar(s.charAt(i + 1)))) || ((isCJKChar(s.charAt(i - 1))) && (s.charAt(i + 1) <= 0x0370))) {
                             res.append(s.charAt(i));
                         }
                     } else {
