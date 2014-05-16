@@ -64,6 +64,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public static String REGEX_EXACT_AFTER_TOKEN;
     public static GwtProp CONST = null;
     public static boolean RELOAD_PARAM_ON = true;
+    public ArrayList<Character> charList = new ArrayList<>();
 
     @Override
     public String myMethod(String s) {
@@ -383,17 +384,27 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 startPos.clear();
                 lastPos.clear();
                 while ((allfound) && (j < Query.size())) {
-                    curHit = Query.get(j);
 //                System.out.println("Looking for hit: " + curHit);
 
-                    len = curHit.length();
                     if (exact) {
-                        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                        curHit = Query.get(j);
+                        if (hasBothBorders(curHit)) {
+                            regex = Pattern.quote(curHit);
+                        } else if (hasFirstBorder(curHit)) {
+                            regex = Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                        } else if (hasLastBorder(curHit)) {
+                            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit);
+                        } else {
+                            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                        }
                         p = Pattern.compile(regex);
                     } else {
+                        curHit = removeBorders(Query.get(j));
                         regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
                         p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
                     }
+                    len = curHit.length();
+
                     m = p.matcher(sentence);
                     if (m.find()) {
                         start = m.start();
@@ -589,23 +600,30 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         lastPos.clear();
         if (!Query.isEmpty()) {
             if (exact) {
-                int start;
-                regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(Query.get(0)) + REGEX_EXACT_AFTER_TOKEN;
+                String curHit = Query.get(0);
+                if (hasBothBorders(curHit)) {
+                    regex = Pattern.quote(curHit);
+                } else if (hasFirstBorder(curHit)) {
+                    regex = Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                } else if (hasLastBorder(curHit)) {
+                    regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit);
+                } else {
+                    regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_EXACT_AFTER_TOKEN;
+                }
                 p = Pattern.compile(regex);
                 m = p.matcher(content);
                 if (m.find()) {
-                    start = m.start();
-                    Pos.add(start);
+                    Pos.add(m.start());
                     PosLn.add(Query.get(0).length());
                     while (m.find()) {
-                        Pos.add(start);
+                        Pos.add(m.start());
                         PosLn.add(Query.get(0).length());
                     }
                 }
 
             } else {
-                first = Query.get(0);
-                last = Query.get(Query.size() - 1);
+                first = removeBorders(Query.get(0));
+                last = removeBorders(Query.get(Query.size() - 1));
                 regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
                 p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
                 m = p.matcher(content);
@@ -646,9 +664,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
         }
 
-//        for (int i = 0; i < Pos.size(); i++) {
-//            System.out.println("Positions found in Line: " + Pos.get(i));
-//        }
+        for (int i = 0; i < Pos.size(); i++) {
+            System.out.println("Positions found in Line: " + Pos.get(i));
+        }
         return getClosePositions(Pos, PosLn);
     }
 
@@ -672,7 +690,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public boolean getAllWords(String content, ArrayList<String> Query) {
         String curHit;
         for (int j = 1; j < Query.size() - 1; j++) {
-            curHit = Query.get(j);
+            curHit = removeBorders(Query.get(j));
 //            System.out.println("test if: " + curHit + " is in :" + content);
             String regex = REGEX_BEFORE_TOKEN + Pattern.quote(curHit) + REGEX_AFTER_TOKEN;
             Pattern p = Pattern.compile(regex);
@@ -709,7 +727,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             sentence = content.substring(begin, end);
             j = 0;
             while (j < Query.size()) {
-                hit = Query.get(j);
+                hit = removeBorders(Query.get(j));
 //                System.out.println("looking for: " + hit);
                 regex = REGEX_BEFORE_TOKEN + Pattern.quote(hit) + REGEX_AFTER_TOKEN;
                 p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
@@ -819,7 +837,15 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
 //        System.out.println("First: " + first);
 //        System.out.println("Last: " + last);
 //        System.out.println("Exact CLOSE: " + Pattern.quote(first));
-        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
+        if (hasBothBorders(first)) {
+            regex = Pattern.quote(first);
+        } else if (hasFirstBorder(first)) {
+            regex = Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
+        } else if (hasLastBorder(first)) {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first);
+        } else {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(first) + REGEX_EXACT_AFTER_TOKEN;
+        }
         p = Pattern.compile(regex);
         m = p.matcher(content);
 
@@ -832,7 +858,15 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             }
         }
 //        System.out.println("Exact CLOSE: " + Pattern.quote(last));
-        regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
+        if (hasBothBorders(last)) {
+            regex = Pattern.quote(last);
+        } else if (hasFirstBorder(last)) {
+            regex = Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
+        } else if (hasLastBorder(last)) {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last);
+        } else {
+            regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(last) + REGEX_EXACT_AFTER_TOKEN;
+        }
         p = Pattern.compile(regex);
         m = p.matcher(content);
 
@@ -909,8 +943,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         startPos.clear();
         lastPos.clear();
 
-        first = Query.get(0);
-        last = Query.get(Query.size() - 1);
+        first = removeBorders(Query.get(0));
+        last = removeBorders(Query.get(Query.size() - 1));
         System.out.println("First: " + first);
         System.out.println("Last: " + last);
         regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
@@ -973,8 +1007,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         Matcher m;
         int startp, lastp;
         String sentence, regex, first, last;
-        first = Query.get(0);
-        last = Query.get(Query.size() - 1);
+        first = removeBorders(Query.get(0));
+        last = removeBorders(Query.get(Query.size() - 1));
 
         for (int i = 0; i < positions.length; i++) {
             begin = positions[i][1];
@@ -1266,6 +1300,10 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.PP_H_MAX = Integer.parseInt(prop.getProperty("PP_H_MAX"));
         CONST.TA_NEAR_AVG_TERM_CHAR = Integer.parseInt(prop.getProperty("TA_NEAR_AVG_TERM_CHAR", "6"));
         CONST.NEAR_DISTANCE = Integer.parseInt(prop.getProperty("NEAR_DISTANCE", "8"));
+        for (Character c : CONST.TOKENIZE_LIST.toCharArray()) {
+            charList.add(c);
+        }
+//        System.out.println(charList.toString());
         /**
          * **********************************************************************************
          */
@@ -1553,8 +1591,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             String[] words = query.get(k).split("\\s+");
             Query.addAll(Arrays.asList(words));
 //            System.out.println("looking for words in expression : " + Query.toString());
-            first = Query.get(0);
-            last = Query.get(Query.size() - 1);
+            first = removeBorders(Query.get(0));
+            last = removeBorders(Query.get(Query.size() - 1));
             regex = REGEX_BEFORE_TOKEN + Pattern.quote(first) + REGEX_AFTER_TOKEN;
             p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
             m = p.matcher(content);
@@ -1630,7 +1668,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         StringBuilder res = new StringBuilder("");
         for (int i = 0; i < Query.length(); i++) {
             r = Query.charAt(i);
-            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ')) {
+            if (Character.isLetter(r) || Character.isDigit(r) || (charList.contains(r)) || (r == ' ')) {
                 res.append(r);
             } else {
                 res.append(" ");
@@ -1646,7 +1684,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         StringBuilder res = new StringBuilder("");
         for (int i = 0; i < Query.length(); i++) {
             r = Query.charAt(i);
-            if (Character.isLetter(r) || Character.isDigit(r) || (MainEntryPoint.charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
+            if (Character.isLetter(r) || Character.isDigit(r) || (charList.contains(r)) || (r == ' ') || (r == '.') || (r == '*')) {
                 res.append(r);
             } else {
                 res.append(" ");
@@ -1654,5 +1692,42 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         }
 //        Window.alert(res.toString());
         return res.toString();
+    }
+
+    private String removeBorders(String hit) {
+        if (charList.contains(hit.charAt(0))) {
+            hit = hit.substring(1);
+        }
+        if (charList.contains(hit.charAt(hit.length() - 1))) {
+            hit = hit.substring(0, hit.length() - 1);
+        }
+        return hit;
+    }
+
+    private boolean hasFirstBorder(String hit) {
+        if (charList.contains(hit.charAt(0))) {
+            return true;
+        }
+        if (charList.contains(hit.charAt(hit.length() - 1))) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasLastBorder(String hit) {
+        if (charList.contains(hit.charAt(0))) {
+            return true;
+        }
+        if (charList.contains(hit.charAt(hit.length() - 1))) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasBothBorders(String hit) {
+        if ((charList.contains(hit.charAt(0))) && (charList.contains(hit.charAt(hit.length() - 1)))) {
+            return true;
+        }
+        return false;
     }
 }

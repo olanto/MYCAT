@@ -76,8 +76,6 @@ public class MainEntryPoint implements EntryPoint {
     public static String beforeWildTerm;
     public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
-    public static ArrayList<Character> charList = new ArrayList<Character>();
-
     /**
      * The entry point method, called automatically by loading a module that
      * declares an implementing class as an entry-point
@@ -109,9 +107,7 @@ public class MainEntryPoint implements EntryPoint {
                 @Override
                 public void onSuccess(GwtProp result) {
                     InitProperties(result);
-                    for (char c : GuiConstant.TOKENIZE_LIST.toCharArray()) {
-                        charList.add(c);
-                    }
+                    
 //                    Window.alert(GuiConstant.show());
 //                    Window.alert(GuiMessageConst.show());
                     if (GuiConstant.MAXIMIZE_ON) {
@@ -164,9 +160,7 @@ public class MainEntryPoint implements EntryPoint {
             @Override
             public void onSuccess(GwtProp result) {
                 InitProperties(result);
-                for (char c : GuiConstant.TOKENIZE_LIST.toCharArray()) {
-                    charList.add(c);
-                }
+               
 //                Window.alert(GuiConstant.show());
 //                Window.alert(GuiMessageConst.show());
                 if (GuiConstant.MAXIMIZE_ON) {
