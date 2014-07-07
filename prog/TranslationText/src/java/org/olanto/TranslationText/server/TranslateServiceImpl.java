@@ -64,6 +64,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     public static String REGEX_EXACT_AFTER_TOKEN;
     public static GwtProp CONST = null;
     public static boolean RELOAD_PARAM_ON = true;
+    private static float QueryLnFactor = 1;
     public ArrayList<Character> charList = new ArrayList<>();
 
     @Override
@@ -362,6 +363,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         ArrayList<Integer> PosLn = new ArrayList<>();
         ArrayList<Integer> startPos = new ArrayList<>();
         ArrayList<Integer> lastPos = new ArrayList<>();
+        queryLn = (int) (QueryLnFactor * queryLn);
         int begin, end;
         String sentence, curHit, regex;
         Pattern p;
@@ -1295,6 +1297,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.TA_DL_SORTBY = prop.getProperty("TA_DL_SORTBY");
         CONST.FEEDBACK_MAIL = prop.getProperty("FEEDBACK_MAIL");
         CONST.REF_FACTOR = Float.parseFloat(prop.getProperty("REF_FACTOR"));
+        //
+        QueryLnFactor = Float.parseFloat(prop.getProperty("REF_FACTOR"));
+        //
         CONST.REF_MIN_LN = Integer.parseInt(prop.getProperty("REF_MIN_LN"));
         CONST.PP_H_MIN = Integer.parseInt(prop.getProperty("PP_H_MIN"));
         CONST.PP_H_MAX = Integer.parseInt(prop.getProperty("PP_H_MAX"));
