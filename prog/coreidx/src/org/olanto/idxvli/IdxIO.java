@@ -1,23 +1,24 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
-
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.idxvli;
 
 import java.io.*;
@@ -35,11 +36,13 @@ import org.olanto.wildchar.WildCharExpander;
 
 /**
  * Une classe gérant le controle des chargements et sauvegarde.
- * 
+ *
  */
 public class IdxIO {
 
-    /** derni�re position utilis�e dans le fichier stockant l'index*/
+    /**
+     * derni�re position utilis�e dans le fichier stockant l'index
+     */
     static final long startpos = 1;// Integer.MAX_VALUE-100000;//1; // dont use 0 = notinMemory
     private long lastbag = startpos; // dont use 0 = notinMemory
     private long lastseq = startpos; // dont use 0 = notinMemory
@@ -49,7 +52,9 @@ public class IdxIO {
     private RandomAccessFile sf;
     private RandomAccessFile pcf;
     static IdxStructure glue;
-    /** pour signaler que tous les objstos sont ferm�s verrous ------------------------------------------*/
+    /**
+     * pour signaler que tous les objstos sont ferm�s verrous ------------------------------------------
+     */
     private static final ReentrantReadWriteLock openRW = new ReentrantReadWriteLock();
     private static final Lock openR = openRW.readLock();
     private static final Lock openW = openRW.writeLock();
@@ -59,7 +64,9 @@ public class IdxIO {
         glue = id;
     }
 
-    /** g�n�ration des id de objectstore (pour �viter de les stocker) */
+    /**
+     * g�n�ration des id de objectstore (pour �viter de les stocker)
+     */
     protected final static int objidx(int j) {
         return 2 * (j / OBJ_NB);
     }    // j/n car n objsto
@@ -197,7 +204,9 @@ public class IdxIO {
         }
     }
 
-    /** nombre de documents dans lesquels apparait le terme j
+    /**
+     * nombre de documents dans lesquels apparait le terme j
+     *
      * @param j i�me terme
      * @return nbr de documents
      */
@@ -470,11 +479,11 @@ public class IdxIO {
                     DOC_ROOT, DOC_NAME, DOC_MAXBIT, DOC_SIZE_NAME);
 
             compactMemory("doc table OK");
-            if (IDX_ZIP_CACHE){
-                glue.zipCache=(new ZipVector_InMemory()).create(DOC_ROOT, ZIP_NAME, DOC_MAXBIT);
-             compactMemory("zip cache OK");
-         }
- 
+            if (IDX_ZIP_CACHE) {
+                glue.zipCache = (new ZipVector_InMemory()).create(DOC_ROOT, ZIP_NAME, DOC_MAXBIT);
+                compactMemory("zip cache OK");
+            }
+
         }
         try {
             compactMemory("ready to load OK");
@@ -519,17 +528,17 @@ public class IdxIO {
             glue.docstable = (new Documents1()).open(DOC_IMPLEMENTATION, DOC_LANGUAGE, DOC_COLLECTION, MODE_IDX, DOC_ROOT, DOC_NAME);
             glue.lastRecordedDoc = glue.docstable.getCount();
             glue.lastUpdatedDoc = glue.lastRecordedDoc;  // read=write
-            if (IDX_ZIP_CACHE){
+            if (IDX_ZIP_CACHE) {
                 COMLOG.info("open zipCache");
-                glue.zipCache=(new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
-             }
- 
+                glue.zipCache = (new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+            }
+
             if (WORD_EXPANSION) {  // pour les wildchar
-            glue.wordExpander = new WildCharExpander(glue.getVocabulary());
-        }
-         if (DOCNAME_EXPANSION) {  // pour les wildchar
-            glue.docNameExpander = new WildCharExpander(glue.getCorpusDocNames());
-        }
+                glue.wordExpander = new WildCharExpander(glue.getVocabulary());
+            }
+            if (DOCNAME_EXPANSION) {  // pour les wildchar
+                glue.docNameExpander = new WildCharExpander(glue.getCorpusDocNames());
+            }
 
             compactMemory("load OK");
         } catch (Exception e) {
@@ -563,8 +572,10 @@ public class IdxIO {
             ostream.close();
             glue.docstable.close();
             COMLOG.info("end of docstable save");
-            glue.zipCache.close();
-            COMLOG.info("end of zipCache save");
+            if (IDX_ZIP_CACHE) {
+                glue.zipCache.close();
+                COMLOG.info("end of zipCache save");
+            }
             glue.wordstable.close();
             COMLOG.info("end of wordstable save");
 
