@@ -73,7 +73,7 @@ public class SenseOS {
     }
 
     /** retourne le home de myCAT
-     * @return AT_HOMEthe MYC
+     * @return the MYCAT_HOME
      */
     public static String getMYCAT_HOME() {
           if (MYCAT_HOME == null) {// par encore initialisée
@@ -92,6 +92,18 @@ public class SenseOS {
         return MYCAT_HOME;
     }
  
+       /** retourne le home de myCAT en forcant un dossier
+     * @return the MYCAT_HOME
+     */
+    public static String getMYCAT_HOME(String path) {
+                 if(getOS_TYPE().equals(WINDOWS_FAMILIES))
+                     MYCAT_HOME=DEF_WINDOWS_HOME+path;
+                 else
+                     MYCAT_HOME=DEF_UNIX_HOME+path;
+             
+        return MYCAT_HOME;
+    }
+
        /** retourne le home de myCAT
      * @return AT_HOMEthe MYC
      */
