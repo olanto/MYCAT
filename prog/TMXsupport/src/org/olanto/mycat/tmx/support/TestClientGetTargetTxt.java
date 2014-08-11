@@ -23,6 +23,8 @@ package org.olanto.mycat.tmx.support;
 
 import org.olanto.conman.server.GetContentService;
 import java.rmi.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
 import static org.olanto.util.Messages.*;
@@ -32,7 +34,7 @@ import org.olanto.util.Timer;
  * test une recherche
  *
  */
-public class TestClientQuerySimple {
+public class TestClientGetTargetTxt {
 
     static IndexService_MyCat is;
     final static float NTOT = 100000000;
@@ -60,22 +62,24 @@ public class TestClientQuerySimple {
 
 //        correlation("rapport final", "final report", "FR", "EN");
 //        correlation("rapport final", "finax report", "FR", "EN");
-//       correlation("rapport", "report", "FR", "EN");
-//      correlation("table", "table", "FR", "EN");
-//      correlation("voiture", "car", "FR", "EN");
-//     correlation("menu", "menu", "FR", "EN");
-//    correlation("Annulation du jugement", "mistrial", "FR", "EN");
-//    correlation("amende", "Financial penalty", "FR", "EN");
-//    correlation("amende", "penalty", "FR", "EN");
-//   correlation("appel", "appeal", "FR", "EN");
-//   correlation("assistance judiciaire", "legal assistance", "FR", "EN");
-//   correlation("assistance juridique", "legal assistance", "FR", "EN");
-//   correlation("aide juridictionnelle", "legal assistance", "FR", "EN");
-        
-      correlation("assistance judiciaire", "legal aid", "FR", "EN");  
-      correlation("assistance judiciaire", "legal assistance", "FR", "EN"); 
-      correlation("assistance judiciaire", "judicial assistance", "FR", "EN"); 
-      
+//        correlation("rapport", "report", "FR", "EN");
+//        correlation("table", "table", "FR", "EN");
+//        correlation("voiture", "car", "FR", "EN");
+//        correlation("menu", "menu", "FR", "EN");
+//        correlation("Annulation du jugement", "mistrial", "FR", "EN");
+//        correlation("amende", "Financial penalty", "FR", "EN");
+//        correlation("amende", "penalty", "FR", "EN");
+//        correlation("appel", "appeal", "FR", "EN");
+        correlation("assistance judiciaire", "legal assistance", "FR", "EN");
+//
+        try {
+            msg(is.getDoc(0)); 
+           msg(is.getDoc(1)); 
+        } catch (RemoteException ex) {
+            Logger.getLogger(TestClientGetTargetTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String target=getTarget("assistance judiciaire", "FR", "EN");
+        msg(target);
     }
 
     static void test(String query) {
@@ -95,17 +99,40 @@ public class TestClientQuerySimple {
         }
     }
 
+    static String getTarget(String termso, String langso, String langta) {
+        StringBuilder targetTXT = new StringBuilder("");
+        try {
+            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\"]";
+            Timer t1 = new Timer("------------- " + queryso);
+            QLResultNice resso = is.evalQLNice(queryso, 0, 0);
+            float n1 = resso.result.length;
+            msg("n1:" + resso.result.length);
+            for (int i = 0; i < resso.result.length; i++) { // adjust value to source
+                targetTXT.append(is.getDoc(resso.result[i]+1)).append("\n");
+            }
+            msg("length target:" + targetTXT.length());
+            t1.stop();
+            return targetTXT.toString();
+        } catch (RemoteException ex) {
+            ex.printStackTrace();
+            return " ";
+        }
+    }
+
+
+    
+
     static double correlation(String termso, String termta, String langso, String langta) {
         try {
             String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\"]";
             String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\"]";
-            Timer t1 = new Timer("------------- " + queryso+" -> "+queryta);
+            Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             QLResultNice resta = is.evalQLNice(queryta, 0, 0);
-            //msg("time:" + resso.duration);
+            msg("time:" + resso.duration);
             float n1 = resso.result.length;
             msg("n1:" + resso.result.length);
-            //msg("time:" + resta.duration);
+            msg("time:" + resta.duration);
             float n2 = resta.result.length;
             msg("n2:" + resta.result.length);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source

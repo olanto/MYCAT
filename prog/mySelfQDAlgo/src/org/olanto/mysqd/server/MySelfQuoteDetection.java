@@ -43,8 +43,9 @@ public class MySelfQuoteDetection {
     public boolean verbose = false;
     public static ConstStringManager MsgManager;
 
-    public MySelfQuoteDetection(String fileName, int minFreq, int minLength) {  // to debug
-        this.fileName = fileName;
+    public MySelfQuoteDetection(String fileName, int minFreq, int minLength, ConstStringManager messageMan) {  // to debug
+         MySelfQuoteDetection.MsgManager = messageMan;
+         this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
         toBeProcess = file2String(fileName, "UTF-8");
