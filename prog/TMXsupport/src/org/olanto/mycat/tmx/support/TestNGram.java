@@ -19,20 +19,22 @@
  *
  *********
  */
-package org.olanto.mysqd.test;
+package org.olanto.mycat.tmx.support;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.olanto.mysqd.server.ConstStringManager;
 import org.olanto.mysqd.server.MySelfQuoteDetection;
 import org.olanto.mysqd.util.Utils;
+import org.olanto.senseos.SenseOS;
 
 /**
  *
  * @author simple
  */
-public class TestFromFile {
+public class TestNGram {
 
     /**
      * @param args the command line arguments
@@ -41,24 +43,35 @@ public class TestFromFile {
 
 //        String FN = "C:/MYCAT/test/bug/Final_Act_FR.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/bug/Final_Act_FR.doc.res.html");
-        String FN = "C:/Users/simple/Desktop/g245_e.doc";
-        test(FN, 2, 6, "C:/Users/simple/Desktop/docxprobleme/g245_e.doc");
+        String FN = "C:/MYCAT_TMX/test/test3.txt";
+        test1(FN, 15, 2, "C:/MYCAT_TMX/test/res_test3.txt");
 //        String FN = "C:/MYCAT/test/G245-UTF8.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/G245-UTF8.res.html");
 //              String FN = "C:/MYCAT/test/test simple.html";
 //        test(FN, 2, 3, "C:/MYCAT/test/test simple.res.html");
- 
+
     }
 
     public static void test(String fileName, int minFreq, int minLength, String resultName) {
-        MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength,null);
         try {
+            ConstStringManager messageMan = new ConstStringManager(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/messages/interface/initserver_en.properties");
+            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan);
             FileOutputStream out = new FileOutputStream(resultName);
             out.write(mysqd.getHTML().getBytes());
             out.close();
         } catch (Exception ex) {
-            Logger.getLogger(TestFromFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TestNGram.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
+    public static void test1(String fileName, int minFreq, int minLength, String resultName) {
+        try {
+            ConstStringManager messageMan = new ConstStringManager(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/messages/interface/initserver_en.properties");
+            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan);
+         } catch (Exception ex) {
+            Logger.getLogger(TestNGram.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
     }
 }

@@ -41,7 +41,27 @@ public class TermList {
         DoParse parser = new DoParse(htmlText);
         t = parser.tokenizeString();
     }
+    
+    public List<Ref> listNGram(List<NGramList> ngl,  int minlen, int minocc) {
+        List<Ref> allref = new Vector<Ref>();
+        for (int i = ngl.size() - 1; i >= 0; i--) { // commence par les plus grands
+            NGramList current = ngl.get(i);
+            int N = current.N;
+            int count = 0;
+            for (Iterator<String> iter = current.ng.keySet().iterator(); iter.hasNext();) { // pour chaque n-gram
+                String key = iter.next();
+                //System.out.println("mark:"+key);
+                Occurences occ = current.ng.get(key);
+                count++;
+                allref.add(new Ref( "N_" + N + "_" + count + "_0", key, N, occ.size()));
+                //System.out.println(key+","+occ.size());
+             }
+        }
+        return allref;
+    }
 
+    
+    
     public void TryToMarkUrl(List<NGramList> ngl, String fileName, int minlen, int minocc) {
         List<Ref> allref = new Vector<Ref>();
         for (int i = ngl.size() - 1; i >= 0; i--) { // commence par les plus grands

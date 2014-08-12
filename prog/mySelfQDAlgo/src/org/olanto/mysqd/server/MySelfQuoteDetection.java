@@ -24,6 +24,7 @@ package org.olanto.mysqd.server;
 import java.util.List;
 import java.util.Vector;
 import org.olanto.mysqd.util.NGramList;
+import org.olanto.mysqd.util.Ref;
 import org.olanto.mysqd.util.TermList;
 import static org.olanto.mysqd.util.Utils.file2String;
 
@@ -43,12 +44,20 @@ public class MySelfQuoteDetection {
     public boolean verbose = false;
     public static ConstStringManager MsgManager;
 
-    public MySelfQuoteDetection(String fileName, int minFreq, int minLength) {  // to debug
-        this.fileName = fileName;
+    public MySelfQuoteDetection(String fileName, int minFreq, int minLength, ConstStringManager messageMan) {  // to debug
+         MySelfQuoteDetection.MsgManager = messageMan;
+         this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
         toBeProcess = file2String(fileName, "UTF-8");
-        init();
+        computeNGram();
+    }
+  public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength) {  // to extract Ngram
+         this.fileName = fileName;
+        this.minFreq = minFreq;
+        this.minLength = minLength;
+        toBeProcess=_toBeProcess;
+        computeNGram();
     }
 
     public MySelfQuoteDetection(String fileName, String toBeProcess, int minFreq, int minLength, boolean verbose, ConstStringManager messageMan) {
@@ -62,6 +71,35 @@ public class MySelfQuoteDetection {
         init();
     }
 
+       private void computeNGram() {
+        terms = new TermList(toBeProcess); // cherche la liste des termes
+        System.out.println("Nbr terms:" + terms.size());
+        if (verbose) {
+            terms.show();
+        }
+        ngl = new Vector<NGramList>();
+        initFirstNGL(terms, minLength, minFreq);
+        NGramList current = initFirstNGL(terms, minLength, minFreq);  // init
+        int currentlevel = minLength;
+        while (current.size() > 0) { // calcul tous les set jusqu a épuissement
+            ngl.add(current);
+            if (verbose) {
+                System.out.println("record level:" + currentlevel);
+            }
+            currentlevel++;
+            current = computeNextNGL(terms, current, currentlevel, minFreq);
+            if (verbose) {
+                System.out.println("current size:" + current.size());
+            }
+            //current.RemoveIncludedNgram(ngl.get(ngl.size() - 1)); // éliminer les ngram du niveau précédent
+            //ngl.get(ngl.size() - 1).show(); // montre les ngram restants après filtrage
+        }
+     }
+
+    public List<Ref> getNGram(){
+        return terms.listNGram(ngl, minLength, minFreq);
+    }
+       
     private void init() {
         terms = new TermList(toBeProcess); // cherche la liste des termes
         System.out.println("Nbr terms:" + terms.size());
