@@ -43,8 +43,8 @@ public class TestNGram {
 
 //        String FN = "C:/MYCAT/test/bug/Final_Act_FR.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/bug/Final_Act_FR.doc.res.html");
-        String FN = "C:/MYCAT_TMX/test/test1.txt";
-        test(FN, 100, 2, "C:/MYCAT_TMX/test/res_test1.txt");
+        String FN = "C:/MYCAT_TMX/test/test3.txt";
+        test1(FN, 15, 2, "C:/MYCAT_TMX/test/res_test3.txt");
 //        String FN = "C:/MYCAT/test/G245-UTF8.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/G245-UTF8.res.html");
 //              String FN = "C:/MYCAT/test/test simple.html";
@@ -62,6 +62,16 @@ public class TestNGram {
         } catch (Exception ex) {
             Logger.getLogger(TestNGram.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
 
+    public static void test1(String fileName, int minFreq, int minLength, String resultName) {
+        try {
+            ConstStringManager messageMan = new ConstStringManager(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/messages/interface/initserver_en.properties");
+            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan);
+         } catch (Exception ex) {
+            Logger.getLogger(TestNGram.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+        
     }
 }

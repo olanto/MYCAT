@@ -76,6 +76,14 @@ public class TestClientQuerySimple {
       correlation("assistance judiciaire", "legal assistance", "FR", "EN"); 
       correlation("assistance judiciaire", "judicial assistance", "FR", "EN"); 
       
+      correlation("choc psychologique", "mental shock", "FR", "EN"); 
+     correlation("choc psychologique", "psychological trauma", "FR", "EN"); 
+     correlation("choc psychologique", "psychological shock", "FR", "EN"); 
+   
+      correlation("Détention illégale", "illegal detention", "FR", "EN"); 
+      correlation("Détention illégale", "unlawful detention", "FR", "EN"); 
+     
+      
     }
 
     static void test(String query) {
