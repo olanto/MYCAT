@@ -82,6 +82,7 @@ public class TestClientQuerySimple {
    
       correlation("Détention illégale", "illegal detention", "FR", "EN"); 
       correlation("Détention illégale", "unlawful detention", "FR", "EN"); 
+      correlation("océan atlantique", "atlantic ocean", "FR", "EN"); 
      
       
     }
