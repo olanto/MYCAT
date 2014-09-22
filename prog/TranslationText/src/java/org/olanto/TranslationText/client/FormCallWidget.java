@@ -21,6 +21,7 @@
  */
 package org.olanto.TranslationText.client;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
@@ -40,14 +41,16 @@ public class FormCallWidget extends Composite {
     public VerticalPanel pWidget = new VerticalPanel();
     public HorizontalPanel statusPanel = new HorizontalPanel();
     public Label msg = new Label();
-    private BitextWidget tS = new BitextWidget(msg);
+    private BitextWidget tS;
 
     // Ajouter un widget pour la gestion des appels externes
     public FormCallWidget(String src, String qry, String lsrc, String ltgt) {
+        initWidget(pWidget);
         this.source = src;
         this.query = qry;
         this.lS = lsrc;
         this.lT = ltgt;
+        tS = new BitextWidget(msg);
         pWidget.add(tS);
         tS.DrawEffects();
         pWidget.setCellHorizontalAlignment(tS, HorizontalPanel.ALIGN_CENTER);
@@ -60,6 +63,7 @@ public class FormCallWidget extends Composite {
     }
 
     public void draWidget(ArrayList<String> stopWords) {
+        tS.updateSize();
         statusPanel.setSize(tS.getOffsetWidth() + "px", "20px");
         if (!(source.equalsIgnoreCase("undefined")) && !(query.equalsIgnoreCase("undefined"))
                 && !(lS.equalsIgnoreCase("undefined")) && !(lT.equalsIgnoreCase("undefined"))) {

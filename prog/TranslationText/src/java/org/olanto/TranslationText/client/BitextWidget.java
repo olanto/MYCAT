@@ -210,7 +210,6 @@ public class BitextWidget extends Composite {
         if (GuiConstant.SAVE_ON) {
             hS.add(save);
         }
-
         hS.setVisible(true);
         hT.setVisible(true);
     }
@@ -1736,7 +1735,7 @@ public class BitextWidget extends Composite {
             });
         }
     }
-    
+
     public void getPositionsNearS(int[][] posit, String content, ArrayList<String> Query, int queryLn) {
         if ((!Query.isEmpty()) && !(Query == null)) {
             rpcS.getHitPosNear(posit, content, Query, queryLn, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {
@@ -1820,7 +1819,7 @@ public class BitextWidget extends Composite {
             });
         }
     }
-    
+
     public void getPositionsCloseMono(String content, ArrayList<String> Query) {
         if ((!Query.isEmpty()) && !(Query == null)) {
             rpcS.getHitPosExactClose(content, Query, GuiConstant.REF_FACTOR, GuiConstant.NEAR_DISTANCE, GuiConstant.TA_NEAR_AVG_TERM_CHAR, new AsyncCallback<int[][]>() {

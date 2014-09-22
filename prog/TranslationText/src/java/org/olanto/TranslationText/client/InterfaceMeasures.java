@@ -123,4 +123,17 @@ public class InterfaceMeasures implements IsSerializable {
                     + "\n Util Width  = " + utilWidth);
         }
     }
+
+    public void calculateMeasuresCall(int wHeight, int wWidth) {
+        utilWidth = wWidth - GuiConstant.TA_OVERHEAD_MAX_L;
+        TAutilHeight = wHeight - GuiConstant.TA_OVERHEAD_MAX_H;
+        this.TA_TEXTAREA_WIDTH = utilWidth / (2 * GuiConstant.TA_CHAR_WIDTH);
+        this.TA_TEXTAREA_HEIGHT = TAutilHeight / GuiConstant.TA_LINE_HEIGHT;
+        if (GuiConstant.DEBUG_ON) {
+            Window.alert("TA_TEXTAREA_WIDTH = " + this.TA_TEXTAREA_WIDTH
+                    + "\n TA_TEXTAREA_HEIGHT  = " + this.TA_TEXTAREA_HEIGHT
+                    + "\n Util Height  = " + TAutilHeight
+                    + "\n Util Width  = " + utilWidth);
+        }
+    }
 }
