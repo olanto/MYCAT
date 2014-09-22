@@ -48,7 +48,7 @@ import java.util.ArrayList;
  */
 public class MainEntryPoint implements EntryPoint {
 
-    public static final String VERSION = "3.1.1";
+    public static final String VERSION = "3.2.4";
     // This is the component of the head of the interface
     // where we can put the query of the TextAligner
     private ResearchWidget textAlignerWidget;
@@ -76,6 +76,7 @@ public class MainEntryPoint implements EntryPoint {
     public static String beforeWildTerm;
     public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
+
     /**
      * The entry point method, called automatically by loading a module that
      * declares an implementing class as an entry-point
@@ -107,7 +108,7 @@ public class MainEntryPoint implements EntryPoint {
                 @Override
                 public void onSuccess(GwtProp result) {
                     InitProperties(result);
-                    
+
 //                    Window.alert(GuiConstant.show());
 //                    Window.alert(GuiMessageConst.show());
                     if (GuiConstant.MAXIMIZE_ON) {
@@ -115,8 +116,10 @@ public class MainEntryPoint implements EntryPoint {
                         Window.resizeTo(getScreenWidth(), getScreenHeight());
                         maximize();
                     }
+                    IMeasures.calculateMeasuresCall(Window.getClientHeight(), Window.getClientWidth());
+
                     final FormCallWidget FC = new FormCallWidget(source.replace("$", "¦"), query, lS, lT);
-                    RootPanel.get("call").add(FC.pWidget);
+                    RootPanel.get("call").add(FC);
                     FC.pWidget.setWidth("100%");
                     rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
                         @Override
@@ -126,7 +129,6 @@ public class MainEntryPoint implements EntryPoint {
 
                         @Override
                         public void onSuccess(ArrayList<String> result) {
-//                            Window.alert("Size of List :" + result.size());
                             FC.draWidget(result);
                         }
                     });
@@ -160,7 +162,7 @@ public class MainEntryPoint implements EntryPoint {
             @Override
             public void onSuccess(GwtProp result) {
                 InitProperties(result);
-               
+
 //                Window.alert(GuiConstant.show());
 //                Window.alert(GuiMessageConst.show());
                 if (GuiConstant.MAXIMIZE_ON) {
