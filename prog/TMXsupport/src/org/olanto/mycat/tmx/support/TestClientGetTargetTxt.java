@@ -30,6 +30,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
+import org.olanto.mycat.tmx.extractor.ItemsCorrelation;
 import org.olanto.mysqd.server.MySelfQuoteDetection;
 import org.olanto.mysqd.util.Ref;
 import static org.olanto.util.Messages.*;
@@ -146,7 +147,7 @@ public class TestClientGetTargetTxt {
         }
     }
 
-    private static boolean check(String ngram) {
+    private static boolean checkFistAndLastNotStopWord(String ngram) {
         if (stopword == null) {
             init();
         }
@@ -173,9 +174,9 @@ public class TestClientGetTargetTxt {
     public static void getComposite(String termso, String langso, int minFreq, int minLength) {
         String source = getSource(termso, langso);
         List<Ref> ref = getNGram(source, minFreq, minLength);
-        msg("------ composite terms for: "+termso);
-        for (Ref r:ref) { // pour chaque n-gram
-            msg(r.ngram+" ("+r.nbocc+")");
+        msg("------ composite terms for: " + termso);
+        for (Ref r : ref) { // pour chaque n-gram
+            msg(r.ngram + " (" + r.nbocc + ")");
         }
     }
 
@@ -184,12 +185,27 @@ public class TestClientGetTargetTxt {
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
-            if (check(r.ngram)) {
-                System.out.println(r.ngram + ", " + r.nbocc + ", " + check(r.ngram));
-                reducedRef.add(r);
-            }
+            if (checkFistAndLastNotStopWord(r.ngram)) {
+                        System.out.println(r.ngram + ", " + r.nbocc + ", " + checkFistAndLastNotStopWord(r.ngram));
+                    reducedRef.add(r);
+              }
         }
         return reducedRef;
+
+    }
+    
+      public static List<Ref> getNGramIncluded(String content, int minFreq, int minLength, String checkInclude) {
+        List<Ref> allref = getRawNGram(content, minFreq, minLength);
+        List<Ref> reducedRef = new Vector<>();
+        for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
+            Ref r = allref.get(i);
+            if (checkFistAndLastNotStopWord(r.ngram)&&r.ngram.contains(checkInclude)) {
+                    System.out.println(r.ngram + ", " + r.nbocc + ", " + checkFistAndLastNotStopWord(r.ngram));
+                    reducedRef.add(r);
+             }
+        }
+        return reducedRef;
+
     }
 
     public static List<Ref> getRawNGram(String content, int minFreq, int minLength) {
@@ -197,14 +213,26 @@ public class TestClientGetTargetTxt {
         return mysqd.getNGram();
     }
 
+        public static int getFrequency(String termso, String langso) {
+//           return 1; 
+        try {
+            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\"]";
+            QLResultNice resso = is.evalQLNice(queryso, 0, 0);
+            return resso.result.length;
+         } catch (RemoteException ex) {
+          //  ex.printStackTrace();
+            return 0;
+        }
+    }
+
+    
     public static String getSource(String termso, String langso) {
         StringBuilder sourceTXT = new StringBuilder("");
         try {
             String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\"]";
             Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
-            float n1 = resso.result.length;
-            msg("n1:" + resso.result.length);
+             msg("n1:" + resso.result.length);
             for (int i = 0; i < resso.result.length; i++) { // 
                 sourceTXT.append(is.getDoc(resso.result[i])).append("\n");
             }
@@ -275,6 +303,47 @@ public class TestClientGetTargetTxt {
             ex.printStackTrace();
             return res;
         }
+    }
+
+    public static ItemsCorrelation correlationObj(String termso, String termta, String langso, String langta) {
+        String res = "";
+        try {
+            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\"]";
+            String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\"]";
+            //Timer t1 = new Timer("------------- " + queryso);
+            QLResultNice resso = is.evalQLNice(queryso, 0, 0);
+            QLResultNice resta = is.evalQLNice(queryta, 0, 0);
+//            msg("time:" + resso.duration);
+            float n1 = resso.result.length;
+//            msg("n1:" + resso.result.length);
+//            msg("time:" + resta.duration);
+            float n2 = resta.result.length;
+//            msg("n2:" + resta.result.length);
+            for (int i = 0; i < resta.result.length; i++) { // adjust value to source
+                resta.result[i]--;
+            }
+            int[] interserct = SetOperation.and(resso.result, resta.result);
+//            msg("n12:" + interserct.length);
+            double n12 = interserct.length;
+            double num = NTOT * n12 - n1 * n2;
+            double den = Math.sqrt(NTOT * n1 - n1 * n1) * Math.sqrt(NTOT * n2 - n2 * n2);
+//            msg("den:" + den);
+            double corelation = 0;
+            if (den != 0) {
+                corelation = num / den;
+            }
+
+            res = termso + "<->" + termta + " =corelation:" + corelation
+                    + ", n1:" + resso.result.length
+                    + ", n2:" + resta.result.length
+                    + ", n12:" + interserct.length;
+            //    t1.stop();
+            return new ItemsCorrelation((float) corelation, res);
+        } catch (RemoteException ex) {
+            ex.printStackTrace();
+            return null;
+        }
+
 
 
     }

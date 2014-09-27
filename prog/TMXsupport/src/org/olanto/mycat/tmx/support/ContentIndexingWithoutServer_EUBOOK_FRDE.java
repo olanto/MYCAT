@@ -28,7 +28,7 @@ import org.olanto.util.Timer;
 /**
  *  index le corpus (sans mode serveur)
  */
-public class ContentIndexingWithoutServer_WIKI_FREN {      // is an application, not an applet !
+public class ContentIndexingWithoutServer_EUBOOK_FRDE {      // is an application, not an applet !
 
     static IdxStructure id;
     static Timer t1 = new Timer("global time");
@@ -36,7 +36,7 @@ public class ContentIndexingWithoutServer_WIKI_FREN {      // is an application,
     public static void main(String[] args) {
         id = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/IDX_fix.xml"));
 
- IndexingMosesCorpus.indexThis(id, "C1", "C:/CORPUS/WIKI/FREN/corpus.so", "C:/CORPUS/WIKI/FREN/corpus.ta", "FR", "EN", Integer.MAX_VALUE, "UTF-8");
+ IndexingMosesCorpus.indexThis(id, "C1", "C:/CORPUS/EUBOOK/SMT/FRDE/corpus.so", "C:/CORPUS/EUBOOK/SMT/FRDE/corpus.ta", "FR", "DE", Integer.MAX_VALUE, "UTF-8");
  id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();

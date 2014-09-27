@@ -4,11 +4,9 @@
  */
 package org.olanto.mycat.tmx.extractor;
 
-import java.rmi.RemoteException;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import org.olanto.conman.server.GetContentService;
-import org.olanto.idxvli.server.IndexService_MyCat;
 import org.olanto.mycat.tmx.support.TestClientGetTargetTxt;
 import org.olanto.mysqd.util.Ref;
 
@@ -51,6 +49,10 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         minNgram = new javax.swing.JTextField();
         extract = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        minTerm = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        correlationLimit = new javax.swing.JTextField();
         bottom = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -120,6 +122,24 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setText("min Terms");
+
+        minTerm.setText("3");
+        minTerm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minTermActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("correlation limit");
+
+        correlationLimit.setText("0.1");
+        correlationLimit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                correlationLimitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
         topLayout.setHorizontalGroup(
@@ -131,34 +151,38 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(topLayout.createSequentialGroup()
-                        .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(termso, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(topLayout.createSequentialGroup()
-                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(topLayout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addComponent(minfreq, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel7))
-                                    .addGroup(topLayout.createSequentialGroup()
-                                        .addComponent(langso, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(29, 29, 29)
-                                        .addComponent(jLabel5)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(langta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(topLayout.createSequentialGroup()
-                                        .addComponent(minNgram, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28)
-                                        .addComponent(extract, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addContainerGap())))))
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(termso, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(topLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(topLayout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(langso, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(langta, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(minTerm, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(topLayout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(minfreq, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(minNgram, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(correlationLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(45, 45, 45)
+                        .addComponent(extract, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
             topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,14 +197,18 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(langso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(langta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(langta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(minTerm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(minfreq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(minNgram, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(extract))
+                    .addComponent(extract)
+                    .addComponent(jLabel9)
+                    .addComponent(correlationLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -201,14 +229,14 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
         );
         bottomLayout.setVerticalGroup(
             bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bottomLayout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(bottom);
@@ -221,7 +249,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -257,24 +285,47 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     private void extractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extractActionPerformed
         // TODO add your handling code here:
         log.append("________________________________________\n");
-        log.append(termso.getText() + ", " + langso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText()+ "\n");
-        log.append(termso.getText() + ", " + langso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText()+ "\n");
-   
-        String source = TestClientGetTargetTxt.getSource(termso.getText(), langso.getText());
-        List<Ref> refComposite = TestClientGetTargetTxt.getNGram(source,Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()));
-        log.append("------ composite terms for: "+termso.getText()+"\n");
-        for (Ref r:refComposite) { // pour chaque n-gram
-            log.append(r.ngram+" ("+r.nbocc+")\n");
-        }
- 
-        
-        String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
-        List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()));
-        for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-            log.append(TestClientGetTargetTxt.correlation(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()) + "\n");
-        }
+        log.append(termso.getText() + ", " + termso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText() + "\n");
+        int freqso = TestClientGetTargetTxt.getFrequency(termso.getText(), langso.getText());
+        log.append("Frequency: " + freqso + "\n");
+        if (freqso != 0) {
+            String source = TestClientGetTargetTxt.getSource(termso.getText(), langso.getText());
+            List<Ref> refComposite = TestClientGetTargetTxt.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
+            log.append("------ composite terms for: " + termso.getText() + "\n");
+            for (Ref r : refComposite) { // pour chaque n-gram
+                log.append(r.ngram + " (" + r.nbocc + ")\n");
+            }
 
+
+            String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
+            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()));
+            List<ItemsCorrelation> list = new ArrayList<ItemsCorrelation>();
+
+            for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
+                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+            }
+            Collections.sort(list);
+            float corlimit = Float.parseFloat(correlationLimit.getText());
+            log.append("------ candidate translations for: " + termso.getText() + ", correlation limit=" + corlimit + "\n");
+            int countskip = 0;
+            for (ItemsCorrelation item : list) { // pour chaque n-gram
+                if (corlimit <= item.cor) {
+                    log.append(item.msg + "\n");
+                } else {
+                    countskip++;
+                }
+            }
+            log.append("skip terms: " + countskip + "\n");
+        }
     }//GEN-LAST:event_extractActionPerformed
+
+    private void minTermActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minTermActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_minTermActionPerformed
+
+    private void correlationLimitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correlationLimitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_correlationLimitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,6 +364,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bottom;
+    private javax.swing.JTextField correlationLimit;
     private javax.swing.JButton extract;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -321,6 +373,8 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -329,6 +383,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     private javax.swing.JTextField langta;
     private javax.swing.JTextArea log;
     private javax.swing.JTextField minNgram;
+    private javax.swing.JTextField minTerm;
     private javax.swing.JTextField minfreq;
     private javax.swing.JTextField termso;
     private javax.swing.JPanel top;

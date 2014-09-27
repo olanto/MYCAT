@@ -20,6 +20,7 @@
 
 package org.olanto.mycat.tmx.support;
 
+import org.olanto.mycat.tmx.dgt2014.ConfigurationIndexingGetFromFile;
 import org.olanto.idxvli.*;
 import org.olanto.senseos.SenseOS;
 import org.olanto.util.Timer;

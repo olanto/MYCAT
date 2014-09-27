@@ -18,9 +18,8 @@
 
 **********/
 
-package org.olanto.mycat.tmx.support;
+package org.olanto.mycat.tmx.dgt2014;
 
-import org.olanto.mycat.tmx.dgt2014.ConfigurationIndexingGetFromFile;
 import org.olanto.idxvli.*;
 import org.olanto.senseos.SenseOS;
 import org.olanto.util.Timer;
@@ -28,7 +27,7 @@ import org.olanto.util.Timer;
 /**
  *  index le corpus (sans mode serveur)
  */
-public class ContentIndexingWithoutServer_WIKI_FREN {      // is an application, not an applet !
+public class ContentIndexingWithoutServer_DGT_2014_X24 {      // is an application, not an applet !
 
     static IdxStructure id;
     static Timer t1 = new Timer("global time");
@@ -36,7 +35,7 @@ public class ContentIndexingWithoutServer_WIKI_FREN {      // is an application,
     public static void main(String[] args) {
         id = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/IDX_fix.xml"));
 
- IndexingMosesCorpus.indexThis(id, "C1", "C:/CORPUS/WIKI/FREN/corpus.so", "C:/CORPUS/WIKI/FREN/corpus.ta", "FR", "EN", Integer.MAX_VALUE, "UTF-8");
+ IndexingDGTCorpus.indexThis(id, "C1", "C:/CORPUS/DGT2014/DGT2014.24x", Integer.MAX_VALUE, "UTF-8");
  id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();
