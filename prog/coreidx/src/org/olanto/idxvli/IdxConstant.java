@@ -166,6 +166,7 @@ public class IdxConstant {
     public static int MAX_CITATION = 100;
     public static int MAX_RESPONSE = 1000;
     public static int MAX_QUERY_IN_CACHE = 1000;  //taille en byte approx MAX_QUERY_IN_CACHE*WINDOW_SIZE*2*1000 ?
+   public static boolean CACHE_QUERY = true;  // active cacheQuery
     /**
      * **********************************************************************************
      */
