@@ -78,19 +78,21 @@ public class QL_Basic implements QLManager {
             initCache();
         }  // premier appel
 
-        String idOfQuery = request + "-" + properties + "-" + profile+"-" +fullresult;
+        String idOfQuery = request + "-" + properties + "-" + profile + "-" + fullresult+ "-" + size;
         msg("idOfQuery:" + idOfQuery);
         QLResultNice nice = getFromCache(idOfQuery);
 
         if (nice != null) { // dans le cache
 
             getInCache++;
-            nice.update(id, cs, request, start, size,fullresult);  // met à jour la fenêtre
+            nice.update(id, cs, request, start, size, fullresult);  // met à jour la fenêtre
 
         } else { // pas dans le cache
 
             nice = evalQLNice(id, cs, request, properties, profile, start, size, fullresult);
-            putInCache(idOfQuery, nice);
+            if (CACHE_QUERY) {
+                putInCache(idOfQuery, nice);
+            }
         }
         totalTime += nice.duration;
         printStatistic();
@@ -111,7 +113,7 @@ public class QL_Basic implements QLManager {
         if (nice != null) { // dans le cache
 
             getInCache++;
-            nice.update(id, cs, request1, start, size2,false);  // met � jour la fen�tre
+            nice.update(id, cs, request1, start, size2, false);  // met � jour la fen�tre
 
         } else { // pas dans le cache
 

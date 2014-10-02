@@ -21,6 +21,7 @@
  */
 package org.olanto.mycat.tmx.support;
 
+import org.olanto.mycat.tmx.dgt2014.ConfigurationIndexingGetFromFile;
 import org.olanto.idxvli.ref.UploadedFile;
 import org.olanto.idxvli.ref.UtilsFiles;
 import java.io.FileNotFoundException;

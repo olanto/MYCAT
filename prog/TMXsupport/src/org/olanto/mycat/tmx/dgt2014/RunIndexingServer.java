@@ -18,8 +18,7 @@
 
 **********/
 
-package org.olanto.mycat.tmx.support;
-
+package org.olanto.mycat.tmx.dgt2014;
 
 import static org.olanto.util.Messages.*;
 import org.olanto.idxvli.server.*;

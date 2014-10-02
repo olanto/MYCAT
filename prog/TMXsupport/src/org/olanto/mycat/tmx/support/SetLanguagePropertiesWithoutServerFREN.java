@@ -21,6 +21,7 @@ package org.olanto.mycat.tmx.support;
  *
  *********
  */
+import org.olanto.mycat.tmx.dgt2014.ConfigurationIndexingGetFromFile;
 import java.rmi.RemoteException;
 import java.util.Arrays;
 import java.util.List;
@@ -38,7 +39,7 @@ import static org.olanto.util.Messages.*;
  *
  * <p>
  */
-public class SetLanguagePropertiesWithoutServerWithoutServerWithoutServer {
+public class SetLanguagePropertiesWithoutServerFREN {
 
     static IdxStructure id;
     static boolean verbose = false;

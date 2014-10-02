@@ -25,6 +25,8 @@ import org.olanto.util.Timer;
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.olanto.idxvli.*;
 import org.olanto.idxvli.extra.*;
 import org.olanto.conman.server.*;
@@ -38,7 +40,7 @@ import org.olanto.idxvli.ql.OrderResult;
  * <p>
  *
  */
-public class QLResultNice implements Serializable {
+public class QLResultNice implements Serializable, Cloneable {
 
     /* les documents résultats */
     public int[] result;
@@ -70,6 +72,16 @@ public class QLResultNice implements Serializable {
      * @param result id des documents
      * @param duration dur�e
      */
+    @Override
+    public QLResultNice clone() {
+        try {
+            return (QLResultNice) super.clone();
+        } catch (CloneNotSupportedException ex) {
+            Logger.getLogger(QLResultNice.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
     public QLResultNice(String query1, String query2, String properties, String profile, String[] termsOfQuery, int[] result, String[] docname, String[] title, String[] clue, long duration, String alternative) {
         this.query2 = query2;
         this.query = query1;
@@ -258,13 +270,9 @@ public class QLResultNice implements Serializable {
     }
 
     public void checkExactClose(IdxStructure id, int size, String close2) {
-        if (!exactDone) { // dont do this many times !!
-            exactDone = true;
-            query2 = close2;
-            checkExactInternal(id, Integer.MAX_VALUE, query);  // first expression
-            checkExactInternal(id, Integer.MAX_VALUE, query2);  // second expression
-
-        }
+        query2 = close2;
+        checkExactInternal(id, Integer.MAX_VALUE, query);  // first expression
+        checkExactInternal(id, Integer.MAX_VALUE, query2);  // second expression
     }
 
     public void checkExact(IdxStructure id, int size) {

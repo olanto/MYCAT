@@ -47,13 +47,15 @@ public class TestClientQueryExact {
 
 
 
-        testnice("QUOTATION(\"for which an established\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"made by the President \") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"Wto\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"tariff negotiations between\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"usa\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"USA\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
-        testnice("QUOTATION(\"wto\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"for which an established\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"made by the President \") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"Wto\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"tariff negotiations between\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"usa\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"USA\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+//        testnice("QUOTATION(\"wto\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+        testnice("QUOTATION(\"incurred\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
+        testnice("QUOTATION(\"cost\") IN[\"SOURCE.EN\" ANDL \"TARGET.FR\"]");
 
     }
 

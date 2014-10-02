@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.support;
+package org.olanto.mycat.tmx.dgt2014;
 
 import java.io.FileInputStream;
 import java.io.IOException;
