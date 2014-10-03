@@ -39,7 +39,8 @@ public class MySelfQuoteDetection {
     public String htmlWithLinks;  // le contenu initial html avec les liens
     public TermList terms; // la liste des termes parsés
     public int minFreq; // fréquence min
-    public int minLength; // fréquence min
+    public int minLength; // longueur min
+    public int maxLength=Integer.MAX_VALUE; // longueur max
     public List<NGramList> ngl; // Liste des listes de ngram
     public boolean verbose = false;
     public static ConstStringManager MsgManager;
@@ -56,6 +57,13 @@ public class MySelfQuoteDetection {
          this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
+        toBeProcess=_toBeProcess;
+        computeNGram();
+    }
+  public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength, int maxLength) {  // to extract Ngram
+         this.fileName = fileName;
+        this.minFreq = minFreq;
+        this.maxLength = maxLength;
         toBeProcess=_toBeProcess;
         computeNGram();
     }
@@ -81,7 +89,7 @@ public class MySelfQuoteDetection {
         initFirstNGL(terms, minLength, minFreq);
         NGramList current = initFirstNGL(terms, minLength, minFreq);  // init
         int currentlevel = minLength;
-        while (current.size() > 0) { // calcul tous les set jusqu a épuissement
+        while (current.size() > 0){ //&& currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
             ngl.add(current);
             if (verbose) {
                 System.out.println("record level:" + currentlevel);

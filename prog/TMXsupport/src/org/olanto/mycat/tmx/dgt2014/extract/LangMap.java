@@ -33,6 +33,16 @@ public class LangMap {
         return decodelang[pos];
     }
 
+   public static int deltaSOTA(String langSO,String langTA) {
+         int posSO=  getpos(langSO);
+    int posTA=  getpos(langTA);
+    int delta=posSO-posTA;
+    //System.out.println ("posSO="+posSO+", posTA="+posTA+", delta="+delta);
+        return delta;
+   
+   }
+  
+   
     public static int size() {
         return langmap.size();
     }
