@@ -1,27 +1,18 @@
 package org.olanto.mycat.tmx.dgt2014.extractor;
 
-/*
-class ItemsCorrelation { 
-    public static void main( String ... args ) { 
-        // create a bunch and sort them 
-        List<CustomObject> list = Arrays.asList(
-            new CustomObject(3, "Blah"),
-            new CustomObject(30, "Bar"),
-            new CustomObject(1, "Zzz"),
-            new CustomObject(1, "Aaa")
-        );
-        System.out.println( "before: "+ list );
-        Collections.sort( list );
-        System.out.println( "after : "+ list );
-    }
-}
-*/
+
  public class ItemsCorrelation implements Comparable<ItemsCorrelation> { 
-    String msg;
+    String msg,termta;
+    int n1,n2,n12;
     float cor;
-    public ItemsCorrelation( float _cor, String _s ) { 
+    public ItemsCorrelation(String _termta, int _n1,int _n2,int _n12, float _cor, String _s ) { 
         cor = _cor;
+        termta = _termta;
         msg = _s;
+        n1=_n1;
+        n2=_n2;
+        n12=_n12;
+        
     }
  
      public int compareTo(ItemsCorrelation two ) {

@@ -307,7 +307,7 @@ LangMap.init();
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText(),true));
             }
             Collections.sort(list);
             float corlimit = Float.parseFloat(correlationLimit.getText());

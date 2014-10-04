@@ -20,7 +20,9 @@ import org.olanto.util.Timer;
  * @author simple
  */
 public class NICEExtractTermsAUTO extends javax.swing.JFrame {
-     private StringBuilder htmlResult;
+
+    private StringBuilder htmlResult;
+
     /**
      * Creates new form ProtoExtractTerms
      */
@@ -36,30 +38,34 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
         styleSheet.addRule("body {margin-left:22px; margin-top:22px; margin-right:22px;}");
         styleSheet.addRule("h1 {color: blue;}");
         styleSheet.addRule("body {color:#000000; font-family:Verdana,sans-serif;}");
+        styleSheet.addRule("caption {border:1px dotted #6495ed;padding:5px;background-color:#EFF6FF;width:25%}");
         styleSheet.addRule("th {border:1px dotted #6495ed;padding:5px;background-color:#EFF6FF;width:25%}");
         styleSheet.addRule("td {border:1px solid #6495ed;padding:5px; text-align:left;}");
         Document doc = kit.createDefaultDocument();
         result.setDocument(doc);
     }
-    
+
     public void setHtmlHeader(String title) {
-        htmlResult=new StringBuilder();
+        htmlResult = new StringBuilder();
         result.setContentType("text/html");
         htmlResult.append("<html><h1>"
                 + title
-                +"<hr/>"
-                + "</h1>");
-   }
-   public void setHtmlFooter() {
+                + "</h1>" + "<hr/>");
+    }
+
+    public void setHtmlFooter() {
         htmlResult.append("</html>");
     }
-   public void addhtml(String s) {
+
+    public void addhtml(String s) {
         htmlResult.append(s);
     }
-   public void showHtml() {
-         result.setContentType("text/html");
-         result.setText(htmlResult.toString());
-  }
+
+    public void showHtml() {
+        setHtmlParam();
+        result.setContentType("text/html");
+        result.setText(htmlResult.toString());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -118,7 +124,8 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
 
         jLabel4.setText("source language");
 
-        termso.setText("océan atlantique");
+        termso.setText("pommes de terre");
+        termso.setToolTipText("");
         termso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 termsoActionPerformed(evt);
@@ -329,23 +336,32 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
 
     private void extractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extractActionPerformed
         // TODO add your handling code here:
-        setHtmlHeader("Result for:"+ termso.getText() + " from " + langso.getText() + " to " + langta.getText() );
+        setHtmlHeader("Result for: \"" + termso.getText() + "\" from " + langso.getText() + " to " + langta.getText());
         Timer t1 = new Timer("total time");
         log.setText("________________________________________\n");
         log.append(termso.getText() + ", " + langso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText() + "\n");
         int freqso = TestClientGetTargetTxt.getFrequency(termso.getText(), langso.getText(), langta.getText());
         log.append("Term Frequency: " + freqso + "\n");
-        addhtml("<p>Term Frequency: " + freqso + "</p>\n");
-        
+        addhtml("<h2>Term frequency: " + freqso + "</h2>\n");
+         addhtml("<table>\n");
         if (freqso != 0) {
             minfreq.setText("" + TestClientGetTargetTxt.fixMinFreq(freqso));
             minTerm.setText("" + TestClientGetTargetTxt.fixMinTerm(termso.getText()));
             String source = TestClientGetTargetTxt.getSource(termso.getText(), langso.getText(), langta.getText());
             List<Ref> refComposite = TestClientGetTargetTxt.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
             log.append("------ composite terms for: " + termso.getText() + "\n");
+            addhtml("<table>\n");
+          addhtml("<h2>Expressions with the source term</h2>\n");        
+        //    addhtml("<caption>Expressions with the source term</caption>\n");
+            addhtml("<tr><th>Expressions containing the term: " + termso.getText() + "</th><th>Occurrences</th></tr>\n");
             for (Ref r : refComposite) { // pour chaque n-gram
+                addhtml("<tr>\n");
                 log.append(r.ngram + " (" + r.nbocc + ")\n");
+                addhtml("<td>" + r.ngram + "</td>"
+                        + "<td>" + r.nbocc + "</td>\n");
+                addhtml("</tr>\n");
             }
+            addhtml("</table>\n");
 
 
             String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
@@ -353,21 +369,40 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText(),false));
             }
             Collections.sort(list);
             float corlimit = Float.parseFloat(correlationLimit.getText());
             log.append("------ candidate translations for: " + termso.getText() + ", correlation limit=" + corlimit + "\n");
             int countskip = 0;
             int count = 0;
+            addhtml("<h2>Translations\n");
+            addhtml("<table>\n");
+   //         addhtml("<caption>possible translation for the source term</caption>\n");
+            addhtml("<tr><th>Expressions containing the term: " + termso.getText()
+                    + "</th><th>Correlation</th>"
+                    + "</th><th>In "+langso.getText()+"</th>"
+                    + "</th><th>In "+langta.getText()+"</th>"
+                    + "</th><th>In both</th></tr>\n"
+                    );
             for (ItemsCorrelation item : list) { // pour chaque n-gram
                 if (corlimit <= item.cor && count < 5) {
-                    log.append(item.msg + "\n");
+                      addhtml("<tr>\n");
+                  log.append(item.msg + "\n");
+                addhtml("<td>" + item.termta + "</td>"
+                        + "<td>" + item.cor + "</td>\n"
+                       + "<td>" + item.n1 + "</td>\n"
+                       + "<td>" + item.n2 + "</td>\n"
+                       + "<td>" + item.n12+ "</td>\n"
+                        );
+                addhtml("</tr>\n");
+            
                 } else {
                     countskip++;
                 }
                 count++;
             }
+            addhtml("</table>\n");
             log.append("skip terms: " + countskip + "\n");
             log.append("total time: " + t1.getstop() + " millisec\n");
             setHtmlFooter();
