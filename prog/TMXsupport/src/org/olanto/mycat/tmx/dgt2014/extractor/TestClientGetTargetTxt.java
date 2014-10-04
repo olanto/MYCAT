@@ -45,6 +45,8 @@ public class TestClientGetTargetTxt {
     static IndexService_MyCat is;
     final static float NTOT = 100000000;
     static HashMap<String, String> stopword;
+    static boolean SEQUENCE = false;
+    static int NB_EXAMPLES =1;
 
     public static void main(String[] args) {
 
@@ -117,6 +119,7 @@ public class TestClientGetTargetTxt {
             ex.printStackTrace();
         }
     }
+
     public static void initIS(IndexService_MyCat _is) {
         is = _is;
     }
@@ -169,13 +172,13 @@ public class TestClientGetTargetTxt {
         if (stopword == null) {
             init();
         }
-        expression=expression.replace(":", " ");
-           expression=expression.replace("/", " ");
-          expression=expression.replace("&", " ");
-          expression=expression.replace(";", " ");
-          expression=expression.replace("[", " ");
-           expression=expression.replace("  ", " ");
-      
+        expression = expression.replace(":", " ");
+        expression = expression.replace("/", " ");
+        expression = expression.replace("&", " ");
+        expression = expression.replace(";", " ");
+        expression = expression.replace("[", " ");
+        expression = expression.replace("  ", " ");
+
         String res = "";
         String[] terms = expression.split(" ");
         for (int i = 0; i < terms.length; i++) {
@@ -245,9 +248,8 @@ public class TestClientGetTargetTxt {
     }
 
     public static int getFrequency(String termso, String langso, String langta) {
-//           return 1; 
         try {
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+            String queryso = getQuery(termso, langso, langta);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             return resso.result.length;
         } catch (RemoteException ex) {
@@ -275,7 +277,7 @@ public class TestClientGetTargetTxt {
     public static String getSource(String termso, String langso, String langta) {
         StringBuilder sourceTXT = new StringBuilder("");
         try {
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+            String queryso = getQuery(termso, langso, langta);
             Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             msg("n1:" + resso.result.length);
@@ -294,7 +296,7 @@ public class TestClientGetTargetTxt {
     public static String getTarget(String termso, String langso, String langta) {
         StringBuilder targetTXT = new StringBuilder("");
         try {
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+            String queryso = getQuery(termso, langso, langta);
             Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             float n1 = resso.result.length;
@@ -317,8 +319,8 @@ public class TestClientGetTargetTxt {
     public static String correlation(String termso, String termta, String langso, String langta) {
         String res = "";
         try {
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
-            String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso + "\"]";
+            String queryso = getQuery(termso, langso, langta);
+            String queryta = getQuery(termta, langta, langso);
             //Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             QLResultNice resta = is.evalQLNice(queryta, 0, 0);
@@ -354,18 +356,19 @@ public class TestClientGetTargetTxt {
         }
     }
 
-    public static ItemsCorrelation correlationObj(String termso, String termta, String langso, String langta, boolean sequence) {
+    public static String getQuery(String termso, String langso, String langta) {
+        if (SEQUENCE) {
+            return "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+        }
+        return getAndExpression(termso) + " IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+    }
+
+    public static ItemsCorrelation correlationObj(String termso, String termta, String langso, String langta) {
         String res = "";
         try {
-            
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
-            String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso + "\"]";
-            if (!sequence){
-                            queryso = getAndExpression(termso)  + " IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta+"\"]";
-             queryta = getAndExpression(termta) + " IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso+"\"]";
-
-            }
-            Timer t1 = new Timer("------------- " + queryso+" <--> "+queryta);
+            String queryso = getQuery(termso, langso, langta);
+            String queryta = getQuery(termta, langta, langso);
+            Timer t1 = new Timer("------------- " + queryso + " <--> " + queryta);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             QLResultNice resta = is.evalQLNice(queryta, 0, 0);
             //msg("timeQ1:" + resso.duration);
@@ -374,8 +377,9 @@ public class TestClientGetTargetTxt {
             //msg("timeQ2:" + resta.duration);
             float n2 = resta.result.length;
             //msg("n2:" + resta.result.length);
+            int deltaSOTA=LangMap.deltaSOTA(langso, langta);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i] += LangMap.deltaSOTA(langso, langta);
+                resta.result[i] += deltaSOTA;
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
             //msg("n12:" + interserct.length);
@@ -393,8 +397,18 @@ public class TestClientGetTargetTxt {
                     + ", n2:" + resta.result.length
                     + ", n12:" + interserct.length;
             System.out.println(res);
-                t1.stop();
-            return new ItemsCorrelation(termta, (int) n1, (int) n2, (int) n12, (float) corelation, res);
+            String[][] ex=null;
+            if (n12 > 0) {
+                //System.out.println(is.getDoc(interserct[0]));
+                //System.out.println(is.getDoc(interserct[0]- deltaSOTA));
+                ex=new String[(int)Math.min(NB_EXAMPLES,n12)][2];
+                for (int i=0;i<NB_EXAMPLES;i++){
+                    ex[i][0]=is.getDoc(interserct[i]);
+                    ex[i][1]=is.getDoc(interserct[0]- deltaSOTA);            
+                }
+            }
+            t1.stop();
+            return new ItemsCorrelation(termta, (int) n1, (int) n2, (int) n12, (float) corelation, res, ex);
         } catch (RemoteException ex) {
             ex.printStackTrace();
             return null;
