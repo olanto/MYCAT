@@ -181,7 +181,7 @@ public class TestClientGetTargetTxt {
     }
 
     public static List<Ref> getNGram(String content, int minFreq, int minLength) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength);
+        List<Ref> allref = getRawNGram(content, minFreq, minLength, minLength+3);
        List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
@@ -197,7 +197,7 @@ public class TestClientGetTargetTxt {
     }
     
       public static List<Ref> getNGramIncluded(String content, int minFreq, int minLength,  String checkInclude) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength);
+        List<Ref> allref = getRawNGram(content, minFreq, minLength, minLength+3);
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
@@ -213,8 +213,8 @@ public class TestClientGetTargetTxt {
     }
 
        
-    public static List<Ref> getRawNGram(String content, int minFreq, int minLength) {
-        MySelfQuoteDetection mysqd = new MySelfQuoteDetection(content, minFreq, minLength);
+    public static List<Ref> getRawNGram(String content, int minFreq, int minLength, int maxLength) {
+        MySelfQuoteDetection mysqd = new MySelfQuoteDetection(content, minFreq, minLength,maxLength);
         return mysqd.getNGram();
     }
 
@@ -230,7 +230,16 @@ public class TestClientGetTargetTxt {
         }
     }
 
-    
+      public static int fixMinFreq(int freqQ){
+          int minFreq=2;
+          if (freqQ<10) return minFreq;
+          return Math.max(minFreq, freqQ/10);
+      }
+    public static int fixMinTerm(String query){
+          String[] part=query.split(" ");
+          if (part==null){return 2;}
+          return Math.max(2, part.length+1);
+      }
     public static String getSource(String termso, String langso, String langta) {
         StringBuilder sourceTXT = new StringBuilder("");
         try {
@@ -321,17 +330,17 @@ public class TestClientGetTargetTxt {
             //Timer t1 = new Timer("------------- " + queryso);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             QLResultNice resta = is.evalQLNice(queryta, 0, 0);
-            msg("timeQ1:" + resso.duration);
+            //msg("timeQ1:" + resso.duration);
             float n1 = resso.result.length;
-            msg("n1:" + resso.result.length);
-            msg("timeQ2:" + resta.duration);
+            //msg("n1:" + resso.result.length);
+            //msg("timeQ2:" + resta.duration);
             float n2 = resta.result.length;
-            msg("n2:" + resta.result.length);
+            //msg("n2:" + resta.result.length);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
              resta.result[i]+=LangMap.deltaSOTA(langso, langta);
              }
             int[] interserct = SetOperation.and(resso.result, resta.result);
-            msg("n12:" + interserct.length);
+            //msg("n12:" + interserct.length);
             double n12 = interserct.length;
             double num = NTOT * n12 - n1 * n2;
             double den = Math.sqrt(NTOT * n1 - n1 * n1) * Math.sqrt(NTOT * n2 - n2 * n2);
