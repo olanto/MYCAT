@@ -40,31 +40,42 @@ public class MySelfQuoteDetection {
     public TermList terms; // la liste des termes parsés
     public int minFreq; // fréquence min
     public int minLength; // longueur min
-    public int maxLength=Integer.MAX_VALUE; // longueur max
+    public int maxLength = Integer.MAX_VALUE; // longueur max
     public List<NGramList> ngl; // Liste des listes de ngram
+    public static final String MARKBREAK = "éééêèèè";
+    public static boolean removeBREAK = false;
     public boolean verbose = false;
     public static ConstStringManager MsgManager;
 
     public MySelfQuoteDetection(String fileName, int minFreq, int minLength, ConstStringManager messageMan) {  // to debug
-         MySelfQuoteDetection.MsgManager = messageMan;
-         this.fileName = fileName;
+        MySelfQuoteDetection.MsgManager = messageMan;
+        this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
         toBeProcess = file2String(fileName, "UTF-8");
         computeNGram();
     }
-  public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength) {  // to extract Ngram
-         this.fileName = fileName;
+
+    public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength) {  // to extract Ngram
+        this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
-        toBeProcess=_toBeProcess;
+        toBeProcess = _toBeProcess;
         computeNGram();
     }
-  public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength, int maxLength) {  // to extract Ngram
+
+    public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength, int maxLength) {  // to extract Ngram
+        removeBREAK = true;
+        if (removeBREAK) {
+            _toBeProcess = _toBeProcess.replace(",", " "+MARKBREAK+" ")
+                    .replace(";",  " "+MARKBREAK+" ")
+                    .replace(".",  " "+MARKBREAK+" ")
+                    .replace(":",  " "+MARKBREAK+" ");
+        }
         this.minFreq = minFreq;
-         this.minLength = minLength;
-       this.maxLength = maxLength;
-        toBeProcess=_toBeProcess;
+        this.minLength = minLength;
+        this.maxLength = maxLength;
+        toBeProcess = _toBeProcess;
         computeNGram(maxLength);
     }
 
@@ -79,7 +90,7 @@ public class MySelfQuoteDetection {
         init();
     }
 
-        private void computeNGram(int maxLength) {
+    private void computeNGram(int maxLength) {
         terms = new TermList(toBeProcess); // cherche la liste des termes
         System.out.println("Nbr terms:" + terms.size());
         if (verbose) {
@@ -89,7 +100,7 @@ public class MySelfQuoteDetection {
         initFirstNGL(terms, minLength, minFreq);
         NGramList current = initFirstNGL(terms, minLength, minFreq);  // init
         int currentlevel = minLength;
-        while (current.size() > 0 && currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
+        while (current.size() > 0 && currentlevel < maxLength) { // calcul tous les set jusqu a épuissement
             ngl.add(current);
             //System.out.println("record level:" + currentlevel);
             if (verbose) {
@@ -103,10 +114,9 @@ public class MySelfQuoteDetection {
             //current.RemoveIncludedNgram(ngl.get(ngl.size() - 1)); // éliminer les ngram du niveau précédent
             //ngl.get(ngl.size() - 1).show(); // montre les ngram restants après filtrage
         }
-     }
-  
-    
-       private void computeNGram() {
+    }
+
+    private void computeNGram() {
         terms = new TermList(toBeProcess); // cherche la liste des termes
         System.out.println("Nbr terms:" + terms.size());
         if (verbose) {
@@ -116,7 +126,7 @@ public class MySelfQuoteDetection {
         initFirstNGL(terms, minLength, minFreq);
         NGramList current = initFirstNGL(terms, minLength, minFreq);  // init
         int currentlevel = minLength;
-        while (current.size() > 0){ //&& currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
+        while (current.size() > 0) { //&& currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
             ngl.add(current);
             if (verbose) {
                 System.out.println("record level:" + currentlevel);
@@ -129,12 +139,12 @@ public class MySelfQuoteDetection {
             //current.RemoveIncludedNgram(ngl.get(ngl.size() - 1)); // éliminer les ngram du niveau précédent
             //ngl.get(ngl.size() - 1).show(); // montre les ngram restants après filtrage
         }
-     }
+    }
 
-    public List<Ref> getNGram(){
+    public List<Ref> getNGram() {
         return terms.listNGram(ngl, minLength, minFreq);
     }
-       
+
     private void init() {
         terms = new TermList(toBeProcess); // cherche la liste des termes
         System.out.println("Nbr terms:" + terms.size());

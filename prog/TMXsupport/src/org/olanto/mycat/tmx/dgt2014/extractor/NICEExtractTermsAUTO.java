@@ -234,7 +234,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
                                 .addComponent(correlationLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45)
                         .addComponent(extract, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
             topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -284,7 +284,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 967, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)))
         );
         bottomLayout.setVerticalGroup(
@@ -292,9 +292,9 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             .addGroup(bottomLayout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(bottom);
@@ -370,7 +370,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
 
 
             String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
-            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()));
+            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()),Integer.parseInt(minfreq.getText())+2);
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
@@ -381,7 +381,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             log.append("------ candidate translations for: " + termso.getText() + ", correlation limit=" + corlimit + "\n");
             int countskip = 0;
             int count = 0;
-            addhtml("<h2>Translations\n");
+            addhtml("<h2>Translations</h2>\n");
             addhtml("<table>\n");
             //         addhtml("<caption>possible translation for the source term</caption>\n");
             addhtml("<tr><th>Expressions containing the term: " + termso.getText()
@@ -418,6 +418,8 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             addhtml("</table>\n");
             log.append("skip terms: " + countskip + "\n");
             log.append("total time: " + t1.getstop() + " millisec\n");
+                  addhtml("<p>total time: " + t1.getstop() + "millisec</p>\n");
+      
             setHtmlFooter();
             showHtml();
         }

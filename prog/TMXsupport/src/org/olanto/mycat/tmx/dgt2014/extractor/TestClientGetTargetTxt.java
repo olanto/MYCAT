@@ -22,6 +22,8 @@
 package org.olanto.mycat.tmx.dgt2014.extractor;
 
 import java.rmi.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
@@ -46,7 +48,7 @@ public class TestClientGetTargetTxt {
     final static float NTOT = 100000000;
     static HashMap<String, String> stopword;
     static boolean SEQUENCE = false;
-    static int NB_EXAMPLES =1;
+    static int NB_EXAMPLES = 1;
 
     public static void main(String[] args) {
 
@@ -111,13 +113,15 @@ public class TestClientGetTargetTxt {
     }
 
     public static void initIS() {
-        is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-        try {
-            showVector(is.getDictionnary().result);
-            showVector(is.getCorpusLanguages());
-        } catch (RemoteException ex) {
-            ex.printStackTrace();
+        if (is == null) {
+            is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
         }
+//        try {
+//            showVector(is.getDictionnary().result);
+//            showVector(is.getCorpusLanguages());
+//        } catch (RemoteException ex) {
+//            ex.printStackTrace();
+//        }
     }
 
     public static void initIS(IndexService_MyCat _is) {
@@ -195,7 +199,7 @@ public class TestClientGetTargetTxt {
     public static void getTranslation(String termso, String langso, String langta, int minFreq, int minLength) {
         getComposite(termso, langso, langta, minFreq, minLength);
         String target = getTarget(termso, langso, langta);
-        List<Ref> ref = getNGram(target, minFreq, minLength);
+        List<Ref> ref = getNGram(target, minFreq, minLength, minLength+4);
         for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
             msg(correlation(termso, ref.get(i).ngram, langso, langta));
         }
@@ -203,19 +207,19 @@ public class TestClientGetTargetTxt {
 
     public static void getComposite(String termso, String langso, String langta, int minFreq, int minLength) {
         String source = getSource(termso, langso, langta);
-        List<Ref> ref = getNGram(source, minFreq, minLength);
+        List<Ref> ref = getNGram(source, minFreq, minLength, minLength+3);
         msg("------ composite terms for: " + termso);
         for (Ref r : ref) { // pour chaque n-gram
             msg(r.ngram + " (" + r.nbocc + ")");
         }
     }
 
-    public static List<Ref> getNGram(String content, int minFreq, int minLength) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength, minLength + 3);
+    public static List<Ref> getNGram(String content, int minFreq, int minLength, int maxLength) {
+        List<Ref> allref = getRawNGram(content, minFreq, minLength, maxLength);
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
-            if (r.len <= minLength + 3) {
+            if (r.len <= maxLength) {
                 if (checkFistAndLastNotStopWord(r.ngram)) {
                     // System.out.println(r.ngram + ", " + r.nbocc + ", " + checkFistAndLastNotStopWord(r.ngram));
                     reducedRef.add(r);
@@ -309,7 +313,8 @@ public class TestClientGetTargetTxt {
             }
             msg("length target:" + targetTXT.length());
             t1.stop();
-            return targetTXT.toString();
+            String allSentence=targetTXT.toString();
+            return allSentence;
         } catch (RemoteException ex) {
             ex.printStackTrace();
             return " ";
@@ -377,7 +382,7 @@ public class TestClientGetTargetTxt {
             //msg("timeQ2:" + resta.duration);
             float n2 = resta.result.length;
             //msg("n2:" + resta.result.length);
-            int deltaSOTA=LangMap.deltaSOTA(langso, langta);
+            int deltaSOTA = LangMap.deltaSOTA(langso, langta);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
                 resta.result[i] += deltaSOTA;
             }
@@ -397,14 +402,14 @@ public class TestClientGetTargetTxt {
                     + ", n2:" + resta.result.length
                     + ", n12:" + interserct.length;
             System.out.println(res);
-            String[][] ex=null;
+            String[][] ex = null;
             if (n12 > 0) {
                 //System.out.println(is.getDoc(interserct[0]));
                 //System.out.println(is.getDoc(interserct[0]- deltaSOTA));
-                ex=new String[(int)Math.min(NB_EXAMPLES,n12)][2];
-                for (int i=0;i<NB_EXAMPLES;i++){
-                    ex[i][0]=is.getDoc(interserct[i]);
-                    ex[i][1]=is.getDoc(interserct[0]- deltaSOTA);            
+                ex = new String[(int) Math.min(NB_EXAMPLES, n12)][2];
+                for (int i = 0; i < NB_EXAMPLES; i++) {
+                    ex[i][0] = is.getDoc(interserct[i]);
+                    ex[i][1] = is.getDoc(interserct[0] - deltaSOTA);
                 }
             }
             t1.stop();
