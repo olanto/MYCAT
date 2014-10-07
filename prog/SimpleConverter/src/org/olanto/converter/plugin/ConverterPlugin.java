@@ -106,6 +106,7 @@ public class ConverterPlugin implements Callable {
         ProcessManager process = new PureJavaProcessManager();
         ProcessQuery query = new ProcessQuery(this.pluginCommand, this.plugInProcess);
         try {
+            System.out.println(" DEBUG stop process");
             Long pid = process.findPid(query);
             _logger.info("Trying to kill plugin process: " + pid);
             process.kill(null, pid);

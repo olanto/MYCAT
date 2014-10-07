@@ -46,7 +46,7 @@ public abstract class ConverterFactoryOffice extends AbstractConverterFactory {
     public static OfficeManager getOfficeManager() {
         if (officeManager == null) {
             try {
-                officeManager = new DefaultOfficeManagerConfiguration().setTaskExecutionTimeout(30000L).buildOfficeManager();
+                officeManager = new DefaultOfficeManagerConfiguration().setTaskExecutionTimeout(60000L).buildOfficeManager();
                 if (officeManager != null) {
                     officeManager.start();
                 }
@@ -91,6 +91,7 @@ public abstract class ConverterFactoryOffice extends AbstractConverterFactory {
             try {
                 Long pid = process.findPid(query);
                 _logger.info("Trying to kill soffice process: " + pid);
+                System.out.println("Trying to kill soffice process: " + pid);
                 process.kill(null, pid);
 
             } catch (IOException e1) {

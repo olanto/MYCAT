@@ -3,6 +3,7 @@
  */
 package org.olanto.converter;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.log4j.Logger;
@@ -17,6 +18,33 @@ public class SimpleConverterCLI {
     private final static Logger _logger = Logger.getLogger(SimpleConverterCLI.class);
 
     public static void main(String[] arguments) throws Exception {
+        Process exec;
+               try {
+            System.out.println("**** Clean all soffice.bin");
+         System.out.println("**** taskkill /F /IM soffice.bin");
+            exec = Runtime.getRuntime().exec("taskkill /F /IM soffice.bin");
+            try {
+                exec.waitFor();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+               try {
+            System.out.println("**** Clean all soffice.exe");
+         System.out.println("**** taskkill /F /IM soffice.exe");
+            exec = Runtime.getRuntime().exec("taskkill /F /IM soffice.exe");
+            try {
+                exec.waitFor();
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+  
+        
         if (arguments.length < 1) {
             System.out.println("Usage: SimpleConverterCLI config-file.xml \n");
             System.exit(EXIT_CODE_TOO_FEW_ARGS);

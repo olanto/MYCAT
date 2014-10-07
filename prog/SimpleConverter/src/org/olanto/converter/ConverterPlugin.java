@@ -60,6 +60,7 @@ public class ConverterPlugin implements Callable {
         System.out.println("run :"+this.plugInCommand);
         Process exec;
         try {
+            System.out.println(" **** taskkill /F /IM "+this.plugInCommand);
             exec = Runtime.getRuntime().exec("taskkill /F /IM "+this.plugInCommand);
             try {
                 exec.waitFor();
