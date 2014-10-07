@@ -67,8 +67,8 @@ public class ConverterControler {
             } else if (source.getExtention().equalsIgnoreCase(Constants.HTML)
                     || source.getExtention().equalsIgnoreCase(Constants.HTM)) {
                 converterFactory = ConverterFactoryHTM.getInstance();
-            } else if (source.getExtention().equalsIgnoreCase(Constants.DOCX) && numberOfRetry == 0
-                    || source.getExtention().equalsIgnoreCase(Constants.DOC)
+// dont use oo for docx            } else if (source.getExtention().equalsIgnoreCase(Constants.DOCX) && numberOfRetry == 0
+              } else if ( source.getExtention().equalsIgnoreCase(Constants.DOC)
                     || source.getExtention().equalsIgnoreCase(Constants.RTF)
                     //|| source.getExtention().equalsIgnoreCase(Constants.TXT)
                     //            || source.getExtention().equalsIgnoreCase(Constants.HTML)
