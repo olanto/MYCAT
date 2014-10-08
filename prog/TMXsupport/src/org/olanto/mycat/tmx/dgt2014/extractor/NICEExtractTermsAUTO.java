@@ -390,11 +390,14 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
 
             String target = NgramAndCorrelation.getTarget(termso.getText(), langso.getText(), langta.getText());
             List<Ref> ref = NgramAndCorrelation.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()), Integer.parseInt(minfreq.getText()) + 2);
-            List<ItemsCorrelation> list = new ArrayList<>();
 
-            for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(NgramAndCorrelation.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
-            }
+            CorrelateAll corAll=new CorrelateAll(ref, termso.getText(), langso.getText(), langta.getText());
+            List<ItemsCorrelation> list=corAll.computePAR();
+            //            List<ItemsCorrelation> list = new ArrayList<>();
+//
+//            for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
+//                list.add(NgramAndCorrelation.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+//            }
             try {
                 Collections.sort(list);
             } catch (Exception ex) {
