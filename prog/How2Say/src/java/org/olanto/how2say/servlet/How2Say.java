@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.olanto.mycat.tmx.dgt2014.extract.LangMap;
 import org.olanto.mycat.tmx.dgt2014.extractor.FormatHtmlResult;
 
 /**
@@ -24,6 +26,13 @@ import org.olanto.mycat.tmx.dgt2014.extractor.FormatHtmlResult;
 public class How2Say extends HttpServlet {
 
     public static boolean verboseContent = true;
+    
+       public static void main(String[] args) {  //only to debug
+
+        LangMap.init();
+        String s=getQueryForm("pomme de terre", "FR", "EN");
+        System.out.println(s);
+       }
 
     /**
      * Processes requests for both HTTP
@@ -69,6 +78,45 @@ public class How2Say extends HttpServlet {
         }
     }
 
+    public static String getQueryForm(String query, String langso, String langta) {
+        StringBuilder s = new StringBuilder("");
+        // heades
+        s.append("<form NAME=\"search\" method=\"post\" action=\"./how2say?\">");
+        s.append("<img src=\"olanto.jpg\"/>");
+        s.append(" ");
+        s.append(" <input type=\"text\" name=\"query\" value=\"" + query + "\" size=\"40\"/>");
+        s.append(" <input type=\"submit\" value=\"How2Say ?\"/>");
+        s.append(" from ");
+        s.append(buildLangSelector("langso", langso));
+        s.append(" to ");
+        s.append(buildLangSelector("langta", langta));
+        s.append(" with DGT2014 ");
+        s.append("</form>");
+        return s.toString();
+    }
+
+    public static String buildSelector(String name, String[] options, String languageSelect) {
+        String res = "<select name=\"" + name + "\">";
+        for (int i = 0; i < options.length; i++) {
+            res += "<option>" + options[i] + "</option>\n";
+        }
+        res += "</select>";
+        res=res.replace(">" + languageSelect + "<", " selected>" + languageSelect + "<");
+        return res;
+    }
+
+    public static String buildLangSelector(String selectorName, String selected) {
+        try{
+        String[] languages = null;
+        LangMap.init();
+        languages = LangMap.decodelang;
+        return buildSelector(selectorName, languages, selected);
+        } catch (Exception ex) {
+                Logger.getLogger(How2Say.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        return "<p>ERROR</p>";
+    }
+
     String query(
             String action,
             String typeNode,
@@ -100,10 +148,13 @@ public class How2Say extends HttpServlet {
         }
 
         StringBuffer result = new StringBuffer("");
-        result.append("<h1>Servlet How2Say at " + request.getContextPath() + "</h1>");
-        result.append("<p>query: " + query + "</p>");
-        result.append("<p>langso: " + langso + "</p>");
-        result.append("<p>langta: " + langta + "</p>");
+//        result.append("<h1>Servlet How2Say at " + request.getContextPath() + "</h1>");
+//        result.append("<p>query: " + query + "</p>");
+//        result.append("<p>langso: " + langso + "</p>");
+//        result.append("<p>langta: " + langta + "</p>");
+
+       result.append(getQueryForm(query, langso, langta));
+        result.append("<hr/");
 
         FormatHtmlResult formatter = new FormatHtmlResult();
         result.append(formatter.getHtmlResult(query, langso, langta));
@@ -123,7 +174,7 @@ public class How2Say extends HttpServlet {
             out.append("<?xml version='1.0'  encoding='UTF-8' ?>");
         }
         if (typeNode.equals("html")) {
-            out.append("<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />");
+            //out.append("<meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\" />");
             out.append("<html>");
             out.append("<head>");
             out.append("<LINK rel=stylesheet href=\"basic.css\" type=\"text/css\">");

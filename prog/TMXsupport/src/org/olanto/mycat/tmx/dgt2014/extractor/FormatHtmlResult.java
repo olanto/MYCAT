@@ -44,22 +44,22 @@ public class FormatHtmlResult {
     private float corlimit = 0.1f;
 
     public FormatHtmlResult() {
-        TestClientGetTargetTxt.initIS();
+        NgramAndCorrelation.initIS();
                LangMap.init();
 
     }
 
     public String getHtmlResult(String termso, String langso, String langta) {
-        setHtmlHeader("Result for: \"" + termso + "\" from " + langso + " to " + langta);
         Timer t1 = new Timer("total time");
-        int freqso = TestClientGetTargetTxt.getFrequency(termso, langso, langta);
-        addhtml("<h2>Term frequency: " + freqso + "</h2>\n");
-
+        int freqso = NgramAndCorrelation.getFrequency(termso, langso, langta);
+         setHtmlHeader("<p>Result for: \"" + termso + "\" from " + langso + " to " + langta+
+                 ", Term frequency: " + freqso + "</p>\n");
+ 
         if (freqso != 0) {
-            minfreq = TestClientGetTargetTxt.fixMinFreq(freqso);
-            minTerm = TestClientGetTargetTxt.fixMinTerm(termso);
-            String source = TestClientGetTargetTxt.getSource(termso, langso, langta);
-            List<Ref> refComposite = TestClientGetTargetTxt.getNGramIncluded(source, minfreq, minTerm, termso);
+            minfreq = NgramAndCorrelation.fixMinFreq(freqso);
+            minTerm = NgramAndCorrelation.fixMinTerm(termso);
+            String source = NgramAndCorrelation.getSource(termso, langso, langta);
+            List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, minfreq, minTerm, termso);
             addhtml("<h2>Expressions with the source term</h2>\n");
             addhtml("<table>\n");
             addhtml("<tr><th width=50%>Expressions containing the term: " + termso + "</th><th>Occurrences</th></tr>\n");
@@ -72,15 +72,18 @@ public class FormatHtmlResult {
             addhtml("</table>\n");
 
  
-            String target = TestClientGetTargetTxt.getTarget(termso, langso, langta);
-            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, minfreq, minNgram, minTerm+3);
+            String target = NgramAndCorrelation.getTarget(termso, langso, langta);
+            List<Ref> ref = NgramAndCorrelation.getNGram(target, minfreq, minNgram, minTerm+3);
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(TestClientGetTargetTxt.correlationObj(termso, ref.get(i).ngram, langso, langta));
+                list.add(NgramAndCorrelation.correlationObj(termso, ref.get(i).ngram, langso, langta));
             }
-           Collections.sort(list);
-            int countskip = 0;
+ try {
+                Collections.sort(list);
+            } catch (Exception ex) {
+                Logger.getLogger(FormatHtmlResult.class.getName()).log(Level.SEVERE, null, ex);
+            }           int countskip = 0;
             int count = 0;
             addhtml("<h2>Translations</h2>\n");
            addhtml("<table>\n");

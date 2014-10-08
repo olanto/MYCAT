@@ -30,7 +30,7 @@ import java.rmi.*;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
 import org.olanto.mycat.tmx.dgt2014.extract.LangMap;
-import org.olanto.mycat.tmx.dgt2014.extractor.TestClientGetTargetTxt;
+import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
 import static org.olanto.util.Messages.*;
 
 /**
@@ -52,7 +52,7 @@ public class Test2014FREN_AND {
         } catch (RemoteException ex) {
             ex.printStackTrace();
         }
-TestClientGetTargetTxt.initIS(is);
+NgramAndCorrelation.initIS(is);
         getGlossary("C:\\CORPUS\\TERM\\english-french-clean.txt.clean");
          //         correlation("pommes de terre", "potatoes", "FR", "EN");
   
@@ -85,8 +85,8 @@ TestClientGetTargetTxt.initIS(is);
     static double correlation(String termso, String termta, String langso, String langta) {
        
             
-              String queryso = TestClientGetTargetTxt.getAndExpression(termso)  + " IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta+"\"]";
-            String queryta = TestClientGetTargetTxt.getAndExpression(termta) + " IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso+"\"]";
+              String queryso = NgramAndCorrelation.getAndExpression(termso)  + " IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta+"\"]";
+            String queryta = NgramAndCorrelation.getAndExpression(termta) + " IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso+"\"]";
             System.out.println(queryso);
             System.out.println(queryta);
          try {

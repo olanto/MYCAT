@@ -7,6 +7,8 @@ package org.olanto.mycat.tmx.dgt2014.extractor;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -68,11 +70,11 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
         result.setContentType("text/html");
         result.setText(htmlResult.toString());
     }
-    
-    public String emphase(String s, String toEmphase){
-        return s.replace(toEmphase,"<em>"+toEmphase+"</em>");
+
+    public String emphase(String s, String toEmphase) {
+        return s.replace(toEmphase, "<em>" + toEmphase + "</em>");
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -346,17 +348,17 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
         Timer t1 = new Timer("total time");
         log.setText("________________________________________\n");
         log.append(termso.getText() + ", " + langso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText() + "\n");
-        int freqso = TestClientGetTargetTxt.getFrequency(termso.getText(), langso.getText(), langta.getText());
+        int freqso = NgramAndCorrelation.getFrequency(termso.getText(), langso.getText(), langta.getText());
         log.append("Term Frequency: " + freqso + "\n");
         addhtml("<h2>Term frequency: " + freqso + "</h2>\n");
         if (freqso != 0) {
-            minfreq.setText("" + TestClientGetTargetTxt.fixMinFreq(freqso));
-            minTerm.setText("" + TestClientGetTargetTxt.fixMinTerm(termso.getText()));
-            String source = TestClientGetTargetTxt.getSource(termso.getText(), langso.getText(), langta.getText());
-            List<Ref> refComposite = TestClientGetTargetTxt.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
+            minfreq.setText("" + NgramAndCorrelation.fixMinFreq(freqso));
+            minTerm.setText("" + NgramAndCorrelation.fixMinTerm(termso.getText()));
+            String source = NgramAndCorrelation.getSource(termso.getText(), langso.getText(), langta.getText());
+            List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
             log.append("------ composite terms for: " + termso.getText() + "\n");
-             addhtml("<h2>Expressions with the source term</h2>\n");
-           addhtml("<table>\n");
+            addhtml("<h2>Expressions with the source term</h2>\n");
+            addhtml("<table>\n");
             //    addhtml("<caption>Expressions with the source term</caption>\n");
             addhtml("<tr><th>Expressions containing the term: " + termso.getText() + "</th><th>Occurrences</th></tr>\n");
             for (Ref r : refComposite) { // pour chaque n-gram
@@ -369,14 +371,20 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             addhtml("</table>\n");
 
 
-            String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
-            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()),Integer.parseInt(minfreq.getText())+2);
+            String target = NgramAndCorrelation.getTarget(termso.getText(), langso.getText(), langta.getText());
+            List<Ref> ref = NgramAndCorrelation.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()), Integer.parseInt(minfreq.getText()) + 2);
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+                list.add(NgramAndCorrelation.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
             }
-            Collections.sort(list);
+            try {
+                Collections.sort(list);
+            } catch (Exception ex) {
+                Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
             float corlimit = Float.parseFloat(correlationLimit.getText());
             log.append("------ candidate translations for: " + termso.getText() + ", correlation limit=" + corlimit + "\n");
             int countskip = 0;
@@ -399,15 +407,15 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
                             + "<td>" + item.n2 + "</td>\n"
                             + "<td>" + item.n12 + "</td>\n");
                     addhtml("</tr>\n");
-                    addhtml("</table>\n"); 
-                    addhtml("<table>\n");
-                    for (int i=0; i<item.examples.length;i++){
-                            addhtml("<tr>\n");
-                     addhtml("<td width=50%>" + emphase(item.examples[i][0],termso.getText()) + "</td>"
-                            + "<td width=50%>" + emphase(item.examples[i][1],item.termta) + "</td>\n");
-                    addhtml("</tr>\n");
                     addhtml("</table>\n");
                     addhtml("<table>\n");
+                    for (int i = 0; i < item.examples.length; i++) {
+                        addhtml("<tr>\n");
+                        addhtml("<td width=50%>" + emphase(item.examples[i][0], termso.getText()) + "</td>"
+                                + "<td width=50%>" + emphase(item.examples[i][1], item.termta) + "</td>\n");
+                        addhtml("</tr>\n");
+                        addhtml("</table>\n");
+                        addhtml("<table>\n");
                     }
 
                 } else {
@@ -418,8 +426,8 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
             addhtml("</table>\n");
             log.append("skip terms: " + countskip + "\n");
             log.append("total time: " + t1.getstop() + " millisec\n");
-                  addhtml("<p>total time: " + t1.getstop() + "millisec</p>\n");
-      
+            addhtml("<p>total time: " + t1.getstop() + "millisec</p>\n");
+
             setHtmlFooter();
             showHtml();
         }
@@ -464,7 +472,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new NICEExtractTermsAUTO().setVisible(true);
-                TestClientGetTargetTxt.initIS();
+                NgramAndCorrelation.initIS();
             }
         });
     }
