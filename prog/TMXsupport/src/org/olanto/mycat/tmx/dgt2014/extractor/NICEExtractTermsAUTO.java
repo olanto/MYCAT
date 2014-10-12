@@ -26,6 +26,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -88,10 +90,30 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
         result.setText(htmlResult.toString());
     }
 
-    public String emphase(String s, String toEmphase) {
+    public String emphase_old(String s, String toEmphase) {
         return s.replace(toEmphase, "<em>" + toEmphase + "</em>");
     }
 
+   public String emphase(String s, String toEmphase) {
+    String REGEX_BEFORE_TOKEN = "([^\\p{L}\\p{N}]|^)";
+    String REGEX_AFTER_TOKEN = "([^\\p{L}\\p{N}]|$)";
+
+        int start, length = toEmphase.length();
+        String regex, newtoEmphase = "";
+        Pattern p;
+        Matcher m;
+//        regex = REGEX_BEFORE_TOKEN + Pattern.quote(toEmphase) + REGEX_AFTER_TOKEN;
+        p = Pattern.compile(toEmphase, Pattern.CASE_INSENSITIVE);
+        m = p.matcher(s);
+        if (m.find()) {
+            start = m.start();
+            newtoEmphase = s.substring(start, start+length);
+            return s.replace(newtoEmphase, "<em>" + newtoEmphase + "</em>");
+        }
+        return s.replace(toEmphase, "<em>" + toEmphase + "</em>");
+    }
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

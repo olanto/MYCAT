@@ -24,8 +24,6 @@ package org.olanto.how2say.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -43,13 +41,13 @@ import org.olanto.mycat.tmx.dgt2014.extractor.FormatHtmlResult;
 public class How2Say extends HttpServlet {
 
     public static boolean verboseContent = true;
-    
-       public static void main(String[] args) {  //only to debug
+
+    public static void main(String[] args) {  //only to debug
 
         LangMap.init();
-        String s=getQueryForm("pomme de terre", "FR", "EN");
+        String s = getQueryForm("pomme de terre", "FR", "EN");
         System.out.println(s);
-       }
+    }
 
     /**
      * Processes requests for both HTTP
@@ -118,19 +116,19 @@ public class How2Say extends HttpServlet {
             res += "<option>" + options[i] + "</option>\n";
         }
         res += "</select>";
-        res=res.replace(">" + languageSelect + "<", " selected>" + languageSelect + "<");
+        res = res.replace(">" + languageSelect + "<", " selected>" + languageSelect + "<");
         return res;
     }
 
     public static String buildLangSelector(String selectorName, String selected) {
-        try{
-        String[] languages = null;
-        LangMap.init();
-        languages = LangMap.decodelang;
-        return buildSelector(selectorName, languages, selected);
+        try {
+            String[] languages = null;
+            LangMap.init();
+            languages = LangMap.decodelang;
+            return buildSelector(selectorName, languages, selected);
         } catch (Exception ex) {
-                Logger.getLogger(How2Say.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Logger.getLogger(How2Say.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return "<p>ERROR</p>";
     }
 
@@ -170,7 +168,7 @@ public class How2Say extends HttpServlet {
 //        result.append("<p>langso: " + langso + "</p>");
 //        result.append("<p>langta: " + langta + "</p>");
 
-       result.append(getQueryForm(query, langso, langta));
+        result.append(getQueryForm(query, langso, langta));
         result.append("<hr/");
 
         FormatHtmlResult formatter = new FormatHtmlResult();
