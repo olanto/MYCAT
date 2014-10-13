@@ -36,7 +36,7 @@ public class IndexingMULTIUNCorpus {      // is an application, not an applet !
     static Timer t1 = new Timer("global time");
 
     public static void indexThis(IdxStructure id, String name, String fileso, int limit, String txt_encoding) {
-        System.out.println("------------- index corpus: " + fileso );
+        System.out.println("------------- index corpus: " + fileso);
         int totread = 0;
         try {
             InputStreamReader isrso = new InputStreamReader(new FileInputStream(fileso), txt_encoding);
@@ -51,9 +51,15 @@ public class IndexingMULTIUNCorpus {      // is an application, not an applet !
                         if (totread % 10000 == 0) {
                             System.out.println(totread);
                         }
-                        id.indexThisContent(docnameso, x7[i]);
+                        if (i == 6) {
+                            id.indexThisContent(docnameso, addSpace(x7[i]));
+                        } else {
+                            id.indexThisContent(docnameso, x7[i]);
+                        }
                     }
-                } else System.out.println("  erronr X24 " + wso);
+                } else {
+                    System.out.println("  erronr X7 " + wso);
+                }
 
                 wso = so.readLine();
             }
@@ -63,5 +69,24 @@ public class IndexingMULTIUNCorpus {      // is an application, not an applet !
             e.printStackTrace();
         }
 
+    }
+
+    public static String addSpace(String s) {
+        StringBuilder res = new StringBuilder("");
+
+        for (int i = 0; i < s.length(); i++) {
+            res.append(s.charAt(i));
+            if (isCJKChar(s.charAt(i))) {
+                res.append(" ");
+            }
+        }
+        return res.toString();
+    }
+
+    public static boolean isCJKChar(char s) {
+        if (s > 0x0370) {
+            return true;
+        }
+        return false;
     }
 }

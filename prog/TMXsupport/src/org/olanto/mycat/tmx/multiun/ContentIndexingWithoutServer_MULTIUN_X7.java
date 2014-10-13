@@ -20,7 +20,6 @@
 
 package org.olanto.mycat.tmx.multiun;
 
-import org.olanto.mycat.tmx.dgt2014.*;
 import org.olanto.idxvli.*;
 import org.olanto.senseos.SenseOS;
 import org.olanto.util.Timer;
@@ -36,7 +35,7 @@ public class ContentIndexingWithoutServer_MULTIUN_X7 {      // is an application
     public static void main(String[] args) {
         id = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/IDX_fix.xml"));
 
- IndexingDGTCorpus.indexThis(id, "C1", "C:/CORPUS/DGT2014/DGT2014.24x", Integer.MAX_VALUE, "UTF-8");
+ IndexingMULTIUNCorpus.indexThis(id, "C1", "C:/CORPUS/MULTI-UN/MULTIUN.x7", Integer.MAX_VALUE, "UTF-8");
  id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();
