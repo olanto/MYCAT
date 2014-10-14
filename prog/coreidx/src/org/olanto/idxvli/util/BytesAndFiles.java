@@ -125,7 +125,7 @@ public class BytesAndFiles {
      * @param r fichier
      * @return cha�ne lue
      */
-    public static final String readString(long pos, String encode, RandomAccessFile r) {
+    public static final synchronized String readString(long pos, String encode, RandomAccessFile r) {
         try {
             r.seek(pos); // position la t�te sur le d�but du block
 
