@@ -42,15 +42,12 @@ package org.olanto.mycat.tmx.multiun;
  *
  *********
  */
-import org.olanto.mycat.tmx.dgt2014.*;
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
-import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.idxvli.doc.PropertiesList;
 import org.olanto.idxvli.util.SetOfBits;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMap;
+import org.olanto.mycat.tmx.multiun.extract.LangMapMULTIUN;
 import org.olanto.senseos.SenseOS;
 import static org.olanto.util.Messages.*;
 
@@ -67,7 +64,7 @@ public class SetLanguagePropertiesWithoutServer_MULTIUN {
 
     public static void main(String[] args) {
         IdxStructure idmain = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/IDX_fix.xml"));
-        LangMap.init();
+        LangMapMULTIUN.init();
 //        for (int i = 0; i < 100; i++) {
 //                System.out.println(i+" length " + idmain.getLengthOfD(i));
 //               }
@@ -89,21 +86,21 @@ public class SetLanguagePropertiesWithoutServer_MULTIUN {
 
         id = idpar;
         int lastdoc = id.lastRecordedDoc; // taille du corpus
-        int step = LangMap.size();
+        int step = LangMapMULTIUN.size();
 
         for (int i = 0; i < step; i++) {
-            msg("clear properties for: " + LangMap.getlang(i));
-            id.clearThisProperty("SOURCE." + LangMap.getlang(i));
-            id.clearThisProperty("TARGET." + LangMap.getlang(i));
+            msg("clear properties for: " + LangMapMULTIUN.getlang(i));
+            id.clearThisProperty("SOURCE." + LangMapMULTIUN.getlang(i));
+            id.clearThisProperty("TARGET." + LangMapMULTIUN.getlang(i));
         }
         for (int i = 0; i < lastdoc; i += step) {
             int first = i;
             for (int j = 0; j < step; j++) {
 //              System.out.println("length" + id.getLengthOfD(i + j));
                 if (id.getLengthOfD(i + j) > 1) {
-                    id.setDocumentPropertie(i + j, "SOURCE." + LangMap.getlang(j));
+                    id.setDocumentPropertie(i + j, "SOURCE." + LangMapMULTIUN.getlang(j));
                     for (int k = 0; k < step; k++) {
-                       id.setDocumentPropertie(first + k, "TARGET." + LangMap.getlang(j));
+                       id.setDocumentPropertie(first + k, "TARGET." + LangMapMULTIUN.getlang(j));
                     }
                 }
             }

@@ -21,9 +21,7 @@
  */
 package org.olanto.mycat.tmx.dgt2014.extractor;
 
-import org.olanto.mycat.tmx.common.NgramAndCorrelation;
 import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.common.CorrelateAll;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -34,7 +32,7 @@ import java.util.regex.Pattern;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMap;
+import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
 
 import org.olanto.mysqd.util.Ref;
 import org.olanto.util.Timer;
@@ -52,7 +50,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
      */
     public NICEExtractTermsAUTO() {
         initComponents();
-        LangMap.init();
+        LangMapDGT2014.init();
     }
 
     public void setHtmlParam() {

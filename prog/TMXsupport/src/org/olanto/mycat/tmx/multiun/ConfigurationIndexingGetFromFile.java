@@ -125,6 +125,8 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
      * processus.
      */
     public void InitConfiguration() {
+        IdxConstant.MAX_QUERY_IN_CACHE=50000;
+        
         CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
         DOC_ENCODING = prop.getProperty("DOC_ENCODING", "UTF-8");

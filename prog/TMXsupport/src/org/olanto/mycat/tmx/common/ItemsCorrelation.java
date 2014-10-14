@@ -41,8 +41,9 @@ package org.olanto.mycat.tmx.common;
      public int compareTo(ItemsCorrelation two ) {
         // I migth compare them using the int first 
         // and if they're the same, use the string... 
-        float diff = this.cor - two.cor;
-        if( diff < 0 ) { // they have different int
+       // float diff = this.cor - two.cor;
+        if( this.cor == two.cor ) return 0;
+        if( this.cor <= two.cor ) { // they have different int
             return 1;
         }
 

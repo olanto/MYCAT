@@ -21,9 +21,7 @@
  */
 package org.olanto.mycat.tmx.multiun.extractor;
 
-import org.olanto.mycat.tmx.common.NgramAndCorrelation;
 import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.common.CorrelateAll;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
@@ -33,7 +31,7 @@ import java.util.regex.Pattern;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-import org.olanto.mycat.tmx.multiun.extract.LangMap;
+import org.olanto.mycat.tmx.multiun.extract.LangMapMULTIUN;
 
 import org.olanto.mysqd.util.Ref;
 import org.olanto.util.Timer;
@@ -51,7 +49,7 @@ public class NICEExtractTermsAUTO extends javax.swing.JFrame {
      */
     public NICEExtractTermsAUTO() {
         initComponents();
-        LangMap.init();
+        LangMapMULTIUN.init();
     }
 
     public void setHtmlParam() {

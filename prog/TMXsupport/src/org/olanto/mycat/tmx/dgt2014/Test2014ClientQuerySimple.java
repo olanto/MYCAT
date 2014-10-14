@@ -25,7 +25,7 @@ import org.olanto.conman.server.GetContentService;
 import java.rmi.*;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMap;
+import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
 import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 
@@ -41,7 +41,7 @@ public class Test2014ClientQuerySimple {
     public static void main(String[] args) {
 
         is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-        LangMap.init();
+        LangMapDGT2014.init();
         try {
             showVector(is.getDictionnary().result);
             showVector(is.getCorpusLanguages());
@@ -120,7 +120,7 @@ public class Test2014ClientQuerySimple {
             float n2 = resta.result.length;
             msg("n2:" + resta.result.length);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i]+=LangMap.deltaSOTA(langso, langta);
+                resta.result[i]+=LangMapDGT2014.deltaSOTA(langso, langta);
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
             msg("n12:" + interserct.length);

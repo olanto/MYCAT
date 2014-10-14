@@ -48,7 +48,7 @@ public class extractMULTIUN {
             sourceTMX = drive + "/CORPUS/MULTI-UN/UNIFY/MultiUN.";
             targetMFLF = "C:" + "/CORPUS/MULTI-UN/" + "MULTIUN" + ".mflf";
             outmflf = new OutputStreamWriter(new FileOutputStream(targetMFLF), "UTF-8");
-            LangMap.init();
+            LangMapMULTIUN.init();
             Process();
             outmflf.close();
             System.out.println("Keep:" + TMX.size());
@@ -98,7 +98,7 @@ public class extractMULTIUN {
     }
     
     static void addEntry(String TA) {
-        int posTA=LangMap.getpos(TA);
+        int posTA=LangMapMULTIUN.getpos(TA);
          String fileNameSO = sourceTMX + "en-" + TA + ".en";
       String fileNameTA = sourceTMX + "en-" + TA + "."+ TA ;
          System.out.println("------------- build sentence dictionary: " + fileNameSO + ", " + fileNameTA);
