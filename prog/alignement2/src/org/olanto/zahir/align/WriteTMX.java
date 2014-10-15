@@ -66,6 +66,50 @@ public class WriteTMX {
         out.write("</tu>\n");
         } catch (Exception e) { error("IO error add tmx",e);} 
     }
+
+     public static String cleanSpaceAndTab(String s) {
+//        System.out.println("-------cst:"+s);
+//        for (int i=0; i<s.length();i++){
+//            int v=s.charAt(i);
+//             System.out.println(i+":"+s.substring(i, i+1)+":"+v);
+//        }
+        s.replace("\t", " ");
+        char x20 = 0x20;
+        char xa0 = 0xa0;
+//        System.out.println("nbsp")
+//            System.out.println("nbsp:" + s);
+        s.replace("" + xa0 + x20, " ");
+//        System.out.println("1e");
+        char x1e = 0x1e;
+        s.replace("" + x1e, " ");
+//        System.out.println("1f");
+        char x1f = 0x1f;
+        s.replace("" + x1f, "");
+//         System.out.println("02");
+        char x02 = 0x02;
+        s.replace("" + x02, " ");
+//          System.out.println("13");
+        char x13 = 0x13;
+        s.replace("" + x13, " ");
+//          System.out.println("15");
+        char x15 = 0x15;
+        s.replace("" + x15, " ");
+//          System.out.println("00");
+        char x00 = 0x00;
+        s.replace("" + x00, " ");
+//          System.out.println("0b");
+        char x0b = 0x0b;
+        s.replace("" + x0b, " ");
+//          System.out.println("0c");
+        char x0c = 0x0c;
+        s.replace("" + x0c, " ");
+//          System.out.println("double blanc");
+        s = s.replace("  ", " ");
+//            System.out.println("return");
+        return s.trim();
+    }
+
+  
     
     static String clean2gram(String s){
         String res="";
@@ -87,7 +131,7 @@ public class WriteTMX {
                 //msg("rep <:"+s);
                 ix += 3;
             }
-        return s;       
+        return cleanSpaceAndTab(s);       
     }
      
     public  void tmxClose() {
