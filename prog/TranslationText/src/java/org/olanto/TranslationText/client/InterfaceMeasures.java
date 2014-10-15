@@ -125,8 +125,8 @@ public class InterfaceMeasures implements IsSerializable {
     }
 
     public void calculateMeasuresCall(int wHeight, int wWidth) {
-        utilWidth = wWidth - GuiConstant.TA_OVERHEAD_MAX_L;
-        TAutilHeight = wHeight - GuiConstant.TA_OVERHEAD_MAX_H;
+        utilWidth = wWidth - GuiConstant.TA_OVERHEAD_MAX_L - 40;
+        TAutilHeight = wHeight - GuiConstant.TA_OVERHEAD_MAX_H / 2;
         this.TA_TEXTAREA_WIDTH = utilWidth / (2 * GuiConstant.TA_CHAR_WIDTH);
         this.TA_TEXTAREA_HEIGHT = TAutilHeight / GuiConstant.TA_LINE_HEIGHT;
         if (GuiConstant.DEBUG_ON) {

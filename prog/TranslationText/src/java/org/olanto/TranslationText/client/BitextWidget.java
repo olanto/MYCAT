@@ -41,7 +41,7 @@ public class BitextWidget extends Composite {
     private VerticalPanel mainWidget = new VerticalPanel();
     private HorizontalPanel hS = new HorizontalPanel();
     private HorizontalPanel hT = new HorizontalPanel();
-    private Grid textAreaGrid = new Grid(2, 3);
+    public Grid textAreaGrid = new Grid(2, 3);
     private Button NextHitS = new Button(GuiMessageConst.TA_BTN_NXT);
     private Button PreviousHitS = new Button(GuiMessageConst.TA_BTN_PVS);
     private Button AlignS = new Button(GuiMessageConst.TA_BTN_ALGN);

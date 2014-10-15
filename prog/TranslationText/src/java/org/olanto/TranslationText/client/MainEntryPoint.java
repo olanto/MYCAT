@@ -116,8 +116,12 @@ public class MainEntryPoint implements EntryPoint {
                         Window.resizeTo(getScreenWidth(), getScreenHeight());
                         maximize();
                     }
-                    IMeasures.calculateMeasuresCall(Window.getClientHeight(), Window.getClientWidth());
-
+                    initCookies();
+                    if (MyCatCookies.areInterfaceMeasuresSaved() && GuiConstant.AUTO_ON) {
+                        IMeasures.setMeasuresfromCookies();
+                    } else {
+                        IMeasures.setDefaultMeasures();
+                    }
                     final FormCallWidget FC = new FormCallWidget(source.replace("$", "¦"), query, lS, lT);
                     RootPanel.get("call").add(FC);
                     FC.pWidget.setWidth("100%");
