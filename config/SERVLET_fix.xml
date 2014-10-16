@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+	<!--The Olanto Foundation-->
+	<!--This is the parameter file for the HOW2SAY servlet-->
+<properties>   
+     <entry key="CORPUS_NAME">DGT2014</entry>
+	 <!--Supported languages (they appear in the GUI drop menus in the following order:) -->
+     <entry key="LIST_OF_LANG">BG CS DA DE EL EN ES ET FI FR GA HU IT LT LV MT NL PL PT RO SH SK SL SV</entry>
+</properties>
