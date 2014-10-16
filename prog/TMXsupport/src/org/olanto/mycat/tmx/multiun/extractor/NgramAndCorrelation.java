@@ -214,7 +214,7 @@ public class NgramAndCorrelation {
     }
 
     public static List<Ref> getNGram(String content, int minFreq, int minLength, int maxLength) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength, maxLength);
+    System.out.println("maxLength:"+maxLength);    List<Ref> allref = getRawNGram(content, minFreq, minLength, maxLength);
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
