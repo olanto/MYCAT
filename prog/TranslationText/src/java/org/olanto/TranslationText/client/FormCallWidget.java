@@ -83,6 +83,7 @@ public class FormCallWidget extends Composite {
                 MainEntryPoint.IMeasures.calculateMeasuresCall(Window.getClientHeight(), Window.getClientWidth());
                 tS.updateSize();
                 MainEntryPoint.IMeasures.saveMeasuresInCookies();
+                statusPanel.setWidth(tS.getOffsetWidth()+"px");
             }
         });
     }
