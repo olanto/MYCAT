@@ -31,8 +31,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.olanto.mycat.tmx.multiun.extractor.FormatHtmlResult;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.FormatHtmlResult;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 
 /**
  *

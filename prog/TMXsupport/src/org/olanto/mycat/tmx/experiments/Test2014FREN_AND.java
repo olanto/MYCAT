@@ -29,7 +29,7 @@ import org.olanto.conman.server.GetContentService;
 import java.rmi.*;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
 import static org.olanto.util.Messages.*;
 

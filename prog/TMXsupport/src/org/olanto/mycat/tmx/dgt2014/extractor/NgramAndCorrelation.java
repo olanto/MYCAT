@@ -34,7 +34,7 @@ import org.olanto.conman.server.GetContentService;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
 import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 import org.olanto.mysqd.server.MySelfQuoteDetection;
 import org.olanto.mysqd.util.Ref;
 import static org.olanto.util.Messages.*;

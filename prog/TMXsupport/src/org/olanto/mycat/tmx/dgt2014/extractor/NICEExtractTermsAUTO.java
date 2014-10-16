@@ -21,6 +21,7 @@
  */
 package org.olanto.mycat.tmx.dgt2014.extractor;
 
+import org.olanto.mycat.tmx.common.CorrelateAll;
 import org.olanto.mycat.tmx.common.ItemsCorrelation;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,7 +33,7 @@ import java.util.regex.Pattern;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 
 import org.olanto.mysqd.util.Ref;
 import org.olanto.util.Timer;

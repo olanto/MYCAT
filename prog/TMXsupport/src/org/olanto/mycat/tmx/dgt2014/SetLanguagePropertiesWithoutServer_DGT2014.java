@@ -49,7 +49,7 @@ import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.idxvli.doc.PropertiesList;
 import org.olanto.idxvli.util.SetOfBits;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 import org.olanto.senseos.SenseOS;
 import static org.olanto.util.Messages.*;
 

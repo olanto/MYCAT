@@ -30,7 +30,7 @@ import java.rmi.*;
 import java.util.HashMap;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 

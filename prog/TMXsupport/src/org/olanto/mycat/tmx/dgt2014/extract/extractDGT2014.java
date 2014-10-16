@@ -21,6 +21,7 @@
  */
 package org.olanto.mycat.tmx.dgt2014.extract;
 
+import org.olanto.mycat.tmx.common.LangMapDGT2014;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.HashMap;
