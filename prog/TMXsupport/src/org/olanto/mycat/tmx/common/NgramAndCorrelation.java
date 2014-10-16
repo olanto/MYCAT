@@ -21,10 +21,7 @@
  */
 package org.olanto.mycat.tmx.common;
 
-import org.olanto.mycat.tmx.common.ItemsCorrelation;
 import java.rmi.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
@@ -33,8 +30,6 @@ import java.util.logging.Logger;
 import org.olanto.conman.server.GetContentService;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.common.LangMap;
 import org.olanto.mysqd.server.MySelfQuoteDetection;
 import org.olanto.mysqd.util.Ref;
 import static org.olanto.util.Messages.*;
