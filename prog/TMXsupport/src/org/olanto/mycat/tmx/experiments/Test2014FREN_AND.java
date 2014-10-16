@@ -29,8 +29,8 @@ import org.olanto.conman.server.GetContentService;
 import java.rmi.*;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.common.LangMapDGT2014;
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
+import org.olanto.mycat.tmx.common.LangMap;
+import org.olanto.mycat.tmx.common.NgramAndCorrelation;
 import static org.olanto.util.Messages.*;
 
 /**
@@ -45,8 +45,8 @@ public class Test2014FREN_AND {
     public static void main(String[] args) {
 
         is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-           LangMapDGT2014.init();
-     try {
+        LangMap.init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
+    try {
             showVector(is.getDictionnary().result);
             showVector(is.getCorpusLanguages());
         } catch (RemoteException ex) {
@@ -102,7 +102,7 @@ NgramAndCorrelation.initIS(is);
             float n2 = resta.result.length;
             System.out.print(resta.result.length+"\t");
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i]+=LangMapDGT2014.deltaSOTA(langso, langta);
+                resta.result[i]+=LangMap.deltaSOTA(langso, langta);
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
             System.out.print(interserct.length+"\t");

@@ -21,7 +21,7 @@
  */
 package org.olanto.mycat.tmx.dgt2014.extract;
 
-import org.olanto.mycat.tmx.common.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMap;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.HashMap;
@@ -46,8 +46,8 @@ public class extractDGT2014 {
             sourceTMX = drive + "/CORPUS/DGT-TMX/Corpus2014/";
             targetMFLF = "C:" + "/CORPUS/DGT-TMX/" + "DGT2014" + ".mflf";
             outmflf = new OutputStreamWriter(new FileOutputStream(targetMFLF), "UTF-8");
-            LangMapDGT2014.init();
-            procesADir(sourceTMX);
+        LangMap.init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
+           procesADir(sourceTMX);
             outmflf.close();
             System.out.println("Keep:" + totkeep);
             System.out.println("Error:" + toterror);
@@ -90,14 +90,14 @@ public class extractDGT2014 {
             //System.out.println("open :" + fileName);
             InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-16");
             BufferedReader insource = new BufferedReader(isr);
-            String[] allw = new String[LangMapDGT2014.size()];
+            String[] allw = new String[LangMap.size()];
             String w = insource.readLine();
             
             while (w != null) {
                 //System.out.println(w);
                 if (w.startsWith("<tu>")) { // reset
                     //System.out.println("reset"+w);
-                    allw = new String[LangMapDGT2014.size()];
+                    allw = new String[LangMap.size()];
                 }
                 if (w.startsWith("</tu>")) { // flush
                     for (int i = 0; i < allw.length; i++) {
@@ -129,7 +129,7 @@ public class extractDGT2014 {
                     // read seg
                     w = insource.readLine();
                     String seg = extract(w, "<seg>", "</seg>");
-                    allw[LangMapDGT2014.getpos(langcode)] = seg;
+                    allw[LangMap.getpos(langcode)] = seg;
                 }
                 w = insource.readLine();
 

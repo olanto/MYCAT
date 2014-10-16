@@ -21,11 +21,6 @@
  */
 package org.olanto.mycat.tmx.common;
 
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
-import org.olanto.mycat.tmx.common.CorrelateAll;
-import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
-
 public class CorrelateProcess implements Runnable {
 
     CorrelateAll allref;

@@ -32,7 +32,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.olanto.mycat.tmx.common.FormatHtmlResult;
-import org.olanto.mycat.tmx.common.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMap;
 
 /**
  *
@@ -44,7 +44,7 @@ public class How2Say extends HttpServlet {
 
     public static void main(String[] args) {  //only to debug
 
-        LangMapDGT2014.init();
+        LangMap.init();
         String s = getQueryForm("pomme de terre", "FR", "EN");
         System.out.println(s);
     }
@@ -123,8 +123,8 @@ public class How2Say extends HttpServlet {
     public static String buildLangSelector(String selectorName, String selected) {
         try {
             String[] languages = null;
-            LangMapDGT2014.init();
-            languages = LangMapDGT2014.decodelang;
+            LangMap.init();
+            languages = LangMap.decodelang;
             return buildSelector(selectorName, languages, selected);
         } catch (Exception ex) {
             Logger.getLogger(How2Say.class.getName()).log(Level.SEVERE, null, ex);

@@ -21,7 +21,6 @@
  */
 package org.olanto.mycat.tmx.common;
 
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -32,9 +31,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.common.LangMapDGT2014;
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
-import org.olanto.mycat.tmx.dgt2014.extractor.NgramAndCorrelation;
+import org.olanto.mycat.tmx.common.LangMap;
 import org.olanto.mysqd.util.Ref;
 import org.olanto.util.Timer;
 
@@ -51,7 +48,8 @@ public class FormatHtmlResult {
 
     public FormatHtmlResult() {
         NgramAndCorrelation.initIS();
-        LangMapDGT2014.init();
+        LangMap.init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
+
 
     }
 
