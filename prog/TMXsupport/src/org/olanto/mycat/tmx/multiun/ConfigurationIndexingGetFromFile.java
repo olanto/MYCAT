@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.dgt2014;
+package org.olanto.mycat.tmx.multiun;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -125,8 +125,9 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
      * processus.
      */
     public void InitConfiguration() {
-                IdxConstant.MAX_QUERY_IN_CACHE=50000;
-CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
+        IdxConstant.MAX_QUERY_IN_CACHE=50000;
+        
+        CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
         DOC_ENCODING = prop.getProperty("DOC_ENCODING", "UTF-8");
         IDX_MFLF_ENCODING = prop.getProperty("IDX_MFLF_ENCODING", "UTF-8");

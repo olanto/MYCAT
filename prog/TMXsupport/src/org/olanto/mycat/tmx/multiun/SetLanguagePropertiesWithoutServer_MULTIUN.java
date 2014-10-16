@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.dgt2014;
+package org.olanto.mycat.tmx.multiun;
 
 /**
  * ********
@@ -44,12 +44,10 @@ package org.olanto.mycat.tmx.dgt2014;
  */
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
-import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.idxvli.doc.PropertiesList;
 import org.olanto.idxvli.util.SetOfBits;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.multiun.extract.LangMapMULTIUN;
 import org.olanto.senseos.SenseOS;
 import static org.olanto.util.Messages.*;
 
@@ -59,19 +57,19 @@ import static org.olanto.util.Messages.*;
  *
  * <p>
  */
-public class SetLanguagePropertiesWithoutServer_DGT2014 {
+public class SetLanguagePropertiesWithoutServer_MULTIUN {
 
     static IdxStructure id;
     static boolean verbose = false;
 
     public static void main(String[] args) {
         IdxStructure idmain = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/IDX_fix.xml"));
-        LangMapDGT2014.init();
+        LangMapMULTIUN.init();
 //        for (int i = 0; i < 100; i++) {
 //                System.out.println(i+" length " + idmain.getLengthOfD(i));
 //               }
      
-        updateLanguageProperties(idmain, "FR", "DE");
+        updateLanguageProperties(idmain);
         id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();
@@ -84,25 +82,25 @@ public class SetLanguagePropertiesWithoutServer_DGT2014 {
         //  e.printStackTrace();
     }
 
-    public static void updateLanguageProperties(IdxStructure idpar, String langso, String langta) {
+    public static void updateLanguageProperties(IdxStructure idpar) {
 
         id = idpar;
         int lastdoc = id.lastRecordedDoc; // taille du corpus
-        int step = LangMapDGT2014.size();
+        int step = LangMapMULTIUN.size();
 
         for (int i = 0; i < step; i++) {
-            msg("clear properties for: " + LangMapDGT2014.getlang(i));
-            id.clearThisProperty("SOURCE." + LangMapDGT2014.getlang(i));
-            id.clearThisProperty("TARGET." + LangMapDGT2014.getlang(i));
+            msg("clear properties for: " + LangMapMULTIUN.getlang(i));
+            id.clearThisProperty("SOURCE." + LangMapMULTIUN.getlang(i));
+            id.clearThisProperty("TARGET." + LangMapMULTIUN.getlang(i));
         }
         for (int i = 0; i < lastdoc; i += step) {
             int first = i;
             for (int j = 0; j < step; j++) {
 //              System.out.println("length" + id.getLengthOfD(i + j));
                 if (id.getLengthOfD(i + j) > 1) {
-                    id.setDocumentPropertie(i + j, "SOURCE." + LangMapDGT2014.getlang(j));
+                    id.setDocumentPropertie(i + j, "SOURCE." + LangMapMULTIUN.getlang(j));
                     for (int k = 0; k < step; k++) {
-                       id.setDocumentPropertie(first + k, "TARGET." + LangMapDGT2014.getlang(j));
+                       id.setDocumentPropertie(first + k, "TARGET." + LangMapMULTIUN.getlang(j));
                     }
                 }
             }

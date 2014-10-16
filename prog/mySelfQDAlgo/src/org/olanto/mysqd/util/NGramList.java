@@ -1,30 +1,33 @@
-/**********
-Copyright © 2010-2012 Olanto Foundation Geneva
-
-This file is part of myCAT.
-
-myCAT is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of
-the License, or (at your option) any later version.
-
-myCAT is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
- **********/
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.mysqd.util;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import org.olanto.mysqd.server.MySelfQuoteDetection;
 
 /**
  * Une classe pour garder les informations sur le ngram d'un document
- * 
+ *
  *
  *
  */
@@ -42,7 +45,13 @@ public class NGramList {
         for (int i = 0; i <= words.size() - level; i++) {
             String key = words.getNgram(i, level);
             //System.out.println(key);
-            add(key, i);
+            if (MySelfQuoteDetection.removeBREAK) {
+                if (!key.contains(MySelfQuoteDetection.MARKBREAK)) {
+                    add(key, i);
+                }
+            } else {
+                add(key, i);
+            }
         }
     }
 
@@ -53,8 +62,16 @@ public class NGramList {
             for (int i = 0; i < occ.size(); i++) { // pour chaque occurence
                 int nextpos = occ.o.get(i) + level - 1;
                 if (nextpos < words.size()) {  // pas à la fin
-                    String newkey = key + " " + words.t[nextpos].term;
-                    add(newkey, occ.o.get(i));
+                    if (MySelfQuoteDetection.removeBREAK) {
+                        if (!words.t[nextpos].term.equals(MySelfQuoteDetection.MARKBREAK)) {
+                            String newkey = key + " " + words.t[nextpos].term;
+                            add(newkey, occ.o.get(i));
+                        }
+                    } else {
+                        String newkey = key + " " + words.t[nextpos].term;
+                        add(newkey, occ.o.get(i));
+                    }
+
                 }
 
             }
@@ -62,7 +79,7 @@ public class NGramList {
     }
 
     public void RemoveIncludedNgram(NGramList predng) {
-       // System.out.println("all Ngram:" + getAllNGram());
+        // System.out.println("all Ngram:" + getAllNGram());
         WildCharExpander tester = new WildCharExpander(getAllNGram());
         HashMap<String, Occurences> newNg = new HashMap<String, Occurences>();
         for (Iterator<String> iter = predng.ng.keySet().iterator(); iter.hasNext();) {
@@ -75,7 +92,7 @@ public class NGramList {
             }
         }
         //System.out.println(" reduce from:"+predng.ng.size()+" to:"+newNg.size());
-        predng.ng = newNg;  
+        predng.ng = newNg;
     }
 
     public void ReduceToMinOcc(int minocc) {
@@ -91,7 +108,7 @@ public class NGramList {
     }
 
     public StringBuilder getAllNGram() {
-        StringBuilder b = new StringBuilder();  
+        StringBuilder b = new StringBuilder();
         b.append(WildCharExpander.ITEM_START);// pour que wordExpander puisse retrouver le premier mot
         for (Iterator<String> iter = ng.keySet().iterator(); iter.hasNext();) {
             String key = iter.next();

@@ -19,28 +19,102 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.extractor;
+package org.olanto.mycat.tmx.dgt2014.extractor;
 
+import org.olanto.mycat.tmx.common.ItemsCorrelation;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.olanto.mycat.tmx.support.TestClientGetTargetTxt;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.text.Document;
+import javax.swing.text.html.HTMLEditorKit;
+import javax.swing.text.html.StyleSheet;
+import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+
 import org.olanto.mysqd.util.Ref;
+import org.olanto.util.Timer;
 
 /**
  *
  * @author simple
  */
-public class ProtoExtractTerms extends javax.swing.JFrame {
+public class NICEExtractTermsAUTO extends javax.swing.JFrame {
+
+    private StringBuilder htmlResult;
 
     /**
      * Creates new form ProtoExtractTerms
      */
-    public ProtoExtractTerms() {
+    public NICEExtractTermsAUTO() {
         initComponents();
-
+        LangMapDGT2014.init();
     }
 
+    public void setHtmlParam() {
+        HTMLEditorKit kit = new HTMLEditorKit();
+        result.setEditorKit(kit);
+        StyleSheet styleSheet = kit.getStyleSheet();
+        styleSheet.addRule("body {margin-left:22px; margin-top:22px; margin-right:22px;}");
+        styleSheet.addRule("h1 {color: blue;}");
+        styleSheet.addRule("body {color:#000000; font-family:Verdana,sans-serif;}");
+        styleSheet.addRule("table {width:100%}");
+        styleSheet.addRule("caption {border:1px dotted #6495ed;padding:5px;background-color:#EFF6FF;width:25%}");
+        styleSheet.addRule("th {border:1px dotted #6495ed;padding:5px;background-color:#EFF6FF;width:25%}");
+        styleSheet.addRule("td {border:1px solid #6495ed;padding:5px; text-align:left;}");
+        styleSheet.addRule("em {color:blue;}");
+        Document doc = kit.createDefaultDocument();
+        result.setDocument(doc);
+    }
+
+    public void setHtmlHeader(String title) {
+        htmlResult = new StringBuilder();
+        result.setContentType("text/html");
+        htmlResult.append("<html><h1>"
+                + title
+                + "</h1>" + "<hr/>");
+    }
+
+    public void setHtmlFooter() {
+        htmlResult.append("</html>");
+    }
+
+    public void addhtml(String s) {
+        htmlResult.append(s);
+    }
+
+    public void showHtml() {
+        setHtmlParam();
+        result.setContentType("text/html");
+        result.setText(htmlResult.toString());
+    }
+
+    public String emphase_old(String s, String toEmphase) {
+        return s.replace(toEmphase, "<em>" + toEmphase + "</em>");
+    }
+
+   public String emphase(String s, String toEmphase) {
+    String REGEX_BEFORE_TOKEN = "([^\\p{L}\\p{N}]|^)";
+    String REGEX_AFTER_TOKEN = "([^\\p{L}\\p{N}]|$)";
+
+        int start, length = toEmphase.length();
+        String regex, newtoEmphase = "";
+        Pattern p;
+        Matcher m;
+//        regex = REGEX_BEFORE_TOKEN + Pattern.quote(toEmphase) + REGEX_AFTER_TOKEN;
+        p = Pattern.compile(toEmphase, Pattern.CASE_INSENSITIVE);
+        m = p.matcher(s);
+        if (m.find()) {
+            start = m.start();
+            newtoEmphase = s.substring(start, start+length);
+            return s.replace(newtoEmphase, "<em>" + newtoEmphase + "</em>");
+        }
+        return s.replace(toEmphase, "<em>" + toEmphase + "</em>");
+    }
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,6 +148,8 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         log = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        result = new javax.swing.JTextPane();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -96,7 +172,8 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
 
         jLabel4.setText("source language");
 
-        termso.setText("océan atlantique");
+        termso.setText("pommes de terre");
+        termso.setToolTipText("");
         termso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 termsoActionPerformed(evt);
@@ -125,7 +202,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
 
         jLabel7.setText("min NGram");
 
-        minNgram.setText("2");
+        minNgram.setText("1");
         minNgram.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minNgramActionPerformed(evt);
@@ -199,7 +276,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                                 .addComponent(correlationLimit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(45, 45, 45)
                         .addComponent(extract, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(496, Short.MAX_VALUE))
         );
         topLayout.setVerticalGroup(
             topLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -237,6 +314,8 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
         log.setRows(5);
         jScrollPane1.setViewportView(log);
 
+        jScrollPane2.setViewportView(result);
+
         javax.swing.GroupLayout bottomLayout = new javax.swing.GroupLayout(bottom);
         bottom.setLayout(bottomLayout);
         bottomLayout.setHorizontalGroup(
@@ -246,14 +325,18 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(bottomLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 701, Short.MAX_VALUE))
+                .addGroup(bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 967, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2)))
         );
         bottomLayout.setVerticalGroup(
             bottomLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bottomLayout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
         );
 
         jSplitPane1.setRightComponent(bottom);
@@ -301,38 +384,95 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
 
     private void extractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_extractActionPerformed
         // TODO add your handling code here:
-        log.append("________________________________________\n");
-        log.append(termso.getText() + ", " + termso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText() + "\n");
-        int freqso = TestClientGetTargetTxt.getFrequency(termso.getText(), langso.getText());
-        log.append("Frequency: " + freqso + "\n");
+        setHtmlHeader("Result for: \"" + termso.getText() + "\" from " + langso.getText() + " to " + langta.getText());
+        Timer t1 = new Timer("total time");
+        log.setText("________________________________________\n");
+        log.append(termso.getText() + ", " + langso.getText() + ", " + langta.getText() + ", " + minfreq.getText() + ", " + minNgram.getText() + "\n");
+        int freqso = NgramAndCorrelation.getFrequency(termso.getText(), langso.getText(), langta.getText());
+        log.append("Term Frequency: " + freqso + "\n");
+        addhtml("<h2>Term frequency: " + freqso + "</h2>\n");
         if (freqso != 0) {
-            String source = TestClientGetTargetTxt.getSource(termso.getText(), langso.getText());
-            List<Ref> refComposite = TestClientGetTargetTxt.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
+            minfreq.setText("" + NgramAndCorrelation.fixMinFreq(freqso));
+            minTerm.setText("" + NgramAndCorrelation.fixMinTerm(termso.getText()));
+            String source = NgramAndCorrelation.getSource(termso.getText(), langso.getText(), langta.getText());
+            List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, Integer.parseInt(minfreq.getText()), Integer.parseInt(minTerm.getText()), termso.getText());
             log.append("------ composite terms for: " + termso.getText() + "\n");
+            addhtml("<h2>Expressions with the source term</h2>\n");
+            addhtml("<table>\n");
+            //    addhtml("<caption>Expressions with the source term</caption>\n");
+            addhtml("<tr><th>Expressions containing the term: " + termso.getText() + "</th><th>Occurrences</th></tr>\n");
             for (Ref r : refComposite) { // pour chaque n-gram
+                addhtml("<tr>\n");
                 log.append(r.ngram + " (" + r.nbocc + ")\n");
+                addhtml("<td>" + r.ngram + "</td>"
+                        + "<td>" + r.nbocc + "</td>\n");
+                addhtml("</tr>\n");
+            }
+            addhtml("</table>\n");
+
+
+            String target = NgramAndCorrelation.getTarget(termso.getText(), langso.getText(), langta.getText());
+            List<Ref> ref = NgramAndCorrelation.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()), Integer.parseInt(minfreq.getText()) + 2);
+
+            CorrelateAll corAll=new CorrelateAll(ref, termso.getText(), langso.getText(), langta.getText());
+            List<ItemsCorrelation> list=corAll.computePAR();
+            //            List<ItemsCorrelation> list = new ArrayList<>();
+//
+//            for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
+//                list.add(NgramAndCorrelation.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
+//            }
+            try {
+                Collections.sort(list);
+            } catch (Exception ex) {
+                Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(Level.SEVERE, null, ex);
             }
 
 
-            String target = TestClientGetTargetTxt.getTarget(termso.getText(), langso.getText(), langta.getText());
-            List<Ref> ref = TestClientGetTargetTxt.getNGram(target, Integer.parseInt(minfreq.getText()), Integer.parseInt(minNgram.getText()));
-            List<ItemsCorrelation> list = new ArrayList<ItemsCorrelation>();
-
-            for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram
-                list.add(TestClientGetTargetTxt.correlationObj(termso.getText(), ref.get(i).ngram, langso.getText(), langta.getText()));
-            }
-            Collections.sort(list);
             float corlimit = Float.parseFloat(correlationLimit.getText());
             log.append("------ candidate translations for: " + termso.getText() + ", correlation limit=" + corlimit + "\n");
             int countskip = 0;
+            int count = 0;
+            addhtml("<h2>Translations</h2>\n");
+            addhtml("<table>\n");
+            //         addhtml("<caption>possible translation for the source term</caption>\n");
+            addhtml("<tr><th>Expressions containing the term: " + termso.getText()
+                    + "</th><th>Correlation</th>"
+                    + "</th><th>In " + langso.getText() + "</th>"
+                    + "</th><th>In " + langta.getText() + "</th>"
+                    + "</th><th>In both</th></tr>\n");
             for (ItemsCorrelation item : list) { // pour chaque n-gram
-                if (corlimit <= item.cor) {
+                if (corlimit <= item.cor && count < 5) {
+                    addhtml("<tr>\n");
                     log.append(item.msg + "\n");
+                    addhtml("<td>" + item.termta + "</td>"
+                            + "<td color=red>" + item.cor + "</td>\n"
+                            + "<td>" + item.n1 + "</td>\n"
+                            + "<td>" + item.n2 + "</td>\n"
+                            + "<td>" + item.n12 + "</td>\n");
+                    addhtml("</tr>\n");
+                    addhtml("</table>\n");
+                    addhtml("<table>\n");
+                    for (int i = 0; i < item.examples.length; i++) {
+                        addhtml("<tr>\n");
+                        addhtml("<td width=50%>" + emphase(item.examples[i][0], termso.getText()) + "</td>"
+                                + "<td width=50%>" + emphase(item.examples[i][1], item.termta) + "</td>\n");
+                        addhtml("</tr>\n");
+                        addhtml("</table>\n");
+                        addhtml("<table>\n");
+                    }
+
                 } else {
                     countskip++;
                 }
+                count++;
             }
+            addhtml("</table>\n");
             log.append("skip terms: " + countskip + "\n");
+            log.append("total time: " + t1.getstop() + " millisec\n");
+            addhtml("<p>total time: " + t1.getstop() + "millisec</p>\n");
+
+            setHtmlFooter();
+            showHtml();
         }
     }//GEN-LAST:event_extractActionPerformed
 
@@ -361,21 +501,21 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProtoExtractTerms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProtoExtractTerms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProtoExtractTerms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProtoExtractTerms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NICEExtractTermsAUTO.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProtoExtractTerms().setVisible(true);
-                TestClientGetTargetTxt.initIS();
+                new NICEExtractTermsAUTO().setVisible(true);
+                NgramAndCorrelation.initIS();
             }
         });
     }
@@ -395,6 +535,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField langso;
     private javax.swing.JTextField langta;
@@ -402,6 +543,7 @@ public class ProtoExtractTerms extends javax.swing.JFrame {
     private javax.swing.JTextField minNgram;
     private javax.swing.JTextField minTerm;
     private javax.swing.JTextField minfreq;
+    private javax.swing.JTextPane result;
     private javax.swing.JTextField termso;
     private javax.swing.JPanel top;
     // End of variables declaration//GEN-END:variables

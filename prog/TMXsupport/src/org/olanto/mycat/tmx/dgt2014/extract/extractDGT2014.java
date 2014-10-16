@@ -1,3 +1,24 @@
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.mycat.tmx.dgt2014.extract;
 
 import java.io.*;
@@ -24,7 +45,7 @@ public class extractDGT2014 {
             sourceTMX = drive + "/CORPUS/DGT-TMX/Corpus2014/";
             targetMFLF = "C:" + "/CORPUS/DGT-TMX/" + "DGT2014" + ".mflf";
             outmflf = new OutputStreamWriter(new FileOutputStream(targetMFLF), "UTF-8");
-            LangMap.init();
+            LangMapDGT2014.init();
             procesADir(sourceTMX);
             outmflf.close();
             System.out.println("Keep:" + totkeep);
@@ -68,14 +89,14 @@ public class extractDGT2014 {
             //System.out.println("open :" + fileName);
             InputStreamReader isr = new InputStreamReader(new FileInputStream(fileName), "UTF-16");
             BufferedReader insource = new BufferedReader(isr);
-            String[] allw = new String[LangMap.size()];
+            String[] allw = new String[LangMapDGT2014.size()];
             String w = insource.readLine();
             
             while (w != null) {
                 //System.out.println(w);
                 if (w.startsWith("<tu>")) { // reset
                     //System.out.println("reset"+w);
-                    allw = new String[LangMap.size()];
+                    allw = new String[LangMapDGT2014.size()];
                 }
                 if (w.startsWith("</tu>")) { // flush
                     for (int i = 0; i < allw.length; i++) {
@@ -107,7 +128,7 @@ public class extractDGT2014 {
                     // read seg
                     w = insource.readLine();
                     String seg = extract(w, "<seg>", "</seg>");
-                    allw[LangMap.getpos(langcode)] = seg;
+                    allw[LangMapDGT2014.getpos(langcode)] = seg;
                 }
                 w = insource.readLine();
 

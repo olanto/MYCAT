@@ -19,39 +19,31 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.extractor;
+package org.olanto.mycat.tmx.common;
 
-import java.util.*;
 
-/*
-class ItemsCorrelation { 
-    public static void main( String ... args ) { 
-        // create a bunch and sort them 
-        List<CustomObject> list = Arrays.asList(
-            new CustomObject(3, "Blah"),
-            new CustomObject(30, "Bar"),
-            new CustomObject(1, "Zzz"),
-            new CustomObject(1, "Aaa")
-        );
-        System.out.println( "before: "+ list );
-        Collections.sort( list );
-        System.out.println( "after : "+ list );
-    }
-}
-*/
  public class ItemsCorrelation implements Comparable<ItemsCorrelation> { 
-    String msg;
-    float cor;
-    public ItemsCorrelation( float _cor, String _s ) { 
+    public String msg,termta;
+    public String[][] examples;
+   public int n1,n2,n12;
+   public float cor;
+    public ItemsCorrelation(String _termta, int _n1,int _n2,int _n12, float _cor, String _s,String[][] _examples ) { 
         cor = _cor;
+        termta = _termta;
+        examples= _examples;
         msg = _s;
+        n1=_n1;
+        n2=_n2;
+        n12=_n12;
+        
     }
  
      public int compareTo(ItemsCorrelation two ) {
         // I migth compare them using the int first 
         // and if they're the same, use the string... 
-        float diff = this.cor - two.cor;
-        if( diff < 0 ) { // they have different int
+       // float diff = this.cor - two.cor;
+        if( this.cor == two.cor ) return 0;
+        if( this.cor <= two.cor ) { // they have different int
             return 1;
         }
 
