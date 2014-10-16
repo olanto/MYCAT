@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.dgt2014.extractor;
+package org.olanto.mycat.tmx.common;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -19,12 +19,9 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.dgt2014.extractor;
+package org.olanto.mycat.tmx.common;
 
-import org.olanto.mycat.tmx.common.ItemsCorrelation;
 import java.rmi.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Vector;
@@ -33,8 +30,6 @@ import java.util.logging.Logger;
 import org.olanto.conman.server.GetContentService;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.common.ItemsCorrelation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
 import org.olanto.mysqd.server.MySelfQuoteDetection;
 import org.olanto.mysqd.util.Ref;
 import static org.olanto.util.Messages.*;
@@ -311,7 +306,7 @@ public class NgramAndCorrelation {
 
                 //System.out.println(i+"SO:"+is.getDoc(resso.result[i]));
                 //System.out.println((i- LangMap.deltaSOTA(langso, langta))+"TA:"+is.getDoc(resso.result[i]- LangMap.deltaSOTA(langso, langta)));
-                targetTXT.append(is.getDoc(resso.result[i] - LangMapDGT2014.deltaSOTA(langso, langta))).append("\n");
+                targetTXT.append(is.getDoc(resso.result[i] - LangMap.deltaSOTA(langso, langta))).append("\n");
             }
             msg("length target:" + targetTXT.length());
             t1.stop();
@@ -338,7 +333,7 @@ public class NgramAndCorrelation {
             float n2 = resta.result.length;
 //            msg("n2:" + resta.result.length);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i] += LangMapDGT2014.deltaSOTA(langso, langta);
+                resta.result[i] += LangMap.deltaSOTA(langso, langta);
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
 //            msg("n12:" + interserct.length);
@@ -384,7 +379,7 @@ public class NgramAndCorrelation {
             //msg("timeQ2:" + resta.duration);
             float n2 = resta.result.length;
             //msg("n2:" + resta.result.length);
-            int deltaSOTA = LangMapDGT2014.deltaSOTA(langso, langta);
+            int deltaSOTA = LangMap.deltaSOTA(langso, langta);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
                 resta.result[i] += deltaSOTA;
             }

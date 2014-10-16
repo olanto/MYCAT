@@ -19,7 +19,7 @@
  *
  *********
  */
-package org.olanto.mycat.tmx.dgt2014.extract;
+package org.olanto.mycat.tmx.common;
 
 import java.util.HashMap;
 
@@ -27,13 +27,14 @@ import java.util.HashMap;
  *
  * @author x
  */
-public class LangMapDGT2014 {
+public class LangMap {
 
     public static HashMap<String, Integer> langmap = new HashMap<>();
     public static String[] decodelang;
 
     public static void main(String[] args) {
-        init();
+       init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
+        
         System.out.println("FR=" + getpos("FR"));
         // System.out.println("XX=" + getpos("XX"));
         System.out.println("size=" + size());
@@ -63,32 +64,10 @@ public class LangMapDGT2014 {
         return langmap.size();
     }
 
-    public static void init() {
+    public static void init(String listLang) {        
         if (decodelang == null) {
-            langmap.put("BG", 0);
-            langmap.put("CS", 1);
-            langmap.put("DA", 2);
-            langmap.put("DE", 3);
-            langmap.put("EL", 4);
-            langmap.put("EN", 5);
-            langmap.put("ES", 6);
-            langmap.put("ET", 7);
-            langmap.put("FI", 8);
-            langmap.put("FR", 9);
-            langmap.put("GA", 10);
-            langmap.put("HU", 11);
-            langmap.put("IT", 12);
-            langmap.put("LT", 13);
-            langmap.put("LV", 14);
-            langmap.put("MT", 15);
-            langmap.put("NL", 16);
-            langmap.put("PL", 17);
-            langmap.put("PT", 18);
-            langmap.put("RO", 19);
-            langmap.put("SH", 20);
-            langmap.put("SK", 21);
-            langmap.put("SL", 22);
-            langmap.put("SV", 23);
+            String[] list=listLang.split("\\s");
+            for (int i=0;i<list.length;i++)langmap.put(list[i], i);
             decodelang = new String[langmap.size()];
 
             for (String key : langmap.keySet()) {
