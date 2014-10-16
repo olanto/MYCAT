@@ -21,9 +21,14 @@
  */
 package org.olanto.TranslationText.client;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import java.util.ArrayList;
 
@@ -41,6 +46,8 @@ public class FormCallWidget extends Composite {
     public HorizontalPanel statusPanel = new HorizontalPanel();
     public Label msg = new Label();
     private BitextWidget tS;
+	
+    private PushButton resize = new PushButton (new Image("images/resize.png"));
 
     // Ajouter un widget pour la gestion des appels externes
     public FormCallWidget(String src, String qry, String lsrc, String ltgt) {
@@ -52,6 +59,7 @@ public class FormCallWidget extends Composite {
         tS = new BitextWidget(msg);
         pWidget.add(tS);
         tS.DrawEffects();
+        tS.textAreaGrid.setWidget(0, 1, resize);
         pWidget.setCellHorizontalAlignment(tS, HorizontalPanel.ALIGN_CENTER);
         pWidget.add(statusPanel);
         pWidget.setCellHorizontalAlignment(statusPanel, HorizontalPanel.ALIGN_CENTER);
@@ -70,6 +78,14 @@ public class FormCallWidget extends Composite {
             tS.queryLength = query.length();
             tS.getTextContent(source, lS, lT, query);
         }
-       
+        resize.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                MainEntryPoint.IMeasures.calculateMeasuresCall(Window.getClientHeight(), Window.getClientWidth());
+                tS.updateSize();
+                MainEntryPoint.IMeasures.saveMeasuresInCookies();
+                statusPanel.setWidth(tS.getOffsetWidth()+"px");
+            }
+        });
     }
 }

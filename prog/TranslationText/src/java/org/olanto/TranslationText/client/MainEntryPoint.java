@@ -122,6 +122,7 @@ public class MainEntryPoint implements EntryPoint {
                     } else {
                         IMeasures.setDefaultMeasures();
                     }
+
                     final FormCallWidget FC = new FormCallWidget(source.replace("$", "¦"), query, lS, lT);
                     RootPanel.get("call").add(FC);
                     FC.pWidget.setWidth("100%");
