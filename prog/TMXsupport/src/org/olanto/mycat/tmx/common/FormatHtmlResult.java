@@ -60,10 +60,14 @@ public class FormatHtmlResult {
                 + ", Term frequency: " + freqso + "</p>\n");
 
         if (freqso != 0) {
-            lengthSO=NgramAndCorrelation.getTermLenght(termso);
+           lengthSO=NgramAndCorrelation.getTermLenght(termso); // sans stop
             minfreqSO = NgramAndCorrelation.fixMinFreq(freqso);
             minfreqTA = NgramAndCorrelation.fixMinFreqTA(freqso,20);
             minTermSO = NgramAndCorrelation.fixMinTerm(termso);
+            System.out.println("lengthSO="+lengthSO);
+            System.out.println("minfreqSO="+minfreqSO);
+            System.out.println("minfreqTA="+minfreqTA);
+            System.out.println("minTermSO="+minTermSO);
             String source = NgramAndCorrelation.getSource(termso, langso, langta);
             List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, minfreqSO, minTermSO, termso);
             addhtml("<h2>Expressions with the source term</h2>\n");
@@ -79,7 +83,7 @@ public class FormatHtmlResult {
 
 
             String target = NgramAndCorrelation.getTarget(termso, langso, langta);
-            List<Ref> ref = NgramAndCorrelation.getNGram(target, minfreqTA, minNgram, lengthSO + 4);
+            List<Ref> ref = NgramAndCorrelation.getNGram(target, minfreqTA, minNgram, lengthSO + 1);
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram

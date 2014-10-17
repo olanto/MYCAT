@@ -212,11 +212,11 @@ public class NgramAndCorrelation {
     }
 
     public static List<Ref> getNGram(String content, int minFreq, int minLength, int maxLength) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength, maxLength);
+        List<Ref> allref = getRawNGram(content, minFreq, minLength, Math.min(6,maxLength+2));
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
-            if (r.len <= maxLength) {
+            if (getTermLenght(r.ngram) <= maxLength) {
                 if (checkFistAndLastNotStopWord(r.ngram)) {
                     // System.out.println(r.ngram + ", " + r.nbocc + ", " + checkFistAndLastNotStopWord(r.ngram));
                     reducedRef.add(r);
@@ -228,7 +228,7 @@ public class NgramAndCorrelation {
     }
 
     public static List<Ref> getNGramIncluded(String content, int minFreq, int minLength, String checkInclude) {
-        List<Ref> allref = getRawNGram(content, minFreq, minLength, minLength + 3);
+        List<Ref> allref = getRawNGram(content, minFreq, minLength, Math.min(minLength + 3,6));
         List<Ref> reducedRef = new Vector<>();
         for (int i = 0; i < allref.size(); i++) { // pour chaque n-gram
             Ref r = allref.get(i);
@@ -283,11 +283,21 @@ public class NgramAndCorrelation {
     }
     
        public static int getTermLenght(String query) {
+                  if (stopword == null) {
+            init();
+        }
+
         String[] part = query.split(" ");
         if (part == null) {
             return 1;
         }
-        return part.length;
+        int length=0;
+        for (int i=0;i<part.length;i++){
+            if (stopword.get(part[i]) != null) {
+            length++;
+        }
+        }
+        return Math.max(length, 1);
     }
 
     public static String getSource(String termso, String langso, String langta) {

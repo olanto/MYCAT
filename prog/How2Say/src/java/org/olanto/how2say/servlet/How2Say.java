@@ -26,6 +26,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.olanto.mycat.tmx.common.FormatHtmlResult;
+import org.olanto.mycat.tmx.common.NgramAndCorrelation;
 
 /**
  *
@@ -34,9 +36,12 @@ import javax.servlet.http.HttpServletResponse;
 public class How2Say extends HttpServlet {
 
     public static void main(String[] args) {  //only to debug
-
+NgramAndCorrelation.initIS();
         ServletProcess.init();
         String s = ServletProcess.getQueryForm("pomme de terre", "FR", "EN");
+              FormatHtmlResult formatter = new FormatHtmlResult();
+        s+=formatter.getHtmlResult("pomme de terre", "FR", "EN");
+ 
         System.out.println(s);
     }
 
