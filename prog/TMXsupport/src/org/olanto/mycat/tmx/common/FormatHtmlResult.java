@@ -107,7 +107,7 @@ public class FormatHtmlResult {
                 if (corlimit <= item.cor && count < 5) {
                     addhtml("<tr>\n");
                     addhtml("<td width=\"60%\">" + linkTo(item.termta, langta, langso) + "</td>"
-                            + "<td style=\"width:100px\">" + (int) (item.cor * 100) + "</td>\n"
+                            + "<td style=\"width:100px\">" + (int) (item.cor * 100) + "%</td>\n"
                             + "<td style=\"width:100px\">" + item.n1 + "</td>\n"
                             + "<td style=\"width:100px\">" + item.n2 + "</td>\n"
                             + "<td style=\"width:100px\">" + item.n12 + "</td>\n");

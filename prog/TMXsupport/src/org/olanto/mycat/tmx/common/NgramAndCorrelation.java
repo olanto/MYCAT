@@ -431,7 +431,7 @@ public class NgramAndCorrelation {
                 ex = new String[(int) Math.min(NB_EXAMPLES, n12)][2];
                 for (int i = 0; i < NB_EXAMPLES; i++) {
                     ex[i][0] = is.getDoc(interserct[i]);
-                    ex[i][1] = is.getDoc(interserct[0] - deltaSOTA);
+                    ex[i][1] = is.getDoc(interserct[i] - deltaSOTA);
                 }
             }
             t1.stop();
