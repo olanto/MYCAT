@@ -24,11 +24,11 @@ package org.olanto.TranslationText.client;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.PushButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import java.util.ArrayList;
 
@@ -47,7 +47,7 @@ public class FormCallWidget extends Composite {
     public Label msg = new Label();
     private BitextWidget tS;
 	
-    private PushButton resize = new PushButton (new Image("images/resize.png"));
+    private Button resize = new Button ();
 
     // Ajouter un widget pour la gestion des appels externes
     public FormCallWidget(String src, String qry, String lsrc, String ltgt) {
@@ -60,6 +60,7 @@ public class FormCallWidget extends Composite {
         pWidget.add(tS);
         tS.DrawEffects();
         tS.textAreaGrid.setWidget(0, 1, resize);
+        resize.setStyleName("resize");
         pWidget.setCellHorizontalAlignment(tS, HorizontalPanel.ALIGN_CENTER);
         pWidget.add(statusPanel);
         pWidget.setCellHorizontalAlignment(statusPanel, HorizontalPanel.ALIGN_CENTER);
