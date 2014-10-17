@@ -42,7 +42,7 @@ import org.olanto.util.Timer;
 public class FormatHtmlResult {
 
     private StringBuilder htmlResult;
-    private int minfreq, minTerm;
+    private int minfreqSO, minTermSO,lengthSO,minfreqTA;
     private int minNgram = 1;
     private float corlimit = 0.1f;
 
@@ -60,10 +60,12 @@ public class FormatHtmlResult {
                 + ", Term frequency: " + freqso + "</p>\n");
 
         if (freqso != 0) {
-            minfreq = NgramAndCorrelation.fixMinFreq(freqso);
-            minTerm = NgramAndCorrelation.fixMinTerm(termso);
+            lengthSO=NgramAndCorrelation.getTermLenght(termso);
+            minfreqSO = NgramAndCorrelation.fixMinFreq(freqso);
+            minfreqTA = NgramAndCorrelation.fixMinFreqTA(freqso,20);
+            minTermSO = NgramAndCorrelation.fixMinTerm(termso);
             String source = NgramAndCorrelation.getSource(termso, langso, langta);
-            List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, minfreq, minTerm, termso);
+            List<Ref> refComposite = NgramAndCorrelation.getNGramIncluded(source, minfreqSO, minTermSO, termso);
             addhtml("<h2>Expressions with the source term</h2>\n");
             addhtml("<table>\n");
             addhtml("<tr><th width=50%>Expressions containing the term: " + termso + "</th><th>Occurrences</th></tr>\n");
@@ -77,7 +79,7 @@ public class FormatHtmlResult {
 
 
             String target = NgramAndCorrelation.getTarget(termso, langso, langta);
-            List<Ref> ref = NgramAndCorrelation.getNGram(target, minfreq, minNgram, minTerm + 3);
+            List<Ref> ref = NgramAndCorrelation.getNGram(target, minfreqTA, minNgram, lengthSO + 4);
             List<ItemsCorrelation> list = new ArrayList<>();
 
             for (int i = 0; i < ref.size(); i++) { // pour chaque n-gram

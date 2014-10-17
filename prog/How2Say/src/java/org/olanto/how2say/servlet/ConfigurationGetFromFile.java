@@ -69,6 +69,7 @@ public class ConfigurationGetFromFile implements How2SayInit {
  
         LIST_OF_LANG = prop.getProperty("LIST_OF_LANG", "XX YY");
       CORPUS_NAME = prop.getProperty("CORPUS_NAME", "Corpus ?");
+     CACHE = prop.getProperty("CACHE", "CACHE");
 
  
 

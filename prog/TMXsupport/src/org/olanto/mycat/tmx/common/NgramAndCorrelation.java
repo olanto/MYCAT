@@ -266,6 +266,13 @@ public class NgramAndCorrelation {
         }
         return Math.max(minFreq, freqQ / 10);
     }
+    public static int fixMinFreqTA(int freqQ, int percent) {
+        int minFreq = 2;
+        if (freqQ < 10) {
+            return minFreq;
+        }
+        return Math.max(minFreq, freqQ*percent / 100);
+    }
 
     public static int fixMinTerm(String query) {
         String[] part = query.split(" ");
@@ -273,6 +280,14 @@ public class NgramAndCorrelation {
             return 2;
         }
         return Math.max(2, part.length + 1);
+    }
+    
+       public static int getTermLenght(String query) {
+        String[] part = query.split(" ");
+        if (part == null) {
+            return 1;
+        }
+        return part.length;
     }
 
     public static String getSource(String termso, String langso, String langta) {

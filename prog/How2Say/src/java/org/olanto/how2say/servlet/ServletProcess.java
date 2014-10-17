@@ -26,17 +26,26 @@ public class ServletProcess {
     public static String listLang = "NO LANG";
     public static boolean initOK = false;
     public static boolean verboseContent = true;
+    public static boolean useCache = false;
 
     public static void init() {
         if (!initOK) {
-            How2SayInit client = new ConfigurationGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/SERVLET_fix.xml");
-          client.InitPermanent();
-        client.InitConfiguration();
-    listLang = How2SayConstant.LIST_OF_LANG;
+
+            How2SayInit client = new ConfigurationGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/SERVLET_fix.xml");
+            client.InitPermanent();
+            client.InitConfiguration();
+            if (How2SayConstant.CACHE.equals("CACHE")) {
+                useCache = true;
+            }
+            if (useCache) {
+                CacheQuery.init(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/ehcache.xml","how2sayCache");
+            }
+            listLang = How2SayConstant.LIST_OF_LANG;
             initOK = true;
         }
     }
-       public static void processQery(HttpServletRequest request, HttpServletResponse response)
+
+    public static void processQery(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         long starttime = System.currentTimeMillis();
 
@@ -82,7 +91,7 @@ public class ServletProcess {
         s.append(buildLangSelector("langso", langso));
         s.append(" to ");
         s.append(buildLangSelector("langta", langta));
-        s.append(" with "+How2SayConstant.CORPUS_NAME);
+        s.append(" with " + How2SayConstant.CORPUS_NAME);
         s.append("</form>");
         return s.toString();
     }
@@ -140,6 +149,14 @@ public class ServletProcess {
         }
 
         StringBuffer result = new StringBuffer("");
+        String signature = query + "|" + langso + "|" + langta;
+        if (useCache) {
+            String fromCache = CacheQuery.get(signature);
+            if (fromCache != null) {
+                return fromCache;
+            }
+        }
+
 //        result.append("<h1>Servlet How2Say at " + request.getContextPath() + "</h1>");
 //        result.append("<p>query: " + query + "</p>");
 //        result.append("<p>langso: " + langso + "</p>");
@@ -150,7 +167,10 @@ public class ServletProcess {
 
         FormatHtmlResult formatter = new FormatHtmlResult();
         result.append(formatter.getHtmlResult(query, langso, langta));
-
+        if (useCache) {
+            CacheQuery.put(signature, result.toString());
+CacheQuery.info();
+        }
         return result.toString();
     }
 
