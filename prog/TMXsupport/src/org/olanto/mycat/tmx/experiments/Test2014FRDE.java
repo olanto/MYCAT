@@ -30,7 +30,7 @@ import java.rmi.*;
 import java.util.HashMap;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMap;
 import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 
@@ -46,7 +46,7 @@ public class Test2014FRDE {
     public static void main(String[] args) {
 
         is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-           LangMapDGT2014.init();
+       LangMap.init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
      try {
             showVector(is.getDictionnary().result);
             showVector(is.getCorpusLanguages());
@@ -97,7 +97,7 @@ public class Test2014FRDE {
             float n2 = resta.result.length;
             System.out.print(resta.result.length+"\t");
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i]+=LangMapDGT2014.deltaSOTA(langso, langta);
+                resta.result[i]+=LangMap.deltaSOTA(langso, langta);
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
             System.out.print(interserct.length+"\t");

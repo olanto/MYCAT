@@ -49,7 +49,7 @@ import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.idxvli.doc.PropertiesList;
 import org.olanto.idxvli.util.SetOfBits;
-import org.olanto.mycat.tmx.dgt2014.extract.LangMapDGT2014;
+import org.olanto.mycat.tmx.common.LangMap;
 import org.olanto.senseos.SenseOS;
 import static org.olanto.util.Messages.*;
 
@@ -66,7 +66,7 @@ public class SetLanguagePropertiesWithoutServer_DGT2014 {
 
     public static void main(String[] args) {
         IdxStructure idmain = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/IDX_fix.xml"));
-        LangMapDGT2014.init();
+       LangMap.init("BG "+"CS "+"DA "+"DE "+"EL "+"EN "+"ES "+"ET "+"FI "+"FR "+"GA "+"HU "+"IT "+"LT "+"LV "+"MT "+"NL "+"PL "+"PT "+"RO "+"SH "+"SK "+"SL "+"SV");
 //        for (int i = 0; i < 100; i++) {
 //                System.out.println(i+" length " + idmain.getLengthOfD(i));
 //               }
@@ -88,21 +88,21 @@ public class SetLanguagePropertiesWithoutServer_DGT2014 {
 
         id = idpar;
         int lastdoc = id.lastRecordedDoc; // taille du corpus
-        int step = LangMapDGT2014.size();
+        int step = LangMap.size();
 
         for (int i = 0; i < step; i++) {
-            msg("clear properties for: " + LangMapDGT2014.getlang(i));
-            id.clearThisProperty("SOURCE." + LangMapDGT2014.getlang(i));
-            id.clearThisProperty("TARGET." + LangMapDGT2014.getlang(i));
+            msg("clear properties for: " + LangMap.getlang(i));
+            id.clearThisProperty("SOURCE." + LangMap.getlang(i));
+            id.clearThisProperty("TARGET." + LangMap.getlang(i));
         }
         for (int i = 0; i < lastdoc; i += step) {
             int first = i;
             for (int j = 0; j < step; j++) {
 //              System.out.println("length" + id.getLengthOfD(i + j));
                 if (id.getLengthOfD(i + j) > 1) {
-                    id.setDocumentPropertie(i + j, "SOURCE." + LangMapDGT2014.getlang(j));
+                    id.setDocumentPropertie(i + j, "SOURCE." + LangMap.getlang(j));
                     for (int k = 0; k < step; k++) {
-                       id.setDocumentPropertie(first + k, "TARGET." + LangMapDGT2014.getlang(j));
+                       id.setDocumentPropertie(first + k, "TARGET." + LangMap.getlang(j));
                     }
                 }
             }
