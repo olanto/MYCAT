@@ -123,7 +123,7 @@ public class MainEntryPoint implements EntryPoint {
                         IMeasures.setDefaultMeasures();
                     }
 
-                    final FormCallWidget FC = new FormCallWidget(source.replace("$", "¦"), query, lS, lT);
+                    final FormCallWidget FC = new FormCallWidget(source, query, lS, lT);
                     RootPanel.get("call").add(FC);
                     FC.pWidget.setWidth("100%");
                     rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
