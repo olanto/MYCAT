@@ -67,8 +67,8 @@ public class ConfigurationGetFromFile implements How2SayInit {
     public void InitPermanent() {
 
  
-        LIST_OF_LANG = prop.getProperty("LIST_OF_LANG", "XX YY");
-      CORPUS_NAME = prop.getProperty("CORPUS_NAME", "Corpus ?");
+     LIST_OF_LANG = prop.getProperty("LIST_OF_LANG", "XX YY");
+     CORPUS_NAME = prop.getProperty("CORPUS_NAME", "Corpus ?");
      CACHE = prop.getProperty("CACHE", "CACHE");
 
  
@@ -80,11 +80,6 @@ public class ConfigurationGetFromFile implements How2SayInit {
      */
     public void InitConfiguration() {
         // les directoire
-//        FOLDER_ORIGINAL = prop.getProperty("FOLDER_ORIGINAL", SenseOS.getMYCAT_HOME() + "/corpus/docs");
-//        FOLDER_CONVERTED = prop.getProperty("FOLDER_CONVERTED", SenseOS.getMYCAT_HOME() + "/corpus/source");
-//        FOLDER_CONVERTED_GLOSSARIES = prop.getProperty("FOLDER_CONVERTED_GLOSSARIES", SenseOS.getMYCAT_HOME() + "/corpus/source/Glossaries");
-//        FOLDER_SEGMENTED = prop.getProperty("FOLDER_SEGMENTED", SenseOS.getMYCAT_HOME() + "/corpus/txt");
-//        FOLDER_EXTRA_SOURCE = prop.getProperty("FOLDER_EXTRA_SOURCE", SenseOS.getMYCAT_HOME() + "/corpus/source/BY_EXT");
 
 
     }
