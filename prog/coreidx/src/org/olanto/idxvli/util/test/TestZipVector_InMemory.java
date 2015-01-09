@@ -101,11 +101,44 @@ public class TestZipVector_InMemory {
         t = new Timer("------close Zip object");
         o.close();
         t.stop();
-       */ Timer t = new Timer("------open Zip object");
+       Timer t = new Timer("------open Zip object");
         System.out.println("open again ...");
         
         
         o = (new ZipVector_InMemory()).open("C:/MYCAT/TEMP", "zipvect", readWriteMode.rw);
+        t.stop();
+        o.printStatistic();
+        o.close();
+        */
+      // performance test
+       String s3 = "abcdefghijklmnopqrstuvwxyz";
+ 
+        o = (new ZipVector_InMemory()).create("C:/MYCAT/TEMP", "zipvect", 23);
+        o = (new ZipVector_InMemory()).open("C:/MYCAT/TEMP", "zipvect", readWriteMode.rw);
+
+        Timer t = new Timer("------Zip all the file");
+        for (int i=0;i<o.length();i++){
+        o.set(i, s3);
+    }
+        System.out.println("o.length()" + o.length());
+        System.out.println("o.lengthZip(3)" + o.lengthZip(3));
+        System.out.println("o.lengthString(3)" + o.lengthString(3));
+        System.out.println("o.totalLengthZip()" + o.totalLengthZip());
+        System.out.println("o.totalLengthString()" + o.totalLengthString());
+
+        t.stop();
+        o.printStatistic();
+        t = new Timer("------close Zip object");
+        o.close();
+        t.stop();
+       
+        t = new Timer("------open again Zip object");
+        System.out.println("open again ...");
+        
+        
+        o = (new ZipVector_InMemory()).open("C:/MYCAT/TEMP", "zipvect", readWriteMode.rw);
+       System.out.println(s3+ "=" + o.get(5));
+
         t.stop();
         o.printStatistic();
         o.close();

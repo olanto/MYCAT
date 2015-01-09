@@ -32,6 +32,7 @@ import static org.olanto.idxvli.IdxConstant.*;
 import static org.olanto.idxvli.IdxEnum.*;
 import java.util.concurrent.locks.*;
 import org.olanto.idxvli.util.ZipVector_InMemory;
+import org.olanto.idxvli.util.ZipVector_InMemory_FastLoad;
 import org.olanto.wildchar.WildCharExpander;
 
 /**
@@ -53,7 +54,8 @@ public class IdxIO {
     private RandomAccessFile pcf;
     static IdxStructure glue;
     /**
-     * pour signaler que tous les objstos sont ferm�s verrous ------------------------------------------
+     * pour signaler que tous les objstos sont ferm�s verrous
+     * ------------------------------------------
      */
     private static final ReentrantReadWriteLock openRW = new ReentrantReadWriteLock();
     private static final Lock openR = openRW.readLock();
@@ -480,7 +482,12 @@ public class IdxIO {
 
             compactMemory("doc table OK");
             if (IDX_ZIP_CACHE) {
-                glue.zipCache = (new ZipVector_InMemory()).create(DOC_ROOT, ZIP_NAME, DOC_MAXBIT);
+                if (IDX_ZIP_CACHE_FASTLOAD) {
+                    glue.zipCache = (new ZipVector_InMemory_FastLoad()).create(DOC_ROOT, ZIP_NAME, DOC_MAXBIT);
+                } else {
+                    glue.zipCache = (new ZipVector_InMemory()).create(DOC_ROOT, ZIP_NAME, DOC_MAXBIT);
+
+                }
                 compactMemory("zip cache OK");
             }
 
@@ -530,7 +537,12 @@ public class IdxIO {
             glue.lastUpdatedDoc = glue.lastRecordedDoc;  // read=write
             if (IDX_ZIP_CACHE) {
                 COMLOG.info("open zipCache");
-                glue.zipCache = (new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+                if (IDX_ZIP_CACHE_FASTLOAD) {
+                    glue.zipCache = (new ZipVector_InMemory_FastLoad()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+                } else {
+                    glue.zipCache = (new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+                }
+
             }
 
             if (WORD_EXPANSION) {  // pour les wildchar

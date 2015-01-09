@@ -228,6 +228,10 @@ public class IdxConstant {
      */
     public static boolean IDX_ZIP_CACHE = false;
     /**
+     * pour accélerer le load et save
+     */
+    public static boolean IDX_ZIP_CACHE_FASTLOAD = false;
+    /**
      * si vrai alors une indexation conceputelle sinon native dans la langue
      */
     public static boolean IDX_CONCEPTUAL = true;
