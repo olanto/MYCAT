@@ -45,6 +45,7 @@ public class Map {
     public int[] tofromCharLength, tofromNbWords, toMapping;
     public int toCountOne;
     public int fullcount;
+    static boolean verbose=false;
 
     public Map(int fromSize, int toSize) {
         fromMap = new int[fromSize];
@@ -202,12 +203,12 @@ public class Map {
                   for (int j = i+2; j < fromMap.length; j++) {
                      if (fromFullMap[j]&&!fromFullMap[j-1]){ // end of false
                          if (fromShift[i]==fromShift[j]){
-                             System.out.println("take a chance from:"+(i+1)+" to "+(j-1));
+                             if (verbose) System.out.println("take a chance from:"+(i+1)+" to "+(j-1));
                              for (int k = i+1; k < j; k++) {
                                  fromFullMap[k]=true; start[k]=1;end[k]=1;mapRules[k]="TAC";fromMap[k]=k-fromShift[i];
                              }
                          } else{
-                             System.out.println("n-m :"+(i+1)+" to "+(j-1));
+                             if (verbose) System.out.println("n-m :"+(i+1)+" to "+(j-1));
                                 fromFullMap[i+1]=true; start[i+1]=j-i-1;end[i+1]=j-i-1+(fromShift[i]-fromShift[j]);mapRules[i+1]="BLK";fromMap[i+1]=i+1-fromShift[i];
                               for (int k = i+2; k < j; k++) {
                                  fromFullMap[k]=true;mapRules[k]="BLK";fromMap[k]=-1;
@@ -297,6 +298,7 @@ public class Map {
     
 
     public void dump() {
+        if(verbose){
         msg("map from -> to "+fullcount+"/"+fromMap.length);
         for (int i = 0; i < fromMap.length; i++) {
             msg(i + " --> " + fromMap[i] + " ;" + fromShift[i]
@@ -323,6 +325,7 @@ public class Map {
                     + " ;" + toMapping[i]);
         }
         msg("toCountOne:" + toCountOne);
+        }
     }
 //    public final double average(){
 //        double sum=0;

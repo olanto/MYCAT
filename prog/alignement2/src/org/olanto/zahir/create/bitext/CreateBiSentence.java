@@ -136,6 +136,7 @@ public class CreateBiSentence {
         buildMapFrom();
         buildMapTo();
         if (verbose) {
+            System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
             map1.dump();
         }
         map1.compute();
@@ -357,7 +358,7 @@ public class CreateBiSentence {
 
     public void buildMap2To() {
 
-        Timer t1 = new Timer("build map2 TO-->FROM");
+        //Timer t1 = new Timer("build map2 TO-->FROM");
         for (int i = 0; i < tonblines; i++) {
             //   for(int i=0;i<40;i++){
             int fromline = getmaxto(i, i - map1.toMapping[i]);
@@ -371,7 +372,7 @@ public class CreateBiSentence {
                     todoc.lines[i].s.length(), todoc.lines[i].iw.length,
                     fromdoc.lines[fromline].s.length(), fromdoc.lines[fromline].iw.length);
         }
-        t1.stop();
+        //t1.stop();
         //StatSimilarity.statistic();
     }
 

@@ -21,7 +21,6 @@
 package org.olanto.zahir.align;
 
 import static org.olanto.util.Messages.*;
-import org.olanto.idxvli.*;
 
 /**
  * Classe stockant la carte des positions entre deux traductions.
