@@ -31,14 +31,14 @@ public class ServletProcess {
     public static void init() {
         if (!initOK) {
 
-            How2SayInit client = new ConfigurationGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/SERVLET_fix.xml");
+            How2SayInit client = new ConfigurationGetFromFile(SenseOS.getMYCAT_HOME("HOW2SAY") + "/config/SERVLET_fix.xml");
             client.InitPermanent();
             client.InitConfiguration();
             if (How2SayConstant.CACHE.equals("CACHE")) {
                 useCache = true;
             }
             if (useCache) {
-                CacheQuery.init(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/ehcache.xml","how2sayCache");
+                CacheQuery.init(SenseOS.getMYCAT_HOME("HOW2SAY") + "/config/ehcache.xml","how2sayCache");
             }
             listLang = How2SayConstant.LIST_OF_LANG;
             initOK = true;

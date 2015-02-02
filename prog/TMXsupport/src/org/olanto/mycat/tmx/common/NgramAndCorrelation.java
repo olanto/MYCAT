@@ -111,7 +111,7 @@ public class NgramAndCorrelation {
 
     public static void initIS() {
         if (is == null) {
-            is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
+            is = GetContentService.getServiceMYCAT("rmi://localhost/TMX");
         }
 //        try {
 //            showVector(is.getDictionnary().result);

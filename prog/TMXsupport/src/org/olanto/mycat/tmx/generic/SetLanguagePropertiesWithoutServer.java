@@ -43,7 +43,7 @@ public class SetLanguagePropertiesWithoutServer {
     static boolean verbose = false;
 
     public static void main(String[] args) {
-        IdxStructure idmain = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/IDX_fix.xml"));
+       IdxStructure idmain = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("HOW2SAY") + "/config/IDX_fix.xml"));
        LangMap.init(IdxConstant.ROOT_CORPUS_LANG);
 
      

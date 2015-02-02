@@ -35,7 +35,7 @@ public class CreateIndexer {      // is an application, not an applet !
     static Timer t1 = new Timer("global time");
 
     public static void main(String[] args) {
-        id = new IdxStructure("NEW", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/IDX_fix.xml"));
+        id = new IdxStructure("NEW", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("HOW2SAY")+"/config/IDX_fix.xml"));
 
         id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();

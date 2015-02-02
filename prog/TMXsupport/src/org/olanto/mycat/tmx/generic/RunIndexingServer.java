@@ -44,7 +44,7 @@ public class RunIndexingServer {
         try {
             System.out.println("initialize index server ...");
 
-            IndexService_MyCat idxsrv = GetIndexService.runServiceIDX(new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX")+"/config/IDX_fix.xml"), "rmi://localhost/VLI");
+            IndexService_MyCat idxsrv = GetIndexService.runServiceIDX(new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("HOW2SAY")+"/config/IDX_fix.xml"), "rmi://localhost/TMX");
 
             msg("current Index manager is opened");
 

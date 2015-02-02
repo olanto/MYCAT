@@ -37,9 +37,9 @@ public class ContentIndexingWithoutServer {      // is an application, not an ap
    
 
     public static void main(String[] args) {
-        id = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/IDX_fix.xml"));
+        id = new IdxStructure("INCREMENTAL", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME("HOW2SAY") + "/config/IDX_fix.xml"));
 langMap.init(IdxConstant.ROOT_CORPUS_LANG);
-        IndexingReader.indexThis(id, SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/corpus/corpus.mflf", Integer.MAX_VALUE, "UTF-8", langMap);
+        IndexingReader.indexThis(id, SenseOS.getMYCAT_HOME("HOW2SAY") + "/corpus/corpus.mflf", Integer.MAX_VALUE, "UTF-8", langMap);
         id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();

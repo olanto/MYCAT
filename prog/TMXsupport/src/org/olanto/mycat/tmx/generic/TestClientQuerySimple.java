@@ -36,11 +36,11 @@ import org.olanto.util.Timer;
 public class TestClientQuerySimple {
 
     static IndexService_MyCat is;
-    final static float NTOT = 100000000;
+    final static float NTOT = 200000000;
 
     public static void main(String[] args) {
 
-        is = GetContentService.getServiceMYCAT("rmi://localhost/VLI");
+        is = GetContentService.getServiceMYCAT("rmi://localhost/TMX");
          LangMap.init("EN FR");
        try {
             showVector(is.getDictionnary().result);
