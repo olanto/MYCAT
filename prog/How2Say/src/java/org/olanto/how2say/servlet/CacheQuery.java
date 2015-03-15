@@ -19,7 +19,7 @@ public class CacheQuery {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        manager = CacheManager.newInstance(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/ehcache.xml");
+        manager = CacheManager.newInstance(SenseOS.getMYCAT_HOME("HOW2SAY") + "/config/ehcache.xml");
         cache = manager.getCache("how2sayCache");
         info();
 

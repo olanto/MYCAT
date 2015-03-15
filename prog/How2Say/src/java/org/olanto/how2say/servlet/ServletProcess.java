@@ -82,7 +82,7 @@ public class ServletProcess {
     public static String getQueryForm(String query, String langso, String langta) {
         StringBuilder s = new StringBuilder("");
         // heades
-        s.append("<form NAME=\"search\" method=\"post\" action=\"./how2say?\">");
+        s.append("<form NAME=\"search\" method=\"get\" action=\"./how2say?\">");
         s.append("<img src=\"olanto.jpg\"/>");
         s.append(" ");
         s.append(" <input type=\"text\" name=\"query\" value=\"" + query + "\" size=\"40\"/>");
@@ -136,7 +136,8 @@ public class ServletProcess {
                 //                    } catch (UnsupportedEncodingException ex) {
                 //                        Logger.getLogger(How2Say.class.getName()).log(Level.SEVERE, null, ex);
                 //                    }
-                query = new String(request.getParameter("query").getBytes("iso-8859-1"), "UTF-8");
+              //  query = new String(request.getParameter("query").getBytes("iso-8859-1"), "UTF-8");
+               query = new String(request.getParameter("query").getBytes("UTF-8"), "UTF-8");
             } catch (UnsupportedEncodingException ex) {
                 Logger.getLogger(ServletProcess.class.getName()).log(Level.SEVERE, null, ex);
             }
