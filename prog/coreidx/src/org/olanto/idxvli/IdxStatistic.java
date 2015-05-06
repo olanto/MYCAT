@@ -55,7 +55,8 @@ public class IdxStatistic {
      *
      */
     public String getGlobal() {
-        return "KDoc: " + DOC_MAX / 1024 + "/" + (glue.lastRecordedDoc / 1024) + " " + (int) (((double) glue.lastRecordedDoc * (double) 100) / (double) Math.max(DOC_MAX, 1)) + "%"
+        return glue.lastRecordedWord+"\n"+glue.lastRecordedDoc+"\n"
+                +"KDoc: " + DOC_MAX / 1024 + "/" + (glue.lastRecordedDoc / 1024) + " " + (int) (((double) glue.lastRecordedDoc * (double) 100) / (double) Math.max(DOC_MAX, 1)) + "%"
                 + " - KWord: " + WORD_MAX / 1024 + "/" + (glue.lastRecordedWord / 1024) + " " + (int) (((double) glue.lastRecordedWord * (double) 100) / (double) Math.max(WORD_MAX, 1)) + "%";
     }
 

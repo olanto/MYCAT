@@ -68,7 +68,7 @@ public class DoParse {
      * (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
      */
     public final Term[] tokenizeString() {
-        int MAXWORD = 1000000;
+        int MAXWORD = 5000000;
         String word;
         int lastscan = 0;
         Term[] idxW = new Term[MAXWORD]; // max de terme dans un document
