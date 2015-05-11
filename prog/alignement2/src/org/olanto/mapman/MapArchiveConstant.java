@@ -215,7 +215,7 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
     /**
      * longueur minimum d'un mot � indexer
      */
-    public static int WORD_MINLENGTH = 3;
+    public static int WORD_MINLENGTH = 1;
     /**
      * longueur maximum d'un mot � indexer (tronquer)
      */

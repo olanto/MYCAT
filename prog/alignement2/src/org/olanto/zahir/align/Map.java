@@ -298,21 +298,22 @@ public class Map {
     
 
     public void dump() {
+        boolean verbose=true;
         if(verbose){
         msg("map from -> to "+fullcount+"/"+fromMap.length);
-        for (int i = 0; i < fromMap.length; i++) {
-            msg(i + " --> " + fromMap[i] + " ;" + fromShift[i]
-                    + " ;" + fromIncrement[i]
-                    + " ;" + fromCertainMap[i]
-                    + " ;" + fromFullMap[i]
-                    + " ;" + start[i]
-                    + " ;" + end[i]
-                    + " ;" + mapRules[i]
-                    + " ;" + fromCharLength[i] + " ;" + fromNbWords[i]
-                    + " ;" + fromtoCharLength[i] + " ;" + fromtoNbWords[i]
-                    + " ; sim:" + fromSimil[i]
-                    + " ;" + fromMapping[i]);
-        }
+//        for (int i = 0; i < fromMap.length; i++) {
+//            msg(i + " --> " + fromMap[i] + " ;" + fromShift[i]
+//                    + " ;" + fromIncrement[i]
+//                    + " ;" + fromCertainMap[i]
+//                    + " ;" + fromFullMap[i]
+//                    + " ;" + start[i]
+//                    + " ;" + end[i]
+//                    + " ;" + mapRules[i]
+//                    + " ;" + fromCharLength[i] + " ;" + fromNbWords[i]
+//                    + " ;" + fromtoCharLength[i] + " ;" + fromtoNbWords[i]
+//                    + " ; sim:" + fromSimil[i]
+//                    + " ;" + fromMapping[i]);
+//        }
         msg("fromCountOne:" + fromCountOne);
         msg("----------------------------------------------------------------------");
         msg("map to -> from");

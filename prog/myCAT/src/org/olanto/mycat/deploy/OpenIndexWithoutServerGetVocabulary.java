@@ -38,7 +38,7 @@ public class OpenIndexWithoutServerGetVocabulary {      // is an application, no
         int lastw = id.lastUpdatedWord;
 
         for (int i = 0; i < lastw; i++) {
-            System.out.println(i + " = " + id.getStringforW(i));
+            System.out.println(i + "\t" + id.getStringforW(i)+ "\t" + id.getOccCorpusOfW(i));
         }
 
         t1.stop();

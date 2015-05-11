@@ -1,4 +1,6 @@
-﻿---FI
+﻿---ZH
+的
+---FI
 aiemmin
 aika
 aikaa

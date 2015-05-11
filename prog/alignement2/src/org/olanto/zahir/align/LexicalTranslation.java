@@ -61,6 +61,7 @@ public class LexicalTranslation {
                 }
                 if (x > limit) {
                     lexmap.put(efv[0] + " " + efv[1], (float) x);
+ //                   System.out.println(efv[0]+ " " + efv[1]+" " + x);
                     Integer soid = lexentryso.get(efv[0]);
                     if (soid == null) { // ajoute une entrÃ©e
                         lexentryso.put(efv[0], countso);

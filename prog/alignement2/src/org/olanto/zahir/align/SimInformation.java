@@ -45,6 +45,7 @@ public final class SimInformation {
             this.targetCnt = toSeq.length;
             return;
         }
+       // System.out.println(Global.FILTERS);
         if (Global.FILTERS) {
             if (fromSeq.length < 3 || toSeq.length < 3) { // trop petit
                 this.sourceCnt = fromSeq.length;
@@ -57,13 +58,14 @@ public final class SimInformation {
                 return;
             }
             float ratio = (float) Math.max(fromSeq.length, toSeq.length) / (float) Math.min(fromSeq.length, toSeq.length);
-            if (ratio > 2.0) { // trop différent
+            if (ratio > 5.0) { // trop différent
                 this.sourceCnt = fromSeq.length;
                 this.targetCnt = toSeq.length;
                 return;
             }
         }
         // merge sort
+////        System.out.println("merge ... ");
         int il1 = fromId.length;
         int il2 = toId.length;
         int wc1 = 0;
