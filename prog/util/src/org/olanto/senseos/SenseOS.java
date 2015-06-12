@@ -27,8 +27,8 @@ import static org.olanto.util.Messages.*;
  */
 public class SenseOS {
 
-    private static final String WINDOWS_FAMILIES = "WINDOWS_FAMILIES";
-    private static final String UNIX_FAMILIES = "UNIX_FAMILIES";
+    public static final String WINDOWS_FAMILIES = "WINDOWS_FAMILIES";
+    public static final String UNIX_FAMILIES = "UNIX_FAMILIES";
     private static final String DEF_WINDOWS_HOME = "C:/";
     private static final String DEF_UNIX_HOME = "/home/olanto/";
     private static String OS_TYPE = null;

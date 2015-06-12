@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.apache.log4j.Logger;
+import org.olanto.senseos.SenseOS;
 
 /**
  *
@@ -19,9 +20,10 @@ public class SimpleConverterCLI {
 
     public static void main(String[] arguments) throws Exception {
         Process exec;
-               try {
+        if (SenseOS.getOS_TYPE()==SenseOS.WINDOWS_FAMILIES){
+        try {
             System.out.println("**** Clean all soffice.bin");
-         System.out.println("**** taskkill /F /IM soffice.bin");
+            System.out.println("**** taskkill /F /IM soffice.bin");
             exec = Runtime.getRuntime().exec("taskkill /F /IM soffice.bin");
             try {
                 exec.waitFor();
@@ -31,9 +33,9 @@ public class SimpleConverterCLI {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-               try {
+        try {
             System.out.println("**** Clean all soffice.exe");
-         System.out.println("**** taskkill /F /IM soffice.exe");
+            System.out.println("**** taskkill /F /IM soffice.exe");
             exec = Runtime.getRuntime().exec("taskkill /F /IM soffice.exe");
             try {
                 exec.waitFor();
@@ -43,15 +45,15 @@ public class SimpleConverterCLI {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-  
-        
+        }
+
         if (arguments.length < 1) {
             System.out.println("Usage: SimpleConverterCLI config-file.xml \n");
             System.exit(EXIT_CODE_TOO_FEW_ARGS);
         } else {
             ConfigUtil.setConfigFile(arguments[0]);
         }
-        
+
         ConfigUtil.loadConfigFromXml();
         Document inputFile = new Document(ConfigUtil.getDocPath());
         Document outFile = new Document(ConfigUtil.getSourcePath());
