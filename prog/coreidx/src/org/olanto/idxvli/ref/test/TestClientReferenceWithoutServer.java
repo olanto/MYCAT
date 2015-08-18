@@ -54,7 +54,7 @@ static float y;
     }
 
     public void run() {
-        REFResultNice ref = id.getReferences(up, NBREF, "EN", "FR", null);
+        REFResultNice ref = id.getReferences(up, NBREF, "EN", "FR", null,false,true);
         
 //        for (int i = 0; i < 1000000; i++) {
 //            dummy(i);
@@ -80,7 +80,7 @@ static float y;
 
 //        REFResultNice ref = id.getReferences(up, 12, "EN", "FR", null);
 //        System.out.println("end ref init-----------------------------------------------------------");
-         REFResultNice ref = id.getReferences(up, NBREF, "EN", "FR", null);
+         REFResultNice ref = id.getReferences(up, NBREF, "EN", "FR", null,false,true);
          System.out.println("end ref alone-----------------------------------------------------------");
         Timer t1 = new Timer("-----------  ref ");
 //        for (int i = 0; i < 1; i++) {

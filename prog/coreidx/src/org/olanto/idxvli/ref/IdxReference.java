@@ -78,8 +78,22 @@ public class IdxReference {
     private String[] selectedCollection;
     private String uploadFileName;
     private String collectList;
-
+   private boolean removefirst; // true=remove first reference
+  private boolean fast;  // false=remove fantome
+ 
+    public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
+            boolean removefirst, boolean fast) {
+        InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst,fast);
+    }
+  
+    
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection) {
+        InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection,false,true);
+    }
+   
+        public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
+            boolean removefirst, boolean fast) {
+      
         Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
         glue = _glue;
         selectedCollection = _selectedCollection;
@@ -281,7 +295,7 @@ public class IdxReference {
                 for (int j = i; j < lastcp - seqn; j++) {
                     b = b.and(doc[j]);
                     // here we need to check the references
-                    if (!PRODUCTION_MODE)b = getOnlyRealRef(b, i, j); // need to be tested before production mode
+                    if (!fast)b = getOnlyRealRef(b, i, j); // need to be tested before production mode
                     if (b.notEmpty()) {
                         mark = j;
                         b.resetcursor();

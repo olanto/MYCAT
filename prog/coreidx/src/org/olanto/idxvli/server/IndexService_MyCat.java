@@ -439,13 +439,15 @@ public interface IndexService_MyCat extends Remote {
      * pour chercher les références d'un fichier uploaded
      * @throws java.rmi.RemoteException
      */
-    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection) throws RemoteException;
+    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast) throws RemoteException;
 
     /**
      * pour chercher les références d'un fichier uploaded
      * @throws java.rmi.RemoteException
      */
-    public String getHtmlReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection) throws RemoteException;
+    public String getHtmlReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast) throws RemoteException;
 
     public String createTemp(String FileName, String Content) throws RemoteException;
     

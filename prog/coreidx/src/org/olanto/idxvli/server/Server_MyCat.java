@@ -634,22 +634,24 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     @Override
-    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection) throws RemoteException {
+    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast) throws RemoteException {
 //        msg("Getting references from file: " + upfile.getFileName() + "\n" + upfile.getContentString());
         if (upfile == null) {// fix result for developpment
             return null;
         } else {
-            return id.getReferences(upfile, limit, source, target, selectedCollection);
+            return id.getReferences(upfile, limit, source, target, selectedCollection,removefirst,fast);
         }
     }
 
     @Override
-    public String getHtmlReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection) throws RemoteException {
+    public String getHtmlReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast) throws RemoteException {
 //        msg("Getting references from file: " + upfile.getFileName() + "\n" + upfile.getContentString());
         if (upfile == null) {// fix result for developpment
             return null;
         } else {
-            return id.getReferences(upfile, limit, source, target, selectedCollection).htmlref;
+            return id.getReferences(upfile, limit, source, target, selectedCollection,removefirst,fast).htmlref;
         }
     }
 

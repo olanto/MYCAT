@@ -544,7 +544,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 co = getCollections(collections);
 
 //            System.out.println("calling references service: " + is.getInformation());
-                ref = is.getHtmlReferences(up, minCons, langS, LangT, co);
+                ref = is.getHtmlReferences(up, minCons, langS, LangT, co, false, true);
 //                t1.stop();
                 if (ref != null) {
 //                    System.out.println(ref);

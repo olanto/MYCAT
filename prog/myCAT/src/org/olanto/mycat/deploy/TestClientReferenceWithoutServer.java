@@ -68,7 +68,7 @@ public class TestClientReferenceWithoutServer {
 
         Timer t1 = new Timer("-------------  ref ");
 //        for (int i = 0; i < 20; i++) {
-            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect);
+            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,true);
 //        }
         t1.stop();
 //            msg("ref:" + ref.htmlref);

@@ -18,6 +18,8 @@
     <entry key="IDX_MORE_INFO">false</entry>
     <entry key="IDX_SAVE_POSITION">true</entry>
     <entry key="IDX_ZIP_CACHE">true</entry>
+    <entry key="IDX_ZIP_CACHE_FASTLOAD">true</entry>
+    <entry key="PRODUCTION_MODE">true</entry>
 
 	<!--Number of independants disks (2^OBJ_PW2)-->     
     <entry key="OBJ_PW2">0</entry> 

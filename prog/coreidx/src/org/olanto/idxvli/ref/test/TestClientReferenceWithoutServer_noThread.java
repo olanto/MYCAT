@@ -60,7 +60,7 @@ public class TestClientReferenceWithoutServer_noThread {
         UploadedFile up = new UploadedFile(ex, "test.txt");
 
         Timer t1 = new Timer("-------------  ref ");
-        REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect);
+        REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,true);
         t1.stop();
 //            msg("ref:" + ref.htmlref);
 //            msg("nbref:" + ref.nbref);

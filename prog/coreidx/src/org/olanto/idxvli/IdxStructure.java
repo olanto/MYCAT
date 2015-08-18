@@ -770,9 +770,10 @@ public class IdxStructure {
         return executor.get(this, cs, request, properties, profile, start, size, fullresult);
     }
 
-    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection) {
+    public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast) {
 //        if (upfile.isTxt()) {// text case
-        IdxReference ref = new IdxReference(this, upfile.getContentString(), limit, source, target, true, selectedCollection);
+        IdxReference ref = new IdxReference(this, upfile.getContentString(), limit, source, target, true, selectedCollection,removefirst, fast);
         ref.postInit(upfile.getFileName());
         String html = ref.getHTML();
         String[] multiref = new String[ref.docMultiRef.size()];
