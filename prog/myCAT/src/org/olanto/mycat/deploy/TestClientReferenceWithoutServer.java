@@ -52,9 +52,9 @@ public class TestClientReferenceWithoutServer {
 
 //        testref(SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.txt", SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.res.html", null , 3);
 //       testref(SenseOS.getMYCAT_HOME() + "/test/g245_e.txt", SenseOS.getMYCAT_HOME() + "/test/g245_e.res.html", null , 3);
-       testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
+ //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
-//       testref(SenseOS.getMYCAT_HOME() + "/test/testcdt.txt", SenseOS.getMYCAT_HOME() + "/test/testcdt.res.html", null , 5);
+       testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
 
     }
 
@@ -68,7 +68,7 @@ public class TestClientReferenceWithoutServer {
 
         Timer t1 = new Timer("-------------  ref ");
 //        for (int i = 0; i < 20; i++) {
-            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,true);
+            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,false);
 //        }
         t1.stop();
 //            msg("ref:" + ref.htmlref);

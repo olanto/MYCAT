@@ -31,7 +31,7 @@ import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.idxvli.util.SetOfBits;
 import org.olanto.util.Timer;
 import static org.olanto.idxvli.IdxConstant.*;
-import org.olanto.idxvli.ql.QRes;
+import org.olanto.idxvli.ref.stat.InverseRef;
 
 /**
  * Une classe pour référencer un string (pour la version de référence).
@@ -80,6 +80,7 @@ public class IdxReference {
     private String collectList;
    private boolean removefirst; // true=remove first reference
   private boolean fast;  // false=remove fantome
+  private String removedFile="no file";
  
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
@@ -92,10 +93,12 @@ public class IdxReference {
     }
    
         public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
-            boolean removefirst, boolean fast) {
-      
+            boolean _removefirst, boolean _fast) {
+        
         Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
         glue = _glue;
+        removefirst=_removefirst;
+        fast=_fast;
         selectedCollection = _selectedCollection;
         collectList = "";
         if (selectedCollection != null) {
@@ -408,7 +411,12 @@ public class IdxReference {
 
         StringBuilder s = new StringBuilder("<P>\n");
         s.append("<hr/>\n");
-        ReferenceStatistic rs = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep);
+        //
+        ReferenceStatistic firstpass = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst,fast, removedFile);
+        InverseRef firstref=firstpass.getFirsReference();
+        removedFile="id:"+firstref.docref+", name:"+"xxx"+", "+firstref.pcttotword+"% ";
+        
+        ReferenceStatistic rs = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst,fast, removedFile);
         s.append(rs.getHeaderSat(uploadFileName, collectList, minlength));
         s.append("<hr/>\n");
         s.append(rs.getStatByRef());
