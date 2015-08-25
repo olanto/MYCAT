@@ -1,22 +1,24 @@
-/**********
-Copyright © 2010-2012 Olanto Foundation Geneva
-
-This file is part of myCAT.
-
-myCAT is free software: you can redistribute it and/or modify
-it under the terms of the GNU Affero General Public License as
-published by the Free Software Foundation, either version 3 of
-the License, or (at your option) any later version.
-
-myCAT is distributed in the hope that it will be useful, but
-WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-See the GNU Affero General Public License for more details.
-
-You should have received a copy of the GNU Affero General Public License
-along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
- **********/
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.mycat.lineseg;
 
 import java.io.*;
@@ -28,8 +30,8 @@ import static org.olanto.mycat.lineseg.SegmentationConstant.*;
 
 /**
  *
- * author: Olanto Foundation Geneva
- * ajout d'une section pour éliminer les -e, -E, -f, -F (pas systématique)
+ * author: Olanto Foundation Geneva ajout d'une section pour éliminer les -e,
+ * -E, -f, -F (pas systématique)
  */
 public class BY_FOLDER_segmentation {
 
@@ -76,8 +78,11 @@ public class BY_FOLDER_segmentation {
 
     public static void indexdoc(String f, String name) {
         if (f.contains(SEPARATOR)) {
-            System.err.println("FATAL ERROR filename contains SEPARATOR:" + f);
-            System.exit(0);
+            System.out.println("FATAL ERROR filename contains SEPARATOR:" + f);
+            name = name.replace(SEPARATOR, "-");
+            System.out.println("replace SEPARATOR with - (error with original button ...)" + f);
+            System.out.println("replace SEPARATOR with - (error with original button ...)" + f);
+            //System.exit(0);
         }
         String flatPath = f.substring(sourceRoot.length() + 1, f.length() - name.length());
         flatPath = flatPath.replace("/", SEPARATOR);
