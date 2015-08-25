@@ -54,7 +54,8 @@ public class TestClientReferenceWithoutServer {
 //       testref(SenseOS.getMYCAT_HOME() + "/test/g245_e.txt", SenseOS.getMYCAT_HOME() + "/test/g245_e.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
-       testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
+      testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
+      testref("C:/MYCAT/corpus/txt/EN/small-collection¦UNO¦HR_Declaration.docx.txt", "C:/Users/simple/Desktop/reftest/HR_Declaration.txt.res.html", null , 3);
 
     }
 
@@ -68,7 +69,7 @@ public class TestClientReferenceWithoutServer {
 
         Timer t1 = new Timer("-------------  ref ");
 //        for (int i = 0; i < 20; i++) {
-            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,false);
+            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,true,false);
 //        }
         t1.stop();
 //            msg("ref:" + ref.htmlref);

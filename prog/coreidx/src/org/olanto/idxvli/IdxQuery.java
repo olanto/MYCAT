@@ -119,7 +119,7 @@ public class IdxQuery {
 
     private final String searchforString(String w, String min) { // with semantic context
         Integer n = new Integer(min);
-        IdxReference s = new IdxReference(glue, w, n.intValue(), null, null, false, null);
+        IdxReference s = new IdxReference(glue, w, n.intValue(), null, null, false, null,false,true);
         // return s.getXML();
         return "OK done";
     }

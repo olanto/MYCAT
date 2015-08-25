@@ -111,8 +111,7 @@ public class ReferenceStatistic {
             res.append("</p> " + MSG.get("server.qd.MSG_7") + " " + Collections);
         }
         res.append("</p> " + MSG.get("server.qd.MSG_8") + " " + Calendar.getInstance().getTime());
-        res.append("</p> " + MSG.get("server.qd.MSG_23") + ": " + removefirst);
-        res.append("</p> " + MSG.get("server.qd.MSG_24") + ": " + fast);
+        res.append("</p> " + MSG.get("server.qd.MSG_23") + ": " + removefirst+", "+MSG.get("server.qd.MSG_24") + ": " + fast);
         res.append("</p> " + MSG.get("server.qd.MSG_25") + ": " + removedFile);
         return res.toString();
     }

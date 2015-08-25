@@ -22,6 +22,8 @@
 package org.olanto.idxvli.ref;
 
 import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 import static org.olanto.idxvli.ql.QueryOperator.*;
 
@@ -78,27 +80,36 @@ public class IdxReference {
     private String[] selectedCollection;
     private String uploadFileName;
     private String collectList;
-   private boolean removefirst; // true=remove first reference
-  private boolean fast;  // false=remove fantome
-  private String removedFile="no file";
- 
+    private boolean removefirst; // true=remove first reference
+    private boolean fast;  // false=remove fantome
+    public String removedFile = "no file";
+    public int removedDoc = -1;
+    private boolean lookforfirst = true;
+    private boolean secondpass = false;
+
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
-        InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst,fast);
+        if (removefirst) {
+            System.out.println("find first document");
+            IdxReference firstpass = new IdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, false, true);
+            String dummyhtml = firstpass.getHTML();
+            this.removedFile = firstpass.removedFile;
+            this.removedDoc = firstpass.removedDoc;
+            lookforfirst = false;
+           secondpass = true;
+
+        }
+
+        InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst, fast);
     }
-  
-    
-    public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection) {
-        InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection,false,true);
-    }
-   
-        public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
+
+    public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean _removefirst, boolean _fast) {
-        
+
         Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
         glue = _glue;
-        removefirst=_removefirst;
-        fast=_fast;
+        removefirst = _removefirst;
+        fast = _fast;
         selectedCollection = _selectedCollection;
         collectList = "";
         if (selectedCollection != null) {
@@ -123,6 +134,11 @@ public class IdxReference {
 //            System.out.println("ta:"+ta.countTrue());
             sota.and(ta, SetOfBits.ALL);
 //            System.out.println("sota:"+sota.countTrue());
+            if (secondpass){
+                System.out.println("remove first file from filter"); 
+                sota.set(removedDoc, false);
+               
+            }
         }
         if (alignsota && selectedCollection != null) {// étend le filtre aux collections
             SetOfBits colfilter = new SetOfBits(glue.docstable.satisfyThisProperty(selectedCollection[0])); // une copie pour le premier operande
@@ -260,15 +276,15 @@ public class IdxReference {
         //System.out.print("\n"); 
         int[] resD = getDocforWseqWN(glue, evalseq).doc;
         //System.out.println("check:" + (to + seqmax - from) + ", res size:" + resD.length);
-   
+
         // transform the result into a sparse ...
         SparseBitSet qres = new SparseBitSet();
         for (int j = 0; j < resD.length; j++) {
             qres.insertbit(resD[j]);
-        }       
+        }
         b = b.and(qres);
         //System.out.println("check after and:" + (to + seqmax - from) + ", res size:" + b.length());
-    //t.stop();
+        //t.stop();
         return b;
     }
 
@@ -294,11 +310,13 @@ public class IdxReference {
             SparseBitSet b = doc[i];
             if (b.notEmpty()) { // ok look for the next
                 mark = i;
-                
+
                 for (int j = i; j < lastcp - seqn; j++) {
                     b = b.and(doc[j]);
                     // here we need to check the references
-                    if (!fast)b = getOnlyRealRef(b, i, j); // need to be tested before production mode
+                    if (!fast) {
+                        b = getOnlyRealRef(b, i, j); // need to be tested before production mode
+                    }
                     if (b.notEmpty()) {
                         mark = j;
                         b.resetcursor();
@@ -308,7 +326,7 @@ public class IdxReference {
                         break;
                     } // not in the same doc
                 }
-                
+
                 if ((mark > maxmarked) && ((mark - i) >= minlength - seqmax)) { // not included in a bigger ref
                     maxmarked = mark; // new max
                     newMark();
@@ -317,17 +335,17 @@ public class IdxReference {
                     b.resetcursor();
                     docM[i] = markdoc; // get the first ref (if many)
                     nbref++;
-/*
-                    String dlist = glue.getFileNameForDocument(multidoc[0]); // liste des références
-                    for (int k = 1; k < multidoc.length; k++) {
-                        dlist += REFResultNice.DOC_REF_SEPARATOR + glue.getFileNameForDocument(multidoc[k]);
-                    }
-                    docMultiRef.add(dlist);
-                    String tlist = glue.getStringforW(cpW[i]); // texte des références
-                    for (int k = i + 1; k < maxmarked + seqmax; k++) {
-                        tlist += " " + glue.getStringforW(cpW[k]);
-                    }
-*/
+                    /*
+                     String dlist = glue.getFileNameForDocument(multidoc[0]); // liste des références
+                     for (int k = 1; k < multidoc.length; k++) {
+                     dlist += REFResultNice.DOC_REF_SEPARATOR + glue.getFileNameForDocument(multidoc[k]);
+                     }
+                     docMultiRef.add(dlist);
+                     String tlist = glue.getStringforW(cpW[i]); // texte des références
+                     for (int k = i + 1; k < maxmarked + seqmax; k++) {
+                     tlist += " " + glue.getStringforW(cpW[k]);
+                     }
+                     */
                     //Timer t1 = new Timer("collect fname");
                     StringBuilder dlist = new StringBuilder(glue.getFileNameForDocument(multidoc[0])); // liste des références
                     for (int k = 1; k < multidoc.length; k++) {
@@ -340,14 +358,14 @@ public class IdxReference {
                     for (int k = i + 1; k < maxmarked + seqmax; k++) {
                         tlist.append(" ").append(glue.getStringforW(cpW[k]));
                     }
-                   
+
                     txtRef.add(tlist.toString());
                     //t2.stop();
                     //Timer t3 = new Timer("add noref part");
                     txtRefOrigin.add(
                             textforhtml.substring(idxpos[idxorig[i]] - word[idxorig[i]].length() - 1,
                             idxpos[idxorig[maxmarked + seqmax - 1]] - 1));
-                     //t3.stop();
+                    //t3.stop();
                 }
             }// if
             //t0.stop();
@@ -412,11 +430,14 @@ public class IdxReference {
         StringBuilder s = new StringBuilder("<P>\n");
         s.append("<hr/>\n");
         //
-        ReferenceStatistic firstpass = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst,fast, removedFile);
-        InverseRef firstref=firstpass.getFirsReference();
-        removedFile="id:"+firstref.docref+", name:"+"xxx"+", "+firstref.pcttotword+"% ";
-        
-        ReferenceStatistic rs = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst,fast, removedFile);
+        if (lookforfirst) {
+            NumberFormat formatter = new DecimalFormat("#0.0");
+            ReferenceStatistic firstpass = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst, fast, removedFile);
+            InverseRef firstref = firstpass.getFirsReference();
+            removedDoc = glue.getIntForDocument(firstref.docref);
+            removedFile = firstref.docref + " (" + formatter.format(firstref.pcttotword) + "%)";
+        }
+        ReferenceStatistic rs = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst, fast, removedFile);
         s.append(rs.getHeaderSat(uploadFileName, collectList, minlength));
         s.append("<hr/>\n");
         s.append(rs.getStatByRef());
