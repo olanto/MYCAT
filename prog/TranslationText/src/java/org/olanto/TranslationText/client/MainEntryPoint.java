@@ -762,6 +762,8 @@ public class MainEntryPoint implements EntryPoint {
         MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + GuiConstant.DOC_LIST_WIDTH);
         MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
         MyCatCookies.initCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
+        MyCatCookies.initCookie(CookiesNamespace.GUI_FAST, "" + GuiConstant.CHOOSE_GUI_FAST_DEFAULT);
+        MyCatCookies.initCookie(CookiesNamespace.REMOVE_FIRST, "" + GuiConstant.REMOVE_FIRST_DEFAULT);
     }
 
     public static void download(String fileDownloadURL, final Label msg) {
@@ -848,6 +850,10 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.TA_NEAR_AVG_TERM_CHAR = CONST.TA_NEAR_AVG_TERM_CHAR;
         GuiConstant.NEAR_DISTANCE = CONST.NEAR_DISTANCE;
         GuiConstant.entryToReplace = CONST.entryToReplace;
+        GuiConstant.SHOW_GUI_FAST = CONST.SHOW_GUI_FAST;
+        GuiConstant.CHOOSE_GUI_FAST_DEFAULT = CONST.CHOOSE_GUI_FAST_DEFAULT;
+        GuiConstant.SHOW_REMOVE_FIRST = CONST.SHOW_REMOVE_FIRST;
+        GuiConstant.REMOVE_FIRST_DEFAULT = CONST.REMOVE_FIRST_DEFAULT;
         /**
          * client interface parameters
          * **********************************************************************************
@@ -877,6 +883,8 @@ public class MainEntryPoint implements EntryPoint {
         GuiMessageConst.WIDGET_COLL_SET = CONST.WIDGET_COLL_SET;
         GuiMessageConst.WIDGET_COLL_CLOSE = CONST.WIDGET_COLL_CLOSE;
         GuiMessageConst.WIDGET_COLL_CLEAR = CONST.WIDGET_COLL_CLEAR;
+        GuiMessageConst.QD_CHECKBOX_FAST = CONST.QD_CHECKBOX_FAST;
+        GuiMessageConst.QD_CHECKBOX_REMOVE_FIRST = CONST.QD_CHECKBOX_REMOVE_FIRST;
         /**
          * **********************************MESSAGES****************************************
          */

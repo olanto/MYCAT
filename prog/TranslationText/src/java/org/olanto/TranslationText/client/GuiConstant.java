@@ -105,6 +105,11 @@ public class GuiConstant {
     public static String LOGO_URL;
     public static String TA_DL_SORTBY;
     public static String FEEDBACK_MAIL;
+    public static boolean SHOW_GUI_FAST;
+    public static boolean CHOOSE_GUI_FAST_DEFAULT;
+    public static boolean SHOW_REMOVE_FIRST;
+    public static boolean REMOVE_FIRST_DEFAULT;
+    
     public static HashMap<String, String> entryToReplace = new HashMap<String, String>();
 
     /**
@@ -139,6 +144,10 @@ public class GuiConstant {
                 + "\n    MAX_OCCU: " + MAX_OCCU
                 + "\n    QUOTE_DETECTOR: " + QUOTE_DETECTOR_LBL
                 + "\n    TEXT_ALIGNER: " + TEXT_ALIGNER_LBL
-                + "\n    TA_DL_SORTBY: " + TA_DL_SORTBY;
+                + "\n    TA_DL_SORTBY: " + TA_DL_SORTBY
+                + "\n    TA_DL_SORTBY: " + SHOW_REMOVE_FIRST
+                + "\n    TA_DL_SORTBY: " + REMOVE_FIRST_DEFAULT
+                + "\n    TA_DL_SORTBY: " + SHOW_GUI_FAST
+                + "\n    TA_DL_SORTBY: " + CHOOSE_GUI_FAST_DEFAULT;
     }
 }

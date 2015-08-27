@@ -41,4 +41,6 @@ public class CookiesNamespace {
     public static String DOC_LIST_WIDTH = "DlWidth";
     public static String DOC_LIST_HEIGHT = "DlHeight";
     public static String QD_DOC_LIST_HEIGHT = "QdDlHeight";
+    public static String GUI_FAST = "GuiFast";
+    public static String REMOVE_FIRST = "RemoveFirst";
 }

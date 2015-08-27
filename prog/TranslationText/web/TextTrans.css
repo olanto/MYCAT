@@ -21,6 +21,14 @@ h1 {
     color: #00ff00;
 }
 
+.gwt-CheckBox {
+    color: white;
+    padding: 2px;
+}
+.gwt-CheckBox-disabled {
+    color: #888;
+}
+
 .sendButton {
     display: block;
     font-size: 16pt;

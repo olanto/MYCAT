@@ -92,6 +92,8 @@ public class QuoteWidget extends Composite {
     private Button help = new Button(GuiMessageConst.WIDGET_BTN_HELP);
     private Button save = new Button(GuiMessageConst.WIDGET_BTN_QD_SAVE);
     private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
+    private CheckBox removeFirst = new CheckBox(GuiMessageConst.QD_CHECKBOX_REMOVE_FIRST);
+    private CheckBox fastCheckbox = new CheckBox(GuiMessageConst.QD_CHECKBOX_FAST);
     private String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
@@ -143,6 +145,13 @@ public class QuoteWidget extends Composite {
         headerPanel.add(minLength);
         headerPanel.add(prev);
         headerPanel.add(next);
+        if (GuiConstant.SHOW_REMOVE_FIRST) {
+            headerPanel.add(removeFirst);
+            headerPanel.add(new HTML("&nbsp;"));
+        }
+        if (GuiConstant.SHOW_GUI_FAST) {
+            headerPanel.add(fastCheckbox);
+        }
         headerPanel.add(refIndic);
         headerPanel.add(TextAligner);
         headerPanel.add(help);
@@ -261,6 +270,21 @@ public class QuoteWidget extends Composite {
                 MyCatCookies.updateCookie(CookiesNamespace.MyQuotelangT, langT.getItemText(langT.getSelectedIndex()));
             }
         });
+        // Hook up a handler to find out when it's clicked.
+        removeFirst.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                boolean checked = ((CheckBox) event.getSource()).getValue();
+                MyCatCookies.updateCookie(CookiesNamespace.REMOVE_FIRST, "" + checked);
+            }
+        });
+        fastCheckbox.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                boolean checked = ((CheckBox) event.getSource()).getValue();
+                MyCatCookies.updateCookie(CookiesNamespace.GUI_FAST, "" + checked);
+            }
+        });
         if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
             im.addClickHandler(new ClickHandler() {
                 @Override
@@ -294,7 +318,7 @@ public class QuoteWidget extends Composite {
         setbuttonstyle(resize, resize.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(save, save.getText().length() * CHAR_W, H_Unit);
         setbuttonstyle(prev, prev.getText().length() * CHAR_W, H_Unit);
-        setbuttonstyle(next, next.getText().length() * CHAR_W, H_Unit);
+        setbuttonstyle(next, (next.getText().length() + 1) * CHAR_W, H_Unit);
 
         GoSrch.setAutoWidth(true);
         TextAligner.setAutoWidth(true);

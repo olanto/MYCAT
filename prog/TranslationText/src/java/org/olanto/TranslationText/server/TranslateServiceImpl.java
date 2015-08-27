@@ -1305,6 +1305,11 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.PP_H_MAX = Integer.parseInt(prop.getProperty("PP_H_MAX"));
         CONST.TA_NEAR_AVG_TERM_CHAR = Integer.parseInt(prop.getProperty("TA_NEAR_AVG_TERM_CHAR", "6"));
         CONST.NEAR_DISTANCE = Integer.parseInt(prop.getProperty("NEAR_DISTANCE", "8"));
+        CONST.SHOW_GUI_FAST = Boolean.valueOf(prop.getProperty("SHOW_GUI_FAST", "true"));
+        CONST.CHOOSE_GUI_FAST_DEFAULT = Boolean.valueOf(prop.getProperty("CHOOSE_GUI_FAST_DEFAULT", "true"));
+        CONST.SHOW_REMOVE_FIRST = Boolean.valueOf(prop.getProperty("SHOW_REMOVE_FIRST", "true"));
+        CONST.REMOVE_FIRST_DEFAULT = Boolean.valueOf(prop.getProperty("REMOVE_FIRST_DEFAULT", "true"));
+
         for (Character c : CONST.TOKENIZE_LIST.toCharArray()) {
             charList.add(c);
         }
@@ -1356,6 +1361,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             CONST.WIDGET_COLL_SET = stringMan.get("widget.coll.set");
             CONST.WIDGET_COLL_CLOSE = stringMan.get("widget.coll.close");
             CONST.WIDGET_COLL_CLEAR = stringMan.get("widget.coll.clear");
+            CONST.QD_CHECKBOX_FAST= stringMan.get("widget.ckbx.fast.qd");
+            CONST.QD_CHECKBOX_REMOVE_FIRST= stringMan.get("widget.ckbx.first.qd");
+            
             /**
              * **********************************************************************************
              */

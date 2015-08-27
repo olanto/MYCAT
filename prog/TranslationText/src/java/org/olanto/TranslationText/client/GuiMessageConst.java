@@ -55,6 +55,8 @@ public class GuiMessageConst {
     public static String WIDGET_COLL_SET;
     public static String WIDGET_COLL_CLOSE;
     public static String WIDGET_COLL_CLEAR;
+    public static String QD_CHECKBOX_FAST;
+    public static String QD_CHECKBOX_REMOVE_FIRST;
     /**
      * **********************************MESSAGES****************************************
      */
@@ -154,7 +156,8 @@ public class GuiMessageConst {
                 + "\n    WIDGET_BTN_QD_LN: " + WIDGET_LBL_QD_LN
                 + "\n    WIDGET_BTN_QD_SAVE: " + WIDGET_BTN_QD_SAVE
                 + "\n    WIDGET_BTN_TA_SAVE: " + WIDGET_BTN_TA_SAVE
-                + "\n    WIDGET_LIST_TA_SBY: " + WIDGET_LIST_TA_SBY
+                + "\n    QD_CHECKBOX_FAST: " + QD_CHECKBOX_FAST
+                + "\n    QD_CHECKBOX_REMOVE_FIRST: " + QD_CHECKBOX_REMOVE_FIRST
                 + "\n    MSG1: " + MSG_1
                 + "\n    MSG2: " + MSG_2
                 + "\n    MSG3: " + MSG_3

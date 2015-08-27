@@ -104,6 +104,10 @@ public class GwtProp implements IsSerializable {
     public String LOGO_URL;
     public String TA_DL_SORTBY;
     public String FEEDBACK_MAIL;
+    public boolean SHOW_GUI_FAST;
+    public boolean CHOOSE_GUI_FAST_DEFAULT;
+    public boolean SHOW_REMOVE_FIRST;
+    public boolean REMOVE_FIRST_DEFAULT;
     public HashMap<String, String> entryToReplace = new HashMap<String, String>();
     /**
      * client interface parameters
@@ -134,6 +138,8 @@ public class GwtProp implements IsSerializable {
     public String WIDGET_COLL_SET;
     public String WIDGET_COLL_CLOSE;
     public String WIDGET_COLL_CLEAR;
+    public String QD_CHECKBOX_FAST;
+    public String QD_CHECKBOX_REMOVE_FIRST;
     /**
      * **********************************MESSAGES****************************************
      */
