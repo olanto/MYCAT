@@ -32,6 +32,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.regex.Pattern;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
+import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.consistent.CheckConsistency;
 import static org.olanto.idxvli.IdxConstant.*;
 import org.olanto.idxvli.IdxInit;
@@ -286,7 +287,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     public QLResultNice browseNice(String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName) throws RemoteException {
         serverR.lock();
         try {
-            return id.browseNice(request.replace("/", "¦"), langS, start, size, collections, order, onlyOnFileName);
+            return id.browseNice(request.replace("/", IdxConstant.SEPARATOR), langS, start, size, collections, order, onlyOnFileName);
         } finally {
             serverR.unlock();
         }

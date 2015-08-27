@@ -28,6 +28,7 @@ import java.io.InputStreamReader;
 import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.olanto.idxvli.IdxConstant;
 import static org.olanto.util.Messages.*;
 
 /**
@@ -88,7 +89,7 @@ public class WildCharExpander {
         if (collections != null) {
             matchcoll = new String[collections.length];
             for (int i = 0; i < collections.length; i++) {
-                matchcoll[i] = "/" + collections[i].substring(11) + "¦";
+                matchcoll[i] = "/" + collections[i].substring(11) + IdxConstant.SEPARATOR;
             }
         }
 //        System.out.println("---------- target size :" + target.length());

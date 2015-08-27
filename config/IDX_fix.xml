@@ -19,7 +19,6 @@
     <entry key="IDX_SAVE_POSITION">true</entry>
     <entry key="IDX_ZIP_CACHE">true</entry>
     <entry key="IDX_ZIP_CACHE_FASTLOAD">true</entry>
-    <entry key="PRODUCTION_MODE">true</entry>
 
 	<!--Number of independants disks (2^OBJ_PW2)-->     
     <entry key="OBJ_PW2">0</entry> 
@@ -119,6 +118,18 @@
 	<!-- Modified on April 30th, 2014 = -->
 	<entry key="REGEX_EXACT_BEFORE_TOKEN">([^\p{L}\p{N}]|^)</entry>
 	<entry key="REGEX_EXACT_AFTER_TOKEN">([^\p{L}\p{N}]|$)</entry>
-	<!--MAXIMIZE_ON: to expand the browser window = -->
+	<!-- File Renaming = -->
+	<!-- Modified on August 25th, 2015 = -->
+	<!-- renaming file name for idx false=disable (LINUX) / true=enable (MS OK but you need for original and save buttons access directly through a drive or a share) -->
+	<entry key="FILE_RENAME">false</entry>
+	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
+	<entry key="FILE_COLLECTION_CASE">NOCHANGE</entry>
+	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
+	<entry key="FILE_NAME_CASE">NOCHANGE</entry>
+	<!-- renaming file extension to LOWER, UPPER, NOCHANGE -->
+	<entry key="FILE_EXTENTION_CASE">NOCHANGE</entry>
+	<!-- production mode true=disable untested fonctionnalities, false=enable untested fonctionnalities -->
+   <entry key="PRODUCTION_MODE">true</entry>
+
 
 </properties>

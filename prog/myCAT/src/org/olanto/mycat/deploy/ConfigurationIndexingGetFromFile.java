@@ -23,7 +23,6 @@ package org.olanto.mycat.deploy;
 
 import org.olanto.idxvli.*;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -123,7 +122,11 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
      * processus.
      */
     public void InitConfiguration() {
-        CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
+        FILE_RENAME = Boolean.parseBoolean(prop.getProperty("FILE_RENAME", "false"));
+        FILE_COLLECTION_CASE = RenameOption.valueOf(prop.getProperty("FILE_COLLECTION_CASE", "NOCHANGE"));
+       FILE_NAME_CASE = RenameOption.valueOf(prop.getProperty("FILE_NAME_CASE", "NOCHANGE"));
+        FILE_EXTENTION_CASE = RenameOption.valueOf(prop.getProperty("FILE_EXTENTION_CASE", "NOCHANGE"));
+       CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
         DOC_ENCODING = prop.getProperty("DOC_ENCODING", "UTF-8");
         IDX_MFLF_ENCODING = prop.getProperty("IDX_MFLF_ENCODING", "UTF-8");

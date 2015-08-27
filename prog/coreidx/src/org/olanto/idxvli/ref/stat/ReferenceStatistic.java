@@ -25,6 +25,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.regex.Pattern;
+import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.server.REFResultNice;
 import static org.olanto.idxvli.IdxConstant.MSG;
 
@@ -165,7 +166,7 @@ public class ReferenceStatistic {
             res.append("<td>" + txt[i] + "</td>\n");  //la ref
             res.append("<td>"); // bloc des références
             for (int j = 0; j < refs.length; j++) {
-                res.append(refs[j].replace("¦", "/") + "</br>\n");
+                res.append(refs[j].replace(IdxConstant.SEPARATOR, "/") + "</br>\n");
             }
             res.append("</td>"); // fin de bloc des références
             res.append("</tr>\n");

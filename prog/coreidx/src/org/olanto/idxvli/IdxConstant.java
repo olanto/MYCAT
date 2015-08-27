@@ -208,6 +208,26 @@ public class IdxConstant {
     public static String ROOT_CORPUS_LANG = "XX YY";
     /*INDEX OPTION *************************************************************************************/
     /**
+     * modification du nom du fichier
+     */
+    public static String SEPARATOR = "¦";
+   /**
+     * modification du nom du fichier
+     */
+    public static boolean FILE_RENAME = false;
+    /**
+     * modification du nom des collections
+     */
+    public static RenameOption FILE_COLLECTION_CASE = RenameOption.NOCHANGE;
+   /**
+     * modification du nom du fichier
+     */
+    public static RenameOption FILE_NAME_CASE = RenameOption.NOCHANGE;
+     /**
+     * modification du nom du fichier
+     */
+    public static RenameOption FILE_EXTENTION_CASE = RenameOption.NOCHANGE;
+    /**
      * sauvegarde des positions
      */
     public static boolean IDX_SAVE_POSITION = true;
@@ -637,6 +657,12 @@ public class IdxConstant {
                 + "\n         DOC_ENCODING: " + DOC_ENCODING
                 + "\n         DOC_SIZE_NAME: " + DOC_SIZE_NAME
                 + "\n         DOC_MAXOCCLENGTH: " + DOC_MAXOCCLENGTH
+                + "\n         SEPARATOR: " + SEPARATOR
+                + "\n       RENAMING"
+                + "\n         FILE_RENAME: " + FILE_RENAME
+                + "\n         FILE_COLLECTION_CASE: " + FILE_COLLECTION_CASE
+                + "\n         FILE_NAME_CASE: " + FILE_NAME_CASE
+                + "\n         FILE_EXTENTION_CASE: " + FILE_EXTENTION_CASE
                 + "\n       PROPERTIES"
                 + "\n         DOC_PROPERTIES_MAXBIT: " + DOC_PROPERTIES_MAXBIT
                 + "\n         DOC_PROPERTIES_MAX_LENGHT: " + DOC_PROPERTIES_MAX_LENGHT

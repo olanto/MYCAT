@@ -22,6 +22,7 @@ package org.olanto.idxvli.server;
 
 import org.olanto.idxvli.doc.PropertiesList;
 import java.rmi.*;
+import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.util.SetOfBits;
 import static org.olanto.util.Messages.*;
 
@@ -52,12 +53,12 @@ public class SetCollectionProperties {
             for (int i = 0; i < lastdoc; i++) {
                 String name = is.getDocName(i);
                 int from = name.lastIndexOf("/");
-                int to = name.lastIndexOf("¦");   // vérifier le marqueur !!!!!!!!!!!!!!!!!!!!!!!
+                int to = name.lastIndexOf(IdxConstant.SEPARATOR);   // vérifier le marqueur !!!!!!!!!!!!!!!!!!!!!!!
                 if (from != -1 && to != -1) {
                     String collection = "COLLECTION." + name.substring(from + 1, to + 1);
                     int start = 0;
                     for (int j = 0; j < MAX_LEVEL; j++) {
-                        int next = collection.indexOf("¦", start);
+                        int next = collection.indexOf(IdxConstant.SEPARATOR, start);
                         if (next != -1) {
                             //msg(collection.substring(0,next) + " is the collection for: " + name);
                             start = next + 1;

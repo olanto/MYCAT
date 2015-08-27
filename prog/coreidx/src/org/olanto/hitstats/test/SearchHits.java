@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.ref.UtilsFiles;
 import org.olanto.idxvli.server.IndexService_MyCat;
 
@@ -109,7 +110,7 @@ public class SearchHits {
                     if (((lastp - startp) >= (queryLn / 2)) && ((lastp - startp) <= refLength)) {
 //                   System.out.println("Found a potential gap, checking if it contains all words");
                         if (getAllWords(content.substring(startp, lastp + 1), query)) {
-                            res = startp + "¦" + (lastp - startp);
+                            res = startp + IdxConstant.SEPARATOR + (lastp - startp);
                             Pos.add(res);
                         }
                     }
@@ -149,7 +150,7 @@ public class SearchHits {
             posit = new int[Pos.size()][2];
             for (int s = 0; s < Pos.size(); s++) {
                 curr = Pos.get(s);
-                i = curr.indexOf("¦");
+                i = curr.indexOf(IdxConstant.SEPARATOR);
                 k = curr.length();
                 l = Integer.parseInt(curr.substring(0, i));
                 l = (l > 0) ? l + 1 : l;

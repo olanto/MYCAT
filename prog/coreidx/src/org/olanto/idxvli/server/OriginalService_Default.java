@@ -23,6 +23,7 @@ package org.olanto.idxvli.server;
 
 import java.io.File;
 import java.rmi.RemoteException;
+import org.olanto.idxvli.IdxConstant;
 import static org.olanto.idxvli.IdxConstant.*;
 import org.olanto.idxvli.ref.UtilsFiles;
 import org.olanto.senseos.SenseOS;
@@ -40,7 +41,7 @@ public class OriginalService_Default implements OriginalService {
     @Override
     public String getURL(String d) throws RemoteException {
         String lang = d.substring(0, 2);
-        String path = d.substring(3, d.length() - 4).replace("¦", "/");  //
+        String path = d.substring(3, d.length() - 4).replace(IdxConstant.SEPARATOR, "/");  //
         int posExt = path.lastIndexOf(".");
         String original = path.substring(0, posExt) + "_" + lang + path.substring(posExt);
         if (ORIGINAL_FULL_URL.equals("HTTP")) {
@@ -57,7 +58,7 @@ public class OriginalService_Default implements OriginalService {
     @Override
     public String getPath(String d) throws RemoteException {
         String lang = d.substring(0, 2);
-        String path = d.substring(3, d.length() - 4).replace("¦", "/");  //
+        String path = d.substring(3, d.length() - 4).replace(IdxConstant.SEPARATOR, "/");  //
         int posExt = path.lastIndexOf(".");
         String original = path.substring(0, posExt) + "_" + lang + path.substring(posExt);
 
@@ -68,7 +69,7 @@ public class OriginalService_Default implements OriginalService {
     @Override
      public String getSaveZipName(String d) throws RemoteException {
          String lang = d.substring(0, 2);
-        String path = d.substring(3, d.length() - 4).replace("¦", "_");  //
+        String path = d.substring(3, d.length() - 4).replace(IdxConstant.SEPARATOR, "_");  //
         int posExt = path.lastIndexOf(".");
         String original = path.substring(0, posExt) + "_" + lang + path.substring(posExt);
 

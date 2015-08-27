@@ -261,9 +261,9 @@ class IdxIndexer {
      */
     private final void onePassIndexdoc(File file, String f, long fdate) {
         try {
-            //msg("idx:"+f+" id:"+glue.lastRecordedDoc);
-                     
-            String content=BytesAndFiles.file2String(f,DOC_ENCODING);
+            msg("debugidx:" + f + " id:" + glue.lastRecordedDoc);
+
+            String content = BytesAndFiles.file2String(f, DOC_ENCODING);
             DoParse a = new DoParse(content, glue.dontIndexThis);
             if (IDX_WITHDOCBAG && DO_DOCBAG) {
                 DocBag.reset();
@@ -284,14 +284,21 @@ class IdxIndexer {
             }
             // enregistre le document
             if (DO_DOCRECORD) {
-                int currentDoc = glue.docstable.put(f);// enregistre le nom du document
-                //msg("current ID:"+currentDoc);
+                if (FILE_RENAME) {
+                    String newName = renameFileForIdx(f);
+                    int currentDoc = glue.docstable.put(newName);// enregistre le nom du document
+                    msg("Rename file for idx:" + f + " --> " + newName);
+                } else {
+                    int currentDoc = glue.docstable.put(f);// enregistre le nom du document
+                    //msg("current ID:"+currentDoc);
+                }
+
 
                 glue.docstable.setDate(glue.lastRecordedDoc, fdate); // enregistre la date du document
 
                 glue.docstable.setSize(glue.lastRecordedDoc, a.nbToken); // enregistre la taille du document
                 if (IDX_ZIP_CACHE) {
-                    glue.zipCache.set(glue.lastRecordedDoc,content); // enregistre le document dans le zipcache
+                    glue.zipCache.set(glue.lastRecordedDoc, content); // enregistre le document dans le zipcache
                 }
                 glue.lastRecordedDoc = glue.docstable.getCount();
             } else {
@@ -306,6 +313,75 @@ class IdxIndexer {
         } catch (Exception e) {
             error("onePassIndexdoc", e);
         }
+    }
+
+    private final String renameFileForIdx(String f) {
+        //msg("renameFileForIdx for:" + f);
+        String res = f;
+        String root = "";
+        String coll = "";
+        String name = "";
+        String lang = "";
+        String extention = "";
+        int posroot = f.lastIndexOf("/") + 1;
+        if (posroot == 0) {
+            msg("no root for: " + f);
+        } else {
+            root = f.substring(0, posroot);
+        }
+        int posExtension = f.lastIndexOf(".", f.length() - 5);
+        int poscoll = f.lastIndexOf(SEPARATOR) + 1;
+        if (poscoll == 0) {
+            msg("no root for: " + f);
+            poscoll = posroot;
+        } else {
+            coll = f.substring(posroot, poscoll);
+        }
+        if (posExtension == -1) {
+            msg("no extention for: " + f);
+            posExtension = f.length() - 1;
+        } else {
+            extention = f.substring(posExtension);
+        }
+        name = f.substring(poscoll, posExtension);
+        if (root.endsWith("/XX/")) {
+            lang = getNExt(name);
+            name = name.substring(0, name.length() - lang.length());
+        }
+        if (!f.equals(root + coll + name + lang + extention)) {
+            msg("ERROR in renameFileForIdx for:" + f);
+            msg("root=" + root + ", coll=" + coll + ", name=" + name + ", lang=" + lang + ", extention=" + extention);
+        }
+        coll=stringCaser(coll,FILE_COLLECTION_CASE);
+        name=stringCaser(name,FILE_NAME_CASE);
+        extention=stringCaser(extention,FILE_EXTENTION_CASE);    
+        return root + coll + name + lang + extention;
+    }
+
+    public String stringCaser(String s, RenameOption opt) {
+        switch (opt) {
+            case LOWER:
+                return s.toLowerCase();
+            case UPPER:
+                return s.toUpperCase();
+            case NOCHANGE:
+                return s;
+            default:
+                return s;
+        }
+    }
+
+    public String getNExt(String name) {
+        String res = "";
+        int lastpos = name.length();
+        int newpos = name.lastIndexOf('_');
+        //msg (""+(lastpos-newpos));
+        while (newpos != -1 && (lastpos - newpos) == 3) { // yes a possible new extention (not verify with language list!)
+            res = name.substring(newpos, newpos + 3) + res;
+            lastpos = newpos;
+            newpos = name.lastIndexOf('_', lastpos - 1);
+        }
+        return res;
     }
 
     private final void stattimer1() {

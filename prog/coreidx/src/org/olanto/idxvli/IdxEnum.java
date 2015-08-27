@@ -140,6 +140,16 @@ public class IdxEnum {
         /** pas utilis�*/
         UNUSED
     };
+    /** rename option  */
+    public static enum RenameOption {
+
+        /** convert to lowercase*/
+        LOWER,
+        /** convert to uppercase*/
+        UPPER,
+        /** no change*/
+        NOCHANGE
+    };
 
     /** type de stockage de l'index */
     public static enum PassMode {
