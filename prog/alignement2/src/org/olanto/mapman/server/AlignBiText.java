@@ -25,6 +25,7 @@ import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.olanto.idxvli.server.IndexService_MyCat;
+import org.olanto.mapman.MapArchiveConstant;
 import org.olanto.util.Timer;
 
 /**
@@ -43,12 +44,27 @@ public class AlignBiText {
     static MapService ms;
     static String rootTxt;
     static boolean skipLine;
+    static String gloss_name;
 
     public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
-
+if (is == null) {
+            is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
+        }
+        if (ms == null) {
+            ms = GetMapService.getServiceMAP("rmi://localhost/MAP");
+        }
         // initialisisation en cas d'erreur
-//        System.out.println("file source:" + fileso+" ta:"+langta+" query:"+query);
-        if (fileso.contains("/Glossaries") && fileso.contains("_" + langso)) {
+        System.out.println("file source:" + fileso+" ta:"+langta+" query:"+query);
+       if (gloss_name == null){
+       try {
+            gloss_name = ms.getGLOSS_NAME();
+        } catch (RemoteException ex) {
+            Logger.getLogger(AlignBiText.class.getName()).log(Level.SEVERE, null, ex);
+            gloss_name = "???Glossaries???";
+        }
+       }
+            System.out.println("gloss_name:" + gloss_name);
+      if (fileso.toLowerCase().contains("/"+gloss_name.toLowerCase()) && fileso.contains("_" + langso)) {
             fileso = fileso.replace(langso + "/", "XX/");
             System.out.println("Glossaries -> new file source:" + fileso);
         }
@@ -60,12 +76,7 @@ public class AlignBiText {
         target.positions = getLineStat(target.lines, w, h, target.content.length());
 
 
-        if (is == null) {
-            is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-        }
-        if (ms == null) {
-            ms = GetMapService.getServiceMAP("rmi://localhost/MAP");
-        }
+        
         if (rootTxt == null) {
             try {
                 rootTxt = is.getROOT_CORPUS_TXT();

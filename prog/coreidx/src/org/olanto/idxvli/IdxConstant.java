@@ -227,6 +227,7 @@ public class IdxConstant {
      * modification du nom du fichier
      */
     public static RenameOption FILE_EXTENTION_CASE = RenameOption.NOCHANGE;
+        public static String GLOSS_NAME = "Glossaries";
     /**
      * sauvegarde des positions
      */
@@ -658,6 +659,7 @@ public class IdxConstant {
                 + "\n         DOC_SIZE_NAME: " + DOC_SIZE_NAME
                 + "\n         DOC_MAXOCCLENGTH: " + DOC_MAXOCCLENGTH
                 + "\n         SEPARATOR: " + SEPARATOR
+                + "\n       GLOSS_NAME: " + GLOSS_NAME
                 + "\n       RENAMING"
                 + "\n         FILE_RENAME: " + FILE_RENAME
                 + "\n         FILE_COLLECTION_CASE: " + FILE_COLLECTION_CASE

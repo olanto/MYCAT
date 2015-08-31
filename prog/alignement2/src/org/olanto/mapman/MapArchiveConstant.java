@@ -224,7 +224,7 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      * définition de la notion de terme
      */
     public static ParseTokenDefinition WORD_DEFINITION = new TokenNative();
-
+    public static String GLOSS_NAME = "Glossaries";
     /**
      * **********************************************************************************
      */
@@ -240,6 +240,7 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
                 + "\n    WORD_MINLENGTH: " + WORD_MINLENGTH
                 + "\n    WORD_MAXLENGTH: " + WORD_MAXLENGTH
                 + "\n    WORD_DEFINITION: " + WORD_DEFINITION.toString()
+                + "\n    GLOSS_NAME: " + GLOSS_NAME
                 + "\nSTRATEGIES"
                 + "\n    MAP_MAX: " + DOC_MAX
                 + "\n    OBJSTO_IMPLEMENTATION: " + OBJ_IMPLEMENTATION

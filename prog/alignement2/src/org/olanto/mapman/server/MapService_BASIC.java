@@ -201,5 +201,8 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
         
     }
 
-    
+       public String getGLOSS_NAME() throws RemoteException{
+         return  GLOSS_NAME;
+       }
+
 }

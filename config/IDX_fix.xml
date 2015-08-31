@@ -121,15 +121,16 @@
 	<!-- File Renaming = -->
 	<!-- Modified on August 25th, 2015 = -->
 	<!-- renaming file name for idx false=disable (LINUX) / true=enable (MS OK but you need for original and save buttons access directly through a drive or a share) -->
-	<entry key="FILE_RENAME">false</entry>
+	<entry key="FILE_RENAME">true</entry>
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
-	<entry key="FILE_COLLECTION_CASE">NOCHANGE</entry>
+	<entry key="FILE_COLLECTION_CASE">UPPER</entry>
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
 	<entry key="FILE_NAME_CASE">NOCHANGE</entry>
 	<!-- renaming file extension to LOWER, UPPER, NOCHANGE -->
 	<entry key="FILE_EXTENTION_CASE">NOCHANGE</entry>
 	<!-- production mode true=disable untested fonctionnalities, false=enable untested fonctionnalities -->
    <entry key="PRODUCTION_MODE">true</entry>
-
+<!--A Glossaries folderName. this entry must be the same in IDX_fix.xml, MAP_fix.xml and SEG_fix.xml-->
+   <entry key="GLOSS_NAME">Glossaries</entry>
 
 </properties>

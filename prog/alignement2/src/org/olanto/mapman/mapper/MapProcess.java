@@ -29,6 +29,7 @@ import org.olanto.zahir.align.BiSentence;
 import org.olanto.zahir.align.LexicalTranslation;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.olanto.mapman.MapArchiveConstant;
 import org.olanto.mapman.server.IntMap;
 import org.olanto.mapman.server.MapService;
 import org.olanto.senseos.SenseOS;
@@ -100,7 +101,7 @@ public class MapProcess implements Runnable {
         if (pivotLanguage.get(alignThis) && targetLanguage.get(alignThis)) {
             try {
                 String pivotName = is.getDocName(alignThis);
-                if (!pivotName.contains("/XX/Glossaries¦")) {  // not a glossary
+                if (!pivotName.toLowerCase().contains("/xx/"+MapArchiveConstant.GLOSS_NAME.toLowerCase()+"¦")) {  // not a glossary
                     if (!ms.existMap(alignThis, source, target)) {
                         //System.out.print("alignThis:"+alignThis);
                         String targetName = getNameOfDocForThisLang(pivotName, target);

@@ -20,6 +20,9 @@
     <entry key="DETLOG_FILE">C:/MYCAT/data/MAP_ARCH/detail.log</entry>
     <entry key="COMMON_ROOT">C:/MYCAT/data/MAP_ARCH</entry>
     <entry key="OBJ_ROOT_0">C:/MYCAT/data/MAP_ARCH/map0</entry>
-     <entry key="IDX_DONTINDEXTHIS">C:/MYCAT/config/dontindexthiswords.txt</entry>
+    <entry key="IDX_DONTINDEXTHIS">C:/MYCAT/config/dontindexthiswords.txt</entry>
+ 
+ <!--A Glossaries folderName. this entry must be the same in IDX_fix.xml, MAP_fix.xml and SEG_fix.xml-->
+<entry key="GLOSS_NAME">Glossaries</entry>
  
 </properties>

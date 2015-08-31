@@ -124,9 +124,11 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
     public void InitConfiguration() {
         FILE_RENAME = Boolean.parseBoolean(prop.getProperty("FILE_RENAME", "false"));
         FILE_COLLECTION_CASE = RenameOption.valueOf(prop.getProperty("FILE_COLLECTION_CASE", "NOCHANGE"));
-       FILE_NAME_CASE = RenameOption.valueOf(prop.getProperty("FILE_NAME_CASE", "NOCHANGE"));
+        FILE_NAME_CASE = RenameOption.valueOf(prop.getProperty("FILE_NAME_CASE", "NOCHANGE"));
         FILE_EXTENTION_CASE = RenameOption.valueOf(prop.getProperty("FILE_EXTENTION_CASE", "NOCHANGE"));
-       CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
+        GLOSS_NAME = prop.getProperty("GLOSS_NAME", "Glossaries");
+
+        CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
         DOC_ENCODING = prop.getProperty("DOC_ENCODING", "UTF-8");
         IDX_MFLF_ENCODING = prop.getProperty("IDX_MFLF_ENCODING", "UTF-8");
@@ -183,9 +185,9 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
             error_fatal("IllegalAccessException - try to load: " + PRE_PROCESSING_CODE);
         }
         REGEX_EXACT_BEFORE_TOKEN = prop.getProperty("REGEX_BEFORE_TOKEN", "([^\\p{L}\\p{N}]|^)");
-        
+
         REGEX_EXACT_AFTER_TOKEN = prop.getProperty("REGEX_AFTER_TOKEN", "([^\\p{L}\\p{N}]|$)");
-        
+
         PRE_PROCESSING_INTERVAL = Integer.parseInt(prop.getProperty("PRE_PROCESSING_INTERVAL", "3600"));
 
         WORD_USE_STEMMER = Boolean.parseBoolean(prop.getProperty("WORD_USE_STEMMER", "false"));

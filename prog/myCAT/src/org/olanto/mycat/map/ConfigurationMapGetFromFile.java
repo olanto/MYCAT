@@ -90,6 +90,8 @@ public class ConfigurationMapGetFromFile implements MapArchiveInit {
         SKIP_LINE = Boolean.parseBoolean(prop.getProperty("SKIP_LINE", "false"));
         
         GET_TXT_FROM_ZIP_CACHE= Boolean.parseBoolean(prop.getProperty("GET_TXT_FROM_ZIP_CACHE", "false"));
+        GLOSS_NAME = prop.getProperty("GLOSS_NAME", "Glossaries");
+
 
         Pattern ps = Pattern.compile("[\\s]");  // le blanc
 
