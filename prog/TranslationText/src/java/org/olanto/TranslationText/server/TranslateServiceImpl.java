@@ -45,6 +45,7 @@ import org.olanto.idxvli.server.QLResultNice;
 import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.mapman.server.AlignBiText;
 import org.olanto.senseos.SenseOS;
+import org.olanto.util.Timer;
 
 /**
  * implémentation des services du GUI
@@ -524,7 +525,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension) {
+    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
         String ref;
         GwtRef gref = null;
         String[] co;
@@ -544,7 +545,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 co = getCollections(collections);
 
 //            System.out.println("calling references service: " + is.getInformation());
-                ref = is.getHtmlReferences(up, minCons, langS, LangT, co, false, true);
+                ref = is.getHtmlReferences(up, minCons, langS, LangT, co, removeFirst, fast);
 //                t1.stop();
                 if (ref != null) {
 //                    System.out.println(ref);

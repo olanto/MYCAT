@@ -59,7 +59,7 @@ public interface TranslateServiceAsync {
 
     public void getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
-    public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, AsyncCallback<GwtRef> asyncCallback);
+    public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast, AsyncCallback<GwtRef> asyncCallback);
 
     public void getCorpusLanguages(AsyncCallback<String[]> asyncCallback);
 

@@ -28,6 +28,7 @@ import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.HtmlContainer;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.google.gwt.core.client.Scheduler;
+import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -149,8 +150,19 @@ public class QuoteWidget extends Composite {
             headerPanel.add(removeFirst);
             headerPanel.add(new HTML("&nbsp;"));
         }
+        if (GuiConstant.REMOVE_FIRST_DEFAULT) {
+            removeFirst.setValue(true);
+        } else {
+            removeFirst.setValue(false);
+        }
         if (GuiConstant.SHOW_GUI_FAST) {
             headerPanel.add(fastCheckbox);
+            headerPanel.add(new HTML("&nbsp;"));
+        }
+        if (GuiConstant.CHOOSE_GUI_FAST_DEFAULT) {
+            fastCheckbox.setValue(true);
+        } else {
+            fastCheckbox.setValue(false);
         }
         headerPanel.add(refIndic);
         headerPanel.add(TextAligner);
@@ -227,6 +239,7 @@ public class QuoteWidget extends Composite {
         refArea.setStyleName("TextBlock");
         fileUpload.addOnStartUploadHandler(onStartUploaderHandler);
         fileUpload.addOnFinishUploadHandler(onFinishUploaderHandler);
+        fileUpload.setAutoSubmit(true);
         help.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
@@ -243,7 +256,6 @@ public class QuoteWidget extends Composite {
         });
         staticDecorator.setStyleName("doclist");
         staticDecorator.setWidget(staticTreeWrapper);
-        fileUpload.setAutoSubmit(true);
         setMessage("info", "");
         for (int i = GuiConstant.MIN_OCCU; i < GuiConstant.MAX_OCCU; i++) {
             minLength.addItem("" + i);
@@ -268,21 +280,6 @@ public class QuoteWidget extends Composite {
             public void onChange(ChangeEvent event) {
                 GoSrch.enable();
                 MyCatCookies.updateCookie(CookiesNamespace.MyQuotelangT, langT.getItemText(langT.getSelectedIndex()));
-            }
-        });
-        // Hook up a handler to find out when it's clicked.
-        removeFirst.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                boolean checked = ((CheckBox) event.getSource()).getValue();
-                MyCatCookies.updateCookie(CookiesNamespace.REMOVE_FIRST, "" + checked);
-            }
-        });
-        fastCheckbox.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                boolean checked = ((CheckBox) event.getSource()).getValue();
-                MyCatCookies.updateCookie(CookiesNamespace.GUI_FAST, "" + checked);
             }
         });
         if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
@@ -473,6 +470,10 @@ public class QuoteWidget extends Composite {
         save.removeAllListeners();
     }
 
+    public void triggerUpload(String fileName) {
+        //trigger the file upload automatically
+    }
+
     public void drawReferences(final ArrayList<String> collections) {
         if (canGo) {
             String lgs = langS.getValue(langS.getSelectedIndex());
@@ -483,7 +484,7 @@ public class QuoteWidget extends Composite {
                 GoSrch.enable();
             } else {
                 setMessage("info", GuiMessageConst.MSG_61 + fileName);
-                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, new AsyncCallback<GwtRef>() {
+                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
                     @Override
                     public void onFailure(Throwable caught) {
                         setMessage("error", GuiMessageConst.MSG_45);

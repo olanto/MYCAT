@@ -76,6 +76,7 @@ public class MainEntryPoint implements EntryPoint {
     public static String beforeWildTerm;
     public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
+    private static boolean isExternalForQD = false;
 
     /**
      * The entry point method, called automatically by loading a module that
@@ -98,49 +99,66 @@ public class MainEntryPoint implements EntryPoint {
             final String query = Window.Location.getParameter("query");
             final String lS = Window.Location.getParameter("LSrc");
             final String lT = Window.Location.getParameter("LTgt");
+            final String file = Window.Location.getParameter("file");
+            if (!file.equalsIgnoreCase("undefined")) {
+                isExternalForQD = true;
+                setMyQuoteWidgetFomExternalCall(file);
+            } else {
+                rpcM.InitPropertiesFromFile("en", new AsyncCallback<GwtProp>() {
+                    @Override
+                    public void onFailure(Throwable caught) {
+                        Window.alert("Couldn't get properties List, problem loading the properties files. Check if all the services are started." + caught.getMessage());
+                    }
 
-            rpcM.InitPropertiesFromFile("en", new AsyncCallback<GwtProp>() {
-                @Override
-                public void onFailure(Throwable caught) {
-                    Window.alert("Couldn't get properties List, problem loading the properties files. Check if all the services are started." + caught.getMessage());
-                }
-
-                @Override
-                public void onSuccess(GwtProp result) {
-                    InitProperties(result);
+                    @Override
+                    public void onSuccess(GwtProp result) {
+                        InitProperties(result);
 
 //                    Window.alert(GuiConstant.show());
 //                    Window.alert(GuiMessageConst.show());
-                    if (GuiConstant.MAXIMIZE_ON) {
-                        Window.moveTo(0, 0);
-                        Window.resizeTo(getScreenWidth(), getScreenHeight());
-                        maximize();
-                    }
-                    initCookies();
-                    if (MyCatCookies.areInterfaceMeasuresSaved() && GuiConstant.AUTO_ON) {
-                        IMeasures.setMeasuresfromCookies();
-                    } else {
-                        IMeasures.setDefaultMeasures();
-                    }
-
-                    final FormCallWidget FC = new FormCallWidget(source, query, lS, lT);
-                    RootPanel.get("call").add(FC);
-                    FC.pWidget.setWidth("100%");
-                    rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
-                        @Override
-                        public void onFailure(Throwable caught) {
-                            Window.alert("Warning: Could not get the list of stopwords. If the problem persists then restart the servers.");
+                        if (GuiConstant.MAXIMIZE_ON) {
+                            Window.moveTo(0, 0);
+                            Window.resizeTo(getScreenWidth(), getScreenHeight());
+                            maximize();
                         }
-
-                        @Override
-                        public void onSuccess(ArrayList<String> result) {
-                            FC.draWidget(result);
+                        initCookies();
+                        if (MyCatCookies.areInterfaceMeasuresSaved() && GuiConstant.AUTO_ON) {
+                            IMeasures.setMeasuresfromCookies();
+                        } else {
+                            IMeasures.setDefaultMeasures();
                         }
-                    });
-                }
-            });
-
+                        setFormWidgetFromCall(source, query, lS, lT);
+                    }
+                });
+            }
         }
+    }
+
+    private void setFormWidgetFromCall(String source, String query, String lS, String lT) {
+        final FormCallWidget FC = new FormCallWidget(source, query, lS, lT);
+        RootPanel.get("call").add(FC);
+        FC.pWidget.setWidth("100%");
+        rpcM.getStopWords(new AsyncCallback<ArrayList<String>>() {
+            @Override
+            public void onFailure(Throwable caught) {
+                Window.alert("Warning: Could not get the list of stopwords. If the problem persists then restart the servers.");
+            }
+
+            @Override
+            public void onSuccess(ArrayList<String> result) {
+                FC.draWidget(result);
+            }
+        });
+    }
+
+    public void setMyQuoteWidgetFomExternalCall(String fileName) {
+        RootPanel.get("content").add(mainWidget);
+        mainWidget.setWidth("100%");
+        mainWidget.setStyleName("mainPage");
+        mainWidget.setHorizontalAlignment(VerticalPanel.ALIGN_CENTER);
+        getCollections();
+        getPropertiesMyCat();
+        quoteDetectorWidget.triggerUpload(fileName);
     }
 
     private void getStopWdMyCat() {
@@ -201,7 +219,11 @@ public class MainEntryPoint implements EntryPoint {
             @Override
             public void onSuccess(String[] result) {
                 languages = result;
-                setMyCatWidget();
+                if (isExternalForQD) {
+                    setMyQuoteWidget(languages);
+                } else {
+                    setMyCatWidget();
+                }
             }
         });
     }
@@ -732,7 +754,6 @@ public class MainEntryPoint implements EntryPoint {
     }
 
     public void getcontentlistMyQuote() {
-
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
@@ -762,8 +783,6 @@ public class MainEntryPoint implements EntryPoint {
         MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_WIDTH, "" + GuiConstant.DOC_LIST_WIDTH);
         MyCatCookies.initCookie(CookiesNamespace.DOC_LIST_HEIGHT, "" + GuiConstant.DOC_LIST_HEIGHT);
         MyCatCookies.initCookie(CookiesNamespace.QD_DOC_LIST_HEIGHT, "" + GuiConstant.QD_DOC_LIST_HEIGHT);
-        MyCatCookies.initCookie(CookiesNamespace.GUI_FAST, "" + GuiConstant.CHOOSE_GUI_FAST_DEFAULT);
-        MyCatCookies.initCookie(CookiesNamespace.REMOVE_FIRST, "" + GuiConstant.REMOVE_FIRST_DEFAULT);
     }
 
     public static void download(String fileDownloadURL, final Label msg) {
