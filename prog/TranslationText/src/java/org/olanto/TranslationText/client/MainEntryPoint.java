@@ -53,7 +53,6 @@ public class MainEntryPoint implements EntryPoint {
     // where we can put the query of the TextAligner
     private ResearchWidget textAlignerWidget;
     private QuoteWidget quoteDetectorWidget;
-    private QuoteWidgetCall quoteDetectorWidgetCall;
     private String fileName = "";
     private BitextWidget tS;
     private TranslateServiceAsync rpcM;
@@ -222,7 +221,8 @@ public class MainEntryPoint implements EntryPoint {
             public void onSuccess(String[] result) {
                 languages = result;
                 if (isExternalForQD) {
-                    setMyQuoteWidgetCall(languages);
+                    setMyQuoteWidget(languages);
+                    getcontentlistMyQuoteCall();
                 } else {
                     setMyCatWidget();
                 }
@@ -246,24 +246,6 @@ public class MainEntryPoint implements EntryPoint {
         }
         quoteDetectorWidget.langS.setSelectedIndex(s);
         quoteDetectorWidget.langT.setSelectedIndex(t);
-    }
-
-    private void setLanguagesQDCall() {
-        int s = 0, t = 0;
-        quoteDetectorWidgetCall.langS.clear();
-        quoteDetectorWidgetCall.langT.clear();
-        for (int i = 0; i < languages.length; i++) {
-            quoteDetectorWidgetCall.langS.addItem(languages[i]);
-            quoteDetectorWidgetCall.langT.addItem(languages[i]);
-            if (languages[i].equalsIgnoreCase(Cookies.getCookie(CookiesNamespace.MyQuotelangS))) {
-                s = i;
-            }
-            if (languages[i].equalsIgnoreCase(Cookies.getCookie(CookiesNamespace.MyQuotelangT))) {
-                t = i;
-            }
-        }
-        quoteDetectorWidgetCall.langS.setSelectedIndex(s);
-        quoteDetectorWidgetCall.langT.setSelectedIndex(t);
     }
 
     private void setLanguagesTA() {
@@ -689,6 +671,9 @@ public class MainEntryPoint implements EntryPoint {
         Document.get().setTitle(GuiConstant.QUOTE_DETECTOR_LBL);
         fixGwtNav();
         quoteDetectorWidget = new QuoteWidget();
+        if (isExternalForQD) {
+            quoteDetectorWidget.fileName = fileName;
+        }
         mainWidget.clear();
         mainWidget.add(quoteDetectorWidget);
         setLanguagesQD();
@@ -772,95 +757,6 @@ public class MainEntryPoint implements EntryPoint {
         });
     }
 
-    public void setMyQuoteWidgetCall(final String[] languages) {
-        initCookies();
-        Document.get().setTitle(GuiConstant.QUOTE_DETECTOR_LBL);
-        fixGwtNav();
-        quoteDetectorWidgetCall = new QuoteWidgetCall();
-        mainWidget.clear();
-        mainWidget.add(quoteDetectorWidgetCall);
-        setLanguagesQDCall();
-        quoteDetectorWidgetCall.draWidget();
-        quoteDetectorWidgetCall.coll.removeAllListeners();
-        quoteDetectorWidgetCall.coll.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-
-                collectionWidgetQD.collectionTreeGrid.setHeight(collPopupWindowQD.getHeight() - 2 * H_Unit - 10);
-                collectionWidgetQD.collectionTreeGrid.setWidth(collPopupWindowQD.getWidth() - 25);
-                collPopupWindowQD.addItem(collectionWidgetQD.collectionTreeGrid);
-                collPopupWindowQD.show();
-                collectionWidgetQD.setCurrentSelection();
-            }
-        });
-
-        History.addValueChangeHandler(new ValueChangeHandler<String>() {
-            @Override
-            public void onValueChange(ValueChangeEvent<String> event) {
-//                Window.alert("History item :" + event.getValue());
-                quoteDetectorWidgetCall.getRefHitContent(Integer.parseInt(event.getValue()));
-            }
-        });
-
-        setColl1.removeAllListeners();
-        setColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-                collectionWidgetQD.OrderSelection();
-                collectionWidgetQD.setSelection();
-                if (!collectionWidgetQD.Selection.isEmpty()) {
-                    quoteDetectorWidgetCall.coll.setText(GuiMessageConst.WIDGET_BTN_COLL_ON);
-                    setbuttonstyle(quoteDetectorWidgetCall.coll);
-                    collPopupWindowQD.hide();
-                } else {
-                    quoteDetectorWidgetCall.coll.setText(GuiMessageConst.WIDGET_BTN_COLL_OFF);
-                    quoteDetectorWidgetCall.coll.setWidth(GuiMessageConst.WIDGET_BTN_COLL_OFF.length() * GuiConstant.CHARACTER_WIDTH);
-                    Window.alert(GuiMessageConst.MSG_28);
-                }
-            }
-        });
-
-        clearColl1.removeAllListeners();
-        clearColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-                collectionWidgetQD.clearSelection();
-                quoteDetectorWidgetCall.coll.setText(GuiMessageConst.WIDGET_BTN_COLL_OFF);
-                quoteDetectorWidgetCall.coll.setWidth(GuiMessageConst.WIDGET_BTN_COLL_OFF.length() * GuiConstant.CHARACTER_WIDTH);
-                collectionWidgetQD.Selection.clear();
-                collectionWidgetQD.selectedRec.clear();
-                collectionWidgetQD.selected.clear();
-                collectionWidgetQD.collectionTreeGrid.deselectAllRecords();
-            }
-        });
-
-        closeColl1.removeAllListeners();
-        closeColl1.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-                collPopupWindowQD.hide();
-            }
-        });
-
-        quoteDetectorWidgetCall.GoSrch.removeAllListeners();
-        quoteDetectorWidgetCall.GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-                quoteDetectorWidgetCall.GoSrch.disable();
-                getcontentlistMyQuoteCall();
-            }
-        });
-
-        quoteDetectorWidgetCall.TextAligner.removeAllListeners();
-        quoteDetectorWidgetCall.TextAligner.addListener(Events.OnClick, new Listener<BaseEvent>() {
-            @Override
-            public void handleEvent(BaseEvent be) {
-                setMyCatWidget();
-            }
-        });
-        quoteDetectorWidgetCall.setFileName(fileName);
-    }
-
     public void getcontentlistMyQuote() {
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
@@ -868,9 +764,9 @@ public class MainEntryPoint implements EntryPoint {
     }
 
     public void getcontentlistMyQuoteCall() {
-        quoteDetectorWidgetCall.refArea.setHtml("");
-        quoteDetectorWidgetCall.refIndic.setText("/");
-        quoteDetectorWidgetCall.drawReferences(collectionWidgetQD.Selection);
+        quoteDetectorWidget.refArea.setHtml("");
+        quoteDetectorWidget.refIndic.setText("/");
+        quoteDetectorWidget.drawReferencesCall(collectionWidgetQD.Selection);
     }
 
     public void resizeAll() {

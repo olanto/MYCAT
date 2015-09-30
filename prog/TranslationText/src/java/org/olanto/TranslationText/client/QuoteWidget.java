@@ -28,7 +28,6 @@ import com.extjs.gxt.ui.client.widget.ContentPanel;
 import com.extjs.gxt.ui.client.widget.HtmlContainer;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -95,7 +94,7 @@ public class QuoteWidget extends Composite {
     private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
     private CheckBox removeFirst = new CheckBox(GuiMessageConst.QD_CHECKBOX_REMOVE_FIRST);
     private CheckBox fastCheckbox = new CheckBox(GuiMessageConst.QD_CHECKBOX_FAST);
-    private String fileName = null;
+    public String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
     private ScrollPanel htmlWrapper = new ScrollPanel();
@@ -527,6 +526,59 @@ public class QuoteWidget extends Composite {
             }
         } else {
             setMessage("error", GuiMessageConst.MSG_48);
+        }
+    }
+
+    public void drawReferencesCall(final ArrayList<String> collections) {
+        GoSrch.disable();
+        String lgs = langS.getValue(langS.getSelectedIndex());
+        String lgt = langT.getValue(langT.getSelectedIndex());
+        int consMin = Integer.parseInt(minLength.getValue(minLength.getSelectedIndex()));
+        if (fileName == null) {
+            setMessage("error", GuiMessageConst.MSG_44);
+            GoSrch.enable();
+        } else {
+            setMessage("info", GuiMessageConst.MSG_61 + fileName);
+            rpcRef.getHtmlRef(fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_45);
+                    GoSrch.enable();
+                }
+
+                @Override
+                public void onSuccess(GwtRef result) {
+                    if (result != null) {
+                        clearHitHandlers();
+                        refDoc = result;
+                        setMessage("info", GuiMessageConst.MSG_46);
+                        refIndic.setText(refIdx + " / " + refDoc.nbref);
+                        refArea.setHtml(refDoc.htmlref);
+                        save.addListener(Events.OnClick, new Listener<BaseEvent>() {
+                            @Override
+                            public void handleEvent(BaseEvent be) {
+                                MyCatDownload.downloadFileFromServer(getSavedFileName() + GuiConstant.QD_FILE_EXT, refDoc.htmlref, msg);
+                                setMessage("info", GuiMessageConst.MSG_13 + fileName + GuiMessageConst.MSG_14 + getSavedFileName() + GuiConstant.QD_FILE_EXT);
+                            }
+                        });
+                        staticTreeWrapper.clear();
+                        docList = Utility.getDocumentlist(refDoc.listofref[refIdx - 1] + "|", refDoc.DOC_REF_SEPARATOR);
+                        if (!(fileName.endsWith(GuiConstant.QD_FILE_EXT))) {
+                            GoSrch.enable();
+                        }
+
+                        if (refDoc.nbref > 0) {
+                            refIndic.setText(refIdx + " / " + refDoc.nbref);
+                            setMessage("info", GuiMessageConst.MSG_8 + refIdx + " / " + refDoc.nbref);
+                            DOM.getElementById("ref" + refIdx).scrollIntoView();
+                            addHitHandlers();
+                        }
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_47);
+                        GoSrch.enable();
+                    }
+                }
+            });
         }
     }
 
