@@ -94,7 +94,7 @@ public class QuoteWidget extends Composite {
     private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
     private CheckBox removeFirst = new CheckBox(GuiMessageConst.QD_CHECKBOX_REMOVE_FIRST);
     private CheckBox fastCheckbox = new CheckBox(GuiMessageConst.QD_CHECKBOX_FAST);
-    private String fileName = null;
+    public String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
     private ScrollPanel htmlWrapper = new ScrollPanel();
@@ -149,8 +149,19 @@ public class QuoteWidget extends Composite {
             headerPanel.add(removeFirst);
             headerPanel.add(new HTML("&nbsp;"));
         }
+        if (GuiConstant.REMOVE_FIRST_DEFAULT) {
+            removeFirst.setValue(true);
+        } else {
+            removeFirst.setValue(false);
+        }
         if (GuiConstant.SHOW_GUI_FAST) {
             headerPanel.add(fastCheckbox);
+            headerPanel.add(new HTML("&nbsp;"));
+        }
+        if (GuiConstant.CHOOSE_GUI_FAST_DEFAULT) {
+            fastCheckbox.setValue(true);
+        } else {
+            fastCheckbox.setValue(false);
         }
         headerPanel.add(refIndic);
         headerPanel.add(TextAligner);
@@ -227,6 +238,7 @@ public class QuoteWidget extends Composite {
         refArea.setStyleName("TextBlock");
         fileUpload.addOnStartUploadHandler(onStartUploaderHandler);
         fileUpload.addOnFinishUploadHandler(onFinishUploaderHandler);
+        fileUpload.setAutoSubmit(true);
         help.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
@@ -243,7 +255,6 @@ public class QuoteWidget extends Composite {
         });
         staticDecorator.setStyleName("doclist");
         staticDecorator.setWidget(staticTreeWrapper);
-        fileUpload.setAutoSubmit(true);
         setMessage("info", "");
         for (int i = GuiConstant.MIN_OCCU; i < GuiConstant.MAX_OCCU; i++) {
             minLength.addItem("" + i);
@@ -268,21 +279,6 @@ public class QuoteWidget extends Composite {
             public void onChange(ChangeEvent event) {
                 GoSrch.enable();
                 MyCatCookies.updateCookie(CookiesNamespace.MyQuotelangT, langT.getItemText(langT.getSelectedIndex()));
-            }
-        });
-        // Hook up a handler to find out when it's clicked.
-        removeFirst.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                boolean checked = ((CheckBox) event.getSource()).getValue();
-                MyCatCookies.updateCookie(CookiesNamespace.REMOVE_FIRST, "" + checked);
-            }
-        });
-        fastCheckbox.addClickHandler(new ClickHandler() {
-            @Override
-            public void onClick(ClickEvent event) {
-                boolean checked = ((CheckBox) event.getSource()).getValue();
-                MyCatCookies.updateCookie(CookiesNamespace.GUI_FAST, "" + checked);
             }
         });
         if ((!GuiConstant.LOGO_PATH.isEmpty()) && (!GuiConstant.LOGO_PATH.isEmpty())) {
@@ -473,6 +469,10 @@ public class QuoteWidget extends Composite {
         save.removeAllListeners();
     }
 
+    public void triggerUpload(String fileName) {
+        //trigger the file upload automatically
+    }
+
     public void drawReferences(final ArrayList<String> collections) {
         if (canGo) {
             String lgs = langS.getValue(langS.getSelectedIndex());
@@ -483,7 +483,7 @@ public class QuoteWidget extends Composite {
                 GoSrch.enable();
             } else {
                 setMessage("info", GuiMessageConst.MSG_61 + fileName);
-                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, new AsyncCallback<GwtRef>() {
+                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
                     @Override
                     public void onFailure(Throwable caught) {
                         setMessage("error", GuiMessageConst.MSG_45);
@@ -526,6 +526,59 @@ public class QuoteWidget extends Composite {
             }
         } else {
             setMessage("error", GuiMessageConst.MSG_48);
+        }
+    }
+
+    public void drawReferencesCall(final ArrayList<String> collections) {
+        GoSrch.disable();
+        String lgs = langS.getValue(langS.getSelectedIndex());
+        String lgt = langT.getValue(langT.getSelectedIndex());
+        int consMin = Integer.parseInt(minLength.getValue(minLength.getSelectedIndex()));
+        if (fileName == null) {
+            setMessage("error", GuiMessageConst.MSG_44);
+            GoSrch.enable();
+        } else {
+            setMessage("info", GuiMessageConst.MSG_61 + fileName);
+            rpcRef.getHtmlRef(fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
+                @Override
+                public void onFailure(Throwable caught) {
+                    setMessage("error", GuiMessageConst.MSG_45);
+                    GoSrch.enable();
+                }
+
+                @Override
+                public void onSuccess(GwtRef result) {
+                    if (result != null) {
+                        clearHitHandlers();
+                        refDoc = result;
+                        setMessage("info", GuiMessageConst.MSG_46);
+                        refIndic.setText(refIdx + " / " + refDoc.nbref);
+                        refArea.setHtml(refDoc.htmlref);
+                        save.addListener(Events.OnClick, new Listener<BaseEvent>() {
+                            @Override
+                            public void handleEvent(BaseEvent be) {
+                                MyCatDownload.downloadFileFromServer(getSavedFileName() + GuiConstant.QD_FILE_EXT, refDoc.htmlref, msg);
+                                setMessage("info", GuiMessageConst.MSG_13 + fileName + GuiMessageConst.MSG_14 + getSavedFileName() + GuiConstant.QD_FILE_EXT);
+                            }
+                        });
+                        staticTreeWrapper.clear();
+                        docList = Utility.getDocumentlist(refDoc.listofref[refIdx - 1] + "|", refDoc.DOC_REF_SEPARATOR);
+                        if (!(fileName.endsWith(GuiConstant.QD_FILE_EXT))) {
+                            GoSrch.enable();
+                        }
+
+                        if (refDoc.nbref > 0) {
+                            refIndic.setText(refIdx + " / " + refDoc.nbref);
+                            setMessage("info", GuiMessageConst.MSG_8 + refIdx + " / " + refDoc.nbref);
+                            DOM.getElementById("ref" + refIdx).scrollIntoView();
+                            addHitHandlers();
+                        }
+                    } else {
+                        setMessage("error", GuiMessageConst.MSG_47);
+                        GoSrch.enable();
+                    }
+                }
+            });
         }
     }
 

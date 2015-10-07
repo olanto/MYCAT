@@ -63,7 +63,9 @@ public interface TranslateService extends RemoteService {
 
     public int[][] getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, boolean exact);
 
-    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension);
+    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast);
+
+    public GwtRef getHtmlRef(String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast);
 
     public String[] getCorpusLanguages();
 
@@ -74,6 +76,6 @@ public interface TranslateService extends RemoteService {
     public String createTempZip(String FileName);
 
     public String filterQuery(String Query);
-    
+
     public String filterWildCardQuery(String Query);
 }

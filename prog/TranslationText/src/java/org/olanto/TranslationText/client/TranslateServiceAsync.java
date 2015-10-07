@@ -48,7 +48,7 @@ public interface TranslateServiceAsync {
     public void getQueryWordsPos(int[][] positions, String content, ArrayList<String> Query, int queryLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
     public void getHitPosExactClose(String content, ArrayList<String> Query, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
-   
+
     public void getHitPosWildCardExpr(String content, ArrayList<String> query, float reFactor, AsyncCallback<int[][]> asyncCallback);
 
     public void getHitPosNearCR(String content, ArrayList<String> Query, int queryLn, float reFactor, int sepNumber, int avgTokenLn, AsyncCallback<int[][]> asyncCallback);
@@ -59,7 +59,9 @@ public interface TranslateServiceAsync {
 
     public void getRefWordsPos(String content, ArrayList<String> Query, int queryLn, float reFactor, int minRefLn, boolean exact, AsyncCallback<int[][]> asyncCallback);
 
-    public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, AsyncCallback<GwtRef> asyncCallback);
+    public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast, AsyncCallback<GwtRef> asyncCallback);
+
+    public void getHtmlRef(String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast, AsyncCallback<GwtRef> asyncCallback);
 
     public void getCorpusLanguages(AsyncCallback<String[]> asyncCallback);
 
@@ -70,8 +72,8 @@ public interface TranslateServiceAsync {
     public void createTempFile(String FileName, String Content, AsyncCallback<String> asyncCallback);
 
     public void createTempZip(String FileName, AsyncCallback<String> asyncCallback);
-    
+
     public void filterQuery(String Query, AsyncCallback<String> asyncCallback);
-    
+
     public void filterWildCardQuery(String Query, AsyncCallback<String> asyncCallback);
 }

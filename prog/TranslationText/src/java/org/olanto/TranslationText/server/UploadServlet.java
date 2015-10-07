@@ -84,7 +84,6 @@ public class UploadServlet extends UploadAction {
         String ret = "Warning: System seems to be unavailable, please contact the Translation Support Section";
         _logger.info("Request to convert file: " + fileName);
         System.out.println("Request to convert file: " + fileName);
-
         try {
             Remote r = Naming.lookup("rmi://localhost/CONVSRV");
             if (r instanceof ConvertService) {
@@ -139,7 +138,8 @@ public class UploadServlet extends UploadAction {
             return content.replaceAll(regex, "$1$2$3$4$5$6 id=\"ref$5$6");
         }
     }
-      public static String cleanConvertedFile(String s) {
+
+    public static String cleanConvertedFile(String s) {
 //        System.out.println("-------cst:"+s);
 //        for (int i=0; i<s.length();i++){
 //            int v=s.charAt(i);
@@ -179,5 +179,4 @@ public class UploadServlet extends UploadAction {
 //        s = s.replace("  ", " ");
         return s;
     }
-
 }
