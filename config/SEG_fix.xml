@@ -22,7 +22,7 @@
 <!--Folder for the converted files-->
  <entry key="FOLDER_CONVERTED">C:/MYCAT/corpus/source</entry> 
 <!--Folder for the glossaries (if activated) must be sychronise with GLOSS_NAME-->
- <entry key="FOLDER_CONVERTED_GLOSSARIES">C:/MYCAT/corpus/source/GGlossaries</entry> 
+ <entry key="FOLDER_CONVERTED_GLOSSARIES">C:/MYCAT/corpus/source/Glossaries</entry> 
 <!--Folder for the segmented files-->
  <entry key="FOLDER_SEGMENTED">C:/MYCAT/corpus/txt</entry>
  </properties>
