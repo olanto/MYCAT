@@ -536,7 +536,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         GwtRef gref = null;
         String[] co;
         System.out.println("uploaded file:" + fileName);
-        System.out.println("Content:" + Content);
+//        System.out.println("Content:" + Content);
         if (fileName.contains(QDFileExtension)) {
             gref = html2GwtRef(Content);
         } else {
@@ -571,7 +571,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         String[] co;
         String content = getContent(fileName);
         System.out.println("uploaded file:" + fileName);
-        System.out.println("Content:" + content);
+//        System.out.println("Content:" + content);
         if (fileName.contains(QDFileExtension)) {
             gref = html2GwtRef(content);
         } else {
@@ -1792,23 +1792,18 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             ext = getFileExtension();
         }
         System.out.println("Do not convert files ending with: " + ext);
-        File f = new File(fileName);
+        System.out.println("Convert file: " + fileName);
         InputStream fis = null;
         try {
             fis = new FileInputStream(fileName);
-        } catch (Exception e) {
-            System.out.println("cannot find source file: " + fileName);
-            e.printStackTrace();
-        }
-        try {
             if ((fileName.toLowerCase().endsWith(".txt")) || (fileName.endsWith(ext))) { // charge sous forme de txt
                 response += cleanConvertedFile(addMissingIds(UtilsFiles.file2String(fis, "UTF-8")));
                 System.out.println("File uploaded successfully ");
             } else {
                 // need conversion
-                byte[] bytes = UtilsFiles.file2byte(f);
-                System.out.println(bytes);
-                response += cleanConvertedFile(convertFileWithRMI(bytes, fileName));
+                File f = new File(fileName);
+                byte[] bFile = UtilsFiles.file2byte(f);
+                response += cleanConvertedFile(convertFileWithRMI(bFile, fileName));
                 System.out.println("File converted successfully");
             }
 
