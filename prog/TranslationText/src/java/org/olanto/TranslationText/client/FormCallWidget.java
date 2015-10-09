@@ -77,6 +77,8 @@ public class FormCallWidget extends Composite {
             tS.words = Utility.getQueryWords(query + " ", stopWords);
             tS.queryLength = query.length();
             tS.getTextContent(source, lS, lT, query);
+        }else{
+            Window.alert("Wrong parameters, Cannot load any interface");
         }
         resize.addClickHandler(new ClickHandler() {
             @Override

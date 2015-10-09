@@ -40,6 +40,8 @@ import com.google.gwt.user.client.ui.*;
 import com.smartgwt.client.widgets.events.ResizedEvent;
 import com.smartgwt.client.widgets.events.ResizedHandler;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Main entry point.
@@ -96,12 +98,29 @@ public class MainEntryPoint implements EntryPoint {
             getCollections();
             getPropertiesMyCat();
         } else {
-            final String source = Window.Location.getParameter("source");
-            final String query = Window.Location.getParameter("query");
-            final String lS = Window.Location.getParameter("LSrc");
-            final String lT = Window.Location.getParameter("LTgt");
-            final String file = Window.Location.getParameter("file");
-            if (!file.equalsIgnoreCase("undefined")) {
+            String QDfile = "undefined";
+            String qdfile = "undefined";
+            String file = "undefined";
+            final Map<String, List<String>> params = Window.Location.getParameterMap();
+
+            if (params.containsKey("QDfile")) {
+                QDfile = Window.Location.getParameter("QDfile");
+            }
+            if (params.containsKey("qdfile")) {
+                qdfile = Window.Location.getParameter("qdfile");
+            }
+            if (params.containsKey("file")) {
+                file = Window.Location.getParameter("file");
+            }
+            if (!QDfile.equalsIgnoreCase("undefined")) {
+                isExternalForQD = true;
+                fileName = QDfile;
+                setMyQuoteWidgetFomExternalCall();
+            } else if (!qdfile.equalsIgnoreCase("undefined")) {
+                isExternalForQD = true;
+                fileName = qdfile;
+                setMyQuoteWidgetFomExternalCall();
+            } else if (!file.equalsIgnoreCase("undefined")) {
                 isExternalForQD = true;
                 fileName = file;
                 setMyQuoteWidgetFomExternalCall();
@@ -128,6 +147,22 @@ public class MainEntryPoint implements EntryPoint {
                             IMeasures.setMeasuresfromCookies();
                         } else {
                             IMeasures.setDefaultMeasures();
+                        }
+                        String source = "undefined";
+                        String query = "undefined";
+                        String lS = "undefined";
+                        String lT = "undefined";
+                        if (params.containsKey("source")) {
+                            source = Window.Location.getParameter("source");
+                        }
+                        if (params.containsKey("query")) {
+                            query = Window.Location.getParameter("query");
+                        }
+                        if (params.containsKey("LSrc")) {
+                            lS = Window.Location.getParameter("LSrc");
+                        }
+                        if (params.containsKey("LSTgt")) {
+                            lT = Window.Location.getParameter("LTgt");
                         }
                         setFormWidgetFromCall(source, query, lS, lT);
                     }

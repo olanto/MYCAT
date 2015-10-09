@@ -1800,40 +1800,13 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 response += cleanConvertedFile(addMissingIds(UtilsFiles.file2String(fis, "UTF-8")));
                 System.out.println("File uploaded successfully ");
             } else {
-                // need conversion
-                File f = new File(fileName);
-                byte[] bFile = UtilsFiles.file2byte(f);
-                response += cleanConvertedFile(convertFileWithRMI(bFile, fileName));
-                System.out.println("File converted successfully");
+                System.out.println("WRONG FILE EXTENSION, OPTION NOT SUPPORTED YET");
+                return "WRONG FILE EXTENSION, OPTION NOT SUPPORTED YET";
             }
-
         } catch (Exception ex2) {
             ex2.printStackTrace();
         }
         return response;
-    }
-
-    private String convertFileWithRMI(byte[] bytes, String fileName) {
-        String ret = "Warning: System seems to be unavailable, please contact the Translation Support Section";
-        System.out.println("Request to convert file: " + fileName);
-
-        try {
-            Remote r = Naming.lookup("rmi://localhost/CONVSRV");
-            if (r instanceof ConvertService) {
-                ConvertService cs = (ConvertService) r;
-                int pos = fileName.lastIndexOf('\\');
-                if (pos >= 0) {
-                    fileName = fileName.substring(pos + 1);
-                }
-                ret = cs.File2Txt(bytes, fileName);
-            } else {
-                return "CONVSRV Service not found or not compatible.";
-            }
-
-        } catch (NotBoundException | MalformedURLException | RemoteException ex) {
-            ex.printStackTrace();
-        }
-        return ret;
     }
 
     private String getFileExtension() {
@@ -1867,18 +1840,6 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     public static String cleanConvertedFile(String s) {
-//        System.out.println("-------cst:"+s);
-//        for (int i=0; i<s.length();i++){
-//            int v=s.charAt(i);
-//             System.out.println(i+":"+s.substring(i, i+1)+":"+v);
-//        }
-//        s = s.replace("\t", " ");
-//        char x20 = 0x20;
-//        char xa0 = 0xa0;
-//        System.out.println("nbsp")
-//            System.out.println("nbsp:" + s);
-//        s = s.replace("" + xa0 + x20, " ");
-//        System.out.println("1e");
         char x1e = 0x1e;
         s = s.replace("" + x1e, " ");
 //        System.out.println("1f");
