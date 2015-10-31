@@ -26,12 +26,18 @@ import com.extjs.gxt.ui.client.event.Events;
 import com.extjs.gxt.ui.client.event.Listener;
 import com.extjs.gxt.ui.client.widget.button.Button;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.event.dom.client.KeyCodes;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.event.dom.client.KeyPressHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.http.client.Request;
+import com.google.gwt.http.client.RequestBuilder;
+import com.google.gwt.http.client.RequestCallback;
+import com.google.gwt.http.client.RequestException;
+import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Window;
@@ -80,6 +86,7 @@ public class MainEntryPoint implements EntryPoint {
     public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
     private static boolean isExternalForQD = false;
+    private static final String fileContentURLBase = GWT.getModuleBaseURL() + "ContentServlet?filename=";
 
     /**
      * The entry point method, called automatically by loading a module that
@@ -257,7 +264,7 @@ public class MainEntryPoint implements EntryPoint {
                 languages = result;
                 if (isExternalForQD) {
                     setMyQuoteWidget(languages);
-                    getcontentlistMyQuoteCall();
+                    getContentListMyQuoteByFileName();
                 } else {
                     setMyCatWidget();
                 }
@@ -706,9 +713,6 @@ public class MainEntryPoint implements EntryPoint {
         Document.get().setTitle(GuiConstant.QUOTE_DETECTOR_LBL);
         fixGwtNav();
         quoteDetectorWidget = new QuoteWidget();
-        if (isExternalForQD) {
-            quoteDetectorWidget.fileName = fileName;
-        }
         mainWidget.clear();
         mainWidget.add(quoteDetectorWidget);
         setLanguagesQD();
@@ -797,11 +801,31 @@ public class MainEntryPoint implements EntryPoint {
         quoteDetectorWidget.refIndic.setText("/");
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
     }
-
-    public void getcontentlistMyQuoteCall() {
+    
+    public void getContentListMyQuoteByFileName() {
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
-        quoteDetectorWidget.drawReferencesCall(collectionWidgetQD.Selection);
+        String link = fileContentURLBase + fileName.replace("¦", "$$$$$$").replace("+", "|||");
+        RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, link);
+        try {
+            builder.sendRequest(null, new RequestCallback() {
+                @Override
+                public void onResponseReceived(Request request, Response response) {
+                    if (response.getStatusCode() == 200) {
+                        quoteDetectorWidget.drawReferencesCall(collectionWidgetQD.Selection, fileName, response.getText());
+                    } else if (response.getStatusCode() == 404) {
+                        Window.alert("Service not available.");
+                    }
+                }
+
+                @Override
+                public void onError(Request request, Throwable exception) {
+                    Window.alert("Service not available.");
+                }
+            });
+        } catch (RequestException re) {
+            GWT.log("Error", re);
+        }
     }
 
     public void resizeAll() {

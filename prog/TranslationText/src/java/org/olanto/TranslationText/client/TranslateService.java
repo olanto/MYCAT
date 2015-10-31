@@ -65,8 +65,6 @@ public interface TranslateService extends RemoteService {
 
     public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast);
 
-    public GwtRef getHtmlRef(String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast);
-
     public String[] getCorpusLanguages();
 
     public String[] getExpandTerms(String wildQuery);

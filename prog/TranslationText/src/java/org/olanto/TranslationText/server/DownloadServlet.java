@@ -162,7 +162,7 @@ public class DownloadServlet extends HttpServlet {
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 System.out.println(is.getInformation());
-
+                
                 languages = is.getCorpusLanguages();
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ZipOutputStream zos = new ZipOutputStream(baos);

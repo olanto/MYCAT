@@ -40,7 +40,6 @@ public class MyCatDownload {
 
     public static void downloadFileFromServer(String FileName, String Content, final Label msg) {
         rpcD.createTempFile(FileName, Content, new AsyncCallback<String>() {
-
             @Override
             public void onFailure(Throwable caught) {
                 Window.alert(GuiMessageConst.MSG_29);

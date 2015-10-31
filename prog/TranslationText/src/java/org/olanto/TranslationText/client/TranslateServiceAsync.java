@@ -61,8 +61,6 @@ public interface TranslateServiceAsync {
 
     public void getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast, AsyncCallback<GwtRef> asyncCallback);
 
-    public void getHtmlRef(String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast, AsyncCallback<GwtRef> asyncCallback);
-
     public void getCorpusLanguages(AsyncCallback<String[]> asyncCallback);
 
     public void getExpandTerms(String wildQuery, AsyncCallback<String[]> asyncCallback);

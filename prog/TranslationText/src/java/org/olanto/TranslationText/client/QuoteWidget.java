@@ -94,7 +94,7 @@ public class QuoteWidget extends Composite {
     private Button resize = new Button(GuiMessageConst.BTN_RESIZE);
     private CheckBox removeFirst = new CheckBox(GuiMessageConst.QD_CHECKBOX_REMOVE_FIRST);
     private CheckBox fastCheckbox = new CheckBox(GuiMessageConst.QD_CHECKBOX_FAST);
-    public String fileName = null;
+    private String fileName = null;
     private String fileContent = "";
     public HtmlContainer refArea = new HtmlContainer();
     private ScrollPanel htmlWrapper = new ScrollPanel();
@@ -154,7 +154,7 @@ public class QuoteWidget extends Composite {
         if (GuiConstant.AUTO_ON) {
             headerPanel.add(resize);
         }
-                if (GuiConstant.SHOW_REMOVE_FIRST) {
+        if (GuiConstant.SHOW_REMOVE_FIRST) {
             headerPanel.add(removeFirst);
             headerPanel.add(new HTML("&nbsp;"));
         }
@@ -413,7 +413,7 @@ public class QuoteWidget extends Composite {
         if (GuiConstant.AUTO_ON) {
             headerPanel.add(resize);
         }
-                if (GuiConstant.SHOW_REMOVE_FIRST) {
+        if (GuiConstant.SHOW_REMOVE_FIRST) {
             headerPanel.add(removeFirst);
             headerPanel.add(new HTML("&nbsp;"));
         }
@@ -548,7 +548,9 @@ public class QuoteWidget extends Composite {
         }
     }
 
-    public void drawReferencesCall(final ArrayList<String> collections) {
+    public void drawReferencesCall(final ArrayList<String> collections, String fileNme, String content) {
+        fileName = fileNme;
+        fileContent = content;
         GoSrch.disable();
         String lgs = langS.getValue(langS.getSelectedIndex());
         String lgt = langT.getValue(langT.getSelectedIndex());
@@ -558,7 +560,7 @@ public class QuoteWidget extends Composite {
             GoSrch.enable();
         } else {
             setMessage("info", GuiMessageConst.MSG_61 + fileName);
-            rpcRef.getHtmlRef(fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
+                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_45);

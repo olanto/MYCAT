@@ -27,12 +27,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
-import java.rmi.NotBoundException;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +39,6 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 import org.olanto.TranslationText.client.*;
-import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.ref.UploadedFile;
 import org.olanto.idxvli.server.IndexService_MyCat;
 import org.olanto.idxvli.server.QLResultNice;
@@ -544,41 +538,6 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
             }
             UploadedFile up = new UploadedFile(Content, fileName);
-//        System.out.println(up.getFileName() + "\n" + up.getContentString());
-            try {
-//                Timer t1 = new Timer("-------------  ref ");
-
-                co = getCollections(collections);
-
-//            System.out.println("calling references service: " + is.getInformation());
-                ref = is.getHtmlReferences(up, minCons, langS, LangT, co, removeFirst, fast);
-//                t1.stop();
-                if (ref != null) {
-//                    System.out.println(ref);
-                    gref = html2GwtRef(ref);
-                }
-            } catch (RemoteException ex) {
-                Logger.getLogger(TranslateServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return gref;
-    }
-
-    @Override
-    public GwtRef getHtmlRef(String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
-        String ref;
-        GwtRef gref = null;
-        String[] co;
-        String content = getContent(fileName);
-        System.out.println("uploaded file:" + fileName);
-//        System.out.println("Content:" + content);
-        if (fileName.contains(QDFileExtension)) {
-            gref = html2GwtRef(content);
-        } else {
-            if (is == null) {
-                is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
-            }
-            UploadedFile up = new UploadedFile(content, fileName);
 //        System.out.println(up.getFileName() + "\n" + up.getContentString());
             try {
 //                Timer t1 = new Timer("-------------  ref ");
@@ -1784,87 +1743,5 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             return true;
         }
         return false;
-    }
-
-    private String getContent(String fileName) {
-        String response = "";
-        if (ext == null) {
-            ext = getFileExtension();
-        }
-        System.out.println("Do not convert files ending with: " + ext);
-        System.out.println("Convert file: " + fileName);
-        InputStream fis = null;
-        try {
-            fis = new FileInputStream(fileName);
-            if ((fileName.toLowerCase().endsWith(".txt")) || (fileName.endsWith(ext))) { // charge sous forme de txt
-                response += cleanConvertedFile(addMissingIds(UtilsFiles.file2String(fis, "UTF-8")));
-                System.out.println("File uploaded successfully ");
-            } else {
-                System.out.println("WRONG FILE EXTENSION, OPTION NOT SUPPORTED YET");
-                return "WRONG FILE EXTENSION, OPTION NOT SUPPORTED YET";
-            }
-        } catch (Exception ex2) {
-            ex2.printStackTrace();
-        }
-        return response;
-    }
-
-    private String getFileExtension() {
-        Properties propF;
-        String fileName = SenseOS.getMYCAT_HOME() + "/config/GUI_fix.xml";
-        FileInputStream f = null;
-        try {
-            f = new FileInputStream(fileName);
-        } catch (Exception e) {
-            System.out.println("cannot find properties file:" + fileName);
-            e.printStackTrace();
-        }
-        try {
-            propF = new Properties();
-            propF.loadFromXML(f);
-            return propF.getProperty("QD_FILE_EXT");
-        } catch (Exception e) {
-            System.out.println("errors in properties file:" + fileName);
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    private String addMissingIds(String content) {
-        if (content.contains("id=\"ref")) {
-            return content;
-        } else {
-            String regex = "(<a)(\\s+)(href=\")(#)(\\d+)(\")";
-            return content.replaceAll(regex, "$1$2$3$4$5$6 id=\"ref$5$6");
-        }
-    }
-
-    public static String cleanConvertedFile(String s) {
-        char x1e = 0x1e;
-        s = s.replace("" + x1e, " ");
-//        System.out.println("1f");
-        char x1f = 0x1f;
-        s = s.replace("" + x1f, "");
-//         System.out.println("02");
-        char x02 = 0x02;
-        s = s.replace("" + x02, " ");
-//          System.out.println("13");
-        char x13 = 0x13;
-        s = s.replace("" + x13, " ");
-//          System.out.println("15");
-        char x15 = 0x15;
-        s = s.replace("" + x15, " ");
-//          System.out.println("00");
-        char x00 = 0x00;
-        s = s.replace("" + x00, " ");
-//          System.out.println("0b");
-        char x0b = 0x0b;
-        s = s.replace("" + x0b, " ");
-//          System.out.println("0c");
-        char x0c = 0x0c;
-        s = s.replace("" + x0c, " ");
-//          System.out.println("double blanc");
-//        s = s.replace("  ", " ");
-        return s;
     }
 }
