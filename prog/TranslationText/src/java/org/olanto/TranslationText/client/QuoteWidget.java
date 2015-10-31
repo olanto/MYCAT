@@ -145,15 +145,20 @@ public class QuoteWidget extends Composite {
         headerPanel.add(minLength);
         headerPanel.add(prev);
         headerPanel.add(next);
-        if (GuiConstant.SHOW_REMOVE_FIRST) {
+        headerPanel.add(refIndic);
+        headerPanel.add(TextAligner);
+        headerPanel.add(help);
+        if (GuiConstant.SAVE_ON) {
+            headerPanel.add(save);
+        }
+        if (GuiConstant.AUTO_ON) {
+            headerPanel.add(resize);
+        }
+                if (GuiConstant.SHOW_REMOVE_FIRST) {
             headerPanel.add(removeFirst);
             headerPanel.add(new HTML("&nbsp;"));
         }
-        if (GuiConstant.REMOVE_FIRST_DEFAULT) {
-            removeFirst.setValue(true);
-        } else {
-            removeFirst.setValue(false);
-        }
+
         if (GuiConstant.SHOW_GUI_FAST) {
             headerPanel.add(fastCheckbox);
             headerPanel.add(new HTML("&nbsp;"));
@@ -163,14 +168,10 @@ public class QuoteWidget extends Composite {
         } else {
             fastCheckbox.setValue(false);
         }
-        headerPanel.add(refIndic);
-        headerPanel.add(TextAligner);
-        headerPanel.add(help);
-        if (GuiConstant.SAVE_ON) {
-            headerPanel.add(save);
-        }
-        if (GuiConstant.AUTO_ON) {
-            headerPanel.add(resize);
+        if (GuiConstant.REMOVE_FIRST_DEFAULT) {
+            removeFirst.setValue(true);
+        } else {
+            removeFirst.setValue(false);
         }
         headerPanel.setStylePrimaryName("searchHeader");
 
@@ -248,7 +249,6 @@ public class QuoteWidget extends Composite {
         resize.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                resizeAll();
                 resizeAll();
                 reselectDocument();
             }
@@ -412,6 +412,25 @@ public class QuoteWidget extends Composite {
         }
         if (GuiConstant.AUTO_ON) {
             headerPanel.add(resize);
+        }
+                if (GuiConstant.SHOW_REMOVE_FIRST) {
+            headerPanel.add(removeFirst);
+            headerPanel.add(new HTML("&nbsp;"));
+        }
+
+        if (GuiConstant.SHOW_GUI_FAST) {
+            headerPanel.add(fastCheckbox);
+            headerPanel.add(new HTML("&nbsp;"));
+        }
+        if (GuiConstant.CHOOSE_GUI_FAST_DEFAULT) {
+            fastCheckbox.setValue(true);
+        } else {
+            fastCheckbox.setValue(false);
+        }
+        if (GuiConstant.REMOVE_FIRST_DEFAULT) {
+            removeFirst.setValue(true);
+        } else {
+            removeFirst.setValue(false);
         }
         leftheadPanel.clear();
         leftheadPanel.add(topJobsSet);
