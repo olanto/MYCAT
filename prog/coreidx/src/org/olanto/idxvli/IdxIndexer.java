@@ -261,7 +261,7 @@ class IdxIndexer {
      */
     private final void onePassIndexdoc(File file, String f, long fdate) {
         try {
-            msg("debugidx:" + f + " id:" + glue.lastRecordedDoc);
+            //msg("debugidx:" + f + " id:" + glue.lastRecordedDoc);
 
             String content = BytesAndFiles.file2String(f, DOC_ENCODING);
             DoParse a = new DoParse(content, glue.dontIndexThis);
@@ -287,7 +287,7 @@ class IdxIndexer {
                 if (FILE_RENAME) {
                     String newName = renameFileForIdx(f);
                     int currentDoc = glue.docstable.put(newName);// enregistre le nom du document
-                    msg("Rename file for idx:" + f + " --> " + newName);
+                    //msg("Rename file for idx:" + f + " --> " + newName);
                 } else {
                     int currentDoc = glue.docstable.put(f);// enregistre le nom du document
                     //msg("current ID:"+currentDoc);

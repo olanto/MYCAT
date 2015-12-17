@@ -125,9 +125,9 @@
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
 	<entry key="FILE_COLLECTION_CASE">UPPER</entry>
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
-	<entry key="FILE_NAME_CASE">NOCHANGE</entry>
+	<entry key="FILE_NAME_CASE">UPPER</entry>
 	<!-- renaming file extension to LOWER, UPPER, NOCHANGE -->
-	<entry key="FILE_EXTENTION_CASE">NOCHANGE</entry>
+	<entry key="FILE_EXTENTION_CASE">LOWER</entry>
 	<!-- production mode true=disable untested fonctionnalities, false=enable untested fonctionnalities -->
    <entry key="PRODUCTION_MODE">true</entry>
 <!--A Glossaries folderName. this entry must be the same in IDX_fix.xml, MAP_fix.xml and SEG_fix.xml-->

@@ -214,7 +214,9 @@ public class FileSegmentation2 {
         int count = 1;
         for (String s : source) {
             //  s = postAbbr(s);
+          //  System.out.println("post:"+pasteWithNext+", "+s);
             if (pasteWithNext) {
+           // System.out.println(" paste");
                 String paste = res.lastElement()+ " " + s;
                 paste = replace.replace(paste,"  ", " ");
                 res.setElementAt(paste , res.size() - 1);
@@ -227,7 +229,7 @@ public class FileSegmentation2 {
                 //System.out.println(count + "-" + s);
                 pasteWithNext = true;
             }
-           if (abrev.endWithAbr(s)) {
+           if (abrev.endWithAbr(s)) {             
                 //System.out.println(count + "-" + s);
                 pasteWithNext = true;
             }

@@ -36,13 +36,12 @@ public class SetOfAbreviations {
     HashMap<String, Integer> entryToReplace = new HashMap<String, Integer>();
     int count = 0;
     /**
-     * création d'une liste chargée depuis un fichier. 
+     * création d'une liste chargée depuis un fichier.
      *
      * @param fname nom du fichier
      */
     Pattern ps = Pattern.compile("[\\t]");  // le tab
 
- 
     public SetOfAbreviations(String fname) {
         System.out.println("load list of abreviations from:" + fname);
         try {
@@ -51,8 +50,8 @@ public class SetOfAbreviations {
             String w = in.readLine();
             while (w != null) {
                 //System.out.println("dont index:"+w);
-                w+=".";
-                w=w.trim();
+                w += ".";
+                w = w.trim();
                 entryToReplace.put(w, 1);
                 System.out.println("add to list:" + w);
 
@@ -67,17 +66,24 @@ public class SetOfAbreviations {
         entryToReplace.put(replace, 1);
     }
 
-      public final boolean endWithAbr(String w) {
-         int pos=w.lastIndexOf(" ",w.length()-2);  // last char could be a space
-         if (pos==-1) return false;
-         String last=w.substring(pos+1,w.length()-1);
-    //     System.out.println("last:"+w+"<--->"+last+"<--->");
-         if (entryToReplace.get(last)==null)return false;
-    //     System.out.println("last:"+last+" is a abreviation");    
-         return true;
-         
-    }
+    public final boolean endWithAbr(String w) {
+        //System.out.println("look for abreviation:" + w);
+        int pos = w.lastIndexOf(" ", w.length() - 2);  // last char could be a space
+        if (pos == -1) {
+            return false;
+        }
 
+        String last = w.substring(pos + 1, w.length() - 1);
+        //System.out.println("last:" + "<--->" + last + "<--->");
+        if (last.startsWith("("))last=last.substring(1);
+        //System.out.println("last remove (:" + "<--->" + last + "<--->");
+        if (entryToReplace.get(last) == null) {
+            return false;
+        }
+        //     System.out.println("last:"+last+" is a abreviation");    
+        return true;
+
+    }
 
     /**
      * liste des termes à remplacer.
