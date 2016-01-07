@@ -132,6 +132,8 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             } else {
                 msg("current indexer is opening ...");
                 id = new IdxStructure(mode, client);
+//                msg("check integrity of index at startup ...");
+//                id.checkIntegrityOfRND(false);
                 CheckOpenClose = new CheckConsistency(COMMON_ROOT, "NOT_CLOSED");
                 if (CheckOpenClose.isConsistent()) {
                     CheckOpenClose.markSomeChange();
@@ -312,7 +314,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         serverR.lock();
         try {
             if (exact) {
-                QLResultNice res = id.evalQLNice(cs, request, start, Integer.MAX_VALUE-2, true); // pas de limite -2 pour signer les query dans le cache
+                QLResultNice res = id.evalQLNice(cs, request, start, Integer.MAX_VALUE - 2, true); // pas de limite -2 pour signer les query dans le cache
                 res.orderBy(id, order);
                 res.checkExact(id, size);
                 return res;
@@ -333,10 +335,10 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     public QLResultNice evalQLNice(String request1, String request2, int start, int size, String order, int chardist, boolean orderbyocc) throws RemoteException {
         serverR.lock();
         try {
-            QLResultNice res1 = id.evalQLNice(cs, request1, start, Integer.MAX_VALUE-1, true); // pas de limite -1 pour signer les query dans le cache
+            QLResultNice res1 = id.evalQLNice(cs, request1, start, Integer.MAX_VALUE - 1, true); // pas de limite -1 pour signer les query dans le cache
 //            res1.dump("res1");
-            QLResultNice res2 = id.evalQLNice(cs, request2, start, Integer.MAX_VALUE-1, true); // pas de limite -1 pour signer les query dans le cache
-            QLResultNice res1close2= res1.clone();
+            QLResultNice res2 = id.evalQLNice(cs, request2, start, Integer.MAX_VALUE - 1, true); // pas de limite -1 pour signer les query dans le cache
+            QLResultNice res1close2 = res1.clone();
 //            res2.dump("res2");
             res1close2.fusionResult(res2.result);
 //            res1.dump("res1 after fusion");
@@ -641,7 +643,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         if (upfile == null) {// fix result for developpment
             return null;
         } else {
-            return id.getReferences(upfile, limit, source, target, selectedCollection,removefirst,fast);
+            return id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast);
         }
     }
 
@@ -652,7 +654,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         if (upfile == null) {// fix result for developpment
             return null;
         } else {
-            return id.getReferences(upfile, limit, source, target, selectedCollection,removefirst,fast).htmlref;
+            return id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast).htmlref;
         }
     }
 

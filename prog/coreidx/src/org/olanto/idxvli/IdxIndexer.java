@@ -84,8 +84,13 @@ class IdxIndexer {
             // f.setReadOnly();  // marque le fichier en lecture seulement, mis en commentaire car ralentit
             long fdate = f.lastModified(); // date de la derniï¿½re modification
             //long fdate = f.lastModified() + (long) (100000L * Math.random()); // provoque des  modifications
-
-            if (glue.docstable.IndexThisDocument(path, fdate)) {
+   
+            String newName = path;
+            if (FILE_RENAME) {
+                newName = renameFileForIdx(path);
+            }
+            
+            if (glue.docstable.IndexThisDocument(newName, fdate)) {
                 if (path.endsWith(".htm") || path.endsWith(".txt") || path.endsWith(".TXT") || path.endsWith(".html") || path.endsWith(".xml") || path.endsWith(".java") || path.endsWith(".sql") || path.endsWith(".lzy")) {
                     onePassIndexdoc(f, path, fdate);
                 }
@@ -287,10 +292,11 @@ class IdxIndexer {
                 if (FILE_RENAME) {
                     String newName = renameFileForIdx(f);
                     int currentDoc = glue.docstable.put(newName);// enregistre le nom du document
-                    //msg("Rename file for idx:" + f + " --> " + newName);
+//                    msg("Rename file for idx:" + f + " --> " + newName);
+//                    msg("current ID:" + currentDoc);
                 } else {
                     int currentDoc = glue.docstable.put(f);// enregistre le nom du document
-                    //msg("current ID:"+currentDoc);
+//                    msg("current ID:" + currentDoc);
                 }
 
 
@@ -352,9 +358,9 @@ class IdxIndexer {
             msg("ERROR in renameFileForIdx for:" + f);
             msg("root=" + root + ", coll=" + coll + ", name=" + name + ", lang=" + lang + ", extention=" + extention);
         }
-        coll=stringCaser(coll,FILE_COLLECTION_CASE);
-        name=stringCaser(name,FILE_NAME_CASE);
-        extention=stringCaser(extention,FILE_EXTENTION_CASE);    
+        coll = stringCaser(coll, FILE_COLLECTION_CASE);
+        name = stringCaser(name, FILE_NAME_CASE);
+        extention = stringCaser(extention, FILE_EXTENTION_CASE);
         return root + coll + name + lang + extention;
     }
 

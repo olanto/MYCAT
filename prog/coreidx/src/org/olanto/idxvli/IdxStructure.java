@@ -672,34 +672,40 @@ public class IdxStructure {
      * @param w terme � v�rifier
      */
     public final void checkIntegrityOfW(String w, boolean verbose) {
-        if (verbose) {
-            msg("check integrity for:" + w);
-        }
-
-        int n1 = getIntForW(w);
-        indexread.lockForFull(n1);
-        // zone prot�g�e
-        int r1[] = indexread.getReferenceOnDoc(n1);
-        int il1 = indexread.getNbDoc(n1);
-        if (verbose) {
-            msg("indexdoc:" + il1 + " #n1:" + n1);
-            //showVector(r1);
-        }
-        for (int i = 0; i < il1; i++) {
-            //msg(" doc:"+r1[i]+", n1:"+n1+", i:"+i);
-            int[] pos = getWposition(n1, i);
-            //msg ("doc:"+r1[i]);showVector(pos);
-            int prevVal = -1;
-            for (int j = 0; j < pos.length; j++) {
-                if (pos[j] <= prevVal) {
-                    msg("integrity failure:" + w + " doc:" + r1[i] + " pos:" + pos[j] + "<=:" + prevVal);
-                }
-                prevVal = pos[j];
+        try {
+            if (verbose) {
+                msg("check integrity for:" + w);
             }
 
+            int n1 = getIntForW(w);
+            indexread.lockForFull(n1);
+            // zone prot�g�e
+            int r1[] = indexread.getReferenceOnDoc(n1);
+            int il1 = indexread.getNbDoc(n1);
+            if (verbose) {
+                msg("indexdoc:" + il1 + " #n1:" + n1);
+                //showVector(r1);
+            }
+            for (int i = 0; i < il1; i++) {
+                //msg(" doc:"+r1[i]+", n1:"+n1+", i:"+i);
+                int[] pos = getWposition(n1, i);
+                //msg ("doc:"+r1[i]);showVector(pos);
+                int prevVal = -1;
+                for (int j = 0; j < pos.length; j++) {
+                    if (pos[j] <= prevVal) {
+                        msg("integrity failure:" + w + " doc:" + r1[i] + " pos:" + pos[j] + "<=:" + prevVal);
+                    }
+                    prevVal = pos[j];
+                }
+
+            }
+            //fin de zone
+            indexread.unlock(n1);
+        } catch (Exception e) {
+            msg("error integrity failure:" + w);
+            msg("error integrity failure:" + e.getMessage());
         }
-        //fin de zone
-        indexread.unlock(n1);
+        ;
     }
 
     /**
@@ -773,7 +779,7 @@ public class IdxStructure {
     public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
             boolean removefirst, boolean fast) {
 //        if (upfile.isTxt()) {// text case
-        IdxReference ref = new IdxReference(this, upfile.getContentString(), limit, source, target, true, selectedCollection,removefirst, fast);
+        IdxReference ref = new IdxReference(this, upfile.getContentString(), limit, source, target, true, selectedCollection, removefirst, fast);
         ref.postInit(upfile.getFileName());
         String html = ref.getHTML();
         String[] multiref = new String[ref.docMultiRef.size()];
