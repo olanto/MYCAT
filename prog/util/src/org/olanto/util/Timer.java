@@ -20,6 +20,10 @@
 
 package org.olanto.util;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /** 
  * Gestion de timer en milli seconde.
  * Une classe pour déclencher un chronomètre et pour mesurer facilement l'efficacité du code.
@@ -34,7 +38,7 @@ public class Timer {
 
     private long start;
     private String activity;
-
+DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     /**
      * crée un chronomètre. Et puis le démarre et affiche dans 
      * la console le commentaire associé
@@ -44,7 +48,11 @@ public class Timer {
     public Timer(String s) {
         activity = s;
         start = System.currentTimeMillis();
-        System.out.println("START: " + activity);
+        	   
+	   //get current date time with Date()
+	   Date date = new Date();
+	   
+        System.out.println("START ["+dateFormat.format(new Date())+"] : " + activity);
     }
 
     /**
@@ -65,7 +73,7 @@ public class Timer {
      */
     public void stop() {
         start = System.currentTimeMillis() - start;
-        System.out.println("STOP: " + activity + " - " + start + " ms");
+        System.out.println("STOP ["+dateFormat.format(new Date())+"]: " + activity + " - " + start + " ms");
     }
 
     /**
@@ -84,6 +92,6 @@ public class Timer {
     public void restart(String s) {
         activity = s;
         start = System.currentTimeMillis();
-        System.out.println("START: " + activity);
+        System.out.println("START ["+dateFormat.format(new Date())+"]: " + activity);
     }
 }

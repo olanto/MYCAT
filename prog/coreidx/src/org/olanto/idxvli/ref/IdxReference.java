@@ -90,16 +90,18 @@ public class IdxReference {
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
         if (removefirst) {
-            System.out.println("find first document");
+            System.out.println("IdxReference: find first document");
             IdxReference firstpass = new IdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, false, true);
             String dummyhtml = firstpass.getHTML();
             this.removedFile = firstpass.removedFile;
             this.removedDoc = firstpass.removedDoc;
             lookforfirst = false;
-           secondpass = true;
+            secondpass = true;
 
         }
-
+        if (secondpass){
+            System.out.println("IdxReference: secondpass with removed document");
+        }
         InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst, fast);
     }
 
@@ -107,12 +109,17 @@ public class IdxReference {
             boolean _removefirst, boolean _fast) {
 
         Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
-        glue = _glue;
+         glue = _glue;
         removefirst = _removefirst;
         fast = _fast;
         selectedCollection = _selectedCollection;
         collectList = "";
-        if (selectedCollection != null) {
+          System.out.println("IdxReference: parameters:");
+        System.out.println("   removefirst:"+removefirst);
+        System.out.println("   fast:"+fast);
+        System.out.println("   lookforfirst:"+lookforfirst);
+        System.out.println("   secondpass:"+secondpass);
+      if (selectedCollection != null) {
             for (int i = 0; i < selectedCollection.length; i++) {
                 collectList += " " + selectedCollection[i].replace("COLLECTION.", "");
             }
@@ -134,10 +141,10 @@ public class IdxReference {
 //            System.out.println("ta:"+ta.countTrue());
             sota.and(ta, SetOfBits.ALL);
 //            System.out.println("sota:"+sota.countTrue());
-            if (secondpass){
-                System.out.println("remove first file from filter"); 
+            if (secondpass&&removedDoc!=-1) {
+                System.out.println("remove first file from filter");
                 sota.set(removedDoc, false);
-               
+
             }
         }
         if (alignsota && selectedCollection != null) {// étend le filtre aux collections
@@ -431,11 +438,14 @@ public class IdxReference {
         s.append("<hr/>\n");
         //
         if (lookforfirst) {
+            System.out.println("try to get first document");
             NumberFormat formatter = new DecimalFormat("#0.0");
             ReferenceStatistic firstpass = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst, fast, removedFile);
             InverseRef firstref = firstpass.getFirsReference();
-            removedDoc = glue.getIntForDocument(firstref.docref);
-            removedFile = firstref.docref + " (" + formatter.format(firstref.pcttotword) + "%)";
+            if (!(firstref == null)) {
+                removedDoc = glue.getIntForDocument(firstref.docref);
+                removedFile = firstref.docref + " (" + formatter.format(firstref.pcttotword) + "%)";
+            }
         }
         ReferenceStatistic rs = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst, fast, removedFile);
         s.append(rs.getHeaderSat(uploadFileName, collectList, minlength));
