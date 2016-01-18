@@ -90,6 +90,48 @@ public class IdxReference {
             _status = THREADFAIL;
         }
     }
+
+    class ComputeMarkThread extends Thread {
+
+        public final static int THREADFAIL = 1;
+        public final static int THREADPASS = 0;
+        int _status;
+        int id;
+        int start;
+        int stop;
+
+        public int status() {
+            return _status;
+        }
+
+        public ComputeMarkThread(int _id, int _stop) {
+            _status = THREADFAIL;
+            id = _id;
+            stop = _stop;
+        }
+
+        public void run() {
+            boolean verbose = true;
+            int count = 0;
+            Date start = new Date();
+            for (int i = id; i < stop; i += NB_PROC) {
+                count++;
+                if (verbose && count % 2500 == 0) {  // check time  ...
+                    Date end = new Date();
+                    System.out.println("Thread " + id + " compute Mark - count:" + count + ":" + (end.getTime() - start.getTime()));
+                    start = new Date();
+                }
+
+                computeMarkN(i);
+            }
+            //System.out.print("Thread " + id + ": End with success\n");
+            System.out.print(" - " + id);
+            _status = THREADPASS;
+            stop();
+            System.out.print("Error: Thread ComputeMarkThreadN " + id + ": Didn't expect to get here!\n");
+            _status = THREADFAIL;
+        }
+    }
     public static final int MaxIndexedW = 1000000;
     public static final int NB_PROC = 4;
     public static final int NotIndexed = -1;
@@ -128,6 +170,10 @@ public class IdxReference {
     public int removedDoc = -1;
     private boolean lookforfirst = true;
     private boolean secondpass = false;
+    // add to paralellise mark
+    private int[] markv;
+    private int[] markdocv;
+    private int[][] multidocv;
 
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
@@ -216,7 +262,7 @@ public class IdxReference {
         if (!secondpass) {
             computeSeq3();
         } else {  // already compute in first pass - need to remove first doc
-            System.out.println("instead of computeSeq, removedDoc:"+removedDoc);
+            System.out.println("instead of computeSeq, removedDoc:" + removedDoc);
             if (removedDoc != -1) {
                 for (int i = 0; i < lastscan; i++) {
                     if (doc[i] != null) {
@@ -286,7 +332,7 @@ public class IdxReference {
 
     private final void computeSeq3() {
         doc = new SparseBitSet[lastscan];
-        System.out.print("Start Thread ");
+        System.out.print("Start computeSeq Thread ");
         ComputeSeqThread[] t = new ComputeSeqThread[NB_PROC];
 
         for (int it = 0; it < NB_PROC; it++) {
@@ -301,7 +347,7 @@ public class IdxReference {
             try {
                 t[it].join();
             } catch (InterruptedException e) {
-                System.out.print("t " + it + " Join interrupted\n");
+                System.out.print("Error: computeSeq Thread " + it + " Join interrupted\n");
             }
         }
         System.out.println(" End Thread ");
@@ -362,10 +408,66 @@ public class IdxReference {
         return b;
     }
 
+    private final void computeMarkN(int i) {
+        int mark;
+        int markdoc = 0;
+        int[] multidoc = null;
+        SparseBitSet b = doc[i];
+        if (b.notEmpty()) { // ok look for the next
+            mark = i;
+
+            for (int j = i; j < lastcp - seqn; j++) {
+                b = b.and(doc[j]);
+                // here we need to check the references
+                if (!fast) {
+                    b = getOnlyRealRef(b, i, j); // need to be tested before production mode
+                }
+                if (b.notEmpty()) {
+                    mark = j;
+                    b.resetcursor();
+                    markdoc = b.getNextPos();
+                    multidoc = b.getDelta();
+                } else {
+                    break;
+                } // not in the same doc
+            }
+            markv[i] = mark;
+            markdocv[i] = markdoc;
+            multidocv[i] = multidoc;
+        } else {
+            markv[i] = -1;
+        }
+    }
+
+    private final void computeMark() {
+        System.out.println("Compute marking");
+        markv = new int[lastcp - seqn];
+        markdocv = new int[lastcp - seqn];
+        multidocv = new int[lastcp - seqn][];
+
+        System.out.print("Start computeMark Thread ");
+        ComputeMarkThread[] t = new ComputeMarkThread[NB_PROC];
+
+        for (int it = 0; it < NB_PROC; it++) {
+            //System.out.println("Create a thread " + it);
+            t[it] = new ComputeMarkThread(it, lastcp - seqn);
+            //System.out.println("Start the thread " + it);
+            System.out.print(" + " + it);
+            t[it].start();
+        }
+        for (int it = 0; it < NB_PROC; it++) {
+            //System.out.print("Wait for the thread " + it + " to complete\n");
+            try {
+                t[it].join();
+            } catch (InterruptedException e) {
+                System.out.print("Error: computeMark Thread  " + it + " Join interrupted\n");
+            }
+        }
+        System.out.println(" End Thread ");
+
+    }
+
     private final void markString() {
-        boolean verbose = true;
-        Date start = new Date();
-        int count = 0;
 
         begM = new int[lastscan];
         for (int i = 0; i < lastscan; i++) {
@@ -383,41 +485,17 @@ public class IdxReference {
         int mark;
         int markdoc = 0;
         int[] multidoc = null;
+        computeMark();
         for (int i = 0; i < lastcp - seqn; i++) {
-            //Timer t0 = new Timer("collect ref at i="+i);
-            count++;
-            if (verbose && count % 10000 == 0) {  // check time  ...
-                Date end = new Date();
-                System.out.println("MarkString - count:" + count + ":" + (end.getTime() - start.getTime()));
-                start = new Date();
-            }
-
-            SparseBitSet b = doc[i];
-            if (b.notEmpty()) { // ok look for the next
-                mark = i;
-
-                for (int j = i; j < lastcp - seqn; j++) {
-                    b = b.and(doc[j]);
-                    // here we need to check the references
-                    if (!fast) {
-                        b = getOnlyRealRef(b, i, j); // need to be tested before production mode
-                    }
-                    if (b.notEmpty()) {
-                        mark = j;
-                        b.resetcursor();
-                        markdoc = b.getNextPos();
-                        multidoc = b.getDelta();
-                    } else {
-                        break;
-                    } // not in the same doc
-                }
-
+            if (markv[i] != -1) { // ok look for the next
+                mark = markv[i];  //reload current value
+                markdoc = markdocv[i];
+                multidoc = multidocv[i];
                 if ((mark > maxmarked) && ((mark - i) >= minlength - seqmax)) { // not included in a bigger ref
                     maxmarked = mark; // new max
                     newMark();
                     begM[i] = currentMark;
                     endM[maxmarked + seqmax] = currentMark;
-                    b.resetcursor();
                     docM[i] = markdoc; // get the first ref (if many)
                     nbref++;
                     /*

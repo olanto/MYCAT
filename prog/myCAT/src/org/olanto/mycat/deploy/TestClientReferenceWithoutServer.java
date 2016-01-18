@@ -54,9 +54,10 @@ public class TestClientReferenceWithoutServer {
 //       testref(SenseOS.getMYCAT_HOME() + "/test/g245_e.txt", SenseOS.getMYCAT_HOME() + "/test/g245_e.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
-      testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
+ //     testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
       testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt.res.html", null , 6);
-
+   //  testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt.res.html", null , 6);
+// 247 282
     }
 
     public static void testref(String fileNameIn, String fileNameOut, String[] collect, int nbref) throws FileNotFoundException {
@@ -69,7 +70,7 @@ public class TestClientReferenceWithoutServer {
 
         Timer t1 = new Timer("-------------  ref ");
 //        for (int i = 0; i < 20; i++) {
-            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,true,true);
+            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,false);
 //        }
         t1.stop();
 //            msg("ref:" + ref.htmlref);
