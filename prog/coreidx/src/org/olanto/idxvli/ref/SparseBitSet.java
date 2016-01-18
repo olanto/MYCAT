@@ -1,38 +1,39 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
-
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.idxvli.ref;
 
 import java.io.*;
 
 /**
  * gestion simple d'un ensemble épars de bit.
- * 
+ *
  *
  * <p>
  */
 class SparseBitSet implements Serializable {
 
     private static final int EOSBS = -1;
-    private  int cursor;
-    private  int cursor2;
+    private int cursor;
+    private int cursor2;
     private int[] delta;
 
     SparseBitSet() {
@@ -40,6 +41,24 @@ class SparseBitSet implements Serializable {
 
     SparseBitSet(int[] delta) { // order by number
         this.delta = delta;
+    }
+
+    public static void main(String[] args) {
+        SparseBitSet x = new SparseBitSet();
+        x.addbit(10);
+        x.addbit(20);
+        x.addbit(30);
+        x.addbit(40);
+        x.addbit(50);
+x.print();
+x.removebit(30);
+x.print();
+x.removebit(11);
+x.print();
+x.removebit(10);
+x.print();
+x.removebit(50);
+x.print();
     }
 
     protected final void resetcursor() {
@@ -98,7 +117,34 @@ class SparseBitSet implements Serializable {
         }
     }
 
+    protected final void removebit(int position) { // very basic implementation
+        
+        if (delta == null) {
+            return;
+        }
+        if (delta.length==1&&delta[0]==position){ // 
+            delta=null;
+            return;
+        }
+        int l = delta.length;
+        int i = 0;
+        for (i = 0; i < l; i++) {
+            if (delta[i] == position) {
+                break;
+            }
+        }
+        if (i == l) { // not in set
+            return;
+        }
+        int[] it = new int[l - 1];
+        //System.out.println("remove: "+position+" i: "+i+" l: "+l);
+        System.arraycopy(delta, 0, it, 0, i ); // copy first part
+        System.arraycopy(delta, i + 1, it, i, l - i-1); // copy second part      
+        delta = it;
+    }
+
     protected final void insertbit(int position) { // 
+
         if (delta == null) {
             delta = new int[1];
             delta[0] = position;

@@ -63,7 +63,7 @@ public class TestClientReference {
           UploadedFile up = new UploadedFile(ex, "test.txt");
 
             Timer t1 = new Timer("-------------  ref ");
-            REFResultNice ref = is.getReferences(up, 3, "EN", "FR", collect,false,true);
+            REFResultNice ref = is.getReferences(up, 3, "EN", "FR", collect,true,true);
             t1.stop();
             msg("ref:" + ref.htmlref);
             msg("nbref:" + ref.nbref);

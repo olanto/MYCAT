@@ -49,7 +49,49 @@ import org.olanto.idxvli.ref.stat.InverseRef;
  */
 public class IdxReference {
 
+    class ComputeSeqThread extends Thread {
+
+        public final static int THREADFAIL = 1;
+        public final static int THREADPASS = 0;
+        int _status;
+        int id;
+        int start;
+        int stop;
+
+        public int status() {
+            return _status;
+        }
+
+        public ComputeSeqThread(int _id, int _stop) {
+            _status = THREADFAIL;
+            id = _id;
+            stop = _stop;
+        }
+
+        public void run() {
+            boolean verbose = true;
+            int count = 0;
+            Date start = new Date();
+            for (int i = id; i < stop; i += NB_PROC) {
+                count++;
+                if (verbose && count % 2500 == 0) {  // check time  ...
+                    Date end = new Date();
+                    System.out.println("Thread " + id + " compute Seq - count:" + count + ":" + (end.getTime() - start.getTime()));
+                    start = new Date();
+                }
+
+                computeSeq3forN(i);
+            }
+            //System.out.print("Thread " + id + ": End with success\n");
+            System.out.print(" - " + id);
+            _status = THREADPASS;
+            stop();
+            System.out.print("Error: Thread computeSeq3forN " + id + ": Didn't expect to get here!\n");
+            _status = THREADFAIL;
+        }
+    }
     public static final int MaxIndexedW = 1000000;
+    public static final int NB_PROC = 4;
     public static final int NotIndexed = -1;
     static final int MaxMark = 3;
     static final int NoMark = -1;
@@ -93,13 +135,14 @@ public class IdxReference {
             System.out.println("IdxReference: find first document");
             IdxReference firstpass = new IdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, false, true);
             String dummyhtml = firstpass.getHTML();
+            this.doc = firstpass.doc;  // copy the result
             this.removedFile = firstpass.removedFile;
             this.removedDoc = firstpass.removedDoc;
             lookforfirst = false;
             secondpass = true;
 
         }
-        if (secondpass){
+        if (secondpass) {
             System.out.println("IdxReference: secondpass with removed document");
         }
         InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst, fast);
@@ -109,17 +152,17 @@ public class IdxReference {
             boolean _removefirst, boolean _fast) {
 
         Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
-         glue = _glue;
+        glue = _glue;
         removefirst = _removefirst;
         fast = _fast;
         selectedCollection = _selectedCollection;
         collectList = "";
-          System.out.println("IdxReference: parameters:");
-        System.out.println("   removefirst:"+removefirst);
-        System.out.println("   fast:"+fast);
-        System.out.println("   lookforfirst:"+lookforfirst);
-        System.out.println("   secondpass:"+secondpass);
-      if (selectedCollection != null) {
+        System.out.println("IdxReference: parameters:");
+        System.out.println("   removefirst:" + removefirst);
+        System.out.println("   fast:" + fast);
+        System.out.println("   lookforfirst:" + lookforfirst);
+        System.out.println("   secondpass:" + secondpass);
+        if (selectedCollection != null) {
             for (int i = 0; i < selectedCollection.length; i++) {
                 collectList += " " + selectedCollection[i].replace("COLLECTION.", "");
             }
@@ -141,7 +184,7 @@ public class IdxReference {
 //            System.out.println("ta:"+ta.countTrue());
             sota.and(ta, SetOfBits.ALL);
 //            System.out.println("sota:"+sota.countTrue());
-            if (secondpass&&removedDoc!=-1) {
+            if (secondpass && removedDoc != -1) {
                 System.out.println("remove first file from filter");
                 sota.set(removedDoc, false);
 
@@ -170,7 +213,20 @@ public class IdxReference {
         compact();
         //t.stop();
         //t = new Timer("Compute Sequence");
-        computeSeq3();
+        if (!secondpass) {
+            computeSeq3();
+        } else {  // already compute in first pass - need to remove first doc
+            System.out.println("instead of computeSeq, removedDoc:"+removedDoc);
+            if (removedDoc != -1) {
+                for (int i = 0; i < lastscan; i++) {
+                    if (doc[i] != null) {
+                        doc[i].removebit(removedDoc);
+                    } else {
+                        doc[i] = new SparseBitSet();
+                    }
+                }
+            }
+        }
         //t.stop();
         //t = new Timer("Marking");
         markString();
@@ -229,39 +285,50 @@ public class IdxReference {
     }
 
     private final void computeSeq3() {
-        boolean verbose = false;
-        int[] resD;
-        int count = 0;
-        Date start = new Date();
         doc = new SparseBitSet[lastscan];
-        for (int i = 0; i < lastcp - seqn; i++) {
-            count++;
-            if (verbose && count % 100 == 0) {  // check time  ...
-                Date end = new Date();
-//                System.out.println(count + ":" + (end.getTime() - start.getTime()));
-                start = new Date();
+        System.out.print("Start Thread ");
+        ComputeSeqThread[] t = new ComputeSeqThread[NB_PROC];
+
+        for (int it = 0; it < NB_PROC; it++) {
+            //System.out.println("Create a thread " + it);
+            t[it] = new ComputeSeqThread(it, lastcp - seqn);
+            //System.out.println("Start the thread " + it);
+            System.out.print(" + " + it);
+            t[it].start();
+        }
+        for (int it = 0; it < NB_PROC; it++) {
+            //System.out.print("Wait for the thread " + it + " to complete\n");
+            try {
+                t[it].join();
+            } catch (InterruptedException e) {
+                System.out.print("t " + it + " Join interrupted\n");
             }
-            if (minlength < 6) { // <6 
-                resD = getDocforWseqW3(glue, cpW[i], cpW[i + 1], cpW[i + 2]);
-            } else { // >=6
-                resD = getDocforWseqW6(glue, cpW[i], cpW[i + 1], cpW[i + 2], cpW[i + 3], cpW[i + 4], cpW[i + 5]);
+        }
+        System.out.println(" End Thread ");
+    }
+
+    private final void computeSeq3forN(int i) {
+        int[] resD;
+        if (minlength < 6) { // <6 
+            resD = getDocforWseqW3(glue, cpW[i], cpW[i + 1], cpW[i + 2]);
+        } else { // >=6
+            resD = getDocforWseqW6(glue, cpW[i], cpW[i + 1], cpW[i + 2], cpW[i + 3], cpW[i + 4], cpW[i + 5]);
+        }
+        //id.showVector(resD);
+        if (alignsota) {  // need to be filtered by sota
+            int l = resD.length;
+            doc[i] = new SparseBitSet();
+            for (int j = 0; j < l; j++) {
+                int currentDoc = resD[j];
+                if (sota.get(currentDoc)) {// check source and target
+                    doc[i].insertbit(currentDoc);
+                }
             }
-            //id.showVector(resD);
-            if (alignsota) {  // need to be filtered by sota
-                int l = resD.length;
+        } else { // no filter
+            if (resD.length > 0) { // copy result
+                doc[i] = new SparseBitSet(resD);
+            } else { // empty result
                 doc[i] = new SparseBitSet();
-                for (int j = 0; j < l; j++) {
-                    int currentDoc = resD[j];
-                    if (sota.get(currentDoc)) {// check source and target
-                        doc[i].insertbit(currentDoc);
-                    }
-                }
-            } else { // no filter
-                if (resD.length > 0) { // copy result
-                    doc[i] = new SparseBitSet(resD);
-                } else { // empty result
-                    doc[i] = new SparseBitSet();
-                }
             }
         }
     }
@@ -296,6 +363,10 @@ public class IdxReference {
     }
 
     private final void markString() {
+        boolean verbose = true;
+        Date start = new Date();
+        int count = 0;
+
         begM = new int[lastscan];
         for (int i = 0; i < lastscan; i++) {
             begM[i] = NoMark;
@@ -314,6 +385,13 @@ public class IdxReference {
         int[] multidoc = null;
         for (int i = 0; i < lastcp - seqn; i++) {
             //Timer t0 = new Timer("collect ref at i="+i);
+            count++;
+            if (verbose && count % 10000 == 0) {  // check time  ...
+                Date end = new Date();
+                System.out.println("MarkString - count:" + count + ":" + (end.getTime() - start.getTime()));
+                start = new Date();
+            }
+
             SparseBitSet b = doc[i];
             if (b.notEmpty()) { // ok look for the next
                 mark = i;
