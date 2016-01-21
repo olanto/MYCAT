@@ -31,6 +31,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.IdxStructure;
 import org.olanto.senseos.SenseOS;
 
@@ -55,7 +56,26 @@ public class TestClientReferenceWithoutServer {
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
  //     testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
-      testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt.res.html", null , 6);
+ IdxConstant.REALREF_MAX_CHECK = 6;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+ IdxConstant.REALREF_MAX_CHECK = 8;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 10;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 12;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 15;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 20;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 30;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 50;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 100;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+IdxConstant.REALREF_MAX_CHECK = 200;
+ testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
    //  testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt.res.html", null , 6);
 // 247 282
     }
@@ -68,9 +88,9 @@ public class TestClientReferenceWithoutServer {
         ex += UtilsFiles.file2String(in, "UTF-8");
         UploadedFile up = new UploadedFile(ex, "test.txt");
 
-        Timer t1 = new Timer("-------------  ref ");
+        Timer t1 = new Timer("-------------  ref:"+IdxConstant.REALREF_MAX_CHECK);
 //        for (int i = 0; i < 20; i++) {
-            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,false,false);
+            REFResultNice ref = id.getReferences(up, nbref, "EN", "FR", collect,true,false);
 //        }
         t1.stop();
 //            msg("ref:" + ref.htmlref);

@@ -72,21 +72,21 @@ public class IdxReference {
             boolean verbose = true;
             int count = 0;
             Date start = new Date();
-            for (int i = id; i < stop; i += NB_PROC) {
+            for (int i = id; i < stop; i += REF_MAX_THREAD) {
                 count++;
                 if (verbose && count % 2500 == 0) {  // check time  ...
                     Date end = new Date();
-                    System.out.println("Thread " + id + " compute Seq - count:" + count + ":" + (end.getTime() - start.getTime()));
+                    System.out.println(TaskId() + "Thread " + id + " compute Seq - count:" + count + ":" + (end.getTime() - start.getTime()));
                     start = new Date();
                 }
 
                 computeSeq3forN(i);
             }
             //System.out.print("Thread " + id + ": End with success\n");
-            System.out.print(" - " + id);
+            System.out.println(TaskId() + " - " + id);
             _status = THREADPASS;
             stop();
-            System.out.print("Error: Thread computeSeq3forN " + id + ": Didn't expect to get here!\n");
+            System.out.print(TaskId() + "Error: Thread computeSeq3forN " + id + ": Didn't expect to get here!\n");
             _status = THREADFAIL;
         }
     }
@@ -114,27 +114,28 @@ public class IdxReference {
             boolean verbose = true;
             int count = 0;
             Date start = new Date();
-            for (int i = id; i < stop; i += NB_PROC) {
+            for (int i = id; i < stop; i += REF_MAX_THREAD) {
                 count++;
                 if (verbose && count % 2500 == 0) {  // check time  ...
                     Date end = new Date();
-                    System.out.println("Thread " + id + " compute Mark - count:" + count + ":" + (end.getTime() - start.getTime()));
+                    System.out.println(TaskId() + "Thread " + id + " compute Mark - count:" + count + ":" + (end.getTime() - start.getTime()));
                     start = new Date();
                 }
 
                 computeMarkN(i);
             }
             //System.out.print("Thread " + id + ": End with success\n");
-            System.out.print(" - " + id);
+            System.out.println(TaskId() + " - " + id);
             _status = THREADPASS;
             stop();
-            System.out.print("Error: Thread ComputeMarkThreadN " + id + ": Didn't expect to get here!\n");
+            System.out.print(TaskId() + "Error: Thread ComputeMarkThreadN " + id + ": Didn't expect to get here!\n");
             _status = THREADFAIL;
         }
     }
     public static final int MaxIndexedW = 1000000;
-    public static final int NB_PROC = 4;
     public static final int NotIndexed = -1;
+    private static int globalTaskNumber = 0;
+    private int taskNumber;
     static final int MaxMark = 3;
     static final int NoMark = -1;
     private int currentMark = 0;
@@ -175,10 +176,22 @@ public class IdxReference {
     private int[] markdocv;
     private int[][] multidocv;
 
+    private synchronized int GetANewTaskId() {
+
+        globalTaskNumber++;
+        return globalTaskNumber;
+
+    }
+
+    private String TaskId() {
+        return "Task:" + taskNumber + " ";
+    }
+
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
+        taskNumber = GetANewTaskId();
         if (removefirst) {
-            System.out.println("IdxReference: find first document");
+            System.out.println(TaskId() + "IdxReference: find first document");
             IdxReference firstpass = new IdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, false, true);
             String dummyhtml = firstpass.getHTML();
             this.doc = firstpass.doc;  // copy the result
@@ -189,7 +202,7 @@ public class IdxReference {
 
         }
         if (secondpass) {
-            System.out.println("IdxReference: secondpass with removed document");
+            System.out.println(TaskId() + "IdxReference: secondpass with removed document");
         }
         InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst, fast);
     }
@@ -197,17 +210,17 @@ public class IdxReference {
     public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean _removefirst, boolean _fast) {
 
-        Timer timing = new Timer("--------------------------------Total reference, size: " + s.length());
+        Timer timing = new Timer(TaskId() + "--------------------------------Total reference, size: " + s.length());
         glue = _glue;
         removefirst = _removefirst;
         fast = _fast;
         selectedCollection = _selectedCollection;
         collectList = "";
-        System.out.println("IdxReference: parameters:");
-        System.out.println("   removefirst:" + removefirst);
-        System.out.println("   fast:" + fast);
-        System.out.println("   lookforfirst:" + lookforfirst);
-        System.out.println("   secondpass:" + secondpass);
+        System.out.println(TaskId() + "IdxReference: parameters:");
+        System.out.println(TaskId() + "   removefirst:" + removefirst);
+        System.out.println(TaskId() + "   fast:" + fast);
+        System.out.println(TaskId() + "   lookforfirst:" + lookforfirst);
+        System.out.println(TaskId() + "   secondpass:" + secondpass);
         if (selectedCollection != null) {
             for (int i = 0; i < selectedCollection.length; i++) {
                 collectList += " " + selectedCollection[i].replace("COLLECTION.", "");
@@ -231,7 +244,7 @@ public class IdxReference {
             sota.and(ta, SetOfBits.ALL);
 //            System.out.println("sota:"+sota.countTrue());
             if (secondpass && removedDoc != -1) {
-                System.out.println("remove first file from filter");
+                System.out.println(TaskId() + "remove first file from filter");
                 sota.set(removedDoc, false);
 
             }
@@ -244,7 +257,7 @@ public class IdxReference {
             }
             sota.and(colfilter, SetOfBits.ALL);
         }
-        Timer t = new Timer("Parsing");
+        Timer t = new Timer(TaskId() + "Parsing");
         //       textforhtml = s.replace("&", "&amp;").replace("<", "&lt;").replace("\n", "<br/>")+ " EndOfDocument ."; // supprime les return
         textforhtml = "BeginOfDocument <br/>" + s.replace("<", "&lt;").replace("&nbsp;", " ") + " EndOfDocument ."; // &amp sont déjà insérer par le GUI
         textforhtml = addSpace(textforhtml);
@@ -262,7 +275,7 @@ public class IdxReference {
         if (!secondpass) {
             computeSeq3();
         } else {  // already compute in first pass - need to remove first doc
-            System.out.println("instead of computeSeq, removedDoc:" + removedDoc);
+            System.out.println(TaskId() + "instead of computeSeq, removedDoc:" + removedDoc);
             if (removedDoc != -1) {
                 for (int i = 0; i < lastscan; i++) {
                     if (doc[i] != null) {
@@ -277,7 +290,7 @@ public class IdxReference {
         //t = new Timer("Marking");
         markString();
         //t.stop();
-        System.out.println(glue.indexread.getStatistic());
+        System.out.println(TaskId() + glue.indexread.getStatistic());
         timing.stop();
         //this.print();
     }
@@ -327,30 +340,30 @@ public class IdxReference {
                 idxcp[i] = NoMark;
             }
         }
-        System.out.println(lastscan + " compact " + lastcp);
+        System.out.println(TaskId() + lastscan + " compact " + lastcp);
     }
 
     private final void computeSeq3() {
         doc = new SparseBitSet[lastscan];
-        System.out.print("Start computeSeq Thread ");
-        ComputeSeqThread[] t = new ComputeSeqThread[NB_PROC];
+        System.out.print(TaskId() + "Start computeSeq Thread ");
+        ComputeSeqThread[] t = new ComputeSeqThread[REF_MAX_THREAD];
 
-        for (int it = 0; it < NB_PROC; it++) {
+        for (int it = 0; it < REF_MAX_THREAD; it++) {
             //System.out.println("Create a thread " + it);
             t[it] = new ComputeSeqThread(it, lastcp - seqn);
             //System.out.println("Start the thread " + it);
-            System.out.print(" + " + it);
+            System.out.println(TaskId() + " + " + it);
             t[it].start();
         }
-        for (int it = 0; it < NB_PROC; it++) {
+        for (int it = 0; it < REF_MAX_THREAD; it++) {
             //System.out.print("Wait for the thread " + it + " to complete\n");
             try {
                 t[it].join();
             } catch (InterruptedException e) {
-                System.out.print("Error: computeSeq Thread " + it + " Join interrupted\n");
+                System.out.print(TaskId() + "Error: computeSeq Thread " + it + " Join interrupted\n");
             }
         }
-        System.out.println(" End Thread ");
+        System.out.println(TaskId() + " End Thread ");
     }
 
     private final void computeSeq3forN(int i) {
@@ -440,30 +453,30 @@ public class IdxReference {
     }
 
     private final void computeMark() {
-        System.out.println("Compute marking");
+        System.out.println(TaskId() + "Compute marking");
         markv = new int[lastcp - seqn];
         markdocv = new int[lastcp - seqn];
         multidocv = new int[lastcp - seqn][];
 
-        System.out.print("Start computeMark Thread ");
-        ComputeMarkThread[] t = new ComputeMarkThread[NB_PROC];
+        System.out.print(TaskId() + "Start computeMark Thread ");
+        ComputeMarkThread[] t = new ComputeMarkThread[REF_MAX_THREAD];
 
-        for (int it = 0; it < NB_PROC; it++) {
+        for (int it = 0; it < REF_MAX_THREAD; it++) {
             //System.out.println("Create a thread " + it);
             t[it] = new ComputeMarkThread(it, lastcp - seqn);
             //System.out.println("Start the thread " + it);
-            System.out.print(" + " + it);
+            System.out.println(TaskId() + " + " + it);
             t[it].start();
         }
-        for (int it = 0; it < NB_PROC; it++) {
+        for (int it = 0; it < REF_MAX_THREAD; it++) {
             //System.out.print("Wait for the thread " + it + " to complete\n");
             try {
                 t[it].join();
             } catch (InterruptedException e) {
-                System.out.print("Error: computeMark Thread  " + it + " Join interrupted\n");
+                System.out.print(TaskId() + "Error: computeMark Thread  " + it + " Join interrupted\n");
             }
         }
-        System.out.println(" End Thread ");
+        System.out.println(TaskId() + " End Thread ");
 
     }
 
@@ -533,7 +546,7 @@ public class IdxReference {
             }// if
             //t0.stop();
         }// for
-        System.out.println("nbref: " + nbref);
+        System.out.println(TaskId() + "nbref: " + nbref);
 //        for (int i = 0; i < nbref; i++) {
 //            System.out.println(i + " -------------");
 //            System.out.println("doc:" + docMultiRef.get(i));
@@ -594,7 +607,7 @@ public class IdxReference {
         s.append("<hr/>\n");
         //
         if (lookforfirst) {
-            System.out.println("try to get first document");
+            System.out.println(TaskId() + "try to get first document");
             NumberFormat formatter = new DecimalFormat("#0.0");
             ReferenceStatistic firstpass = new ReferenceStatistic(txtRefOrigin, docMultiRef, totwordspacesep, removefirst, fast, removedFile);
             InverseRef firstref = firstpass.getFirsReference();
@@ -675,9 +688,9 @@ public class IdxReference {
     }
 
     private final void print() {
-        System.out.println("Scanned String lenght" + lastscan);
+        System.out.println(TaskId() + "Scanned String lenght" + lastscan);
         for (int i = 0; i < lastscan - 1; i++) {
-            System.out.println(i + "/" + word[i] + "/" + idxpos[i] + "/" + idxW[i] + "/" + idxcp[i] + "/" + begM[i] + "/" + endM[i] + "/" + docM[i]);
+            System.out.println(TaskId() + i + "/" + word[i] + "/" + idxpos[i] + "/" + idxW[i] + "/" + idxcp[i] + "/" + begM[i] + "/" + endM[i] + "/" + docM[i]);
             doc[i].print();
         }
     }

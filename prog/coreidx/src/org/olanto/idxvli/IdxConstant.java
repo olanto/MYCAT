@@ -465,8 +465,12 @@ public class IdxConstant {
     /**
      * longueur max des check pour les reférences trouvées
      */
-    public static int REALREF_MAX_CHECK = 20;
-    /**
+    public static int REALREF_MAX_CHECK = 12;
+     /**
+     * longueur max des check pour les reférences trouvées
+     */
+    public static int REF_MAX_THREAD = 4;
+   /**
      * search expression are insensitive by default
      */
     public static boolean DOCNAME_BROWSE_INSENSITIVE = true;
@@ -685,6 +689,7 @@ public class IdxConstant {
                 + "\n         ACTUAL_LANGUAGE: " + ACTUAL_LANGUAGE
                 + "\n     QUOTEREF"
                 + "\n         REALREF_MAX_CHECK: " + REALREF_MAX_CHECK
+                + "\n         REF_MAX_THREAD: " + REF_MAX_THREAD
                 + "\n     WILDCHAR"
                 + "\n         WORD_EXPANSION: " + WORD_EXPANSION
                 + "\n         WORD_EXPANSION_RELOAD: " + WORD_EXPANSION_RELOAD

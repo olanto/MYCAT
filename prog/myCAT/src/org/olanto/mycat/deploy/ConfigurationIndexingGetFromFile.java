@@ -238,6 +238,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         CLOSE_REF_BEG = prop.getProperty("CLOSE_REF_BEG", "[E");
         CLOSE_REF_END = prop.getProperty("CLOSE_REF_END", "]");
         REALREF_MAX_CHECK = Integer.parseInt(prop.getProperty("REALREF_MAX_CHECK", "20"));
+        REF_MAX_THREAD = Integer.parseInt(prop.getProperty("REF_MAX_THREAD", "4"));
 
 
         WORD_EXPANSION = Boolean.parseBoolean(prop.getProperty("WORD_EXPANSION", "true"));
