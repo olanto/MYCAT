@@ -22,6 +22,8 @@
 package org.olanto.mycat.tmx.generic;
 
 import java.rmi.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.olanto.conman.server.GetContentService;
 import org.olanto.idxvli.server.*;
 import org.olanto.idxvli.util.SetOperation;
@@ -41,52 +43,59 @@ public class TestClientQuerySimple {
     public static void main(String[] args) {
 
         is = GetContentService.getServiceMYCAT("rmi://localhost/TMX");
-         LangMap.init("EN FR");
-       try {
+        LangMap.init("EN FR");
+        try {
             showVector(is.getDictionnary().result);
             showVector(is.getCorpusLanguages());
         } catch (RemoteException ex) {
             ex.printStackTrace();
         }
+        //test("armement OR nucléaire");
+        //test("weapon IN[\"SOURCE.EN\" AND \"TARGET.FR\"]");
+        //test("(weapon AND nuclear)IN[\"SOURCE.EN\" AND \"TARGET.RU\"]");
+        //test("NEAR(\"weapon\",\"nuclear\")IN[\"SOURCE.EN\" AND \"TARGET.RU\"]");
+        //test("QUOTATION(\"efforts to mainstream gender perspectives\") IN[\"SOURCE.EN\" AND \"TARGET.FR\"]");
+        //test("QUOTATION(\"financial the collappse\") ");
 
+        //        test("QUOTATION(\"final report\") IN[\"SOURCE.EN\" ANDL \"TARGET.GA\"] ");
+        //       test("QUOTATION(\"rapport final\") IN[\"SOURCE.FR\"]");
 
-//test("armement OR nucléaire");
-//test("weapon IN[\"SOURCE.EN\" AND \"TARGET.FR\"]");
-//test("(weapon AND nuclear)IN[\"SOURCE.EN\" AND \"TARGET.RU\"]");
-//test("NEAR(\"weapon\",\"nuclear\")IN[\"SOURCE.EN\" AND \"TARGET.RU\"]");
-//test("QUOTATION(\"efforts to mainstream gender perspectives\") IN[\"SOURCE.EN\" AND \"TARGET.FR\"]");
-//test("QUOTATION(\"financial the collappse\") ");
+        //        correlation("rapport final", "final report", "FR", "EN");
+        //        correlation("rapport final", "finax report", "FR", "EN");
+        //       correlation("rapport", "report", "FR", "EN");
+        //      correlation("table", "table", "FR", "EN");
+        //      correlation("voiture", "car", "FR", "EN");
+        //     correlation("menu", "menu", "FR", "EN");
+        //    correlation("Annulation du jugement", "mistrial", "FR", "EN");
+        //    correlation("amende", "Financial penalty", "FR", "EN");
+        //    correlation("amende", "penalty", "FR", "EN");
+        //   correlation("appel", "appeal", "FR", "EN");
+        //   correlation("assistance judiciaire", "legal assistance", "FR", "EN");
+        //   correlation("assistance juridique", "legal assistance", "FR", "EN");
+        //   correlation("aide juridictionnelle", "legal assistance", "FR", "EN");
 
-//        test("QUOTATION(\"final report\") IN[\"SOURCE.EN\" ANDL \"TARGET.GA\"] ");
-//       test("QUOTATION(\"rapport final\") IN[\"SOURCE.FR\"]");
-
-//        correlation("rapport final", "final report", "FR", "EN");
-//        correlation("rapport final", "finax report", "FR", "EN");
-//       correlation("rapport", "report", "FR", "EN");
-//      correlation("table", "table", "FR", "EN");
-//      correlation("voiture", "car", "FR", "EN");
-//     correlation("menu", "menu", "FR", "EN");
-//    correlation("Annulation du jugement", "mistrial", "FR", "EN");
-//    correlation("amende", "Financial penalty", "FR", "EN");
-//    correlation("amende", "penalty", "FR", "EN");
-//   correlation("appel", "appeal", "FR", "EN");
-//   correlation("assistance judiciaire", "legal assistance", "FR", "EN");
-//   correlation("assistance juridique", "legal assistance", "FR", "EN");
-//   correlation("aide juridictionnelle", "legal assistance", "FR", "EN");
-        
-//      correlation("assistance judiciaire", "legal aid", "FR", "EN");  
-//      correlation("assistance judiciaire", "legal assistance", "FR", "EN"); 
-//      correlation("assistance judiciaire", "judicial assistance", "FR", "EN"); 
-//      
-//      correlation("choc psychologique", "mental shock", "FR", "EN"); 
-//     correlation("choc psychologique", "psychological trauma", "FR", "EN"); 
-//     correlation("choc psychologique", "psychological shock", "FR", "EN"); 
-//   
-      correlation("Détention illégale", "illegal detention", "FR", "EN"); 
-      correlation("Détention illégale", "unlawful detention", "FR", "EN"); 
-      correlation("océan atlantique", "atlantic ocean", "FR", "EN"); 
-     
-      
+        //      correlation("assistance judiciaire", "legal aid", "FR", "EN");  
+        //      correlation("assistance judiciaire", "legal assistance", "FR", "EN"); 
+        //      correlation("assistance judiciaire", "judicial assistance", "FR", "EN"); 
+        //      
+        //      correlation("choc psychologique", "mental shock", "FR", "EN"); 
+        //     correlation("choc psychologique", "psychological trauma", "FR", "EN"); 
+        //     correlation("choc psychologique", "psychological shock", "FR", "EN"); 
+        //   
+        //      correlation("Détention illégale", "illegal detention", "FR", "EN"); 
+        //      correlation("Détention illégale", "unlawful detention", "FR", "EN"); 
+        //      correlation("océan atlantique", "atlantic ocean", "FR", "EN"); 
+        //    test("accord OR agreement");
+//        try {
+//            for (int i = 0; i < 30; i += 3) {
+//                System.out.println(i + "-" + is.getDoc(i));
+//            }
+//        } catch (RemoteException ex) {
+//            Logger.getLogger(TestClientQuerySimple.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        //   test("agreement IN[\"SOURCE.EN\"");
+        //   test("armes IN[\"SOURCE.EN\" AND \"TARGET.FR\"]");
+            correlation("accord", "agreement", "FR", "EN"); 
     }
 
     static void test(String query) {
@@ -108,9 +117,9 @@ public class TestClientQuerySimple {
 
     static double correlation(String termso, String termta, String langso, String langta) {
         try {
-            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta+"\"]";
-            String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso+"\"]";
-            Timer t1 = new Timer("------------- " + queryso+" -> "+queryta);
+            String queryso = "QUOTATION(\"" + termso + "\") IN[\"SOURCE." + langso + "\" ANDL \"TARGET." + langta + "\"]";
+            String queryta = "QUOTATION(\"" + termta + "\") IN[\"SOURCE." + langta + "\" ANDL \"TARGET." + langso + "\"]";
+            Timer t1 = new Timer("------------- " + queryso + " -> " + queryta);
             QLResultNice resso = is.evalQLNice(queryso, 0, 0);
             QLResultNice resta = is.evalQLNice(queryta, 0, 0);
             //msg("time:" + resso.duration);
@@ -120,7 +129,7 @@ public class TestClientQuerySimple {
             float n2 = resta.result.length;
             msg("n2:" + resta.result.length);
             for (int i = 0; i < resta.result.length; i++) { // adjust value to source
-                resta.result[i]+=LangMap.deltaSOTA(langso, langta);
+                resta.result[i] += LangMap.deltaSOTA(langso, langta);
             }
             int[] interserct = SetOperation.and(resso.result, resta.result);
             msg("n12:" + interserct.length);

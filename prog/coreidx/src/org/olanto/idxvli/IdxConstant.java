@@ -353,7 +353,7 @@ public class IdxConstant {
      * facteur de compression esp�r�, utilis� dans les impl�mentations BIG, !
      * allocation fixe
      */
-    public static final int HOPE_COMPRESSION = 64;
+    public static  int HOPE_COMPRESSION = 64;
     /**
      * maximum en cache, utilis� dans les impl�mentations BIG, ! allocation fixe
      */

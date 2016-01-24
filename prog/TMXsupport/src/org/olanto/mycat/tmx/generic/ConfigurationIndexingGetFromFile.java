@@ -83,10 +83,11 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         DOC_MAXBIT = Integer.parseInt(prop.getProperty("DOC_MAXBIT", "20"));
         WORD_MAXBIT = Integer.parseInt(prop.getProperty("WORD_MAXBIT", "21"));
         DOC_PROPERTIES_MAXBIT = Integer.parseInt(prop.getProperty("DOC_PROPERTIES_MAXBIT", "12"));
+        HOPE_COMPRESSION = Integer.parseInt(prop.getProperty("HOPE_COMPRESSION", "32"));
  
         DOC_MAX = (int) Math.pow(2, DOC_MAXBIT);  // recalcule
         WORD_MAX = (int) Math.pow(2, WORD_MAXBIT); // recalcule
-
+        
         WORD_IMPLEMENTATION = implementationMode.valueOf(prop.getProperty("WORD_IMPLEMENTATION", "FAST"));
         DOC_IMPLEMENTATION = implementationMode.valueOf(prop.getProperty("DOC_IMPLEMENTATION", "FAST"));
         OBJ_IMPLEMENTATION = implementationMode.valueOf(prop.getProperty("OBJ_IMPLEMENTATION", "FAST"));
@@ -103,7 +104,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         WORD_MAXLENGTH = Integer.parseInt(prop.getProperty("WORD_MAXLENGTH", "20"));
 
        WORD_EXPANSION = Boolean.parseBoolean(prop.getProperty("WORD_EXPANSION", "false"));
- DOCNAME_EXPANSION = Boolean.parseBoolean(prop.getProperty("DOCNAME_EXPANSION", "false"));
+       DOCNAME_EXPANSION = Boolean.parseBoolean(prop.getProperty("DOCNAME_EXPANSION", "false"));
 
 
         OBJ_PW2 = Integer.parseInt(prop.getProperty("OBJ_PW2", "0"));

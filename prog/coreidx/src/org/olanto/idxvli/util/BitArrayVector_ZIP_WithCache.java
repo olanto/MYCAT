@@ -143,6 +143,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
                 break;
             case XL:
             case XXL:
+                //System.out.println("XL implementation HOPE_COMPRESSION:"+HOPE_COMPRESSION+" size:"+HOPE_COMPRESSION);
                 vZip = new ByteArrayVector_OnDisk().create(pathName, fileName + "_zip", _maxSize, fixedArraySize / HOPE_COMPRESSION);
                 break;
         }
@@ -163,6 +164,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
     private final void saveMasterFile() {  // sauver les informations persistante du gestionnaire
         if (RW == readWriteMode.rw) {
             try {
+                getStatistic();
                 FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
                 ObjectOutputStream p = new ObjectOutputStream(ostream);
                 p.writeObject(VERSION); // �crire les flags

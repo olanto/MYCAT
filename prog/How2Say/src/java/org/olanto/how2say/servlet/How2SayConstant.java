@@ -44,6 +44,10 @@ public class How2SayConstant {//extends org.olanto.idxvli.IdxConstant {
      * corpus name
      */
     public static String CACHE = "CACHE";
+    /**
+     * encodage des paramètres UTF-8, iso-8859-1
+     */
+    public static String URL_PARAM_ENCODING = "UTF-8";
 
     /**
      * **********************************************************************************
@@ -53,6 +57,8 @@ public class How2SayConstant {//extends org.olanto.idxvli.IdxConstant {
                 "HOWTOSAY"
                 + "\n    CORPUS_NAME: " + CORPUS_NAME
                 + "\n    LIST_OF_LANG: " + LIST_OF_LANG
-                + "\n    CACHE: " + CACHE);
+                + "\n    CACHE: " + CACHE
+                + "\n    URL_PARAM_ENCODING: " + URL_PARAM_ENCODING   
+);
     }
 }

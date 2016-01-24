@@ -173,7 +173,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
             writeInt(val.length, posOnDisk, rdoc);
             writeBytes(val, posOnDisk + 4, rdoc);
         } else {
-            error("int array is too big length:" + val.length + " limit:" + fixedArraySize);
+            error("ByteArrayVector_OnDisk: int array is too big length (Check HOPE_COMPRESSION...):" + val.length + " limit:" + fixedArraySize);
         }
     }
 

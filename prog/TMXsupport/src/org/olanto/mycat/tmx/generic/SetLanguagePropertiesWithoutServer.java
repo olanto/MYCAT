@@ -66,6 +66,7 @@ public class SetLanguagePropertiesWithoutServer {
         int lastdoc = id.lastRecordedDoc; // taille du corpus
         System.out.println("lastdoc:"+lastdoc);
         int step = LangMap.size();
+       System.out.println("step:"+step);
 
         for (int i = 0; i < step; i++) {
             msg("clear properties for: " + LangMap.getlang(i));
@@ -76,7 +77,7 @@ public class SetLanguagePropertiesWithoutServer {
             int first = i;
             for (int j = 0; j < step; j++) {
 //              System.out.println("length" + id.getLengthOfD(i + j));
-                if (id.getLengthOfD(i + j) > 1) {
+                if (id.getLengthOfD(i + j) > 1) { // test if not empty
                     id.setDocumentPropertie(i + j, "SOURCE." + LangMap.getlang(j));
                     for (int k = 0; k < step; k++) {
                        id.setDocumentPropertie(first + k, "TARGET." + LangMap.getlang(j));
