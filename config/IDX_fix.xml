@@ -132,5 +132,9 @@
    <entry key="PRODUCTION_MODE">true</entry>
 <!--A Glossaries folderName. this entry must be the same in IDX_fix.xml, MAP_fix.xml and SEG_fix.xml-->
    <entry key="GLOSS_NAME">Glossaries</entry>
+<!--maximum lenght to check a reference min=3 default=12 (could be cpu time expensive)-->
+   <entry key="REALREF_MAX_CHECK">12</entry>
+<!--maximum Cpus (cores) used during QD min=1 max=maxcorehost default=4-->
+   <entry key="REF_MAX_THREAD">4</entry>
 
 </properties>
