@@ -143,6 +143,7 @@ public class extractCorpusFromMyPREP {
         System.out.println("DUMP");
         for (String key : TMX.keySet()) {
             String[] entry = TMX.get(key);
+//            System.out.println(key);
             try {
                 outmflf.append(key);  // entry[i] is empty
                 for (int i = 1; i < LangMap.size(); i++) {
