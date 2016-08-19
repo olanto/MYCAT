@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<converter>
+    <common>
+        <targetFormat>txt</targetFormat>
+        <badPath>C:/MYCAT/corpus/bad</badPath>
+        <docPath>C:/MYCAT/corpus/docs</docPath>
+        <sourcePath>C:/MYCAT/corpus/source</sourcePath>
+        <tempPath>C:/MYCAT/TEMP</tempPath>
+        <maxRetry>2</maxRetry>
+        <keepExtension>true</keepExtension>
+        <outputEncoding>UTF-8</outputEncoding>
+    </common> 
+	<!-- examples of plugins -->
+    <plugins>
+         <plugin>
+            <plugName>pdftotext</plugName>
+            <plugCommand>C:/MYCAT/plugins/pdftotext/pdftotext.exe  %source% %target%</plugCommand>
+            <plugProcessWindows>pdftotext.exe</plugProcessWindows>               
+        </plugin>
+        <maps>
+             <ext>
+                <extName>pdf</extName>
+                <conv>pdftotext</conv>
+                <builtin>no</builtin>
+            </ext>
+        </maps>
+    </plugins>
+
+</converter>
