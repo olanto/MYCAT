@@ -76,7 +76,6 @@ public class RefDocService {
                 UploadedFile up = new UploadedFile(TxtSrc, TxtTgt);
                 refDoc = is.getHtmlReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast);
             }
-
         } catch (NotBoundException | IOException ex) {
             _logger.error(ex);
         }
