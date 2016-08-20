@@ -67,7 +67,7 @@ public class RefDocService {
             @DefaultValue("FALSE") @QueryParam("Fast") Boolean Fast) {
 
         String refDoc = "empty ref";
-        String[] collections = Filter.split(";", -1);
+        String[] collections = Filter.split(";");
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
             if (r instanceof IndexService_MyCat) {
@@ -77,6 +77,7 @@ public class RefDocService {
                 refDoc = is.getHtmlReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast);
             }
         } catch (NotBoundException | IOException ex) {
+            refDoc = "RMI call unsuccessful because of unmarshalling issue";
             _logger.error(ex);
         }
         return "<QD>"
