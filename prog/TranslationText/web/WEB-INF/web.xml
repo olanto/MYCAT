@@ -4,12 +4,22 @@
         <servlet-name>TranslateService</servlet-name>
         <servlet-class>org.olanto.TranslationText.server.TranslateServiceImpl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <description>Multiple packages, separated by semicolon(;), can be specified in param-value</description>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>org.olanto.mycatt.rest</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>TranslateService</servlet-name>
         <url-pattern>/org.olanto.TranslationText.Main/translateservice</url-pattern>
     </servlet-mapping>
     <context-param>
-    <!-- max size of the upload request -->
+        <!-- max size of the upload request -->
         <param-name>maxSize</param-name>
         <param-value>20145728</param-value>
     </context-param>
@@ -20,6 +30,10 @@
     <servlet-mapping>
         <servlet-name>uploadServlet</servlet-name>
         <url-pattern>*.gupld</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAdaptor</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
