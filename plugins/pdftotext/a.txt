@@ -1,0 +1,3025 @@
+CERN/3177 CERN/FC/5911 Original: English/French 31 March 2015
+Financial Statements
+for the year ended 31 December 2014
+Audited by SUPREME AUDIT OFFICE OF POLAND
+NAJWYSZA IZBA KONTROLI (NIK)
+
+Action to be taken  For recommendation to Council
+For approval
+
+Voting Procedure
+
+FINANCE COMMITTEE 352nd Meeting 17 June 2015 
+
+Simple majority of Member States represented and voting and 51% of the contributions of all Member States
+
+COUNCIL 176th Session 18 June 2015
+
+Simple majority of Member States represented and voting
+
+The Finance Committee is invited to recommend to the Council and the Council is invited to approve the 2014 Financial Statements and to grant discharge to the Director-General.
+
+Table of contents
+INTRODUCTION ............................................................................................................ 5
+AUDIT OPINION ............................................................................................................ 7
+SIGNATURE OF THE CERN OFFICIAL REPRESENTATIVES....................................11
+1. STATEMENT OF FINANCIAL POSITION.............................................................13
+2. STATEMENT OF CHANGES IN NET ASSETS ....................................................14
+3. STATEMENT OF FINANCIAL PERFORMANCE ..................................................15
+4. CASH-FLOW STATEMENT ..................................................................................16
+5. STATEMENT OF COMPARISON OF BUDGET AND ACTUAL AMOUNTS.........17
+6. ACCOUNTING RECONCILIATION OF BUDGET ACTUAL AMOUNTS TO STATEMENT OF FINANCIAL PERFORMANCE ..................................................18
+7. NOTES TO THE FINANCIAL STATEMENTS .......................................................19 7.1. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES ...................................19 7.1.1. BASIS OF PREPARATION.............................................................................19 7.1.2. USE OF ESTIMATES AND ASSUMPTIONS ..................................................20 7.1.3. UNIT OF ACCOUNT AND FOREIGN CURRENCY TRANSLATION...............20 7.1.4. ASSETS .........................................................................................................20 7.1.5. LIABILITIES ....................................................................................................23 7.1.6. REVENUE ......................................................................................................25 7.1.7. INTERNAL TAXATION ...................................................................................26 7.1.8. FINANCIAL INSTRUMENTS...........................................................................26 7.2. COMMITMENTS NOT SHOWN IN THE STATEMENT OF FINANCIAL POSITION
+.......................................................................................................................27 7.2.1. PENSION FUND.............................................................................................27 7.2.2. BANKER'S GUARANTEES IN OUR POSSESSION .......................................28 7.2.3. BANKER'S GUARANTEES GIVEN BY CERN ................................................28 7.2.4. FUTURE COMMITMENTS TO SUPPLIERS...................................................29 7.3. PROPERTY, PLANT AND EQUIPMENT..............................................................29 7.3.1. PROPERTY, PLANT AND EQUIPMENT AVAILABLE FOR USE....................29 7.3.2. PROPERTY, PLANT AND EQUIPMENT IN PROGRESS...............................32 7.4. INTANGIBLE ASSETS.........................................................................................34 7.4.1. INTANGIBLE ASSETS AVAILABLE FOR USE...............................................34 7.4.2. INTANGIBLE ASSETS IN PROGRESS ..........................................................34 7.5. INVENTORIES .....................................................................................................35 7.6. RECEIVABLES ....................................................................................................35 7.6.1. MEMBER STATES .........................................................................................35 7.6.2. TAXES............................................................................................................36 7.6.3. TEAMS AND COLLABORATIONS..................................................................36
+1
+
+7.6.4. OTHER RECEIVABLES AND PREPAYMENTS .............................................36 7.7. OTHER FINANCIAL ASSETS..............................................................................36 7.8. CASH AND CASH EQUIVALENTS .....................................................................37 7.9. NET ASSETS.......................................................................................................37 7.10. LONG-TERM DEBTS...........................................................................................38 7.10.1. BNP FORTIS ..................................................................................................38 7.10.2. FIPOI ..............................................................................................................38 7.10.3. SIG .................................................................................................................39 7.11. CHIS FUND..........................................................................................................39 7.12. MEMBER STATES ..............................................................................................40 7.13. POST-EMPLOYMENT BENEFITS .......................................................................41 7.14. OTHER PROVISIONS..........................................................................................45 7.15. SHORT-TERM DEBT AND BANK OVERDRAFT ................................................48 7.16. PAYABLES..........................................................................................................49 7.16.1. TRADE ACCOUNTS ......................................................................................49 7.16.2. TEAMS AND COLLABORATIONS .................................................................49 7.16.3. EMPLOYEE BENEFITS..................................................................................50 7.17. DEFERRED REVENUE........................................................................................51 7.18. OTHER CURRENT LIABILITIES .........................................................................52 7.19. MEMBER STATES' CONTRIBUTIONS ...............................................................52 7.20. EU CONTRIBUTIONS..........................................................................................53 7.21. OTHER REVENUE...............................................................................................54 7.22. MATERIAL EXPENSES.......................................................................................55 7.23. PERSONNEL EXPENSES ...................................................................................56 7.24. FINANCIAL REVENUE AND EXPENSES ...........................................................57 7.25. MANAGEMENT OF FINANCIAL RISKS..............................................................57 7.25.1. LIQUIDITY RISK.............................................................................................58 7.25.2. MARKET RISK ...............................................................................................58 7.25.3. CREDIT RISK.................................................................................................59 7.25.4. INTEREST RISK ............................................................................................60 7.25.5. CURRENCY RISK ..........................................................................................60 7.26. FINANCIAL INSTRUMENTS................................................................................61 7.26.1. FINANCIAL INSTRUMENTS BY CATEGORY................................................61 7.26.2. FAIR VALUE LEVELS ....................................................................................63 7.26.3. GAINS AND LOSSES ON FINANCIAL INSTRUMENTS.................................64 7.27. RECAPITALISATION OF THE PENSION FUND .................................................65 7.28. RELATED PARTY DISCLOSURES .....................................................................65 7.29. EVENTS AFTER THE REPORTING PERIOD......................................................66
+8. NOTES TO THE BUDGET ACTUAL AMOUNTS..................................................67 8.1. SUMMARY OF REVENUE AND EXPENSES BY ACTIVITY ...............................69 8.2. MATERIAL EXPENSES.......................................................................................70 8.3. PERSONNEL EXPENSES ...................................................................................72 8.3.1. EXPENSES BY NATURE ...............................................................................72 8.3.2. DISTRIBUTION OF FTE BY ACTIVITY ..........................................................73
+2
+
+8.4. INTEREST AND FINANCIAL COSTS ..................................................................74 8.5. CAPITAL REPAYMENTS ....................................................................................74
+3
+
+4
+
+INTRODUCTION
+CERN, the European Organisation for Nuclear Research, operates the world's leading laboratory for particle physics. Its business is fundamental physics, finding out what the Universe is made of and how it works. Founded in 1954, CERN has become a prime example of international collaboration, with 21 Member States as of January 2015. Additional nations around the globe also contribute to and participate in the research programmes.
+The Financial Statements of CERN for the year ending on 31 December 2014 have been drawn up in compliance with the International Public Sector Accounting Standards (IPSAS), as were the Financial Statements of all years since 2007.
+The budget deficit for 2014 was initially foreseen to be 45.8 MCHF. In fact a budget surplus amounting to 86.0 MCHF was recorded. The main reasons for the 131.8 MCHF difference are as follows:
+(1) As published in the Final 2015 Budget (CERN/FC/5873), expenses were significantly lower owing to multi-annual project re-profiling (108.1 MCHF). Notably, it concerns delays of building construction and renovation projects (Buildings 107, 774, magnetic measurements building, Globe) and re-profiling of the HL-LHC, LIU, detectors upgrade projects and delays in the diversity programme due to the focus on finishing important milestones and to maintain the LS1 schedule.
+(2) Less cost under the centralized expenses heading for energy and insurances.
+Taking into account 26.2 MCHF in capital repayments and 60 MCHF for the recapitalization of the Pension Fund, the final amount to be allocated to the budget balance is -0.2 MCHF which will be added to the cumulative budget deficit.
+The net assets passed from +344 MCHF in 2013 to ­2,298 MCHF at the end of 2014 mostly due to provisions for actuarial liabilities for post-employment benefits. The significant increase in the liabilities for post-employment benefits is linked to the decrease of the discount rate (30 years Swiss Confederation Bond interest rate) from 1.97% in 2013 to 0.81% at the end of 2014. More explanations are given in note 7.13.
+5
+
+6
+
+AUDIT OPINION
+7
+
+8
+
+9
+
+10
+
+SIGNATURE OF THE CERN OFFICIAL REPRESENTATIVES
+11
+
+12
+
+1. STATEMENT OF FINANCIAL POSITION
+
+kCHF ASSETS
+Non-current assets Property, Plant and Equipment LHC Programme Other Programmes Infrastructure and services buildings In progress Sub-total - Property, Plant and Equipment Intangible Assets Financial Assets - CHIS Fund
+Current assets Inventories Receivables - Member States Receivables - Taxes Receivables - Teams & Collaborations Other receivables and prepayments Other financial assets Cash and cash equivalents
+LIABILITIES & NET ASSETS Net assets Reserves Accumulated deficits Net surplus/deficit (-) for the period
+Non-current liabilities Long-term debts Long term liabilities - CHIS Fund Member States Post-employment benefits Provisions - Others
+Current liabilities Short-term debt and bank overdraft Short term liabilities - CHIS Fund Payables - Trade accounts Payables - Teams & Collaborations Payables - Employee benefits Deferred revenue Member States Other current liabilities
+
+As at
+Note
+31.12.2014
+
+7.3.1 7.3.1 7.3.1 7.3.2
+7.4 7.11
+7.5 7.6.1 7.6.2 7.6.3 7.6.4 7.7 7.8
+Total
+
+5 672 356 205 105 204 078 988 616
+7 070 155 3 332
+190 259
+7 263 746
+7 623 87 991 19 029
+7 841 19 831 50 000 117 723 310 038
+7 573 784
+
+7.9
+7.10 7.11 7.12 7.13 7.14
+7.15 7.11 7.16.1 7.16.2 7.16.3 7.17 7.12 7.18
+Total
+
+687 -2 039 548
+- 259 573 -2 298 434
+332 976 163 822
+8 741 227 167 267
+9 405 292
+56 952 26 437 84 049 183 979 72 338 37 925
+2 277 2 969 466 926
+7 573 784
+
+As at 31.12.2013
+5 896 026 129 324 185 003 930 314
+7 140 668 4 026
+167 366
+7 312 060
+7 047 126 978
+16 166 5 411
+22 738 60 000 80 252 318 592 7 630 652
+687 215 714 127 430 343 831
+389 961 142 975
+20 678 6 128 298
+165 115 6 847 027
+26 206 24 391 78 976 177 050 71 934 56 649
+4 588 439 794 7 630 652
+
+13
+
+2. STATEMENT OF CHANGES IN NET ASSETS
+
+kCHF Balance as at 31.12.2012
+Changes during the period 2013
+Actuarial gains ­ Health Care Actuarial gains ­ Pensions Balance as at 31.12.2013
+Changes during the period 2014
+Actuarial losses ­ Health Care Actuarial losses ­ Pensions Balance as at 31.12.2014 * recognized directly in net assets
+
+Reserves 687
+687
+687
+
+Accumulated gains & losses from defined benefits plans*
+-8 697 578
+
+Accumulated surpluses &
+deficits
+6 142 540
+
+2 770 752
+
+127 430
+
+1 491 498 1 279 254 -5 926 826
+
+6 269 970
+
+-2 382 692
+
+- 259 573
+
+- 696 070 -1 686 622 -8 309 518
+
+6 010 397
+
+Total -2 554 351 2 898 182
+343 831 -2 642 265
+-2 298 434
+
+The above statement includes the Organization's net deficit for the year as well as other valuations adjustments which, in line with IPSAS, are not recorded in the Statement of Financial Performance but directly in the Statement of Financial Position.
+In 2014, these included the actuarial losses on defined benefit plans.
+
+For more information about variation for the year, please refer to note 7.9.
+
+14
+
+3. STATEMENT OF FINANCIAL PERFORMANCE
+
+kCHF REVENUE
+Contributions for the financial year Additional contributions from Host States Contribution from Romania as Candidate for Accession Special Contribution from Israel as Member State Contribution from Serbia as Associate Member State EU contributions Financial Revenue Internal taxation Other revenue
+EXPENSES MATERIALS Goods, Consumables & Supplies Electricity, heating gas and water Industrial services Associated Members of Personnel Other overheads
+PERSONNEL Remuneration Social and family benefits Social insurance cover Annual variation - paid leave Post-employment benefits Internal taxation
+FINANCIAL EXPENSES DEPRECIATION AND AMORTISATION EXPENSES CHANGE IN PROVISION FOR RADIOACTIVE WASTE WRITE-OFF PROPERTY, PLANT AND EQUIPMENT RECAPITALISATION PENSION FUND
+NET SURPLUS/DEFICIT (-) FOR THE PERIOD
+
+Note 2014 2013 Variation
+
+7.19 7.19 7.19 7.19 7.19 7.20 7.24
+7.21
+Total
+
+1 099 637 1 574 7 891
+12 044 1 000
+20 864 2 270
+29 028 109 737
+1 284 045
+
+1 082 155 1 259 6 530 3 132 1 000
+14 712 2 178
+28 571 45 997
+1 185 533
+
+17 482 315
+1 361 8 912
+6 152 92
+457 63 740 98 512
+
+86 692 89 149
+
+- 2 457
+
+42 227 40 758
+
+1 469
+
+82 302 85 776
+
+- 3 474
+
+32 499 32 061
+
+437
+
+49 015 39 463
+
+9 553
+
+7.22 292 735 287 207
+
+5 528
+
+7.23 7.24
+7.14 7.3.1 7.27
+Total
+
+278 097 54 507 93 917 6 423
+258 956 29 028
+720 928
+
+262 297 49 708 86 540
+- 14 593 150 570
+28 571 563 093
+
+15 779 16 623
+
+433 358 432 749
+
+2 131 - 306 153
+
+18 687
+
+4 585
+
+60 000 60 000
+
+1 543 618 1 058 103
+
+- 259 573 127 430
+
+15 800 4 799 7 377
+21 016 108 386
+457 157 835
+- 844 609
+308 284 14 102
+485 514
+- 387 003
+
+15
+
+4. CASH-FLOW STATEMENT
+
+CASH-FLOW FROM OPERATING ACTIVITIES
+RECEIPTS Contributions from Member States EU contributions Taxation refund Interest Other receipts
+PAYMENTS Personnel (transfers to PPE excluded) Suppliers (PPE excluded) Partners in the EU Projects
+
+kCHF
+
+2014
+
+2013
+
+1 132 204 24 641 20 137 2 566 40 209
+1 219 757
+
+1 067 857 40 264 16 870 2 697 28 261
+1 155 949
+
+- 425 483 - 311 788
+- 14 252 - 751 523
+
+- 384 238 - 294 375
+- 18 573 - 697 187
+
+NET CASH-FLOW FROM TEAMS AND COLLABORATIONS
+
+3 905
+
+11 123
+
+Net cash-flow - Operating Activities (A)
+CASH-FLOW FROM INVESTING ACTIVITIES Personnel expenses - transfers to PPE Material expenses - transfers to PPE Financial assets CHIS Fund capitalization
+Net cash-flow - Investing activities (B)
+CASH-FLOW FROM FINANCING ACTIVITIES Proceeds from long-term borrowings Repayments of long-term borrowings Financial costs Net variation of short-term borrowings Recapitalization Pension Fund
+Net cash-flow - Financing activities (C)
+NET VARIATION IN CASH AND CASH EQUIVALENTS (A+B+C) CASH AND CASH EQUIVALENTS AT BEGINNING OF PERIOD
+CASH AND CASH EQUIVALENTS AT END OF PERIOD
+
+472 139
+
+469 885
+
+- 108 698 - 214 218
+10 000 - 22 902
+- 335 818
+
+- 145 726 - 232 562
+65 000 - 16 988
+- 330 276
+
+- 26 239 - 12 610
+- 60 000 - 98 849
+37 471
+
+- 25 397 - 16 623
+- 60 000 - 102 019
+37 589
+
+80 252
+
+42 663
+
+117 723
+
+80 252
+
+16
+
+5. STATEMENT OF COMPARISON OF BUDGET AND ACTUAL AMOUNTS
+
+MCHF
+
+Final 2014 Budget
+Note CERN/FC/5781 (2014 prices)
+
+2014 Actual amounts
+
+Variation of Actual amounts with respect to
+Budget
+
+Revenues
+
+Member States' contributions
+Additional contributions from Host States Contribution from Romania as Candidate for Accession Special Contribution from Israel as Member State Contribution from Serbia as Associate Member State Contribution from Cyprus as Associate Member State
+EU Contributions
+Other revenues
+
+8.1
+
+1 099.6
+7.9 9.0 1.0
+18.8 69.2 1 205.5
+
+1 099.6 1.6 7.9
+12.0 1.0
+20.9 82.5 1 225.5
+
+1.6 3.0
+2.1 13.3 20.0
+
+Expenses
+
+Materials Personnel Interest and Financial Costs
+
+8.2 8.3 8.4
+
+BUDGET SURPLUS/DEFICIT (-) FOR A. THE PERIOD*
+
+619.4 617.0
+14.9 1 251.3
+- 45.8
+
+507.0 616.7
+15.8 1 139.5
+86.0
+
+- 112.4 - 0.3 0.9
+- 111.9
+131.8
+
+B. CAPITAL REPAYMENTS
+
+8.5 26.2 26.2
+
+C. RECAPITALISATION PENSION FUND
+ALLOCATION TO BUDGET BALANCE (A-B-C)
+
+7.27 7.9
+
+60.0 - 132.0
+
+60.0 - 0.2
+
+131.8
+
+CUMULATIVE BUDGET BALANCE 7.9 - 218.1 * refer to note 8
+
+- 86.3
+
+131.8
+
+17
+
+6. ACCOUNTING RECONCILIATION OF BUDGET ACTUAL AMOUNTS TO STATEMENT OF FINANCIAL PERFORMANCE
+The Budget is recorded based on modified accrual basis accounting while the revenue and expenses on the Statement of Financial Performance are recorded under accrual basis accounting.
+The summary of differences between the budget actual amounts and the amounts recognised in the Statement of Financial Performance are shown in the following table. Note that the expenses transferred to PPE concern most categories of expenses, which should be taken into account if making a detailed comparison.
+
+Note
+
+MCHF
+
+BUDGET SURPLUS/DEFICIT (-) FOR THE PERIOD (A)
+
+86.0
+
+Property, plant and equipment (PPE) reconciliation (B)
+
+- 70.6
+
+Revenues In-Kind on detectors
+
+7.21
+
+58.5
+
+Expenses transferred to PPE and intangible assets Depreciation and amortisation expenses Write-off PPE
+
+7.3, 7.4 7.3, 7.4
+7.3
+
+322.9 - 433.3
+- 18.7
+
+Items not recognized in the Budget Surplus/Deficit (C)
+
+- 275.0
+
+Variation of provision for post-employment benefits
+
+7.13
+
+- 230.2
+
+Recapitalisation Pension Fund
+
+7.27
+
+- 60.0
+
+Variation of provision for elimination of radioactive waste 7.14
+
+- 2.1
+
+Amortisation of staff benefit accruals*
+
+17.3
+
+TOTAL ACCOUNTING RECONCILIATION (D) = (B)+(C)
+
+- 345.6
+
+NET ACCOUNTING SURPLUS/DEFICIT (-) FOR THE PERIOD = (A)+(D)
+
+- 259.6
+
+* Amortisation of the accruals of staff's paid leave and similar allowances, introduced for the first time in the Financial Statements for the year 2007 (CERN/FC/5245 - CERN/2787)
+
+18
+
+7. NOTES TO THE FINANCIAL STATEMENTS
+
+Founded in 1954, CERN, the European Organization for Nuclear Research, is an Intergovernmental Organization located in Geneva, Switzerland.
+
+CERN's mission is to provide for collaboration among Member States and Associate Member States in the field of high-energy particle physics research and to this end it designs, constructs and runs the necessary particle accelerators and the associated experimental areas. Accelerators boost beams of particles to high energies before they are made to collide with each other or with stationary targets. Detectors observe and record the results of these collisions.
+
+CERN also hosts numerous international collaborations and visiting scientists.
+
+7.1. SUMMARY OF SIGNIFICANT ACCOUNTING POLICIES
+
+7.1.1.
+
+BASIS OF PREPARATION
+
+The financial statements of CERN as at and for the year ending 31 December 2014 have been prepared in accordance with International Public Sector Accounting Standards (IPSAS) and in conformity with the Financial Rules and their implementing regulations approved by the Organization's governing bodies.
+They have been approved by the Director-General and the Director for Administration and General Infrastructure on 31 March 2015.
+Although the Pension Fund is legally part of the Organization, its accounts are the subject of a separate report by the Administration of the Pension Fund. The report is endorsed by the Governing Board of the Pension Fund and submitted to the Council for approval through the Finance Committee.
+While the accounts of CERN are maintained to the cent, these financial statements are expressed in thousands or millions of Swiss Francs. Some rounding differences therefore occur.
+The accounting principles applied to the financial statements of 31 December 2014 are identical to those used in the financial statements of 31 December 2013. The application of IPSAS new standards and interpretations had no impact on the CERN's financial statements as of 31 December 2014.
+The financial statements are prepared on the basis of the historical cost principle, unless otherwise stated.
+
+19
+
+7.1.2. USE OF ESTIMATES AND ASSUMPTIONS
+The financial statements necessarily include amounts based on estimates and assumptions by Management. Estimates include, but are not limited to: post-employment benefits obligations, provisions, financial risk on inventories and receivables, accrued charges, contingent liabilities, estimated useful life of property, plant and equipment, and degree of impairment of property, plant and equipment. Actual results could differ from those estimates. Changes in estimates are reflected in the period in which they become known. 7.1.3. UNIT OF ACCOUNT AND FOREIGN CURRENCY TRANSLATION
+The unit of account for all transactions is the Swiss franc, in compliance with Article 4 of the Financial Rules (CERN/FC/5305 ­ CERN/2822).
+Transactions denominated in the other main currencies (EUR, USD, GBP, JPY) are converted into Swiss francs:
+· using the Swiss National Bank daily exchange rate, for receipts and payments;
+· using a weekly reference exchange rate for all other transactions.
+At the end of the year, all monetary items denominated in a foreign currency are converted at the rates of exchange applicable on the last working day of the year. The rates of exchange used are those of the Swiss National Bank and if not available, those of the European Central Bank. The resulting gains and losses, including those relating to foreign currency transactions during the financial year, are recorded in the Financial Revenue and Expenses included in the Statement of Financial Performance. 7.1.4. ASSETS 7.1.4.1. Property, Plant and Equipment (PPE)
+In accordance with IPSAS 17, if an item of PPE is likely to bring future economic benefit and/or service potential to CERN, its cost or fair value shall be recognised as an asset unless it cannot be measured reliably.
+In preparation for the introduction of accrual basis IPSAS, an internal accounting policy for the recording of PPE was introduced in 2006. It introduced internal accounting rules aimed at guaranteeing the presentation of relevant information to reflect the Organization's main activities.
+20
+
+The following are currently considered as PPE:
+A) All complex assemblies identified as a medium or long-term scientific project:
+· concerning the creation of accelerators and auxiliary apparatus constituting the tools allowing the physicists to conduct their research;
+· comprising a multitude of inseparable components of different kinds;
+· reported in the Budget (and exceeding 3 MCHF).
+The complex assemblies identified as CERN's medium or long-term scientific projects display the characteristics which allow them to be recognised as infrastructure assets under §21 of IPSAS 17.
+B) All infrastructure and services buildings, i.e. buildings not included in the abovementioned complex assemblies and of an amount exceeding 3 MCHF.
+Each item recorded as a PPE is recognised at cost of acquisition or at construction cost. Where applicable, the values of in-kind contributions and dismantling costs are incorporated into the fixed asset at its starting date of exploitation. The dismantling cost is incorporated into the fixed asset when the corresponding provision is recognised in the Financial Statements, in accordance with paragraph 7.1.5.4 of these Notes.
+It is depreciated on a straight-line basis with effect from its starting date over a period:
+· of 30 years for infrastructure and service buildings;
+· to be defined for each individual assembly, based on technical criteria.
+Under IPSAS 21, an impairment loss must be recognised when the recoverable service amount of an asset is less than its carrying value. Recoverable value corresponds to the higher of the value in use and the fair value. As there is no market for CERN's scientific assemblies, only the value in use will be quoted for comparison with the carrying value.
+C) For the four detectors ATLAS, CMS, LHCb and ALICE, the value is shown on the assets of the CERN balance sheet and depreciation is applied to them as CERN is deemed to be the body that controls them.
+In view of the evolution of CERN asset classes, the termination of the construction of the LHC and the various consolidation programmes, it is now considered that a review of the PPE recognition and depreciation policies is required. This review has started in 2014 and the new policy will include an approach by components, the identification of assets classes and recognition thresholds, recognition of assets not yet recognised, and the means to obtain a regular assessment of the life time of the PPE recognised.
+21
+
+Note that CERN does not capitalize the borrowing costs.
+7.1.4.2. Intangible assets
+Effective 1 January 2012, CERN adopted IPSAS 31: Intangible Assets on a prospective basis. Intangible assets are defined as identifiable non-monetary assets that do not have physical substance. They are recognised if it is probable that the future economic benefits or service potential from the asset will flow to CERN, and the cost of the asset can be measured reliably. The intangible asset must also be under the control of CERN.
+The following are recorded as intangible assets at CERN:
+· patents;
+· purchased software exceeding 50 kCHF.
+Note that costs for internal development of software are not included in the intangible assets as they cannot currently be measured reliably. A review commenced in 2014 with the aim to identify such developed software, and to create procedures to allow reliable measurement for inclusion in the 2015 accounts.
+Concerning the intangible assets in progress, the cost of patents include those costs paid directly for acquiring patents, and the materials and time spent to develop the ideas under patent, which can take a number of years. Research costs incurred as part of regular CERN operations, and prior to identification of a potential/existing market, are not included in these costs.
+Intangible assets are amortised on a straight-line basis over a defined period from the time the intangible assets are available for use:
+· the life of the patent (usually 20 years);
+· to be defined for each individual software purchased (usually 5 to 10 years).
+To determine whether an intangible asset is impaired, IPSAS 21 or IPSAS 26 is applied as appropriate. This would include comparison of the carrying amount of the asset to its recoverable amount or recoverable service amount, depending on whether it is cashgenerating (in the case of patents) or not (in the case of software).
+7.1.4.3. Financial assets ­ CHIS Fund
+The CERN Health Insurance Scheme (CHIS) provides health insurance to CHIS members. Contributions to the scheme are received from the Organization and the individual members.
+This item represents investments in shares and bonds, plus deposits dedicated to the scheme and available in specific bank accounts. It is carried at fair value.
+22
+
+7.1.4.4. Inventories
+
+Inventory is measured at standard cost, using the weighted average cost method.
+
+The standard cost is arrived at using the purchase cost and applying a coefficient to the purchase cost of each item. This coefficient represents the costs incurred in bringing products to their present location and condition.
+
+Depreciation is calculated for supplies held on the inventory according to stock consumption and recorded in order to show the estimate of the net realisable value of inventories.
+7.1.4.5. Receivables and prepayments
+
+Receivables mainly relate to amounts due from Member States, national institutes, laboratories and the European Union. The amounts due from private companies are shown under the sub heading "Other receivables and prepayments".
+
+The expenditure committed on behalf of collaborations or research institutes in order to facilitate their participation in the experiments conducted on the CERN site as well as internal recharging are not reported in the Statement of Financial Performance but charged to the corresponding third party account in the Statement of Financial Position.
+7.1.4.6. Other financial assets
+
+Fixed-term deposits with an initial term greater than 3 months are reported as other financial assets. Financial assets are carried at their fair value.
+7.1.4.7. Cash and cash equivalents
+
+Cash and cash equivalents comprise cash on hand, bank accounts and deposits held up to 90 days that are readily convertible to cash.
+
+Cash and cash equivalents are subject to an insignificant risk of changes in value, and therefore their carrying value is assumed to be their fair value.
+
+Bank overdrafts are shown under current liabilities of the Statement of Financial Position.
+
+7.1.5.
+
+LIABILITIES
+
+7.1.5.1. Debts
+
+The amounts expected to be settled after more than twelve months from the reporting date are shown under Non-current liabilities. The amounts expected to be settled within twelve months from the reporting date, including the accrued interest over the period, are shown as part of Current liabilities.
+
+23
+
+7.1.5.2. Liabilities - CHIS Fund
+In December 2007 the CERN Council approved the setting-up of a fund for the CERN Health Insurance Scheme (CERN/FC/5209 - CERN/2759).
+The fund is allocated exclusively to the Organization's health insurance liabilities and contributes to addressing the problem of an ageing population and to improving the financial balance of the Health Insurance Scheme. The value of the liability is affected by the capital return and by the difference between contributions and benefits and external overheads.
+This item includes the accrued benefits to be paid from the fund at the reporting date.
+7.1.5.3. Post-employment benefits
+Post-employment benefits represent the estimated actuarial liability of defined-benefit plans for retirement benefits and post-employment health cover calculated in accordance with IPSAS 25.
+The actuarial liability of the defined-benefit plans for retirement benefits and postemployment health cover is the present value of the defined-benefit obligations at the reporting date minus the fair value of the corresponding plan assets.
+The defined-benefit obligation is calculated annually by independent actuaries using the projected credit method. The present value of the defined-benefit obligations is determined by the estimated future cash outflows using the interest rate on long-term Swiss Confederation Bonds as the discount rate.
+The actuarial gains or losses arising from experience adjustments and changes in actuarial assumptions are recognised immediately in net assets.
+The Organization's post-employment benefits are partly funded by separately held assets: the Pension Fund and the CHIS fund.
+As indicated in 7.2.1, the accounts of the Pension Fund are subject to separate Financial Statements reported by the Administration of the Pension Fund.
+Since the CERN Pension Fund holds the retirement benefits for both CERN and ESO members, the scheme must be considered as multi-employer. Therefore, the fair value of plan assets to be considered by CERN is calculated on a pro-rata basis of the employers' obligations, by independent actuaries.
+7.1.5.4. Provisions
+Provisions are recognised when the Organization has a legal or constructive obligation as a result of a past event where it is probable that an outflow of resources will be required to
+24
+
+settle the obligation, and where a reliable estimate of the amount of the obligation can be made.
+The present value of the special leaves for long service, of shift work compensation and of the contract termination allowances is calculated using the projected credit method. The discount rate used for calculating the present value is the relevant Swiss Confederation Bond's interest rate.
+7.1.5.5. Current liabilities
+
+Current liabilities are expected to be settled in the normal course of the operating cycle or are due to be settled within twelve months.
+This heading includes mainly:
+
+· · · · ·
+7.1.6.
+
+the current liability of the long-term debts as well as the short-term borrowings from commercial banks;
+debts to suppliers and to the personnel;
+debts to third parties and advances from Teams and Collaborations;
+deferred revenue from the European Union and third parties which are accounted for as revenue up to the extent of the related projects' expenses;
+the accumulated remuneration estimated to be paid within twelve months to the members of the personnel when they are absent for annual, saved or compensation leave reasons.
+REVENUE
+
+Contributions and special contributions from Member States are non-exchange transactions which are recognised in the period in which the transfer arrangement becomes binding.
+
+EU contributions and revenue from Knowledge Transfer are recognised as revenue according to the stage of completion of the various projects involved. The yearly amounts allocated to revenue are based on the related projects' expenses.
+The other revenue mainly concerns:
+
+· bank interest earned on the short-term deposits in various currencies at certain times of the year. The amount of interest varies from year to year depending on the funds available, i.e. the receipt of contributions from the Member States and the timing of personnel and materials expenses and on the evolution of the market rates;
+
+25
+
+· · ·
+7.1.7.
+
+sale of scrap, obsolete equipment, rents, overnight stays at CERN hostels, revenue from Collaborations and miscellaneous revenue. These are recorded at the time of the transactions;
+in-kind contributions to property, plant and equipment which are recognised as revenue and incorporated into the property, plant and equipment at the date of start-up;
+for all the in-kind contributions below, the amounts shown in revenue are offset by similar amounts shown in expenses:
+- in-kind contributions resulting from the advantage granted to the Organization from loans without interest. The estimate is based on the equivalent interest rates prevailing when the loans were granted;
+- in-kind contributions resulting from the advantage granted to the Organization of the right to use land with minimal or no charge. The estimate is based on the fair value of the farming or building land in question, according to the use the Organization is making of it;
+- in-kind contributions resulting from the advantage granted to the Organization from various supplies or services made available without charge. The estimate is based on the fair value of such supplies or services.
+INTERNAL TAXATION
+
+In accordance with document CERN/FC/4914 - CERN/2599, the system of internal taxation of remuneration, payments and other financial benefits was introduced with effect from 1 January 2005.
+
+The amount shown in revenue is offset by a similar amount shown under Personnel expenses.
+7.1.8. FINANCIAL INSTRUMENTS
+
+Effective 1 January 2013, CERN adopted IPSAS 28 Financial instruments: Presentation, IPSAS 29 Financial instruments: Recognition and measurements, IPSAS 30 Financial instruments: Disclosures. A financial instrument is any contract that gives rise to both a financial asset of one entity and a financial liability or equity instrument of another entity.
+
+Financial instruments are split into the categories of financial assets or financial liabilities as defined in IPSAS 29: financial assets and liabilities at fair value through surplus or deficit (designated upon initial recognition), held to maturity investments, loans and receivables, available-for-sale financial assets and financial liabilities measured at amortized cost. The classification of the financial assets and financial liabilities determines the measurement
+
+26
+
+after initial recognition; either at fair value, or at amortized cost. Fair value is the amount for which an asset could be exchanged, or a liability settled, between knowledgeable, willing parties in an arm's length transaction.
+
+The Organization's financial assets include: cash and cash equivalents, trade and other receivables, other financial assets, derivative financial instruments and quoted financial instruments, most of which are held in the CERN Health Insurance Scheme (CHIS) fund.
+
+The Organization's financial liabilities include: trade and other payables, short-term debt and bank overdrafts, long-term debts.
+
+CERN's financial instruments measured at fair value through the surplus or deficit are designated at initial recognition. The instruments are revalued at the value quoted in an active market on the balance sheet date. The resulting gains and losses appear in the Statement of Financial Performance. Typical examples are derivatives, specifically forwardrate agreements and foreign currencies options. The Organization uses these types of financial instruments for the purpose of managing its exposure to currency fluctuations and interest rate risks (refer to note 7.25).
+
+7.2. COMMITMENTS NOT SHOWN IN THE STATEMENT OF FINANCIAL POSITION
+
+Some memoranda accounts which do not appear in the Statement of Financial Position are given below. They relate to the Pension Fund, guarantees received or given by the Organization and future commitments to suppliers.
+
+7.2.1.
+
+PENSION FUND
+
+As mentioned in section 7.1.1, although the Pension Fund is legally part of the Organization, its accounts are reported separately.
+
+27
+
+7.2.2. BANKER'S GUARANTEES IN OUR POSSESSION
+
+The following amounts relate to banker's guarantees provided by various suppliers in connection with CERN contracts. The list of amounts corresponding to these guarantees is shown below:
+
+kCHF Currency CHF DKK EUR GBP JPY NOK SEK USD
+Total
+
+Banker's guarantees
+
+As at 31.12.2014
+
+As at 31.12.2013
+
+10 589 130
+27 554 653 678 47 85
+3 466
+43 202
+
+12 263 90
+30 922 247 686 52 345
+2 105
+46 710
+
+7.2.3. BANKER'S GUARANTEES GIVEN BY CERN
+As at 31 December 2014, CERN has provided the following guarantees:
+· 175.5 kUSD to ICANN Internet Corporation for Assigned Names and Numbers (175.5 kUSD in 2013);
+· 7.6 kCHF to agencies to guarantee rentals of Housing Fund apartments (7.6 kCHF in 2013);
+· 72.6 kCHF to the Prefecture de l'Ain to guarantee for the transfer of waste (none in 2013).
+
+28
+
+7.2.4.
+
+FUTURE COMMITMENTS TO SUPPLIERS
+
+Future commitments
+
+As at 31.12.2014
+
+As at 31.12.2013
+
+Year 2016
+
+Year 2015
+
+Year 2015
+
+Year 2014
+
+kCHF
+
+and further
+
+and further
+
+Currency
+
+CHF
+
+12 717
+
+10 757 11 811
+
+18 122
+
+EUR
+
+50 590
+
+30 586 65 063
+
+28 682
+
+USD
+
+8 117
+
+7 888
+
+3 033
+
+6 200
+
+GBP
+
+2 444
+
+5 111
+
+1 989
+
+2 403
+
+OTHERS
+
+497
+
+2 877
+
+2 010
+
+802
+
+74 364
+
+57 220 83 906
+
+56 209
+
+Total
+
+131 584
+
+140 115
+
+7.3. PROPERTY, PLANT AND EQUIPMENT
+
+7.3.1.
+
+PROPERTY, PLANT AND EQUIPMENT AVAILABLE FOR USE
+
+In compliance with the policy for recording property, plant and equipment described in 7.1.4.1, changes in the net book value of the PPE available for use are detailed in the following table. Note that in 2014, the PPE policy was still under review and the present statements are consistent with the policy introduced in 2007.
+
+29
+
+Gross balance as at
+
+LHC Programme LHC - machine LHC - detectors LHC - injectors LHC - computing LHC - improvements
+
+kCHF
+
+Other Programmes PS Consolidation SPS Consolidation Other
+
+Infrastructure and services buildings Built prior to 1992
+Housing Fund - Buildings n°41, 39, 38 + extension Physicists' Building n°40 + extension
+Globe of Science & Innovation + permanent exhibition Infrastructure consolidation Radiation Workshop - Building n°867
+Other
+
+PPE - available for use
+
+31/12/2013 a
+5 267 543 2 404 246
+153 017 186 001
+34 769 8 045 576
+82 026 54 588 17 109 153 724
+246 936
+21 073
+44 875
+19 002
+42 320 18 113 14 400 406 719 8 606 019
+
+Additions
+2014 b
+11 492 83 861
+19 144 99 332 213 829
+40 948 32 925 13 709 87 582
+2 934 15 609 15 531 34 074 335 485
+
+Disposals and Transfers
+
+Gross balance
+as at
+
+2014
+
+31/12/2014
+
+c d=a+b-c
+
+31 010 12 950
+26 734
+70 694
+
+5 248 025 2 475 157
+153 017 178 411 134 101 8 188 711
+
+335 2 196
+2 531
+
+122 639 85 317 30 818
+238 774
+
+73 225
+
+246 936
+21 073
+44 875
+21 936
+57 929 18 113 29 931 440 793 8 868 279
+
+kCHF
+
+Accumulated Depreciation
+
+Recognized
+
+Disposals
+
+Accumulated Depreciation
+
+as at
+
+in
+
+as at
+
+Net book value as at
+
+Net book value as at
+
+LHC Programme LHC - machine LHC - detectors LHC - injectors LHC - computing LHC - improvements
+Other Programmes PS Consolidation SPS Consolidation Other
+Infrastructure and services buildings Built prior to 1992 Housing Fund - Buildings n°41, 39, 38 + extension Physicists' Building n°40 + extension Globe of Science & Innovation + permanent exhibition Infrastructure consolidation Radiation Workshop - Building n°867 Other
+30 PPE - available for use
+
+31/12/2013 e
+1 398 825 638 461 40 635 66 414 5 215
+2 149 550
+15 319 9 080
+24 399
+181 086
+9 719
+20 139
+5 235 3 163
+22 2 350 221 715 2 395 664
+
+2014 f
+
+2014 g
+
+31/12/2014 31/12/2013 31/12/2014
+
+h=e+f-g
+
+i=a-e
+
+j=d-h
+
+263 377 120 212
+7 651 11 937
+4 222 407 399
+
+9 777 4 083
+26 734
+40 594
+
+1 652 425 754 590 48 286 51 617 9 437
+2 516 355
+
+3 868 718 1 765 785
+112 382 119 587
+29 554 5 896 026
+
+3 595 600 1 720 567
+104 731 126 794 124 664 5 672 356
+
+4 647 3 957 1 463 10 067
+
+106 692
+798
+
+19 860 12 345
+1 463 33 668
+
+66 707 45 508 17 109 129 323
+
+102 779 72 972 29 355
+205 105
+
+8 231
+702
+1 496
+807
+1 930 604
+1 231 15 001 432 467
+
+41 392
+
+189 317
+
+65 850
+
+57 619
+
+10 421
+
+11 354
+
+10 652
+
+21 635
+
+24 736
+
+23 240
+
+6 042
+
+13 767
+
+15 894
+
+5 093 626
+3 581 236 716
+
+39 157 18 091 12 050 185 005
+
+2 786 740 6 210 354
+
+52 836 17 487 26 350 204 078
+6 081 539
+
+For infrastructure and service buildings, depreciation is calculated using a linear method at the rate of 3.33%.The depreciation rate for complex scientific assemblies is defined for each individual assembly, based on technical criteria and depreciation is calculated using the linear method.
+For LHC, PS and SPS consolidation, depreciation is calculated using a linear method at the rate of 5% of the gross value of the various components, except for the computing component, to which various rates of depreciation are applied according to the nature of the assets.
+In 2014 new facilities have been commissioned and consequently transferred to Infrastructure and services buildings available for use. All of them are depreciated using a linear method.
+· 2.9 MCHF for the Globe of Science & Innovation consisting of 1.1 MCHF for the sculpture and 1.8 MCHF for the car park. The sculpture having been inaugurated in December 2014, no depreciation has been recorded. For the car park, the depreciation is calculated at the rate of 3.33%;
+· 5.9 MCHF for the consolidation of the CERN Control Center (CCC) which estimated useful life is 15 years and depreciation calculated at the rate of 6.66%;
+· 4.1 MCHF for visit points at buildings 513, at CCC and for the Synchrocyclotron Museum, all being depreciated at the rate of 10 %;
+· 0.4 MCHF for Isolde building 115 which was completed in 2014 but will be inaugurated in the 1st quarter of 2015. As a consequence no depreciation has been calculated in 2014;
+· 2.3 MCHF for building 157, and the depreciation is calculated at a rate of 3.33%;
+· 2.1 MCHF for the CMS site renovation, and the depreciation is calculated at a rate of 3.33%;
+· 0.8 MCHF for the AD control room, and the depreciation is calculated at a rate of 3.33%.
+The Prévessin Main Building (building 774) and Building 107 on the Meyrin site were not completed at the end of 2014 and consequently remained in the PPE in progress as at 31 December 2014.
+With regards to the LHC, during LS1, components of the machine have been replaced by spares and the items replaced have been written-off. Depreciation of the new items will be calculated from the date of the restart of the machine in 2015.
+31
+
+In 2014, new facilities have been commissioned and added to Other programmes available for use. For the 1.5 MCHF of the Isolde Robots project and the 3.1 MCHF of n-TOF-EAR2, analyses per components have allowed to identify different useful lifetime and thus calculate depreciation according to various rates. For the 9.1 MCHF of the High Radiation Test facility which was completed in September 2014, the estimated useful lifetime is 20 years, so the depreciation is calculated using a linear method at the rate of 5%. For multi-year consolidation projects where the assets become available for use prior to the end of the projects and due to the end of the LS1, the review at the end of the year has resulted in a transfer to PPE available for use of:
+· 99.3 MCHF for LHC Improvements (none in 2013); · 83.9 MCHF for LHC Detectors (none in 2013); · 40.9 MCHF for PS Consolidation (16.8 MCHF in 2013); · 32.9 MCHF for SPS Consolidation (9.4 MCHF in 2013); · 15.6 MCHF for Infrastructure Consolidation (12.1 MCHF in 2013). Finally, as shown in the Statement of Financial Performance, the total of PPE written-off in 2014 amounts to 18.7 MCHF (4.6 MCHF in 2013). This value corresponds to the carrying value of the items that has been replaced by new ones or by spares in the context of the LS1 : · Detectors components: 8.9 MCHF · LHC components: 8.1 MCHF · PS and SPS components: 1.7 MCHF
+7.3.2. PROPERTY, PLANT AND EQUIPMENT IN PROGRESS The detail of the PPE in progress is shown in the following table. There is no depreciation as the assets in question are still in the process of being built as at 31 December 2014.
+32
+
+Gross balance as at
+
+31/12/2013
+
+PPE in progress
+
+kCHF
+
+LHC programme LHC spares LHC machine and areas reliability and consolidation CERN control centre consolidation LHC detectors consolidation LHC Computing Grid Other programmes B115 works AEGIS NA62 ISOLDE robots n_TOF-EAR2 Magnet Infrastructure Upgrade SM18 - Upgrade TE infrastructure consolidation AD Consolidation East area consolidation North area consolidation 66/18 kV loop PS consolidation 18 kV loop+substations SPS consolidation Accelerator Consolidation PS and SPS spares Infrastructure and services Investment in new mechanical technologies Globe Car Park & "Esplanade des Particules" Radio infrastructure upgrade for firefighters Consolidation of calibration hall Ramses II Light Emergency SC Dismantling and museum Idealab building Visitpoint AD control room Building 38 (hotel renovation) Building 107 (surface treatment) Building 774 (Prévessin main building) CMS site consolidation Renovation Globe of Science and Innovation LHCb Building Surface and technical infrastructure consolidation Sculpture Globe of Science and Innovation Projects CLIC Test Facility HIE - ISOLDE ELENA High radiation material test facility Proton Plasma wakefield acceleration (AWAKE) MEDICIS CERN Neutrino Platform LINAC4 LHC Injectors Upgrade LHC luminosity upgrade project (HL-LHC) LHC detectors upgrade
+
+Total PPE - in progress
+
+a
+13 696 237 943
+5 569 9 370 13 757
+378 17 074
+2 452 1 508 1 630
+5 599 1 082 1 993 1 686 12 834 44 541
+1 002 1 190
+389 5 211
+2 174 170
+2 016 779
+13 610 7 397 1 081
+61 14 807
+893
+206 869 28 211 9 199 9 123 25 406 397
+130 630 45 112 31 310 22 165
+930 314
+
+Additions
+2014 b
+
+Disposals and Gross balance
+
+Transfers
+
+as at
+
+2014
+
+31/12/2014
+
+c d=a+b-c
+
+18 073 70 032
+329 1 356 20 071
+
+8 590 103 667
+5 898 10 703 19 144
+
+391 293 5 263 1 451 1 532 645
+77 476 1 211 1 527 3 593 950 2 800 20 633 894
+
+391
+1 500 3 040
+2 221 2 607 12 462 56 869
+559
+
+322 769 509 2 925 2 101 401 602 2 050 289
+1 193 4 392 8 305 1 041 207 1 464 13 999 270
+
+1 771
+2 776 1 293
+774
+2 122 15 609
+1 163
+
+27 464 19 168
+7 615 3
+1 951 1 750 1 875 17 740 24 643 25 373 16 208
+335 227
+58 302
+
+9 126
+14 640 276 925
+
+23 179 204 308
+23 14 684
+671 22 337
+2 403
+2 275 77
+476 6 810
+388 5 586
+29 3 172 8 305
+335
+322
+1 699 3 314 7 312
+401
+2 220 1 012
+6 193 18 002 15 702
+207 1 525 13 197
+234 333 47 379 16 814
+27 357 2 147 1 875
+148 370 69 755 56 683 23 733
+988 616
+
+33
+
+7.4. INTANGIBLE ASSETS
+The total net amount of intangible assets is 3 332 kCHF (4 026 kCHF in 2013) and can be split into intangible assets available for use 3 131 kCHF (3 885 kCHF in 2013) and in progress 201 kCHF (141 kCHF in 2013). Note that in 2014, the intangible assets policy was still under review and the present statements are consistent with the policy introduced in 2012.
+7.4.1. INTANGIBLE ASSETS AVAILABLE FOR USE
+
+In accordance with the policy for recording intangible assets described in 7.1.4.2, beginning in 2012, CERN has recorded the following intangible assets which are available for use.
+
+Gross balance
+as at 31.12.2013
+
+kCHF
+Computer software Total Intangible Assets -
+available for use
+
+a 4 525
+4 525
+
+Additions 2014
+Acquired b 123 123
+
+Disposals and
+Transfers 2014
+c
+
+Gross balance
+as at 31.12.2014
+d=a+b-c 4 648
+4 648
+
+Accumulated
+
+Amortization Recognized
+
+as at
+
+in 2014
+
+31.12.2013
+
+Disposals 2014
+
+Accumulated Amortization
+as at 31.12.2014
+
+kCHF
+Computer software Total Intangible Assets -
+available for use
+
+e 640
+640
+
+f 878
+878
+
+g
+
+h=e+f-g 1 517
+1 517
+
+Net book value as at
+31.12.2013
+i=a-e 3 885
+3 885
+
+Net book value as at
+31.12.2014
+j=d-h 3 131
+3 131
+
+The acquired software will be amortized on a straight-line basis over 5 to 10 years. The amortization is recognized under the heading "Depreciation and amortization expenses" in the statement of financial performance.
+7.4.2. INTANGIBLE ASSETS IN PROGRESS
+
+The detail of the intangible assets in progress, and therefore not yet available for use, is shown in the following table:
+
+kCHF
+Patents Total intangible Assets - in
+progress
+
+Gross balance
+as at 31.12.2013
+a 141
+141
+
+Additions 2014
+Acquired Internally developed
+b 36 24
+
+Disposals and
+Transfers 2014
+c
+
+60
+
+Gross balance
+as at 31.12.2014
+d=a+b-c 201
+201
+
+34
+
+7.5. INVENTORIES
+
+Inventories consist of standard parts, equipment, accessories, chemicals, raw materials and consumables used for CERN engineering and research operations, as well as for infrastructure and administration requirements.
+
+Gross value Depreciation
+
+kCHF Total
+
+As at 31.12.2014
+9 493 - 1 870
+7 623
+
+As at 31.12.2013
+8 883 - 1 836
+7 047
+
+7.6. RECEIVABLES
+
+7.6.1.
+
+MEMBER STATES
+
+The amount shown in the Statement of Financial Position under this sub-heading can be broken down as follows:
+
+Contributions - Greece
+
+kCHF
+
+Contributions - Portugal
+
+Contributions - Spain
+
+Contributions - Israel
+
+Special contributions - France
+
+Receivables from Member States
+
+As at 31.12.2014
+25 373 8 299
+51 486 1 832 -
+86 991
+
+As at 31.12.2013
+17 380 11 433 94 819
+1 879
+125 511
+
+Contributions - Romania
+
+- 467
+
+Receivables from Candidates for accession Contributions - Serbia
+
+1 000
+
+467 1 000
+
+Receivables from Associate Member States
+
+1 000
+
+1 000
+
+TOTAL
+
+87 991
+
+126 978
+
+Special contributions represented the balance of in-kind contributions due from France at the end of 2013. The counterpart was shown under current liabilities "Deferred Revenue" for the same amount. In 2014, this amount is recognised as additional in-kind contributions on the Statement of Financial Performance.
+
+35
+
+7.6.2. TAXES
+
+The amount shown in the Statement of Financial Position under this sub-heading can be broken down as follows:
+
+French VAT
+
+kCHF
+
+VAT other Member States
+
+Swiss taxes and levies
+
+Total
+
+As at 31.12.2014
+17 818 900 312
+19 029
+
+As at 31.12.2013
+15 745 107 314
+16 166
+
+7.6.3. TEAMS AND COLLABORATIONS
+
+The various Teams and Collaborations owed 7.8 MCHF at the end of 2014 (5.4 MCHF in 2013). There exists also a liability to the Teams and Collaborations in the Liabilities section, the two balances being the result of the transactions arising from the collaborations and research institutes' participation in experiments at CERN. The liability to Teams and Collaborations at the end of 2014 was 183.9 MCHF (177 MCHF in 2013). For more details, refer to note 7.16.2.
+7.6.4. OTHER RECEIVABLES AND PREPAYMENTS
+
+The amount shown in the Statement of Financial Position under this sub-heading can be broken down as follows:
+
+kCHF Advances to suppliers Revenues to be received Expenses in advance Sundry debtors
+Total
+
+As at 31.12.2014
+3 761 4 182 8 429 3 459
+19 831
+
+As at 31.12.2013
+10 416 4 557 3 103 4 662
+22 738
+
+7.7. OTHER FINANCIAL ASSETS
+The CERN short-term investment objectives for cash in excess of near-term future requirements are to maintain safety of the principal, preserve liquidity and maximize returns. At 31 December 2014, CERN held fixed-term deposits with a maturity over 3 months in the amount of 50 MCHF (60 MCHF in 2013).
+
+36
+
+7.8. CASH AND CASH EQUIVALENTS
+
+The variations of cash and cash equivalents between 31 December 2013 and 31 December 2014 are explained in the Cash-Flow Statement (section 4).
+7.9. NET ASSETS
+
+During 2014, the net assets decreased by 2 642 MCHF (in 2013 net assets increased by 2 898 MCHF). This amount can be broken down as follows:
+· net deficit for 2014: 259.6 MCHF (net surplus for 2013: 127.4 MCHF);
+· actuarial losses on post-employment benefits 2014: 2 383 MCHF (actuarial gains in 2013: 2 771 MCHF).
+
+As is demonstrated above, the value of the Net Assets is highly sensitive to the variation of the discount rate used to calculate the obligation for post-employment benefits since the obligation is significant relative to the rest of the financial position. The discount rate at 31 December 2014 is 0.81%, down from the previous year rate of 1.97%. Since 2007 the discount rate has been decreasing, with the exception of 2013 when the rate increased almost to the level of 2010 (2.10%). The downward trend has continued in 2014 with a significant drop and resulting significant impact on the value of net assets.
+
+The reconciliation with the cumulative budget deficit is summarised in the table below:
+
+Cumulative Budget Balance
+
+MCHF
+
+as at 31.12.2011
+- 84
+
+Var.* 2012
+24
+
+as at 31.12.2012
+- 61
+
+Var.* 2013
+- 40
+
+as at 31.12.2013
+- 101
+
+Var.* 2014
+-0
+
+as at 31.12.2014
+- 101
+
+SIG Debt- Impact of the annual repayment
+SIG Debt - Impact of interest
+Cumulative Budget Balance after SIG adjustments
+
+28 - 14 - 70
+
+28 - 14
+
+28 - 14
+
+28 - 14
+
+24 - 47 - 40 - 86 - 0 - 86
+
+Accounting reconciliation
+PPE: gross value less depreciation Capital repayments (loans) Capital repayments (SIG) Personnel: 
+Paid leave and CA22 Post employment benefits (actuarial gains & losses)
+P
+ost employment benefits (employer cost) Provision: E
+limination of waste Others
+Net Assets * Variation
+
+7 375 - 439 - 53 - 119
+
+- 171 21 2 17
+
+- 8 731
+
+33
+
+32 - 358
+27 - 2 335
+
+- 112 - 34
+- 220
+
+7 204 - 417 - 50 - 102
+- 8 698
+- 80 - 392
+27 - 2 554
+
+- 59 23 3 17
+2 771
+- 123 306
+2 898
+
+7 145 - 394 - 47 - 85
+
+- 71 24 3 17
+
+7 075 - 371 - 44 - 68
+
+- 5 927 - 2 383 - 8 310
+
+- 203 - 86
+27 344
+
+- 230 -2
+- 2 642
+
+- 433 - 88
+27 - 2 298
+
+37
+
+7.10. LONG-TERM DEBTS
+
+This heading includes amounts expected to be settled after more than twelve months from the reporting date:
+
+BNP FORTIS
+
+kCHF
+
+As at 31.12.2014
+297 185
+
+As at 31.12.2013
+320 394
+
+FIPOI
+
+35 791
+
+36 896
+
+SIG 32 670
+
+Total
+
+332 976
+
+389 961
+
+7.10.1. BNP FORTIS
+
+As approved by the Council in June 20061, a loan with an initial amount of 462.9 MCHF has been taken out with FORTIS Bank for the purpose of repaying the Organization's debt to the Pension Fund. As at 31 December 2014, the outstanding debt is 320.4 MCHF (342.8 MCHF in 2013). The loan is expected to be fully repaid by 2026.
+
+Capital
+
+kCHF Total
+
+Less than 12 months
+23 209
+23 209
+
+More than 12 months
+297 185
+297 185
+
+Total 320 394 320 394
+
+7.10.2. FIPOI
+
+In line with the decision of the Swiss Federal Chambers in 1996, no interest is charged on the loans granted by FIPOI for the construction of buildings at CERN. Initial amounts of the three FIPOI loans amount to 53.2 MCHF. As at 31 December 2014, the outstanding debt is 36.9 MCHF (38.0 MCHF in 2013). The loans are expected to be fully repaid by 2035, 2047, and 2060 respectively.
+
+kCHF Capital FIPOI 1 - Buildings 32 & 33 Capital FIPOI 2 - Building 40 Capital FIPOI 3 - Building 42
+Total
+
+Less than 12 months
+210 669 226
+1 106
+
+More than 12 months
+4 208 21 413 10 170
+35 791
+
+Total
+4 418 22 082 10 396 36 896
+
+1 CERN/FC/5051 ­ CERN/2676
+38
+
+7.10.3. SIG
+
+Under the contract for the supply of water (E059) awarded to SIG (Services Industriels de Genève), CERN has an outstanding debt of 32.6 MCHF as at 31 December 2014 (35.3 MCHF in 2013) relating to investments in infrastructure. This debt has been repaid in full during 2015 following negotiations for early repayment with a penalty of 2.5 MCHF. Compared to the remaining outstanding interest to be paid based on the original loan terms, this penalty represents a total saving to CERN of 4.8 MCHF.
+
+Capital
+
+kCHF Total
+
+Less than 12 months
+32 637
+32 637
+
+More than 12 months
+
+Total 32 637 32 637
+
+7.11. CHIS FUND
+
+In December 2007, the Council approved the setting-up of a fund for the CERN Health Insurance Scheme (CERN/FC/5209 - CERN/2759).
+A) The amount shown in the assets of the Statement of Financial Position can be broken down as follows:
+
+kCHF Shares and bonds Deposits and bank accounts CHIS contractor Miscellaneous Withholding tax
+Total
+
+As at 31.12.2014
+170 158 17 428 1 821 - 16 868
+190 259
+
+As at 31.12.2013
+120 850 43 485 2 516 -6 520
+167 366
+
+B) In order to enhance the visibility of the CHIS, the following table shows the distinction between Health Insurance Scheme (HIS) and Long Term Care (LTC).
+
+CHIS Fund - HIS CHIS Fund - LTC
+
+kCHF
+
+As at 31.12.2014
+90 173 37 768
+
+Sub-total Plan Assets 127 941
+
+Accrued benefits on LTC allowances - long term Accrued benefits on HIS repayments - short term Accrued benefits on LTC allowances - short term
+
+35 881 19 112
+7 325
+
+Total
+
+190 259
+
+As at 31.12.2013
+76 038 35 297
+111 335
+31 640 17 544
+6 847
+167 366
+
+39
+
+C) The change in the CHIS Fund balance is the result of Health and LTC movements throughout the year, a breakdown of which is shown in the following table.
+
+HEALTH INSURANCE SCHEME (HIS)
+Position as at 31.12.2013 Ordinary contributions Health benefits paid Contractor fees and overheads Financial gain on financial assets
+Position as at 31.12.2014
+LONG TERM CARE (LTC)
+Position as at 31.12.2013 Ordinary contributions LTC benefits paid Contractor fees and overheads Financial gain on financial assets
+Position as at 31.12.2014
+
+Total
+
+kCHF
+93 582 88 177 - 75 593 - 2 409
+5 527 109 285
+kCHF
+73 784 8 869
+- 5 763 - 61 4 144
+80 974
+190 259
+
+The 2014 financial performance of the funds invested with UBS and SARASIN banks amounted to 9.7 MCHF (4 MCHF in 2013). This performance is based on a valuation of the portfolio at market prices as at 31 December 2014. The gross yield is 5.8% in 2014 compared to 2.86 % in 2013.
+7.12. MEMBER STATES
+The amount shown in the Statement of Financial Position under this sub-heading corresponds to the ppbar contributions from Member States.
+The ppbar improvement project was presented to and approved by the Council in December 1983.
+In February 1984, the Director-General's proposals for the funding of the project were approved by the Finance Committee (CERN/FC/2711 - CERN/CC/1526). Part of the financing procedures for the project was based on loans received from Member States during the first few years. In addition, it was decided to index the sums received from the date of receipt of funds to the date of repayment. Indexation is based on the overall costvariation index for the indexation of Member States' contributions granted by the Council. The indexation rate for 2014 was 0% (no change from 2013).
+As recommended by the previous External Auditors, the Management sent a letter to the Member States concerned in March 2013 in order to find a mutually acceptable solution to
+
+40
+
+settle the outstanding amounts. At the end of 2014, there remains one Member State still to indicate how they want their debt to be settled. Since this notification is expected to be received within the next 12 months, the remaining ppbar debt has been classed as a current liability in 2014.
+
+Austria Denmark France Italy Switzerland
+
+kCHF Total
+
+As at 31.12.2014
+2 276
+2 276
+
+As at 31.12.2013
+1 200 859
+9 788 6 555 2 276
+20 678
+
+7.13. POST-EMPLOYMENT BENEFITS
+
+These provisions cover obligations of uncertain amount and timing.
+
+Pension scheme
+
+kCHF
+
+CERN Health Insurance Scheme (CHIS)
+
+Post-employment benefits
+
+As at 31.12.2014
+5 903 633
+2 837 594
+8 741 227
+
+As at 31.12.2013
+4 062 347
+2 065 951
+6 128 298
+
+Comments:
+
+As required by IPSAS 25 and explained in 7.1.3.3, post-employment benefits represent the estimated actuarial liability of defined-benefit plans for pension benefits and postemployment CERN Health Insurance Scheme (CHIS) benefits towards employed and retired members of the CERN personnel as at the reporting date.
+
+The principle underlying the IPSAS 25 requirements is to recognize the cost of providing employee benefits in the period in which the benefit is earned by the employee, rather than when it is paid or payable.
+
+Since both the pension plan and post-employment medical care plan are defined-benefit plans, under IPSAS 25 the related liability that should be recognised in the statement of financial position is equal to the net total of:
+· the present value of the defined-benefit obligation (the present value of expected future payments required to settle the obligation resulting from employee service in the current and prior periods);
+
+41
+
+· plus/minus any deferred actuarial gains/losses minus any deferred past service costs;
+
+· minus the fair value of any plan assets at the reporting date.
+
+The estimate of post-employment benefits according to IPSAS 25, and as accounted for in these financial statements, can be characterised as having a focus on the existing liability and the current period charges at the reporting date. The objective is not to assess the future funding of the liability, only to show there is a liability to be funded. The calculation of the probable future cost of benefits already earned therefore includes a salary evolution assumption, but does not reflect expected future financing and contributions to the schemes.
+
+By contrast, the approach used by CERN to assess the funding has the objective of showing whether the long term equilibrium of the scheme will be reached. Under this approach, the review is done on an open-fund basis, taking into account any remedial measures and all future expected contributions to the schemes.
+
+a) Net Liability
+
+The amounts recognised under IPSAS 25 in the Statement of Financial Position are determined as follows:
+
+kCHF Pension Benefits
+Future benefits obligation Plan assets *
+
+As at 31.12.2014
+9 645 561 -3 741 928
+
+As at 31.12.2013
+7 831 470 -3 769 123
+
+Net liabilities
+
+5 903 633
+
+4 062 347
+
+CHIS Benefits Future benefits obligation Plan assets
+
+2 965 535 - 127 941
+
+2 177 286 - 111 335
+
+Net liabilities
+
+2 837 594
+
+2 065 951
+
+* Based on the amount of the net assets provided by the Pension Fund on 26 February 2015
+
+b) Actuarial assumptions
+The calculation of the present value of defined-benefit obligations is based on demographic and financial assumptions. The principal actuarial assumptions used by the actuaries for calculation as at 31 December 2014 were as follows:
+
+42
+
+Discount rate
+
+As at 31.12.2014
+
+Pension
+
+CHIS
+
+benefits benefits
+
+0.81%
+
+0.81%
+
+As at 31.12.2013
+
+Pension
+
+CHIS
+
+benefits benefits
+
+1.97%
+
+1.97%
+
+Future salary increase
+
+3.50%
+
+3.50%
+
+3.50%
+
+3.50%
+
+Future pension increase
+
+1.00%
+
+1.00%
+
+1.00%
+
+1.00%
+
+Future health cost increase
+
+3.00%
+
+3.00%
+
+Return on plan assets
+
+4.00%
+
+3.50%
+
+4.00%
+
+3.50%
+
+% of award of indefinite contracts 50.00% 50.00% 50.00% 50.00%
+
+Demographic tables
+
+VZ 2010 GEN LPP 2010 VZ 2010 GEN LPP 2010
+
+According to the standard, the discount rate used to reflect the present value of future cashflows has to be modified each year according to the current position of the financial markets as at the reporting date.
+
+The discount rate used at CERN since 2007 is the long-term (30-year) Swiss Confederation Bond interest rate.
+
+c) Sensitivity of the discount rate
+
+As a consequence, due to the systematic change of such a sensitive parameter, it can be difficult to compare present value from year to year. As shown in the table below, an increase or decrease of half a percentage point in the assumed discount rate would result in a significant change in the present values of pension benefits and health cover obligations.
+
+Present value of future benefits obligation (in MCHF) Effect if increase of + 0.5% point in discount rate (in MCHF) Effect if increase of + 0.5% point in discount rate (in %)
+
+As at 31.12.2014
+
+Pension CHIS benefits benefits
+
+9 646
+
+2 966
+
+- 884
+
+- 380
+
+-9.2%
+
+-12.8%
+
+Since the CERN Pension Fund holds the retirement benefits for both CERN and ESO members, the plan assets deducted from the Pension benefits obligation has been calculated by the independent actuary on a prorata basis of the employers' obligations and based on the amount of net assets provided by the Pension Fund on 26 February 2015.
+The plan assets deducted from the CHIS benefits obligations consist of 127.9 MCHF (111.3 MCHF in 2013).
+
+43
+
+d) Evolution of the net liabilities
+
+The change in net liabilities resulted in the following:
+
+MCHF Net liabilities as at 31.12.2013
+Employer cost* Actuarial variations** Total of the annual variation
+Net liabilities as at 31.12.2014
+
+Pension benefits
+4 062
+155 1 686 1 841
+5 903
+
+As at 31.12.2014
+CHIS benefits
+2 066
+76 696 772
+2 838
+
+Total
+6 128 230
+2 382 2 613 8 741
+
+* The Employer cost heading corresponds to the difference between the employer's actual contributions for the year and the estimated cost for the year calculated according to the actuarial assessment made at the end of the previous year. The actuarial assessment corresponds to the sum of the service cost and the interest cost, minus the expected return
+** The actuarial variations are attribuable to changes in the actuarial assumptions and to adjustments to take account of what has actually occurred (differences between what has occured and the estimates made using assumptions).
+
+The table below shows the detailed variations over the four previous years:
+
+as at Var. as at Var. as at Var. as at MCHF 31.12.2011 2012 31.12.2012 2013 31.12.2013 2014 31.12.2014
+
+Net Liabilities - Pension benefits
+
+5 349 - 30 5 319 - 1 256 4 062 1 841 5 903
+
+Discount rate used in the actuarial assumptions Impact of the change in the discount rate Impact of the variation of the plan assets Various adjustments
+Total - Actuarial variations
+Employer cost
+
+1.23%
+
+1.16%
+
+1.97%
+
+0.81%
+
+108 - 1 288
+
+1 851
+
+- 100
+- 59 - 51
+21
+
+9 - 1 279
+23
+
+- 165 1 686
+155
+
+Net Liabilities - CHIS benefits
+
+3 348 109 3 457 - 1 391 2 066
+
+772 2 838
+
+Discount rate used in the actuarial assumptions Impact of the change in the discount rate Impact of the change in medical costs assumptions Various adjustments
+Total - Actuarial variations
+Employer cost
+
+1.23%
+
+69
+- 51 18 91
+
+1.16%
+
+1.97%
+
+- 707
+
+- 652
+- 132 - 1 491
+100
+
+803
+- 107 696 76
+
+0.81%
+
+44
+
+In summary, for 2014:
+· for the Pension benefits net liabilities, the main variation is due to the impact of the change in the discount rate 1 851 MCHF (-1 288 MCHF in 2013);
+· for the CHIS benefits net liabilities, the main variations are due to the impact of the change in the discount rate 803 MCHF (-707 MCHF in 2013). There was no impact in 2014 for the change in medical cost assumptions which occurred in 2013 (impact -652 MCHF in 2013). The medical cost assumptions were updated in 2013 to reflect observed actual medical costs between 2011 and 2013.
+e) Pension Fund
+Since 2008, the Pension Fund Governing Board has used for the Financial Statements of the Pension Fund a set of assumptions in line with the requirements of IAS 26. The funding ratio under another set of assumptions is included in an annex to the Pension Fund's Financial Statements for information purposes:
+· the first set of assumptions follows the IPSAS principles and IAS 26 (i.e. using the discount rate of 0.81%). At the end of 2014, the IPSAS coverage ratio of the Pension Fund calculated according to this set is 38.8% compared to 48.1% at the end of 2013;
+· the second set of assumptions reflects the actuarial assumptions used in the document "Report by the Pension Fund Governing Board on Funding principles and policy and measures to restore full funding of the CERN Pension Fund" (CERN/FC/5432/RA ­ CERN/2897/RA). At the end of 2014, the funding ratio of the Pension Fund calculated according to this set is 73.2% compared to 72.7% at the end of 2013. Note that this amount is calculated including LPP (loss of future purchasing power). The funding ratio calculated without LPP in 2014 is 69.8% compared to 69.1% shown on the annex to the financial statements of 2013.
+7.14. OTHER PROVISIONS
+
+These provisions cover obligations of uncertain amount and timing.
+
+kCHF Radioactive waste management Paid leave - long term portion Damages on accidents and defects
+Others
+
+Comments A
+
+As at 31.12.2014
+87 978 78 283
+1 005
+167 267
+
+As at 31.12.2013
+85 847 78 768
+500
+165 115
+
+45
+
+Comments:
+A) Radioactive waste management
+The disposal costs for radioactive waste from CERN's facilities are assessed annually in the framework of the evaluation of CERN's financial commitments.
+The Tripartite Agreement on radiation safety and radiation protection signed on 15 November 2010 by CERN and its Host States represented by the Swiss Federal Office of Public Health (OFSP) and the French Authority for Nuclear Security (ASN), foresees that the CERN's radioactive waste will be disposed of through the different elimination pathways available in the two Host States according to their applicable legislation. The Tripartite Agreement further stipulates that the parties will aim to divide the radioactive waste fairly between the two Host States taking into account quantity, toxicity and total activity of the radioactive waste as well as the cost of disposal.
+Starting from 2013, the calculation of the disposal costs takes into account the provisions in the Tripartite Agreement and the elimination pathways that have been opened since its entry into force. The costs per unit of volume of disposed waste are based on recent experience (waste disposal campaigns performed in 2011-2013) as well as on updated estimates for the elimination pathways not yet in use.
+The estimated costs for the disposal of CERN radioactive waste are based on the amount and radiotoxicity of both the radioactive waste presently stored in CERN's temporary storage facility and the future radioactive waste that is forecast to be produced by preventive and corrective maintenance or by the upgrade of CERN's facilities or experiments. It must be noted that the data on future waste does not cover radioactive material or waste that could result from the decommissioning of CERN facilities and experiments. The present figures include the cost of the containers that will be eliminated with the waste and the transport of the waste to the final disposal facilities. They do not include cost for tools and manpower needed for the radiological characterisation of the waste or for the handling and conditioning of the waste at CERN.
+The disposal costs for radioactive waste on 31 December 2014 are estimated to be 88.0 MCHF (85.8 MCHF in 2013).
+B) Other Items not recognised in the Financial Statements
+a) Dismantling
+The applicable texts (in particular CERN's founding Convention and the pertinent agreements with Switzerland and France) do not stipulate an obligation for CERN to dismantle its' installations at the end of their operating period.
+46
+
+In the absence of an obligation to dismantle and given that the fate and state of the installations at the end of their operating period is not foreseeable at present, no provisions for dismantling are included in the financial statements.
+If CERN were to dismantle installations, such operations would have to be carried out in the applicable legal framework and involve costs which cannot be determined today.
+b) Litigation
+CERN was involved in 2 litigations during 2014:
+· following termination by CERN of a contract for the construction of Building 107 on the CERN site, the contractor submitted a claim for 8.9 MEUR relating to (1) delays in the execution of the project, (2) additional works performed, and (3) various additional costs incurred by the contractor. In March 2015, CERN and the contractor have negotiated an amicable settlement whereby CERN will pay open invoices of 573 kCHF;
+· following termination by CERN, on the basis of a breach of contract by the (insolvent) contractor, of a contract for the construction of Building 774 on the CERN site, CERN submitted a claim for 2.4 MEUR to the contractor and the Insolvency Administrator, established in the place of incorporation of the contractor, Barcelona. The majority of CERN's claim relates to the cost of completion of the works by the contractor's sub-contractors and various other firms. The contractor disputed CERN's claim, with the result that CERN could not be listed as a beneficiary in the Payment Plan drawn up by the Insolvency Administrator. CERN is now on a list of contingent creditors, and continues to pursue all reasonable legal means to recover a part of its loss.
+c) Claims
+CERN has received or submitted the following claims:
+· having received defective hoses from a contractor, CERN has reached a settlement with the contractor whereby the contractor has accepted to replace all defective hoses, at an estimated cost of 3.9 MEUR, against a contribution by CERN towards the cost of the replacement items of 1 MEUR. A proposal for a settlement agreement is under discussion and a portion of the replacement work has already been performed, therefore a provision of 0.5 MEUR has been recorded for the related CERN contribution;
+· following the discovery by CERN of serious defects in capacitors installed by a contractor, CERN sent a formal notice to the contract or asking the latter to remedy the defects. CERN, the contractor and its subcontractor have entered in
+47
+
+discussion in order to find a technical solution. In the meantime, the contractor has extended the warranty on the capacitors;
+· following discovery by CERN of helium leaks in various sectors of the compound cryogenic helium distribution line for the LHC due to a hidden defect of the compensating bellows supplied by a contractor, the parties have agreed on an arrangement whereby the contractor compensated CERN through the free supply of liquid helium valued at 0.4 MCHF. The helium was delivered to CERN and its value is included in the 2014 accounts as an in-kind revenue;
+· CERN received a short vacuum impregnation system for the development of magnet prototypes. The equipment has been found to be defective and is not compliant with applicable EC Directives. CERN has drawn on a 0.02 MEUR bank guarantee for this order and is withholding payment of an invoice amounting to 0.03 MEUR, and is seeking to recover an additional 0.2 MCHF from the contractor corresponding to the cost incurred by CERN in partially remedying the non-conformities. CERN and the contractor have started to discuss a possible amicable settlement, which would include an intervention by the contractor to remedy the remaining non-conformities of the system;
+· following termination by CERN, for breach of contract, of a contract for the provision of a long vacuum impregnation system for the development of magnets for HL-LHC, the contractor submitted a claim for 0.2 MEUR for its alleged costs. It is noted that this is the same contractor as mentioned in the short vacuum impregnation system dispute stated above. CERN has informed the contractor that it does not consider the claim justified;
+· CERN is seeking to recover 0.4 MEUR in costs for having the work carried out by another contractor and having had to find alternate means to impregnate two magnet coils in 2014. The contractor contests the claim and is seeking payment from CERN for materials purchased and its engineering time. The parties remain in discussion with a view to reaching a solution to this matter.
+7.15. SHORT-TERM DEBT AND BANK OVERDRAFT
+As mentioned under Long-term debts, the amounts falling due next year are included under this heading in addition to short-term borrowing from banks.
+48
+
+As at
+
+As at
+
+kCHF 31.12.2014 31.12.2013
+
+BNP FORTIS - to be reimbursed within 1 yr 23 209 22 442
+
+FIPOI - to be reimbursed within 1 year
+
+1 106
+
+1 105
+
+SIG - to be reimbursed within 1 year
+
+32 637
+
+2 659
+
+Total
+
+56 952
+
+26 206
+
+CERN has credit lines with various financial establishments. These do not generate any financial cost on top of the interest incurred when used. No credit lines were being used by CERN at the end of 2014.
+7.16. PAYABLES
+7.16.1. TRADE ACCOUNTS This sub-heading represents outstanding invoices and accrued Material expenses payable to suppliers. Included in the accrued expenses is 1.7 MCHF for a litigation settlement payable to a supplier.
+7.16.2. TEAMS AND COLLABORATIONS This represents the advances received from Teams and Collaborations and other Funds. The most important part concerns Collaborations and mainly:
+The LHC Experiments
+· ATLAS (A Toroidal LHC Apparatus); · CMS (Compact Muon Solenoid); · ALICE (A Large Ion Collider Experiment); · LHCb (LHC beauty);
+
+49
+
+The balances as at 31 December 2014 are shown in the table below:
+
+MCHF ATLAS CMS ALICE LHCb
+Total
+
+As at 31.12.2014
+60.4 36.7 10.5 14.4
+122.0
+
+As at 31.12.2013
+66.1 31.6 11.4 11.2
+120.3
+
+The status of the LHC experiments is reported regularly to Council, most recently in June 2014 (CERN/SPC/1030 - CERN/FC/5846 - CERN/3117).
+7.16.3. EMPLOYEE BENEFITS
+7.16.3.1. Employee benefits recognised in the Financial Statements
+
+A) The amount shown in the Statement of Financial Position under this sub-heading can be broken down as follows:
+
+Accruals Paid leave Shift work compensation Paid leave for long service Termination allowances
+Other payables
+
+kCHF
+
+As at 31.12.2014
+
+As at 31.12.2013
+
+Total
+
+43 446 14 620 10 443
+3 761 68
+72 338
+
+42 883 16 168
+9 183 3 684
+16
+71 934
+
+At 31 December 2014, the total provision for Paid Leave amounts to 121.7 MCHF (121.6 MCHF in 2013). The figure above is the current portion of the provision, expected to be used within 12 months. The remaining long-term portion of Paid Leave appears in Provisions on the Statement of Financial Position, and at 31 December 2014 it amounts to 78.3 MCHF (78.7 MCHF in 2013).
+
+50
+
+B) The principal assumptions used for calculating the present value of special leaves
+
+for long service, shift work compensation and termination allowances were as
+
+follows:
+
+Long service
+
+As at 31.12.2014 Shift work Termination compensation allowance
+
+Long service
+
+As at 31.12.2013 Shift work compensation
+
+Termination a llow a nce
+
+Discount rate
+
+0.38%
+
+-0.09%
+
+-0.26%
+
+1.25%
+
+0.42%
+
+-0.07%
+
+Swiss Confederation Bond interest rate 10 year
+
+5 year
+
+2 year 10 year
+
+5 year
+
+2 year
+
+Future salary increase
+
+3.50%
+
+3.50%
+
+3.50%
+
+3.50%
+
+3.50%
+
+3.50%
+
+% of award of indefinite contracts
+
+50.00%
+
+NA
+
+50.00% 50.00%
+
+NA
+
+50.00%
+
+7.16.3.2. Other employee benefits not recognised in the Financial Statements Reinstallation indemnities
+
+As provided for in the Staff Rules and Regulations, reinstallation indemnities may be paid under certain conditions to non-resident staff within 30 months following the termination of their contract. At the reporting date, the corresponding contingent liability towards the members of personnel amounted to 7.9 MCHF (8.7 MCHF in 2013).
+7.17. DEFERRED REVENUE
+
+The amount shown in the Statement of Financial Position under this heading can be broken down as follows:
+
+Bulgaria - within 1 year Israel - within 1 year Germany - within 1 year EU projects Other revenues in advance Deferred in-kind
+
+kCHF Total
+
+As at 31.12.2014
+1 605 3 414
+3 16 179 16 724
+37 925
+
+As at 31.12.2013
+3 082 10 578
+10 26 654 14 446
+1 879
+56 649
+
+Note that the deferred revenue balance from Israel corresponds to their 2015 contribution paid in advance. In 2013 their balance included advance payment for the 2014 contribution for 1.5 MCHF and for the special Membership contribution for 9 MCHF.
+Following the agreement with the EU in the context of the European Commission's 7th Framework Programme in 2008, CERN received advances for a large number of projects. These advances are either redistributed to other parties when CERN is project coordinator or retained to cover CERN expenditure. 20.9 MCHF were used in 2014 (14.7 MCHF in 2013) and transferred to revenue.
+
+51
+
+The sub-heading "Other revenue in advance" mainly concerns balances of Openlab and various projects awaiting recognition as revenue according to the stage of completion of contracts.
+7.18. OTHER CURRENT LIABILITIES
+This heading amounts to 3.0 MCHF as at 31 December 2014 (4.6 MCHF in 2013) and includes the balance of advance payments from various companies, CERN schools and social activities.
+
+7.19. MEMBER STATES' CONTRIBUTIONS
+
+The detail of annual Member States' contributions is shown in the following table:
+
+Austria Belgium Bulgaria Czech Republic Denmark Finland France Germany Greece Hungary Italy Israel Netherlands Norway Poland Portugal Slovakia Spain Sweden Switzerland United Kingdom
+
+kCHF Total
+
+2014
+24 409 30 524
+3 082 11 324 19 333 15 312 169 206 222 938 17 993
+7 116 126 257
+13 115 50 586 28 006 29 271 13 206
+5 461 91 094 28 713 40 082 152 609
+1 099 637
+
+2013
+24 079 30 025
+3 023 11 589 19 148 15 447 168 463 219 570 19 333
+7 356 127 440
+49 904 27 066 29 443 13 290
+5 472 92 345 27 548 34 539 157 075
+1 082 155
+
+The following amounts have been recognised in the 2014 revenues: · 7 891 kCHF from Romania as Candidate for Accession (6 530 kCHF in 2013); · 0 kCHF from Israel as Associate Member State (3 132 kCHF in 2013); · 12 044 kCHF from Israel as a Special Contribution (0 kCHF in 2013); · 1 000 kCHF from Serbia as Associate Member State (1 000 kCHF in 2013);
+
+52
+
+· 1 574 kCHF from France as additional in-kind contributions (1 259 kCHF in 2013).
+
+7.20. EU CONTRIBUTIONS
+
+Following the agreement between the EU and CERN in the context of the European Commission's 7th Framework Programmes, an amount of 20.9 MCHF (14.7 MCHF in 2013) was used to cover expenses in 2014. The corresponding EU projects were:
+
+kCHF MARIE CURIE Actions Cessamag project BSM Oxford project CRISP project LHC Theory Project EUCARD project Tical project EUCARD2 project Laguna LBNO project Hilumi project TORCH project endoTOFPET project ENSAR2 project Helix Nebula project Others
+Total
+
+2014
+11 245 2 689 658 647 464 421 419 390 357 325 315 263 210 199 2 264
+20 864
+
+2013 8 669
+353 406 623 566 267
+148 700
+85 185 415 164 246 1 887 14 712
+
+53
+
+7.21. OTHER REVENUE
+The amount shown under this heading can be broken down as follows.
+The sub-total "Other in-kind contributions" represents the estimate of advantages granted to the Organization. These in-kind revenues have their counterpart within Material Expenses, with the exception of the revenues in-kind on detectors. These in-kind revenues are recorded for additions to the CMS and ATLAS Collaboration detectors during LS1, and the counterpart therefore appears in the LHC-Detectors category of PPE balances.
+
+kCHF Loans and advances with no interest Lands made available without charge Computing : material and training Revenues in-kind on detectors Material made available without charge Others
+Sub-total Other in-kind contributions Revenue for HIE-ISOLDE, IdeaLab, FAIR, CESSAMAG, ELENA, SH.NEUTRINOS Personnel paid on Team accounts Personnel on detachment Knowledge transfer
+Sales and miscellaneous OpenLab revenues Revenue from the Housing activity
+Sub-total Others
+Total
+
+2014 1 983 2 930 498
+58 517 396
+64 324
+6 031
+13 254 1 259 1 848
+15 342 2 456 5 223
+45 413 109 737
+
+2013 2 044 2 855 461
+10 5 370
+2 490
+15 158 1 188 1 139
+12 593 2 339 5 720
+40 627 45 997
+
+54
+
+7.22. MATERIAL EXPENSES
+
+Details of materials expenses are shown in the following table:
+
+kCHF
+Goods, Consumables, Equipment & Supplies Stock variations Buildings, civil-engineering equipment and supplies Electrotechnics, electronics equipment and supplies IT equipment and supplies Mechanics equipment and supplies Vacuum and particle detection equipment and supplies Cryogenics and gases for experiments Transport, handling and hoisting equipment and supplies Miscellaneous supplies
+Electricity, heating gas and water
+
+2014
+86 692 - 609 11 653 24 119 12 199 13 134 5 984 6 555 2 371 11 287
+42 227
+
+Industrial Services Service contracts Repair & maintenance Temporary labour
+Associated Members of Personnel
+
+82 302 48 853 29 583
+3 866
+32 499
+
+Other overheads Consultancy Contributions to Collaborations Equipment hire Insurance premiums Library Litigation settlement Visits and conferences Duty travel and hospitality expenses Transport Training costs Communications Miscellaneous overheads
+
+Total
+
+49 015 5 043 4 792 2 176 4 950 5 665 5 735 2 291
+10 230 2 424 3 841 902 967
+292 735
+
+2013 89 149 - 696 16 473 23 043 12 267 13 310
+5 736 2 512 1 648 14 856 40 758
+85 776 51 264 30 325
+4 187 32 061
+39 463 4 882 5 505 2 089 5 004 2 912
+2 309 8 923 1 735 4 135 1 206
+763 287 207
+
+Variation
+- 2 457 87
+- 4 820 1 076 - 68 - 176 248 4 043 723
+- 3 569 1 469
+- 3 474 - 2 411
+- 742 - 321
+438
+9 552 161
+- 713 87
+- 54 2 753 5 735 - 18 1 307
+689 - 294 - 304
+204 5 528
+
+The Materials expenses charged to the budget for 2014 and shown in note 8.2 amounted to 507.0 MCHF (519.8 MCHF in 2013). They can be reconciled with the above as follows:
+
+Materials Budget expenses Material expenses transfered to PPE Materials expenses
+
+MCHF 507.0 -214.2 292.8
+
+55
+
+7.23. PERSONNEL EXPENSES
+
+The details of personnel expenses are shown in the following table:
+
+kCHF Remuneration
+Staff members Fellows Apprentices
+Social and family benefits Staff members Fellows
+Social insurance cover Pension Staff members Fellows Health Insurance Staff members Fellows Apprentices
+Annual variation - paid leave Staff members Fellows
+Post-employment benefits Contribution to Health Insurance for pensioners Contribution to Long-Term Care for pensioners Changes in provision for the Pension scheme Changes in provision for the Health scheme
+Internal taxation
+Total
+
+2014
+278 097 239 694
+38 126 277
+54 507 52 086
+2 421
+93 917
+72 898 66 325
+6 574 21 019 18 022
+2 841 156
+6 423 6 226
+197
+258 956 25 920 2 798
+154 664 75 573 29 028
+720 928
+
+2013
+262 297 226 597
+35 416 284
+49 708 47 529
+2 179
+86 540
+67 571 61 239
+6 332 18 969 16 251
+2 539 179
+- 14 593 - 14 560
+- 33
+150 570 24 815 2 784 22 864
+100 107 28 571
+563 093
+
+Variation
+15 800 13 097
+2 710 -7
+4 799 4 557
+242
+7 377
+5 328 5 086
+242 2 050 1 771
+302 - 23
+21 016 20 786
+230
+108 385 1 105 14
+131 800 - 24 534
+457
+157 835
+
+The Personnel expenses charged to the budget for 2014 and shown in note 8.3 amounted to 616.7 MCHF (603.2 MCHF in 2013). They can be reconciled with the above as follows:
+
+Personnel Budget expenses Personnel expenses transfered to PPE Employer costs - HIS benefits * Employer costs - Pension benefits * Amortization of staff benefits accruals Personnel expenses * refer to note 7.13 d
+
+MCHF 616.7 -108.7 75.6 154.7 -17.3 720.9
+
+56
+
+7.24. FINANCIAL REVENUE AND EXPENSES
+
+The details of financial revenue and expenses are shown in the following table:
+
+Financial revenue Interest Discounts Exchange gain
+
+kCHF
+
+2014
+2 210 60
+
+Total
+
+2 270
+
+Financial expenses Interest on FORTIS loan Loans with no interest Interest on SIG debt Financial expenses on set up of investments Exchange loss Exchange loss on hedging *
+
+11 434 1 983 1 331 299 723
+
+Other financial expenses
+
+9
+
+Total
+
+15 778
+
+* Gross amount relating to Financial Instruments - refer also to 7.26.3
+
+2013
+1 704 51
+423 2 178
+12 175 2 044 1 431 88
+875 9
+16 623
+
+The Interest and Financial costs charged to the budget for 2014 and shown in note 8.4 amounted to 15.8 MCHF (16.6 MCHF in 2013).
+
+7.25. MANAGEMENT OF FINANCIAL RISKS
+Risk management policies depend on the type of financial instruments concerned. Risk management for CERN operating financial assets and financial liabilities is distinct from that for the CHIS portfolio. The following description of the policies and processes for managing and measuring the financial risks reflects the split of management responsibility for these two groups of assets and liabilities. A more general description of the CERN accounting policies on financial instruments, including a definition of financial instruments, appears in note 7.1.
+Financial Instruments held by CERN
+As disclosed in note 7.26, CERN holds a variety of financial instruments. The main risks arising from CERN's financial instruments are liquidity risk, interest rate risk, currency risk and credit risk. For CERN financial assets used for investment purposes, the senior management approves the investment instruments, policies and strategy for managing these assets and their associated risks.
+
+57
+
+Financial Instruments held by CHIS
+Details of the CHIS financial instruments also appear in note 7.26. The main risks arising from the CHIS financial instruments are market risk, interest rate risk, and credit risk. Two banks have been appointed to manage the portfolio of CHIS. They actively manage the assets following a pre-defined strategic allocation with maximum assets at risk to preserve the value of CHIS assets.
+7.25.1. LIQUIDITY RISK
+Liquidity risk is the risk of not being able to meet obligations that are settled by delivering cash (or another financial asset) as they fall due.
+CERN's activities are mainly financed by the annual contributions of the Member States, with the corresponding budget approved by member states and upon which the amounts of the contributions are based. Therefore liquidity risk is increased if the cash inflows and cash outflows are mismatched, namely if member state contributions are not received on a timely basis.
+The Treasury section at CERN addresses liquidity risk by monitoring bank balances and estimating expected cash outflows based on open commitments and due dates on financial liabilities. They also monitor member state contributions, the most significant source of cash inflows to CERN. The Resource Planning and Controls section monitors commitments and expenditures in order to ensure the budget is correctly executed and is not exceeded.
+In the event that the contributions received are not sufficient to cover for CERN cash flow needs, CERN may, if necessary, take recourse to short-term loans with financial institutions to cover its exposure to liquidity risks. In the event of a cash surplus not needed to cover operational short-term expenses, CERN may invest the amounts concerned with the first objective of preserving capital, and the secondary objectives to maximise returns and ensure liquidity needs are met.
+For a maturity analysis of the long term debts held by CERN, please refer to note 7.10.
+7.25.2. MARKET RISK
+Market risk is the risk that the fair value or future cash flows of a financial instrument will fluctuate because of changes in market prices. Market risk comprises three types of risk: currency risk, interest rate risk, and other price risk.
+For CERN financial instruments, the Treasurer may have recourse to financial products to cover financial market risks such as variations in interest and exchange rates. The Organization uses hedging tools to manage its exposure to currency and interest rate risks incurred in the normal course of business. The goal of financial risk management is to
+58
+
+minimise the impact of the unpredictable nature of financial market trends on CERN's financial position.
+The financial assets held by the CHIS are exposed to market price risk. It is the responsibility of the two banks which manage the portfolio of CHIS to manage this risk through diversification and any other means they deem prudent in line with the mandate they have. 7.25.3. CREDIT RISK
+Credit risk is the risk that one party to a financial instrument will cause a financial loss of the other party by failing to discharge an obligation.
+For the CERN financial instruments, credit risk arises principally from the following financial instruments: all receivables, other financial assets and cash and cash equivalents. The carrying amount of these financial assets represents the maximum credit exposure. The maximum exposure to credit risk as at 31 December 2014 was therefore 290 MCHF (298 MCHF in 2013).
+Refer to 7.2.3 regarding banker's guarantees provided by CERN.
+No other collateral is held as security for CERN.
+Credit quality is the assessed risk of default attached to the counterparties with which CERN invests, and to which CERN extends credit. CERN invests with only top-rated financial institutions for holding cash and making investments in order to mitigate this risk.
+CERN takes the following steps to protect itself from the risk of counterparty default:
+· having recourse to top-rated financial institutions and setting a ceiling on the level of operations authorised with each counterparty;
+· applying rules and procedures defining the conditions for opening and managing third-party accounts and limiting the amounts managed and the transactions authorised;
+For the CHIS financial instruments, the financial assets exposed to credit risk are cash and investments held at banks. The carrying amount of these financial assets represents the maximum credit exposure. The maximum exposure to credit risk as at 31 December 2014 was therefore 190 MCHF (167 MCHF in 2013).
+Collateral held as security in the form of margin calls amounts to 906 kCHF at 31 December 2014 for CHIS (196 kCHF for 2013).
+59
+
+7.25.4. INTEREST RISK
+Interest rate risk is the risk that the fair value or future cash flows of a financial instrument will fluctuate because of changes in the market interest rates.
+Exposure to interest risk at CERN is limited to interest bearing financial instruments which they hold. This includes cash, other financial asset, and long term debts. CERN uses forward exchange contracts and options to hedge its interest risk. At 31 December 2014, CERN had no interest swaps in progress.
+The impact of a +/- 10% change in the average interest rates received/paid on the closing balances would result in a net loss/gain of 1.2 MCHF and a corresponding increase/decrease in the net asset value. Note this figure is calculated including the interest-bearing long term debts, however given these have fixed interest rates, the associated interest risk is low.
+The CHIS fund is exposed to interest risk on the cash and bonds which they hold. It is the responsibility of the two banks which manage the portfolio of CHIS to manage this risk.
+The impact of a +/- 10% change in the average interest rates received/paid on the closing balances would result in a net gain/loss of 0.5 MCHF and a corresponding increase/decrease in the net asset value.
+7.25.5. CURRENCY RISK
+Currency risk is the risk that the fair value or future cashflows of a financial instrument will fluctuate because of changes in exchange rates.
+CERN is exposed to currency risk through its normal foreign-currency transactions, and the translation of financial instruments denominated in currencies other than the Swiss franc. Exposure to the currency risk on transactions is due to the fact that the member state contributions are in CHF while a percentage of CERN expenditure is committed in EUR, and to a lesser extent other currencies.
+At 31 December 2014, the principal financial instruments denominated in foreign currencies held by CERN and translated into CHF were cash, receivables, other receivables and payables. The impact of a +/- 10% change in the exchange rates of the 4 significant foreign currencies used at CERN on the closing balances would result in a gain/loss of 125 kCHF and a corresponding increase/decrease in the net asset value.
+CERN uses natural hedges where possible, and if not available, forward exchange contracts and options to hedge its foreign exchange risk. At 31 December 2014, CERN had no foreign exchange hedging instruments in progress.
+60
+
+The CHIS fund is exposed to currency risk through the translation of financial assets denominated in a foreign-currency. As 31 December 2014, the financial assets denominated in foreign currencies were cash, bonds and shares. The impact of a +/- 10% change in the exchange rates on the closing balances would result in a gain/loss of 2.0 MCHF and a corresponding increase/decrease in the asset value. 7.26. FINANCIAL INSTRUMENTS 7.26.1. FINANCIAL INSTRUMENTS BY CATEGORY The following table is a comparison by category of the carrying amounts and fair values of all of CERN's financial instruments carried in the financial statements.
+61
+
+Carrying Value
+
+CERN Financial Instruments
+
+As at
+
+As at
+
+kCHF 31.12.2014 31.12.2013
+
+Financial Assets Fair Value through Profit and Loss
+Bonds
+
+-
+
+Shares
+
+-
+
+Funds
+
+-
+
+Derivatives used for trading
+
+-
+
+Total
+
+--
+
+Cash and cash equivalents
+
+117 723
+
+80 252
+
+Other financial assets
+
+50 000
+
+60 000
+
+Financial assets measured at amortized cost
+
+Receivables
+
+114 861
+
+148 555
+
+Other receivables
+
+7 641
+
+9 219
+
+Total CERN Financial Assets Short-term debt and bank overdraft Financial liabilities measured at amortized cost Payables Long-term debts Member States
+Total CERN Financial Liabilities
+
+290 225 56 952
+268 028 332 976
+2 277 660 233
+
+298 026 26 206
+256 026 389 961
+20 678 692 871
+
+Fair Value
+
+As at
+
+As at
+
+31.12.2014 31.12.2013
+
+117 723
+50 000 -
+114 861 7 641 -
+290 225 56 952
+268 028 302 552
+2 277 629 809
+
+80 252 60 000
+148 555 9 219
+298 026 26 206
+256 026 374 405
+20 678 656 637
+
+CHIS Financial Instruments Financial Assets Fair Value through Profit and Loss
+Bonds Shares Funds Derivatives used for trading Total Cash and cash equivalents Other
+Total CHIS Financial Assets Financial liabilities measured at amortized cost Long-term liabilities - CHIS fund Short-term liabilities - CHIS fund
+Total CHIS Financial Liabilities
+
+85 152 39 477 45 529
+1 885 172 043
+15 543 2 673
+190 259
+163 822 26 437
+190 259
+
+64 781 46 727
+9 343 1 417 122 267 42 069 3 030 167 366
+142 975 24 391
+167 366
+
+85 152 39 477 45 529
+1 885 172 043
+15 543 2 673
+190 259
+144 919 26 437
+171 356
+
+64 781 46 727
+9 343 1 417 122 267 42 069 3 030 167 366
+107 179 24 391
+131 570
+
+The fair value of the financial assets and liabilities are included at the amount at which the instrument could be exchanged in a current transaction between willing parties, other than in a forced sale or liquidation.
+At 31 December 2014, no financial instruments at fair value through surplus or deficit were held directly by CERN. The fair values of the CHIS fund financial assets at fair value through surplus or deficit are measured based on quoted prices at the balance sheet date or at the last available price available to market participants. The carrying amounts and the fair value amounts do not differ.
+
+62
+
+For cash and cash equivalents, receivables, other financial assets, as well as payables, short-term debt and bank overdrafts, the carrying amounts are not considered to differ significantly from the fair value amounts largely due to the expected short-term maturities of these instruments. The long term loans carried at amortised cost from Fortis, SIG and FIPOI are not traded on an active market. Their fair value at the balance sheet date is calculated as the present value of the future cash flows discounted using the prevailing government interest rates for the approximate remaining period of each loan. 7.26.2. FAIR VALUE LEVELS For valuation purposes, the financial assets at fair value through the surplus and deficit are classified under the following fair value levels:
+· level 1 ­ quoted prices (unadjusted) in active markets for identical assets or liabilities;
+· level 2 ­ inputs other than quoted prices included within Level 1 that are observable for the asset or liability, either directly or indirectly;
+· level 3 ­ inputs that are not based on observable market data. At 31 December 2014, CERN did not hold any financial assets classified as fair value through surplus and deficit. Based on the above fair value hierarchy, at 31 December 2014 all financial assets classified as fair value through surplus and deficit held by CHIS were classified as Level 1.
+63
+
+7.26.3. GAINS AND LOSSES ON FINANCIAL INSTRUMENTS
+
+The table below details gains and losses on financial instruments recorded in the year.
+
+For the year
+
+ended
+kCHF 31.12.2014
+
+CERN Financial Instruments
+
+Financial Assets Fair Value
+
+through Profit and Loss
+
+Net gains (losses) on assets at
+
+fair value through surplus or
+
+0
+
+deficit
+
+For the year ended
+31.12.2013
+17
+
+Interest income Interest expense on long term debt Net exchange gains/losses* Fees and other costs Sundry
+
+2 210 - 14 748
+- 723 - 299
+51
+
+1 704 - 15 650
+- 470 - 88 43
+
+Total
+
+- 13 509
+
+- 14 445
+
+* Exchange gains/losses related to financial assets at fair value through sur
+
+or deficit are netted agains net gains (losses) on these assets in the table a
+
+For the year
+ended
+kCHF 31.12.2014
+
+CHIS Financial Instruments*
+
+Financial Assets Fair Value through Profit and Loss
+Net gains (losses) on assets at
+
+fair value through surplus or
+
+10 232
+
+deficit
+
+Interest income
+
+3
+
+Interest expense
+
+Fees and other costs
+
+- 551
+
+Sundry
+
+For the year ended
+31.12.2013
+3 500 5
+- 435
+
+Total
+
+9 685
+
+* do not appear in Statement of financial performance
+
+3 071
+
+64
+
+7.27. RECAPITALISATION OF THE PENSION FUND
+Following the Five-Yearly Review 2010 and the approval by the Council in December 20102, CERN contributed in 2014 to the recapitalisation of the Pension Fund in an amount of 60 MCHF (60 MCHF in 2013).
+7.28. RELATED PARTY DISCLOSURES
+Requirements of the IPSAS 20 Standard
+The standard requires the following disclosures:
+The total amount of all other remuneration and compensation provided to key management personnel, and close members of the family of key management personnel, by the reporting entity during the reporting period, showing separately the aggregate amounts provided to:
+(i) Key management personnel; and (ii) Close members of the family of key management personnel
+The standard defines close members of the family of key management personnel as close relatives of the individual or members of the individual's immediate family who can be expected to influence, or be influenced by, that individual in their dealings with the entity.
+Key Management Personnel
+The Organization is governed by the CERN Council composed of delegates of all Member States. The latter do not receive remuneration from the Organization. The CERN Council is the highest authority of the Organization and, as such, appoints the Director-General to manage the CERN Laboratory.
+The Director-General is assisted by a Directorate and Key Advisors, and runs the Laboratory through a structure of Departments, each managed by a Head of Department. The DirectorGeneral, the Directorate, the Key Advisors and Heads of Departments are remunerated by the Organization and represent the key management personnel of CERN.
+The aggregate remuneration related to key management personnel and their close family
+members includes salaries, allowances, employer social contribution, benefits and other
+entitlements paid directly or indirectly in accordance with the Staff Rules & Regulations.
+
+2 CERN/FC/5498 ­ CERN/2947
+
+65
+
+31.12.2014
+
+Directorate (Director-General and Directors)
+
+Number of persons
+4
+
+Total (kCHF)
+1 738
+
+Head of Departments
+
+8 3 061
+
+Key Advisors
+
+3 1 048
+
+Total Key management personnel
+
+15 5 847
+
+31.12.2013
+
+Number of Total
+
+persons
+
+(kCHF)
+
+4 1 733
+
+8 3 066 3 894
+
+15 5 693
+
+In addition, the Director-General receives the benefit of use of a car and a driver. These represented for 2014 an amount of 220 kCHF (186 kCHF in 2013).
+The key management personnel are ordinary participants in the CERN Pension Fund and CERN Health Insurance Scheme. The total post-employment benefits represent an amount of 1 963 kCHF for 2014 (1 738 kCHF in 2013).
+Concerning close family members of key management personnel (includes spouses and children), the aggregate remuneration amounted to 571 kCHF (344 kCHF in 2013) and the post-employment benefits represented an amount 287 kCHF (248 kCHF in 2013).
+The above variations in amounts from year to year are principally due to changes in the composition of key management personnel and the close family members. Other Related Parties
+Parties are considered to be related if one party has the ability to control the other party, or exercise significant influence over the other party in making financial and operating decisions, or if the related party entity and another entity are subject to common control.
+CERN contributes to a significant portion of the CERN Pension Fund's financing. While the CERN Pension Fund is an autonomous operating entity, for the purpose of IPSAS 20 disclosure requirements, it is considered to be a related party. CERN provided some administrative support and office accommodations to the Pension Fund free of charge in 2014.
+The Foundation for the Globe of Science & Innovation and the Foundation CERN & Society can also be considered as a related party given that it shares some key management personnel with CERN and CERN has significant influence on financial and operating decisions. During 2014, CERN provided personnel, administrative support and office accommodations to these two Foundations free of charge.
+7.29. EVENTS AFTER THE REPORTING PERIOD
+
+On 15 January 2015, the Swiss National Bank (SNB) discontinued the minimum exchange rate of CHF 1.20 per euro. The estimated impact on the net assets of this decrease in the CHF/euro rate is not material. There is however a potential material impact for the collection
+
+66
+
+of the 2015 member state contributions given that a significant number of the member states have the euro as their base currency. At 31 March 2015, 33% of total contributions have been received compared to 52% at the same time in 2014.
+
+8. NOTES TO THE BUDGET ACTUAL AMOUNTS
+As required by IPSAS 24 ­ Presentation of Budget Information in Financial Statements, section 8 of the notes makes a comparison of budget amounts and the actual amounts arising from execution of the budget. In addition, explanations of the reasons for material differences between the budget and actual amounts are provided.
+The Final 2014 Budget3 for expenses of 1 251.3 MCHF at 2014 prices was endorsed by the Finance Committee in December 2013. 2014 Probable Revenues and Expenses were presented to the Finance Committee in December 2014 in the framework of the Final 2015 Budget4.
+In contrast to the announced and planned increase of the cumulative budget deficit in the Final 2014 Budget, the budget position of the Organization shows stabilisation with respect to the end of 2013.
+With respect to the annual balance of -132.0 MCHF anticipated in the Final 2014 Budget, the 2014 out-turn shows -0.2 MCHF, resulting in a cumulative budget deficit of -86.3 MCHF compared to -86.1 MCHF at the end of 2013.
+This positive improvement of the budget position of 131.8 MCHF was achieved in spite of the considerable work-load during the LS1 period. Some 110 MCHF of the differences in the expenses were already anticipated and explained as outcome of the probable revenues and expenses exercise for 2014 and presented as part of the Final 2015 Budget document. The Management informed Council and its Committees in the December session of the impact of the limited experienced manpower, which in some cases needed to be re-deployed to ensure the completion of the highest priority, the LS1 activities, and illustrates the upper limit of achievable work packages within a given workforce, in particular during a laboratory-wide maintenance period like LS1.
+The main differences are as follows:
+· delays of building construction and renovation projects (Buildings 107, 774, magnetic measurements building, Globe) for various reasons, including difficulties with the contractors;
+· need to focus and partially re-allocate personnel from HL-LHC and LIU towards LS1 activities to finish important milestones (such as hardware tests, cold checkout, setup with beam for the LHC injectors and pressure tests, cool-down and
+
+3 CERN/FC/5781 ­ CERN/3087 4 CERN/FC/5873 ­ CERN/3150
+
+67
+
+powering tests for LHC) and to maintain the schedule. This resulted in re-profiling of the HL-LHC, LIU and detectors upgrade projects as well as in delays for the diversity programme; · difficulties in the R&D for science diversity projects that delayed the start of construction, e.g. for HIE-ISOLDE, ELENA as well as some delays in the starting contracts for the extension of the North Area building for the Neutrino Platform; · actively trying to steer expenses, i.e. optimizing orders when compatible with the overall schedule, without endangering safe and reliable operation of the laboratory.
+68
+
+8.1. SUMMARY OF REVENUE AND EXPENSES BY ACTIVITY
+
+The table below shows a comparison between the budget and the actual amounts:
+
+Reference to Annual Progress
+Report 2014 CERN/FC/5891
+
+(in MCHF, 2014 prices, rounded off)
+
+Page 68, Figure 2 "Total Revenues"
+
+REVENUES Member States' contributions Additional contributions from Host States Additional contribution from Romania as a Candidate for Accession Special contribution from Israel Additional contribution from Serbia as an Associate Member State EU contributions Additional contributions (for LINAC4, HIE-ISOLDE, ELENA, CLIC, IdeaLab, R&D neutrinos, FAIR, CESSAMag) Personnel paid on team accounts Personnel on detachment Internal taxation Knowledge transfer Other revenues
+
+Final 2014 Budget CERN/FC/5781 (2014 prices)
+(a)
+1,205.5 1,099.6
+7.9 9.0 1.0 18.8
+
+2014 Out-Turn CERN/FC/5891 (2014 prices)
+(b)
+1,225.5 1,099.6
+1.6 7.9 12.0 1.0 20.9
+
+Variations of Out-
+
+Turn with respect
+
+to Budget
+
+MCHF
+
+%
+
+(c)=(b)(a)
+
+(c)/(a)
+
+20.0 1.7%
+
+0.0 0.0%
+
+1.6
+
+0.0 0.0%
+
+3.0 33.3%
+
+2.1 11.2%
+
+3.4 6.5 3.1 92.0%
+
+12.6 13.3 0.7 5.4% 1.1 1.3 0.2 17.6%
+28.5 29.0 0.5 1.9% 1.1 1.8 0.7 65.0%
+22.5 30.6 8.1 35.8%
+
+Fact sheet (MTP 2014)
+1, 2, 3, 4, 5, 6, 7, 8 9, 10, 11, 12 13
+14, 15, 16, 17, 18, 19 20
+21 21 21 21 21 21
+22 23 24 25 25
+26, 27 28
+29 30 31 32, 33, 35, 36
+
+EXPENSES
+Running of scientific programmes and support Scientific programmes LHC (machine, detectors, computing, including spares and consolidation) Non-LHC physics and scientific support Accelerators and areas (including consolidation) Infrastructure and services General infrastructure and services (including administration, outreach) Infrastructure consolidation, buildings and renovation Centralised expenses Centralised personnel expenses Internal taxation Personnel int. mobility, on detachment, not available, paid on team accounts Budget amortisation of staff benefits accruals Energy and water, insurances and postal charges, miscellaneous Interest, bank and financial expenses, in-kind
+Projects and studies LHC upgrades LINAC4 LHC injectors upgrade HL-LHC construction LHC detectors upgrade (Phase 1) and consolidation HL-LHC detectors, including R&D (Phase 2) Energy frontier Linear collider studies (CLIC, ILC, detector R&D) Future Circular Collider study Diversity activities ELENA HIE-ISOLDE CERN neutrino platform R&D (incl. EU support) for accelerators, detectors, medical applications
+
+1,251.3
+1,035.2 536.3 341.1 53.6 141.6 324.8 261.0 63.8 174.0 35.7 28.5 14.3 17.3 60.5 17.8 216.2 123.1 20.3 38.3 36.5 17.6 10.5 33.4 31.9 1.5 59.7 10.4 20.6 6.2 22.5
+
+1,139.5
+958.1 508.2 317.9 54.2 136.1 277.3 247.7 29.7 172.5 35.6 29.0 16.7 17.3 55.2 18.8 181.3
+95.6 19.4 24.8 28.4 16.5
+6.4 35.7 32.1 3.6 50.0 7.7 20.2 1.9 20.3
+
+-111.9 -8.9%
+
+-77.0 -28.1 -23.2
+0.6 -5.5 -47.5 -13.3 -34.2 -1.4 -0.1 0.5 2.4 0.0 -5.3 1.0 -34.8 -27.6 -0.9 -13.4 -8.1 -1.1 -4.0 2.4 0.2 2.1 -9.7 -2.7 -0.4 -4.3 -2.2
+
+-7.4% -5.2% -6.8% 1.1% -3.9% -14.6% -5.1% -53.5% -0.8% -0.4% 1.9% 16.7% 0.2% -8.7% 5.6% -16.1% -22.4% -4.5% -35.1% -22.1% -6.3% -38.7% 7.2% 0.8% 142.9% -16.2% -26.0% -2.0% -69.8% -9.8%
+
+Page 13, chapter "Summary of Revenues and Expenses by Activity"
+
+BALANCE
+
+Annual balance
+
+Capital repayment allocated to the budget (Fortis, FIPOI and SIG)
+
+Recapitalisation pension fund
+
+Annual balance allocated to budget deficit
+
+-Cumulative Balance-
+
+- 86.1
+
+-45.8 -26.2 -60.0 -132.0 -218.1
+
+86.0 -26.2 -60.0
+-0.2 -86.3
+
+131.8 0.0
+131.8 131.8
+
+69
+
+8.2. MATERIAL EXPENSES
+
+In addition to the above table which details expenses by Activity, the following table shows the breakdown of Materials budget expenses by nature.
+
+MCHF
+Goods, Consumables and Supplies Electricity, heating gas and water Industrial services Associated Members of Personnel Other overheads
+
+Comments A B C D E
+Total
+
+Budget 349.8
+53.6 132.3
+38.0 45.8
+619.4
+
+2014
+
+Expenses Difference
+
+228.8 - 121.0
+
+42.2 - 11.3
+
+133.0
+
+0.7
+
+42.3 4.3
+
+60.7 14.9
+
+507.0 - 112.4
+
+Comments A) The difference is explained by:
+
+· The re-profiling of multi-annual projects and delays in procurement: - for projects in the "Infrastructure and Services" programme the difference amounts to -37.7 MCHF and mainly concerns:
+· -19.5 MCHF due to a delay in the construction of Building 107, which was foreseen to be finished end of 2014, and which will now be partially re-tendered, leading to important delays;
+· -4.8 MCHF due to a late start of Globe renovation project;
+· -4.0 MCHF due to a delayed start of magnetic measurements building (building 311) for which studies were started but not the works itself;
+· -2.3 MCHF due to a delay in the new LHCb building complex;
+· -2.2 MCHF for Prevessin Main building (building 774) due to open commitments at the end of the year;
+· -1.7 MCHF due to the postponement of the Place des Particules project;
+· -1.6 MCHF for Computing network consolidation as in 2014 the main focus was on studies on the improvement and enhancement of the campus Wi-Fi network;
+· -1.4 MCHF due to late deliveries in the "Safety, health and environment projects";
+
+70
+
+- in the "Projects & Studies" programme, the re-profiling of projects amounts to -28.7 MCHF and is related mainly to:
+· -21.4 MCHF for LHC upgrades mainly due to some delays in LHC injectors upgrade (-13.1 MCHF) and HL-LHC construction (-6.8 MCHF);
+· -4.5 MCHF due to delayed start of construction for CERN neutrino platform (late contract adjudications);
+· -3.5 MCHF for ELENA, where the construction part of the machine has some delays;
+- for projects that are part of the "LHC Programme" and "Other Programmes", the re-profiling amounts to -28.5 MCHF and mainly concerns:
+· -20.1 MCHF for LHC Consolidation, injectors and spares (-15.9 MCHF), detectors consolidation (-1.1 MCHF), LHC computing (-3.2 MCHF);
+· -6.6 MCHF for low and medium accelerators including consolidation;
+· the late delivery of some items under the operations headings.
+B) The difference is explained mainly by lower costs of electricity. Less energy was consumed due to the adjusted planning notably in the last quarter of 2014 for SPS testing and start-up of the LHC power convertors, which lead to significant savings due to the higher tariff for MWh in the winter season. In addition, the actual EURCHF exchange rate was more favourable than budgeted. Furthermore, a relatively warm winter has also reduced the use of heating oil and gas.
+C) The heading is almost in line with Final 2014 budget.
+D) The increase is mainly linked to additional work during the shutdown.
+E) The increase is linked mainly to the SCOAP 3 projects not planned in the Final 2014 Budget (3.8 MCHF), consultancy (+1.3 MCHF), CERN contributions to Collaborations (+1.2 MCHF), litigation settlement 5.7 MCHF.
+Further detailed explanations regarding the differences between actual Materials expenses and Budget are given in the Annual Progress Report for 2014 (see CERN/FC/5891 ­ CERN/3165).
+71
+
+8.3. PERSONNEL EXPENSES
+
+8.3.1.
+
+EXPENSES BY NATURE
+
+For 2014, 617.0 MCHF were initially allocated to the Personnel Budget. The final expenses charged to the Personnel budget amounted to 616.7 MCHF.
+
+The following tables show the breakdown of Personnel expenses.
+
+MCHF Staff Members Fellows and Apprentices Centralised Personnel Budget (CPB) Internal taxation Amortization of staff benefits accruals
+
+Comments F G H
+
+Personnel externally funded
+
+I Total
+
+Budget 466.7
+56.2 35.7 28.5 17.3 81.5 12.6 617.0
+
+As at 31.12.2014
+
+Expenses Difference
+
+462.7
+
+- 4.0
+
+58.9 2.7 35.5 - 0.2 29.0 0.5 17.3 81.8 0.3 13.3 0.7
+
+616.7
+
+- 0.3
+
+Comments
+F) The decrease is mainly due to a lower basic salary mass of -0.8%, resulting from the slower increase of basic salary per FTE (replacement of staff going on retirement is partially offsetting the effects of the yearly advancement exercise). Additionally, the variation of paid leave is negative (-0.6 MCHF), net allowances are lower than anticipated (-0.5 MCHF), and there is a variation of -0.6 MCHF for social contributions (lower contributions to Pension Fund linked to the lower basic salaries and lower contributions for new Staff members).
+G) This is mainly due to transfers from materials for the GET fellowships and the Technical Trainee Programme.
+H) The increase is mainly due to higher contribution to Health Insurance for pensioners (+0.9 MCHF) and internal taxation (+0.5 MCHF) partially offset by lower expenses for costs linked to taking up appointments and leaving the Organization (-0.7 MCHF).
+I) The increase is mainly due to an increase in the number of externally-funded personnel, with the corresponding revenues recorded.
+
+72
+
+8.3.2. 8.3.2.1.
+
+DISTRIBUTION OF FTE BY ACTIVITY Staff
+
+The total CERN Staff Member strength in 2014 was 2477.1 FTEs (compared to 2479.0 in Final 2014 budget and 2481.2 in 2013).
+
+Activity LHC Programme (incl. projects) Other programmes Infrastructure and services Other expenses 2) Projects
+Total
+
+FTE 1)
+
+FTE
+
+Personnel not CERN Budget available
+
+766.1
+
+517.5
+
+738.6
+
+25.4
+
+369.6 2 391.8
+
+25.4 2 477.1
+
+FTE Externally
+funded 26.5 5.6 7.6 17.7 2.5 59.9
+
+1) Including staff financed by EU, TT and OpenLab funds. 2) Pension Fund
+
+8.3.2.2. Fellows and Apprentices
+
+For Fellows and Apprentices, the total strength in 2014 was 619.2 FTEs (compared to 576.1 in 2013). The increase in Fellows stems from the higher importance of the GET fellowship programme (i.e. funding fellowships with a transfer from materials) and TTE programme (Technical Training Experience) as well as CERN's success in acquiring Marie-Curie and CoFUND funding from the European Union for fellowships.
+
+FTE CERN Budget FTE Externally funded
+
+Fellows Apprentices Fellows Apprentices Activity
+
+LHC Programme (incl. projects)
+
+212.4
+
+18.6
+
+Other programmes
+
+102.8
+
+2.8
+
+Infrastructure and services Other expenses 1) Projects
+
+105.9 143.1
+
+20.9
+
+9.0 0.4 3.3
+
+564.2
+
+20.9 34.1
+
+Sub-Total
+
+585.1
+
+34.1
+
+1) Pension Fund
+
+Total
+
+619.2
+
+73
+
+Further detailed explanations regarding the differences between actual Personnel expenses and Budget are given in the Annual Progress Report for 2014 (see CERN/FC/5891 ­ CERN/3165).
+8.4. INTEREST AND FINANCIAL COSTS
+
+MCHF BNP FORTIS Bank In-kind (FIPOI interests 0%) SIG Debt Financial expenses
+Total
+
+As at 31.12.2014
+
+Budget Expenses Difference
+
+11.4 11.4
+
+-
+
+2.1 2.0 - 0.1
+
+1.4 1.3 - 0.0
+
+- 1.0
+
+1.0
+
+14.9 15.8
+
+0.9
+
+8.5. CAPITAL REPAYMENTS
+
+In line with International Public Sector Accounting Standards (IPSAS), the capital repayment of long-term loans is not shown as budget expenditure but deducted from the liabilities in the Statement of Financial Position. However, in order to reflect cash requirements of the Organization, it is still allocated to the budget balance.
+
+FORTIS loan FIPOI loans SIG Debt
+
+MCHF Total
+
+As at 31.12.2014
+
+Budget Repayment Difference
+
+22.4 22.4
+
+0.0
+
+1.1 1.1
+
+-
+
+2.7 2.7 - 0.0
+
+26.2 26.2
+
+0.0
+
+* **
+
+74
+
+
