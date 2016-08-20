@@ -33,7 +33,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletAdaptor</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
+        <url-pattern>/MyCATT/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
