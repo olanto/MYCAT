@@ -498,7 +498,8 @@ public class IdxReference {
         int mark;
         int markdoc = 0;
         int[] multidoc = null;
-        computeMark();
+           if ((lastcp - seqn)>0) computeMark(); // not to short
+        
         for (int i = 0; i < lastcp - seqn; i++) {
             if (markv[i] != -1) { // ok look for the next
                 mark = markv[i];  //reload current value
