@@ -101,12 +101,14 @@ public class RefDocService {
             _logger.error(ex);
         }
         
-       
-        
-        return "<QD>"
+       String result="<QD>"
                 + WSRESTUtil.niceXMLParameters( msg, TxtSrc,  RefType, DocSrc, DocTgt,  LngSrc, LngTgt, Filter, MinLen,  RemFirst, Fast)
                 + refDoc
                 + "</QD>";
+       
+       System.out.println("RefDocService:\n"+result);
+        
+        return result;
     }
 
     /**

@@ -664,13 +664,15 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         if (!fromFile) {
             REFResultNice refres = id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast);
             String htmlref = refres.htmlref;
+            String xmlInfo = refres.xmlInfo;
             htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
             htmlref = htmlref.replace("-->", "</htmlendcomment>");
             return "<htmlRefDoc>\n"
                     + "<!--\n"
                     + htmlref
                     + "-->\n"
-                    + "</htmlRefDoc>\n";
+                    + "</htmlRefDoc>\n"
+                    + xmlInfo;
         } else {
             return "<htmlRefDoc>\n"
                     + "<!--\n"

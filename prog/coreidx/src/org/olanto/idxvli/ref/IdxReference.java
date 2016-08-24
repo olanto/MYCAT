@@ -176,6 +176,7 @@ public class IdxReference {
     private int[] markdocv;
     private int[][] multidocv;
 
+    private String XMLInfo="<noInfo/>";
     private synchronized int GetANewTaskId() {
 
         globalTaskNumber++;
@@ -556,6 +557,9 @@ public class IdxReference {
 //        }
 
     }
+   public final String getXMLInfo() {
+       return XMLInfo;
+   }
 
     public final String getHTML() {
 
@@ -624,9 +628,19 @@ public class IdxReference {
         s.append("<hr/>\n");
         s.append(rs.getStatByQuote());
         s.append("<hr/>\n");
+        
+        XMLInfo=getXMLInfo(rs); 
         //timing.stop();
         return s.toString();
     }
+        public final String getXMLInfo(ReferenceStatistic rs) {
+            StringBuilder s = new StringBuilder("<Info>\n");
+            s.append(rs.getXMLStatByQuote());
+            s.append("</Info>\n");
+            
+            return s.toString();
+        }
+
 
     public final String getXML() {
         //Timer timing = new Timer("--------------------------------Total getXML");
