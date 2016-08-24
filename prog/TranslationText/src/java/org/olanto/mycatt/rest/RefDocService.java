@@ -57,8 +57,10 @@ public class RefDocService {
     @GET
     @Produces("application/xml")
     @Path("params")
-    public String getRefDocXML(@DefaultValue("TEST") @QueryParam("TxtSrc") String TxtSrc,
-            @DefaultValue("You Need to specify the text to be processed with the TxtTgt parameter") @QueryParam("TxtTgt") String TxtTgt,
+    public String getRefDocXML(@DefaultValue("") @QueryParam("TxtSrc") String TxtSrc,
+            @DefaultValue("") @QueryParam("RefType") String RefType,
+            @DefaultValue("") @QueryParam("DocSrc") String DocSrc,
+            @DefaultValue("") @QueryParam("DocTgt") String DocTgt,
             @DefaultValue("EN") @QueryParam("LngSrc") String LngSrc,
             @DefaultValue("FR") @QueryParam("LngTgt") String LngTgt,
             @DefaultValue("") @QueryParam("Filter") String Filter,
@@ -66,31 +68,44 @@ public class RefDocService {
             @DefaultValue("FALSE") @QueryParam("RemFirst") Boolean RemFirst,
             @DefaultValue("FALSE") @QueryParam("Fast") Boolean Fast) {
 
-        String refDoc = "empty ref";
+        String msg = "ok";
+       String refDoc = "empty ref";
+       boolean fromFile=false;
         // process collection
         String[] collections = null;
         if (!Filter.equals("")) {
             collections = Filter.split(";");
         }
-
+        if (!DocSrc.equals("")) {
+            fromFile=true;
+        }
+        if (TxtSrc.equals("")&&DocSrc.equals("")){
+            msg="Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
+           
+       }
+       if (!TxtSrc.equals("")&&!DocSrc.equals("")){
+            msg="TxtSrc is not null, DocSrc will be ignored";
+            fromFile=false;
+       }
+       
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 _logger.info(is.getInformation());
-                UploadedFile up = new UploadedFile(TxtSrc, TxtTgt);
-                refDoc = is.getHtmlReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast);
+                UploadedFile up = new UploadedFile(TxtSrc, null);
+                refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt);
             }
         } catch (NotBoundException | IOException ex) {
-            refDoc = "RMI call unsuccessful because of unmarshalling issue";
+            msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
             _logger.error(ex);
         }
+        
+       
+        
         return "<QD>"
-                + "<htmlRefDoc>"
-                + "<!--"
-                + WSRESTUtil.unCommentRefDoc(refDoc)
-                + "-->"
-                + "</htmlRefDoc>"
+                + WSRESTUtil.niceXMLParameters( msg, TxtSrc,  RefType, DocSrc, DocTgt,  LngSrc, LngTgt, Filter, MinLen,  RemFirst, Fast)
+                + refDoc
                 + "</QD>";
     }
 

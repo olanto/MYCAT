@@ -659,6 +659,28 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     @Override
+    public String getXMLReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast, boolean fromFile, String DocSrc, String DocTgt) throws RemoteException {
+        if (!fromFile) {
+            REFResultNice refres = id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast);
+            String htmlref = refres.htmlref;
+            htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
+            htmlref = htmlref.replace("-->", "</htmlendcomment>");
+            return "<htmlRefDoc>\n"
+                    + "<!--\n"
+                    + htmlref
+                    + "-->\n"
+                    + "</htmlRefDoc>\n";
+        } else {
+            return "<htmlRefDoc>\n"
+                    + "<!--\n"
+                    + "not implemented"
+                    + "-->\n"
+                    + "</htmlRefDoc>\n";
+        }
+    }
+
+    @Override
     public String createTemp(String FileName, String Content) throws RemoteException {
         return UtilsFiles.String2File(FileName, Content, TEMP_FOLDER);
     }
