@@ -4,6 +4,13 @@
  */
 package org.olanto.mycatt.rest;
 
+import java.net.MalformedURLException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import org.olanto.convsrv.server.ConvertService;
+
 /**
  *
  * @author simple
@@ -11,6 +18,13 @@ package org.olanto.mycatt.rest;
 
 
 public class WSRESTUtil {
+    
+    public static void main(String[] args){
+        byte[] bytes=null;
+        System.out.println(convertFileWithRMI( bytes,
+        "C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_AR.pdf")
+                );
+    }
     
     public static String unCommentRefDoc(String s){
         s=s.replace("<!--","</htmlstartcomment>");
@@ -52,6 +66,34 @@ public class WSRESTUtil {
         
     }   
     
-      
+        public static String convertFileWithRMI(byte[] bytes, String fileName) {
+        String ret = "Warning: System seems to be unavailable, please contact the Translation Support Section";
+        System.out.println("Request to convert file from WebService: " + fileName);
+           try {
+            Remote r = Naming.lookup("rmi://localhost/CONVSRV");
+            if (r instanceof ConvertService) {
+                ConvertService is = (ConvertService) r;
+                // ret = is.getInformation();
+
+                int pos = fileName.lastIndexOf('/');
+
+                if (pos >= 0) {
+                    fileName = fileName.substring(pos + 1);
+                }
+
+                ret = is.File2Txt(bytes, fileName);
+                
+                        System.out.println("Converted file content: " + ret);
+                
+            } else {
+                return "CONVSRV Service not found or not compatible.";
+            }
+
+        } catch (NotBoundException | MalformedURLException | RemoteException ex) {
+           System.out.println(ex);
+        }
+
+        return ret;
+    }  
             
 }

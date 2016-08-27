@@ -51,6 +51,8 @@ public class RefDocService {
         return "<QD>"
                 + "<htmlRefDoc>"
                 + "</htmlRefDoc>"
+                + "<Info>"
+                + "</Info>"
                 + "</QD>";
     }
 
@@ -69,45 +71,49 @@ public class RefDocService {
             @DefaultValue("FALSE") @QueryParam("Fast") Boolean Fast) {
 
         String msg = "ok";
-       String refDoc = "empty ref";
-       boolean fromFile=false;
+        String refDoc = "empty ref";
+        boolean fromFile = false;
         // process collection
         String[] collections = null;
         if (!Filter.equals("")) {
             collections = Filter.split(";");
         }
         if (!DocSrc.equals("")) {
-            fromFile=true;
+            fromFile = true;
         }
-        if (TxtSrc.equals("")&&DocSrc.equals("")){
-            msg="Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
-           
-       }
-       if (!TxtSrc.equals("")&&!DocSrc.equals("")){
-            msg="TxtSrc is not null, DocSrc will be ignored";
-            fromFile=false;
-       }
-       
+        if (TxtSrc.equals("") && DocSrc.equals("")) {
+            msg = "Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
+
+        }
+        if (!TxtSrc.equals("") && !DocSrc.equals("")) {
+            msg = "TxtSrc is not null, DocSrc will be ignored";
+            fromFile = false;
+        }
+
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 _logger.info(is.getInformation());
-                UploadedFile up = new UploadedFile(TxtSrc, null);
-                refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt);
+                if (!fromFile) {  // text
+                    UploadedFile up = new UploadedFile(TxtSrc, null);
+                    refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt);
+                } else { // from a file
+                    
+                }
             }
         } catch (NotBoundException | IOException ex) {
             msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
             _logger.error(ex);
         }
-        
-       String result="<QD>"
-                + WSRESTUtil.niceXMLParameters( msg, TxtSrc,  RefType, DocSrc, DocTgt,  LngSrc, LngTgt, Filter, MinLen,  RemFirst, Fast)
+
+        String result = "<QD>"
+                + WSRESTUtil.niceXMLParameters(msg, TxtSrc, RefType, DocSrc, DocTgt, LngSrc, LngTgt, Filter, MinLen, RemFirst, Fast)
                 + refDoc
                 + "</QD>";
-       
-       System.out.println("RefDocService:\n"+result);
-        
+
+        System.out.println("RefDocService:\n" + result);  // ONLY FOR DEBUG
+
         return result;
     }
 
