@@ -23,12 +23,12 @@ package org.olanto.convsrv.server;
 import java.rmi.*;
 
 /* -server -Xmx600m -Djava.rmi.server.codebase="file:///c:/MYCAT/prog/ConverterServer/dist/ConverterServer.jar"  -Djava.security.policy="c:/MYCAT/rmi.policy" */
-// JG modifier pour le rmi
+
 /**
  *  Facade pour les services du service de conversion en modeRMI 
  * (ces services peuvent être augmentés en publiant des méthodes utiles pour la conversion
- * par exemple des
- * init, stop, restart, statistiques ...)
+ * par exemple des init, stop, restart, statistiques ...)
+ * 
  *
  */
 public interface ConvertService extends Remote {
@@ -48,7 +48,15 @@ public interface ConvertService extends Remote {
      */
     public String File2Txt(byte[] content, String fileName) throws RemoteException;
 
-    /**
+   /**
+     * Pour convertir un fichier dont on connait le nom (sans passer par le TempDir
+     * @param fileName nom du fichier (utiliser les extensions pour la conversion)  
+     * @return le txt convertit
+     * @throws java.rmi.RemoteException
+     */
+    public String File2TxtNo(String fileName) throws RemoteException;
+
+   /**
      * Pour convertir un fichier dont on connait le nom
      * @param fileName nom du fichier (utiliser les extensions pour la conversion)
      * @return le fichier html  au format UTF8 convertit
@@ -73,5 +81,5 @@ public interface ConvertService extends Remote {
      * @return le fichier converti
      * @throws java.rmi.RemoteException
      */
-    public byte[] File2File(byte[] content, String SourceFormat, String TargetFormat) throws RemoteException;
+    public byte[] File2File(byte[] content, String fileName, String targetFormat) throws RemoteException;
 }

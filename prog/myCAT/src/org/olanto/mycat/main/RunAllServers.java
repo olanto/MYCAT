@@ -20,6 +20,9 @@
 
 package org.olanto.mycat.main;
 
+import java.rmi.Naming;
+import org.olanto.converter.ConfigUtil;
+import org.olanto.convsrv.server.ConvertService_BASIC;
 import org.olanto.senseos.SenseOS;
 import org.olanto.mycat.map.ConfigurationMapGetFromFile;
 import org.olanto.mapman.server.GetMapService;
@@ -65,6 +68,22 @@ public class RunAllServers {
         } catch (Exception e) {
             error("During startup: Index", e);
         }
+try {
+            System.out.println("initialisation du convertisseur ...");
+     ConfigUtil.setConfigFile(SenseOS.getMYCAT_HOME()+"/config/CONV_fix.xml");
+     ConfigUtil.loadConfigFromXml();
+            ConvertService_BASIC idxobj = new ConvertService_BASIC();
 
+            System.out.println("Enregistrement du serveur");
+
+            String name = "rmi://localhost/CONVSRV";
+            System.out.println("name:" + name);
+            Naming.rebind(name, idxobj);
+            System.out.println("Server is ready");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
     }
 }

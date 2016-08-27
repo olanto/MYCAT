@@ -95,12 +95,13 @@ public class RefDocService {
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 _logger.info(is.getInformation());
+                UploadedFile up=null;
                 if (!fromFile) {  // text
-                    UploadedFile up = new UploadedFile(TxtSrc, null);
-                    refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt);
-                } else { // from a file
-                    
+                    up = new UploadedFile(TxtSrc, null);
                 }
+                
+                    refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt, RefType);
+                
             }
         } catch (NotBoundException | IOException ex) {
             msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
@@ -108,7 +109,7 @@ public class RefDocService {
         }
 
         String result = "<QD>"
-                + WSRESTUtil.niceXMLParameters(msg, TxtSrc, RefType, DocSrc, DocTgt, LngSrc, LngTgt, Filter, MinLen, RemFirst, Fast)
+                + WSTUtil.niceXMLParameters(msg, TxtSrc, RefType, DocSrc, DocTgt, LngSrc, LngTgt, Filter, MinLen, RemFirst, Fast)
                 + refDoc
                 + "</QD>";
 

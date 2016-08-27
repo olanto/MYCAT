@@ -454,7 +454,7 @@ public interface IndexService_MyCat extends Remote {
      * @throws java.rmi.RemoteException
      */
     public String getXMLReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
-            boolean removefirst, boolean fast, boolean fromFile, String DocSrc,String DocTgt) throws RemoteException;
+            boolean removefirst, boolean fast, boolean fromFile, String DocSrc,String DocTgt, String RefType) throws RemoteException;
     
     
     public String createTemp(String FileName, String Content) throws RemoteException;

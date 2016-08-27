@@ -22,6 +22,9 @@
 package org.olanto.idxvli.server;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
@@ -29,6 +32,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
@@ -47,6 +52,7 @@ import static org.olanto.util.Messages.msg;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 import org.olanto.util.TimerNano;
 import org.olanto.idxvli.ref.UtilsFiles;
+import org.olanto.idxvli.ref.WSRESTUtil;
 
 /**
  * service mycat.
@@ -660,7 +666,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     @Override
     public String getXMLReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
-            boolean removefirst, boolean fast, boolean fromFile, String DocSrc, String DocTgt) throws RemoteException {
+            boolean removefirst, boolean fast, boolean fromFile, String DocSrc, String DocTgt, String RefType) throws RemoteException {
         if (!fromFile) {
             REFResultNice refres = id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast);
             String htmlref = refres.htmlref;
@@ -674,14 +680,41 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "</htmlRefDoc>\n"
                     + xmlInfo;
         } else {
-            return "<htmlRefDoc>\n"
+            String content=WSRESTUtil.convertFileWithRMI(DocSrc);
+            UploadedFile getfromfile=new UploadedFile(content,DocSrc);
+            REFResultNice refres = id.getReferences(getfromfile, limit, source, target, selectedCollection, removefirst, fast);
+            String htmlref = refres.htmlref;
+            String xmlInfo = refres.xmlInfo;
+            htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
+            htmlref = htmlref.replace("-->", "</htmlendcomment>");
+            String htmlresult= "<htmlRefDoc>\n"
                     + "<!--\n"
-                    + "not implemented"
+                    + htmlref
                     + "-->\n"
-                    + "</htmlRefDoc>\n";
+                    + "</htmlRefDoc>\n"
+                    + xmlInfo;
+            String xmlresult = "<QD>"
+                + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
+                + htmlresult
+                + "</QD>";
+                    try {
+                        OutputStreamWriter outxml = new OutputStreamWriter(new FileOutputStream(DocTgt), "UTF-8");
+                        outxml.append(xmlresult);
+                        outxml.close();
+                        System.out.println("WSREF:"+DocSrc+" --> "+DocTgt);
+                    } catch (Exception ex) {
+                        Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+            return "<FileRefDoc>\n"
+                    + "<!--\n"
+                    + "WSREF process :"+DocSrc+" result in "+DocTgt
+                    + "-->\n"
+                    + "</FileRefDoc>\n";
         }
     }
 
+    
+    
     @Override
     public String createTemp(String FileName, String Content) throws RemoteException {
         return UtilsFiles.String2File(FileName, Content, TEMP_FOLDER);
