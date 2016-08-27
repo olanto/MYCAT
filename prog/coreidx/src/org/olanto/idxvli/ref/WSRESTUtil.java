@@ -45,7 +45,8 @@ public class WSRESTUtil {
      @DefaultValue("FALSE") @QueryParam("RemFirst") Boolean RemFirst,
      @DefaultValue("FALSE") @QueryParam("Fast") Boolean Fast) 
      */
-    public static String niceXMLParameters(String msg, String TxtSrc, String RefType, String DocSrc, String DocTgt, String LngSrc, String LngTgt, String[] Filter, Integer MinLen, Boolean RemFirst, Boolean Fast) {
+    public static String niceXMLParameters(String msg, String TxtSrc, String RefType, String DocSrc, String DocTgt,
+            String LngSrc, String LngTgt, String[] Filter, Integer MinLen, Boolean RemFirst, Boolean Fast) {
 
         String collections = "";
         if (Filter != null) {
@@ -65,6 +66,26 @@ public class WSRESTUtil {
                 + "   <MinLen>" + MinLen + "</MinLen>\n"
                 + "   <Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
+
+    }
+
+
+    public static String niceXMLInfo(String RefDocFullName, String RefDocType,
+            String RefDocLng, String RefDocPerCent, String RefDocOccurences) {
+
+
+        return "<statistics>\n"
+                + "  <mycat>\n"
+                + "    <RefDocFullName>" + RefDocFullName + "</RefDocFullName>\n"
+                + "    <RefDocType>" + RefDocType + "</RefDocType>\n"
+                + "    <RefDocLng>" + RefDocLng + "</RefDocLng>\n"
+                + "    <RefDocPerCent>" + RefDocPerCent + "</RefDocPerCent>\n"
+                + "    <RefDocOccurences>" + RefDocOccurences + "</RefDocOccurences>\n"
+                + "  </mycat>\n"
+                + "  <organisation>\n"
+                + "     <!-- imported template in /config -->"
+                + "  </organisation>\n"
+                + "</statistics>\n";
 
     }
 

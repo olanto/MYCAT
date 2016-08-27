@@ -1,0 +1,14 @@
+•	Provenant de MyCatt
+o	RefDocFullName
+o	RefDocType
+o	RefDocLng
+o	RefDocPerCent
+o	RefDocOccurences
+•	Provenant de DOMOS
+o	TranslatedE
+o	TranslatedF
+o	TranslatedS
+o	RevisedE
+o	RevisedF
+o	RevisedS
+o	Finished
