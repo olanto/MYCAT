@@ -196,12 +196,11 @@ public class IdxReference {
     private int[] markv;
     private int[] markdocv;
     private int[][] multidocv;
-
-    private String XMLInfo="<noInfo/>";
+    private String XMLInfo = "<noInfo/>";
     private int XMLtotword;
     private int XMLtotwordref;
     private String XMLpctref;
- 
+
     private synchronized int GetANewTaskId() {
 
         globalTaskNumber++;
@@ -524,8 +523,9 @@ public class IdxReference {
         int mark;
         int markdoc = 0;
         int[] multidoc = null;
-           if ((lastcp - seqn)>0) computeMark(); // not to short
-        
+        if ((lastcp - seqn) > 0) {
+            computeMark(); // not to short
+        }
         for (int i = 0; i < lastcp - seqn; i++) {
             if (markv[i] != -1) { // ok look for the next
                 mark = markv[i];  //reload current value
@@ -582,9 +582,10 @@ public class IdxReference {
 //        }
 
     }
-   public final String getXMLInfo() {
-       return XMLInfo;
-   }
+
+    public final String getXMLInfo() {
+        return XMLInfo;
+    }
 
     public final String getHTML() {
 
@@ -653,22 +654,22 @@ public class IdxReference {
         s.append("<hr/>\n");
         s.append(rs.getStatByQuote());
         s.append("<hr/>\n");
-        
-        XMLInfo=getXMLInfo(rs);
-        XMLtotword=rs.totword;
-        XMLtotwordref=rs.totwordref;
-        XMLpctref=rs.pctref;
+
+        XMLInfo = getXMLInfo(rs);
+        XMLtotword = rs.totword;
+        XMLtotwordref = rs.totwordref;
+        XMLpctref = rs.pctref;
         //timing.stop();
         return s.toString();
     }
-        public final String getXMLInfo(ReferenceStatistic rs) {
-            StringBuilder s = new StringBuilder("<Info>\n");
-            s.append(rs.getXMLStatByQuote());
-            s.append("</Info>\n");
-            
-            return s.toString();
-        }
 
+    public final String getXMLInfo(ReferenceStatistic rs) {
+        StringBuilder s = new StringBuilder("<Info>\n");
+        s.append(rs.getXMLStatByQuote());
+        s.append("</Info>\n");
+
+        return s.toString();
+    }
 
     public final String getXML() {
         //Timer timing = new Timer("--------------------------------Total getXML");
@@ -678,21 +679,25 @@ public class IdxReference {
         int countrefstart = 0;
         int countrefstop = 0;
         int openRef = 0;  // pour gérer les intersections de références
+        String seqofstopword = "";
         for (int i = 0; i < lastscan - 1; i++) {
-//            System.out.println(idxcp[i + 1]);
-//            System.out.println(idxcp[i + 1]+", "+begM[idxcp[i + 1]]+", "+endM[idxcp[i + 1]]);
+//            System.out.println("index:"+(i+1)+"="+idxcp[i + 1]);
             if (idxcp[i + 1] != NoMark) {
-//              System.out.println(idxcp[i + 1]+", "+begM[idxcp[i + 1]]+", "+endM[idxcp[i + 1]]);              
+//                System.out.println("index:" + (i + 1) + "=" + idxcp[i + 1] + ", " + begM[idxcp[i + 1]] + ", " + endM[idxcp[i + 1]]);
                 if (endM[idxcp[i + 1]] != NoMark) {
+//                    System.out.println("before endM:" + s.toString());
+//                    System.out.println("before endM stopword:" + seqofstopword);
                     openRef--;
                     countrefstop++;
                     String targetTxt = CLOSE_REF_BEG + countrefstop + CLOSE_REF_END;
                     countchar += targetTxt.length();
+                    countchar += seqofstopword.length();           
                     if (openRef >= 1) {
-                        s.append(targetTxt);
+                        s.append(targetTxt).append(seqofstopword);
                     } else {
-                        s.append(targetTxt).append("</a>");
+                        s.append(targetTxt).append("</a>").append(seqofstopword);
                     }
+                    seqofstopword = "";
                 } // if
                 if (begM[idxcp[i + 1]] != NoMark) {
                     openRef++;
@@ -700,15 +705,25 @@ public class IdxReference {
                     countrefstart++;
                     String targetTxt = OPEN_REF_BEG + countrefstart + OPEN_REF_END;
                     countchar += targetTxt.length();
+                    countchar += seqofstopword.length();  
                     if (openRef > 1) {
-                        s.append("</a>");
+                        s.append("</a>").append(seqofstopword);
+                        seqofstopword = "";
                     }
-                    s.append("<a href=\"#").append(countrefstart).append("\" id=\"ref").append(countrefstart).append("\" onClick=\"return gwtnav(this);\">").append(targetTxt);
+                    s.append(seqofstopword).append("<a href=\"#").append(countrefstart).append("\" id=\"ref").append(countrefstart).append("\" onClick=\"return gwtnav(this);\">").append(targetTxt);
+                 seqofstopword = "";
                 } //if
             } //if
             String addtohtml;
             if (i < lastscan - 1) {
-                addtohtml = textforhtml.substring(idxpos[i], idxpos[i + 1]);
+                if (idxcp[i + 1] != NoMark) { // indexed word                
+                    addtohtml = seqofstopword+textforhtml.substring(idxpos[i], idxpos[i + 1]);
+                    seqofstopword = "";
+                } else { // stop word
+                    seqofstopword += textforhtml.substring(idxpos[i], idxpos[i + 1]);
+                    addtohtml="";
+                }
+                
             } else {
                 addtohtml = textforhtml.substring(idxpos[i], textforhtml.length());
             }

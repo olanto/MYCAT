@@ -51,31 +51,35 @@ public class TestClientReferenceWithoutServer {
         System.out.println(id.getFileNameForDocument(1));
         System.out.println(id.getFileNameForDocument(2));
 
+ IdxConstant.REALREF_MAX_CHECK = 20;
+ testref("C:/Users/simple/Desktop/debug/teststopword.txt", "C:/Users/simple/Desktop/debug/teststopword.txt.res.html", null , 3);
+       
+        
 //        testref(SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.txt", SenseOS.getMYCAT_HOME() + "/test/World_Bank¦0000188336.doc.res.html", null , 3);
 //       testref(SenseOS.getMYCAT_HOME() + "/test/g245_e.txt", SenseOS.getMYCAT_HOME() + "/test/g245_e.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/S181-04.doc_EN.txt.txt.res.html", null , 3);
  //      testref(SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt", SenseOS.getMYCAT_HOME() + "/corpus/source/316R-01_EN.doc.txt.txt.res.html", null , 3);
  //     testref("C:/Users/simple/Desktop/reftest/test fantome.txt", "C:/Users/simple/Desktop/reftest/test fantome.txt.res.html", null , 3);
- IdxConstant.REALREF_MAX_CHECK = 6;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
- IdxConstant.REALREF_MAX_CHECK = 8;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 10;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 12;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 15;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 20;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 30;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 50;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 100;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
-IdxConstant.REALREF_MAX_CHECK = 200;
- testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+// IdxConstant.REALREF_MAX_CHECK = 6;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+// IdxConstant.REALREF_MAX_CHECK = 8;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 10;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 12;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 15;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 20;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 30;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 50;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 100;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
+//IdxConstant.REALREF_MAX_CHECK = 200;
+// testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt.res.html", null , 6);
    //  testref("C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.1000.txt", "C:/Users/simple/Desktop/debug/316R-01/316R-01NewSEG.unquart.txt.res.html", null , 6);
 // 247 282
     }
