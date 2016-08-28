@@ -49,6 +49,27 @@ import org.olanto.idxvli.ref.stat.InverseRef;
  */
 public class IdxReference {
 
+    /**
+     * @return the XMLtotword
+     */
+    public int getXMLtotword() {
+        return XMLtotword;
+    }
+
+    /**
+     * @return the XMLtotwordref
+     */
+    public int getXMLtotwordref() {
+        return XMLtotwordref;
+    }
+
+    /**
+     * @return the XMLpctref
+     */
+    public String getXMLpctref() {
+        return XMLpctref;
+    }
+
     class ComputeSeqThread extends Thread {
 
         public final static int THREADFAIL = 1;
@@ -177,6 +198,10 @@ public class IdxReference {
     private int[][] multidocv;
 
     private String XMLInfo="<noInfo/>";
+    private int XMLtotword;
+    private int XMLtotwordref;
+    private String XMLpctref;
+ 
     private synchronized int GetANewTaskId() {
 
         globalTaskNumber++;
@@ -629,7 +654,10 @@ public class IdxReference {
         s.append(rs.getStatByQuote());
         s.append("<hr/>\n");
         
-        XMLInfo=getXMLInfo(rs); 
+        XMLInfo=getXMLInfo(rs);
+        XMLtotword=rs.totword;
+        XMLtotwordref=rs.totwordref;
+        XMLpctref=rs.pctref;
         //timing.stop();
         return s.toString();
     }

@@ -37,8 +37,9 @@ public class ReferenceStatistic {
     private String[] multiref;
     private String[] txt;
     private int[] txtlength;
-    private int totword;
-    private int totwordref;
+    public int totword;
+    public int totwordref;
+    public String pctref="0%";
     private HashMap<String, InverseRef> invmap = new HashMap<String, InverseRef>(1000);
     private InverseRef[] alldoc;  // la liste des documents
     private Pattern p = Pattern.compile("[" + REFResultNice.DOC_REF_SEPARATOR + "]");  // le |
@@ -103,8 +104,9 @@ public class ReferenceStatistic {
         res.append("</p> " + MSG.get("server.qd.MSG_1") + " " + fileName);
         res.append("</p> " + MSG.get("server.qd.MSG_2") + " " + totword);
         res.append("</p> " + MSG.get("server.qd.MSG_3") + " " + alldoc.length);
+        pctref=formatter.format((float) totwordref * 100.0f / (float) totword + 0.0000001f) + "%";
         res.append("</p> " + MSG.get("server.qd.MSG_4") + " " + totwordref
-                + " (" + formatter.format((float) totwordref * 100.0f / (float) totword + 0.0000001f) + "%)");
+                + " (" + pctref + ")");
         res.append("</p> " + MSG.get("server.qd.MSG_5") + " " + min);
         if (Collections.equals("")) {
             res.append("</p> " + MSG.get("server.qd.MSG_6"));

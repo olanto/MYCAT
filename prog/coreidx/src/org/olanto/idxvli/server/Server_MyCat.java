@@ -695,7 +695,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + xmlInfo;
             String xmlresult = "<QD>"
                 + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
-                + WSRESTUtil.niceXMLInfo(DocSrc, RefType, "1111", "23%", "233")
+                + WSRESTUtil.niceXMLInfo(DocSrc, RefType, ""+refres.XMLtotword, ""+refres.XMLtotwordref, refres.XMLpctref)
                 + htmlresult
                 + "</QD>";
                     try {

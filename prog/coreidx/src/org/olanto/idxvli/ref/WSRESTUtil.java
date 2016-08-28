@@ -4,18 +4,19 @@
  */
 package org.olanto.idxvli.ref;
 
-import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.Remote;
-import java.rmi.RemoteException;
 import org.olanto.convsrv.server.ConvertService;
+import org.olanto.idxvli.IdxConstant;
+import org.olanto.idxvli.util.BytesAndFiles;
 
 /**
  *
  * @author simple
  */
 public class WSRESTUtil {
+    
+    static String organisationTemplate=null;
 
     public static void main(String[] args) {
         byte[] bytes = null;
@@ -73,6 +74,11 @@ public class WSRESTUtil {
     public static String niceXMLInfo(String RefDocFullName, String RefDocType,
             String RefDocLng, String RefDocPerCent, String RefDocOccurences) {
 
+        if (organisationTemplate==null){
+            organisationTemplate=BytesAndFiles.file2String(IdxConstant.IDX_XML_ORGANISATION_TEMPLATE, "UTF-8");
+             if (organisationTemplate==null)  organisationTemplate="<!-- Error impossible to load: "
+                     +IdxConstant.IDX_XML_ORGANISATION_TEMPLATE+"-->";
+        }
 
         return "<statistics>\n"
                 + "  <mycat>\n"
@@ -83,7 +89,8 @@ public class WSRESTUtil {
                 + "    <RefDocOccurences>" + RefDocOccurences + "</RefDocOccurences>\n"
                 + "  </mycat>\n"
                 + "  <organisation>\n"
-                + "     <!-- imported template in /config -->"
+                + "     <!-- imported template from /config -->"
+                + organisationTemplate
                 + "  </organisation>\n"
                 + "</statistics>\n";
 

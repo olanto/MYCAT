@@ -49,6 +49,12 @@ public class IdxConstant {
      */
     public static String IDX_DONTINDEXTHISDOC = "C:/JG/gigaversion/data/dontindexthisdocuments.txt";
     // -------------------------------------------------------------------   
+    // constante pour être compatible avec la version du classifieur
+    /**
+     * nom du fichier pour les documents non-indexables
+     */
+    public static String IDX_XML_ORGANISATION_TEMPLATE = "C:/MYCAT/config/organisation_template.xml";
+    // -------------------------------------------------------------------   
 
     /* LOGGER DEFINITION */
     /**
