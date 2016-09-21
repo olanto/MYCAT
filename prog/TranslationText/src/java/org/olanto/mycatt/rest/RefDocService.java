@@ -8,18 +8,19 @@ import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.Remote;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
+import javax.ws.rs.GET;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
-import javax.ws.rs.GET;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import org.olanto.idxvli.server.IndexService_MyCat;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.UriInfo;
 import org.apache.log4j.Logger;
+import org.olanto.idxvli.doc.PropertiesList;
 import org.olanto.idxvli.ref.UploadedFile;
+import org.olanto.idxvli.server.IndexService_MyCat;
 
 /**
  * REST Web Service
@@ -29,6 +30,7 @@ import org.olanto.idxvli.ref.UploadedFile;
 @Path("RefDoc")
 public class RefDocService {
 
+    public final static String COLLECTION_PREFIX = "COLLECTION.";
     private static final Logger _logger = Logger.getLogger(RefDocService.class);
     @Context
     private UriInfo context;
@@ -77,13 +79,12 @@ public class RefDocService {
         String[] collections = null;
         if (!Filter.equals("")) {
             collections = Filter.split(";");
-        }
-        if (!DocSrc.equals("")) {
-            fromFile = true;
-        }
-        if (TxtSrc.equals("") && DocSrc.equals("")) {
-            msg = "Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
-
+            for (int i = 0; i < collections.length; i++) {
+                collections[i] = collections[i].trim(); // remove space
+                if (!collections[i].startsWith(COLLECTION_PREFIX)) {
+                    collections[i] = COLLECTION_PREFIX + collections[i];  // add prefix if missing 
+                }
+            }
         }
         if (!TxtSrc.equals("") && !DocSrc.equals("")) {
             msg = "TxtSrc is not null, DocSrc will be ignored";
@@ -95,13 +96,48 @@ public class RefDocService {
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 _logger.info(is.getInformation());
-                UploadedFile up=null;
+                UploadedFile up = null;
                 if (!fromFile) {  // text
                     up = new UploadedFile(TxtSrc, null);
                 }
-                
-                    refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt, RefType);
-                
+
+                if (collections != null) {  // check if collection are ok
+                    //System.out.println("collection nb:" + collections.length);
+                    for (int i = 0; i < collections.length; i++) {
+
+                        PropertiesList CollectionsList = is.getDictionnary(collections[i]);
+
+                        //System.out.println("test:" + collections[i] + CollectionsList.result);
+                        if (!(CollectionsList.result.length >= 1 && CollectionsList.result != null)) {
+                            //System.out.println("test:" + collections[i] + "Error");
+                            if (msg.equals("ok")) {
+                                msg = ""; // reset msg
+                            }
+                            msg += "ERROR: This collection: " + collections[i] + " doesnt exist , Filter is considered EMPTY\n";
+                            collections = null;
+                            break;
+                        } else {
+                            boolean found = false;
+                            for (int j = 0; j < CollectionsList.result.length; j++) {
+                                if (CollectionsList.result[j].equals(collections[i])) {
+                                    found = true;
+                                    break;
+                                }
+                            }
+                            if (!found) {
+                                if (msg.equals("ok")) {
+                                    msg = ""; // reset msg
+                                }
+                                msg += "ERROR: This collection: " + collections[i] + " doesnt exist , Filter is set to EMPTY\n";
+                                collections = null;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt, RefType);
+
             }
         } catch (NotBoundException | IOException ex) {
             msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
@@ -113,7 +149,7 @@ public class RefDocService {
                 + refDoc
                 + "</QD>";
 
-        System.out.println("RefDocService:\n" + result);  // ONLY FOR DEBUG
+        //System.out.println("RefDocService:\n" + result);  // ONLY FOR DEBUG
 
         return result;
     }

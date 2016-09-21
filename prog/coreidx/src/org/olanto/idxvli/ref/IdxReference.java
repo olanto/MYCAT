@@ -274,7 +274,7 @@ public class IdxReference {
 
             }
         }
-        if (alignsota && selectedCollection != null) {// étend le filtre aux collections
+        if (alignsota && selectedCollection != null) {// étend le filtre aux collections           
             SetOfBits colfilter = new SetOfBits(glue.docstable.satisfyThisProperty(selectedCollection[0])); // une copie pour le premier operande
             for (int i = 1; i < selectedCollection.length; i++) {
                 SetOfBits col = glue.docstable.satisfyThisProperty(selectedCollection[i]);
