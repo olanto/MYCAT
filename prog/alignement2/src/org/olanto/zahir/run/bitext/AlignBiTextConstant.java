@@ -42,6 +42,8 @@ public class AlignBiTextConstant {
     public static String LIST_OF_BITEXT_LANG = "XXYY XXYYY";
     public static String[] BITEXT;
     public static float MIN_DICT_LEVEL =0.1f;
+    public static float MIN_SIM_LEVEL =0.2f;
+    public static boolean DONT_CHECK_LENGTH =false;
 
     /*************************************************************************************/
     public static void show() {
@@ -53,6 +55,8 @@ public class AlignBiTextConstant {
                 + "\n    IDX_DONTINDEXTHIS: " + IDX_DONTINDEXTHIS
                 + "\n    LIST_OF_BITEXT_LANG: " + LIST_OF_BITEXT_LANG
                 + "\n    MIN_DICT_LEVEL: " + MIN_DICT_LEVEL
+                + "\n    MIN_SIM_LEVEL: " + MIN_SIM_LEVEL
+                + "\n    DONT_CHECK_LENGTH: " + DONT_CHECK_LENGTH
                 + "\nVALUES");
     }
 }

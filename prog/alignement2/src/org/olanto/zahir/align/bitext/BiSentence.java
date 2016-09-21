@@ -22,13 +22,13 @@
 package org.olanto.zahir.align.bitext;
 
 import static org.olanto.util.Messages.*;
-import org.olanto.idxvli.IdxStructure;
 import org.olanto.zahir.align.DocumentSentence;
 import org.olanto.zahir.align.Global;
 import org.olanto.zahir.align.LexicalTranslation;
 import org.olanto.zahir.align.Map;
 import org.olanto.zahir.align.SimInformation;
 import org.olanto.zahir.align.WriteTMX;
+import org.olanto.zahir.run.bitext.AlignBiTextConstant;
 
 /**
  * Classe stockant la carte des positions entre deux traductions. init -> add
@@ -131,6 +131,8 @@ public class BiSentence {
     }
 
     public void buildMap() {
+ //       System.out.println(getInformation());
+//        boolean verbose=true;
         map1 = new Map(fromnblines, tonblines);
         map2 = new Map(fromnblines, tonblines);
         adjustWindow();
@@ -316,7 +318,7 @@ public class BiSentence {
                 msg("getmaxfrom max for," + fromline + " to " + i + ": " + todoc.lines[i].s);
             }
             counttested += fromdoc.lines[fromline].iw.length * todoc.lines[i].iw.length;
-            if (similarlength(fromline, i)) {
+            if (similarlength(fromline, i)||AlignBiTextConstant.DONT_CHECK_LENGTH) {
                 // float sim = StatSimilarity.statSimilar(s2t, fromdoc.lines[fromline].iw, todoc.lines[i].iw, ratioLength(fromline, i));
                 SimInformation sim = new SimInformation(fromdoc.lines[fromline].iw, todoc.lines[i].iw, fromdoc.lines[fromline].id, todoc.lines[i].id, todoc.lines[i].score, false, s2t);
                 if (sim.similarity == 0) {

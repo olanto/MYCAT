@@ -69,7 +69,7 @@ public class AlignBITEXT_classic {
                     SO_Folder,
                     TA_Folder,
                     "UTF-8",
-                    0.2f,
+                    MIN_SIM_LEVEL,
                     s2t,
                     TMX_SOTA,
                     true,
