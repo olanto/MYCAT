@@ -86,6 +86,14 @@ public class RefDocService {
                 }
             }
         }
+        if (!DocSrc.equals("")) {
+            fromFile = true;
+        }
+        if (TxtSrc.equals("") && DocSrc.equals("")) {
+            msg = "Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
+
+        }
+
         if (!TxtSrc.equals("") && !DocSrc.equals("")) {
             msg = "TxtSrc is not null, DocSrc will be ignored";
             fromFile = false;
@@ -113,7 +121,7 @@ public class RefDocService {
                             if (msg.equals("ok")) {
                                 msg = ""; // reset msg
                             }
-                            msg += "ERROR: This collection: " + collections[i] + " doesnt exist , Filter is considered EMPTY\n";
+                            msg += "ERROR: This collection: " + collections[i] + " doesn't exist , Filter is considered EMPTY\n";
                             collections = null;
                             break;
                         } else {
