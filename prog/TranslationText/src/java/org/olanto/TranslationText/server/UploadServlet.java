@@ -61,12 +61,21 @@ public class UploadServlet extends UploadAction {
                     if ((item.getName().toLowerCase().endsWith(".txt")) || (item.getName().endsWith(ext))) { // charge sous forme de txt
                         response += cleanConvertedFile(addMissingIds(UtilsFiles.file2String(item.getInputStream(), "UTF-8")));
                         System.out.println("File uploaded successfully ");
+                    } else if (item.getName().toLowerCase().endsWith(".xml")) { // extract html from xml ref doc if it starts with <QD>
+                        String content = UtilsFiles.file2String(item.getInputStream(), "UTF-8");
+                        if (content.startsWith("<QD>")) {
+                            System.out.println("Valid file from QD xml WS ");
+                            response += cleanConvertedFile(addMissingIds(content));
+                        } else {
+                            // need conversion
+                            response += cleanConvertedFile(convertFileWithRMI(item.get(), item.getName()));
+                            System.out.println("File converted successfully");
+                        }
                     } else {
                         // need conversion
                         response += cleanConvertedFile(convertFileWithRMI(item.get(), item.getName()));
                         System.out.println("File converted successfully");
                     }
-
                 } catch (Exception ex2) {
                     _logger.error(ex2);
                 }

@@ -44,6 +44,7 @@ import org.olanto.idxvli.server.IndexService_MyCat;
 import org.olanto.idxvli.server.QLResultNice;
 import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.mapman.server.AlignBiText;
+import org.olanto.mycatt.rest.WSTUtil;
 import org.olanto.senseos.SenseOS;
 
 /**
@@ -525,19 +526,22 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
+    public GwtRef getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
         String ref;
         GwtRef gref = null;
         String[] co;
         System.out.println("uploaded file:" + fileName);
 //        System.out.println("Content:" + Content);
         if (fileName.contains(QDFileExtension)) {
-            gref = html2GwtRef(Content);
+            gref = html2GwtRef(content);
+        } else if (fileName.contains(".xml") && content.startsWith("<QD>")) {
+            content = WSTUtil.extractHTML(content);
+            gref = html2GwtRef(content);
         } else {
             if (is == null) {
                 is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
             }
-            UploadedFile up = new UploadedFile(Content, fileName);
+            UploadedFile up = new UploadedFile(content, fileName);
 //        System.out.println(up.getFileName() + "\n" + up.getContentString());
             try {
 //                Timer t1 = new Timer("-------------  ref ");
@@ -1081,7 +1085,6 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             refL.htmlref = htmlref;
             getRefDocText(refL, comments, refL.DOC_REF_SEPARATOR);
         }
-        // treat this properly!!!
         return refL;
     }
 

@@ -91,14 +91,11 @@ public class RefDocService {
         }
         if (TxtSrc.equals("") && DocSrc.equals("")) {
             msg = "Need to specifiy TxtSrc=\"text to be process\" or DocSrc=\"file Name to be process\"";
-
         }
-
         if (!TxtSrc.equals("") && !DocSrc.equals("")) {
             msg = "TxtSrc is not null, DocSrc will be ignored";
             fromFile = false;
         }
-
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
             if (r instanceof IndexService_MyCat) {
@@ -108,13 +105,10 @@ public class RefDocService {
                 if (!fromFile) {  // text
                     up = new UploadedFile(TxtSrc, null);
                 }
-
                 if (collections != null) {  // check if collection are ok
                     //System.out.println("collection nb:" + collections.length);
                     for (int i = 0; i < collections.length; i++) {
-
                         PropertiesList CollectionsList = is.getDictionnary(collections[i]);
-
                         //System.out.println("test:" + collections[i] + CollectionsList.result);
                         if (!(CollectionsList.result.length >= 1 && CollectionsList.result != null)) {
                             //System.out.println("test:" + collections[i] + "Error");
@@ -143,22 +137,17 @@ public class RefDocService {
                         }
                     }
                 }
-
                 refDoc = is.getXMLReferences(up, MinLen, LngSrc, LngTgt, collections, RemFirst, Fast, fromFile, DocSrc, DocTgt, RefType);
-
             }
         } catch (NotBoundException | IOException ex) {
             msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
             _logger.error(ex);
         }
-
         String result = "<QD>"
                 + WSTUtil.niceXMLParameters(msg, TxtSrc, RefType, DocSrc, DocTgt, LngSrc, LngTgt, Filter, MinLen, RemFirst, Fast)
                 + refDoc
                 + "</QD>";
-
         //System.out.println("RefDocService:\n" + result);  // ONLY FOR DEBUG
-
         return result;
     }
 
