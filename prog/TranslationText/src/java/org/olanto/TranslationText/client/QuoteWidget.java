@@ -453,6 +453,8 @@ public class QuoteWidget extends Composite {
                     fileUpload.setTitle(GuiMessageConst.MSG_42 + fileName);
                     if (fileName.endsWith(GuiConstant.QD_FILE_EXT)) {
                         drawReferences(null);
+                    } else if (fileName.endsWith(".xml") && fileContent.startsWith("<QD>")) {
+                        drawReferences(null);
                     } else if (fileName.endsWith(GuiConstant.QD_GENERAL_EXT)) {
                         setMessage("error", GuiMessageConst.MSG_58);
                         Window.alert("Ereur: " + GuiMessageConst.MSG_58);

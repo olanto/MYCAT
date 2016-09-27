@@ -23,11 +23,10 @@ public class WSTUtil {
     }
 
     public static String extractHTML(String s) {
-        int index1 = s.indexOf("<htmlRefDoc>") + 16;
+        int index1 = s.indexOf("<htmlRefDoc>") + 15;
         int index2 = s.indexOf("</htmlRefDoc>") - 4;
         s = s.substring(index1, index2);
         s = reCommentRefDoc(s);
-        System.out.println(s);
         return s;
     }
 
