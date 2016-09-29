@@ -1092,7 +1092,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         int i = 0;
         if (!(comments.isEmpty())) {
             if (comments.contains("0|")) {
-                String number = comments.substring(15, comments.indexOf("0|") - 1);
+                String number = comments.substring(15, comments.indexOf("0|") - 1).replaceAll("[^\\d]", "");
                 if ((!(number.isEmpty())) && (number.matches("^\\d+"))) {
                     i = Integer.parseInt(number);
 //                    System.out.println("Ref number = " + i);
@@ -1109,15 +1109,15 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 refL.listofref = new String[refL.nbref];
                 refL.reftext = new String[refL.nbref];
                 int j = 0;
-                String[] Lines = curlines.split("[\n]+");
+                String[] Lines = curlines.split("\\n+");
                 for (int i = 0; i < Lines.length; i++) {
-                    if ((!(Lines[i].isEmpty())) && (Lines[i].matches("(^\\d+)(.*)")) && (Lines[i].contains(separator))) {
+                    if ((!(Lines[i].isEmpty())) && (Lines[i].contains(separator))) {
                         curlines = Lines[i].substring(Lines[i].indexOf(separator) + 1);
                         if ((!(curlines.isEmpty())) && (curlines.contains(separator))) {
                             refL.reftext[j] = curlines.substring(0, curlines.indexOf(separator));
                             refL.listofref[j] = curlines.substring(curlines.indexOf(separator) + 1);
-//                            System.out.println("reference " + i + " text " + refL.reftext[j]);
-//                            System.out.println("reference " + i + " list " + refL.listofref[j]);
+                            System.out.println("reference " + i + " text " + refL.reftext[j]);
+                            System.out.println("reference " + i + " list " + refL.listofref[j]);
                             j++;
                         }
                     }
