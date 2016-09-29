@@ -1116,8 +1116,8 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                         if ((!(curlines.isEmpty())) && (curlines.contains(separator))) {
                             refL.reftext[j] = curlines.substring(0, curlines.indexOf(separator));
                             refL.listofref[j] = curlines.substring(curlines.indexOf(separator) + 1);
-                            System.out.println("reference " + i + " text " + refL.reftext[j]);
-                            System.out.println("reference " + i + " list " + refL.listofref[j]);
+//                            System.out.println("reference " + i + " text " + refL.reftext[j]);
+//                            System.out.println("reference " + i + " list " + refL.listofref[j]);
                             j++;
                         }
                     }
