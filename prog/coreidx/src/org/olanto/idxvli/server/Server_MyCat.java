@@ -725,4 +725,18 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     public byte[] getTemp(String FileName) throws RemoteException {
         return UtilsFiles.file2byte(new File(TEMP_FOLDER + "/" + FileName));
     }
+
+    @Override
+    public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
+        // TODO read docsrc 1
+        // TODO read docsrc 2
+        // TODO extract dcument parts
+        // Find total number of references
+        // TODO merge part 1
+        // TODO merge part 2
+        // TODO merge part 3
+        // TODO merge part 4
+        
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }
