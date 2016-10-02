@@ -12,7 +12,7 @@ public class WSMergeUtil {
 
     public static String niceXMLParameters(String msg, String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
 
-        return "<parameters>\n"
+        return "<params>\n"
                 + "   <msg>" + msg + "</msg>\n"
                 + "   <RefType>" + RefType + "</RefType>\n"
                 + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
@@ -21,6 +21,6 @@ public class WSMergeUtil {
                 + "   <RepTag1>" + RepTag1 + "</RepTag1>\n"
                 + "   <RepTag2>" + RepTag2 + "</RepTag2>\n"
                 + "   <Color2>" + Color2 + "</Color2>\n"
-                + "</parameters>\n";
+                + "</params>\n";
     }
 }

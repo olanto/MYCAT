@@ -68,7 +68,7 @@ public class RefDocMergeService {
             @DefaultValue("") @QueryParam("Color2") String Color2) {
         String msg = "";
         String refDoc = "empty ref";
-        if (DocSrc1.isEmpty() && DocSrc1.isEmpty() && DocTgt.isEmpty()) {
+        if (DocSrc1.isEmpty() && DocSrc2.isEmpty() && DocTgt.isEmpty()) {
             msg += "You need to specifiy source and target documents\n";
         }
         if (RepTag1.isEmpty() && RepTag2.isEmpty()) {

@@ -4,19 +4,29 @@
  */
 package org.olanto.idxvli.ref;
 
+import java.io.File;
+import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.Remote;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
 import org.olanto.idxvli.util.BytesAndFiles;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  *
  * @author simple
  */
 public class WSRESTUtil {
-    
-    static String organisationTemplate=null;
+
+    static String organisationTemplate = null;
 
     public static void main(String[] args) {
         byte[] bytes = null;
@@ -70,14 +80,15 @@ public class WSRESTUtil {
 
     }
 
-
     public static String niceXMLInfo(String RefDocFullName, String RefDocType,
             String RefDocLng, String RefDocPerCent, String RefDocOccurences) {
 
-        if (organisationTemplate==null){
-            organisationTemplate=BytesAndFiles.file2String(IdxConstant.IDX_XML_ORGANISATION_TEMPLATE, "UTF-8");
-             if (organisationTemplate==null)  organisationTemplate="<!-- Error impossible to load: "
-                     +IdxConstant.IDX_XML_ORGANISATION_TEMPLATE+"-->";
+        if (organisationTemplate == null) {
+            organisationTemplate = BytesAndFiles.file2String(IdxConstant.IDX_XML_ORGANISATION_TEMPLATE, "UTF-8");
+            if (organisationTemplate == null) {
+                organisationTemplate = "<!-- Error impossible to load: "
+                        + IdxConstant.IDX_XML_ORGANISATION_TEMPLATE + "-->";
+            }
         }
 
         return "<statistics>\n"
@@ -119,5 +130,45 @@ public class WSRESTUtil {
         }
 
         return ret;
+    }
+
+    public static String mergeXMLParameters(Document doc1, Document doc2) {
+        return "<parameters>\n"
+                + "   <msg>" + doc1.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "</msg>\n"
+                + "   <TxtSrc>" + doc1.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent() + "</TxtSrc>\n"
+                + "   <RefType>" + doc1.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent() + "</RefType>\n"
+                + "   <DocSrc>" + doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent() + "</DocSrc>\n"
+                + "   <DocTgt>" + doc1.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent() + "</DocTgt>\n"
+                + "   <LngSrc>" + doc1.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent() + "</LngSrc>\n"
+                + "   <LngTgt>" + doc1.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent() + "</LngTgt>\n"
+                + "   <Filter>" + doc1.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent() + "</Filter>\n"
+                + "   <MinLen>" + doc1.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent() + "</MinLen>\n"
+                + "   <Fast>" + doc1.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "</Fast>\n"
+                + "</parameters>\n";
+    }
+
+    public static String mergeXMLStatistics(Document doc1, Document doc2) {
+        String organization = "";
+        NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
+        NodeList nodes1 = doc2.getDocumentElement().getElementsByTagName("organisation");
+        for (int i = 0; i < nodes.getLength(); i++) {
+            organization += "<" + nodes.item(i).getLocalName() + ">" + nodes.item(i).getTextContent() + "</" + nodes.item(i).getLocalName() + ">";
+        }
+        for (int i = 0; i < nodes1.getLength(); i++) {
+            organization += "<" + nodes1.item(i).getLocalName() + ">" + nodes1.item(i).getTextContent() + "</" + nodes1.item(i).getLocalName() + ">";
+        }
+        return "<statistics>\n"
+                + "  <mycat>\n"
+                + "    <RefDocFullName>" + doc1.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent() + "</RefDocFullName>\n"
+                + "    <RefDocType>" + doc1.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent() + "</RefDocType>\n"
+                + "    <RefDocLng>" + doc1.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent() + "</RefDocLng>\n"
+                + "    <RefDocPerCent>" + doc1.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent() + "</RefDocPerCent>\n"
+                + "    <RefDocOccurences>" + doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "</RefDocOccurences>\n"
+                + "  </mycat>\n"
+                + "  <organisation>\n"
+                + "     <!-- imported template from /config -->"
+                + organization
+                + "  </organisation>\n"
+                + "</statistics>\n";
     }
 }

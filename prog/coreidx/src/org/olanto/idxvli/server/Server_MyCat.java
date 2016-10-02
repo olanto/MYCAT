@@ -23,8 +23,8 @@ package org.olanto.idxvli.server;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
@@ -35,6 +35,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
 import org.olanto.idxvli.IdxConstant;
@@ -53,6 +56,8 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
 import org.olanto.util.TimerNano;
 import org.olanto.idxvli.ref.UtilsFiles;
 import org.olanto.idxvli.ref.WSRESTUtil;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  * service mycat.
@@ -680,42 +685,40 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "</htmlRefDoc>\n"
                     + xmlInfo;
         } else {
-            String content=WSRESTUtil.convertFileWithRMI(DocSrc);
-            UploadedFile getfromfile=new UploadedFile(content,DocSrc);
+            String content = WSRESTUtil.convertFileWithRMI(DocSrc);
+            UploadedFile getfromfile = new UploadedFile(content, DocSrc);
             REFResultNice refres = id.getReferences(getfromfile, limit, source, target, selectedCollection, removefirst, fast);
             String htmlref = refres.htmlref;
             String xmlInfo = refres.xmlInfo;
             htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
             htmlref = htmlref.replace("-->", "</htmlendcomment>");
-            String htmlresult= "<htmlRefDoc>\n"
+            String htmlresult = "<htmlRefDoc>\n"
                     + "<!--\n"
                     + htmlref
                     + "-->\n"
                     + "</htmlRefDoc>\n"
                     + xmlInfo;
             String xmlresult = "<QD>"
-                + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
-                + WSRESTUtil.niceXMLInfo(DocSrc, RefType, ""+refres.XMLtotword, ""+refres.XMLtotwordref, refres.XMLpctref)
-                + htmlresult
-                + "</QD>";
-                    try {
-                        OutputStreamWriter outxml = new OutputStreamWriter(new FileOutputStream(DocTgt), "UTF-8");
-                        outxml.append(xmlresult);
-                        outxml.close();
-                        System.out.println("WSREF:"+DocSrc+" --> "+DocTgt);
-                    } catch (Exception ex) {
-                        Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
+                    + WSRESTUtil.niceXMLInfo(DocSrc, RefType, "" + refres.XMLtotword, "" + refres.XMLtotwordref, refres.XMLpctref)
+                    + htmlresult
+                    + "</QD>";
+            try {
+                OutputStreamWriter outxml = new OutputStreamWriter(new FileOutputStream(DocTgt), "UTF-8");
+                outxml.append(xmlresult);
+                outxml.close();
+                System.out.println("WSREF:" + DocSrc + " --> " + DocTgt);
+            } catch (Exception ex) {
+                Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return "<FileRefDoc>\n"
                     + "<!--\n"
-                    + "WSREF process :"+DocSrc+" result in "+DocTgt
+                    + "WSREF process :" + DocSrc + " result in " + DocTgt
                     + "-->\n"
                     + "</FileRefDoc>\n";
         }
     }
 
-    
-    
     @Override
     public String createTemp(String FileName, String Content) throws RemoteException {
         return UtilsFiles.String2File(FileName, Content, TEMP_FOLDER);
@@ -728,15 +731,38 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
-        // TODO read docsrc 1
-        // TODO read docsrc 2
-        // TODO extract dcument parts
-        // Find total number of references
-        // TODO merge part 1
-        // TODO merge part 2
-        // TODO merge part 3
-        // TODO merge part 4
-        
-        throw new UnsupportedOperationException("Not supported yet.");
+        String mergedRefDoc = "";
+        File fXmlFile = new File(DocSrc1);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+
+        File fXmlFile1 = new File(DocSrc2);
+        DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
+
+        try {
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+            doc.getDocumentElement().normalize();
+
+            DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
+            Document doc1 = dBuilder1.parse(fXmlFile1);
+            doc1.getDocumentElement().normalize();
+
+            // merge params
+            mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
+            // merge statistics
+            mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
+
+            // Find total number of references
+            // TODO merge part 3
+            // TODO merge part 4 
+            System.out.println(mergedRefDoc);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return mergedRefDoc;
     }
 }
