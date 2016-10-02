@@ -15,6 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
+import org.olanto.idxvli.server.Server_MyCat;
 import org.olanto.idxvli.util.BytesAndFiles;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -29,8 +30,41 @@ public class WSRESTUtil {
     static String organisationTemplate = null;
 
     public static void main(String[] args) {
-        byte[] bytes = null;
-        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
+//        byte[] bytes = null;
+//        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
+
+        String mergedRefDoc = "";
+        File fXmlFile = new File("C:\\MYCAT\\doc2process\\A_RES_53_144_EN_1.xml");
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+
+        File fXmlFile1 = new File("C:\\MYCAT\\doc2process\\A_RES_53_144_EN_2.xml");
+        DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
+
+        try {
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+            doc.getDocumentElement().normalize();
+
+            DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
+            Document doc1 = dBuilder1.parse(fXmlFile1);
+            doc1.getDocumentElement().normalize();
+
+            // merge params
+            mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
+            // merge statistics
+            mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
+
+            // Find total number of references
+            // TODO merge part 3
+            // TODO merge part 4 
+            System.out.println(mergedRefDoc);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public static String unCommentRefDoc(String s) {
@@ -151,11 +185,23 @@ public class WSRESTUtil {
         String organization = "";
         NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
         NodeList nodes1 = doc2.getDocumentElement().getElementsByTagName("organisation");
-        for (int i = 0; i < nodes.getLength(); i++) {
-            organization += "<" + nodes.item(i).getLocalName() + ">" + nodes.item(i).getTextContent() + "</" + nodes.item(i).getLocalName() + ">";
+        for (int i = 0; i < nodes.item(0).getChildNodes().getLength(); i++) {
+            if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
+                organization += "";
+            } else if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
+                organization += "<!--" + nodes.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
+            } else {
+                organization += "<" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+            }
         }
-        for (int i = 0; i < nodes1.getLength(); i++) {
-            organization += "<" + nodes1.item(i).getLocalName() + ">" + nodes1.item(i).getTextContent() + "</" + nodes1.item(i).getLocalName() + ">";
+        for (int i = 0; i < nodes1.item(0).getChildNodes().getLength(); i++) {
+            if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
+                organization += "";
+            } else if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
+                organization += "<!--" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
+            } else {
+                organization += "<" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+            }
         }
         return "<statistics>\n"
                 + "  <mycat>\n"
@@ -166,7 +212,6 @@ public class WSRESTUtil {
                 + "    <RefDocOccurences>" + doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "</RefDocOccurences>\n"
                 + "  </mycat>\n"
                 + "  <organisation>\n"
-                + "     <!-- imported template from /config -->"
                 + organization
                 + "  </organisation>\n"
                 + "</statistics>\n";
