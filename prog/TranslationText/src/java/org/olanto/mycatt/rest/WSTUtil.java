@@ -55,6 +55,7 @@ public class WSTUtil {
                 + "   <LngTgt>" + LngTgt + "</LngTgt>\n"
                 + "   <Filter>" + Filter + "</Filter>\n"
                 + "   <MinLen>" + MinLen + "</MinLen>\n"
+                + "   <RemFirst>" + RemFirst + "</RemFirst>\n"
                 + "   <Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
     }
