@@ -15,9 +15,11 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
+import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.idxvli.server.Server_MyCat;
 import org.olanto.idxvli.util.BytesAndFiles;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -30,8 +32,8 @@ public class WSRESTUtil {
     static String organisationTemplate = null;
 
     public static void main(String[] args) {
-//        byte[] bytes = null;
-//        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
+        byte[] bytes = null;
+        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
 
         String mergedRefDoc = "";
         File fXmlFile = new File("C:\\MYCAT\\doc2process\\A_RES_53_144_EN_1.xml");
@@ -215,5 +217,56 @@ public class WSRESTUtil {
                 + organization
                 + "  </organisation>\n"
                 + "</statistics>\n";
+    }
+
+    public static String mergeHTMLContent(Document doc1, Document doc2, String RepTag1, String RepTag2, String Color2) {
+        return "<htmlRefDoc>\n"
+                + doc1.getDocumentElement().getElementsByTagName("htmlRefDoc").toString()
+                + doc2.getDocumentElement().getElementsByTagName("htmlRefDoc").toString()
+                + "</htmlRefDoc>";
+    }
+
+    public static String mergeInfo(Document doc1, Document doc2) {
+        return "<Info>\n"
+                + "<references>"
+                + getReferencesFromDocument(doc1, 0)
+                + getReferencesFromDocument(doc2, doc1.getElementsByTagName("reference").getLength() + 1)
+                + "</references>"
+                + "</Info>";
+    }
+
+    public static int getRefTotalNumber(Document doc1, Document doc2) {
+        int totalRefNumber = 0;
+        totalRefNumber += doc1.getDocumentElement().getElementsByTagName("references").getLength();
+        totalRefNumber += doc2.getDocumentElement().getElementsByTagName("references").getLength();
+        return totalRefNumber;
+    }
+
+    public static String getReferencesFromDocument(Document doc, int start) {
+        String references = "";
+        NodeList referencesList = doc.getElementsByTagName("reference");
+        for (int j = 0; j < referencesList.getLength(); ++j) {
+            Element reference = (Element) referencesList.item(j);
+            references += "<reference>\n"
+                    + "<id>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</id>\n"
+                    + "<quote>" + reference.getElementsByTagName("quote").item(0).getTextContent() + "</quote>\n"
+                    + "<documents>\n";
+            NodeList documentsList = reference.getElementsByTagName("document");
+            for (int i = 0; i < documentsList.getLength(); ++i) {
+                Element document = (Element) referencesList.item(j);
+                references += "<document>" + document.getFirstChild().getNodeValue() + "</document>\n";
+            }
+            references += "</documents>\n"
+                    + "</reference>\n";
+        }
+
+        return references;
+    }
+
+    private static String getReferenceNumberAsString(String ref, int start) {
+        int refNumber = 0;
+        refNumber = Integer.parseInt(ref);
+        refNumber += start;
+        return refNumber + "";
     }
 }

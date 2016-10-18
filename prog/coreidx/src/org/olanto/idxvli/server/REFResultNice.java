@@ -47,7 +47,7 @@ public class REFResultNice implements Serializable {
    public int XMLtotword;
     public int XMLtotwordref;
     public String XMLpctref;
- 
+    
     /** crée un résultat
      * @param result id des documents
      * @param duration durée

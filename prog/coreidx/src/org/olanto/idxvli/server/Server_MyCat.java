@@ -751,11 +751,11 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
-
-            // Find total number of references
-            // TODO merge part 3
-            // TODO merge part 4 
-            System.out.println(mergedRefDoc);
+            // merge HTML
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(doc, doc1, RepTag1, RepTag2, Color2);
+            // merge details
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
+            // TODO save document in given location
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
