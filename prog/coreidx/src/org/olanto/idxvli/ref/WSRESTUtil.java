@@ -224,7 +224,7 @@ public class WSRESTUtil {
                 + "</statistics>\n";
     }
 
-    public static String mergeHTMLContent(String docSource1, String docSource2, String repTag1, String repTag2, String color2, int start) {
+    public static String mergeHTMLContent(String docSource1, String docSource2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String[] content1 = parseHtmlAndUpdateTagsAndColor(docSource1, repTag1, "", 0);
         String[] content2 = parseHtmlAndUpdateTagsAndColor(docSource2, repTag2, color2, start);
 
@@ -232,10 +232,11 @@ public class WSRESTUtil {
                 + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
                 + content1[0]
                 + content2[0]
-                + "</htmlstartcomment>"
+                + "</htmlstartcomment>MYQUOTEREF "
+                + totalRefs
                 + content1[1]
                 + content2[1]
-                + "</htmlendcomment></P> </body> </html> -->\n"
+                + "MYQUOTEREF</htmlendcomment></P> </body> </html> -->\n"
                 + "</htmlRefDoc>";
     }
 
@@ -291,7 +292,7 @@ public class WSRESTUtil {
                 String top = html.substring(html.indexOf("<body>") + 6, html.indexOf("</htmlstartcomment>"));
                 top = top.replace("<A NAME=\"TOP\"></A>", "");
                 top = top.replace("<A HREF=\"#STATISTIC\">STATISTICS</A>", "");
-                String comments = html.substring(html.indexOf("MYQUOTEREF"), html.indexOf("</htmlendcomment>"));
+                String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
                 if (!repTag.isEmpty()) {
                     top = top.replace("[R", "[R" + repTag);
                     top = top.replace("&lt;E", "&lt;E" + repTag);
@@ -317,6 +318,7 @@ public class WSRESTUtil {
                     Pattern pattern = Pattern.compile(regex);
                     Matcher matcher = pattern.matcher(comments);
                     number = 0;
+                    newNum = 0;
                     while (matcher.find()) {
                         newNum = number + start;
                         comments = comments.replace(number + "|", newNum + "|");
