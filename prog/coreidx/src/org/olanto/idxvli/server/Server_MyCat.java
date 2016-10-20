@@ -734,9 +734,11 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         String mergedRefDoc = "";
         File fXmlFile = new File(DocSrc1);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        dbFactory.setIgnoringComments(false);
 
         File fXmlFile1 = new File(DocSrc2);
         DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
+        dbFactory1.setIgnoringComments(false);
 
         try {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -747,12 +749,12 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             Document doc1 = dBuilder1.parse(fXmlFile1);
             doc1.getDocumentElement().normalize();
 
-            // merge params
+           // merge params
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(doc, doc1, RepTag1, RepTag2, Color2);
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength());
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
             // TODO save document in given location

@@ -5,17 +5,20 @@
 package org.olanto.idxvli.ref;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.Remote;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
-import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.idxvli.server.Server_MyCat;
 import org.olanto.idxvli.util.BytesAndFiles;
 import org.w3c.dom.Document;
@@ -32,14 +35,16 @@ public class WSRESTUtil {
     static String organisationTemplate = null;
 
     public static void main(String[] args) {
-        byte[] bytes = null;
-        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
+//        byte[] bytes = null;
+//        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
 
         String mergedRefDoc = "";
-        File fXmlFile = new File("C:\\MYCAT\\doc2process\\A_RES_53_144_EN_1.xml");
+        String file1 = "C:\\MYCAT\\doc2process\\A_RES_53_144_EN_1.xml";
+        String file2 = "C:\\MYCAT\\doc2process\\A_RES_53_144_EN_2.xml";
+        File fXmlFile = new File(file1);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 
-        File fXmlFile1 = new File("C:\\MYCAT\\doc2process\\A_RES_53_144_EN_2.xml");
+        File fXmlFile1 = new File(file2);
         DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
 
         try {
@@ -55,10 +60,10 @@ public class WSRESTUtil {
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
-
-            // Find total number of references
-            // TODO merge part 3
-            // TODO merge part 4 
+            // merge HTML
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength());
+            // merge details
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
             System.out.println(mergedRefDoc);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
@@ -219,10 +224,18 @@ public class WSRESTUtil {
                 + "</statistics>\n";
     }
 
-    public static String mergeHTMLContent(Document doc1, Document doc2, String RepTag1, String RepTag2, String Color2) {
+    public static String mergeHTMLContent(String docSource1, String docSource2, String repTag1, String repTag2, String color2, int start) {
+        String[] content1 = parseHtmlAndUpdateTagsAndColor(docSource1, repTag1, "", 0);
+        String[] content2 = parseHtmlAndUpdateTagsAndColor(docSource2, repTag2, color2, start);
+
         return "<htmlRefDoc>\n"
-                + doc1.getDocumentElement().getElementsByTagName("htmlRefDoc").toString()
-                + doc2.getDocumentElement().getElementsByTagName("htmlRefDoc").toString()
+                + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
+                + content1[0]
+                + content2[0]
+                + "</htmlstartcomment>"
+                + content1[1]
+                + content2[1]
+                + "</htmlendcomment></P> </body> </html> -->\n"
                 + "</htmlRefDoc>";
     }
 
@@ -233,13 +246,6 @@ public class WSRESTUtil {
                 + getReferencesFromDocument(doc2, doc1.getElementsByTagName("reference").getLength())
                 + "</references>"
                 + "</Info>";
-    }
-
-    public static int getRefTotalNumber(Document doc1, Document doc2) {
-        int totalRefNumber = 0;
-        totalRefNumber += doc1.getDocumentElement().getElementsByTagName("references").getLength();
-        totalRefNumber += doc2.getDocumentElement().getElementsByTagName("references").getLength();
-        return totalRefNumber;
     }
 
     public static String getReferencesFromDocument(Document doc, int start) {
@@ -254,7 +260,7 @@ public class WSRESTUtil {
             Element documents = (Element) reference.getElementsByTagName("documents").item(0);
             NodeList documentsList = documents.getElementsByTagName("document");
             for (int i = 0; i < documentsList.getLength(); ++i) {
-                    references+= "<document>" + documentsList.item(i).getTextContent() + "</document>\n";
+                references += "<document>" + documentsList.item(i).getTextContent() + "</document>\n";
             }
             references += "</documents>\n"
                     + "</reference>\n";
@@ -270,5 +276,60 @@ public class WSRESTUtil {
         }
         refNumber += start;
         return refNumber + "";
+    }
+
+    private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String color, int start) {
+        FileInputStream in = null;
+        String[] content = new String[2];
+        content[0] = "";
+        content[1] = "";
+        try {
+            in = new FileInputStream(docSource);
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
+            if (html.contains("<body>")) {
+                String top = html.substring(html.indexOf("<body>") + 6, html.indexOf("</htmlstartcomment>"));
+                top = top.replace("<A NAME=\"TOP\"></A>", "");
+                top = top.replace("<A HREF=\"#STATISTIC\">STATISTICS</A>", "");
+                String comments = html.substring(html.indexOf("MYQUOTEREF"), html.indexOf("</htmlendcomment>"));
+                if (!repTag.isEmpty()) {
+                    top = top.replace("[R", "[R" + repTag);
+                }
+                if (!color.isEmpty()) {
+                    String regex = "style=\"BACKGROUND-COLOR:([^\"]+)\"";
+                    top = top.replaceAll(regex, "style=\"BACKGROUND-COLOR: " + color + "\"");
+                }
+                if (start > 0) {
+                    String regex = "(href=\"#)([0-9]+)(\" id=\"ref)([0-9])(\")";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(top);
+                    while (matcher.find()) {
+                        int number = Integer.parseInt(matcher.group(2)) + start;
+                        top = top.replace(regex, "$1" + number + "$3" + number + "$5");
+                    }
+                }
+                content[0] = top;
+                if (start > 0) {
+                    String regex = "([0-9]+)(\\|)";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(comments);
+                    while (matcher.find()) {
+                        int number = Integer.parseInt(matcher.group(1)) + start;
+                        comments = comments.replace(regex, number + "$2");
+                    }
+                }
+                content[1] = comments;
+            }
+            return content;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                in.close();
+            } catch (IOException ex) {
+                Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return content;
     }
 }
