@@ -61,7 +61,8 @@ public class WSRESTUtil {
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength());
+            int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
             System.out.println(mergedRefDoc);

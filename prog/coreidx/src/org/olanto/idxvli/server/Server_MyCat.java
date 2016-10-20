@@ -749,12 +749,14 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             Document doc1 = dBuilder1.parse(fXmlFile1);
             doc1.getDocumentElement().normalize();
 
-           // merge params
+            // merge params
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength());
+            int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
+
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
             // TODO save document in given location
