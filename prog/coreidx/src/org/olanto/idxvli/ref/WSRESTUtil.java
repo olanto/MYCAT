@@ -299,13 +299,15 @@ public class WSRESTUtil {
                     String regex = "style=\"BACKGROUND-COLOR:([^\"]+)\"";
                     top = top.replaceAll(regex, "style=\"BACKGROUND-COLOR: " + color + "\"");
                 }
+                int number = 0, newNum = 0;
                 if (start > 0) {
                     String regex = "(href=\"#)([0-9]+)(\" id=\"ref)([0-9])(\")";
                     Pattern pattern = Pattern.compile(regex);
                     Matcher matcher = pattern.matcher(top);
                     while (matcher.find()) {
-                        int number = Integer.parseInt(matcher.group(2)) + start;
-                        top = top.replace(regex, "$1" + number + "$3" + number + "$5");
+                        number++;
+                        newNum = number + start;
+                        top = top.replace("href=\"#" + number + "\" id=\"ref" + number + "\"", "href=\"#" + newNum + "\" id=\"ref" + newNum + "\"");
                     }
                 }
                 content[0] = top;
@@ -313,9 +315,11 @@ public class WSRESTUtil {
                     String regex = "([0-9]+)(\\|)";
                     Pattern pattern = Pattern.compile(regex);
                     Matcher matcher = pattern.matcher(comments);
+                    number = 0;
                     while (matcher.find()) {
-                        int number = Integer.parseInt(matcher.group(1)) + start;
-                        comments = comments.replace(regex, number + "$2");
+                        newNum = number + start;
+                        comments = comments.replace(number + "|", newNum + "|");
+                        number++;
                     }
                 }
                 content[1] = comments;
