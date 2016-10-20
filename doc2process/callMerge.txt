@@ -6,3 +6,4 @@ Missing: Merge the html documents:
 - change the color2 (TODO)
 - store the file in the target given (TODO)
 - adapt the display to support the tag changes
+
