@@ -294,6 +294,7 @@ public class WSRESTUtil {
                 String comments = html.substring(html.indexOf("MYQUOTEREF"), html.indexOf("</htmlendcomment>"));
                 if (!repTag.isEmpty()) {
                     top = top.replace("[R", "[R" + repTag);
+                    top = top.replace("&lt;E", "&lt;E" + repTag);
                 }
                 if (!color.isEmpty()) {
                     String regex = "style=\"BACKGROUND-COLOR:([^\"]+)\"";
