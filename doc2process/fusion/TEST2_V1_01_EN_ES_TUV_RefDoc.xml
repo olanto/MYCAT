@@ -1,0 +1,2715 @@
+<QD><parameters>
+   <msg>process by WebService</msg>
+   <TxtSrc></TxtSrc>
+   <RefType></RefType>
+   <DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\8832.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+   <DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\8832.16\JOB\_ORIG_V1_01_EN_ES_TUV_RefDoc.xml</DocTgt>
+   <LngSrc>EN</LngSrc>
+   <LngTgt>ES</LngTgt>
+   <Filter></Filter>
+   <MinLen>6</MinLen>
+   <Fast>false</Fast>
+</parameters>
+<statistics>
+  <mycat>
+    <RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\8832.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
+    <RefDocType></RefDocType>
+    <RefDocLng>3948</RefDocLng>
+    <RefDocPerCent>4139</RefDocPerCent>
+    <RefDocOccurences>104.8%</RefDocOccurences>
+  </mycat>
+  <organisation>
+     <!-- imported template from /config -->﻿<!-- Template - inserted into organisation element in xml QD -->
+    <TranslatedE>Put a default value here</TranslatedE>
+    <TranslatedF>Put a default value here</TranslatedF>
+    <TranslatedS>Put a default value here</TranslatedS>
+    <RevisedE>Put a default value here</RevisedE>
+    <RevisedF>Put a default value here</RevisedF>
+    <RevisedS>Put a default value here</RevisedS>
+    <Finished>Put a default value here</Finished>
+  </organisation>
+</statistics>
+<htmlRefDoc>
+<!--
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>myQuote</title></head>
+<body>
+<A NAME="TOP"></A><A HREF="#STATISTIC">(Statistics)</A><br/><P><br/><br/><br/>﻿ | RESTRICTED<br/><br/> | <br/><br/> | GPA/ACC/TJK/30<br/><br/> | 18 October 2016<br/><br/>(16-0000)<a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R1] | Page: 1/2<br/><br/>Committee on Government Procurement | Original: English<br/><br/>[E1]</FONT></a><br/><br/><br/><br/><br/><br/><br/><br/>GPA/ACC/TJK/30<br/><br/><a href="#2" id="ref2" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R2]- 2 -<br/><br/><br/><br/><br/><br/><br/><br/>ACCESSION OF TAJIKISTAN </a>TO THE <a href="#3" id="ref3" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R3]AGREEMENT ON GOVERNMENT PROCUREMENT<br/><br/>[E2]</FONT>THIRD REVISED </a><a href="#4" id="ref4" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R4]OFFER<br/><br/></a>The <a href="#5" id="ref5" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R5]following communication, dated [E3]</FONT>17 October [E4]</FONT>2016, is being circulated at the request of the Delegation [E5]</FONT></a>of Tajikistan.<br/><br/><br/><br/>_______________<br/><br/><br/><br/><br/><br/>THIRD <a href="#6" id="ref6" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R6]REVISED OFFER<br/><br/>APPENDIX I (1) <br/><br/>REPUBLIC OF TAJIKISTAN<br/><br/>(Authentic in the English Language only)<br/><br/>ANNEX 1<br/><br/>CENTRAL GOVERNMENT ENTITIES<br/><br/>Thresholds:<br/><br/>Goods    (2)                SDR 130,000<br/><br/><br/><br/>Services1               SDR 130,000<br/><br/><br/><br/>Construction Services         SDR 5,000,000<br/><br/>List of Entities:<br/><br/>1.   Executive Office of the President of the Republic of Tajikistan;<br/><br/>2.   Majlisi Millii of Majlisi Oli of the Republic of Tajikistan;<br/><br/>3.   Majlisi Namoyandagon of Majlisi Oli of the Republic of Tajikistan;<br/><br/>4.   Supreme Court of the Republic of Tajikistan;<br/><br/>5.   Constitutional Court of the Republic of Tajikistan;<br/><br/>6.   Supreme Economic Court of the Republic of Tajikistan;<br/><br/>7.   Ministry of Justice of the Republic of Tajikistan;<br/><br/>8.   Ministry of Agriculture of the Republic of Tajikistan;<br/><br/>9.   Ministry of Internal Affairs of the Republic of Tajikistan;<br/><br/>10.   Ministry of Foreign Affairs of the Republic of Tajikistan;<br/><br/>11.   Ministry of Education and Science of the Republic of Tajikistan;<br/><br/>12.   Ministry of Labour, Migration and Employment of Population of the Republic of Tajikistan;<br/><br/>13.   Ministry of Finance of the Republic of Tajikistan;<br/><br/>14.   Ministry of Defence of the Republic of Tajikistan;<br/><br/>15.   Ministry of Transport of the Republic of Tajikistan;<br/><br/>16.   Ministry of Economic Development and Trade of the Republic of Tajikistan;<br/><br/>17.   Ministry of Industry and New Technologies of the Republic of Tajikistan;<br/><br/>18.   Ministry of Health and Social Protection of Population of the Republic of Tajikistan;<br/><br/>19.   Ministry of Culture of the Republic of Tajikistan;<br/><br/>20.   Ministry of Energy and Water Recourses of the Republic of Tajikistan;<br/><br/>21.   National Bank of the Republic of Tajikistan;<br/><br/>22.   General Prosecutor of the Republic of Tajikistan;<br/><br/>23.   State Committee on National Security of the Republic of Tajikistan;<br/><br/>24.   State Committee of Land Management and Geodesy of the Republic of Tajikistan;<br/><br/>25.   State Committee for Investment and State Property Management of the Republic of Tajikistan;<br/><br/>26.   Tax Committee under the Government of the Republic of Tajikistan;<br/><br/>27.   Committee of Language and Terminology under the Government of the Republic of Tajikistan;<br/><br/>28.   Committee of Women and Family Affairs under the Government of the Republic of Tajikistan;<br/><br/>29.   Committee for Architecture and Construction under the Government of the Republic of Tajikistan;<br/><br/>30.   Committee on Religion Affairs, Regulation of Traditions and National Ceremonies and Holidays under the Government of the Republic of Tajikistan;<br/><br/>31.   Committee on Television and Radio under the Government of the Republic of Tajikistan;<br/><br/>32.   Committee of Environmental Protection under the Government of the Republic of Tajikistan;<br/><br/>33.   Committee on Emergency and Civil Defence under the Government of the Republic of Tajikistan;<br/><br/>34.   Committee for Youth Affairs, Sports and Tourism under the Government of the Republic of Tajikistan;<br/><br/>35.   Communication Service under the Government of the Republic of Tajikistan;<br/><br/>36.   Customs Service under the Government of the Republic of Tajikistan;<br/><br/>37.   Antimonopoly Service under the Government of the Republic of Tajikistan;<br/><br/>38.   State Supervision Service on the Safe Conduction of Works in Industry and Mining under the Government of the Republic of Tajikistan;<br/><br/>39.   Agency on Irrigation and Land Reclamation under the Government of the Republic of Tajikistan;<br/><br/>40.   Agency of Social Insurance and Pension under the Government of the Republic of Tajikistan;<br/><br/>41.   Agency on State Material Resources under the Government of the Republic of Tajikistan;<br/><br/>42.   Agency of Standardization, Metrology, Certification and Trade Inspection under the Government of the Republic of Tajikistan;<br/><br/>43.   Agency on Provision of Special Property under the Government of the Republic of Tajikistan;<br/><br/>44.   Agency on Public Procurement of Goods, Works and Services under the Government of the Republic of Tajikistan;<br/><br/>45.   Forestry Agency under the Government of the Republic of Tajikistan;<br/><br/>46.   General Office of Archive under the Government of the Republic of Tajikistan;<br/><br/>47.   General Office of Geology under the Government of the Republic of Tajikistan;<br/><br/>48.   General Office of State Secret Protection under the Government of the Republic of Tajikistan;<br/><br/>49.   Security Council of the Republic of Tajikistan;<br/><br/>50.   Justice Council of the Republic of Tajikistan;<br/><br/>51.   Committee of District Development under the President of the Republic of Tajikistan;<br/><br/>52.   Agency for Civil Service Affairs under the President of the Republic of Tajikistan;<br/><br/>53.   Agency for State Financial Control and Fight with Corruption of the Republic of Tajikistan;<br/><br/>54.   Agency of Drug Control under the President of the Republic of Tajikistan;<br/><br/>55.   Agency of Statistics under the President of the Republic of Tajikistan;<br/><br/>56.   Chamber of Commerce and Industry of the Republic of Tajikistan;<br/><br/>57.   Centre for Strategic Research under the President of the Republic of Tajikistan;<br/><br/>58.   Accounts Chamber of the Republic of Tajikistan;<br/><br/>59.   Department of "Tajikmatlubot" Union.</a><a href="#7" id="ref7" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R7]<br/><br/>Note to Annex </a><a href="#8" id="ref8" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R8]1<br/><br/>[E6]</FONT>All agencies subordinate to the above listed central government entities are covered.<br/><br/><br/><br/>ANNEX 2<br/><br/>SUB-CENTRAL GOVERNMENT ENTITIES<br/><br/>[E7]</FONT>Thresholds:<br/><br/>Goods    (3)                SDR 200,000<br/><br/><br/><br/>Services1               SDR 200,000<br/><br/><br/><br/>Construction Services         SDR 5,000,000<br/><br/>List of Entities:<br/><br/>1.   Region of Sugd;<br/><br/>2.   Region of Khatlon;<br/><br/>3.   Region of Mukhtori Kuhistoni Badakhson;<br/><br/>4.   City of Dushanbe;<br/><br/>5.   District of Ismoili Somoni;<br/><br/>6.   District of Sino;<br/><br/>7.   District of Firdavsi;<br/><br/>8.   District of Shohmansur;<br/><br/>9.   City of Hujand;<br/><br/>10.   City of Qurgonteppa;<br/><br/>11.   City of Vahdat;<br/><br/>12.   City of Rogun;<br/><br/>13.   City of Tursunzoda;<br/><br/>14.   City of Norak;<br/><br/>15.   City of Kulob;<br/><br/>16.   City [E8]</FONT></a>of Guliston;<br/><br/>17.   City of <a href="#9" id="ref9" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R9]Buston;<br/><br/>18.   City of Konibodom;<br/><br/>19.   City of Taboshar;<br/><br/>20.   City of Isfara;<br/><br/>21.   City Istaravshan;<br/><br/>22.   City of Panjakent;<br/><br/>23.   City of Khorog;<br/><br/>24.   City of Hisor;[E9]</FONT></a><br/><br/>25.   District of Nurobod;<br/><br/>26.   District of Rasht;<br/><br/>27.   District of Lahsh;<br/><br/>28.   District of Tojikobod;<br/><br/>29.   District of Sangvor;<br/><br/>30.   District of Fayzobod;<br/><br/>31.   District of Varzob;<br/><br/>32.   District of Rudaki;<a href="#10" id="ref10" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R10]<br/><br/>33.   District of Shahrinav;<br/><br/>34.   District of Sarband;<br/><br/>35.   District of Bohtar;<br/><br/>36.   District of Nosiri Husrav;<br/><br/>37.   District of Vahsh;<br/><br/>38.   District of Huroson;<br/><br/>39.   District of Yovon;<br/><br/>40.   District of Qubodiyon;<br/><br/>41.   District of Jaloliddini [E10]</FONT></a>Balhi;<br/><br/>42.   District of <a href="#11" id="ref11" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R11]Jayhun;<br/><br/>43.   District of Pyandz;<br/><br/>44.   District of Abdurahmoni Jomi;<br/><br/>45.   District [E11]</FONT></a>of <a href="#12" id="ref12" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R12]Dusti;<br/><br/>46.   District of Shahritus;<br/><br/>47.   District of Balguvon;<br/><br/>48.   District of Vose;<br/><br/>49.   District of Dangara;<br/><br/>50.   District of Muminobod;<br/><br/>51.   District of Temurmalik;<br/><br/>52.   District of Farhor;<br/><br/>53.   District of Hovaling;<br/><br/>54.   District of Mir Said Alii Hamadoni;<br/><br/>55.   District [E12]</FONT></a>of <a href="#13" id="ref13" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R13]Shamsiddini Shohin;<br/><br/>56.   District of Bobojon Gafurov;<br/><br/>57.   District of Ayni;<br/><br/>58.   District of Asht;<br/><br/>59.   District [E13]</FONT></a>of <a href="#14" id="ref14" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R14]Devashtich;<br/><br/>60.   District of Zafarobod;<br/><br/>61.   District of Kuhistoni Mastchoh;<br/><br/>62.   District of Mastchoh;<br/><br/>63.   District of Spitamen;<br/><br/>64.   District of Shahriston;<br/><br/>65.   District of Jabbor Rasulov;<br/><br/>66.   District of Vanj;<br/><br/>67.   District of Darvoz;<br/><br/>68.   District of Ishkoshim;<br/><br/>69.   District of Murgob;<br/><br/>70.   District of Rushon;<br/><br/>71.   District of Roshtgala;<br/><br/>72.   District of Shugnon.</a><a href="#15" id="ref15" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R15]<br/><br/>Note to Annex 2<br/><br/>[E14]</FONT>The </a><a href="#16" id="ref16" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R16]above sub-central authorities include their subordinate bodies and organizations which are under supervision or control of such authorities.<br/><br/><br/><br/><br/><br/>ANNEX 3<br/><br/>OTHER ENTITIES<br/><br/>[E15]</FONT>Thresholds:<br/><br/>Goods (4)                SDR 400,000<br/><br/><br/><br/>Services1               SDR 400,000<br/><br/><br/><br/>Construction Services         SDR 5,000,000<br/><br/>List of Entities:<br/><br/>1.   All legal persons (authorities, establishments and foundations) governed by public law, particularly:<br/><br/><br/><br/>a.   State non-commercial (non-profit) organizations;<br/><br/>b.</a><a href="#17" id="ref17" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R17]   Commercial organizations with over 50%[E16]</FONT> of </a><a href="#18" id="ref18" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R18]government [E17]</FONT>shareholding;<br/><br/>c.   Public services, including utilities sector companies.<br/><br/>Notes to Annex 3<br/><br/></a><a href="#19" id="ref19" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R19]1.[E18]</FONT>  This </a><a href="#20" id="ref20" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R20]list of entities shall be published in Procurement official electronic web-portal:[E19]</FONT> [web address to be provided][E20]</FONT></a><a href="#21" id="ref21" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R21].<br/><br/>2.  Indicative lists of contracting authorities and public undertakings fulfilling the criteria set out above follow.[E21]</FONT></a><a href="#22" id="ref22" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R22]<br/><br/>INDICATIVE LISTS OF CONTRACTING AUTHORITIES AND PUBLIC UNDERTAKINGS FULFILLING THE CRITERIA LAID </a>DOWN <a href="#23" id="ref23" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R23]UNDER ANNEX 3<br/><br/>[E22]</FONT>   State Unitary Enterprise "Khogagiimanzilicommunali" (State utilities company);<br/><br/>   State Unitary Enterprise "Tajikairnavigation";<br/><br/>   Joint Stock Company "Tajikair";<br/><br/>   State Unitary Enterprise "Tajiksuhurta" (State insurance company)[E23]</FONT></a>;<br/><br/>   The Joint Stock Company "Tojiktransgaz"<a href="#24" id="ref24" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R24].<br/><br/><br/><br/><br/><br/>ANNEX 4<br/><br/>GOODS<br/><br/>The Agreement applies to all goods procured by the entities listed in Annexes 1 to 3.<br/><br/>Notes to Annex 4<br/><br/>1.[E24]</FONT></a><a href="#25" id="ref25" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R25]  Ministry of Defence of the Republic of Tajikistan, Ministry of Internal Affairs of the Republic of Tajikistan and State Committee on National Security of the Republic of Tajikistan: For these entities, the Agreement only covers the procurement of the following categories:<br/><br/>FSC Reference No.         Description<br/><br/>1.   22                  Railway Equipment;<br/><br/>2.   23   Motor Vehicles, Trailers, and Cycles (except buses in<br/><br/>         2310);<br/><br/>3.   24               Tractors;<br/><br/>4.   25                  Vehicular Equipment Components;<br/><br/>5.   26                  Tyres and Tubes;<br/><br/>6.   29               Engine Accessories<br/><br/>7.   30               Mechanical Power Transmission Equipment;<br/><br/>8.   32               Woodworking Machinery and Equipment;<br/><br/>9.   34               Metalworking Machinery;<br/><br/>10.   35               Service and Trade Equipment;<br/><br/>11.   36               Special Industry Machinery;<br/><br/>12.   37               Agricultural Machinery and Equipment;<br/><br/>13.   38               Construction, Mining, Excavating, and Highway<br/><br/>                  Maintenance Equipment;<br/><br/>14.   39               Materials Handling Equipment;<br/><br/>15.   40               Rope, Cable, Chain and Fittings;<br/><br/>16   41                  Refrigeration and Air Conditioning Equipment;<br/><br/>17.   42               Fire Fighting, Rescue and Safety Equipment;<br/><br/>18.   43               Pumps and Compressors;<br/><br/>19.   44               Furnace, Steam Plant, Drying Equipment;<br/><br/>20.   45               Plumbing, Heating and Sanitation Equipment;<br/><br/>21.   46               Water Purification and Sewage Treatment Equipment;<br/><br/>22.   47               Pipe, Tubing, Hose and Fittings<br/><br/>23.   48               Valves;<br/><br/>24.   49               Maintenance and Repair Shop Equipment;<br/><br/>25.    53               Hardware and Abrasives;<br/><br/>26.    54               Prefabricated Structures and Scaffolding;<br/><br/>27.    55               Lumber, Millwork, Plywood and Veneer;<br/><br/>28.    56               Construction and Building Materials;<br/><br/>29.   61               Electric Wire, and Power and Distribution Equipment;<br/><br/>30.   62               Lighting Fixtures and Lamps;<br/><br/>31.   63               Alarm and Signal Systems;<br/><br/>32.   65               Medical, Dental, and Veterinary Equipment and<br/><br/>                  Supplies;<br/><br/>33.   66               Instruments and Laboratory Equipment;<br/><br/>34.   67               Photographic Equipment;<br/><br/>35.   68               Chemicals and Chemical Products;<br/><br/>36.   69               Training Aids and Devices;<br/><br/>37.   70               General Purpose ADPE, Software, Supplies and Support<br/><br/>                  Equipment;<br/><br/>38.   71                  Furniture;<br/><br/>39.   72      Household and Commercial Furnishings and <br/><br/>   Appliances;<br/><br/>40.   73               Food Preparation and Serving Equipment;<br/><br/>41.   74               Office Machines, Visible Record Equipment and ADP<br/><br/>                  Equipment;<br/><br/>42.   75               Office Supplies and Devices;<br/><br/>43.   76               Books, Maps and Other Publications;<br/><br/>44.   77               Musical Instruments, Phonographs, and Home Type<br/><br/>                  Radios;<br/><br/>45.   78               Recreational and Athletic Equipment;<br/><br/>46.   79               Cleaning Equipment and Supplies;<br/><br/>47.   80               Brushes, Paints, Sealers and Adhesives;<br/><br/>48.   81               Containers, Packaging and Packing Supplies;<br/><br/>49.   85               Toiletries;<br/><br/>50.   87               Agricultural Supplies;<br/><br/>51.   88               Live Animals;<br/><br/>52.   91               Fuels, Lubricants, Oils and Waxes;<br/><br/>53.   93               Non-metallic Fabricated Materials;<br/><br/>54.   94               Non-metallic Crude Materials;<br/><br/>55.   96               Ores, Minerals and their Primary Products;<br/><br/>56.   99               Miscellaneous.<br/><br/><br/><br/><br/><br/>ANNEX 5<br/><br/>SERVICES<br/><br/>1.   The Agreement applies to all services procured by the entities listed in Annexes 1 to 3.<br/><br/>2.   Services as contained in document MTN.GNS/W/120 and additionally the following services identified in accordance with the United Nations Provisional Central Product Classification (CPC Prov.) are offered.<br/><br/>Description               CPC Prov. Reference No.<br/><br/>1.   Telecommunications services         752<br/><br/>2.   Financial Services (5)                81<br/><br/>3.   Sewage and refuse disposal;         94<br/><br/>sanitation and similar </a><a href="#26" id="ref26" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R26]services<br/><br/>[E25]</FONT></a><a href="#27" id="ref27" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R27]<br/><br/><br/><br/><br/><br/><br/><br/>ANNEX 6<br/><br/>CONSTRUCTION SERVICES<br/><br/>List of Construction Services [E26]</FONT>(Division 51, CPC Prov.):<br/><br/>1.   The Agreement applies to all construction services procured by the entities listed in Annexes 1 to 3.<br/><br/>2.   All construction services listed in Division 51 of the United Nations Provisional Central Product Classification (CPC Prov.) are covered.[E27]</FONT></a><a href="#28" id="ref28" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R28]<br/><br/><br/><br/>ANNEX 7<br/><br/>GENERAL NOTES<br/><br/></a>The <a href="#29" id="ref29" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R29]following General Notes apply without exception to this Agreement, including to Annexes 1 through 6.<br/><br/><br/><br/>1.  This Agreement does not cover:[E28]</FONT><br/><br/>a.</a><a href="#30" id="ref30" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R30]   procurement [E29]</FONT>of goods or services in respect of contracts for construction of chanceries abroad;[E30]</FONT></a><br/><br/>b.<a href="#31" id="ref31" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R31]   procurement of goods or services by "Tajik Air" and Tajik Railways </a><a href="#32" id="ref32" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R32]outside the territory of Tajikistan for consumption outside the territory of Tajikistan;[E31]</FONT><br/><br/>c.   for greater certainty under Article II:3(b), commercial sponsorship arrangements;[E32]</FONT></a><br/><br/>d.<a href="#33" id="ref33" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R33]   procurement by an entity covered under this Appendix from another entity covered under this Appendix, except where tenders are called, in which case, this Agreement shall apply;[E33]</FONT></a> and;<br/><br/>2.  For a 5 <a href="#34" id="ref34" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R34]years transition period starting with the entry into force of the agreement for Republic of Tajikistan, procuring entities covered under Annex 1 to 3 may accord a price preference programme of up to 15% for the part of the tender incorporating goods and services originating from Republic of Tajikistan. The price preference and its application will be clearly described in the notice of intended procurement.[E34]</FONT></a><a href="#35" id="ref35" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R35]<br/><br/>1.</a><a href="#36" id="ref36" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R36]  <br/><br/>APPENDIX II<br/><br/>ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF<br/><br/>LAWS, REGULATIONS, JUDICIAL DECISIONS, ADMINISTRATIVE RULINGS OF GENERAL APPLICATION, STANDARD CONTRACT CLAUSES, AND PROCEDURES REGARDING GOVERNMENT PROCUREMENT COVERED BY THIS AGREEMENT PURSUANT TO ARTICLE VI<br/><br/>[E35]</FONT>Tajikistan<br/><br/>1.   Publication of general laws and regulations - [web address to be provided].<br/><br/>2.   Publication of GP measures - [web address to be provided].<br/><br/>3.   Publication of Judicial Decisions, Administrative Rulings of General Application - [web address to be provided].<br/><br/>4.   Publication of Standard Contract Clauses and Procedures regarding Government Procurement - [web address to be provided].<br/><br/><br/><br/>_______________<br/><br/>APPENDIX III<br/><br/>ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF NOTICES REQUIRED BY ARTICLES VII, IX:7 AND XVI:2 PURSUANT TO ARTICLE VI<br/><br/>Tajikistan<br/><br/></a><a href="#37" id="ref37" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R37]1.   Publication of Notices Required by Articles VII, IX:7 AND XVI:2 - [web address to be provided][E36]</FONT></a><a href="#38" id="ref38" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R38].<br/><br/><br/><br/>_______________<br/><br/>APPENDIX IV<br/><br/>WEBSITE ADDRESS OR ADDRESSES WHERE PARTIES PUBLISH PROCUREMENT STATISTICS PURSUANT TO ARTICLE XVI:5 AND NOTICES CONCERNING AWARDED CONTRACTS PURSUANT TO ARTICLE XVI:6<br/><br/>[E37]</FONT>Tajikistan<br/><br/>1.   Publication of procurement statistics - [web address to be provided].<br/><br/>2.   Publication of notices concerning awarded contracts - [web address to be provided][E38]</FONT></a><a href="#39" id="ref39" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R39].<br/><br/><br/><br/>____________________<br/><br/> (1) In English only.<br/><br/> (2)</a><a href="#40" id="ref40" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R40] Thresholds in respect of goods and services are subject [E39]</FONT>to a three-year </a><a href="#41" id="ref41" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R41]transition period. In the first year following accession, the thresholds for both goods and services will be SDR [E40]</FONT>150,000; in the second year following accession they will be SDR 140,000; from the beginning of the third </a><a href="#42" id="ref42" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R42]year following accession, the thresholds will be SDR 130,000.[E41]</FONT><br/><br/> (3)</a><a href="#43" id="ref43" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R43] Thresholds in respect of goods and services are subject [E42]</FONT>to a three-year </a><a href="#44" id="ref44" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R44]transition period. In the first year following accession, the thresholds for both goods and services will be SDR [E43]</FONT>220,000; in the second year following accession they will be SDR 210,000; from the beginning of the third </a><a href="#45" id="ref45" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R45]year following accession, the thresholds will be SDR 200,000.[E44]</FONT><br/><br/> (4)</a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R46] Thresholds in respect of goods and services are subject [E45]</FONT>to a three-year </a><a href="#47" id="ref47" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R47]transition period. In the first year following accession, the thresholds for both goods and services will be SDR [E46]</FONT>500,000; in the second year following accession they will be SDR 450,000; from the beginning of the third </a><a href="#48" id="ref48" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R48]year following accession, the thresholds will be SDR 400,000.[E47]</FONT><br/><br/> (5) Except contracts for financial services in connection with the issue, purchase, sale or transfer of securities or other financial instruments, and central bank services.[E48]</FONT></a><br/><br/><br/><br/><br/><br/><br/><br/>GPA/ACC/TJK/30<br/><br/><a href="#49" id="ref49" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R49]- 2 </a><a href="#50" id="ref50" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R50]-<br/><br/><br/><br/><br/><br/><br/><br/>\\CWR.WTO.ORG\DFSROOT\MDRIVE\[E49]</FONT>REOFFICE\[E50]</FONT></a>8832.16\JOB\_Orig_v1_01.doc (146 kb) converted on 20161026-10:<a href="#51" id="ref51" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R51]33 with WTO2TXT.EXE version:2016-05-11 12:01<br/><br/>[E51]</FONT></a></P><br/><br/><A NAME="STATISTIC"></A><A HREF="#TOP">(Text)</A><br/><P>
+<hr/>
+</p> Statistics of document \\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\8832.16\JOB\_ORIG_V1_01.DOC</p> Total number of words: 3948</p> Number of references found: 233</p> Number of words found in references: 4139 (104.8%)</p> Minimum of consecutive words: 6</p> Collection: All collections</p> Date: Wed Oct 26 10:34:13 CEST 2016</p> Remove first: false, Fast: false</p> Removed file: E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt (90.3%)<hr/>
+</p><table BORDER="1">
+<caption><b>Statistics on referenced documents</b></caption>
+<tr>
+<th>Reference</br>Document</th>
+<th>%</th>
+<th>References</th>
+</tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt</td>
+<td>90.3 %</td>
+<td>6, 8, 9, 10, 11, 12, 13, 14, 16, 18, 20, 24, 25, 27, 28, 30, 31, 33, 34, 36, 38, 39, 42, 45, 48, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt</td>
+<td>40.5 %</td>
+<td>6, 8, 10, 18, 20, 24, 27, 28, 30, 32, 33, 36, 38, 39, 42, 45, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt</td>
+<td>4.5 %</td>
+<td>20, 28, 32, 33, 35, 37, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK26.doc.txt</td>
+<td>3.8 %</td>
+<td>2, 41, 44, 47, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCARM1.doc.txt</td>
+<td>2.3 %</td>
+<td>40, 43, 46, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA2.doc.txt</td>
+<td>2.3 %</td>
+<td>40, 43, 46, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL10.doc.txt</td>
+<td>1.9 %</td>
+<td>7, 28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL12.doc.txt</td>
+<td>1.9 %</td>
+<td>7, 28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦125.doc.txt</td>
+<td>1.9 %</td>
+<td>7, 28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK22.doc.txt</td>
+<td>1.7 %</td>
+<td>15, 23, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK8.doc.txt</td>
+<td>1.5 %</td>
+<td>17, 32, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK10.doc.txt</td>
+<td>1.4 %</td>
+<td>2, 30, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK12.doc.txt</td>
+<td>1.4 %</td>
+<td>2, 30, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦113.doc.txt</td>
+<td>1.3 %</td>
+<td>22, 26, 29, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W316.doc.txt</td>
+<td>1.3 %</td>
+<td>22, 26, 29, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-03.pdf.txt</td>
+<td>1.3 %</td>
+<td>28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-02.pdf.txt</td>
+<td>1.3 %</td>
+<td>28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦LET¦1049-02.pdf.txt</td>
+<td>1.3 %</td>
+<td>28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦LET¦1085-02.pdf.txt</td>
+<td>1.3 %</td>
+<td>28, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK13.doc.txt</td>
+<td>1.0 %</td>
+<td>2, 33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INTERNAL2012¦3399.pdf.txt</td>
+<td>1.0 %</td>
+<td>22, 29, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK27.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, 31, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W326-05.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>21, 22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦LET¦977-02.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>21, 22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC26-03.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>21, 22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦EXCS13.doc.txt</td>
+<td> &lt;1 %</td>
+<td>33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL9.doc.txt</td>
+<td> &lt;1 %</td>
+<td>33, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>29, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR9.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, 19, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODISL1-03.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVISL1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OISL1R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVEU3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODISL1-02.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦LET¦985-02.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W326-07.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOISL1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOEU1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVEU2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC26-02.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>22, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK15.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK29.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK25.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK11.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK19.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK18.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK20.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SGQ2¦JOR10.doc.txt</td>
+<td> &lt;1 %</td>
+<td>5, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOTPKM1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>26, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦STRQ1¦CAN15.doc.txt</td>
+<td> &lt;1 %</td>
+<td>5, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA17.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR18.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A12.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL8.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦37A11.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦M50.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA10.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦117.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK6.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W325.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR7.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA11.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A7.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE7.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR8.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦37A12.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W325A6.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN82.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE13.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCKGZ4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME12.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A11.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W336A9.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1R2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC25.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR15.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCAUS1A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN70.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦99A3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR16.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME25.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN77R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W328.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA14.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT8.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA12.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT6.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCKGZ3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE6.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR17.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR12.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCCHN44.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA20.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A8.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦99A4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦RD-GPA¦26.doc.txt</td>
+<td> &lt;1 %</td>
+<td>17, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBTAndFINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPINGAndSUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OHKG2.doc.txt</td>
+<td> &lt;1 %</td>
+<td>4, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-12-1_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-03-2_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S And D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-09-3_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIFAndAFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULESAndCSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-5_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-4_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-02-2_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-2_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-11-6_ES_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>49, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN470.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN478.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS432A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU168.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦459.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦183R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦381-37.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SCM¦N299JOR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NKAZ1A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/S¦WPGR¦M89.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦371-17.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦TPR¦G345.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦434.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦AIRCOMTDSE¦4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NIND149.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITSD¦28.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/S¦C¦N863.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN482.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-MA¦108.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦441-20.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-WEB¦2497.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER647.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦467-20.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦AIRTPR¦33.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN481.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦434-17.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦SERV¦232.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦RD-TPR¦640.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦AG¦NCAN112.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦RD-GPA¦35.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦182R1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦GEN1506.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦466.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS438-01.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS437-02.xls.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1004A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER649.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦REG¦373N1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1002A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦RD-DEV¦129.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS429A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SCM¦W324.wpf.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NRUS125.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦AIRWGTTT¦5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦RD-TBT¦1R3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦188.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU151A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU150A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DSB¦W571.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦MIN11¦2A1-02.xls.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NARG193.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦427-11.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-LDIMD¦203.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦TPR¦380.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦REG¦372-1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦458-19.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN15¦CAN452A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-WEB¦2476.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCOL260A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦435-20.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦REG¦369-1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦AG¦NKOR54.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN04¦CAN98R2A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦LIC¦N2BOL1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦ADP¦W316.wpf.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦465.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN479.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦TPR¦M320A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN480.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS437-01.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦DS¦427-10.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS438-02.xls.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NUSA2872.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN483.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1008A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1003A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NCRI170.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦AIRCTE¦3.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER648.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN484.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS439.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦TPR¦S339.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/G¦SPS¦NMEX296A1.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦187.doc.txt</td>
+<td> &lt;1 %</td>
+<td>51, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/WT¦GC¦180.doc.txt</td>
+<td> &lt;1 %</td>
+<td>50, </td></tr>
+</table>
+<hr/>
+</p><table BORDER="1">
+<caption><b>Statistics by referenced texts</b></caption>
+<tr>
+<th>Reference</br>Number</th>
+<th>Referenced Text</th>
+<th>Reference File</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Page: 1/2
+Committee on Government Procurement | Original: English</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME25.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1R2.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP2.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT2.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT5.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT6.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/117.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/37A11.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/37A12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/99A3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/99A4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCAUS1A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCCHN44.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCKGZ3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCKGZ4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA11.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA14.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA20.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE13.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE5.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE6.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE7.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL5.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK5.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK6.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR15.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR16.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR17.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR18.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR7.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR9.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/M50.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC25.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN70.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN77R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN82.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A11.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A7.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W325.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W325A6.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W328.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W336A9.doc.txt</br>
+</td></tr>
+<tr>
+<td>2</td>
+<td>2 -
+
+
+
+ACCESSION OF TAJIKISTAN TO THE AGREEMENT ON GOVERNMENT PROCUREMENT</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK11.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK13.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK15.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK18.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK19.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK20.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK25.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK27.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK29.doc.txt</br>
+</td></tr>
+<tr>
+<td>3</td>
+<td>AGREEMENT ON GOVERNMENT PROCUREMENT
+THIRD REVISED OFFER
+The following communication, dated</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA17.doc.txt</br>
+</td></tr>
+<tr>
+<td>4</td>
+<td>OFFER
+The following communication, dated 17 October</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OHKG2.doc.txt</br>
+</td></tr>
+<tr>
+<td>5</td>
+<td>following communication, dated 17 October 2016, is being circulated at the request of the Delegation</td>
+<td>E:/MYCAT/corpus/txt/EN/G/SGQ2/JOR10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/STRQ1/CAN15.doc.txt</br>
+</td></tr>
+<tr>
+<td>6</td>
+<td>REVISED OFFER
+APPENDIX I (1) 
+REPUBLIC OF TAJIKISTAN
+(Authentic in the English Language only)
+ANNEX 1
+CENTRAL GOVERNMENT ENTITIES
+Thresholds:
+Goods    (2)                SDR 130,000
+
+Services1               SDR 130,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   Executive Office of the President of the Republic of Tajikistan;
+2.   Majlisi Millii of Majlisi Oli of the Republic of Tajikistan;
+3.   Majlisi Namoyandagon of Majlisi Oli of the Republic of Tajikistan;
+4.   Supreme Court of the Republic of Tajikistan;
+5.   Constitutional Court of the Republic of Tajikistan;
+6.   Supreme Economic Court of the Republic of Tajikistan;
+7.   Ministry of Justice of the Republic of Tajikistan;
+8.   Ministry of Agriculture of the Republic of Tajikistan;
+9.   Ministry of Internal Affairs of the Republic of Tajikistan;
+10.   Ministry of Foreign Affairs of the Republic of Tajikistan;
+11.   Ministry of Education and Science of the Republic of Tajikistan;
+12.   Ministry of Labour, Migration and Employment of Population of the Republic of Tajikistan;
+13.   Ministry of Finance of the Republic of Tajikistan;
+14.   Ministry of Defence of the Republic of Tajikistan;
+15.   Ministry of Transport of the Republic of Tajikistan;
+16.   Ministry of Economic Development and Trade of the Republic of Tajikistan;
+17.   Ministry of Industry and New Technologies of the Republic of Tajikistan;
+18.   Ministry of Health and Social Protection of Population of the Republic of Tajikistan;
+19.   Ministry of Culture of the Republic of Tajikistan;
+20.   Ministry of Energy and Water Recourses of the Republic of Tajikistan;
+21.   National Bank of the Republic of Tajikistan;
+22.   General Prosecutor of the Republic of Tajikistan;
+23.   State Committee on National Security of the Republic of Tajikistan;
+24.   State Committee of Land Management and Geodesy of the Republic of Tajikistan;
+25.   State Committee for Investment and State Property Management of the Republic of Tajikistan;
+26.   Tax Committee under the Government of the Republic of Tajikistan;
+27.   Committee of Language and Terminology under the Government of the Republic of Tajikistan;
+28.   Committee of Women and Family Affairs under the Government of the Republic of Tajikistan;
+29.   Committee for Architecture and Construction under the Government of the Republic of Tajikistan;
+30.   Committee on Religion Affairs, Regulation of Traditions and National Ceremonies and Holidays under the Government of the Republic of Tajikistan;
+31.   Committee on Television and Radio under the Government of the Republic of Tajikistan;
+32.   Committee of Environmental Protection under the Government of the Republic of Tajikistan;
+33.   Committee on Emergency and Civil Defence under the Government of the Republic of Tajikistan;
+34.   Committee for Youth Affairs, Sports and Tourism under the Government of the Republic of Tajikistan;
+35.   Communication Service under the Government of the Republic of Tajikistan;
+36.   Customs Service under the Government of the Republic of Tajikistan;
+37.   Antimonopoly Service under the Government of the Republic of Tajikistan;
+38.   State Supervision Service on the Safe Conduction of Works in Industry and Mining under the Government of the Republic of Tajikistan;
+39.   Agency on Irrigation and Land Reclamation under the Government of the Republic of Tajikistan;
+40.   Agency of Social Insurance and Pension under the Government of the Republic of Tajikistan;
+41.   Agency on State Material Resources under the Government of the Republic of Tajikistan;
+42.   Agency of Standardization, Metrology, Certification and Trade Inspection under the Government of the Republic of Tajikistan;
+43.   Agency on Provision of Special Property under the Government of the Republic of Tajikistan;
+44.   Agency on Public Procurement of Goods, Works and Services under the Government of the Republic of Tajikistan;
+45.   Forestry Agency under the Government of the Republic of Tajikistan;
+46.   General Office of Archive under the Government of the Republic of Tajikistan;
+47.   General Office of Geology under the Government of the Republic of Tajikistan;
+48.   General Office of State Secret Protection under the Government of the Republic of Tajikistan;
+49.   Security Council of the Republic of Tajikistan;
+50.   Justice Council of the Republic of Tajikistan;
+51.   Committee of District Development under the President of the Republic of Tajikistan;
+52.   Agency for Civil Service Affairs under the President of the Republic of Tajikistan;
+53.   Agency for State Financial Control and Fight with Corruption of the Republic of Tajikistan;
+54.   Agency of Drug Control under the President of the Republic of Tajikistan;
+55.   Agency of Statistics under the President of the Republic of Tajikistan;
+56.   Chamber of Commerce and Industry of the Republic of Tajikistan;
+57.   Centre for Strategic Research under the President of the Republic of Tajikistan;
+58.   Accounts Chamber of the Republic of Tajikistan;
+59.   Department of "Tajikmatlubot" Union.
+Note to Annex 1</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>7</td>
+<td>Note to Annex 1
+All agencies subordinate to the above listed central government entities are covered.
+
+ANNEX 2
+SUB-CENTRAL GOVERNMENT ENTITIES</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</br>
+</td></tr>
+<tr>
+<td>8</td>
+<td>1
+All agencies subordinate to the above listed central government entities are covered.
+
+ANNEX 2
+SUB-CENTRAL GOVERNMENT ENTITIES
+Thresholds:
+Goods    (3)                SDR 200,000
+
+Services1               SDR 200,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   Region of Sugd;
+2.   Region of Khatlon;
+3.   Region of Mukhtori Kuhistoni Badakhson;
+4.   City of Dushanbe;
+5.   District of Ismoili Somoni;
+6.   District of Sino;
+7.   District of Firdavsi;
+8.   District of Shohmansur;
+9.   City of Hujand;
+10.   City of Qurgonteppa;
+11.   City of Vahdat;
+12.   City of Rogun;
+13.   City of Tursunzoda;
+14.   City of Norak;
+15.   City of Kulob;
+16.   City</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>9</td>
+<td>Buston;
+18.   City of Konibodom;
+19.   City of Taboshar;
+20.   City of Isfara;
+21.   City Istaravshan;
+22.   City of Panjakent;
+23.   City of Khorog;
+24.   City of Hisor</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>10</td>
+<td>33.   District of Shahrinav;
+34.   District of Sarband;
+35.   District of Bohtar;
+36.   District of Nosiri Husrav;
+37.   District of Vahsh;
+38.   District of Huroson;
+39.   District of Yovon;
+40.   District of Qubodiyon;
+41.   District of Jaloliddini</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>11</td>
+<td>Jayhun;
+43.   District of Pyandz;
+44.   District of Abdurahmoni Jomi;
+45.   District</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>12</td>
+<td>Dusti;
+46.   District of Shahritus;
+47.   District of Balguvon;
+48.   District of Vose;
+49.   District of Dangara;
+50.   District of Muminobod;
+51.   District of Temurmalik;
+52.   District of Farhor;
+53.   District of Hovaling;
+54.   District of Mir Said Alii Hamadoni;
+55.   District</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>13</td>
+<td>Shamsiddini Shohin;
+56.   District of Bobojon Gafurov;
+57.   District of Ayni;
+58.   District of Asht;
+59.   District</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>14</td>
+<td>Devashtich;
+60.   District of Zafarobod;
+61.   District of Kuhistoni Mastchoh;
+62.   District of Mastchoh;
+63.   District of Spitamen;
+64.   District of Shahriston;
+65.   District of Jabbor Rasulov;
+66.   District of Vanj;
+67.   District of Darvoz;
+68.   District of Ishkoshim;
+69.   District of Murgob;
+70.   District of Rushon;
+71.   District of Roshtgala;
+72.   District of Shugnon.
+Note to Annex 2</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>15</td>
+<td>Note to Annex 2
+The above sub-central authorities include their subordinate bodies and organizations which are under supervision or control of such authorities.
+
+
+ANNEX 3
+OTHER ENTITIES</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK22.doc.txt</br>
+</td></tr>
+<tr>
+<td>16</td>
+<td>above sub-central authorities include their subordinate bodies and organizations which are under supervision or control of such authorities.
+
+
+ANNEX 3
+OTHER ENTITIES
+Thresholds:
+Goods (4)                SDR 400,000
+
+Services1               SDR 400,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   All legal persons (authorities, establishments and foundations) governed by public law, particularly:
+
+a.   State non-commercial (non-profit) organizations;
+b.   Commercial organizations with over 50</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>17</td>
+<td>Commercial organizations with over 50% of government</td>
+<td>E:/MYCAT/corpus/txt/EN/JOBS/RD-GPA/26.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</br>
+</td></tr>
+<tr>
+<td>18</td>
+<td>government shareholding;
+c.   Public services, including utilities sector companies.
+Notes to Annex 3
+1</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>19</td>
+<td>1.  This list of entities shall be published in Procurement official electronic web-portal</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR9.doc.txt</br>
+</td></tr>
+<tr>
+<td>20</td>
+<td>list of entities shall be published in Procurement official electronic web-portal: [web address to be provided</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>21</td>
+<td>2.  Indicative lists of contracting authorities and public undertakings fulfilling the criteria set out above follow</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-03.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-05.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/977-02.pdf.txt</br>
+</td></tr>
+<tr>
+<td>22</td>
+<td>INDICATIVE LISTS OF CONTRACTING AUTHORITIES AND PUBLIC UNDERTAKINGS FULFILLING THE CRITERIA LAID DOWN UNDER ANNEX 3</td>
+<td>E:/MYCAT/corpus/txt/EN/JOBS/INTERNAL2012/3399.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-03.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODISL1-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODISL1-03.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R2.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OISL1R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOEU1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOISL1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVEU2.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVEU3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVISL1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-05.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-07.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/977-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/985-02.pdf.txt</br>
+</td></tr>
+<tr>
+<td>23</td>
+<td>UNDER ANNEX 3
+   State Unitary Enterprise "Khogagiimanzilicommunali" (State utilities company);
+   State Unitary Enterprise "Tajikairnavigation";
+   Joint Stock Company "Tajikair";
+   State Unitary Enterprise "Tajiksuhurta" (State insurance company</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK22.doc.txt</br>
+</td></tr>
+<tr>
+<td>24</td>
+<td>ANNEX 4
+GOODS
+The Agreement applies to all goods procured by the entities listed in Annexes 1 to 3.
+Notes to Annex 4
+1</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>25</td>
+<td>Ministry of Defence of the Republic of Tajikistan, Ministry of Internal Affairs of the Republic of Tajikistan and State Committee on National Security of the Republic of Tajikistan: For these entities, the Agreement only covers the procurement of the following categories:
+FSC Reference No.         Description
+1.   22                  Railway Equipment;
+2.   23   Motor Vehicles, Trailers, and Cycles (except buses in
+         2310);
+3.   24               Tractors;
+4.   25                  Vehicular Equipment Components;
+5.   26                  Tyres and Tubes;
+6.   29               Engine Accessories
+7.   30               Mechanical Power Transmission Equipment;
+8.   32               Woodworking Machinery and Equipment;
+9.   34               Metalworking Machinery;
+10.   35               Service and Trade Equipment;
+11.   36               Special Industry Machinery;
+12.   37               Agricultural Machinery and Equipment;
+13.   38               Construction, Mining, Excavating, and Highway
+                  Maintenance Equipment;
+14.   39               Materials Handling Equipment;
+15.   40               Rope, Cable, Chain and Fittings;
+16   41                  Refrigeration and Air Conditioning Equipment;
+17.   42               Fire Fighting, Rescue and Safety Equipment;
+18.   43               Pumps and Compressors;
+19.   44               Furnace, Steam Plant, Drying Equipment;
+20.   45               Plumbing, Heating and Sanitation Equipment;
+21.   46               Water Purification and Sewage Treatment Equipment;
+22.   47               Pipe, Tubing, Hose and Fittings
+23.   48               Valves;
+24.   49               Maintenance and Repair Shop Equipment;
+25.    53               Hardware and Abrasives;
+26.    54               Prefabricated Structures and Scaffolding;
+27.    55               Lumber, Millwork, Plywood and Veneer;
+28.    56               Construction and Building Materials;
+29.   61               Electric Wire, and Power and Distribution Equipment;
+30.   62               Lighting Fixtures and Lamps;
+31.   63               Alarm and Signal Systems;
+32.   65               Medical, Dental, and Veterinary Equipment and
+                  Supplies;
+33.   66               Instruments and Laboratory Equipment;
+34.   67               Photographic Equipment;
+35.   68               Chemicals and Chemical Products;
+36.   69               Training Aids and Devices;
+37.   70               General Purpose ADPE, Software, Supplies and Support
+                  Equipment;
+38.   71                  Furniture;
+39.   72      Household and Commercial Furnishings and 
+   Appliances;
+40.   73               Food Preparation and Serving Equipment;
+41.   74               Office Machines, Visible Record Equipment and ADP
+                  Equipment;
+42.   75               Office Supplies and Devices;
+43.   76               Books, Maps and Other Publications;
+44.   77               Musical Instruments, Phonographs, and Home Type
+                  Radios;
+45.   78               Recreational and Athletic Equipment;
+46.   79               Cleaning Equipment and Supplies;
+47.   80               Brushes, Paints, Sealers and Adhesives;
+48.   81               Containers, Packaging and Packing Supplies;
+49.   85               Toiletries;
+50.   87               Agricultural Supplies;
+51.   88               Live Animals;
+52.   91               Fuels, Lubricants, Oils and Waxes;
+53.   93               Non-metallic Fabricated Materials;
+54.   94               Non-metallic Crude Materials;
+55.   96               Ores, Minerals and their Primary Products;
+56.   99               Miscellaneous.
+
+
+ANNEX 5
+SERVICES
+1.   The Agreement applies to all services procured by the entities listed in Annexes 1 to 3.
+2.   Services as contained in document MTN.GNS/W/120 and additionally the following services identified in accordance with the United Nations Provisional Central Product Classification (CPC Prov.) are offered.
+Description               CPC Prov. Reference No.
+1.   Telecommunications services         752
+2.   Financial Services (5)                81
+3.   Sewage and refuse disposal;         94
+sanitation and similar services</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>26</td>
+<td>services
+
+
+
+
+ANNEX 6
+CONSTRUCTION SERVICES
+List of Construction Services</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOTPKM1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</br>
+</td></tr>
+<tr>
+<td>27</td>
+<td>ANNEX 6
+CONSTRUCTION SERVICES
+List of Construction Services (Division 51, CPC Prov.):
+1.   The Agreement applies to all construction services procured by the entities listed in Annexes 1 to 3.
+2.   All construction services listed in Division 51 of the United Nations Provisional Central Product Classification (CPC Prov.) are covered</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>28</td>
+<td>ANNEX 7
+GENERAL NOTES
+The following General Notes apply without exception to this Agreement, including to Annexes 1 through 6.
+
+1.  This Agreement does not cover</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-03.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/1049-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/1085-02.pdf.txt</br>
+</td></tr>
+<tr>
+<td>29</td>
+<td>following General Notes apply without exception to this Agreement, including to Annexes 1 through 6.
+
+1.  This Agreement does not cover:
+a.   procurement</td>
+<td>E:/MYCAT/corpus/txt/EN/JOBS/INTERNAL2012/3399.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</br>
+</td></tr>
+<tr>
+<td>30</td>
+<td>procurement of goods or services in respect of contracts for construction of chanceries abroad</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>31</td>
+<td>procurement of goods or services by "Tajik Air" and Tajik Railways outside the territory of Tajikistan for consumption outside the territory of Tajikistan</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK27.doc.txt</br>
+</td></tr>
+<tr>
+<td>32</td>
+<td>outside the territory of Tajikistan for consumption outside the territory of Tajikistan;
+c.   for greater certainty under Article II:3(b), commercial sponsorship arrangements</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>33</td>
+<td>procurement by an entity covered under this Appendix from another entity covered under this Appendix, except where tenders are called, in which case, this Agreement shall apply</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/EXCS13.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL9.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK13.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-03.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/1049-02.pdf.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/LET/1085-02.pdf.txt</br>
+</td></tr>
+<tr>
+<td>34</td>
+<td>years transition period starting with the entry into force of the agreement for Republic of Tajikistan, procuring entities covered under Annex 1 to 3 may accord a price preference programme of up to 15% for the part of the tender incorporating goods and services originating from Republic of Tajikistan. The price preference and its application will be clearly described in the notice of intended procurement</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>35</td>
+<td>1.  
+APPENDIX II
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF
+LAWS, REGULATIONS, JUDICIAL DECISIONS, ADMINISTRATIVE RULINGS OF GENERAL APPLICATION, STANDARD CONTRACT CLAUSES, AND PROCEDURES REGARDING GOVERNMENT PROCUREMENT COVERED BY THIS AGREEMENT PURSUANT TO ARTICLE VI</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+</td></tr>
+<tr>
+<td>36</td>
+<td>APPENDIX II
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF
+LAWS, REGULATIONS, JUDICIAL DECISIONS, ADMINISTRATIVE RULINGS OF GENERAL APPLICATION, STANDARD CONTRACT CLAUSES, AND PROCEDURES REGARDING GOVERNMENT PROCUREMENT COVERED BY THIS AGREEMENT PURSUANT TO ARTICLE VI
+Tajikistan
+1.   Publication of general laws and regulations - [web address to be provided].
+2.   Publication of GP measures - [web address to be provided].
+3.   Publication of Judicial Decisions, Administrative Rulings of General Application - [web address to be provided].
+4.   Publication of Standard Contract Clauses and Procedures regarding Government Procurement - [web address to be provided].
+
+_______________
+APPENDIX III
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF NOTICES REQUIRED BY ARTICLES VII, IX:7 AND XVI:2 PURSUANT TO ARTICLE VI
+Tajikistan
+1.   Publication of Notices Required by Articles VII, IX:7 AND XVI:2 - [web address to be provided</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>37</td>
+<td>1.   Publication of Notices Required by Articles VII, IX:7 AND XVI:2 - [web address to be provided].
+
+_______________
+APPENDIX IV
+WEBSITE ADDRESS OR ADDRESSES WHERE PARTIES PUBLISH PROCUREMENT STATISTICS PURSUANT TO ARTICLE XVI:5 AND NOTICES CONCERNING AWARDED CONTRACTS PURSUANT TO ARTICLE XVI:6</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</br>
+</td></tr>
+<tr>
+<td>38</td>
+<td>APPENDIX IV
+WEBSITE ADDRESS OR ADDRESSES WHERE PARTIES PUBLISH PROCUREMENT STATISTICS PURSUANT TO ARTICLE XVI:5 AND NOTICES CONCERNING AWARDED CONTRACTS PURSUANT TO ARTICLE XVI:6
+Tajikistan
+1.   Publication of procurement statistics - [web address to be provided].
+2.   Publication of notices concerning awarded contracts - [web address to be provided</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>39</td>
+<td>1) In English only.
+ (2) Thresholds in respect of goods and services are subject</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>40</td>
+<td>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</br>
+</td></tr>
+<tr>
+<td>41</td>
+<td>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 150,000; in the second year following accession they will be SDR 140,000; from the beginning of the third year following accession, the thresholds will be SDR 130,000</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</br>
+</td></tr>
+<tr>
+<td>42</td>
+<td>year following accession, the thresholds will be SDR 130,000.
+ (3) Thresholds in respect of goods and services are subject</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>43</td>
+<td>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</br>
+</td></tr>
+<tr>
+<td>44</td>
+<td>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 220,000; in the second year following accession they will be SDR 210,000; from the beginning of the third year following accession, the thresholds will be SDR 200,000</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</br>
+</td></tr>
+<tr>
+<td>45</td>
+<td>year following accession, the thresholds will be SDR 200,000.
+ (4) Thresholds in respect of goods and services are subject</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</br>
+</td></tr>
+<tr>
+<td>46</td>
+<td>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</br>
+</td></tr>
+<tr>
+<td>47</td>
+<td>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 500,000; in the second year following accession they will be SDR 450,000; from the beginning of the third year following accession, the thresholds will be SDR 400,000</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</br>
+</td></tr>
+<tr>
+<td>48</td>
+<td>year following accession, the thresholds will be SDR 400,000.
+ (5) Except contracts for financial services in connection with the issue, purchase, sale or transfer of securities or other financial instruments, and central bank services</td>
+<td>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</br>
+</td></tr>
+<tr>
+<td>49</td>
+<td>2 -
+
+
+
+\\CWR.WTO.ORG\DFSROOT\MDRIVE</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-2_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-4_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-5_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-02-2_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-03-2_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-09-3_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-11-6_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-12-1_ES_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/ANTI-DUMPINGAndSUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/GATS RULESAndCSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/LDCS, EIFAndAFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS - S And D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE, DEBTAndFINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+</td></tr>
+<tr>
+<td>50</td>
+<td>CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE</td>
+<td>E:/MYCAT/corpus/txt/EN/WT/GC/180.doc.txt</br>
+</td></tr>
+<tr>
+<td>51</td>
+<td>33 with WTO2TXT.EXE version:2016-05-11 12:01</td>
+<td>E:/MYCAT/corpus/txt/EN/G/ADP/W316.wpf.txt</br>
+E:/MYCAT/corpus/txt/EN/G/AG/NCAN112.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/AG/NKOR54.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/LIC/N2BOL1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS429A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS432A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS437-01.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS437-02.xls.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS438-01.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS438-02.xls.txt</br>
+E:/MYCAT/corpus/txt/EN/G/MATAR/RS439.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SCM/N299JOR.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SCM/W324.wpf.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/GEN1506.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NARG193.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1002A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1003A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1004A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1008A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCOL260A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NCRI170.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NEU150A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NEU151A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NEU168.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NIND149.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NKAZ1A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NMEX296A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NPER647.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NPER648.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NPER649.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NRUS125.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/SPS/NUSA2872.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN04/CAN98R2A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN15/CAN452A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN470.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN478.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN479.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN480.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN481.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN482.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN483.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN484.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITSD/28.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/434.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/459.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/465.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/466.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-LDIMD/203.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-MA/108.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-WEB/2476.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/INT-WEB/2497.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/RD-DEV/129.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/RD-GPA/35.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/RD-TBT/1R3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/RD-TPR/640.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/SERV/232.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/TBT/182R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/TBT/183R1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/TBT/187.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/JOBS/TBT/188.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/S/C/N863.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/S/WPGR/M89.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/AIRCOMTDSE/4.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/AIRCTE/3.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/AIRTPR/33.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/AIRWGTTT/5.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DSB/W571.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/371-17.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/381-37.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/427-10.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/427-11.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/434-17.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/435-20.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/441-20.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/458-19.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/DS/467-20.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/MIN11/2A1-02.xls.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/REG/369-1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/REG/372-1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/REG/373N1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/TPR/380.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/TPR/G345.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/TPR/M320A1.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/WT/TPR/S339.doc.txt</br>
+</td></tr>
+</table>
+<hr/>
+
+</htmlstartcomment>MYQUOTEREF
+51
+0|page 1/2 committee government procurement original english|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME25.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SME4.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1R1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP1R2.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦SP2.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT2.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT5.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT6.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦STAT8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦117.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦37A11.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦37A12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦99A3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦99A4.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCAUS1A1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCCHN44.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCKGZ3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCKGZ4.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA11.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA14.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA20.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE13.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE5.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE6.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMNE7.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL5.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK5.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK6.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR15.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR16.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR17.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR18.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR7.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR9.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦M50.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC25.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN70.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN77R1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODJPN82.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A11.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A4.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A7.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W324A8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W325.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W325A6.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W328.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W336A9.doc.txt
+1|2 accession tajikistan agreement government procurement|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK11.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK13.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK15.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK18.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK19.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK20.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK25.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK26.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK27.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK29.doc.txt
+2|agreement government procurement third revised offer following communication dated|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA17.doc.txt
+3|offer following communication dated 17 october|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OHKG2.doc.txt
+4|following communication dated 17 october 2016 circulated request delegation|E:/MYCAT/corpus/txt/EN/G¦SGQ2¦JOR10.doc.txt|E:/MYCAT/corpus/txt/EN/G¦STRQ1¦CAN15.doc.txt
+5|revised offer appendix 1 republic tajikistan authentic english language only annex 1 central government entities thresholds goods 2 sdr 130 000 services1 sdr 130 000 construction services sdr 5 000 000 list entities 1 executive office president republic tajikistan 2 majlisi millii majlisi oli republic tajikistan 3 majlisi namoyandagon majlisi oli republic tajikistan 4 supreme court republic tajikistan 5 constitutional court republic tajikistan 6 supreme economic court republic tajikistan 7 ministry justice republic tajikistan 8 ministry agriculture republic tajikistan 9 ministry internal affairs republic tajikistan 10 ministry foreign affairs republic tajikistan 11 ministry education science republic tajikistan 12 ministry labour migration employment population republic tajikistan 13 ministry finance republic tajikistan 14 ministry defence republic tajikistan 15 ministry transport republic tajikistan 16 ministry economic development trade republic tajikistan 17 ministry industry new technologies republic tajikistan 18 ministry health social protection population republic tajikistan 19 ministry culture republic tajikistan 20 ministry energy water recourses republic tajikistan 21 national bank republic tajikistan 22 general prosecutor republic tajikistan 23 state committee national security republic tajikistan 24 state committee land management geodesy republic tajikistan 25 state committee investment state property management republic tajikistan 26 tax committee under government republic tajikistan 27 committee language terminology under government republic tajikistan 28 committee women family affairs under government republic tajikistan 29 committee architecture construction under government republic tajikistan 30 committee religion affairs regulation traditions national ceremonies holidays under government republic tajikistan 31 committee television radio under government republic tajikistan 32 committee environmental protection under government republic tajikistan 33 committee emergency civil defence under government republic tajikistan 34 committee youth affairs sports tourism under government republic tajikistan 35 communication service under government republic tajikistan 36 customs service under government republic tajikistan 37 antimonopoly service under government republic tajikistan 38 state supervision service safe conduction works industry mining under government republic tajikistan 39 agency irrigation land reclamation under government republic tajikistan 40 agency social insurance pension under government republic tajikistan 41 agency state material resources under government republic tajikistan 42 agency standardization metrology certification trade inspection under government republic tajikistan 43 agency provision special property under government republic tajikistan 44 agency public procurement goods works services under government republic tajikistan 45 forestry agency under government republic tajikistan 46 general office archive under government republic tajikistan 47 general office geology under government republic tajikistan 48 general office state secret protection under government republic tajikistan 49 security council republic tajikistan 50 justice council republic tajikistan 51 committee district development under president republic tajikistan 52 agency civil service affairs under president republic tajikistan 53 agency state financial control fight with corruption republic tajikistan 54 agency drug control under president republic tajikistan 55 agency statistics under president republic tajikistan 56 chamber commerce industry republic tajikistan 57 centre strategic research under president republic tajikistan 58 accounts chamber republic tajikistan 59 department tajikmatlubot union note annex 1|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+6|note annex 1 all agencies subordinate above listed central government entities covered annex 2 sub-central government entities|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦125.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL12.doc.txt
+7|1 all agencies subordinate above listed central government entities covered annex 2 sub-central government entities thresholds goods 3 sdr 200 000 services1 sdr 200 000 construction services sdr 5 000 000 list entities 1 region sugd 2 region khatlon 3 region mukhtori kuhistoni badakhson 4 city dushanbe 5 district ismoili somoni 6 district 7 district firdavsi 8 district shohmansur 9 city hujand 10 city qurgonteppa 11 city vahdat 12 city rogun 13 city tursunzoda 14 city norak 15 city kulob 16 city|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+8|buston 18 city konibodom 19 city taboshar 20 city isfara 21 city istaravshan 22 city panjakent 23 city khorog 24 city hisor|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+9|33 district shahrinav 34 district sarband 35 district bohtar 36 district nosiri husrav 37 district vahsh 38 district huroson 39 district yovon 40 district qubodiyon 41 district jaloliddini|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+10|jayhun 43 district pyandz 44 district abdurahmoni jomi 45 district|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+11|dusti 46 district shahritus 47 district balguvon 48 district vose 49 district dangara 50 district muminobod 51 district temurmalik 52 district farhor 53 district hovaling 54 district mir said alii hamadoni 55 district|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+12|shamsiddini shohin 56 district bobojon gafurov 57 district ayni 58 district asht 59 district|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+13|devashtich 60 district zafarobod 61 district kuhistoni mastchoh 62 district mastchoh 63 district spitamen 64 district shahriston 65 district jabbor rasulov 66 district vanj 67 district darvoz 68 district ishkoshim 69 district murgob 70 district rushon 71 district roshtgala 72 district shugnon note annex 2|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+14|note annex 2 above sub-central authorities include subordinate bodies organizations under supervision control authorities annex 3 other entities|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK22.doc.txt
+15|above sub-central authorities include subordinate bodies organizations under supervision control authorities annex 3 other entities thresholds goods 4 sdr 400 000 services1 sdr 400 000 construction services sdr 5 000 000 list entities 1 all legal persons authorities establishments foundations governed public law particularly state non-commercial non-profit organizations b commercial organizations with over 50|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+16|commercial organizations with over 50 government|E:/MYCAT/corpus/txt/EN/JOBS¦RD-GPA¦26.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK8.doc.txt
+17|government shareholding public services including utilities sector companies notes annex 3 1|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+18|1 list entities published procurement official electronic web-portal|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCUKR9.doc.txt
+19|list entities published procurement official electronic web-portal web address provided|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+20|2 indicative lists contracting authorities public undertakings fulfilling criteria set above follow|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC26-03.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W326-05.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦977-02.pdf.txt
+21|indicative lists contracting authorities public undertakings fulfilling criteria laid under annex 3|E:/MYCAT/corpus/txt/EN/JOBS¦INTERNAL2012¦3399.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦113.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC26-02.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODEEC26-03.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODISL1-02.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODISL1-03.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R2.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OEEC2R3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OISL1R1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOEU1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOISL1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVEU2.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVEU3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦OVISL1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A3.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A4.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W316.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W326-05.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W326-07.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦977-02.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦985-02.pdf.txt
+22|under annex 3 state unitary enterprise khogagiimanzilicommunali state utilities company state unitary enterprise tajikairnavigation joint stock company tajikair state unitary enterprise tajiksuhurta state insurance company|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK22.doc.txt
+23|annex 4 goods agreement applies all goods procured entities listed annexes 1 3 notes annex 4 1|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+24|ministry defence republic tajikistan ministry internal affairs republic tajikistan state committee national security republic tajikistan entities agreement only covers procurement following categories fsc reference description 1 22 railway equipment 2 23 motor vehicles trailers cycles except buses 2310 3 24 tractors 4 25 vehicular equipment components 5 26 tyres tubes 6 29 engine accessories 7 30 mechanical power transmission equipment 8 32 woodworking machinery equipment 9 34 metalworking machinery 10 35 service trade equipment 11 36 special industry machinery 12 37 agricultural machinery equipment 13 38 construction mining excavating highway maintenance equipment 14 39 materials handling equipment 15 40 rope cable chain fittings 16 41 refrigeration air conditioning equipment 17 42 fire fighting rescue safety equipment 18 43 pumps compressors 19 44 furnace steam plant drying equipment 20 45 plumbing heating sanitation equipment 21 46 water purification sewage treatment equipment 22 47 pipe tubing hose fittings 23 48 valves 24 49 maintenance repair shop equipment 25 53 hardware abrasives 26 54 prefabricated structures scaffolding 27 55 lumber millwork plywood veneer 28 56 construction building materials 29 61 electric wire power distribution equipment 30 62 lighting fixtures lamps 31 63 alarm signal systems 32 65 medical dental veterinary equipment supplies 33 66 instruments laboratory equipment 34 67 photographic equipment 35 68 chemicals chemical products 36 69 training aids devices 37 70 general purpose adpe software supplies support equipment 38 71 furniture 39 72 household commercial furnishings appliances 40 73 food preparation serving equipment 41 74 office machines visible record equipment adp equipment 42 75 office supplies devices 43 76 books maps other publications 44 77 musical instruments phonographs home type radios 45 78 recreational athletic equipment 46 79 cleaning equipment supplies 47 80 brushes paints sealers adhesives 48 81 containers packaging packing supplies 49 85 toiletries 50 87 agricultural supplies 51 88 live animals 52 91 fuels lubricants oils waxes 53 93 non-metallic fabricated materials 54 94 non-metallic crude materials 55 96 ores minerals primary products 56 99 miscellaneous annex 5 services 1 agreement applies all services procured entities listed annexes 1 3 2 services contained document mtn gns/w/120 additionally following services identified accordance with united nations provisional central product classification cpc prov offered description cpc prov reference 1 telecommunications services 752 2 financial services 5 81 3 sewage refuse disposal 94 sanitation similar services|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+25|services annex 6 construction services list construction services|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦113.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ORFOTPKM1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W316.doc.txt
+26|annex 6 construction services list construction services division 51 cpc prov 1 agreement applies all construction services procured entities listed annexes 1 3 2 all construction services listed division 51 united nations provisional central product classification cpc prov covered|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+27|annex 7 general notes following general notes apply without exception agreement including annexes 1 through 6 1 agreement cover|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦125.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-02.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-03.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦1049-02.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦1085-02.pdf.txt
+28|following general notes apply without exception agreement including annexes 1 through 6 1 agreement cover procurement|E:/MYCAT/corpus/txt/EN/JOBS¦INTERNAL2012¦3399.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦113.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W315A1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦W316.doc.txt
+29|procurement goods services respect contracts construction chanceries abroad|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+30|procurement goods services tajik air tajik railways outside territory tajikistan consumption outside territory tajikistan|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK27.doc.txt
+31|outside territory tajikistan consumption outside territory tajikistan greater certainty under article ii 3 b commercial sponsorship arrangements|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+32|procurement entity covered under appendix another entity covered under appendix except tenders called case agreement apply|E:/MYCAT/corpus/txt/EN/PLURI¦GPAWPS¦EXCS13.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦125.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCNZL9.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK10.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK12.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK13.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK8.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-02.pdf.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦MODNZL1-03.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦1049-02.pdf.txt|E:/MYCAT/corpus/txt/EN/WT¦LET¦1085-02.pdf.txt
+33|years transition period starting with entry force agreement republic tajikistan procuring entities covered under annex 1 3 accord price preference programme 15 part tender incorporating goods services originating republic tajikistan price preference application clearly described notice intended procurement|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+34|1 appendix ii electronic paper media utilized parties publication laws regulations judicial decisions administrative rulings general application standard contract clauses procedures regarding government procurement covered agreement pursuant article vi|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt
+35|appendix ii electronic paper media utilized parties publication laws regulations judicial decisions administrative rulings general application standard contract clauses procedures regarding government procurement covered agreement pursuant article vi tajikistan 1 publication general laws regulations web address provided 2 publication gp measures web address provided 3 publication judicial decisions administrative rulings general application web address provided 4 publication standard contract clauses procedures regarding government procurement web address provided appendix iii electronic paper media utilized parties publication notices required articles vii ix 7 xvi 2 pursuant article vi tajikistan 1 publication notices required articles vii ix 7 xvi 2 web address provided|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+36|1 publication notices required articles vii ix 7 xvi 2 web address provided appendix iv website address addresses parties publish procurement statistics pursuant article xvi 5 notices concerning awarded contracts pursuant article xvi 6|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK1.doc.txt
+37|appendix iv website address addresses parties publish procurement statistics pursuant article xvi 5 notices concerning awarded contracts pursuant article xvi 6 tajikistan 1 publication procurement statistics web address provided 2 publication notices concerning awarded contracts web address provided|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+38|1 english only 2 thresholds respect goods services subject|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+39|thresholds respect goods services subject three-year transition period first year following accession thresholds both goods services sdr|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCARM1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA2.doc.txt
+40|transition period first year following accession thresholds both goods services sdr 150 000 second year following accession sdr 140 000 beginning third year following accession thresholds sdr 130 000|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK26.doc.txt
+41|year following accession thresholds sdr 130 000 3 thresholds respect goods services subject|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+42|thresholds respect goods services subject three-year transition period first year following accession thresholds both goods services sdr|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCARM1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA2.doc.txt
+43|transition period first year following accession thresholds both goods services sdr 220 000 second year following accession sdr 210 000 beginning third year following accession thresholds sdr 200 000|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK26.doc.txt
+44|year following accession thresholds sdr 200 000 4 thresholds respect goods services subject|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK9.doc.txt
+45|thresholds respect goods services subject three-year transition period first year following accession thresholds both goods services sdr|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCARM1.doc.txt|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCMDA2.doc.txt
+46|transition period first year following accession thresholds both goods services sdr 500 000 second year following accession sdr 450 000 beginning third year following accession thresholds sdr 400 000|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK26.doc.txt
+47|year following accession thresholds sdr 400 000 5 except contracts financial services connection with issue purchase sale transfer securities other financial instruments central bank services|E:/MYCAT/corpus/txt/EN/PLURI¦GPA¦ACCTJK23.doc.txt
+48|2 cwr wto org dfsroot mdrive|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-2_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-4_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-01-5_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-02-2_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-03-2_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-09-3_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-11-6_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦UNIFORMEMOS-12-1_ES_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPINGAndSUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULESAndCSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIFAndAFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S And D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBTAndFINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt
+49|cwr wto org dfsroot mdrive reoffice|E:/MYCAT/corpus/txt/EN/WT¦GC¦180.doc.txt
+50|33 with wto2txt exe version 2016-05-11 12 01|E:/MYCAT/corpus/txt/EN/G¦ADP¦W316.wpf.txt|E:/MYCAT/corpus/txt/EN/G¦AG¦NCAN112.doc.txt|E:/MYCAT/corpus/txt/EN/G¦AG¦NKOR54.doc.txt|E:/MYCAT/corpus/txt/EN/G¦LIC¦N2BOL1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS429A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS432A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS437-01.doc.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS437-02.xls.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS438-01.doc.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS438-02.xls.txt|E:/MYCAT/corpus/txt/EN/G¦MATAR¦RS439.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SCM¦N299JOR.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SCM¦W324.wpf.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦GEN1506.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NARG193.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1002A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1003A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1004A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCAN1008A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCOL260A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NCRI170.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU150A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU151A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NEU168.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NIND149.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NKAZ1A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NMEX296A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER647.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER648.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NPER649.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NRUS125.doc.txt|E:/MYCAT/corpus/txt/EN/G¦SPS¦NUSA2872.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN04¦CAN98R2A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN15¦CAN452A1.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN470.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN478.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN479.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN480.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN481.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN482.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN483.doc.txt|E:/MYCAT/corpus/txt/EN/G¦TBTN16¦KEN484.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITSD¦28.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦434.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦459.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦465.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-ITTC¦466.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-LDIMD¦203.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-MA¦108.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-WEB¦2476.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦INT-WEB¦2497.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦RD-DEV¦129.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦RD-GPA¦35.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦RD-TBT¦1R3.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦RD-TPR¦640.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦SERV¦232.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦182R1.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦183R1.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦187.doc.txt|E:/MYCAT/corpus/txt/EN/JOBS¦TBT¦188.doc.txt|E:/MYCAT/corpus/txt/EN/S¦C¦N863.doc.txt|E:/MYCAT/corpus/txt/EN/S¦WPGR¦M89.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦AIRCOMTDSE¦4.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦AIRCTE¦3.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦AIRTPR¦33.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦AIRWGTTT¦5.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DSB¦W571.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦371-17.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦381-37.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦427-10.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦427-11.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦434-17.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦435-20.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦441-20.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦458-19.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦DS¦467-20.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦MIN11¦2A1-02.xls.txt|E:/MYCAT/corpus/txt/EN/WT¦REG¦369-1.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦REG¦372-1.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦REG¦373N1.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦TPR¦380.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦TPR¦G345.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦TPR¦M320A1.doc.txt|E:/MYCAT/corpus/txt/EN/WT¦TPR¦S339.doc.txt
+MYQUOTEREF</htmlendcomment></P>
+</body>
+</html>
+-->
+</htmlRefDoc>
+<Info>
+<references>
+<reference>
+  <id>1</id>
+  <quote>Page: 1/2
+Committee on Government Procurement | Original: English</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME25.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SME4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP1R2.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/SP2.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT2.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT5.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT6.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/STAT8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/117.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/37A11.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/37A12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/99A3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/99A4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCAUS1A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCCHN44.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCKGZ3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCKGZ4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA11.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA14.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA20.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE13.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE5.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE6.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMNE7.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL5.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK5.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK6.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR15.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR16.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR17.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR18.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR7.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR9.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/M50.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC25.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN70.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN77R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODJPN82.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A11.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A7.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W324A8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W325.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W325A6.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W328.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W336A9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>2</id>
+  <quote>2 -
+
+
+
+ACCESSION OF TAJIKISTAN TO THE AGREEMENT ON GOVERNMENT PROCUREMENT</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK11.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK13.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK15.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK18.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK19.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK20.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK25.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK27.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK29.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>3</id>
+  <quote>AGREEMENT ON GOVERNMENT PROCUREMENT
+THIRD REVISED OFFER
+The following communication, dated</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA17.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>4</id>
+  <quote>OFFER
+The following communication, dated 17 October</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OHKG2.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>5</id>
+  <quote>following communication, dated 17 October 2016, is being circulated at the request of the Delegation</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/G/SGQ2/JOR10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/STRQ1/CAN15.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>6</id>
+  <quote>REVISED OFFER
+APPENDIX I (1) 
+REPUBLIC OF TAJIKISTAN
+(Authentic in the English Language only)
+ANNEX 1
+CENTRAL GOVERNMENT ENTITIES
+Thresholds:
+Goods    (2)                SDR 130,000
+
+Services1               SDR 130,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   Executive Office of the President of the Republic of Tajikistan;
+2.   Majlisi Millii of Majlisi Oli of the Republic of Tajikistan;
+3.   Majlisi Namoyandagon of Majlisi Oli of the Republic of Tajikistan;
+4.   Supreme Court of the Republic of Tajikistan;
+5.   Constitutional Court of the Republic of Tajikistan;
+6.   Supreme Economic Court of the Republic of Tajikistan;
+7.   Ministry of Justice of the Republic of Tajikistan;
+8.   Ministry of Agriculture of the Republic of Tajikistan;
+9.   Ministry of Internal Affairs of the Republic of Tajikistan;
+10.   Ministry of Foreign Affairs of the Republic of Tajikistan;
+11.   Ministry of Education and Science of the Republic of Tajikistan;
+12.   Ministry of Labour, Migration and Employment of Population of the Republic of Tajikistan;
+13.   Ministry of Finance of the Republic of Tajikistan;
+14.   Ministry of Defence of the Republic of Tajikistan;
+15.   Ministry of Transport of the Republic of Tajikistan;
+16.   Ministry of Economic Development and Trade of the Republic of Tajikistan;
+17.   Ministry of Industry and New Technologies of the Republic of Tajikistan;
+18.   Ministry of Health and Social Protection of Population of the Republic of Tajikistan;
+19.   Ministry of Culture of the Republic of Tajikistan;
+20.   Ministry of Energy and Water Recourses of the Republic of Tajikistan;
+21.   National Bank of the Republic of Tajikistan;
+22.   General Prosecutor of the Republic of Tajikistan;
+23.   State Committee on National Security of the Republic of Tajikistan;
+24.   State Committee of Land Management and Geodesy of the Republic of Tajikistan;
+25.   State Committee for Investment and State Property Management of the Republic of Tajikistan;
+26.   Tax Committee under the Government of the Republic of Tajikistan;
+27.   Committee of Language and Terminology under the Government of the Republic of Tajikistan;
+28.   Committee of Women and Family Affairs under the Government of the Republic of Tajikistan;
+29.   Committee for Architecture and Construction under the Government of the Republic of Tajikistan;
+30.   Committee on Religion Affairs, Regulation of Traditions and National Ceremonies and Holidays under the Government of the Republic of Tajikistan;
+31.   Committee on Television and Radio under the Government of the Republic of Tajikistan;
+32.   Committee of Environmental Protection under the Government of the Republic of Tajikistan;
+33.   Committee on Emergency and Civil Defence under the Government of the Republic of Tajikistan;
+34.   Committee for Youth Affairs, Sports and Tourism under the Government of the Republic of Tajikistan;
+35.   Communication Service under the Government of the Republic of Tajikistan;
+36.   Customs Service under the Government of the Republic of Tajikistan;
+37.   Antimonopoly Service under the Government of the Republic of Tajikistan;
+38.   State Supervision Service on the Safe Conduction of Works in Industry and Mining under the Government of the Republic of Tajikistan;
+39.   Agency on Irrigation and Land Reclamation under the Government of the Republic of Tajikistan;
+40.   Agency of Social Insurance and Pension under the Government of the Republic of Tajikistan;
+41.   Agency on State Material Resources under the Government of the Republic of Tajikistan;
+42.   Agency of Standardization, Metrology, Certification and Trade Inspection under the Government of the Republic of Tajikistan;
+43.   Agency on Provision of Special Property under the Government of the Republic of Tajikistan;
+44.   Agency on Public Procurement of Goods, Works and Services under the Government of the Republic of Tajikistan;
+45.   Forestry Agency under the Government of the Republic of Tajikistan;
+46.   General Office of Archive under the Government of the Republic of Tajikistan;
+47.   General Office of Geology under the Government of the Republic of Tajikistan;
+48.   General Office of State Secret Protection under the Government of the Republic of Tajikistan;
+49.   Security Council of the Republic of Tajikistan;
+50.   Justice Council of the Republic of Tajikistan;
+51.   Committee of District Development under the President of the Republic of Tajikistan;
+52.   Agency for Civil Service Affairs under the President of the Republic of Tajikistan;
+53.   Agency for State Financial Control and Fight with Corruption of the Republic of Tajikistan;
+54.   Agency of Drug Control under the President of the Republic of Tajikistan;
+55.   Agency of Statistics under the President of the Republic of Tajikistan;
+56.   Chamber of Commerce and Industry of the Republic of Tajikistan;
+57.   Centre for Strategic Research under the President of the Republic of Tajikistan;
+58.   Accounts Chamber of the Republic of Tajikistan;
+59.   Department of "Tajikmatlubot" Union.
+Note to Annex 1</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>7</id>
+  <quote>Note to Annex 1
+All agencies subordinate to the above listed central government entities are covered.
+
+ANNEX 2
+SUB-CENTRAL GOVERNMENT ENTITIES</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>8</id>
+  <quote>1
+All agencies subordinate to the above listed central government entities are covered.
+
+ANNEX 2
+SUB-CENTRAL GOVERNMENT ENTITIES
+Thresholds:
+Goods    (3)                SDR 200,000
+
+Services1               SDR 200,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   Region of Sugd;
+2.   Region of Khatlon;
+3.   Region of Mukhtori Kuhistoni Badakhson;
+4.   City of Dushanbe;
+5.   District of Ismoili Somoni;
+6.   District of Sino;
+7.   District of Firdavsi;
+8.   District of Shohmansur;
+9.   City of Hujand;
+10.   City of Qurgonteppa;
+11.   City of Vahdat;
+12.   City of Rogun;
+13.   City of Tursunzoda;
+14.   City of Norak;
+15.   City of Kulob;
+16.   City</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>9</id>
+  <quote>Buston;
+18.   City of Konibodom;
+19.   City of Taboshar;
+20.   City of Isfara;
+21.   City Istaravshan;
+22.   City of Panjakent;
+23.   City of Khorog;
+24.   City of Hisor</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>10</id>
+  <quote>33.   District of Shahrinav;
+34.   District of Sarband;
+35.   District of Bohtar;
+36.   District of Nosiri Husrav;
+37.   District of Vahsh;
+38.   District of Huroson;
+39.   District of Yovon;
+40.   District of Qubodiyon;
+41.   District of Jaloliddini</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>11</id>
+  <quote>Jayhun;
+43.   District of Pyandz;
+44.   District of Abdurahmoni Jomi;
+45.   District</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>12</id>
+  <quote>Dusti;
+46.   District of Shahritus;
+47.   District of Balguvon;
+48.   District of Vose;
+49.   District of Dangara;
+50.   District of Muminobod;
+51.   District of Temurmalik;
+52.   District of Farhor;
+53.   District of Hovaling;
+54.   District of Mir Said Alii Hamadoni;
+55.   District</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>13</id>
+  <quote>Shamsiddini Shohin;
+56.   District of Bobojon Gafurov;
+57.   District of Ayni;
+58.   District of Asht;
+59.   District</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>14</id>
+  <quote>Devashtich;
+60.   District of Zafarobod;
+61.   District of Kuhistoni Mastchoh;
+62.   District of Mastchoh;
+63.   District of Spitamen;
+64.   District of Shahriston;
+65.   District of Jabbor Rasulov;
+66.   District of Vanj;
+67.   District of Darvoz;
+68.   District of Ishkoshim;
+69.   District of Murgob;
+70.   District of Rushon;
+71.   District of Roshtgala;
+72.   District of Shugnon.
+Note to Annex 2</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>15</id>
+  <quote>Note to Annex 2
+The above sub-central authorities include their subordinate bodies and organizations which are under supervision or control of such authorities.
+
+
+ANNEX 3
+OTHER ENTITIES</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK22.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>16</id>
+  <quote>above sub-central authorities include their subordinate bodies and organizations which are under supervision or control of such authorities.
+
+
+ANNEX 3
+OTHER ENTITIES
+Thresholds:
+Goods (4)                SDR 400,000
+
+Services1               SDR 400,000
+
+Construction Services         SDR 5,000,000
+List of Entities:
+1.   All legal persons (authorities, establishments and foundations) governed by public law, particularly:
+
+a.   State non-commercial (non-profit) organizations;
+b.   Commercial organizations with over 50</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>17</id>
+  <quote>Commercial organizations with over 50% of government</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/JOBS/RD-GPA/26.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>18</id>
+  <quote>government shareholding;
+c.   Public services, including utilities sector companies.
+Notes to Annex 3
+1</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>19</id>
+  <quote>1.  This list of entities shall be published in Procurement official electronic web-portal</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCUKR9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>20</id>
+  <quote>list of entities shall be published in Procurement official electronic web-portal: [web address to be provided</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>21</id>
+  <quote>2.  Indicative lists of contracting authorities and public undertakings fulfilling the criteria set out above follow</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-03.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-05.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/977-02.pdf.txt</document>
+</documents></reference>
+<reference>
+  <id>22</id>
+  <quote>INDICATIVE LISTS OF CONTRACTING AUTHORITIES AND PUBLIC UNDERTAKINGS FULFILLING THE CRITERIA LAID DOWN UNDER ANNEX 3</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/JOBS/INTERNAL2012/3399.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODEEC26-03.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODISL1-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODISL1-03.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R2.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OEEC2R3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OISL1R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOEU1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOISL1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVEU2.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVEU3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/OVISL1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-05.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W326-07.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/977-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/985-02.pdf.txt</document>
+</documents></reference>
+<reference>
+  <id>23</id>
+  <quote>UNDER ANNEX 3
+   State Unitary Enterprise "Khogagiimanzilicommunali" (State utilities company);
+   State Unitary Enterprise "Tajikairnavigation";
+   Joint Stock Company "Tajikair";
+   State Unitary Enterprise "Tajiksuhurta" (State insurance company</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK22.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>24</id>
+  <quote>ANNEX 4
+GOODS
+The Agreement applies to all goods procured by the entities listed in Annexes 1 to 3.
+Notes to Annex 4
+1</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>25</id>
+  <quote>Ministry of Defence of the Republic of Tajikistan, Ministry of Internal Affairs of the Republic of Tajikistan and State Committee on National Security of the Republic of Tajikistan: For these entities, the Agreement only covers the procurement of the following categories:
+FSC Reference No.         Description
+1.   22                  Railway Equipment;
+2.   23   Motor Vehicles, Trailers, and Cycles (except buses in
+         2310);
+3.   24               Tractors;
+4.   25                  Vehicular Equipment Components;
+5.   26                  Tyres and Tubes;
+6.   29               Engine Accessories
+7.   30               Mechanical Power Transmission Equipment;
+8.   32               Woodworking Machinery and Equipment;
+9.   34               Metalworking Machinery;
+10.   35               Service and Trade Equipment;
+11.   36               Special Industry Machinery;
+12.   37               Agricultural Machinery and Equipment;
+13.   38               Construction, Mining, Excavating, and Highway
+                  Maintenance Equipment;
+14.   39               Materials Handling Equipment;
+15.   40               Rope, Cable, Chain and Fittings;
+16   41                  Refrigeration and Air Conditioning Equipment;
+17.   42               Fire Fighting, Rescue and Safety Equipment;
+18.   43               Pumps and Compressors;
+19.   44               Furnace, Steam Plant, Drying Equipment;
+20.   45               Plumbing, Heating and Sanitation Equipment;
+21.   46               Water Purification and Sewage Treatment Equipment;
+22.   47               Pipe, Tubing, Hose and Fittings
+23.   48               Valves;
+24.   49               Maintenance and Repair Shop Equipment;
+25.    53               Hardware and Abrasives;
+26.    54               Prefabricated Structures and Scaffolding;
+27.    55               Lumber, Millwork, Plywood and Veneer;
+28.    56               Construction and Building Materials;
+29.   61               Electric Wire, and Power and Distribution Equipment;
+30.   62               Lighting Fixtures and Lamps;
+31.   63               Alarm and Signal Systems;
+32.   65               Medical, Dental, and Veterinary Equipment and
+                  Supplies;
+33.   66               Instruments and Laboratory Equipment;
+34.   67               Photographic Equipment;
+35.   68               Chemicals and Chemical Products;
+36.   69               Training Aids and Devices;
+37.   70               General Purpose ADPE, Software, Supplies and Support
+                  Equipment;
+38.   71                  Furniture;
+39.   72      Household and Commercial Furnishings and 
+   Appliances;
+40.   73               Food Preparation and Serving Equipment;
+41.   74               Office Machines, Visible Record Equipment and ADP
+                  Equipment;
+42.   75               Office Supplies and Devices;
+43.   76               Books, Maps and Other Publications;
+44.   77               Musical Instruments, Phonographs, and Home Type
+                  Radios;
+45.   78               Recreational and Athletic Equipment;
+46.   79               Cleaning Equipment and Supplies;
+47.   80               Brushes, Paints, Sealers and Adhesives;
+48.   81               Containers, Packaging and Packing Supplies;
+49.   85               Toiletries;
+50.   87               Agricultural Supplies;
+51.   88               Live Animals;
+52.   91               Fuels, Lubricants, Oils and Waxes;
+53.   93               Non-metallic Fabricated Materials;
+54.   94               Non-metallic Crude Materials;
+55.   96               Ores, Minerals and their Primary Products;
+56.   99               Miscellaneous.
+
+
+ANNEX 5
+SERVICES
+1.   The Agreement applies to all services procured by the entities listed in Annexes 1 to 3.
+2.   Services as contained in document MTN.GNS/W/120 and additionally the following services identified in accordance with the United Nations Provisional Central Product Classification (CPC Prov.) are offered.
+Description               CPC Prov. Reference No.
+1.   Telecommunications services         752
+2.   Financial Services (5)                81
+3.   Sewage and refuse disposal;         94
+sanitation and similar services</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>26</id>
+  <quote>services
+
+
+
+
+ANNEX 6
+CONSTRUCTION SERVICES
+List of Construction Services</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ORFOTPKM1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>27</id>
+  <quote>ANNEX 6
+CONSTRUCTION SERVICES
+List of Construction Services (Division 51, CPC Prov.):
+1.   The Agreement applies to all construction services procured by the entities listed in Annexes 1 to 3.
+2.   All construction services listed in Division 51 of the United Nations Provisional Central Product Classification (CPC Prov.) are covered</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>28</id>
+  <quote>ANNEX 7
+GENERAL NOTES
+The following General Notes apply without exception to this Agreement, including to Annexes 1 through 6.
+
+1.  This Agreement does not cover</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-03.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/1049-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/1085-02.pdf.txt</document>
+</documents></reference>
+<reference>
+  <id>29</id>
+  <quote>following General Notes apply without exception to this Agreement, including to Annexes 1 through 6.
+
+1.  This Agreement does not cover:
+a.   procurement</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/JOBS/INTERNAL2012/3399.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/113.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W315A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/W316.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>30</id>
+  <quote>procurement of goods or services in respect of contracts for construction of chanceries abroad</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>31</id>
+  <quote>procurement of goods or services by "Tajik Air" and Tajik Railways outside the territory of Tajikistan for consumption outside the territory of Tajikistan</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK27.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>32</id>
+  <quote>outside the territory of Tajikistan for consumption outside the territory of Tajikistan;
+c.   for greater certainty under Article II:3(b), commercial sponsorship arrangements</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>33</id>
+  <quote>procurement by an entity covered under this Appendix from another entity covered under this Appendix, except where tenders are called, in which case, this Agreement shall apply</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPAWPS/EXCS13.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/125.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCNZL9.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK12.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK13.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK8.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/MODNZL1-03.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/1049-02.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/LET/1085-02.pdf.txt</document>
+</documents></reference>
+<reference>
+  <id>34</id>
+  <quote>years transition period starting with the entry into force of the agreement for Republic of Tajikistan, procuring entities covered under Annex 1 to 3 may accord a price preference programme of up to 15% for the part of the tender incorporating goods and services originating from Republic of Tajikistan. The price preference and its application will be clearly described in the notice of intended procurement</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>35</id>
+  <quote>1.  
+APPENDIX II
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF
+LAWS, REGULATIONS, JUDICIAL DECISIONS, ADMINISTRATIVE RULINGS OF GENERAL APPLICATION, STANDARD CONTRACT CLAUSES, AND PROCEDURES REGARDING GOVERNMENT PROCUREMENT COVERED BY THIS AGREEMENT PURSUANT TO ARTICLE VI</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>36</id>
+  <quote>APPENDIX II
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF
+LAWS, REGULATIONS, JUDICIAL DECISIONS, ADMINISTRATIVE RULINGS OF GENERAL APPLICATION, STANDARD CONTRACT CLAUSES, AND PROCEDURES REGARDING GOVERNMENT PROCUREMENT COVERED BY THIS AGREEMENT PURSUANT TO ARTICLE VI
+Tajikistan
+1.   Publication of general laws and regulations - [web address to be provided].
+2.   Publication of GP measures - [web address to be provided].
+3.   Publication of Judicial Decisions, Administrative Rulings of General Application - [web address to be provided].
+4.   Publication of Standard Contract Clauses and Procedures regarding Government Procurement - [web address to be provided].
+
+_______________
+APPENDIX III
+ELECTRONIC OR PAPER MEDIA UTILIZED BY PARTIES FOR THE PUBLICATION OF NOTICES REQUIRED BY ARTICLES VII, IX:7 AND XVI:2 PURSUANT TO ARTICLE VI
+Tajikistan
+1.   Publication of Notices Required by Articles VII, IX:7 AND XVI:2 - [web address to be provided</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>37</id>
+  <quote>1.   Publication of Notices Required by Articles VII, IX:7 AND XVI:2 - [web address to be provided].
+
+_______________
+APPENDIX IV
+WEBSITE ADDRESS OR ADDRESSES WHERE PARTIES PUBLISH PROCUREMENT STATISTICS PURSUANT TO ARTICLE XVI:5 AND NOTICES CONCERNING AWARDED CONTRACTS PURSUANT TO ARTICLE XVI:6</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK1.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>38</id>
+  <quote>APPENDIX IV
+WEBSITE ADDRESS OR ADDRESSES WHERE PARTIES PUBLISH PROCUREMENT STATISTICS PURSUANT TO ARTICLE XVI:5 AND NOTICES CONCERNING AWARDED CONTRACTS PURSUANT TO ARTICLE XVI:6
+Tajikistan
+1.   Publication of procurement statistics - [web address to be provided].
+2.   Publication of notices concerning awarded contracts - [web address to be provided</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>39</id>
+  <quote>1) In English only.
+ (2) Thresholds in respect of goods and services are subject</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>40</id>
+  <quote>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>41</id>
+  <quote>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 150,000; in the second year following accession they will be SDR 140,000; from the beginning of the third year following accession, the thresholds will be SDR 130,000</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>42</id>
+  <quote>year following accession, the thresholds will be SDR 130,000.
+ (3) Thresholds in respect of goods and services are subject</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>43</id>
+  <quote>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>44</id>
+  <quote>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 220,000; in the second year following accession they will be SDR 210,000; from the beginning of the third year following accession, the thresholds will be SDR 200,000</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>45</id>
+  <quote>year following accession, the thresholds will be SDR 200,000.
+ (4) Thresholds in respect of goods and services are subject</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK9.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>46</id>
+  <quote>Thresholds in respect of goods and services are subject to a three-year transition period. In the first year following accession, the thresholds for both goods and services will be SDR</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCARM1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCMDA2.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>47</id>
+  <quote>transition period. In the first year following accession, the thresholds for both goods and services will be SDR 500,000; in the second year following accession they will be SDR 450,000; from the beginning of the third year following accession, the thresholds will be SDR 400,000</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK26.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>48</id>
+  <quote>year following accession, the thresholds will be SDR 400,000.
+ (5) Except contracts for financial services in connection with the issue, purchase, sale or transfer of securities or other financial instruments, and central bank services</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/PLURI/GPA/ACCTJK23.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>49</id>
+  <quote>2 -
+
+
+
+\\CWR.WTO.ORG\DFSROOT\MDRIVE</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-2_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-4_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-01-5_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-02-2_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-03-2_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-09-3_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-11-6_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/1. LEXIQUES/UNIFORMEMOS-12-1_ES_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/ANTI-DUMPINGAndSUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/GATS RULESAndCSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/LDCS, EIFAndAFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS - S And D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRADE, DEBTAndFINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES/WTO/4. INTERPRETERS/TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>50</id>
+  <quote>CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/WT/GC/180.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>51</id>
+  <quote>33 with WTO2TXT.EXE version:2016-05-11 12:01</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/G/ADP/W316.wpf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/AG/NCAN112.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/AG/NKOR54.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/LIC/N2BOL1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS429A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS432A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS437-01.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS437-02.xls.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS438-01.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS438-02.xls.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/MATAR/RS439.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SCM/N299JOR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SCM/W324.wpf.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/GEN1506.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NARG193.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1002A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1003A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1004A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCAN1008A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCOL260A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NCRI170.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NEU150A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NEU151A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NEU168.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NIND149.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NKAZ1A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NMEX296A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NPER647.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NPER648.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NPER649.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NRUS125.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/SPS/NUSA2872.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN04/CAN98R2A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN15/CAN452A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN470.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN478.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN479.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN480.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN481.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN482.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN483.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/G/TBTN16/KEN484.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITSD/28.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/434.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/459.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/465.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-ITTC/466.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-LDIMD/203.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-SUB-MA/108.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-WEB/2476.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/INT-WEB/2497.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/RD-DEV/129.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/RD-GPA/35.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/RD-TBT/1R3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/RD-TPR/640.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/SERV/232.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/TBT/182R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/TBT/183R1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/TBT/187.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/JOBS/TBT/188.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/S/C/N863.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/S/WPGR/M89.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/AIRCOMTDSE/4.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/AIRCTE/3.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/AIRTPR/33.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/AIRWGTTT/5.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DSB/W571.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/371-17.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/381-37.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/427-10.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/427-11.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/434-17.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/435-20.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/441-20.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/458-19.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/DS/467-20.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/MIN11/2A1-02.xls.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/REG/369-1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/REG/372-1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/REG/373N1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/TPR/380.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/TPR/G345.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/TPR/M320A1.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/WT/TPR/S339.doc.txt</document>
+</documents></reference>
+</references>
+</Info>
+</QD>
