@@ -233,10 +233,17 @@ public class WSRESTUtil {
                 + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
                 + content1[0]
                 + content2[0]
-                + "</htmlstartcomment>MYQUOTEREF "
-                + totalRefs
+                + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
                 + content1[1]
                 + content2[1]
+                + "</table> <hr/> </p><table BORDER=\"1\"> <caption><b>Statistics by referenced texts</b></caption> <tr> <th>Reference</br>Number</th> <th>Referenced Text</th> <th>Reference File</th> </tr> <tr>"
+                + content1[2]
+                + content2[2]
+                + "</table> <hr/>"
+                + "</htmlstartcomment>MYQUOTEREF "
+                + totalRefs
+                + content1[3]
+                + content2[3]
                 + "MYQUOTEREF</htmlendcomment></P> </body> </html> -->\n"
                 + "</htmlRefDoc>";
     }
@@ -280,19 +287,27 @@ public class WSRESTUtil {
         return refNumber + "";
     }
 
+    public String extractStats(String FileName) {
+        return "";
+    }
+
     private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String color, int start) {
         FileInputStream in = null;
-        String[] content = new String[2];
+        String[] content = new String[4];
         content[0] = "";
         content[1] = "";
+        content[2] = "";
+        content[3] = "";
         try {
             in = new FileInputStream(docSource);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                String top = html.substring(html.indexOf("<body>") + 6, html.indexOf("</htmlstartcomment>"));
+                String top = html.substring(html.indexOf("<body>") + 6, html.indexOf("<table BORDER=\"1\">"));
                 top = top.replace("<A NAME=\"TOP\"></A>", "");
                 top = top.replace("<A HREF=\"#STATISTIC\">STATISTICS</A>", "");
+                String stats1 = html.substring(html.indexOf("<th>References</th>") + 25, html.indexOf("</table>"));
+                String stats2 = html.substring(html.indexOf("<th>Reference File</th>") + 29, html.lastIndexOf("</table>"));
                 String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
                 if (!repTag.isEmpty()) {
                     top = top.replace("[R", "[R" + repTag);
@@ -315,6 +330,37 @@ public class WSRESTUtil {
                 }
                 content[0] = top;
                 if (start > 0) {
+                    String regex = "<td>(.*, )+</td>";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(stats1);
+                    number = 0;
+                    newNum = 0;
+                    String res = "";
+                    while (matcher.find()) {
+                        String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
+                        for (int i = 0; i < refs.length - 1; i++) {
+                                number = Integer.parseInt(refs[i].replace(" ", ""));
+                                newNum = number + start;
+                                res += newNum + ", ";
+                        }
+                        stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
+                    }
+                }
+                content[1] = stats1;
+                if (start > 0) {
+                    String regex = "<td>(\\d+)</td>";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(stats2);
+                    number = 0;
+                    newNum = 0;
+                    while (matcher.find()) {
+                        number++;
+                        newNum = number + start;
+                        stats2 = stats2.replace("<td>" + number + "</td>", "<td>" + newNum + "</td>");
+                    }
+                }
+                content[2] = stats2;
+                 if (start > 0) {
                     String regex = "([0-9]+)(\\|)";
                     Pattern pattern = Pattern.compile(regex);
                     Matcher matcher = pattern.matcher(comments);
@@ -326,7 +372,7 @@ public class WSRESTUtil {
                         number++;
                     }
                 }
-                content[1] = comments;
+                content[3] = comments;
             }
             return content;
         } catch (FileNotFoundException ex) {
