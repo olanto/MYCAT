@@ -233,19 +233,18 @@ public class WSRESTUtil {
 
         return "<htmlRefDoc>\n"
                 + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
+                + " TO DO"
+                + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
                 + content1[0]
                 + content2[0]
-                + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
+                + "</table> <hr/> </p><table BORDER=\"1\"> <caption><b>Statistics by referenced texts</b></caption> <tr> <th>Reference</br>Number</th> <th>Referenced Text</th> <th>Reference File</th> </tr> <tr>"
                 + content1[1]
                 + content2[1]
-                + "</table> <hr/> </p><table BORDER=\"1\"> <caption><b>Statistics by referenced texts</b></caption> <tr> <th>Reference</br>Number</th> <th>Referenced Text</th> <th>Reference File</th> </tr> <tr>"
-                + content1[2]
-                + content2[2]
                 + "</table> <hr/>"
                 + "</htmlstartcomment>MYQUOTEREF "
                 + totalRefs
-                + content1[3]
-                + content2[3]
+                + content1[2]
+                + content2[2]
                 + "MYQUOTEREF</htmlendcomment></P> </body> </html> -->\n"
                 + "</htmlRefDoc>";
     }
@@ -276,8 +275,13 @@ public class WSRESTUtil {
             references += "</documents>\n"
                     + "</reference>\n";
         }
-
         return references;
+    }
+    
+    public static String getOriginalTextFromDocument(Document doc) {        
+        return "<origText>\n"
+                    + doc.getElementsByTagName("origText").item(0).getTextContent()
+                    +"<origText>";
     }
 
     private static String getReferenceNumberAsString(String ref, int start) {
@@ -299,38 +303,15 @@ public class WSRESTUtil {
         content[0] = "";
         content[1] = "";
         content[2] = "";
-        content[3] = "";
         try {
             in = new FileInputStream(docSource);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                String top = html.substring(html.indexOf("<body>") + 6, html.indexOf("<table BORDER=\"1\">"));
-                top = top.replace("<A NAME=\"TOP\"></A>", "");
-                top = top.replace("<A HREF=\"#STATISTIC\">STATISTICS</A>", "");
                 String stats1 = html.substring(html.indexOf("<th>References</th>") + 25, html.indexOf("</table>"));
                 String stats2 = html.substring(html.indexOf("<th>Reference File</th>") + 29, html.lastIndexOf("</table>"));
                 String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
-                if (!repTag.isEmpty()) {
-                    top = top.replace("[R", "[R" + repTag);
-                    top = top.replace("&lt;E", "&lt;E" + repTag);
-                }
-                if (!color.isEmpty()) {
-                    String regex = "style=\"BACKGROUND-COLOR:([^\"]+)\"";
-                    top = top.replaceAll(regex, "style=\"BACKGROUND-COLOR: " + color + "\"");
-                }
                 int number = 0, newNum = 0;
-                if (start > 0) {
-                    String regex = "(href=\"#)([0-9]+)(\" id=\"ref)([0-9])(\")";
-                    Pattern pattern = Pattern.compile(regex);
-                    Matcher matcher = pattern.matcher(top);
-                    while (matcher.find()) {
-                        number++;
-                        newNum = number + start;
-                        top = top.replace("href=\"#" + number + "\" id=\"ref" + number + "\"", "href=\"#" + newNum + "\" id=\"ref" + newNum + "\"");
-                    }
-                }
-                content[0] = top;
                 if (start > 0) {
                     String regex = "<td>(.*, )+</td>";
                     Pattern pattern = Pattern.compile(regex);
@@ -348,7 +329,7 @@ public class WSRESTUtil {
                         stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
                     }
                 }
-                content[1] = stats1;
+                content[0] = stats1;
                 if (start > 0) {
                     String regex = "<td>(\\d+)</td>";
                     Pattern pattern = Pattern.compile(regex);
@@ -361,7 +342,7 @@ public class WSRESTUtil {
                         stats2 = stats2.replace("<td>" + number + "</td>", "<td>" + newNum + "</td>");
                     }
                 }
-                content[2] = stats2;
+                content[1] = stats2;
                 if (start > 0) {
                     String regex = "([0-9]+)(\\|)";
                     Pattern pattern = Pattern.compile(regex);
@@ -374,7 +355,7 @@ public class WSRESTUtil {
                         number++;
                     }
                 }
-                content[3] = comments;
+                content[2] = comments;
             }
             return content;
         } catch (FileNotFoundException ex) {
@@ -389,23 +370,7 @@ public class WSRESTUtil {
         return content;
     }
 
-    private int getRefNumber(String comments) {
-        int i = 0;
-        if (!(comments.isEmpty())) {
-            if (comments.contains("0|")) {
-                String number = comments.substring(15, comments.indexOf("0|") - 1).replaceAll("[^\\d]", "");
-                if ((!(number.isEmpty())) && (number.matches("^\\d+"))) {
-                    i = Integer.parseInt(number);
-//                    System.out.println("Ref number = " + i);
-                }
-            }
-        }
-        return i;
-    }
-
-    private Reference[] getRefDocText(String comments, String separator) {
-        int refNumber = getRefNumber(comments);
-        System.out.println("Number of references = " + refNumber);
+    private Reference[] getReferences(String comments, String separator, int refNumber, int start) {
         if (refNumber > 0) {
             Reference[] references = new Reference[refNumber];
             if ((!(comments.isEmpty())) && (refNumber > 0)) {
