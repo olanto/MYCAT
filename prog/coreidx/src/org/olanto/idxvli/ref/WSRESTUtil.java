@@ -118,6 +118,7 @@ public class WSRESTUtil {
                 + "   <LngTgt>" + LngTgt + "</LngTgt>\n"
                 + "   <Filter>" + collections + "</Filter>\n"
                 + "   <MinLen>" + MinLen + "</MinLen>\n"
+                + "   <RemFirst>" + RemFirst + "</RemFirst>\n"
                 + "   <Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
 
