@@ -19,6 +19,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
+import org.olanto.idxvli.server.Reference;
 import org.olanto.idxvli.server.Server_MyCat;
 import org.olanto.idxvli.util.BytesAndFiles;
 import org.w3c.dom.Document;
@@ -339,9 +340,9 @@ public class WSRESTUtil {
                     while (matcher.find()) {
                         String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
                         for (int i = 0; i < refs.length - 1; i++) {
-                                number = Integer.parseInt(refs[i].replace(" ", ""));
-                                newNum = number + start;
-                                res += newNum + ", ";
+                            number = Integer.parseInt(refs[i].replace(" ", ""));
+                            newNum = number + start;
+                            res += newNum + ", ";
                         }
                         stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
                     }
@@ -360,7 +361,7 @@ public class WSRESTUtil {
                     }
                 }
                 content[2] = stats2;
-                 if (start > 0) {
+                if (start > 0) {
                     String regex = "([0-9]+)(\\|)";
                     Pattern pattern = Pattern.compile(regex);
                     Matcher matcher = pattern.matcher(comments);
@@ -385,5 +386,47 @@ public class WSRESTUtil {
             }
         }
         return content;
+    }
+
+    private int getRefNumber(String comments) {
+        int i = 0;
+        if (!(comments.isEmpty())) {
+            if (comments.contains("0|")) {
+                String number = comments.substring(15, comments.indexOf("0|") - 1).replaceAll("[^\\d]", "");
+                if ((!(number.isEmpty())) && (number.matches("^\\d+"))) {
+                    i = Integer.parseInt(number);
+//                    System.out.println("Ref number = " + i);
+                }
+            }
+        }
+        return i;
+    }
+
+    private Reference[] getRefDocText(String comments, String separator) {
+        int refNumber = getRefNumber(comments);
+        System.out.println("Number of references = " + refNumber);
+        if (refNumber > 0) {
+            Reference[] references = new Reference[refNumber];
+            if ((!(comments.isEmpty())) && (refNumber > 0)) {
+                if (comments.contains("0|")) {
+                    String curlines = comments.substring(comments.indexOf("0"));
+                    int j = 0;
+                    String[] Lines = curlines.split("\\n+");
+                    for (int i = 0; i < Lines.length; i++) {
+                        if ((!(Lines[i].isEmpty())) && (Lines[i].contains(separator))) {
+                            curlines = Lines[i].substring(Lines[i].indexOf(separator) + 1);
+                            if ((!(curlines.isEmpty())) && (curlines.contains(separator))) {
+                                Reference ref = new Reference();
+                                ref.setTextOfRef(curlines.substring(0, curlines.indexOf(separator)));
+                                System.out.println("reference " + i + " text " + ref.getTextOfRef());
+                                j++;
+                            }
+                        }
+                    }
+                }
+            }
+            return references;
+        }
+        return null;
     }
 }
