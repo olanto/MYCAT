@@ -58,7 +58,6 @@ public class REFResultNice implements Serializable {
         this.listofref = listofref;
         this.reftext = reftext;
         this.htmlref = htmlref;
-       this.xmlInfo = xmlInfo;
       this.XMLtotword = XMLtotword;
       this.XMLtotwordref = XMLtotwordref;
       this.xmlInfo = xmlInfo;

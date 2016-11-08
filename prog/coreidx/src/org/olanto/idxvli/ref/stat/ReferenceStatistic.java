@@ -185,11 +185,11 @@ public class ReferenceStatistic {
             String[] refs = p.split(multiref[i]);
             res.append("<reference>\n");
             res.append("  <id>" + (i + 1) + "</id>\n");  // numéro de la ref
-            res.append("  <quote>" + txt[i] + "</quote>\n");  //la ref
+            res.append("  <quote>" + clean4xml(txt[i]) + "</quote>\n");  //la ref
             res.append("  <documents>"); // bloc des références
             for (int j = 0; j < refs.length; j++) {
                 res.append("    <document>"); // bloc des références
-                res.append(refs[j].replace(IdxConstant.SEPARATOR, "/") + "</document>\n");
+                clean4xml(res.append(refs[j].replace(IdxConstant.SEPARATOR, "/")) + "</document>\n");
             }
             res.append("</documents>"); // fin de bloc des références
             res.append("</reference>\n");
@@ -198,5 +198,10 @@ public class ReferenceStatistic {
         return res.toString();
 
     }
+       
+    public static String clean4xml(String s) {
+         return s.replace("&","&amp;").replace("<","&lt;");
+        
+    }  
     
 }
