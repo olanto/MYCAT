@@ -374,6 +374,7 @@ public class WSRESTUtil {
         return content;
     }
 
+    // this method gets all the references and locally manages their tags, colors etc.
     private Reference[] getReferences(Document doc, int start, String repTag, String targetColor) {
         NodeList referencesList = doc.getElementsByTagName("reference");
         if (referencesList.getLength() > 0) {
