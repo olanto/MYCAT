@@ -297,10 +297,6 @@ public class WSRESTUtil {
         return refNumber;
     }
 
-    public String extractStats(String FileName) {
-        return "";
-    }
-
     private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String targetColor, int start) {
         FileInputStream in = null;
         String[] content = new String[4];
@@ -377,6 +373,9 @@ public class WSRESTUtil {
     // this method gets all the references and locally manages their tags, colors etc.
     private Reference[] getReferences(Document doc, int start, String repTag, String targetColor) {
         NodeList referencesList = doc.getElementsByTagName("reference");
+        String originalText = doc.getElementsByTagName("origText").item(0).getTextContent();
+        int lastIdx = 0, idx = 0;
+        String remainingText = originalText;
         if (referencesList.getLength() > 0) {
             Reference[] references = new Reference[referencesList.getLength()];
             for (int j = 0; j < referencesList.getLength(); ++j) {
@@ -395,6 +394,15 @@ public class WSRESTUtil {
                     }
                 }
                 ref.setTag(repTag);
+                idx = remainingText.indexOf(ref.getTextOfRef());
+                if (idx >= 0) {
+                    ref.setStartIDX(idx + lastIdx);
+                    lastIdx = idx + 1;
+                    ref.setEndIDX(idx + lastIdx + ref.getTextOfRef().length());
+                    remainingText = originalText.substring(ref.getStartIDX() + 1);
+                }
+                ref.setOpeningText("<a href=\"#" + ref.getGlobalIDX() + "\" id=\"ref" + ref.getGlobalIDX() + "\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: " + ref.getColor() + "\">[R" + ref.getTag() + ref.getLocalIDX() + "]");
+                ref.setClosingText("[E" + ref.getTag() + ref.getLocalIDX() + "]</FONT></a>");
                 references[j] = ref;
             }
             return references;
