@@ -252,19 +252,19 @@ public class WSRESTUtil {
     public static String mergeInfo(Document doc1, Document doc2) {
         return "<Info>\n"
                 + "<references>"
-                + getReferencesFromDocument(doc1, 0)
-                + getReferencesFromDocument(doc2, doc1.getElementsByTagName("reference").getLength())
+                + getReferencesFromDocument(doc1)
+                + getReferencesFromDocument(doc2)
                 + "</references>"
                 + "</Info>";
     }
 
-    public static String getReferencesFromDocument(Document doc, int start) {
+    public static String getReferencesFromDocument(Document doc) {
         String references = "";
         NodeList referencesList = doc.getElementsByTagName("reference");
         for (int j = 0; j < referencesList.getLength(); ++j) {
             Element reference = (Element) referencesList.item(j);
             references += "<reference>\n"
-                    + "<id>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</id>\n"
+                    + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n"
                     + "<quote>" + reference.getElementsByTagName("quote").item(0).getTextContent() + "</quote>\n"
                     + "<documents>\n";
             Element documents = (Element) reference.getElementsByTagName("documents").item(0);
@@ -272,32 +272,36 @@ public class WSRESTUtil {
             for (int i = 0; i < documentsList.getLength(); ++i) {
                 references += "<document>" + documentsList.item(i).getTextContent() + "</document>\n";
             }
-            references += "</documents>\n"
-                    + "</reference>\n";
+            references += "</documents>\n";
+            if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
+            } else {
+                references += "<color>yellow</color>\n";
+            }
+            references += "</reference>\n";
         }
         return references;
     }
-    
-    public static String getOriginalTextFromDocument(Document doc) {        
+
+    public static String getOriginalTextFromDocument(Document doc) {
         return "<origText>\n"
-                    + doc.getElementsByTagName("origText").item(0).getTextContent()
-                    +"<origText>";
+                + doc.getElementsByTagName("origText").item(0).getTextContent()
+                + "<origText>";
     }
 
-    private static String getReferenceNumberAsString(String ref, int start) {
+    private static Integer getReferenceNumber(String refId) {
         int refNumber = 0;
-        if (ref.matches("\\d+")) {
-            refNumber = Integer.parseInt(ref);
+        if (refId.matches("\\d+")) {
+            refNumber = Integer.parseInt(refId);
         }
-        refNumber += start;
-        return refNumber + "";
+        return refNumber;
     }
 
     public String extractStats(String FileName) {
         return "";
     }
 
-    private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String color, int start) {
+    private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String targetColor, int start) {
         FileInputStream in = null;
         String[] content = new String[4];
         content[0] = "";
@@ -370,26 +374,27 @@ public class WSRESTUtil {
         return content;
     }
 
-    private Reference[] getReferences(String comments, String separator, int refNumber, int start) {
-        if (refNumber > 0) {
-            Reference[] references = new Reference[refNumber];
-            if ((!(comments.isEmpty())) && (refNumber > 0)) {
-                if (comments.contains("0|")) {
-                    String curlines = comments.substring(comments.indexOf("0"));
-                    int j = 0;
-                    String[] Lines = curlines.split("\\n+");
-                    for (int i = 0; i < Lines.length; i++) {
-                        if ((!(Lines[i].isEmpty())) && (Lines[i].contains(separator))) {
-                            curlines = Lines[i].substring(Lines[i].indexOf(separator) + 1);
-                            if ((!(curlines.isEmpty())) && (curlines.contains(separator))) {
-                                Reference ref = new Reference();
-                                ref.setTextOfRef(curlines.substring(0, curlines.indexOf(separator)));
-                                System.out.println("reference " + i + " text " + ref.getTextOfRef());
-                                j++;
-                            }
-                        }
+    private Reference[] getReferences(Document doc, int start, String repTag, String targetColor) {
+        NodeList referencesList = doc.getElementsByTagName("reference");
+        if (referencesList.getLength() > 0) {
+            Reference[] references = new Reference[referencesList.getLength()];
+            for (int j = 0; j < referencesList.getLength(); ++j) {
+                Element reference = (Element) referencesList.item(j);
+                Reference ref = new Reference();
+                ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
+                ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
+                ref.setGlobalIDX(ref.getLocalIDX() + start);
+                if (!targetColor.isEmpty()) {
+                    ref.setColor(targetColor);
+                } else {
+                    if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                        ref.setColor(reference.getElementsByTagName("color").item(0).getTextContent());
+                    } else {
+                        ref.setColor("yellow");
                     }
                 }
+                ref.setTag(repTag);
+                references[j] = ref;
             }
             return references;
         }
