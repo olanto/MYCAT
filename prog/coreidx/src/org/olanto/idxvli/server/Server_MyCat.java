@@ -684,9 +684,9 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "-->\n"
                     + "</htmlRefDoc>\n"
                     + xmlInfo
-                    +"<origText>\n"
+                    + "<origText>\n"
                     + upfile.getContentString()
-                    +"<origText>";
+                    + "<origText>";
         } else {
             String content = WSRESTUtil.convertFileWithRMI(DocSrc);
             UploadedFile getfromfile = new UploadedFile(content, DocSrc);
@@ -701,9 +701,9 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "-->\n"
                     + "</htmlRefDoc>\n"
                     + xmlInfo
-                    +"<origText>\n"
+                    + "<origText>\n"
                     + getfromfile.getContentString()
-                    +"<origText>";
+                    + "<origText>";
             String xmlresult = "<QD>"
                     + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
                     + WSRESTUtil.niceXMLInfo(DocSrc, RefType, "" + refres.XMLtotword, "" + refres.XMLtotwordref, refres.XMLpctref)
@@ -761,15 +761,15 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
             int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
-            
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, "T", "J", "red", doc1.getElementsByTagName("reference").getLength(), totalRefs);
+            int start = doc1.getElementsByTagName("reference").getLength();
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
             // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
-            // merge details
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start);
+            // get the original text
             mergedRefDoc += WSRESTUtil.getOriginalTextFromDocument(doc);
-            
+
             // save document in given location
-            UtilsFiles.String2File(DocTgt, mergedRefDoc, TEMP_FOLDER);
+            UtilsFiles.String2File(DocTgt, mergedRefDoc);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {

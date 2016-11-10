@@ -21,13 +21,11 @@
  */
 package org.olanto.idxvli.server;
 
-import java.io.Serializable;
-
 /**
  *
  * @author simple
  */
-public class Reference implements Serializable {
+public class Reference implements Comparable<Reference> {
 
     private Integer localIDX;
     private String textOfRef;
@@ -36,9 +34,11 @@ public class Reference implements Serializable {
     private String tag;
     private String color;
     private Integer globalIDX;
-    private Integer finalPos;
     private String openingText;
     private String closingText;
+    private String textBeforeStart;
+    private String highlightedText;
+    private String remainingText;
 
     public Reference() {
         this.localIDX = 0;
@@ -48,9 +48,11 @@ public class Reference implements Serializable {
         this.tag = "";
         this.color = "";
         this.globalIDX = 0;
-        this.finalPos = 0;
         this.openingText = "";
         this.closingText = "";
+        this.textBeforeStart = "";
+        this.highlightedText = "";
+        this.remainingText = "";
     }
 
     public void setLocalIDX(Integer localIDX) {
@@ -108,15 +110,6 @@ public class Reference implements Serializable {
     public Integer getGlobalIDX() {
         return this.globalIDX;
     }
-
-    public void setFinalPos(Integer finalPos) {
-        this.finalPos = finalPos;
-    }
-
-    public Integer getFinalPos() {
-        return this.finalPos;
-    }
-
     public void setOpeningText(String openingText) {
         this.openingText = openingText;
     }
@@ -131,5 +124,43 @@ public class Reference implements Serializable {
 
     public String getClosingText() {
         return this.closingText;
+    }
+    
+    public void setTextBeforeStart(String textBeforeStart) {
+        this.textBeforeStart = textBeforeStart;
+    }
+
+    public String getTextBeforeStart() {
+        return this.textBeforeStart;
+    }
+
+    public void setHighlightedText(String highlightedText) {
+        this.highlightedText = highlightedText;
+    }
+
+    public String getHighlightedText() {
+        return this.highlightedText;
+    }
+
+    public void setRemainigText(String remainingText) {
+        this.remainingText = remainingText;
+    }
+
+    public String getRemainingText() {
+        return this.remainingText;
+    }
+    
+    @Override
+    public String toString() {
+        return this.textBeforeStart 
+                + this.openingText 
+                + this.highlightedText 
+                + this.closingText 
+                + this.remainingText;
+    }
+
+    @Override
+    public int compareTo(Reference o) {
+        return this.startIDX - o.startIDX;
     }
 }

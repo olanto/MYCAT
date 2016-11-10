@@ -10,6 +10,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.rmi.Naming;
 import java.rmi.Remote;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -63,9 +66,11 @@ public class WSRESTUtil {
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
             int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
+            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, doc, doc1, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1);
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength());
+            mergedRefDoc += WSRESTUtil.getOriginalTextFromDocument(doc);
+
             System.out.println(mergedRefDoc);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
@@ -227,13 +232,17 @@ public class WSRESTUtil {
                 + "</statistics>\n";
     }
 
-    public static String mergeHTMLContent(String docSource1, String docSource2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
-        String[] content1 = parseHtmlAndUpdateTagsAndColor(docSource1, repTag1, "", 0);
-        String[] content2 = parseHtmlAndUpdateTagsAndColor(docSource2, repTag2, color2, start);
+    public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
+        String[] content1 = parseHtmlAndGetStatsAndComments(docSource1, 0);
+        String[] content2 = parseHtmlAndGetStatsAndComments(docSource2, start);
+        List<Reference> references = getReferences(doc1, repTag1, "");
+        references.addAll(getReferences(doc2, repTag2, color2));
+        String originalText = doc1.getElementsByTagName("origText").item(0).getTextContent();
 
+        Collections.sort(references);
         return "<htmlRefDoc>\n"
                 + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
-                + " TO DO"
+                + mergeReferences(references, originalText)
                 + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
                 + content1[0]
                 + content2[0]
@@ -249,21 +258,22 @@ public class WSRESTUtil {
                 + "</htmlRefDoc>";
     }
 
-    public static String mergeInfo(Document doc1, Document doc2) {
+    public static String mergeInfo(Document doc1, Document doc2, String color, int start) {
         return "<Info>\n"
                 + "<references>"
-                + getReferencesFromDocument(doc1)
-                + getReferencesFromDocument(doc2)
+                + getReferencesFromDocument(doc1, "", 0)
+                + getReferencesFromDocument(doc2, color, start)
                 + "</references>"
                 + "</Info>";
     }
 
-    public static String getReferencesFromDocument(Document doc) {
+    public static String getReferencesFromDocument(Document doc, String color, int start) {
         String references = "";
         NodeList referencesList = doc.getElementsByTagName("reference");
         for (int j = 0; j < referencesList.getLength(); ++j) {
             Element reference = (Element) referencesList.item(j);
             references += "<reference>\n"
+                    + "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
                     + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n"
                     + "<quote>" + reference.getElementsByTagName("quote").item(0).getTextContent() + "</quote>\n"
                     + "<documents>\n";
@@ -273,10 +283,14 @@ public class WSRESTUtil {
                 references += "<document>" + documentsList.item(i).getTextContent() + "</document>\n";
             }
             references += "</documents>\n";
-            if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
+            if (!color.isEmpty()) {
+                references += "<color>" + color + "</color>\n";
             } else {
-                references += "<color>yellow</color>\n";
+                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                    references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
+                } else {
+                    references += "<color>yellow</color>\n";
+                }
             }
             references += "</reference>\n";
         }
@@ -286,7 +300,7 @@ public class WSRESTUtil {
     public static String getOriginalTextFromDocument(Document doc) {
         return "<origText>\n"
                 + doc.getElementsByTagName("origText").item(0).getTextContent()
-                + "<origText>";
+                + "</origText>";
     }
 
     private static Integer getReferenceNumber(String refId) {
@@ -297,7 +311,15 @@ public class WSRESTUtil {
         return refNumber;
     }
 
-    private static String[] parseHtmlAndUpdateTagsAndColor(String docSource, String repTag, String targetColor, int start) {
+    private static String getReferenceNumberAsString(String refId, int start) {
+        int refNumber = 0;
+        if (refId.matches("\\d+")) {
+            refNumber = Integer.parseInt(refId) + start;
+        }
+        return "" + refNumber;
+    }
+
+    private static String[] parseHtmlAndGetStatsAndComments(String docSource, int start) {
         FileInputStream in = null;
         String[] content = new String[4];
         content[0] = "";
@@ -371,19 +393,18 @@ public class WSRESTUtil {
     }
 
     // this method gets all the references and locally manages their tags, colors etc.
-    private Reference[] getReferences(Document doc, int start, String repTag, String targetColor) {
+    private static List<Reference> getReferences(Document doc, String repTag, String targetColor) {
         NodeList referencesList = doc.getElementsByTagName("reference");
         String originalText = doc.getElementsByTagName("origText").item(0).getTextContent();
-        int lastIdx = 0, idx = 0;
+        List<Reference> references = new ArrayList<Reference>();
+        int lastIdx = 0, idx;
         String remainingText = originalText;
         if (referencesList.getLength() > 0) {
-            Reference[] references = new Reference[referencesList.getLength()];
-            for (int j = 0; j < referencesList.getLength(); ++j) {
+            for (int j = 0; j < referencesList.getLength(); j++) {
                 Element reference = (Element) referencesList.item(j);
                 Reference ref = new Reference();
                 ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
                 ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
-                ref.setGlobalIDX(ref.getLocalIDX() + start);
                 if (!targetColor.isEmpty()) {
                     ref.setColor(targetColor);
                 } else {
@@ -398,15 +419,52 @@ public class WSRESTUtil {
                 if (idx >= 0) {
                     ref.setStartIDX(idx + lastIdx);
                     lastIdx = idx + 1;
-                    ref.setEndIDX(idx + lastIdx + ref.getTextOfRef().length());
+                    ref.setEndIDX(ref.getStartIDX() + ref.getTextOfRef().length());
                     remainingText = originalText.substring(ref.getStartIDX() + 1);
                 }
-                ref.setOpeningText("<a href=\"#" + ref.getGlobalIDX() + "\" id=\"ref" + ref.getGlobalIDX() + "\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: " + ref.getColor() + "\">[R" + ref.getTag() + ref.getLocalIDX() + "]");
-                ref.setClosingText("[E" + ref.getTag() + ref.getLocalIDX() + "]</FONT></a>");
-                references[j] = ref;
+                references.add(ref);
             }
             return references;
         }
         return null;
+    }
+
+    private static String mergeReferences(List<Reference> references, String originalText) {
+        StringBuilder finalText = new StringBuilder("<P>\n");
+        String textBeforeStart = "", highlightedText = "";
+        String remainingText = "";
+        for (int i = 0; i < references.size(); i++) {
+            Reference current = references.get(i);
+            current.setGlobalIDX(i + 1);
+            current.setOpeningText("<a href=\"#" + current.getGlobalIDX() + "\" id=\"ref" + current.getGlobalIDX() + "\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: " + current.getColor() + "\">[R" + current.getTag() + current.getLocalIDX() + "]");
+            current.setClosingText("[E" + current.getTag() + current.getLocalIDX() + "]</FONT></a>");
+
+            if (i > 0) {
+                Reference previous = references.get(i - 1);
+                if (current.getStartIDX() > previous.getEndIDX()) {
+                    textBeforeStart = originalText.substring(previous.getEndIDX(), current.getStartIDX());
+                }
+            } else {
+                textBeforeStart = originalText.substring(0, current.getStartIDX());
+            }
+            if (i < references.size() - 1) {
+                Reference next = references.get(i + 1);
+                if (current.getEndIDX() >= next.getStartIDX()) {
+                    current.setEndIDX(next.getStartIDX());
+                }
+            } else {
+                remainingText = originalText.substring(current.getEndIDX());
+            }
+            if (current.getEndIDX() > current.getStartIDX()) {
+                highlightedText = originalText.substring(current.getStartIDX(), current.getEndIDX());
+            }
+            current.setTextBeforeStart(textBeforeStart);
+            current.setHighlightedText(highlightedText);
+            current.setRemainigText(remainingText);
+            finalText.append(current.toString());
+        }
+        finalText.append("</P>\n");
+
+        return finalText.toString().replaceAll("\n", "<br/><br/>");
     }
 }
