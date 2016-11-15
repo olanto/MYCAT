@@ -685,8 +685,10 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "</htmlRefDoc>\n"
                     + xmlInfo
                     + "<origText>\n"
+                    + "<!-- "
                     + upfile.getContentString()
-                    + "<origText>";
+                    + " -->\n"
+                    + "</origText>";
         } else {
             String content = WSRESTUtil.convertFileWithRMI(DocSrc);
             UploadedFile getfromfile = new UploadedFile(content, DocSrc);
@@ -702,8 +704,10 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "</htmlRefDoc>\n"
                     + xmlInfo
                     + "<origText>\n"
+                    + "<!-- "
                     + getfromfile.getContentString()
-                    + "<origText>";
+                    + " -->\n"
+                    + "</origText>";
             String xmlresult = "<QD>"
                     + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
                     + WSRESTUtil.niceXMLInfo(DocSrc, RefType, "" + refres.XMLtotword, "" + refres.XMLtotwordref, refres.XMLpctref)
@@ -754,7 +758,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
             Document doc1 = dBuilder1.parse(fXmlFile1);
             doc1.getDocumentElement().normalize();
-
+            mergedRefDoc = "<QD>";
             // merge params
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
@@ -766,7 +770,12 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start);
             // get the original text
-            mergedRefDoc += WSRESTUtil.getOriginalTextFromDocument(doc);
+            mergedRefDoc += "<origText>\n"
+                    + "<!-- "
+                    + WSRESTUtil.getOriginalTextFromDocument(DocSrc1)
+                    + " -->\n"
+                    + "</origText>";
+            mergedRefDoc += "</QD>";
 
             // save document in given location
             UtilsFiles.String2File(DocTgt, mergedRefDoc);

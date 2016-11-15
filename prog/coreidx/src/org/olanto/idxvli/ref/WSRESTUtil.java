@@ -69,7 +69,11 @@ public class WSRESTUtil {
             mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, doc, doc1, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength());
-            mergedRefDoc += WSRESTUtil.getOriginalTextFromDocument(doc);
+            mergedRefDoc += "<origText>\n"
+                    + "<!-- "
+                    + WSRESTUtil.getOriginalTextFromDocument(file1)
+                    + " -->"
+                    + "</origText>";
 
             System.out.println(mergedRefDoc);
         } catch (ParserConfigurationException ex) {
@@ -235,14 +239,14 @@ public class WSRESTUtil {
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String[] content1 = parseHtmlAndGetStatsAndComments(docSource1, 0);
         String[] content2 = parseHtmlAndGetStatsAndComments(docSource2, start);
-        List<Reference> references = getReferences(doc1, repTag1, "");
-        references.addAll(getReferences(doc2, repTag2, color2));
-        String originalText = doc1.getElementsByTagName("origText").item(0).getTextContent();
+        String origText = getOriginalTextFromDocument(docSource1);
+        List<Reference> references = getReferences(doc1, origText, repTag1, "");
+        references.addAll(getReferences(doc2, origText, repTag2, color2));
 
         Collections.sort(references);
         return "<htmlRefDoc>\n"
                 + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
-                + mergeReferences(references, originalText)
+                + mergeReferences(references, origText)
                 + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
                 + content1[0]
                 + content2[0]
@@ -297,10 +301,17 @@ public class WSRESTUtil {
         return references;
     }
 
-    public static String getOriginalTextFromDocument(Document doc) {
-        return "<origText>\n"
-                + doc.getElementsByTagName("origText").item(0).getTextContent()
-                + "</origText>";
+    public static String getOriginalTextFromDocument(String docSource) {
+        FileInputStream in = null;
+        try {
+            in = new FileInputStream(docSource);
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String origText = xmlContent.substring(xmlContent.indexOf("<origText>"), xmlContent.indexOf("</origText>")).replace("<!--", "").replace("-->", "");
+            return origText;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
     }
 
     private static Integer getReferenceNumber(String refId) {
@@ -393,9 +404,8 @@ public class WSRESTUtil {
     }
 
     // this method gets all the references and locally manages their tags, colors etc.
-    private static List<Reference> getReferences(Document doc, String repTag, String targetColor) {
+    private static List<Reference> getReferences(Document doc, String originalText, String repTag, String targetColor) {
         NodeList referencesList = doc.getElementsByTagName("reference");
-        String originalText = doc.getElementsByTagName("origText").item(0).getTextContent();
         List<Reference> references = new ArrayList<Reference>();
         int lastIdx = 0, idx;
         String remainingText = originalText;
