@@ -384,7 +384,7 @@ public class WSRESTUtil {
                     newNum = 0;
                     while (matcher.find()) {
                         newNum = number + start;
-                        comments = comments.replace(number + "|", newNum + "|");
+                        comments = comments.replace(number + "|", newNum + "|").replace("Â", "");
                         number++;
                     }
                 }
@@ -441,29 +441,39 @@ public class WSRESTUtil {
 
     private static String mergeReferences(List<Reference> references, String originalText) {
         StringBuilder finalText = new StringBuilder("<P>\n");
+        String remainingText = "";
         for (int i = 0; i < references.size(); i++) {
             Reference current = references.get(i);
             current.setGlobalIDX(i + 1);
             current.setOpeningText("<a href=\"#" + current.getGlobalIDX() + "\" id=\"ref" + current.getGlobalIDX() + "\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: " + current.getColor() + "\">[R" + current.getTag() + current.getLocalIDX() + "]");
             current.setClosingText("[E" + current.getTag() + current.getLocalIDX() + "]</FONT></a>");
-            int lastStart = 0;
+            int lastEnd = 0;
             if (i > 0) {
                 Reference prev = references.get(i - 1);
-                lastStart = prev.getEndIDX();
+                lastEnd = prev.getEndIDX();
+
             }
-            current.setTextBeforeStart(originalText.substring(lastStart, current.getStartIDX()));
+            if (lastEnd < originalText.length() - 1) {
+                lastEnd++;
+            }
+            if (current.getStartIDX() <= lastEnd) {
+                lastEnd = current.getStartIDX();
+            }
+            current.setTextBeforeStart(originalText.substring(lastEnd, current.getStartIDX()));
             if (i < references.size() - 1) {
                 Reference next = references.get(i + 1);
                 if (current.getEndIDX() >= next.getStartIDX()) {
                     current.setEndIDX(next.getStartIDX());
                 }
+            } else {
+                remainingText = originalText.substring(current.getEndIDX());
             }
             if (current.getEndIDX() > current.getStartIDX()) {
                 current.setHighlightedText(originalText.substring(current.getStartIDX(), current.getEndIDX()));
             }
             finalText.append(current.toString());
         }
-        finalText.append(originalText);
+        finalText.append(remainingText);
         finalText.append("</P>\n");
 
         return finalText.toString().replaceAll("\n", "<br/><br/>");
