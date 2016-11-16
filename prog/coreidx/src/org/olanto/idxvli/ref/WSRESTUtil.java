@@ -306,7 +306,7 @@ public class WSRESTUtil {
         try {
             in = new FileInputStream(docSource);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
-            String origText = xmlContent.substring(xmlContent.indexOf("<origText>"), xmlContent.indexOf("</origText>")).replace("<!--", "").replace("-->", "");
+            String origText = xmlContent.substring(xmlContent.indexOf("<origText>") + 10, xmlContent.indexOf("</origText>")).replace("<!--", "").replace("-->", "");
             return origText;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
@@ -441,38 +441,29 @@ public class WSRESTUtil {
 
     private static String mergeReferences(List<Reference> references, String originalText) {
         StringBuilder finalText = new StringBuilder("<P>\n");
-        String textBeforeStart = "", highlightedText = "";
-        String remainingText = "";
         for (int i = 0; i < references.size(); i++) {
             Reference current = references.get(i);
             current.setGlobalIDX(i + 1);
             current.setOpeningText("<a href=\"#" + current.getGlobalIDX() + "\" id=\"ref" + current.getGlobalIDX() + "\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: " + current.getColor() + "\">[R" + current.getTag() + current.getLocalIDX() + "]");
             current.setClosingText("[E" + current.getTag() + current.getLocalIDX() + "]</FONT></a>");
-
+            int lastStart = 0;
             if (i > 0) {
-                Reference previous = references.get(i - 1);
-                if (current.getStartIDX() > previous.getEndIDX()) {
-                    textBeforeStart = originalText.substring(previous.getEndIDX(), current.getStartIDX());
-                }
-            } else {
-                textBeforeStart = originalText.substring(0, current.getStartIDX());
+                Reference prev = references.get(i - 1);
+                lastStart = prev.getEndIDX();
             }
+            current.setTextBeforeStart(originalText.substring(lastStart, current.getStartIDX()));
             if (i < references.size() - 1) {
                 Reference next = references.get(i + 1);
                 if (current.getEndIDX() >= next.getStartIDX()) {
                     current.setEndIDX(next.getStartIDX());
                 }
-            } else {
-                remainingText = originalText.substring(current.getEndIDX());
             }
             if (current.getEndIDX() > current.getStartIDX()) {
-                highlightedText = originalText.substring(current.getStartIDX(), current.getEndIDX());
+                current.setHighlightedText(originalText.substring(current.getStartIDX(), current.getEndIDX()));
             }
-            current.setTextBeforeStart(textBeforeStart);
-            current.setHighlightedText(highlightedText);
-            current.setRemainigText(remainingText);
             finalText.append(current.toString());
         }
+        finalText.append(originalText);
         finalText.append("</P>\n");
 
         return finalText.toString().replaceAll("\n", "<br/><br/>");

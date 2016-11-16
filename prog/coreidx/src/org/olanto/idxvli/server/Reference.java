@@ -38,7 +38,6 @@ public class Reference implements Comparable<Reference> {
     private String closingText;
     private String textBeforeStart;
     private String highlightedText;
-    private String remainingText;
 
     public Reference() {
         this.localIDX = 0;
@@ -52,7 +51,6 @@ public class Reference implements Comparable<Reference> {
         this.closingText = "";
         this.textBeforeStart = "";
         this.highlightedText = "";
-        this.remainingText = "";
     }
 
     public void setLocalIDX(Integer localIDX) {
@@ -110,6 +108,7 @@ public class Reference implements Comparable<Reference> {
     public Integer getGlobalIDX() {
         return this.globalIDX;
     }
+
     public void setOpeningText(String openingText) {
         this.openingText = openingText;
     }
@@ -125,7 +124,7 @@ public class Reference implements Comparable<Reference> {
     public String getClosingText() {
         return this.closingText;
     }
-    
+
     public void setTextBeforeStart(String textBeforeStart) {
         this.textBeforeStart = textBeforeStart;
     }
@@ -142,21 +141,12 @@ public class Reference implements Comparable<Reference> {
         return this.highlightedText;
     }
 
-    public void setRemainigText(String remainingText) {
-        this.remainingText = remainingText;
-    }
-
-    public String getRemainingText() {
-        return this.remainingText;
-    }
-    
     @Override
     public String toString() {
-        return this.textBeforeStart 
-                + this.openingText 
-                + this.highlightedText 
-                + this.closingText 
-                + this.remainingText;
+        return this.textBeforeStart
+                + this.openingText
+                + this.highlightedText
+                + this.closingText;
     }
 
     @Override
