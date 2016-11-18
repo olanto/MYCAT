@@ -68,14 +68,14 @@ public class RefDocMergeService {
             @DefaultValue("") @QueryParam("Color2") String Color2) {
         String msg = "";
         String refDoc = "empty ref";
-        if (DocSrc1.isEmpty() && DocSrc2.isEmpty() && DocTgt.isEmpty()) {
-            msg += "You need to specifiy source and target documents\n";
+        if (DocSrc1.isEmpty() || DocSrc2.isEmpty() ||  DocTgt.isEmpty()) {
+            return "You need to specifiy source and target documents\n";
         }
-        if (RepTag1.isEmpty() && RepTag2.isEmpty()) {
-            msg += "You need to specifiy replacement tages for both documents to merge\n";
+        if (RepTag1.isEmpty() || RepTag2.isEmpty()) {
+            return "You need to specifiy replacement tages for both documents to merge\n";
         }
-        if (Color2.isEmpty() && Color2.isEmpty()) {
-            msg += "You need to specifiy second document's references color\n";
+        if (Color2.isEmpty() || Color2.isEmpty()) {
+            return "You need to specifiy second document's references color\n";
         }
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
