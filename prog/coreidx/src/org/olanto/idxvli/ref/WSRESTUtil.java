@@ -70,7 +70,7 @@ public class WSRESTUtil {
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength());
             mergedRefDoc += "<origText>\n"
-                    + WSRESTUtil.getOriginalTextFromDocument(file1)
+                    + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
                     + "</origText>";
 
             System.out.println(mergedRefDoc);
@@ -237,7 +237,7 @@ public class WSRESTUtil {
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String[] content1 = parseHtmlAndGetStatsAndComments(docSource1, 0);
         String[] content2 = parseHtmlAndGetStatsAndComments(docSource2, start);
-        String origText = getOriginalTextFromDocument(docSource1);
+        String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
         List<Reference> references = getReferences(doc1, origText, repTag1, "");
         references.addAll(getReferences(doc2, origText, repTag2, color2));
 
@@ -297,19 +297,6 @@ public class WSRESTUtil {
             references += "</reference>\n";
         }
         return references;
-    }
-
-    public static String getOriginalTextFromDocument(String docSource) {
-        FileInputStream in = null;
-        try {
-            in = new FileInputStream(docSource);
-            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
-            String origText = xmlContent.substring(xmlContent.indexOf("<origText>") + 10, xmlContent.indexOf("</origText>")).replace("<!--", "").replace("-->", "");
-            return origText;
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return "";
     }
 
     private static Integer getReferenceNumber(String refId) {

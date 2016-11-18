@@ -766,7 +766,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start);
             // get the original text
-            mergedRefDoc += WSRESTUtil.getOriginalTextFromDocument(doc);
+            mergedRefDoc +=  doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
 
             // save document in given location
             UtilsFiles.String2File(DocTgt, mergedRefDoc);
