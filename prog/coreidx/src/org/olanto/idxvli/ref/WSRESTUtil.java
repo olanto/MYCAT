@@ -501,11 +501,14 @@ public class WSRESTUtil {
                                 if (previous.getEndIDX() > current.getStartIDX()) {
                                     ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()));
                                     current.setEffectiveStartIDX(previous.getEndIDX());
+                                    containing.setEffectiveStartIDX(previous.getEndIDX());
                                 }
                                 ref.append("[E").append(previous.getTag()).append(previous.getLocalIDX()).append("]");
                             }
                         } else {
-                            // a pop will happen
+                            // Anything ending before the current starts should be ended
+                            // pop operations will happen
+                             
                         }
                     }
                 } else {
@@ -537,19 +540,24 @@ public class WSRESTUtil {
                 // first reference, append all the text before it starts
                 ref.append(originalText.substring(0, current.getStartIDX()));
                 ref.append("<a href=\"#").append(current.getGlobalIDX()).append("\" id=\"ref").append(current.getGlobalIDX()).append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ").append(current.getColor()).append("\">[R").append(current.getTag()).append(current.getLocalIDX()).append("]");
-            }
-            if (i < references.size() - 1) {
+            }            
+            // Adding in the pile (if current does not close before the closing of the next)
+            if (i < references.size() - 2) {
                 Reference next = references.get(i + 1);
                 if (current.getEndIDX() > next.getEndIDX()) {
                     latestOpenReference.push(current);
                 }
             } else {
-                // last reference, add the highlighted text and the remining test of the document
-                if (current.getEffectiveStartIDX() < current.getEndIDX()) {
-                    ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()));
+                // last reference and no other reference to close, add the highlighted text and the remining test of the document
+                if (latestOpenReference.isEmpty()) {
+                    if (current.getEffectiveStartIDX() < current.getEndIDX()) {
+                        ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()));
+                    }
+                    ref.append("[E").append(current.getTag()).append(current.getLocalIDX()).append("]</FONT></a>");
+                    ref.append(originalText.substring(current.getEndIDX()));
+                }else{
+                    // Anything ending before the end of the document should be closed
                 }
-                ref.append("[E").append(current.getTag()).append(current.getLocalIDX()).append("]</FONT></a>");
-                ref.append(originalText.substring(current.getEndIDX()));
             }
             finalText.append(ref.toString());
         }
