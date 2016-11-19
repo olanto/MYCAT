@@ -33,28 +33,22 @@ public class Reference implements Comparable<Reference> {
     private Integer localIDX;
     private String textOfRef;
     private Integer startIDX;
+    private Integer effectiveStartIDX;
     private Integer endIDX;
     private String tag;
     private String color;
     private Integer globalIDX;
-    private String openingText;
-    private String closingText;
-    private String textBeforeStart;
-    private String highlightedText;
     private List<String> referencedDocs;
 
     public Reference() {
         this.localIDX = 0;
         this.textOfRef = "";
         this.startIDX = 0;
+        this.effectiveStartIDX = 0;
         this.endIDX = 0;
         this.tag = "";
         this.color = "";
         this.globalIDX = 0;
-        this.openingText = "";
-        this.closingText = "";
-        this.textBeforeStart = "";
-        this.highlightedText = "";
         this.referencedDocs = Collections.emptyList();
     }
 
@@ -80,6 +74,17 @@ public class Reference implements Comparable<Reference> {
 
     public Integer getStartIDX() {
         return this.startIDX;
+    }
+
+    public void setEffectiveStartIDX(Integer effectiveStartIDX) {
+        this.effectiveStartIDX = effectiveStartIDX;
+    }
+
+    public Integer getEffectiveStartIDX() {
+        if (this.effectiveStartIDX <= this.startIDX) {
+            return this.startIDX;
+        }
+        return this.effectiveStartIDX;
     }
 
     public void setEndIDX(Integer endIDX) {
@@ -114,38 +119,6 @@ public class Reference implements Comparable<Reference> {
         return this.globalIDX;
     }
 
-    public void setOpeningText(String openingText) {
-        this.openingText = openingText;
-    }
-
-    public String getOpeningText() {
-        return this.openingText;
-    }
-
-    public void setClosingText(String closingText) {
-        this.closingText = closingText;
-    }
-
-    public String getClosingText() {
-        return this.closingText;
-    }
-
-    public void setTextBeforeStart(String textBeforeStart) {
-        this.textBeforeStart = textBeforeStart;
-    }
-
-    public String getTextBeforeStart() {
-        return this.textBeforeStart;
-    }
-
-    public void setHighlightedText(String highlightedText) {
-        this.highlightedText = highlightedText;
-    }
-
-    public String getHighlightedText() {
-        return this.highlightedText;
-    }
-
     public List<String> getReferencedDocs() {
         return this.referencedDocs;
     }
@@ -155,15 +128,11 @@ public class Reference implements Comparable<Reference> {
     }
 
     @Override
-    public String toString() {
-        return this.textBeforeStart
-                + this.openingText
-                + this.highlightedText
-                + this.closingText;
-    }
-
-    @Override
     public int compareTo(Reference o) {
         return this.startIDX - o.startIDX;
+    }
+
+    public boolean SameAs(Reference o) {
+        return (this.globalIDX == o.globalIDX);
     }
 }
