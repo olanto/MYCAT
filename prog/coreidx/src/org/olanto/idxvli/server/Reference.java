@@ -21,6 +21,9 @@
  */
 package org.olanto.idxvli.server;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  *
  * @author simple
@@ -38,6 +41,7 @@ public class Reference implements Comparable<Reference> {
     private String closingText;
     private String textBeforeStart;
     private String highlightedText;
+    private List<String> referencedDocs;
 
     public Reference() {
         this.localIDX = 0;
@@ -51,6 +55,7 @@ public class Reference implements Comparable<Reference> {
         this.closingText = "";
         this.textBeforeStart = "";
         this.highlightedText = "";
+        this.referencedDocs = Collections.emptyList();
     }
 
     public void setLocalIDX(Integer localIDX) {
@@ -139,6 +144,14 @@ public class Reference implements Comparable<Reference> {
 
     public String getHighlightedText() {
         return this.highlightedText;
+    }
+
+    public List<String> getReferencedDocs() {
+        return this.referencedDocs;
+    }
+
+    public void setReferencedDocs(List<String> referencedDocs) {
+        this.referencedDocs = referencedDocs;
     }
 
     @Override

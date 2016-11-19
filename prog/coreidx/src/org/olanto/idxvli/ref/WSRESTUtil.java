@@ -22,6 +22,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.convsrv.server.ConvertService;
 import org.olanto.idxvli.IdxConstant;
+import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.idxvli.server.Reference;
 import org.olanto.idxvli.server.Server_MyCat;
 import org.olanto.idxvli.util.BytesAndFiles;
@@ -235,29 +236,33 @@ public class WSRESTUtil {
     }
 
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
-        String[] content1 = parseHtmlAndGetStatsAndComments(docSource1, 0);
-        String[] content2 = parseHtmlAndGetStatsAndComments(docSource2, start);
         String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
+
         List<Reference> references = getReferences(doc1, origText, repTag1, "");
         references.addAll(getReferences(doc2, origText, repTag2, color2));
-
         Collections.sort(references);
-        return "<htmlRefDoc>\n"
-                + "<!-- <html> <head> <meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"> <title>myQuote</title></head> <body> <A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A>"
-                + mergeReferences(references, origText)
-                + "<table BORDER=\"1\"> <caption><b>Statistics on referenced documents</b></caption> <tr> <th>Reference</br>Document</th> <th>%</th> <th>References</th> </tr>"
-                + content1[0]
-                + content2[0]
-                + "</table> <hr/> </p><table BORDER=\"1\"> <caption><b>Statistics by referenced texts</b></caption> <tr> <th>Reference</br>Number</th> <th>Referenced Text</th> <th>Reference File</th> </tr> <tr>"
-                + content1[1]
-                + content2[1]
-                + "</table> <hr/>"
-                + "</htmlstartcomment>MYQUOTEREF "
-                + totalRefs
-                + content1[2]
-                + content2[2]
-                + "MYQUOTEREF</htmlendcomment></P> </body> </html> -->\n"
-                + "</htmlRefDoc>";
+
+        StringBuilder res = new StringBuilder("");
+        res.append("<htmlRefDoc>\n");
+        res.append("<!-- <html>\n");
+        res.append("<head>\n");
+        res.append("<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\">\n");
+        res.append("<title>myQuote</title>");
+        res.append("</head>\n");
+        res.append("<body>\n");
+        res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">").append(IdxConstant.MSG.get("server.qd.MSG_19")).append("</A>"
+                + "<br/>");
+        
+        res.append(mergeReferences(references, origText));
+        res.append(parseHtmlAndGetStats(docSource1));
+        res.append(parseHtmlAndGetStats(docSource2));
+        res.append(parseHtmlAndGetStatsTables(docSource1, repTag1));
+        res.append(parseHtmlAndGetStatsTables(docSource2, repTag2));
+        res.append(generateStatsTable(references));
+        res.append(generateHTMLComments(references));
+        res.append("</body> </html> -->\n"
+                + "</htmlRefDoc>");
+        return res.toString();
     }
 
     public static String mergeInfo(Document doc1, Document doc2, String color, int start) {
@@ -315,67 +320,19 @@ public class WSRESTUtil {
         return "" + refNumber;
     }
 
-    private static String[] parseHtmlAndGetStatsAndComments(String docSource, int start) {
+    private static String parseHtmlAndGetStats(String docSource) {
         FileInputStream in = null;
-        String[] content = new String[4];
-        content[0] = "";
-        content[1] = "";
-        content[2] = "";
+        String stats = "<hr/>";
         try {
             in = new FileInputStream(docSource);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                String stats1 = html.substring(html.indexOf("<th>References</th>") + 25, html.indexOf("</table>"));
-                String stats2 = html.substring(html.indexOf("<th>Reference File</th>") + 29, html.lastIndexOf("</table>"));
-                String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
-                int number = 0, newNum = 0;
-                if (start > 0) {
-                    String regex = "<td>(.*, )+</td>";
-                    Pattern pattern = Pattern.compile(regex);
-                    Matcher matcher = pattern.matcher(stats1);
-                    number = 0;
-                    newNum = 0;
-                    String res = "";
-                    while (matcher.find()) {
-                        String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
-                        for (int i = 0; i < refs.length - 1; i++) {
-                            number = Integer.parseInt(refs[i].replace(" ", ""));
-                            newNum = number + start;
-                            res += newNum + ", ";
-                        }
-                        stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
-                    }
-                }
-                content[0] = stats1;
-                if (start > 0) {
-                    String regex = "<td>(\\d+)</td>";
-                    Pattern pattern = Pattern.compile(regex);
-                    Matcher matcher = pattern.matcher(stats2);
-                    number = 0;
-                    newNum = 0;
-                    while (matcher.find()) {
-                        number++;
-                        newNum = number + start;
-                        stats2 = stats2.replace("<td>" + number + "</td>", "<td>" + newNum + "</td>");
-                    }
-                }
-                content[1] = stats2;
-                if (start > 0) {
-                    String regex = "([0-9]+)(\\|)";
-                    Pattern pattern = Pattern.compile(regex);
-                    Matcher matcher = pattern.matcher(comments);
-                    number = 0;
-                    newNum = 0;
-                    while (matcher.find()) {
-                        newNum = number + start;
-                        comments = comments.replace(number + "|", newNum + "|").replace("Â", "");
-                        number++;
-                    }
-                }
-                content[2] = comments;
+                int statsIDX = html.indexOf("</p> Statistics of document");
+                int endIDX = html.indexOf("</p><table BORDER=<\"1\">");
+                stats += html.substring(statsIDX, endIDX);
             }
-            return content;
+            return stats;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -385,7 +342,47 @@ public class WSRESTUtil {
                 Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return content;
+        return stats;
+    }
+
+    private static String parseHtmlAndGetStatsTables(String docSource, String tag) {
+        FileInputStream in = null;
+        String stats1 = "";
+        try {
+            in = new FileInputStream(docSource);
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
+            if (html.contains("<body>")) {
+                stats1 = html.substring(html.indexOf("<th>References</th>") + 25, html.indexOf("</table>"));
+                int number;
+                String regex = "<td>(.*, )+</td>";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(stats1);
+                String res = "";
+                while (matcher.find()) {
+                    String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
+                    for (int i = 0; i < refs.length - 1; i++) {
+                        if (refs[i].replace(" ", "").matches("\\d+")) {
+                            number = Integer.parseInt(refs[i].replace(" ", ""));
+                            res += tag + number + ", ";
+                        } else {
+                            res += refs[i].replace(" ", "") + ", ";
+                        }
+                    }
+                    stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
+                }
+            }
+            return stats1;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                in.close();
+            } catch (IOException ex) {
+                Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return stats1;
     }
 
     // this method gets all the references and locally manages their tags, colors etc.
@@ -407,14 +404,57 @@ public class WSRESTUtil {
                         ref.setColor("yellow");
                     }
                 }
+                Element documents = (Element) reference.getElementsByTagName("documents").item(0);
+                NodeList documentsList = documents.getElementsByTagName("document");
+                List<String> docs = new ArrayList<String>();
+                for (int i = 0; i < documentsList.getLength(); ++i) {
+                    docs.add(documentsList.item(i).getTextContent());
+                }
                 ref.setTag(repTag);
                 ref.setStartIDX(originalText.indexOf(ref.getTextOfRef()));
                 ref.setEndIDX(ref.getStartIDX() + ref.getTextOfRef().length());
+                ref.setReferencedDocs(docs);
                 references.add(ref);
             }
             return references;
         }
         return null;
+    }
+
+    private static String generateStatsTable(List<Reference> references) {
+        StringBuilder res = new StringBuilder("");
+        res.append("</p><table BORDER=\"1\">\n");
+        res.append("<caption><b>").append(IdxConstant.MSG.get("server.qd.MSG_9")).append("</b></caption>\n");
+        res.append("<tr>\n" + "<th>").append(IdxConstant.MSG.get("server.qd.MSG_10")).append("</br>").append(IdxConstant.MSG.get("server.qd.MSG_11")).append("</th>\n" + "<th>" + "%" + "</th>\n" + "<th>").append(IdxConstant.MSG.get("server.qd.MSG_12")).append("</th>\n"
+                + "</tr>\n");
+        for (Reference ref : references) {
+            res.append("<tr>\n" + "<td>").append(ref.getGlobalIDX()).append("</td>\n");
+            res.append("<td>\n").append(ref.getTextOfRef()).append("</td>\n");
+            res.append("<td>\n");
+            for (String doc : ref.getReferencedDocs()) {
+                res.append(doc).append("<br/>\n");
+            }
+            res.append("</td>\n"
+                    + "</tr>");
+        }
+        return res.toString();
+    }
+
+    private static String generateHTMLComments(List<Reference> references) {
+        StringBuilder s = new StringBuilder("");
+        s.append("\n</htmlstartcomment>MYQUOTEREF");
+        s.append("\n").append(references.size());
+        for (int i = 0; i < references.size(); i++) {
+            s.append("\n").append(i).append(REFResultNice.DOC_REF_SEPARATOR).append(references.get(i).getTextOfRef()).append(REFResultNice.DOC_REF_SEPARATOR);
+            StringBuilder dlist = new StringBuilder("");
+            for (String doc : references.get(i).getReferencedDocs()) {
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
+            }
+            s.append(dlist);
+        }
+        s.append("\nMYQUOTEREF</htmlendcomment>");
+        s.append("</P>\n");
+        return s.toString();
     }
 
     private static String mergeReferences(List<Reference> references, String originalText) {
