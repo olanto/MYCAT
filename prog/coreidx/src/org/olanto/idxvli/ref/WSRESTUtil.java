@@ -418,7 +418,7 @@ public class WSRESTUtil {
     }
 
     private static String mergeReferences(List<Reference> references, String originalText) {
-        StringBuilder finalText = new StringBuilder("<P>\n");
+        StringBuilder finalText = new StringBuilder("<A NAME=\"TOP\"></A><A HREF=\"#STATISTIC\">STATISTICS</A><br/><P>\n");
         String remainingText = "";
         for (int i = 0; i < references.size(); i++) {
             Reference current = references.get(i);
