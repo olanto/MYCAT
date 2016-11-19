@@ -10,10 +10,9 @@ package org.olanto.mycatt.rest;
  */
 public class WSMergeUtil {
 
-    public static String niceXMLParameters(String msg, String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
+    public static String niceXMLParameters(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
 
         return "<params>\n"
-                + "   <msg>" + msg + "</msg>\n"
                 + "   <RefType>" + RefType + "</RefType>\n"
                 + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
                 + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"

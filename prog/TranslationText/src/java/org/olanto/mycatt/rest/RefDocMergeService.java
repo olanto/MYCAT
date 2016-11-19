@@ -66,9 +66,8 @@ public class RefDocMergeService {
             @DefaultValue("") @QueryParam("RepTag1") String RepTag1,
             @DefaultValue("") @QueryParam("RepTag2") String RepTag2,
             @DefaultValue("") @QueryParam("Color2") String Color2) {
-        String msg = "";
         String refDoc = "empty ref";
-        if (DocSrc1.isEmpty() || DocSrc2.isEmpty() ||  DocTgt.isEmpty()) {
+        if (DocSrc1.isEmpty() || DocSrc2.isEmpty() || DocTgt.isEmpty()) {
             return "You need to specifiy source and target documents\n";
         }
         if (RepTag1.isEmpty() || RepTag2.isEmpty()) {
@@ -85,11 +84,11 @@ public class RefDocMergeService {
                 refDoc = is.mergeXMLReferences(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2);
             }
         } catch (NotBoundException | IOException ex) {
-            msg = "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
             _logger.error(ex);
+            return "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
         }
         String result = "<QD>"
-                + WSMergeUtil.niceXMLParameters(msg, RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
+                + WSMergeUtil.niceXMLParameters(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
                 + refDoc
                 + "</QD>";
         return result;
