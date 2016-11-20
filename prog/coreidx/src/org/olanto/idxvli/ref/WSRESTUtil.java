@@ -474,9 +474,17 @@ public class WSRESTUtil {
                         // current is completely included in the previous: add previous text and open reference
                         if (containing.getEffectiveStartIDX() < current.getStartIDX()) {
                             ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()));
-                            containing.setEffectiveStartIDX(current.getStartIDX());
                         }
-                        ref.append("</FONT></a><a href=\"#").append(current.getGlobalIDX()).append("\" id=\"ref").append(current.getGlobalIDX()).append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ").append(current.getColor()).append("\">[R").append(current.getTag()).append(current.getLocalIDX()).append("]");
+                        containing.setEffectiveStartIDX(current.getStartIDX());
+                        ref.append("</FONT></a><a href=\"#")
+                                .append(current.getGlobalIDX())
+                                .append("\" id=\"ref").append(current.getGlobalIDX())
+                                .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                .append(current.getColor())
+                                .append("\">[R")
+                                .append(current.getTag())
+                                .append(current.getLocalIDX())
+                                .append("]");
                     } else {
                         // previous is completely included in another reference and current might also be included
                         // test if current is fully included in containing: if it is the case we fall into checking between prev and current
@@ -484,31 +492,175 @@ public class WSRESTUtil {
                             // No pop will happen
                             if (previous.getEndIDX() <= current.getStartIDX()) {
                                 // 1. previous is not overlapping with current: prev.start -> prev.end, close, add between text then open
+                                // get text in bewteen
                                 if (previous.getEffectiveStartIDX() < previous.getEndIDX()) {
                                     ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()));
                                 }
-                                ref.append("[E").append(previous.getTag()).append(previous.getLocalIDX()).append("]</FONT></a>");
+                                // close previous
+                                ref.append("[E").append(previous.getTag())
+                                        .append(previous.getLocalIDX())
+                                        .append("]</FONT></a>");
+                                // get text before current
                                 if (previous.getEndIDX() < current.getStartIDX()) {
-                                    ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()));
+                                    ref.append("<a href=\"#")
+                                            .append(containing.getGlobalIDX())
+                                            .append("\" id=\"ref")
+                                            .append(containing.getGlobalIDX())
+                                            .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                            .append(containing.getColor())
+                                            .append("\">");
+                                    ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()))
+                                            .append("</FONT></a>");
                                 }
-                                ref.append("<a href=\"#").append(current.getGlobalIDX()).append("\" id=\"ref").append(current.getGlobalIDX()).append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ").append(current.getColor()).append("\">[R").append(current.getTag()).append(current.getLocalIDX()).append("]");
+                                containing.setEffectiveStartIDX(current.getStartIDX());
+                                // start current
+                                ref.append("<a href=\"#")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(current.getColor()).append("\">[R")
+                                        .append(current.getTag())
+                                        .append(current.getLocalIDX())
+                                        .append("]");
                             } else {
                                 // 2. previous is overlapping with current. prev.start -> curr.start, then open current, close previous 
                                 if (previous.getEffectiveStartIDX() < current.getStartIDX()) {
                                     ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()));
                                 }
-                                ref.append("</FONT></a><a href=\"#").append(current.getGlobalIDX()).append("\" id=\"ref").append(current.getGlobalIDX()).append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ").append(current.getColor()).append("\">[R").append(current.getTag()).append(current.getLocalIDX()).append("]");
+                                ref.append("</FONT></a><a href=\"#")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(current.getColor()).append("\">[R")
+                                        .append(current.getTag())
+                                        .append(current.getLocalIDX())
+                                        .append("]");
+                                // get text between start of current and end of previous
                                 if (previous.getEndIDX() > current.getStartIDX()) {
                                     ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()));
-                                    current.setEffectiveStartIDX(previous.getEndIDX());
-                                    containing.setEffectiveStartIDX(previous.getEndIDX());
                                 }
-                                ref.append("[E").append(previous.getTag()).append(previous.getLocalIDX()).append("]");
+                                current.setEffectiveStartIDX(previous.getEndIDX());
+                                containing.setEffectiveStartIDX(previous.getEndIDX());
+                                // close previous
+                                ref.append("[E")
+                                        .append(previous.getTag())
+                                        .append(previous.getLocalIDX())
+                                        .append("]");
                             }
                         } else {
                             // Anything ending before the current starts should be ended
-                            // pop operations will happen
-                             
+                            // close everything before the start of current && close everything before the end of current
+                            if (previous.getEndIDX() <= current.getStartIDX()) {
+                                // 1. previous is not overlapping with current
+                                // close previous
+                                if (previous.getEffectiveStartIDX() < previous.getEndIDX()) {
+                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()));
+                                }
+                                ref.append("[E")
+                                        .append(previous.getTag())
+                                        .append(previous.getLocalIDX())
+                                        .append("]</FONT></a>");
+                                containing.setEffectiveStartIDX(previous.getEndIDX());
+                                // close anything in between
+                                boolean stop = false;
+                                int latestPosition = previous.getEndIDX();
+                                while (!latestOpenReference.isEmpty() && !stop) {
+                                    if (((Reference) latestOpenReference.peek()).getEndIDX() <= current.getStartIDX()) {
+                                        Reference prevContaining = (Reference) latestOpenReference.pop();
+                                        ref.append("<a href=\"#")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" id=\"ref")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                                .append(prevContaining.getColor())
+                                                .append("\">");
+                                        if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
+                                            ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()));
+                                        }
+                                        // close prevContaining
+                                        ref.append("[E")
+                                                .append(prevContaining.getTag())
+                                                .append(prevContaining.getLocalIDX())
+                                                .append("]</FONT></a>");
+                                        latestPosition = prevContaining.getEndIDX();
+                                        // if something is still in the stack then it references the text 
+                                        // between the last close and the current start
+                                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        if (prevPrevContaining != null) {
+                                            prevPrevContaining.setEffectiveStartIDX(prevContaining.getEndIDX());
+                                            ref.append("<a href=\"#")
+                                                    .append(prevPrevContaining.getGlobalIDX())
+                                                    .append("\" id=\"ref")
+                                                    .append(prevPrevContaining.getGlobalIDX())
+                                                    .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                                    .append(prevPrevContaining.getColor())
+                                                    .append("\">");
+                                        }
+                                    } else {
+                                        stop = true;
+                                    }
+                                }
+                                // append text before start
+                                containing = (Reference) latestOpenReference.peek();
+                                if (containing != null) {
+                                    // get text before current
+                                    if (containing.getEffectiveStartIDX() < current.getStartIDX()) {
+                                        ref.append("<a href=\"#")
+                                                .append(containing.getGlobalIDX())
+                                                .append("\" id=\"ref")
+                                                .append(containing.getGlobalIDX())
+                                                .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                                .append(containing.getColor())
+                                                .append("\">");
+                                        ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()))
+                                                .append("</FONT></a>");
+                                    }
+                                    containing.setEffectiveStartIDX(current.getStartIDX());
+                                } else {
+                                    if (latestPosition < current.getStartIDX()) {
+                                        ref.append(originalText.substring(latestPosition, current.getStartIDX()));
+                                    }
+                                }
+                                // start current
+                                ref.append("<a href=\"#")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(current.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(current.getColor())
+                                        .append("\">");
+                                // close anything before end of current
+                                stop = false;
+                                while (!latestOpenReference.isEmpty() && !stop) {
+                                    if (((Reference) latestOpenReference.peek()).getEndIDX() <= current.getEndIDX()) {
+                                        Reference prevContaining = (Reference) latestOpenReference.pop();
+                                        if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
+                                            ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()));
+                                        }
+                                        // close prevContaining
+                                        ref.append("[E")
+                                                .append(prevContaining.getTag())
+                                                .append(prevContaining.getLocalIDX())
+                                                .append("]");
+                                        // if something is still in the stack then it references the text 
+                                        // between the last close and the current start
+                                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        if (prevPrevContaining != null) {
+                                            prevPrevContaining.setEffectiveStartIDX(prevContaining.getEndIDX());
+                                        }
+                                    } else {
+                                        stop = true;
+                                    }
+                                }
+                            } else {
+                                // 2. previous is overlapping with current
+                                // add text before current starts
+                                // start current
+                                // close previous
+                                // close anything before end of current
+                            }
                         }
                     }
                 } else {
@@ -540,7 +692,7 @@ public class WSRESTUtil {
                 // first reference, append all the text before it starts
                 ref.append(originalText.substring(0, current.getStartIDX()));
                 ref.append("<a href=\"#").append(current.getGlobalIDX()).append("\" id=\"ref").append(current.getGlobalIDX()).append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ").append(current.getColor()).append("\">[R").append(current.getTag()).append(current.getLocalIDX()).append("]");
-            }            
+            }
             // Adding in the pile (if current does not close before the closing of the next)
             if (i < references.size() - 2) {
                 Reference next = references.get(i + 1);
@@ -555,7 +707,7 @@ public class WSRESTUtil {
                     }
                     ref.append("[E").append(current.getTag()).append(current.getLocalIDX()).append("]</FONT></a>");
                     ref.append(originalText.substring(current.getEndIDX()));
-                }else{
+                } else {
                     // Anything ending before the end of the document should be closed
                 }
             }
