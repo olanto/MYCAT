@@ -43,7 +43,6 @@ public class WSRESTUtil {
     public static void main(String[] args) {
 //        byte[] bytes = null;
 //        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
-
         String mergedRefDoc = "";
         String file1 = "C:\\MYCAT\\doc2process\\A_RES_53_144_EN_1.xml";
         String file2 = "C:\\MYCAT\\doc2process\\A_RES_53_144_EN_2.xml";
@@ -251,8 +250,9 @@ public class WSRESTUtil {
         res.append("<title>myQuote</title>");
         res.append("</head>\n");
         res.append("<body>\n");
-        res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">").append(IdxConstant.MSG.get("server.qd.MSG_19")).append("</A>"
-                + "<br/>");
+        res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
+                .append(IdxConstant.MSG.get("server.qd.MSG_19"))
+                .append("</A><br/>");
 
         res.append(mergeReferences(references, origText));
         res.append(parseHtmlAndGetStats(docSource1));
@@ -425,12 +425,24 @@ public class WSRESTUtil {
     private static String generateStatsTable(List<Reference> references) {
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
-        res.append("<caption><b>").append(IdxConstant.MSG.get("server.qd.MSG_9")).append("</b></caption>\n");
-        res.append("<tr>\n" + "<th>").append(IdxConstant.MSG.get("server.qd.MSG_10")).append("</br>").append(IdxConstant.MSG.get("server.qd.MSG_11")).append("</th>\n" + "<th>" + "%" + "</th>\n" + "<th>").append(IdxConstant.MSG.get("server.qd.MSG_12")).append("</th>\n"
+        res.append("<caption><b>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_9"))
+                .append("</b></caption>\n");
+        res.append("<tr>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_10"))
+                .append("</br>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_11"))
+                .append("</th>\n" + "<th>" + "%" + "</th>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_12"))
+                .append("</th>\n"
                 + "</tr>\n");
         for (Reference ref : references) {
-            res.append("<tr>\n" + "<td>").append(ref.getGlobalIDX()).append("</td>\n");
-            res.append("<td>\n").append(ref.getTextOfRef()).append("</td>\n");
+            res.append("<tr>\n" + "<td>")
+                    .append(ref.getGlobalIDX())
+                    .append("</td>\n");
+            res.append("<td>\n")
+                    .append(ref.getTextOfRef())
+                    .append("</td>\n");
             res.append("<td>\n");
             for (String doc : ref.getReferencedDocs()) {
                 res.append(doc).append("<br/>\n");
@@ -446,10 +458,15 @@ public class WSRESTUtil {
         s.append("\n</htmlstartcomment>MYQUOTEREF");
         s.append("\n").append(references.size());
         for (int i = 0; i < references.size(); i++) {
-            s.append("\n").append(i).append(REFResultNice.DOC_REF_SEPARATOR).append(references.get(i).getTextOfRef()).append(REFResultNice.DOC_REF_SEPARATOR);
+            s.append("\n")
+                    .append(i)
+                    .append(REFResultNice.DOC_REF_SEPARATOR)
+                    .append(references.get(i).getTextOfRef())
+                    .append(REFResultNice.DOC_REF_SEPARATOR);
             StringBuilder dlist = new StringBuilder("");
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR)
+                        .append(doc);
             }
             s.append(dlist);
         }
@@ -480,7 +497,8 @@ public class WSRESTUtil {
                         // start current
                         ref.append("</FONT></a><a href=\"#")
                                 .append(current.getGlobalIDX())
-                                .append("\" id=\"ref").append(current.getGlobalIDX())
+                                .append("\" id=\"ref")
+                                .append(current.getGlobalIDX())
                                 .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
                                 .append(current.getColor())
                                 .append("\">[R")
