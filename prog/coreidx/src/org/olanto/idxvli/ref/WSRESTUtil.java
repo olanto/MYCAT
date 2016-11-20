@@ -329,8 +329,8 @@ public class WSRESTUtil {
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                int statsIDX = html.indexOf("</p> Statistics of document");
-                int endIDX = html.indexOf("</p><table BORDER=<\"1\">");
+                int statsIDX = html.indexOf("<hr/>");
+                int endIDX = html.indexOf("table BORDER") - 5;
                 stats += html.substring(statsIDX, endIDX);
             }
             return stats;
@@ -348,32 +348,45 @@ public class WSRESTUtil {
 
     private static String parseHtmlAndGetStatsTables(String docSource, String tag) {
         FileInputStream in = null;
-        String stats1 = "";
+        StringBuilder res = new StringBuilder();
+        res.append("</p><table BORDER=\"1\">\n");
+        res.append("<caption><b>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_9"))
+                .append("</b></caption>\n");
+        res.append("<tr>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_10"))
+                .append("</br>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_11"))
+                .append("</th>\n" + "<th>" + "%" + "</th>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_12"))
+                .append("</th>\n"
+                + "</tr>\n");
         try {
             in = new FileInputStream(docSource);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                stats1 = html.substring(html.indexOf("<th>References</th>") + 25, html.indexOf("</table>"));
+                String stats1 = html.substring(html.indexOf("<td>") + 25, html.indexOf("</table>"));
                 int number;
                 String regex = "<td>(.*, )+</td>";
                 Pattern pattern = Pattern.compile(regex);
                 Matcher matcher = pattern.matcher(stats1);
-                String res = "";
+                String sub = "";
                 while (matcher.find()) {
                     String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
                     for (int i = 0; i < refs.length - 1; i++) {
                         if (refs[i].replace(" ", "").matches("\\d+")) {
                             number = Integer.parseInt(refs[i].replace(" ", ""));
-                            res += tag + number + ", ";
+                            sub += tag + number + ", ";
                         } else {
-                            res += refs[i].replace(" ", "") + ", ";
+                            sub += refs[i].replace(" ", "") + ", ";
                         }
                     }
-                    stats1 = stats1.replace(matcher.group(), "<td>" + res + "</td>");
+                    stats1 = stats1.replace(matcher.group(), "<td>" + sub + "</td>");
                 }
+                res.append(stats1);
             }
-            return stats1;
+            return res.toString();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -383,7 +396,7 @@ public class WSRESTUtil {
                 Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return stats1;
+        return "";
     }
 
     // this method gets all the references and locally manages their tags, colors etc.
@@ -424,16 +437,18 @@ public class WSRESTUtil {
 
     private static String generateStatsTable(List<Reference> references) {
         StringBuilder res = new StringBuilder("");
-        res.append("</p><table BORDER=\"1\">\n");
+         res.append("</p><table BORDER=\"1\">\n");
         res.append("<caption><b>")
-                .append(IdxConstant.MSG.get("server.qd.MSG_9"))
-                .append("</b></caption>\n");
+                .append(IdxConstant.MSG.get("server.qd.MSG_13"))
+                .append("</b></caption>\n"); // titre
         res.append("<tr>\n" + "<th>")
-                .append(IdxConstant.MSG.get("server.qd.MSG_10"))
+                .append(IdxConstant.MSG.get("server.qd.MSG_14"))
                 .append("</br>")
-                .append(IdxConstant.MSG.get("server.qd.MSG_11"))
-                .append("</th>\n" + "<th>" + "%" + "</th>\n" + "<th>")
-                .append(IdxConstant.MSG.get("server.qd.MSG_12"))
+                .append(IdxConstant.MSG.get("server.qd.MSG_15"))
+                .append("</th>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_16"))
+                .append("</th>\n" + "<th>")
+                .append(IdxConstant.MSG.get("server.qd.MSG_17"))
                 .append("</th>\n"
                 + "</tr>\n");
         for (Reference ref : references) {
