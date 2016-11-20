@@ -485,7 +485,10 @@ public class WSRESTUtil {
             // getting the text before starting the reference
             if (i > 0) {
                 Reference previous = references.get(i - 1);
-                Reference containing = (Reference) latestOpenReference.peek();
+                Reference containing = null;
+                if (!latestOpenReference.isEmpty()) {
+                    containing = (Reference) latestOpenReference.peek();
+                }
                 if (containing != null) {
                     if (previous.SameAs(containing)) {
                         // current is completely included in the previous: add previous text and open reference
@@ -614,7 +617,10 @@ public class WSRESTUtil {
                                         latestPosition = prevContaining.getEndIDX();
                                         // if something is still in the stack then it references the text 
                                         // between the last close and the current start
-                                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        Reference prevPrevContaining = null;
+                                        if (!latestOpenReference.isEmpty()) {
+                                            prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        }
                                         if (prevPrevContaining != null) {
                                             // update its position
                                             prevPrevContaining.setEffectiveStartIDX(prevContaining.getEndIDX());
@@ -624,7 +630,10 @@ public class WSRESTUtil {
                                     }
                                 }
                                 // append text before start
-                                containing = (Reference) latestOpenReference.peek();
+                                containing = null;
+                                if (!latestOpenReference.isEmpty()) {
+                                    containing = (Reference) latestOpenReference.peek();
+                                }
                                 if (containing != null) {
                                     // get text before current
                                     if (containing.getEffectiveStartIDX() < current.getStartIDX()) {
@@ -668,7 +677,10 @@ public class WSRESTUtil {
                                         current.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         // if something is still in the stack then it references the text 
                                         // between the last close and the current start
-                                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        Reference prevPrevContaining = null;
+                                        if (!latestOpenReference.isEmpty()) {
+                                            prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        }
                                         if (prevPrevContaining != null) {
                                             prevPrevContaining.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         }
@@ -720,7 +732,10 @@ public class WSRESTUtil {
                                         current.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         // if something is still in the stack then it references the text 
                                         // between the last close and the current start
-                                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        Reference prevPrevContaining = null;
+                                        if (!latestOpenReference.isEmpty()) {
+                                            prevPrevContaining = (Reference) latestOpenReference.peek();
+                                        }
                                         if (prevPrevContaining != null) {
                                             prevPrevContaining.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         }
@@ -813,7 +828,10 @@ public class WSRESTUtil {
                     ref.append(originalText.substring(current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
                 } else {
                     // Any remaining reference in the stack is a containing reference for the current
-                    Reference containing = (Reference) latestOpenReference.peek();
+                    Reference containing = null;
+                    if (!latestOpenReference.isEmpty()) {
+                        containing = (Reference) latestOpenReference.peek();
+                    }
                     if (current.getEffectiveStartIDX() < current.getEndIDX()) {
                         ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
                     }
@@ -821,7 +839,9 @@ public class WSRESTUtil {
                             .append(current.getTag())
                             .append(current.getLocalIDX())
                             .append("]</FONT></a>");
-                    containing.setEffectiveStartIDX(current.getEndIDX());
+                    if (containing != null) {
+                        containing.setEffectiveStartIDX(current.getEndIDX());
+                    }
                     int lastClosingPosition = current.getEndIDX();
                     while (!latestOpenReference.isEmpty()) {
                         containing = (Reference) latestOpenReference.pop();
@@ -843,7 +863,10 @@ public class WSRESTUtil {
                                 .append(current.getLocalIDX())
                                 .append("]</FONT></a>");
                         lastClosingPosition = containing.getEndIDX();
-                        Reference prevPrevContaining = (Reference) latestOpenReference.peek();
+                        Reference prevPrevContaining = null;
+                        if (!latestOpenReference.isEmpty()) {
+                            prevPrevContaining = (Reference) latestOpenReference.peek();
+                        }
                         if (prevPrevContaining != null) {
                             prevPrevContaining.setEffectiveStartIDX(containing.getEndIDX());
                         }
