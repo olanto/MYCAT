@@ -771,7 +771,19 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
                     + "</origText>";
             // save document in given location
-            UtilsFiles.String2File(DocTgt, mergedRefDoc);
+            String doctosave = "<QD>"
+                    + "<params>\n"
+                    + "   <RefType>" + RefType + "</RefType>\n"
+                    + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
+                    + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"
+                    + "   <DocTgt>" + DocTgt + "</DocTgt>\n"
+                    + "   <RepTag1>" + RepTag1 + "</RepTag1>\n"
+                    + "   <RepTag2>" + RepTag2 + "</RepTag2>\n"
+                    + "   <Color2>" + Color2 + "</Color2>\n"
+                    + "</params>\n"
+                    + mergedRefDoc
+                    + "</QD>";
+            UtilsFiles.String2File(DocTgt, doctosave);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
