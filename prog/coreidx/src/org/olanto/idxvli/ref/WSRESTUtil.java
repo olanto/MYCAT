@@ -257,8 +257,7 @@ public class WSRESTUtil {
         res.append(mergeReferences(references, origText));
         res.append(parseHtmlAndGetStats(docSource1));
         res.append(parseHtmlAndGetStats(docSource2));
-        res.append(parseHtmlAndGetStatsTables(docSource1, repTag1));
-        res.append(parseHtmlAndGetStatsTables(docSource2, repTag2));
+        res.append(parseHtmlAndGetStatsTables(docSource1, repTag1, docSource2, repTag2));
         res.append(generateStatsTable(references));
         res.append(generateHTMLComments(references));
         res.append("</body> </html> -->\n"
@@ -346,8 +345,8 @@ public class WSRESTUtil {
         return stats;
     }
 
-    private static String parseHtmlAndGetStatsTables(String docSource, String tag) {
-        FileInputStream in = null;
+    private static String parseHtmlAndGetStatsTables(String docSource, String tag1, String docSource1, String tag2) {
+        FileInputStream in = null, in1 = null;
         StringBuilder res = new StringBuilder();
         res.append("</p><table BORDER=\"1\">\n");
         res.append("<caption><b>")
@@ -363,10 +362,13 @@ public class WSRESTUtil {
                 + "</tr>\n");
         try {
             in = new FileInputStream(docSource);
+            in1 = new FileInputStream(docSource1);
             String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String xmlContent1 = UtilsFiles.file2String(in1, "UTF-8");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
+            String html1 = xmlContent1.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
-                String stats1 = html.substring(html.indexOf("<td>") + 25, html.indexOf("</table>"));
+                String stats1 = html.substring(html.indexOf("<td>"), html.indexOf("</table>"));
                 int number;
                 String regex = "<td>(.*, )+</td>";
                 Pattern pattern = Pattern.compile(regex);
@@ -377,7 +379,7 @@ public class WSRESTUtil {
                     for (int i = 0; i < refs.length - 1; i++) {
                         if (refs[i].replace(" ", "").matches("\\d+")) {
                             number = Integer.parseInt(refs[i].replace(" ", ""));
-                            sub += tag + number + ", ";
+                            sub += tag1 + number + ", ";
                         } else {
                             sub += refs[i].replace(" ", "") + ", ";
                         }
@@ -386,12 +388,34 @@ public class WSRESTUtil {
                 }
                 res.append(stats1);
             }
+            if (html1.contains("<body>")) {
+                String stats2 = html1.substring(html1.indexOf("<td>"), html1.indexOf("</table>"));
+                int number;
+                String regex = "<td>(.*, )+</td>";
+                Pattern pattern = Pattern.compile(regex);
+                Matcher matcher = pattern.matcher(stats2);
+                String sub = "";
+                while (matcher.find()) {
+                    String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
+                    for (int i = 0; i < refs.length - 1; i++) {
+                        if (refs[i].replace(" ", "").matches("\\d+")) {
+                            number = Integer.parseInt(refs[i].replace(" ", ""));
+                            sub += tag2 + number + ", ";
+                        } else {
+                            sub += refs[i].replace(" ", "") + ", ";
+                        }
+                    }
+                    stats2 = stats2.replace(matcher.group(), "<td>" + sub + "</td>");
+                }
+                res.append(stats2);
+            }
             return res.toString();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 in.close();
+                in1.close();
             } catch (IOException ex) {
                 Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -437,7 +461,7 @@ public class WSRESTUtil {
 
     private static String generateStatsTable(List<Reference> references) {
         StringBuilder res = new StringBuilder("");
-         res.append("</p><table BORDER=\"1\">\n");
+        res.append("</p><table BORDER=\"1\">\n");
         res.append("<caption><b>")
                 .append(IdxConstant.MSG.get("server.qd.MSG_13"))
                 .append("</b></caption>\n"); // titre
