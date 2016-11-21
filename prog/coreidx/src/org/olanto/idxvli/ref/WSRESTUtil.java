@@ -236,7 +236,7 @@ public class WSRESTUtil {
     }
 
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
-        String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
+        String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "");
 
         List<Reference> references = getReferences(doc1, origText, repTag1, "");
         references.addAll(getReferences(doc2, origText, repTag2, color2));
@@ -325,7 +325,7 @@ public class WSRESTUtil {
         String stats = "<hr/>";
         try {
             in = new FileInputStream(docSource);
-            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8").replace("Â", "");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
                 int statsIDX = html.indexOf("<hr/>");
@@ -363,8 +363,8 @@ public class WSRESTUtil {
         try {
             in = new FileInputStream(docSource);
             in1 = new FileInputStream(docSource1);
-            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
-            String xmlContent1 = UtilsFiles.file2String(in1, "UTF-8");
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8").replace("Â", "");
+            String xmlContent1 = UtilsFiles.file2String(in1, "UTF-8").replace("Â", "");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             String html1 = xmlContent1.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
             if (html.contains("<body>")) {
