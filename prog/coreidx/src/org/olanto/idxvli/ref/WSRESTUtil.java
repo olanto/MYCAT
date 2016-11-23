@@ -255,6 +255,7 @@ public class WSRESTUtil {
                 .append("</A><br/>");
 
         res.append(mergeReferences(references, origText));
+        res.append("<br/><br/><A NAME=\"STATISTIC\"></A><A HREF=\"#TOP\">TOP</A><br/>");
         res.append(parseHtmlAndGetStats(docSource1));
         res.append(parseHtmlAndGetStats(docSource2));
         res.append(parseHtmlAndGetStatsTables(docSource1, repTag1, docSource2, repTag2));
