@@ -510,7 +510,7 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef())
+                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "))
                     .append(REFResultNice.DOC_REF_SEPARATOR);
             StringBuilder dlist = new StringBuilder("");
             int j = 0;

@@ -22,12 +22,12 @@
 package org.olanto.idxvli.server;
 
 import java.rmi.*;
+import java.util.HashMap;
 import org.olanto.idxvli.*;
-import org.olanto.idxvli.knn.*;
 import org.olanto.idxvli.doc.*;
+import org.olanto.idxvli.knn.*;
 import org.olanto.idxvli.ref.UploadedFile;
 import org.olanto.idxvli.util.SetOfBits;
-import java.util.HashMap;
 
 /* -server -Xmx1400m -Djava.rmi.server.codebase="file:///c:/JG/VLI_RW/dist/VLI_RW.jar"  -Djava.security.policy="c:/JG/VLI_RW/rmi.policy" */
 
