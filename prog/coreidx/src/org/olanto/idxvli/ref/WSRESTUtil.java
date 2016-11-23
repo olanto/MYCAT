@@ -37,9 +37,9 @@ import org.xml.sax.SAXException;
  * @author simple
  */
 public class WSRESTUtil {
-
+    
     static String organisationTemplate = null;
-
+    
     public static void main(String[] args) {
 //        byte[] bytes = null;
 //        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
@@ -48,15 +48,15 @@ public class WSRESTUtil {
         String file2 = "C:\\MYCAT\\doc2process\\A_RES_53_144_EN_2.xml";
         File fXmlFile = new File(file1);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-
+        
         File fXmlFile1 = new File(file2);
         DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
-
+        
         try {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
-
+            
             DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
             Document doc1 = dBuilder1.parse(fXmlFile1);
             doc1.getDocumentElement().normalize();
@@ -73,7 +73,7 @@ public class WSRESTUtil {
             mergedRefDoc += "<origText>\n"
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
                     + "</origText>";
-
+            
             System.out.println(mergedRefDoc);
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
@@ -83,13 +83,13 @@ public class WSRESTUtil {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
     public static String unCommentRefDoc(String s) {
         s = s.replace("<!--", "</htmlstartcomment>");
         s = s.replace("-->", "</htmlendcomment>");
         return s;
     }
-
+    
     public static String reCommentRefDoc(String s) {
         s = s.replace("</htmlstartcomment>", "<!--");
         s = s.replace("</htmlendcomment>", "-->");
@@ -109,7 +109,7 @@ public class WSRESTUtil {
      */
     public static String niceXMLParameters(String msg, String TxtSrc, String RefType, String DocSrc, String DocTgt,
             String LngSrc, String LngTgt, String[] Filter, Integer MinLen, Boolean RemFirst, Boolean Fast) {
-
+        
         String collections = "";
         if (Filter != null) {
             for (int i = 0; i < Filter.length; i++) {
@@ -129,12 +129,12 @@ public class WSRESTUtil {
                 + "   <RemFirst>" + RemFirst + "</RemFirst>\n"
                 + "   <Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
-
+        
     }
-
+    
     public static String niceXMLInfo(String RefDocFullName, String RefDocType,
             String RefDocLng, String RefDocPerCent, String RefDocOccurences) {
-
+        
         if (organisationTemplate == null) {
             organisationTemplate = BytesAndFiles.file2String(IdxConstant.IDX_XML_ORGANISATION_TEMPLATE, "UTF-8");
             if (organisationTemplate == null) {
@@ -142,7 +142,7 @@ public class WSRESTUtil {
                         + IdxConstant.IDX_XML_ORGANISATION_TEMPLATE + "-->";
             }
         }
-
+        
         return "<statistics>\n"
                 + "  <mycat>\n"
                 + "    <RefDocFullName>" + RefDocFullName + "</RefDocFullName>\n"
@@ -156,9 +156,9 @@ public class WSRESTUtil {
                 + organisationTemplate
                 + "  </organisation>\n"
                 + "</statistics>\n";
-
+        
     }
-
+    
     public static String convertFileWithRMI(String fileName) {
         String ret = "Conversion Error";
         System.out.println("Request to convert file from WebService: " + fileName);
@@ -168,7 +168,7 @@ public class WSRESTUtil {
                 ConvertService is = (ConvertService) r;
                 // ret = is.getInformation();
 
-
+                
                 ret = is.File2Txt(fileName);
 
                 //System.out.println("DEBUG Converted file content: " + ret);
@@ -176,14 +176,14 @@ public class WSRESTUtil {
             } else {
                 return "Error: CONVSRV Service not found or not compatible.";
             }
-
+            
         } catch (Exception ex) {
             System.out.println(ex);
         }
-
+        
         return ret;
     }
-
+    
     public static String mergeXMLParameters(Document doc1, Document doc2) {
         return "<parameters>\n"
                 + "   <msg>" + doc1.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "</msg>\n"
@@ -198,7 +198,7 @@ public class WSRESTUtil {
                 + "   <Fast>" + doc1.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "</Fast>\n"
                 + "</parameters>\n";
     }
-
+    
     public static String mergeXMLStatistics(Document doc1, Document doc2) {
         String organization = "";
         NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
@@ -234,14 +234,14 @@ public class WSRESTUtil {
                 + "  </organisation>\n"
                 + "</statistics>\n";
     }
-
+    
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "");
-
+        
         List<Reference> references = getReferences(doc1, origText, repTag1, "");
         references.addAll(getReferences(doc2, origText, repTag2, color2));
         Collections.sort(references);
-
+        
         StringBuilder res = new StringBuilder("");
         res.append("<htmlRefDoc>\n");
         res.append("<!-- <html>\n");
@@ -253,7 +253,7 @@ public class WSRESTUtil {
         res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
                 .append(IdxConstant.MSG.get("server.qd.MSG_19"))
                 .append("</A><br/>");
-
+        
         res.append(mergeReferences(references, origText));
         res.append("<br/><br/><A NAME=\"STATISTIC\"></A><A HREF=\"#TOP\">TOP</A><br/>");
         res.append(parseHtmlAndGetStats(docSource1));
@@ -265,7 +265,7 @@ public class WSRESTUtil {
                 + "</htmlRefDoc>");
         return res.toString();
     }
-
+    
     public static String mergeInfo(Document doc1, Document doc2, String color, int start) {
         return "<Info>\n"
                 + "<references>"
@@ -274,7 +274,7 @@ public class WSRESTUtil {
                 + "</references>"
                 + "</Info>";
     }
-
+    
     public static String getReferencesFromDocument(Document doc, String color, int start) {
         String references = "";
         NodeList referencesList = doc.getElementsByTagName("reference");
@@ -304,7 +304,7 @@ public class WSRESTUtil {
         }
         return references;
     }
-
+    
     private static Integer getReferenceNumber(String refId) {
         int refNumber = 0;
         if (refId.matches("\\d+")) {
@@ -312,7 +312,7 @@ public class WSRESTUtil {
         }
         return refNumber;
     }
-
+    
     private static String getReferenceNumberAsString(String refId, int start) {
         int refNumber = 0;
         if (refId.matches("\\d+")) {
@@ -320,7 +320,7 @@ public class WSRESTUtil {
         }
         return "" + refNumber;
     }
-
+    
     private static String parseHtmlAndGetStats(String docSource) {
         FileInputStream in = null;
         String stats = "<hr/>";
@@ -345,7 +345,7 @@ public class WSRESTUtil {
         }
         return stats;
     }
-
+    
     private static String parseHtmlAndGetStatsTables(String docSource, String tag1, String docSource1, String tag2) {
         FileInputStream in = null, in1 = null;
         StringBuilder res = new StringBuilder();
@@ -427,6 +427,8 @@ public class WSRESTUtil {
     // this method gets all the references and locally manages their tags, colors etc.
     private static List<Reference> getReferences(Document doc, String originalText, String repTag, String targetColor) {
         NodeList referencesList = doc.getElementsByTagName("reference");
+        String remainingText = originalText;
+        int fromStart = 0;
         List<Reference> references = new ArrayList<Reference>();
         if (referencesList.getLength() > 0) {
             for (int j = 0; j < referencesList.getLength(); j++) {
@@ -449,9 +451,16 @@ public class WSRESTUtil {
                 for (int i = 0; i < documentsList.getLength(); ++i) {
                     docs.add(documentsList.item(i).getTextContent());
                 }
+                int currentpos = remainingText.indexOf(ref.getTextOfRef());
+                remainingText = remainingText.substring(currentpos + 1);
                 ref.setTag(repTag);
-                ref.setStartIDX(originalText.indexOf(ref.getTextOfRef()));
-                ref.setEndIDX(ref.getStartIDX() + ref.getTextOfRef().length());
+                if (j > 0) {
+                    fromStart += currentpos + 1;
+                } else {
+                    fromStart = currentpos;
+                }
+                ref.setStartIDX(fromStart);
+                ref.setEndIDX(fromStart + ref.getTextOfRef().length());
                 ref.setReferencedDocs(docs);
                 references.add(ref);
             }
@@ -459,7 +468,7 @@ public class WSRESTUtil {
         }
         return null;
     }
-
+    
     private static String generateStatsTable(List<Reference> references) {
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
@@ -492,7 +501,7 @@ public class WSRESTUtil {
         }
         return res.toString();
     }
-
+    
     private static String generateHTMLComments(List<Reference> references) {
         StringBuilder s = new StringBuilder("");
         s.append("\n</htmlstartcomment>MYQUOTEREF");
@@ -514,7 +523,7 @@ public class WSRESTUtil {
         s.append("</P>\n");
         return s.toString();
     }
-
+    
     private static String mergeReferences(List<Reference> references, String originalText) {
         Stack latestOpenReference = new Stack();
         StringBuilder finalText = new StringBuilder("<P>");
