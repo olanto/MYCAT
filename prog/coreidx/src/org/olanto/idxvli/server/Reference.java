@@ -133,6 +133,6 @@ public class Reference implements Comparable<Reference> {
     }
 
     public boolean SameAs(Reference o) {
-        return (this.globalIDX == o.globalIDX);
+        return ((this.startIDX == o.startIDX) && (this.endIDX == o.endIDX));
     }
 }
