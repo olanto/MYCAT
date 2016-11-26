@@ -1,5 +1,8 @@
 call xml generation:
-http://localhost:8080/TranslationText/MyCATT/RefDoc/params?TxtSrc=&DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&Filter=COLLECTION.SMALL-COLLECTION&MinLen=6&RemFirst=True&Fast=False
+
+http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&Filter=COLLECTION.SMALL-COLLECTION&MinLen=6&RemFirst=False&Fast=False
+
+http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&Filter=COLLECTION.SMALL-COLLECTION&MinLen=6&RemFirst=True&Fast=False
 
 call merge xm files:
 

@@ -513,7 +513,7 @@ public class WSRESTUtil {
                     .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "));
             StringBuilder dlist = new StringBuilder("");
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(getCanonicalFileName(doc));
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
             }
             s.append(dlist);
         }
@@ -928,10 +928,5 @@ public class WSRESTUtil {
         }
         finalText.append("</P>\n");
         return finalText.toString();
-    }
-    private static String getCanonicalFileName(String docName){
-        String canonicalFileName = "";
-        String separator = IdxConstant.SEPARATOR;
-        return canonicalFileName;
     }
 }
