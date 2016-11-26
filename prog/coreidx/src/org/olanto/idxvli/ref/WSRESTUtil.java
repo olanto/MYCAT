@@ -275,6 +275,10 @@ public class WSRESTUtil {
                 + "</Info>\n";
     }
 
+    public static String clean4xml(String s) {
+        return s.replace("&", "&amp;").replace("<", "&lt;");
+    }
+
     public static String getReferencesFromDocument(Document doc, String color, int start) {
         String references = "";
         NodeList referencesList = doc.getElementsByTagName("reference");
@@ -283,12 +287,12 @@ public class WSRESTUtil {
             references += "<reference>\n"
                     + "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
                     + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n"
-                    + "<quote>" + reference.getElementsByTagName("quote").item(0).getTextContent() + "</quote>\n"
+                    + "<quote>" + clean4xml(reference.getElementsByTagName("quote").item(0).getTextContent()) + "</quote>\n"
                     + "<documents>\n";
             Element documents = (Element) reference.getElementsByTagName("documents").item(0);
             NodeList documentsList = documents.getElementsByTagName("document");
             for (int i = 0; i < documentsList.getLength(); ++i) {
-                references += "<document>" + documentsList.item(i).getTextContent() + "</document>\n";
+                references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
             }
             references += "</documents>\n";
             if (!color.isEmpty()) {
@@ -367,50 +371,58 @@ public class WSRESTUtil {
             String xmlContent = UtilsFiles.file2String(in, "UTF-8").replace("Â", "");
             String xmlContent1 = UtilsFiles.file2String(in1, "UTF-8").replace("Â", "");
             String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
-            String html1 = xmlContent1.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
-            if (html.contains("<body>")) {
-                String stats1 = html.substring(html.indexOf("<td>"), html.indexOf("</table>"));
-                int number;
-                String regex = "<td>(.*, )+</td>";
-                Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(stats1);
-                String sub = "";
-                while (matcher.find()) {
-                    String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
-                    for (int i = 0; i < refs.length - 1; i++) {
-                        if (refs[i].replace(" ", "").matches("\\d+")) {
-                            number = Integer.parseInt(refs[i].replace(" ", ""));
-                            sub += tag1 + number + ", ";
-                        } else {
-                            sub += refs[i].replace(" ", "") + ", ";
+            String html1 = xmlContent1.substring(xmlContent1.indexOf("<html>"), xmlContent1.indexOf("</html>"));
+            if (html.contains("<td>") && html.contains("</table>")) {
+                int idx1 = html.indexOf("<td>");
+                int idx2 = html.indexOf("</table>");
+                if (idx2 > idx1) {
+                    String stats1 = html.substring(idx1, idx2);
+                    int number;
+                    String regex = "<td>(.*, )+</td>";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(stats1);
+                    String sub = "";
+                    while (matcher.find()) {
+                        String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
+                        for (int i = 0; i < refs.length - 1; i++) {
+                            if (refs[i].replace(" ", "").matches("\\d+")) {
+                                number = Integer.parseInt(refs[i].replace(" ", ""));
+                                sub += tag1 + number + ", ";
+                            } else {
+                                sub += refs[i].replace(" ", "") + ", ";
+                            }
                         }
+                        stats1 = stats1.replace(matcher.group(), "<td>" + sub + "</td>");
                     }
-                    stats1 = stats1.replace(matcher.group(), "<td>" + sub + "</td>");
+                    res.append(stats1);
                 }
-                res.append(stats1);
             }
-            if (html1.contains("<body>")) {
-                String stats2 = html1.substring(html1.indexOf("<td>"), html1.indexOf("</table>"));
-                int number;
-                String regex = "<td>(.*, )+</td>";
-                Pattern pattern = Pattern.compile(regex);
-                Matcher matcher = pattern.matcher(stats2);
-                String sub = "";
-                while (matcher.find()) {
-                    String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
-                    for (int i = 0; i < refs.length - 1; i++) {
-                        if (refs[i].replace(" ", "").matches("\\d+")) {
-                            number = Integer.parseInt(refs[i].replace(" ", ""));
-                            sub += tag2 + number + ", ";
-                        } else {
-                            sub += refs[i].replace(" ", "") + ", ";
+            if (html1.contains("<td>") && html1.contains("</table>")) {
+                int idx1 = html1.indexOf("<td>");
+                int idx2 = html1.indexOf("</table>");
+                if (idx2 > idx1) {
+                    String stats2 = html1.substring(idx1, idx2);
+                    int number;
+                    String regex = "<td>(.*, )+</td>";
+                    Pattern pattern = Pattern.compile(regex);
+                    Matcher matcher = pattern.matcher(stats2);
+                    String sub = "";
+                    while (matcher.find()) {
+                        String[] refs = matcher.group().replace("<td>", "").replace("</td>", "").split(",");
+                        for (int i = 0; i < refs.length - 1; i++) {
+                            if (refs[i].replace(" ", "").matches("\\d+")) {
+                                number = Integer.parseInt(refs[i].replace(" ", ""));
+                                sub += tag2 + number + ", ";
+                            } else {
+                                sub += refs[i].replace(" ", "") + ", ";
+                            }
                         }
+                        stats2 = stats2.replace(matcher.group(), "<td>" + sub + "</td>");
                     }
-                    stats2 = stats2.replace(matcher.group(), "<td>" + sub + "</td>");
+                    res.append("<tr>\n").append(stats2);
                 }
-                res.append(stats2);
             }
-            return res.toString();
+            return res.toString() + "</table>";
         } catch (FileNotFoundException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -510,10 +522,10 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "));
+                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " ").replace("&amp;", "&").replace("&lt;", "<"));
             StringBuilder dlist = new StringBuilder("");
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc.replace("&amp;", "&").replace("&lt;", "<"));
             }
             s.append(dlist);
         }
