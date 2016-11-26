@@ -510,15 +510,10 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "))
-                    .append(REFResultNice.DOC_REF_SEPARATOR);
+                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "));
             StringBuilder dlist = new StringBuilder("");
-            int j = 0;
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(doc);
-                if (j > 0 && (j < references.get(i).getReferencedDocs().size() - 1)) {
-                    dlist.append(REFResultNice.DOC_REF_SEPARATOR);
-                }
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
             }
             s.append(dlist);
         }
