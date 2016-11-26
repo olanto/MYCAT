@@ -189,7 +189,7 @@ public class ReferenceStatistic {
             res.append("  <documents>"); // bloc des références
             for (int j = 0; j < refs.length; j++) {
                 res.append("    <document>"); // bloc des références
-                res.append(clean4xml(refs[j].replace(IdxConstant.SEPARATOR, "/")) + "</document>\n");
+                res.append(clean4xml(refs[j]) + "</document>\n");
             }
             res.append("</documents>"); // fin de bloc des références
             res.append("</reference>\n");

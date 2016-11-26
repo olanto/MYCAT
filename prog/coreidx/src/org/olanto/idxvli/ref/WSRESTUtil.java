@@ -262,7 +262,7 @@ public class WSRESTUtil {
         res.append(generateStatsTable(references));
         res.append(generateHTMLComments(references));
         res.append("</body> </html> -->\n"
-                + "</htmlRefDoc>");
+                + "</htmlRefDoc>\n");
         return res.toString();
     }
 
@@ -272,7 +272,7 @@ public class WSRESTUtil {
                 + getReferencesFromDocument(doc1, "", 0)
                 + getReferencesFromDocument(doc2, color, start)
                 + "</references>"
-                + "</Info>";
+                + "</Info>\n";
     }
 
     public static String getReferencesFromDocument(Document doc, String color, int start) {
@@ -513,7 +513,7 @@ public class WSRESTUtil {
                     .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " "));
             StringBuilder dlist = new StringBuilder("");
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(getCanonicalFileName(doc));
             }
             s.append(dlist);
         }
@@ -928,5 +928,10 @@ public class WSRESTUtil {
         }
         finalText.append("</P>\n");
         return finalText.toString();
+    }
+    private static String getCanonicalFileName(String docName){
+        String canonicalFileName = "";
+        String separator = IdxConstant.SEPARATOR;
+        return canonicalFileName;
     }
 }
