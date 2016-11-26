@@ -1,0 +1,2704 @@
+<QD><params>
+   <RefType>ref</RefType>
+   <DocSrc1>C:\MYCAT\doc2process\full_A_RES_53_144_EN.xml</DocSrc1>
+   <DocSrc2>C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml</DocSrc2>
+   <DocTgt>C:\MYCAT\doc2process\full_rem_A_RES_53_144_EN_MERGED.xml</DocTgt>
+   <RepTag1>T</RepTag1>
+   <RepTag2>J</RepTag2>
+   <Color2>red</Color2>
+</params>
+<parameters>
+   <msg>process by WebService|process by WebService</msg>
+   <TxtSrc>|</TxtSrc>
+   <RefType>|</RefType>
+   <DocSrc>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</DocSrc>
+   <DocTgt>C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml|C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml</DocTgt>
+   <LngSrc>EN|EN</LngSrc>
+   <LngTgt>FR|FR</LngTgt>
+   <Filter>|</Filter>
+   <MinLen>3|3</MinLen>
+   <Fast>false|false</Fast>
+</parameters>
+<statistics>
+  <mycat>
+    <RefDocFullName>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</RefDocFullName>
+    <RefDocType>|</RefDocType>
+    <RefDocLng>2604|2604</RefDocLng>
+    <RefDocPerCent>2594|517</RefDocPerCent>
+    <RefDocOccurences>99.6%|19.9%</RefDocOccurences>
+  </mycat>
+  <organisation>
+<!-- imported template from /config -->
+<!-- Template - inserted into organisation element in xml QD -->
+<TranslatedE>Put a default value here</TranslatedE>
+<TranslatedF>Put a default value here</TranslatedF>
+<TranslatedS>Put a default value here</TranslatedS>
+<RevisedE>Put a default value here</RevisedE>
+<RevisedF>Put a default value here</RevisedF>
+<RevisedS>Put a default value here</RevisedS>
+<Finished>Put a default value here</Finished>
+<!-- imported template from /config -->
+<!-- Template - inserted into organisation element in xml QD -->
+<TranslatedE>Put a default value here</TranslatedE>
+<TranslatedF>Put a default value here</TranslatedF>
+<TranslatedS>Put a default value here</TranslatedS>
+<RevisedE>Put a default value here</RevisedE>
+<RevisedF>Put a default value here</RevisedF>
+<RevisedS>Put a default value here</RevisedS>
+<Finished>Put a default value here</Finished>
+  </organisation>
+</statistics>
+<htmlRefDoc>
+<!-- <html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>myQuote</title></head>
+<body>
+<A NAME="TOP"></A><A HREF="#STATISTIC">STATISTICS</A><br/><P><br/><br/><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[RT1]</FONT></a><a href="#2" id="ref2" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ1]UNITED A<br/><br/>NATIONS<br/><br/>General Assembly[EJ1]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>Distr.<br/><br/>GENERAL<br/><br/>A/RES/53/144<br/><br/>8 March 1999<br/><br/>Fifty-third </FONT></a><a href="#3" id="ref3" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ2]session<br/><br/>Agenda item[EJ2]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> 110 (b)<br/><br/></FONT></a><a href="#4" id="ref4" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ3]RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY[EJ3]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>[on the report of the Third Committee (A/53/625/Add.2)]<br/><br/>53/144. Declaration on the Right and Responsibility of Individuals, Groups and<br/><br/>Organs of Society to Promote and Protect Universally Recognized </FONT></a><a href="#5" id="ref5" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ4]Human<br/><br/>Rights and Fundamental Freedoms[EJ4]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>The General Assembly,<br/><br/>Reaffirming the importance of the observance of the purposes and principles of the </FONT></a><a href="#6" id="ref6" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ5]Charter of the<br/><br/></FONT></a><a href="#7" id="ref7" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ6]United Nations[EJ5] for the promotion[EJ6]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and protection of all </FONT></a><a href="#8" id="ref8" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ7]human rights and fundamental freedoms[EJ7]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> for all<br/><br/>persons in all countries of the world,<br/><br/>Taking note of Commission on Human Rights resolution 1998/7 of 3 April 1998,1 in which the<br/><br/>Commission approved the text of the draft declaration on the right and responsibility of individuals, groups<br/><br/>and organs of society to promote and protect universally recognized </FONT></a><a href="#9" id="ref9" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ8]human rights and fundamental freedoms[EJ8]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">,<br/><br/>Taking note also of </FONT></a><a href="#10" id="ref10" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ9]Economic and Social Council[EJ9]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> resolution 1998/33 of 30 July 1998, in which the<br/><br/>Council recommended the draft declaration to the General Assembly for adoption,<br/><br/>Conscious of the importance of the adoption of the draft declaration in the context of the fiftieth<br/><br/></FONT></a><a href="#11" id="ref11" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ10]anniversary of the Universal Declaration of Human Rights[EJ10]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> 2,<br/><br/>1 See Official Records of the </FONT></a><a href="#12" id="ref12" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ11]Economic and Social Council[EJ11]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, 1998, Supplement No. 3 (E/1998/23), chap. II, sect.<br/><br/>A.<br/><br/>2 </FONT></a><a href="#13" id="ref13" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ12]Resolution 217 A (III[EJ12]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">).<br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page 2<br/><br/>1. Adopts the Declaration on the Right and Responsibility of Individuals, Groups and Organs of<br/><br/>Society to Promote and Protect Universally Recognized </FONT></a><a href="#14" id="ref14" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ13]Human Rights and Fundamental Freedoms[EJ13]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, annexed<br/><br/>to the present resolution;<br/><br/>2. Invites Governments, agencies and organizations of the </FONT></a><a href="#15" id="ref15" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ14]United Nations system[EJ14]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and<br/><br/></FONT></a><a href="#16" id="ref16" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ15]intergovernmental and non-governmental organizations[EJ15]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> to intensify their efforts to disseminate the<br/><br/>Declaration and to promote universal respect and understanding thereof, and requests the Secretary-General<br/><br/>to include the text of the Declaration in the next edition of Human Rights: A Compilation of International<br/><br/>Instruments.<br/><br/>85th plenary meeting<br/><br/>9 December 1998<br/><br/>ANNEX<br/><br/>Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote<br/><br/>and Protect Universally Recognized </FONT></a><a href="#17" id="ref17" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ16]Human Rights and Fundamental Freedoms[EJ16]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>The General Assembly,<br/><br/>Reaffirming the importance of the observance of the purposes and principles of the </FONT></a><a href="#18" id="ref18" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ17]Charter of the<br/><br/></FONT></a><a href="#19" id="ref19" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ18]United Nations[EJ17] for the promotion[EJ18]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and protection of all </FONT></a><a href="#20" id="ref20" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ19]human rights and fundamental freedoms[EJ19]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> for all<br/><br/>persons in all countries of the world,<br/><br/>Reaffirming also the importance of the </FONT></a><a href="#21" id="ref21" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ20]Universal Declaration of Human[EJ20]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> Rights2 and the International<br/><br/>Covenants on Human Rights3 as basic elements of international efforts to promote </FONT></a><a href="#22" id="ref22" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ21]universal respect for and<br/><br/>observance of human rights and fundamental freedoms[EJ21]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and the importance of other human rights instruments<br/><br/>adopted within the </FONT></a><a href="#23" id="ref23" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ22]United Nations system[EJ22]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, as well as those at the regional level,<br/><br/>Stressing that all members of the international community shall fulfil, jointly and separately, their<br/><br/>solemn obligation to promote and encourage </FONT></a><a href="#24" id="ref24" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ23]respect for human rights and fundamental freedoms[EJ23]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> for all<br/><br/></FONT></a><a href="#25" id="ref25" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ24]without distinction of any kind[EJ24]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, including distinctions based on </FONT></a><a href="#26" id="ref26" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ25]race, colour, sex, language, religion, political<br/><br/>or other opinion, national or social origin, property, birth or other status[EJ25]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, and reaffirming the particular<br/><br/>importance of achieving international cooperation to fulfil this obligation according to the Charter,<br/><br/>Acknowledging the important role of international cooperation for, and the valuable work of individuals,<br/><br/>groups and associations in contributing to, the effective elimination of all violations of </FONT></a><a href="#27" id="ref27" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ26]human rights and<br/><br/>fundamental freedoms[EJ26]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> of peoples and individuals, including in relation to mass, flagrant or systematic<br/><br/>violations such as those resulting from apartheid, all forms of racial discrimination, colonialism, foreign<br/><br/>domination or occupation, aggression or threats to national sovereignty, national unity or territorial integrity<br/><br/>and from the refusal to recognize the right of peoples to self-determination and the right of every people to<br/><br/>exercise full sovereignty over its wealth and natural resources,<br/><br/>3<br/><br/> Resolution 2200 A (XXI), annex.<br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page 3<br/><br/>Recognizing the relationship between international peace and security and the </FONT></a><a href="#28" id="ref28" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ27]enjoyment of </FONT></a><a href="#29" id="ref29" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ28]human<br/><br/>rights[EJ27] and fundamental freedoms[EJ28]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, and mindful that the absence of international peace and security does not<br/><br/>excuse non-compliance,<br/><br/>Reiterating that all </FONT></a><a href="#30" id="ref30" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ29]human rights and fundamental freedoms[EJ29]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> are universal, indivisible, interdependent<br/><br/>and interrelated and should be promoted and implemented in a fair and equitable manner, without prejudice to<br/><br/>the implementation of each of those rights and freedoms,<br/><br/>Stressing that the prime responsibility and duty to </FONT></a><a href="#31" id="ref31" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ30]promote and protect </FONT></a><a href="#32" id="ref32" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ31]human rights[EJ30] and fundamental<br/><br/>freedoms[EJ31]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> lie with the State,<br/><br/>Recognizing the right and the responsibility of individuals, groups and associations to promote respect<br/><br/>for and foster knowledge of </FONT></a><a href="#33" id="ref33" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ32]human rights and fundamental freedoms[EJ32]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> at the national and international levels,<br/><br/>Declares:<br/><br/>Article </FONT></a><a href="#34" id="ref34" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ33]1<br/><br/>Everyone has the right[EJ33]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, individually and in association with others, to promote and to strive for the<br/><br/>protection and </FONT></a><a href="#35" id="ref35" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ34]realization of </FONT></a><a href="#36" id="ref36" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ35]human rights[EJ34] and fundamental freedoms[EJ35]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> at the national and international levels.<br/><br/></FONT></a><a href="#37" id="ref37" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ36]Article 2<br/><br/>1[EJ36]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">. Each State has a prime responsibility and duty to protect, promote and implement all </FONT></a><a href="#38" id="ref38" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ37]human rights and<br/><br/>fundamental freedoms[EJ37]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, inter alia, by adopting such steps as may be necessary to create all conditions<br/><br/>necessary in the social, economic, political and other fields, as well as the legal guarantees required to ensure<br/><br/>that all persons under its jurisdiction, individually and in association with others, are able to enjoy all those<br/><br/>rights and freedoms in practice.<br/><br/>2. Each State shall adopt such legislative, administrative and other steps as may be necessary to ensure that<br/><br/>the rights and freedoms referred to in the present Declaration are effectively guaranteed.<br/><br/>Article 3<br/><br/>Domestic law consistent with the </FONT></a><a href="#39" id="ref39" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ38]Charter of the United Nations[EJ38]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and other international obligations of the<br/><br/>State in the </FONT></a><a href="#40" id="ref40" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ39]field of </FONT></a><a href="#41" id="ref41" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ40]human rights[EJ39] and fundamental freedoms[EJ40]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> is the juridical framework within which </FONT></a><a href="#42" id="ref42" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ41]human<br/><br/>rights and fundamental freedoms[EJ41]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> should be implemented and enjoyed and within which all activities referred<br/><br/>to in the present Declaration for the promotion, protection and effective realization of those rights and<br/><br/>freedoms should be conducted.<br/><br/>Article 4<br/><br/>Nothing in the present Declaration shall be construed as impairing or contradicting the purposes and<br/><br/>principles of the </FONT></a><a href="#43" id="ref43" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ42]Charter of the United Nations[EJ42]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> or as restricting or derogating from the provisions of the<br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page 4<br/><br/></FONT></a><a href="#44" id="ref44" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ43]Universal Declaration of Human Rights[EJ43]</FONT></a><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> 2[ET1]</FONT></a> 3, the <a href="#45" id="ref45" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">International Covenants on Human[ET2]</FONT></a> Rights and other<br/><br/><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[RT3]international instruments and commitments applicable in this field.<br/><br/>Article 5<br/><br/>For the purpose of </FONT></a><a href="#47" id="ref47" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ44]promoting and protecting </FONT></a><a href="#48" id="ref48" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ45]human rights[EJ44] and fundamental freedoms[EJ45]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, everyone has the<br/><br/>right, individually and in association with others, at the national and international levels:<br/><br/>(a) To meet or assemble peacefully;<br/><br/>(b) To form, join and participate in non-governmental organizations, associations or groups;<br/><br/>(c) To communicate with non-governmental or intergovernmental organizations.<br/><br/></FONT></a><a href="#49" id="ref49" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ46]Article 6<br/><br/>Everyone has the right[EJ46]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, individually and in association with others:<br/><br/>(a) To know, seek, obtain, receive and hold information about all </FONT></a><a href="#50" id="ref50" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ47]human rights and fundamental<br/><br/>freedoms[EJ47]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, including having access to information as to how those rights and freedoms are given effect in<br/><br/>domestic legislative, judicial or administrative systems;<br/><br/>(b) As provided for in human rights and other applicable international instruments, freely to publish,<br/><br/>impart or disseminate to others views, information and knowledge on all </FONT></a><a href="#51" id="ref51" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ48]human rights and fundamental<br/><br/>freedoms[EJ48]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">;<br/><br/>(c) To study, discuss, form and hold opinions on the observance, both in law and in practice, of all<br/><br/></FONT></a><a href="#52" id="ref52" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ49]human rights and fundamental freedoms[EJ49]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and, through these and other appropriate means, to draw public<br/><br/>attention to those matters.<br/><br/>Article 7<br/><br/>Everyone has the right, individually and in association with others, to develop and discuss new human<br/><br/>rights ideas and principles and to advocate their acceptance.<br/><br/>Article 8<br/><br/></FONT></a><a href="#53" id="ref53" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ50]1. Everyone has the right[EJ50]</FONT></a><a href="#46" id="ref46" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, individually and in association with others, to have effective access[ET3]</FONT></a>, on a non-<br/><br/>discriminatory <a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">basis, to participation in the government of his or her country and in the conduct of public<br/><br/>affairs.<br/><br/>2. This includes, inter alia, the right, individually and in association with others, to submit to governmental<br/><br/>bodies and agencies and organizations concerned with public affairs criticism and proposals for improving<br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page 5<br/><br/>their functioning and to draw attention to any aspect of their work that may hinder or impede the promotion,<br/><br/>protection and </FONT></a><a href="#55" id="ref55" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ51]realization of </FONT></a><a href="#56" id="ref56" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ52]human rights[EJ51] and fundamental freedoms[EJ52]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/></FONT></a><a href="#57" id="ref57" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ53]Article 9<br/><br/>1[EJ53]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">. In the exercise of </FONT></a><a href="#58" id="ref58" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ54]human rights and fundamental freedoms[EJ54]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, including the promotion and protection of<br/><br/>human rights as referred to in the present Declaration, everyone has the right, individually and in association<br/><br/>with others, to benefit from an effective remedy and to be protected in the event of the violation of those<br/><br/>rights.<br/><br/>2. To this end, everyone whose rights or freedoms are allegedly violated has the right, either in person or<br/><br/>through legally authorized representation, to complain to and have that complaint promptly reviewed in a<br/><br/></FONT></a><a href="#59" id="ref59" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ55]public hearing before an independent, impartial[EJ55]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and competent judicial or other authority established by law<br/><br/>and to obtain from such an authority a decision, in accordance with law, providing redress, including any<br/><br/>compensation due, where there has been a violation of that person’s rights or freedoms, as well as<br/><br/>enforcement of the eventual decision and award, all without undue delay.<br/><br/>3. To the same end, everyone has the right, individually and in association with others, inter alia:<br/><br/>(a) To complain about the policies and actions of individual officials and governmental bodies with<br/><br/>regard to violations of </FONT></a><a href="#60" id="ref60" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ56]human rights and fundamental freedoms[EJ56]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, by petition or other appropriate means, to<br/><br/>competent domestic judicial, administrative or legislative authorities or any other competent authority<br/><br/>provided for by the legal system of the State, which should render their decision on the complaint without<br/><br/>undue delay;<br/><br/>(b) To attend public hearings, proceedings and trials so as to form an opinion on their compliance with<br/><br/>national law and applicable international obligations and commitments;<br/><br/>(c) To offer and provide professionally qualified legal assistance or other relevant advice and<br/><br/>assistance in defending </FONT></a><a href="#61" id="ref61" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ57]human rights and fundamental freedoms[EJ57]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>4. To the same end, and in accordance with applicable international instruments and procedures, everyone<br/><br/>has the right, individually and in association with others, to unhindered access to and communication with<br/><br/>international bodies with general or special competence to receive and consider communications on matters of<br/><br/></FONT></a><a href="#62" id="ref62" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ58]human rights and fundamental freedoms[EJ58]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>5. The State shall conduct a prompt and impartial investigation or ensure that an inquiry takes place<br/><br/>whenever there is reasonable ground to believe that a </FONT></a><a href="#63" id="ref63" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ59]violation of human rights and fundamental freedoms[EJ59]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>has occurred in any territory under its jurisdiction.<br/><br/>Article 10<br/><br/>No one shall participate, by act or by failure to act where required, in violating </FONT></a><a href="#64" id="ref64" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ60]human rights and<br/><br/>fundamental freedoms[EJ60]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and no one shall be subjected to punishment or adverse action of any kind for refusing<br/><br/>to do so.<br/><br/>Article 11<br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page </FONT></a><a href="#65" id="ref65" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ61]6<br/><br/>Everyone has the right[EJ61]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, individually and in association with others, to the lawful exercise of his or her<br/><br/>occupation or profession. Everyone who, as a result of his or her profession, can affect the human dignity,<br/><br/></FONT></a><a href="#66" id="ref66" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ62]human rights and fundamental freedoms[EJ62]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> of others should </FONT></a><a href="#67" id="ref67" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ63]respect those rights and freedoms[EJ63]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and comply with<br/><br/>relevant national and international standards of occupational and professional conduct or ethics.<br/><br/>Article 12<br/><br/></FONT></a><a href="#68" id="ref68" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ64]1. Everyone has the right[EJ64]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, individually and in association with others, to participate in peaceful activities<br/><br/>against violations of </FONT></a><a href="#69" id="ref69" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ65]human rights and fundamental freedoms[EJ65]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>2. The State shall take all necessary measures to ensure the protection by the competent authorities of<br/><br/>everyone, individually and in association with others, against any violence, threats, retaliation, de facto or de<br/><br/>jure adverse discrimination, pressure or any other arbitrary action as a consequence of his or her legitimate<br/><br/>exercise of the rights referred to in the present Declaration.<br/><br/>3. In this connection, everyone is entitled, individually and in association with others, to be protected<br/><br/>effectively under national law in reacting against or opposing, through peaceful means, activities and acts,<br/><br/>including those by omission, attributable to States that result in violations of </FONT></a><a href="#70" id="ref70" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ66]human rights and fundamental<br/><br/>freedoms[EJ66]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, as well as acts of violence perpetrated by groups or individuals that affect the </FONT></a><a href="#71" id="ref71" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ67]enjoyment of </FONT></a><a href="#72" id="ref72" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ68]human<br/><br/>rights[EJ67] and fundamental freedoms[EJ68]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>Article 13<br/><br/>Everyone has the right, individually and in association with others, to solicit, receive and utilize<br/><br/>resources for the express purpose of </FONT></a><a href="#73" id="ref73" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ69]promoting and protecting </FONT></a><a href="#74" id="ref74" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ70]human rights[EJ69] and fundamental freedoms[EJ70]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>through peaceful means, in accordance with article 3 of the present Declaration.<br/><br/></FONT></a><a href="#75" id="ref75" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ71]Article 14<br/><br/>1[EJ71]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">. The State has the responsibility to take legislative, judicial, administrative or other appropriate measures<br/><br/>to promote the understanding by all persons under its jurisdiction of their civil, political, </FONT></a><a href="#76" id="ref76" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ72]economic, social and<br/><br/>cultural rights[EJ72]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>2. Such measures shall </FONT></a><a href="#77" id="ref77" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ73]include, inter alia[EJ73]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">:<br/><br/>(a) The publication and widespread availability of national laws and regulations and of applicable<br/><br/>basic international human rights instruments;<br/><br/>(b) Full and equal access to international documents in the </FONT></a><a href="#78" id="ref78" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ74]field of human rights[EJ74]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, including the periodic<br/><br/>reports by the State to the bodies established by the international human rights treaties to which it is a party,<br/><br/>as well as the summary records of discussions and the official reports of these bodies.<br/><br/>3. The State shall ensure and support, where appropriate, the creation and development of further<br/><br/>independent national institutions for the promotion and protection of </FONT></a><a href="#79" id="ref79" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ75]human rights and fundamental freedoms[EJ75]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>/...<br/><br/>A/RES/53/144<br/><br/>Page 7<br/><br/>in all territory under its jurisdiction, whether they be ombudsmen, human rights commissions or any other<br/><br/>form of national institution.<br/><br/>Article 15<br/><br/>The State has the responsibility to promote and facilitate the teaching of </FONT></a><a href="#80" id="ref80" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ76]human rights and fundamental<br/><br/>freedoms[EJ76]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> at all levels of education and to ensure that all those responsible for training lawyers, law<br/><br/>enforcement officers, the personnel of the armed forces and public officials include appropriate elements of<br/><br/>human rights teaching in their training programme.<br/><br/>Article 16<br/><br/>Individuals, non-governmental organizations and relevant institutions have an important role to play in<br/><br/>contributing to making the public more aware of questions relating to all </FONT></a><a href="#81" id="ref81" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ77]human rights and fundamental<br/><br/>freedoms[EJ77]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> through activities such as education, training and research in these areas to strengthen further, inter<br/><br/>alia, understanding, tolerance, peace and friendly relations among nations and among all </FONT></a><a href="#82" id="ref82" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ78]racial and religious<br/><br/>groups[EJ78]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">, bearing in mind the various backgrounds of the societies and communities in which they carry out<br/><br/>their activities.<br/><br/>Article 17<br/><br/>In the </FONT></a><a href="#83" id="ref83" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ79]exercise of the rights and freedoms[EJ79]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> referred to in the present Declaration, everyone, acting<br/><br/>individually and in association with others, shall be subject only to such limitations as are in accordance with<br/><br/>applicable international obligations and are </FONT></a><a href="#84" id="ref84" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ80]determined by law solely for the purpose of securing due<br/><br/>recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,<br/><br/>public order and the general welfare in a democratic society[EJ80]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">.<br/><br/>Article 18<br/><br/></FONT></a><a href="#85" id="ref85" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ81]1. Everyone has duties[EJ81]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> towards and within the </FONT></a><a href="#86" id="ref86" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ82]community, in which alone the free and full development of<br/><br/>his or her personality is possible.<br/><br/>2[EJ82]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">. Individuals, groups, institutions and non-governmental organizations have an important role to play and<br/><br/>a responsibility in safeguarding democracy, promoting </FONT></a><a href="#87" id="ref87" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ83]human rights and fundamental freedoms[EJ83]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> and<br/><br/>contributing to the promotion and advancement of democratic societies, institutions and processes.<br/><br/>3. Individuals, groups, institutions and non-governmental organizations also have an important role and a<br/><br/>responsibility in contributing, as appropriate, to the promotion of the right of everyone to a </FONT></a><a href="#88" id="ref88" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ84]social and<br/><br/>international order in which the rights and freedoms set forth[EJ84]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> in the </FONT></a><a href="#89" id="ref89" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ85]Universal Declaration of Human Rights[EJ85]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"><br/><br/>and other human rights instruments can be </FONT></a><a href="#90" id="ref90" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ86]fully realized.<br/><br/>Article[EJ86]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> 19<br/><br/>A/RES/53/144<br/><br/>Page 8<br/><br/>Nothing in the present </FONT></a><a href="#91" id="ref91" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ87]Declaration shall be interpreted as implying[EJ87]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow"> for any individual, group or organ of<br/><br/>society or any State the </FONT></a><a href="#92" id="ref92" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ88]right to engage in any activity or to perform any act aimed at the destruction of the<br/><br/>rights and freedoms[EJ88]</FONT></a><a href="#54" id="ref54" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[RT4] referred to in the present Declaration.<br/><br/>Article 20<br/><br/>Nothing in the present Declaration shall be interpreted as permitting States to support and promote<br/><br/>activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the<br/><br/>provisions of the Charter of the United Nations[EJ88]</FONT></a>.<br/><br/>right to engage in any activity or to perform any act aimed at the destruction of the<br/><br/>rights and freedoms[EJ88]</FONT></a> referred to in the present Declaration.<br/><br/>Article 20<br/><br/>Nothing in the present Declaration shall be interpreted as permitting States to support and promote<br/><br/>activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the<br/><br/><a href="#93" id="ref93" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: red">[RJ89]provisions of the Charter of the United Nations[EJ89]</FONT></a>.<br/><br/></P>
+<br/><br/><A NAME="STATISTIC"></A><A HREF="#TOP">TOP</A><br/><hr/><hr/>
+</p> Statistics of document C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</p> Total number of words: 2604</p> Number of references found: 1</p> Number of words found in references: 2594 (99.6%)</p> Minimum of consecutive words: 3</p> Collection: All collections</p> Date: Mon Nov 21 12:55:02 CET 2016</p> Remove first: false, Fast: false</p> Remove file: C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt (99.6%)<hr/>
+<hr/><hr/>
+</p> Statistics of document C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</p> Total number of words: 2604</p> Number of references found: 9</p> Number of words found in references: 517 (19.9%)</p> Minimum of consecutive words: 3</p> Collection: All collections</p> Date: Mon Nov 21 12:55:14 CET 2016</p> Remove first: true, Fast: false</p> Remove file: C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt (99.6%)<hr/>
+</p><table BORDER="1">
+<caption><b>Statistics on referenced documents</b></caption>
+<tr>
+<th>Reference</br>Document</th>
+<th>%</th>
+<th>References</th>
+</tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</td>
+<td>99.6 %</td>
+<td>T1, T2, T3, T4, </td></tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</td>
+<td>15.0 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</td>
+<td>10.3 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</td>
+<td>9.7 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT¦SCT_24_4.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/XX/GLOSSARIES¦GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, J5, J17, J38, J42, J9, J11, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦WO_GA¦WO_GA_31_4.doc.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, J5, J17, J38, J42, J9, J11, J15, </td></tr>
+<tr>
+<td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦PLT¦PLT_CE_V_5.doc.txt</td>
+<td> &lt;1 %</td>
+<td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, J5, J17, J38, J42, J9, J11, J15, J53, </td></tr>
+</p><table BORDER="1">
+<caption><b>Statistics by referenced texts</b></caption>
+<tr>
+<th>Reference</br>Number</th>
+<th>Referenced Text</th>
+<th>Reference File</th>
+</tr>
+<tr>
+<td>1</td>
+<td>
+UNITED A
+NATIONS
+General Assembly
+Distr.
+GENERAL
+A/RES/53/144
+8 March 1999
+Fifty-third session
+Agenda item 110 (b)
+RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY
+[on the report of the Third Committee (A/53/625/Add.2)]
+53/144. Declaration on the Right and Responsibility of Individuals, Groups and
+Organs of Society to Promote and Protect Universally Recognized Human
+Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Taking note of Commission on Human Rights resolution 1998/7 of 3 April 1998,1 in which the
+Commission approved the text of the draft declaration on the right and responsibility of individuals, groups
+and organs of society to promote and protect universally recognized human rights and fundamental freedoms,
+Taking note also of Economic and Social Council resolution 1998/33 of 30 July 1998, in which the
+Council recommended the draft declaration to the General Assembly for adoption,
+Conscious of the importance of the adoption of the draft declaration in the context of the fiftieth
+anniversary of the Universal Declaration of Human Rights 2,
+1 See Official Records of the Economic and Social Council, 1998, Supplement No. 3 (E/1998/23), chap. II, sect.
+A.
+2 Resolution 217 A (III).
+/...
+A/RES/53/144
+Page 2
+1. Adopts the Declaration on the Right and Responsibility of Individuals, Groups and Organs of
+Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms, annexed
+to the present resolution;
+2. Invites Governments, agencies and organizations of the United Nations system and
+intergovernmental and non-governmental organizations to intensify their efforts to disseminate the
+Declaration and to promote universal respect and understanding thereof, and requests the Secretary-General
+to include the text of the Declaration in the next edition of Human Rights: A Compilation of International
+Instruments.
+85th plenary meeting
+9 December 1998
+ANNEX
+Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote
+and Protect Universally Recognized Human Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Reaffirming also the importance of the Universal Declaration of Human Rights2 and the International
+Covenants on Human Rights3 as basic elements of international efforts to promote universal respect for and
+observance of human rights and fundamental freedoms and the importance of other human rights instruments
+adopted within the United Nations system, as well as those at the regional level,
+Stressing that all members of the international community shall fulfil, jointly and separately, their
+solemn obligation to promote and encourage respect for human rights and fundamental freedoms for all
+without distinction of any kind, including distinctions based on race, colour, sex, language, religion, political
+or other opinion, national or social origin, property, birth or other status, and reaffirming the particular
+importance of achieving international cooperation to fulfil this obligation according to the Charter,
+Acknowledging the important role of international cooperation for, and the valuable work of individuals,
+groups and associations in contributing to, the effective elimination of all violations of human rights and
+fundamental freedoms of peoples and individuals, including in relation to mass, flagrant or systematic
+violations such as those resulting from apartheid, all forms of racial discrimination, colonialism, foreign
+domination or occupation, aggression or threats to national sovereignty, national unity or territorial integrity
+and from the refusal to recognize the right of peoples to self-determination and the right of every people to
+exercise full sovereignty over its wealth and natural resources,
+3
+ Resolution 2200 A (XXI), annex.
+/...
+A/RES/53/144
+Page 3
+Recognizing the relationship between international peace and security and the enjoyment of human
+rights and fundamental freedoms, and mindful that the absence of international peace and security does not
+excuse non-compliance,
+Reiterating that all human rights and fundamental freedoms are universal, indivisible, interdependent
+and interrelated and should be promoted and implemented in a fair and equitable manner, without prejudice to
+the implementation of each of those rights and freedoms,
+Stressing that the prime responsibility and duty to promote and protect human rights and fundamental
+freedoms lie with the State,
+Recognizing the right and the responsibility of individuals, groups and associations to promote respect
+for and foster knowledge of human rights and fundamental freedoms at the national and international levels,
+Declares:
+Article 1
+Everyone has the right, individually and in association with others, to promote and to strive for the
+protection and realization of human rights and fundamental freedoms at the national and international levels.
+Article 2
+1. Each State has a prime responsibility and duty to protect, promote and implement all human rights and
+fundamental freedoms, inter alia, by adopting such steps as may be necessary to create all conditions
+necessary in the social, economic, political and other fields, as well as the legal guarantees required to ensure
+that all persons under its jurisdiction, individually and in association with others, are able to enjoy all those
+rights and freedoms in practice.
+2. Each State shall adopt such legislative, administrative and other steps as may be necessary to ensure that
+the rights and freedoms referred to in the present Declaration are effectively guaranteed.
+Article 3
+Domestic law consistent with the Charter of the United Nations and other international obligations of the
+State in the field of human rights and fundamental freedoms is the juridical framework within which human
+rights and fundamental freedoms should be implemented and enjoyed and within which all activities referred
+to in the present Declaration for the promotion, protection and effective realization of those rights and
+freedoms should be conducted.
+Article 4
+Nothing in the present Declaration shall be construed as impairing or contradicting the purposes and
+principles of the Charter of the United Nations or as restricting or derogating from the provisions of the
+/...
+A/RES/53/144
+Page 4
+Universal Declaration of Human Rights 2</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>2</td>
+<td>
+UNITED A
+NATIONS
+General Assembly</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>3</td>
+<td>
+session
+Agenda item</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>4</td>
+<td>
+RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>5</td>
+<td>
+Human
+Rights and Fundamental Freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>6</td>
+<td>
+Charter of the
+United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt<br/>
+</td>
+</tr><tr>
+<td>7</td>
+<td>
+United Nations for the promotion</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>8</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>9</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>10</td>
+<td>
+Economic and Social Council</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt<br/>
+</td>
+</tr><tr>
+<td>11</td>
+<td>
+anniversary of the Universal Declaration of Human Rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>12</td>
+<td>
+Economic and Social Council</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt<br/>
+</td>
+</tr><tr>
+<td>13</td>
+<td>
+Resolution 217 A (III</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>14</td>
+<td>
+Human Rights and Fundamental Freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>15</td>
+<td>
+United Nations system</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>16</td>
+<td>
+intergovernmental and non-governmental organizations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦WO_GA/WO_GA_31_4.doc.txt<br/>
+</td>
+</tr><tr>
+<td>17</td>
+<td>
+Human Rights and Fundamental Freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>18</td>
+<td>
+Charter of the
+United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt<br/>
+</td>
+</tr><tr>
+<td>19</td>
+<td>
+United Nations for the promotion</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>20</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>21</td>
+<td>
+Universal Declaration of Human</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>22</td>
+<td>
+universal respect for and
+observance of human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>23</td>
+<td>
+United Nations system</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>24</td>
+<td>
+respect for human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>25</td>
+<td>
+without distinction of any kind</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>26</td>
+<td>
+race, colour, sex, language, religion, political
+or other opinion, national or social origin, property, birth or other status</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>27</td>
+<td>
+human rights and
+fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>28</td>
+<td>
+enjoyment of human
+rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>29</td>
+<td>
+human
+rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>30</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>31</td>
+<td>
+promote and protect human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>32</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>33</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>34</td>
+<td>
+1
+Everyone has the right</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>35</td>
+<td>
+realization of human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>36</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>37</td>
+<td>
+Article 2
+1</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>38</td>
+<td>
+human rights and
+fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>39</td>
+<td>
+Charter of the United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt<br/>
+</td>
+</tr><tr>
+<td>40</td>
+<td>
+field of human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>41</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>42</td>
+<td>
+human
+rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>43</td>
+<td>
+Charter of the United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt<br/>
+</td>
+</tr><tr>
+<td>44</td>
+<td>
+Universal Declaration of Human Rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>45</td>
+<td>
+International Covenants on Human</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>46</td>
+<td>
+international instruments and commitments applicable in this field.
+Article 5
+For the purpose of promoting and protecting human rights and fundamental freedoms, everyone has the
+right, individually and in association with others, at the national and international levels:
+(a) To meet or assemble peacefully;
+(b) To form, join and participate in non-governmental organizations, associations or groups;
+(c) To communicate with non-governmental or intergovernmental organizations.
+Article 6
+Everyone has the right, individually and in association with others:
+(a) To know, seek, obtain, receive and hold information about all human rights and fundamental
+freedoms, including having access to information as to how those rights and freedoms are given effect in
+domestic legislative, judicial or administrative systems;
+(b) As provided for in human rights and other applicable international instruments, freely to publish,
+impart or disseminate to others views, information and knowledge on all human rights and fundamental
+freedoms;
+(c) To study, discuss, form and hold opinions on the observance, both in law and in practice, of all
+human rights and fundamental freedoms and, through these and other appropriate means, to draw public
+attention to those matters.
+Article 7
+Everyone has the right, individually and in association with others, to develop and discuss new human
+rights ideas and principles and to advocate their acceptance.
+Article 8
+1. Everyone has the right, individually and in association with others, to have effective access</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>47</td>
+<td>
+promoting and protecting human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>48</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>49</td>
+<td>
+Article 6
+Everyone has the right</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>50</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>51</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>52</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>53</td>
+<td>
+1. Everyone has the right</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>54</td>
+<td>
+basis, to participation in the government of his or her country and in the conduct of public
+affairs.
+2. This includes, inter alia, the right, individually and in association with others, to submit to governmental
+bodies and agencies and organizations concerned with public affairs criticism and proposals for improving
+/...
+A/RES/53/144
+Page 5
+their functioning and to draw attention to any aspect of their work that may hinder or impede the promotion,
+protection and realization of human rights and fundamental freedoms.
+Article 9
+1. In the exercise of human rights and fundamental freedoms, including the promotion and protection of
+human rights as referred to in the present Declaration, everyone has the right, individually and in association
+with others, to benefit from an effective remedy and to be protected in the event of the violation of those
+rights.
+2. To this end, everyone whose rights or freedoms are allegedly violated has the right, either in person or
+through legally authorized representation, to complain to and have that complaint promptly reviewed in a
+public hearing before an independent, impartial and competent judicial or other authority established by law
+and to obtain from such an authority a decision, in accordance with law, providing redress, including any
+compensation due, where there has been a violation of that person’s rights or freedoms, as well as
+enforcement of the eventual decision and award, all without undue delay.
+3. To the same end, everyone has the right, individually and in association with others, inter alia:
+(a) To complain about the policies and actions of individual officials and governmental bodies with
+regard to violations of human rights and fundamental freedoms, by petition or other appropriate means, to
+competent domestic judicial, administrative or legislative authorities or any other competent authority
+provided for by the legal system of the State, which should render their decision on the complaint without
+undue delay;
+(b) To attend public hearings, proceedings and trials so as to form an opinion on their compliance with
+national law and applicable international obligations and commitments;
+(c) To offer and provide professionally qualified legal assistance or other relevant advice and
+assistance in defending human rights and fundamental freedoms.
+4. To the same end, and in accordance with applicable international instruments and procedures, everyone
+has the right, individually and in association with others, to unhindered access to and communication with
+international bodies with general or special competence to receive and consider communications on matters of
+human rights and fundamental freedoms.
+5. The State shall conduct a prompt and impartial investigation or ensure that an inquiry takes place
+whenever there is reasonable ground to believe that a violation of human rights and fundamental freedoms
+has occurred in any territory under its jurisdiction.
+Article 10
+No one shall participate, by act or by failure to act where required, in violating human rights and
+fundamental freedoms and no one shall be subjected to punishment or adverse action of any kind for refusing
+to do so.
+Article 11
+/...
+A/RES/53/144
+Page 6
+Everyone has the right, individually and in association with others, to the lawful exercise of his or her
+occupation or profession. Everyone who, as a result of his or her profession, can affect the human dignity,
+human rights and fundamental freedoms of others should respect those rights and freedoms and comply with
+relevant national and international standards of occupational and professional conduct or ethics.
+Article 12
+1. Everyone has the right, individually and in association with others, to participate in peaceful activities
+against violations of human rights and fundamental freedoms.
+2. The State shall take all necessary measures to ensure the protection by the competent authorities of
+everyone, individually and in association with others, against any violence, threats, retaliation, de facto or de
+jure adverse discrimination, pressure or any other arbitrary action as a consequence of his or her legitimate
+exercise of the rights referred to in the present Declaration.
+3. In this connection, everyone is entitled, individually and in association with others, to be protected
+effectively under national law in reacting against or opposing, through peaceful means, activities and acts,
+including those by omission, attributable to States that result in violations of human rights and fundamental
+freedoms, as well as acts of violence perpetrated by groups or individuals that affect the enjoyment of human
+rights and fundamental freedoms.
+Article 13
+Everyone has the right, individually and in association with others, to solicit, receive and utilize
+resources for the express purpose of promoting and protecting human rights and fundamental freedoms
+through peaceful means, in accordance with article 3 of the present Declaration.
+Article 14
+1. The State has the responsibility to take legislative, judicial, administrative or other appropriate measures
+to promote the understanding by all persons under its jurisdiction of their civil, political, economic, social and
+cultural rights.
+2. Such measures shall include, inter alia:
+(a) The publication and widespread availability of national laws and regulations and of applicable
+basic international human rights instruments;
+(b) Full and equal access to international documents in the field of human rights, including the periodic
+reports by the State to the bodies established by the international human rights treaties to which it is a party,
+as well as the summary records of discussions and the official reports of these bodies.
+3. The State shall ensure and support, where appropriate, the creation and development of further
+independent national institutions for the promotion and protection of human rights and fundamental freedoms
+/...
+A/RES/53/144
+Page 7
+in all territory under its jurisdiction, whether they be ombudsmen, human rights commissions or any other
+form of national institution.
+Article 15
+The State has the responsibility to promote and facilitate the teaching of human rights and fundamental
+freedoms at all levels of education and to ensure that all those responsible for training lawyers, law
+enforcement officers, the personnel of the armed forces and public officials include appropriate elements of
+human rights teaching in their training programme.
+Article 16
+Individuals, non-governmental organizations and relevant institutions have an important role to play in
+contributing to making the public more aware of questions relating to all human rights and fundamental
+freedoms through activities such as education, training and research in these areas to strengthen further, inter
+alia, understanding, tolerance, peace and friendly relations among nations and among all racial and religious
+groups, bearing in mind the various backgrounds of the societies and communities in which they carry out
+their activities.
+Article 17
+In the exercise of the rights and freedoms referred to in the present Declaration, everyone, acting
+individually and in association with others, shall be subject only to such limitations as are in accordance with
+applicable international obligations and are determined by law solely for the purpose of securing due
+recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,
+public order and the general welfare in a democratic society.
+Article 18
+1. Everyone has duties towards and within the community, in which alone the free and full development of
+his or her personality is possible.
+2. Individuals, groups, institutions and non-governmental organizations have an important role to play and
+a responsibility in safeguarding democracy, promoting human rights and fundamental freedoms and
+contributing to the promotion and advancement of democratic societies, institutions and processes.
+3. Individuals, groups, institutions and non-governmental organizations also have an important role and a
+responsibility in contributing, as appropriate, to the promotion of the right of everyone to a social and
+international order in which the rights and freedoms set forth in the Universal Declaration of Human Rights
+and other human rights instruments can be fully realized.
+Article 19
+A/RES/53/144
+Page 8
+Nothing in the present Declaration shall be interpreted as implying for any individual, group or organ of
+society or any State the right to engage in any activity or to perform any act aimed at the destruction of the
+rights and freedoms referred to in the present Declaration.
+Article 20
+Nothing in the present Declaration shall be interpreted as permitting States to support and promote
+activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the
+provisions of the Charter of the United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>55</td>
+<td>
+realization of human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>56</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>57</td>
+<td>
+Article 9
+1</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦PLT/PLT_CE_V_5.doc.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>58</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>59</td>
+<td>
+public hearing before an independent, impartial</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>60</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>61</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>62</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>63</td>
+<td>
+violation of human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>64</td>
+<td>
+human rights and
+fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>65</td>
+<td>
+6
+Everyone has the right</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>66</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>67</td>
+<td>
+respect those rights and freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>68</td>
+<td>
+1. Everyone has the right</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>69</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>70</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>71</td>
+<td>
+enjoyment of human
+rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>72</td>
+<td>
+human
+rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>73</td>
+<td>
+promoting and protecting human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>74</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>75</td>
+<td>
+Article 14
+1</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>76</td>
+<td>
+economic, social and
+cultural rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>77</td>
+<td>
+include, inter alia</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>78</td>
+<td>
+field of human rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>79</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>80</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>81</td>
+<td>
+human rights and fundamental
+freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>82</td>
+<td>
+racial and religious
+groups</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>83</td>
+<td>
+exercise of the rights and freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>84</td>
+<td>
+determined by law solely for the purpose of securing due
+recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,
+public order and the general welfare in a democratic society</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>85</td>
+<td>
+1. Everyone has duties</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>86</td>
+<td>
+community, in which alone the free and full development of
+his or her personality is possible.
+2</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>87</td>
+<td>
+human rights and fundamental freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>88</td>
+<td>
+social and
+international order in which the rights and freedoms set forth</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>89</td>
+<td>
+Universal Declaration of Human Rights</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt<br/>
+</td>
+</tr><tr>
+<td>90</td>
+<td>
+fully realized.
+Article</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>91</td>
+<td>
+Declaration shall be interpreted as implying</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>92</td>
+<td>
+right to engage in any activity or to perform any act aimed at the destruction of the
+rights and freedoms</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt<br/>
+</td>
+</tr><tr>
+<td>93</td>
+<td>
+provisions of the Charter of the United Nations</td>
+<td>
+C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt<br/>
+</td>
+</tr>
+</htmlstartcomment>MYQUOTEREF
+93
+0|UNITED A NATIONS General Assembly Distr. GENERAL A/RES/53/144 8 March 1999 Fifty-third session Agenda item 110 (b) RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY [on the report of the Third Committee (A/53/625/Add.2)] 53/144. Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms The General Assembly, Reaffirming the importance of the observance of the purposes and principles of the Charter of the United Nations for the promotion and protection of all human rights and fundamental freedoms for all persons in all countries of the world, Taking note of Commission on Human Rights resolution 1998/7 of 3 April 1998,1 in which the Commission approved the text of the draft declaration on the right and responsibility of individuals, groups and organs of society to promote and protect universally recognized human rights and fundamental freedoms, Taking note also of Economic and Social Council resolution 1998/33 of 30 July 1998, in which the Council recommended the draft declaration to the General Assembly for adoption, Conscious of the importance of the adoption of the draft declaration in the context of the fiftieth anniversary of the Universal Declaration of Human Rights 2, 1 See Official Records of the Economic and Social Council, 1998, Supplement No. 3 (E/1998/23), chap. II, sect. A. 2 Resolution 217 A (III). /... A/RES/53/144 Page 2 1. Adopts the Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms, annexed to the present resolution; 2. Invites Governments, agencies and organizations of the United Nations system and intergovernmental and non-governmental organizations to intensify their efforts to disseminate the Declaration and to promote universal respect and understanding thereof, and requests the Secretary-General to include the text of the Declaration in the next edition of Human Rights: A Compilation of International Instruments. 85th plenary meeting 9 December 1998 ANNEX Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms The General Assembly, Reaffirming the importance of the observance of the purposes and principles of the Charter of the United Nations for the promotion and protection of all human rights and fundamental freedoms for all persons in all countries of the world, Reaffirming also the importance of the Universal Declaration of Human Rights2 and the International Covenants on Human Rights3 as basic elements of international efforts to promote universal respect for and observance of human rights and fundamental freedoms and the importance of other human rights instruments adopted within the United Nations system, as well as those at the regional level, Stressing that all members of the international community shall fulfil, jointly and separately, their solemn obligation to promote and encourage respect for human rights and fundamental freedoms for all without distinction of any kind, including distinctions based on race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status, and reaffirming the particular importance of achieving international cooperation to fulfil this obligation according to the Charter, Acknowledging the important role of international cooperation for, and the valuable work of individuals, groups and associations in contributing to, the effective elimination of all violations of human rights and fundamental freedoms of peoples and individuals, including in relation to mass, flagrant or systematic violations such as those resulting from apartheid, all forms of racial discrimination, colonialism, foreign domination or occupation, aggression or threats to national sovereignty, national unity or territorial integrity and from the refusal to recognize the right of peoples to self-determination and the right of every people to exercise full sovereignty over its wealth and natural resources, 3 Resolution 2200 A (XXI), annex. /... A/RES/53/144 Page 3 Recognizing the relationship between international peace and security and the enjoyment of human rights and fundamental freedoms, and mindful that the absence of international peace and security does not excuse non-compliance, Reiterating that all human rights and fundamental freedoms are universal, indivisible, interdependent and interrelated and should be promoted and implemented in a fair and equitable manner, without prejudice to the implementation of each of those rights and freedoms, Stressing that the prime responsibility and duty to promote and protect human rights and fundamental freedoms lie with the State, Recognizing the right and the responsibility of individuals, groups and associations to promote respect for and foster knowledge of human rights and fundamental freedoms at the national and international levels, Declares: Article 1 Everyone has the right, individually and in association with others, to promote and to strive for the protection and realization of human rights and fundamental freedoms at the national and international levels. Article 2 1. Each State has a prime responsibility and duty to protect, promote and implement all human rights and fundamental freedoms, inter alia, by adopting such steps as may be necessary to create all conditions necessary in the social, economic, political and other fields, as well as the legal guarantees required to ensure that all persons under its jurisdiction, individually and in association with others, are able to enjoy all those rights and freedoms in practice. 2. Each State shall adopt such legislative, administrative and other steps as may be necessary to ensure that the rights and freedoms referred to in the present Declaration are effectively guaranteed. Article 3 Domestic law consistent with the Charter of the United Nations and other international obligations of the State in the field of human rights and fundamental freedoms is the juridical framework within which human rights and fundamental freedoms should be implemented and enjoyed and within which all activities referred to in the present Declaration for the promotion, protection and effective realization of those rights and freedoms should be conducted. Article 4 Nothing in the present Declaration shall be construed as impairing or contradicting the purposes and principles of the Charter of the United Nations or as restricting or derogating from the provisions of the /... A/RES/53/144 Page 4 Universal Declaration of Human Rights 2|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt
+1|UNITED A NATIONS General Assembly|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+2|session Agenda item|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+3|RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+4|Human Rights and Fundamental Freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+5|Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt
+6|United Nations for the promotion|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+7|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+8|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+9|Economic and Social Council|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt
+10|anniversary of the Universal Declaration of Human Rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+11|Economic and Social Council|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt
+12|Resolution 217 A (III|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+13|Human Rights and Fundamental Freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+14|United Nations system|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+15|intergovernmental and non-governmental organizations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦WO_GA/WO_GA_31_4.doc.txt
+16|Human Rights and Fundamental Freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+17|Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt
+18|United Nations for the promotion|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+19|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+20|Universal Declaration of Human|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+21|universal respect for and observance of human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+22|United Nations system|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+23|respect for human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+24|without distinction of any kind|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+25|race, colour, sex, language, religion, political or other opinion, national or social origin, property, birth or other status|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+26|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+27|enjoyment of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+28|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+29|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+30|promote and protect human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+31|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+32|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+33|1 Everyone has the right|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+34|realization of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+35|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+36|Article 2 1|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+37|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+38|Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt
+39|field of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+40|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+41|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+42|Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt
+43|Universal Declaration of Human Rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+44|International Covenants on Human|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt
+45|international instruments and commitments applicable in this field. Article 5 For the purpose of promoting and protecting human rights and fundamental freedoms, everyone has the right, individually and in association with others, at the national and international levels: (a) To meet or assemble peacefully; (b) To form, join and participate in non-governmental organizations, associations or groups; (c) To communicate with non-governmental or intergovernmental organizations. Article 6 Everyone has the right, individually and in association with others: (a) To know, seek, obtain, receive and hold information about all human rights and fundamental freedoms, including having access to information as to how those rights and freedoms are given effect in domestic legislative, judicial or administrative systems; (b) As provided for in human rights and other applicable international instruments, freely to publish, impart or disseminate to others views, information and knowledge on all human rights and fundamental freedoms; (c) To study, discuss, form and hold opinions on the observance, both in law and in practice, of all human rights and fundamental freedoms and, through these and other appropriate means, to draw public attention to those matters. Article 7 Everyone has the right, individually and in association with others, to develop and discuss new human rights ideas and principles and to advocate their acceptance. Article 8 1. Everyone has the right, individually and in association with others, to have effective access|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt
+46|promoting and protecting human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+47|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+48|Article 6 Everyone has the right|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+49|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+50|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+51|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+52|1. Everyone has the right|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+53|basis, to participation in the government of his or her country and in the conduct of public affairs. 2. This includes, inter alia, the right, individually and in association with others, to submit to governmental bodies and agencies and organizations concerned with public affairs criticism and proposals for improving /... A/RES/53/144 Page 5 their functioning and to draw attention to any aspect of their work that may hinder or impede the promotion, protection and realization of human rights and fundamental freedoms. Article 9 1. In the exercise of human rights and fundamental freedoms, including the promotion and protection of human rights as referred to in the present Declaration, everyone has the right, individually and in association with others, to benefit from an effective remedy and to be protected in the event of the violation of those rights. 2. To this end, everyone whose rights or freedoms are allegedly violated has the right, either in person or through legally authorized representation, to complain to and have that complaint promptly reviewed in a public hearing before an independent, impartial and competent judicial or other authority established by law and to obtain from such an authority a decision, in accordance with law, providing redress, including any compensation due, where there has been a violation of that person’s rights or freedoms, as well as enforcement of the eventual decision and award, all without undue delay. 3. To the same end, everyone has the right, individually and in association with others, inter alia: (a) To complain about the policies and actions of individual officials and governmental bodies with regard to violations of human rights and fundamental freedoms, by petition or other appropriate means, to competent domestic judicial, administrative or legislative authorities or any other competent authority provided for by the legal system of the State, which should render their decision on the complaint without undue delay; (b) To attend public hearings, proceedings and trials so as to form an opinion on their compliance with national law and applicable international obligations and commitments; (c) To offer and provide professionally qualified legal assistance or other relevant advice and assistance in defending human rights and fundamental freedoms. 4. To the same end, and in accordance with applicable international instruments and procedures, everyone has the right, individually and in association with others, to unhindered access to and communication with international bodies with general or special competence to receive and consider communications on matters of human rights and fundamental freedoms. 5. The State shall conduct a prompt and impartial investigation or ensure that an inquiry takes place whenever there is reasonable ground to believe that a violation of human rights and fundamental freedoms has occurred in any territory under its jurisdiction. Article 10 No one shall participate, by act or by failure to act where required, in violating human rights and fundamental freedoms and no one shall be subjected to punishment or adverse action of any kind for refusing to do so. Article 11 /... A/RES/53/144 Page 6 Everyone has the right, individually and in association with others, to the lawful exercise of his or her occupation or profession. Everyone who, as a result of his or her profession, can affect the human dignity, human rights and fundamental freedoms of others should respect those rights and freedoms and comply with relevant national and international standards of occupational and professional conduct or ethics. Article 12 1. Everyone has the right, individually and in association with others, to participate in peaceful activities against violations of human rights and fundamental freedoms. 2. The State shall take all necessary measures to ensure the protection by the competent authorities of everyone, individually and in association with others, against any violence, threats, retaliation, de facto or de jure adverse discrimination, pressure or any other arbitrary action as a consequence of his or her legitimate exercise of the rights referred to in the present Declaration. 3. In this connection, everyone is entitled, individually and in association with others, to be protected effectively under national law in reacting against or opposing, through peaceful means, activities and acts, including those by omission, attributable to States that result in violations of human rights and fundamental freedoms, as well as acts of violence perpetrated by groups or individuals that affect the enjoyment of human rights and fundamental freedoms. Article 13 Everyone has the right, individually and in association with others, to solicit, receive and utilize resources for the express purpose of promoting and protecting human rights and fundamental freedoms through peaceful means, in accordance with article 3 of the present Declaration. Article 14 1. The State has the responsibility to take legislative, judicial, administrative or other appropriate measures to promote the understanding by all persons under its jurisdiction of their civil, political, economic, social and cultural rights. 2. Such measures shall include, inter alia: (a) The publication and widespread availability of national laws and regulations and of applicable basic international human rights instruments; (b) Full and equal access to international documents in the field of human rights, including the periodic reports by the State to the bodies established by the international human rights treaties to which it is a party, as well as the summary records of discussions and the official reports of these bodies. 3. The State shall ensure and support, where appropriate, the creation and development of further independent national institutions for the promotion and protection of human rights and fundamental freedoms /... A/RES/53/144 Page 7 in all territory under its jurisdiction, whether they be ombudsmen, human rights commissions or any other form of national institution. Article 15 The State has the responsibility to promote and facilitate the teaching of human rights and fundamental freedoms at all levels of education and to ensure that all those responsible for training lawyers, law enforcement officers, the personnel of the armed forces and public officials include appropriate elements of human rights teaching in their training programme. Article 16 Individuals, non-governmental organizations and relevant institutions have an important role to play in contributing to making the public more aware of questions relating to all human rights and fundamental freedoms through activities such as education, training and research in these areas to strengthen further, inter alia, understanding, tolerance, peace and friendly relations among nations and among all racial and religious groups, bearing in mind the various backgrounds of the societies and communities in which they carry out their activities. Article 17 In the exercise of the rights and freedoms referred to in the present Declaration, everyone, acting individually and in association with others, shall be subject only to such limitations as are in accordance with applicable international obligations and are determined by law solely for the purpose of securing due recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality, public order and the general welfare in a democratic society. Article 18 1. Everyone has duties towards and within the community, in which alone the free and full development of his or her personality is possible. 2. Individuals, groups, institutions and non-governmental organizations have an important role to play and a responsibility in safeguarding democracy, promoting human rights and fundamental freedoms and contributing to the promotion and advancement of democratic societies, institutions and processes. 3. Individuals, groups, institutions and non-governmental organizations also have an important role and a responsibility in contributing, as appropriate, to the promotion of the right of everyone to a social and international order in which the rights and freedoms set forth in the Universal Declaration of Human Rights and other human rights instruments can be fully realized. Article 19 A/RES/53/144 Page 8 Nothing in the present Declaration shall be interpreted as implying for any individual, group or organ of society or any State the right to engage in any activity or to perform any act aimed at the destruction of the rights and freedoms referred to in the present Declaration. Article 20 Nothing in the present Declaration shall be interpreted as permitting States to support and promote activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the provisions of the Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt
+54|realization of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+55|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+56|Article 9 1|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦PLT/PLT_CE_V_5.doc.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+57|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+58|public hearing before an independent, impartial|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+59|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+60|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+61|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+62|violation of human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+63|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+64|6 Everyone has the right|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+65|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+66|respect those rights and freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+67|1. Everyone has the right|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+68|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+69|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+70|enjoyment of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+71|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+72|promoting and protecting human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt
+73|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+74|Article 14 1|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+75|economic, social and cultural rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+76|include, inter alia|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+77|field of human rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+78|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+79|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+80|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+81|racial and religious groups|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+82|exercise of the rights and freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+83|determined by law solely for the purpose of securing due recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality, public order and the general welfare in a democratic society|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+84|1. Everyone has duties|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+85|community, in which alone the free and full development of his or her personality is possible. 2|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+86|human rights and fundamental freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+87|social and international order in which the rights and freedoms set forth|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+88|Universal Declaration of Human Rights|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt
+89|fully realized. Article|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+90|Declaration shall be interpreted as implying|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+91|right to engage in any activity or to perform any act aimed at the destruction of the rights and freedoms|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt
+92|provisions of the Charter of the United Nations|C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt
+MYQUOTEREF</htmlendcomment></P>
+</body> </html> -->
+</htmlRefDoc>
+<Info>
+<references><reference>
+<number>1</number>
+<id>1</id>
+<quote>UNITED A
+NATIONS
+General Assembly
+Distr.
+GENERAL
+A/RES/53/144
+8 March 1999
+Fifty-third session
+Agenda item 110 (b)
+RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY
+[on the report of the Third Committee (A/53/625/Add.2)]
+53/144. Declaration on the Right and Responsibility of Individuals, Groups and
+Organs of Society to Promote and Protect Universally Recognized Human
+Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Taking note of Commission on Human Rights resolution 1998/7 of 3 April 1998,1 in which the
+Commission approved the text of the draft declaration on the right and responsibility of individuals, groups
+and organs of society to promote and protect universally recognized human rights and fundamental freedoms,
+Taking note also of Economic and Social Council resolution 1998/33 of 30 July 1998, in which the
+Council recommended the draft declaration to the General Assembly for adoption,
+Conscious of the importance of the adoption of the draft declaration in the context of the fiftieth
+anniversary of the Universal Declaration of Human Rights 2,
+1 See Official Records of the Economic and Social Council, 1998, Supplement No. 3 (E/1998/23), chap. II, sect.
+A.
+2 Resolution 217 A (III).
+/...
+A/RES/53/144
+Page 2
+1. Adopts the Declaration on the Right and Responsibility of Individuals, Groups and Organs of
+Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms, annexed
+to the present resolution;
+2. Invites Governments, agencies and organizations of the United Nations system and
+intergovernmental and non-governmental organizations to intensify their efforts to disseminate the
+Declaration and to promote universal respect and understanding thereof, and requests the Secretary-General
+to include the text of the Declaration in the next edition of Human Rights: A Compilation of International
+Instruments.
+85th plenary meeting
+9 December 1998
+ANNEX
+Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote
+and Protect Universally Recognized Human Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Reaffirming also the importance of the Universal Declaration of Human Rights2 and the International
+Covenants on Human Rights3 as basic elements of international efforts to promote universal respect for and
+observance of human rights and fundamental freedoms and the importance of other human rights instruments
+adopted within the United Nations system, as well as those at the regional level,
+Stressing that all members of the international community shall fulfil, jointly and separately, their
+solemn obligation to promote and encourage respect for human rights and fundamental freedoms for all
+without distinction of any kind, including distinctions based on race, colour, sex, language, religion, political
+or other opinion, national or social origin, property, birth or other status, and reaffirming the particular
+importance of achieving international cooperation to fulfil this obligation according to the Charter,
+Acknowledging the important role of international cooperation for, and the valuable work of individuals,
+groups and associations in contributing to, the effective elimination of all violations of human rights and
+fundamental freedoms of peoples and individuals, including in relation to mass, flagrant or systematic
+violations such as those resulting from apartheid, all forms of racial discrimination, colonialism, foreign
+domination or occupation, aggression or threats to national sovereignty, national unity or territorial integrity
+and from the refusal to recognize the right of peoples to self-determination and the right of every people to
+exercise full sovereignty over its wealth and natural resources,
+3
+ Resolution 2200 A (XXI), annex.
+/...
+A/RES/53/144
+Page 3
+Recognizing the relationship between international peace and security and the enjoyment of human
+rights and fundamental freedoms, and mindful that the absence of international peace and security does not
+excuse non-compliance,
+Reiterating that all human rights and fundamental freedoms are universal, indivisible, interdependent
+and interrelated and should be promoted and implemented in a fair and equitable manner, without prejudice to
+the implementation of each of those rights and freedoms,
+Stressing that the prime responsibility and duty to promote and protect human rights and fundamental
+freedoms lie with the State,
+Recognizing the right and the responsibility of individuals, groups and associations to promote respect
+for and foster knowledge of human rights and fundamental freedoms at the national and international levels,
+Declares:
+Article 1
+Everyone has the right, individually and in association with others, to promote and to strive for the
+protection and realization of human rights and fundamental freedoms at the national and international levels.
+Article 2
+1. Each State has a prime responsibility and duty to protect, promote and implement all human rights and
+fundamental freedoms, inter alia, by adopting such steps as may be necessary to create all conditions
+necessary in the social, economic, political and other fields, as well as the legal guarantees required to ensure
+that all persons under its jurisdiction, individually and in association with others, are able to enjoy all those
+rights and freedoms in practice.
+2. Each State shall adopt such legislative, administrative and other steps as may be necessary to ensure that
+the rights and freedoms referred to in the present Declaration are effectively guaranteed.
+Article 3
+Domestic law consistent with the Charter of the United Nations and other international obligations of the
+State in the field of human rights and fundamental freedoms is the juridical framework within which human
+rights and fundamental freedoms should be implemented and enjoyed and within which all activities referred
+to in the present Declaration for the promotion, protection and effective realization of those rights and
+freedoms should be conducted.
+Article 4
+Nothing in the present Declaration shall be construed as impairing or contradicting the purposes and
+principles of the Charter of the United Nations or as restricting or derogating from the provisions of the
+/...
+A/RES/53/144
+Page 4
+Universal Declaration of Human Rights 2</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
+</documents>
+<color>yellow</color>
+</reference>
+<reference>
+<number>2</number>
+<id>2</id>
+<quote>International Covenants on Human</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
+</documents>
+<color>yellow</color>
+</reference>
+<reference>
+<number>3</number>
+<id>3</id>
+<quote>international instruments and commitments applicable in this field.
+Article 5
+For the purpose of promoting and protecting human rights and fundamental freedoms, everyone has the
+right, individually and in association with others, at the national and international levels:
+(a) To meet or assemble peacefully;
+(b) To form, join and participate in non-governmental organizations, associations or groups;
+(c) To communicate with non-governmental or intergovernmental organizations.
+Article 6
+Everyone has the right, individually and in association with others:
+(a) To know, seek, obtain, receive and hold information about all human rights and fundamental
+freedoms, including having access to information as to how those rights and freedoms are given effect in
+domestic legislative, judicial or administrative systems;
+(b) As provided for in human rights and other applicable international instruments, freely to publish,
+impart or disseminate to others views, information and knowledge on all human rights and fundamental
+freedoms;
+(c) To study, discuss, form and hold opinions on the observance, both in law and in practice, of all
+human rights and fundamental freedoms and, through these and other appropriate means, to draw public
+attention to those matters.
+Article 7
+Everyone has the right, individually and in association with others, to develop and discuss new human
+rights ideas and principles and to advocate their acceptance.
+Article 8
+1. Everyone has the right, individually and in association with others, to have effective access</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
+</documents>
+<color>yellow</color>
+</reference>
+<reference>
+<number>4</number>
+<id>4</id>
+<quote>basis, to participation in the government of his or her country and in the conduct of public
+affairs.
+2. This includes, inter alia, the right, individually and in association with others, to submit to governmental
+bodies and agencies and organizations concerned with public affairs criticism and proposals for improving
+/...
+A/RES/53/144
+Page 5
+their functioning and to draw attention to any aspect of their work that may hinder or impede the promotion,
+protection and realization of human rights and fundamental freedoms.
+Article 9
+1. In the exercise of human rights and fundamental freedoms, including the promotion and protection of
+human rights as referred to in the present Declaration, everyone has the right, individually and in association
+with others, to benefit from an effective remedy and to be protected in the event of the violation of those
+rights.
+2. To this end, everyone whose rights or freedoms are allegedly violated has the right, either in person or
+through legally authorized representation, to complain to and have that complaint promptly reviewed in a
+public hearing before an independent, impartial and competent judicial or other authority established by law
+and to obtain from such an authority a decision, in accordance with law, providing redress, including any
+compensation due, where there has been a violation of that person’s rights or freedoms, as well as
+enforcement of the eventual decision and award, all without undue delay.
+3. To the same end, everyone has the right, individually and in association with others, inter alia:
+(a) To complain about the policies and actions of individual officials and governmental bodies with
+regard to violations of human rights and fundamental freedoms, by petition or other appropriate means, to
+competent domestic judicial, administrative or legislative authorities or any other competent authority
+provided for by the legal system of the State, which should render their decision on the complaint without
+undue delay;
+(b) To attend public hearings, proceedings and trials so as to form an opinion on their compliance with
+national law and applicable international obligations and commitments;
+(c) To offer and provide professionally qualified legal assistance or other relevant advice and
+assistance in defending human rights and fundamental freedoms.
+4. To the same end, and in accordance with applicable international instruments and procedures, everyone
+has the right, individually and in association with others, to unhindered access to and communication with
+international bodies with general or special competence to receive and consider communications on matters of
+human rights and fundamental freedoms.
+5. The State shall conduct a prompt and impartial investigation or ensure that an inquiry takes place
+whenever there is reasonable ground to believe that a violation of human rights and fundamental freedoms
+has occurred in any territory under its jurisdiction.
+Article 10
+No one shall participate, by act or by failure to act where required, in violating human rights and
+fundamental freedoms and no one shall be subjected to punishment or adverse action of any kind for refusing
+to do so.
+Article 11
+/...
+A/RES/53/144
+Page 6
+Everyone has the right, individually and in association with others, to the lawful exercise of his or her
+occupation or profession. Everyone who, as a result of his or her profession, can affect the human dignity,
+human rights and fundamental freedoms of others should respect those rights and freedoms and comply with
+relevant national and international standards of occupational and professional conduct or ethics.
+Article 12
+1. Everyone has the right, individually and in association with others, to participate in peaceful activities
+against violations of human rights and fundamental freedoms.
+2. The State shall take all necessary measures to ensure the protection by the competent authorities of
+everyone, individually and in association with others, against any violence, threats, retaliation, de facto or de
+jure adverse discrimination, pressure or any other arbitrary action as a consequence of his or her legitimate
+exercise of the rights referred to in the present Declaration.
+3. In this connection, everyone is entitled, individually and in association with others, to be protected
+effectively under national law in reacting against or opposing, through peaceful means, activities and acts,
+including those by omission, attributable to States that result in violations of human rights and fundamental
+freedoms, as well as acts of violence perpetrated by groups or individuals that affect the enjoyment of human
+rights and fundamental freedoms.
+Article 13
+Everyone has the right, individually and in association with others, to solicit, receive and utilize
+resources for the express purpose of promoting and protecting human rights and fundamental freedoms
+through peaceful means, in accordance with article 3 of the present Declaration.
+Article 14
+1. The State has the responsibility to take legislative, judicial, administrative or other appropriate measures
+to promote the understanding by all persons under its jurisdiction of their civil, political, economic, social and
+cultural rights.
+2. Such measures shall include, inter alia:
+(a) The publication and widespread availability of national laws and regulations and of applicable
+basic international human rights instruments;
+(b) Full and equal access to international documents in the field of human rights, including the periodic
+reports by the State to the bodies established by the international human rights treaties to which it is a party,
+as well as the summary records of discussions and the official reports of these bodies.
+3. The State shall ensure and support, where appropriate, the creation and development of further
+independent national institutions for the promotion and protection of human rights and fundamental freedoms
+/...
+A/RES/53/144
+Page 7
+in all territory under its jurisdiction, whether they be ombudsmen, human rights commissions or any other
+form of national institution.
+Article 15
+The State has the responsibility to promote and facilitate the teaching of human rights and fundamental
+freedoms at all levels of education and to ensure that all those responsible for training lawyers, law
+enforcement officers, the personnel of the armed forces and public officials include appropriate elements of
+human rights teaching in their training programme.
+Article 16
+Individuals, non-governmental organizations and relevant institutions have an important role to play in
+contributing to making the public more aware of questions relating to all human rights and fundamental
+freedoms through activities such as education, training and research in these areas to strengthen further, inter
+alia, understanding, tolerance, peace and friendly relations among nations and among all racial and religious
+groups, bearing in mind the various backgrounds of the societies and communities in which they carry out
+their activities.
+Article 17
+In the exercise of the rights and freedoms referred to in the present Declaration, everyone, acting
+individually and in association with others, shall be subject only to such limitations as are in accordance with
+applicable international obligations and are determined by law solely for the purpose of securing due
+recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,
+public order and the general welfare in a democratic society.
+Article 18
+1. Everyone has duties towards and within the community, in which alone the free and full development of
+his or her personality is possible.
+2. Individuals, groups, institutions and non-governmental organizations have an important role to play and
+a responsibility in safeguarding democracy, promoting human rights and fundamental freedoms and
+contributing to the promotion and advancement of democratic societies, institutions and processes.
+3. Individuals, groups, institutions and non-governmental organizations also have an important role and a
+responsibility in contributing, as appropriate, to the promotion of the right of everyone to a social and
+international order in which the rights and freedoms set forth in the Universal Declaration of Human Rights
+and other human rights instruments can be fully realized.
+Article 19
+A/RES/53/144
+Page 8
+Nothing in the present Declaration shall be interpreted as implying for any individual, group or organ of
+society or any State the right to engage in any activity or to perform any act aimed at the destruction of the
+rights and freedoms referred to in the present Declaration.
+Article 20
+Nothing in the present Declaration shall be interpreted as permitting States to support and promote
+activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the
+provisions of the Charter of the United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
+</documents>
+<color>yellow</color>
+</reference>
+<reference>
+<number>90</number>
+<id>1</id>
+<quote>UNITED A
+NATIONS
+General Assembly</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>91</number>
+<id>2</id>
+<quote>session
+Agenda item</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>92</number>
+<id>3</id>
+<quote>RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>93</number>
+<id>4</id>
+<quote>Human
+Rights and Fundamental Freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>94</number>
+<id>5</id>
+<quote>Charter of the
+United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>95</number>
+<id>6</id>
+<quote>United Nations for the promotion</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>96</number>
+<id>7</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>97</number>
+<id>8</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>98</number>
+<id>9</id>
+<quote>Economic and Social Council</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>99</number>
+<id>10</id>
+<quote>anniversary of the Universal Declaration of Human Rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>100</number>
+<id>11</id>
+<quote>Economic and Social Council</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>101</number>
+<id>12</id>
+<quote>Resolution 217 A (III</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>102</number>
+<id>13</id>
+<quote>Human Rights and Fundamental Freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>103</number>
+<id>14</id>
+<quote>United Nations system</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>104</number>
+<id>15</id>
+<quote>intergovernmental and non-governmental organizations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦WO_GA/WO_GA_31_4.doc.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>105</number>
+<id>16</id>
+<quote>Human Rights and Fundamental Freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>106</number>
+<id>17</id>
+<quote>Charter of the
+United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>107</number>
+<id>18</id>
+<quote>United Nations for the promotion</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>108</number>
+<id>19</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>109</number>
+<id>20</id>
+<quote>Universal Declaration of Human</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>110</number>
+<id>21</id>
+<quote>universal respect for and
+observance of human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>111</number>
+<id>22</id>
+<quote>United Nations system</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>112</number>
+<id>23</id>
+<quote>respect for human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>113</number>
+<id>24</id>
+<quote>without distinction of any kind</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>114</number>
+<id>25</id>
+<quote>race, colour, sex, language, religion, political
+or other opinion, national or social origin, property, birth or other status</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>115</number>
+<id>26</id>
+<quote>human rights and
+fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>116</number>
+<id>27</id>
+<quote>enjoyment of human
+rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>117</number>
+<id>28</id>
+<quote>human
+rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>118</number>
+<id>29</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>119</number>
+<id>30</id>
+<quote>promote and protect human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>120</number>
+<id>31</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>121</number>
+<id>32</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>122</number>
+<id>33</id>
+<quote>1
+Everyone has the right</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>123</number>
+<id>34</id>
+<quote>realization of human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>124</number>
+<id>35</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>125</number>
+<id>36</id>
+<quote>Article 2
+1</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>126</number>
+<id>37</id>
+<quote>human rights and
+fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>127</number>
+<id>38</id>
+<quote>Charter of the United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>128</number>
+<id>39</id>
+<quote>field of human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>129</number>
+<id>40</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>130</number>
+<id>41</id>
+<quote>human
+rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>131</number>
+<id>42</id>
+<quote>Charter of the United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦FINAL_ACT.doc.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>132</number>
+<id>43</id>
+<quote>Universal Declaration of Human Rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>133</number>
+<id>44</id>
+<quote>promoting and protecting human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>134</number>
+<id>45</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>135</number>
+<id>46</id>
+<quote>Article 6
+Everyone has the right</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>136</number>
+<id>47</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>137</number>
+<id>48</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>138</number>
+<id>49</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>139</number>
+<id>50</id>
+<quote>1. Everyone has the right</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>140</number>
+<id>51</id>
+<quote>realization of human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>141</number>
+<id>52</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>142</number>
+<id>53</id>
+<quote>Article 9
+1</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦PLT/PLT_CE_V_5.doc.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>143</number>
+<id>54</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>144</number>
+<id>55</id>
+<quote>public hearing before an independent, impartial</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>145</number>
+<id>56</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>146</number>
+<id>57</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>147</number>
+<id>58</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>148</number>
+<id>59</id>
+<quote>violation of human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>149</number>
+<id>60</id>
+<quote>human rights and
+fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>150</number>
+<id>61</id>
+<quote>6
+Everyone has the right</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>151</number>
+<id>62</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>152</number>
+<id>63</id>
+<quote>respect those rights and freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>153</number>
+<id>64</id>
+<quote>1. Everyone has the right</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>154</number>
+<id>65</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>155</number>
+<id>66</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>156</number>
+<id>67</id>
+<quote>enjoyment of human
+rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>157</number>
+<id>68</id>
+<quote>human
+rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>158</number>
+<id>69</id>
+<quote>promoting and protecting human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>159</number>
+<id>70</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>160</number>
+<id>71</id>
+<quote>Article 14
+1</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>161</number>
+<id>72</id>
+<quote>economic, social and
+cultural rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>162</number>
+<id>73</id>
+<quote>include, inter alia</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>163</number>
+<id>74</id>
+<quote>field of human rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>164</number>
+<id>75</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>165</number>
+<id>76</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>166</number>
+<id>77</id>
+<quote>human rights and fundamental
+freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>167</number>
+<id>78</id>
+<quote>racial and religious
+groups</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>168</number>
+<id>79</id>
+<quote>exercise of the rights and freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>169</number>
+<id>80</id>
+<quote>determined by law solely for the purpose of securing due
+recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,
+public order and the general welfare in a democratic society</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>170</number>
+<id>81</id>
+<quote>1. Everyone has duties</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>171</number>
+<id>82</id>
+<quote>community, in which alone the free and full development of
+his or her personality is possible.
+2</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>172</number>
+<id>83</id>
+<quote>human rights and fundamental freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>173</number>
+<id>84</id>
+<quote>social and
+international order in which the rights and freedoms set forth</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>174</number>
+<id>85</id>
+<quote>Universal Declaration of Human Rights</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>175</number>
+<id>86</id>
+<quote>fully realized.
+Article</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>176</number>
+<id>87</id>
+<quote>Declaration shall be interpreted as implying</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>177</number>
+<id>88</id>
+<quote>right to engage in any activity or to perform any act aimed at the destruction of the
+rights and freedoms</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
+</documents>
+<color>red</color>
+</reference>
+<reference>
+<number>178</number>
+<id>89</id>
+<quote>provisions of the Charter of the United Nations</quote>
+<documents>
+<document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
+</documents>
+<color>red</color>
+</reference>
+</references></Info>
+<origText>
+
+UNITED A
+NATIONS
+General Assembly
+Distr.
+GENERAL
+A/RES/53/144
+8 March 1999
+Fifty-third session
+Agenda item 110 (b)
+RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY
+[on the report of the Third Committee (A/53/625/Add.2)]
+53/144. Declaration on the Right and Responsibility of Individuals, Groups and
+Organs of Society to Promote and Protect Universally Recognized Human
+Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Taking note of Commission on Human Rights resolution 1998/7 of 3 April 1998,1 in which the
+Commission approved the text of the draft declaration on the right and responsibility of individuals, groups
+and organs of society to promote and protect universally recognized human rights and fundamental freedoms,
+Taking note also of Economic and Social Council resolution 1998/33 of 30 July 1998, in which the
+Council recommended the draft declaration to the General Assembly for adoption,
+Conscious of the importance of the adoption of the draft declaration in the context of the fiftieth
+anniversary of the Universal Declaration of Human Rights 2,
+1 See Official Records of the Economic and Social Council, 1998, Supplement No. 3 (E/1998/23), chap. II, sect.
+A.
+2 Resolution 217 A (III).
+/...
+A/RES/53/144
+Page 2
+1. Adopts the Declaration on the Right and Responsibility of Individuals, Groups and Organs of
+Society to Promote and Protect Universally Recognized Human Rights and Fundamental Freedoms, annexed
+to the present resolution;
+2. Invites Governments, agencies and organizations of the United Nations system and
+intergovernmental and non-governmental organizations to intensify their efforts to disseminate the
+Declaration and to promote universal respect and understanding thereof, and requests the Secretary-General
+to include the text of the Declaration in the next edition of Human Rights: A Compilation of International
+Instruments.
+85th plenary meeting
+9 December 1998
+ANNEX
+Declaration on the Right and Responsibility of Individuals, Groups and Organs of Society to Promote
+and Protect Universally Recognized Human Rights and Fundamental Freedoms
+The General Assembly,
+Reaffirming the importance of the observance of the purposes and principles of the Charter of the
+United Nations for the promotion and protection of all human rights and fundamental freedoms for all
+persons in all countries of the world,
+Reaffirming also the importance of the Universal Declaration of Human Rights2 and the International
+Covenants on Human Rights3 as basic elements of international efforts to promote universal respect for and
+observance of human rights and fundamental freedoms and the importance of other human rights instruments
+adopted within the United Nations system, as well as those at the regional level,
+Stressing that all members of the international community shall fulfil, jointly and separately, their
+solemn obligation to promote and encourage respect for human rights and fundamental freedoms for all
+without distinction of any kind, including distinctions based on race, colour, sex, language, religion, political
+or other opinion, national or social origin, property, birth or other status, and reaffirming the particular
+importance of achieving international cooperation to fulfil this obligation according to the Charter,
+Acknowledging the important role of international cooperation for, and the valuable work of individuals,
+groups and associations in contributing to, the effective elimination of all violations of human rights and
+fundamental freedoms of peoples and individuals, including in relation to mass, flagrant or systematic
+violations such as those resulting from apartheid, all forms of racial discrimination, colonialism, foreign
+domination or occupation, aggression or threats to national sovereignty, national unity or territorial integrity
+and from the refusal to recognize the right of peoples to self-determination and the right of every people to
+exercise full sovereignty over its wealth and natural resources,
+3
+ Resolution 2200 A (XXI), annex.
+/...
+A/RES/53/144
+Page 3
+Recognizing the relationship between international peace and security and the enjoyment of human
+rights and fundamental freedoms, and mindful that the absence of international peace and security does not
+excuse non-compliance,
+Reiterating that all human rights and fundamental freedoms are universal, indivisible, interdependent
+and interrelated and should be promoted and implemented in a fair and equitable manner, without prejudice to
+the implementation of each of those rights and freedoms,
+Stressing that the prime responsibility and duty to promote and protect human rights and fundamental
+freedoms lie with the State,
+Recognizing the right and the responsibility of individuals, groups and associations to promote respect
+for and foster knowledge of human rights and fundamental freedoms at the national and international levels,
+Declares:
+Article 1
+Everyone has the right, individually and in association with others, to promote and to strive for the
+protection and realization of human rights and fundamental freedoms at the national and international levels.
+Article 2
+1. Each State has a prime responsibility and duty to protect, promote and implement all human rights and
+fundamental freedoms, inter alia, by adopting such steps as may be necessary to create all conditions
+necessary in the social, economic, political and other fields, as well as the legal guarantees required to ensure
+that all persons under its jurisdiction, individually and in association with others, are able to enjoy all those
+rights and freedoms in practice.
+2. Each State shall adopt such legislative, administrative and other steps as may be necessary to ensure that
+the rights and freedoms referred to in the present Declaration are effectively guaranteed.
+Article 3
+Domestic law consistent with the Charter of the United Nations and other international obligations of the
+State in the field of human rights and fundamental freedoms is the juridical framework within which human
+rights and fundamental freedoms should be implemented and enjoyed and within which all activities referred
+to in the present Declaration for the promotion, protection and effective realization of those rights and
+freedoms should be conducted.
+Article 4
+Nothing in the present Declaration shall be construed as impairing or contradicting the purposes and
+principles of the Charter of the United Nations or as restricting or derogating from the provisions of the
+/...
+A/RES/53/144
+Page 4
+Universal Declaration of Human Rights 2 3, the International Covenants on Human Rights and other
+international instruments and commitments applicable in this field.
+Article 5
+For the purpose of promoting and protecting human rights and fundamental freedoms, everyone has the
+right, individually and in association with others, at the national and international levels:
+(a) To meet or assemble peacefully;
+(b) To form, join and participate in non-governmental organizations, associations or groups;
+(c) To communicate with non-governmental or intergovernmental organizations.
+Article 6
+Everyone has the right, individually and in association with others:
+(a) To know, seek, obtain, receive and hold information about all human rights and fundamental
+freedoms, including having access to information as to how those rights and freedoms are given effect in
+domestic legislative, judicial or administrative systems;
+(b) As provided for in human rights and other applicable international instruments, freely to publish,
+impart or disseminate to others views, information and knowledge on all human rights and fundamental
+freedoms;
+(c) To study, discuss, form and hold opinions on the observance, both in law and in practice, of all
+human rights and fundamental freedoms and, through these and other appropriate means, to draw public
+attention to those matters.
+Article 7
+Everyone has the right, individually and in association with others, to develop and discuss new human
+rights ideas and principles and to advocate their acceptance.
+Article 8
+1. Everyone has the right, individually and in association with others, to have effective access, on a non-
+discriminatory basis, to participation in the government of his or her country and in the conduct of public
+affairs.
+2. This includes, inter alia, the right, individually and in association with others, to submit to governmental
+bodies and agencies and organizations concerned with public affairs criticism and proposals for improving
+/...
+A/RES/53/144
+Page 5
+their functioning and to draw attention to any aspect of their work that may hinder or impede the promotion,
+protection and realization of human rights and fundamental freedoms.
+Article 9
+1. In the exercise of human rights and fundamental freedoms, including the promotion and protection of
+human rights as referred to in the present Declaration, everyone has the right, individually and in association
+with others, to benefit from an effective remedy and to be protected in the event of the violation of those
+rights.
+2. To this end, everyone whose rights or freedoms are allegedly violated has the right, either in person or
+through legally authorized representation, to complain to and have that complaint promptly reviewed in a
+public hearing before an independent, impartial and competent judicial or other authority established by law
+and to obtain from such an authority a decision, in accordance with law, providing redress, including any
+compensation due, where there has been a violation of that person’s rights or freedoms, as well as
+enforcement of the eventual decision and award, all without undue delay.
+3. To the same end, everyone has the right, individually and in association with others, inter alia:
+(a) To complain about the policies and actions of individual officials and governmental bodies with
+regard to violations of human rights and fundamental freedoms, by petition or other appropriate means, to
+competent domestic judicial, administrative or legislative authorities or any other competent authority
+provided for by the legal system of the State, which should render their decision on the complaint without
+undue delay;
+(b) To attend public hearings, proceedings and trials so as to form an opinion on their compliance with
+national law and applicable international obligations and commitments;
+(c) To offer and provide professionally qualified legal assistance or other relevant advice and
+assistance in defending human rights and fundamental freedoms.
+4. To the same end, and in accordance with applicable international instruments and procedures, everyone
+has the right, individually and in association with others, to unhindered access to and communication with
+international bodies with general or special competence to receive and consider communications on matters of
+human rights and fundamental freedoms.
+5. The State shall conduct a prompt and impartial investigation or ensure that an inquiry takes place
+whenever there is reasonable ground to believe that a violation of human rights and fundamental freedoms
+has occurred in any territory under its jurisdiction.
+Article 10
+No one shall participate, by act or by failure to act where required, in violating human rights and
+fundamental freedoms and no one shall be subjected to punishment or adverse action of any kind for refusing
+to do so.
+Article 11
+/...
+A/RES/53/144
+Page 6
+Everyone has the right, individually and in association with others, to the lawful exercise of his or her
+occupation or profession. Everyone who, as a result of his or her profession, can affect the human dignity,
+human rights and fundamental freedoms of others should respect those rights and freedoms and comply with
+relevant national and international standards of occupational and professional conduct or ethics.
+Article 12
+1. Everyone has the right, individually and in association with others, to participate in peaceful activities
+against violations of human rights and fundamental freedoms.
+2. The State shall take all necessary measures to ensure the protection by the competent authorities of
+everyone, individually and in association with others, against any violence, threats, retaliation, de facto or de
+jure adverse discrimination, pressure or any other arbitrary action as a consequence of his or her legitimate
+exercise of the rights referred to in the present Declaration.
+3. In this connection, everyone is entitled, individually and in association with others, to be protected
+effectively under national law in reacting against or opposing, through peaceful means, activities and acts,
+including those by omission, attributable to States that result in violations of human rights and fundamental
+freedoms, as well as acts of violence perpetrated by groups or individuals that affect the enjoyment of human
+rights and fundamental freedoms.
+Article 13
+Everyone has the right, individually and in association with others, to solicit, receive and utilize
+resources for the express purpose of promoting and protecting human rights and fundamental freedoms
+through peaceful means, in accordance with article 3 of the present Declaration.
+Article 14
+1. The State has the responsibility to take legislative, judicial, administrative or other appropriate measures
+to promote the understanding by all persons under its jurisdiction of their civil, political, economic, social and
+cultural rights.
+2. Such measures shall include, inter alia:
+(a) The publication and widespread availability of national laws and regulations and of applicable
+basic international human rights instruments;
+(b) Full and equal access to international documents in the field of human rights, including the periodic
+reports by the State to the bodies established by the international human rights treaties to which it is a party,
+as well as the summary records of discussions and the official reports of these bodies.
+3. The State shall ensure and support, where appropriate, the creation and development of further
+independent national institutions for the promotion and protection of human rights and fundamental freedoms
+/...
+A/RES/53/144
+Page 7
+in all territory under its jurisdiction, whether they be ombudsmen, human rights commissions or any other
+form of national institution.
+Article 15
+The State has the responsibility to promote and facilitate the teaching of human rights and fundamental
+freedoms at all levels of education and to ensure that all those responsible for training lawyers, law
+enforcement officers, the personnel of the armed forces and public officials include appropriate elements of
+human rights teaching in their training programme.
+Article 16
+Individuals, non-governmental organizations and relevant institutions have an important role to play in
+contributing to making the public more aware of questions relating to all human rights and fundamental
+freedoms through activities such as education, training and research in these areas to strengthen further, inter
+alia, understanding, tolerance, peace and friendly relations among nations and among all racial and religious
+groups, bearing in mind the various backgrounds of the societies and communities in which they carry out
+their activities.
+Article 17
+In the exercise of the rights and freedoms referred to in the present Declaration, everyone, acting
+individually and in association with others, shall be subject only to such limitations as are in accordance with
+applicable international obligations and are determined by law solely for the purpose of securing due
+recognition and respect for the rights and freedoms of others and of meeting the just requirements of morality,
+public order and the general welfare in a democratic society.
+Article 18
+1. Everyone has duties towards and within the community, in which alone the free and full development of
+his or her personality is possible.
+2. Individuals, groups, institutions and non-governmental organizations have an important role to play and
+a responsibility in safeguarding democracy, promoting human rights and fundamental freedoms and
+contributing to the promotion and advancement of democratic societies, institutions and processes.
+3. Individuals, groups, institutions and non-governmental organizations also have an important role and a
+responsibility in contributing, as appropriate, to the promotion of the right of everyone to a social and
+international order in which the rights and freedoms set forth in the Universal Declaration of Human Rights
+and other human rights instruments can be fully realized.
+Article 19
+A/RES/53/144
+Page 8
+Nothing in the present Declaration shall be interpreted as implying for any individual, group or organ of
+society or any State the right to engage in any activity or to perform any act aimed at the destruction of the
+rights and freedoms referred to in the present Declaration.
+Article 20
+Nothing in the present Declaration shall be interpreted as permitting States to support and promote
+activities of individuals, groups of individuals, institutions or non-governmental organizations contrary to the
+provisions of the Charter of the United Nations.
+</origText></QD>
