@@ -511,7 +511,7 @@ public class WSRESTUtil {
             res.append("</td>\n"
                     + "</tr>");
         }
-        return res.toString();
+        return res.toString() + "</table>";
     }
 
     private static String generateHTMLComments(List<Reference> references) {
