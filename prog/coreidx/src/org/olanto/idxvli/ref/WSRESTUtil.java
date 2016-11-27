@@ -553,7 +553,9 @@ public class WSRESTUtil {
                         // current is completely included in the previous: add previous text and open reference
                         // append the text before start
                         if (containing.getEffectiveStartIDX() < current.getStartIDX()) {
-                            ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= current.getStartIDX()) {
+                                ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                            }
                         }
                         containing.setEffectiveStartIDX(current.getStartIDX());
                         // start current
@@ -577,7 +579,9 @@ public class WSRESTUtil {
                                 // 1. previous is not overlapping with current: prev.start -> prev.end, close, add between text then open
                                 // get text of previous reference
                                 if (previous.getEffectiveStartIDX() < previous.getEndIDX()) {
-                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= previous.getEndIDX()) {
+                                        ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 // close previous ans its anchor
                                 ref.append("[E").append(previous.getTag())
@@ -592,8 +596,10 @@ public class WSRESTUtil {
                                             .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
                                             .append(containing.getColor())
                                             .append("\">");
-                                    ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"))
-                                            .append("</FONT></a>");
+                                    if (originalText.length() >= current.getStartIDX()) {
+                                        ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
+                                    ref.append("</FONT></a>");
                                 }
                                 containing.setEffectiveStartIDX(current.getStartIDX());
                                 // start current
@@ -610,7 +616,9 @@ public class WSRESTUtil {
                                 // 2. previous is overlapping with current. prev.start -> curr.start, then open current, close previous 
                                 // append the text before start
                                 if (previous.getEffectiveStartIDX() < current.getStartIDX()) {
-                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= current.getStartIDX()) {
+                                        ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 // close prev anchor and start current
                                 ref.append("</FONT></a><a href=\"#")
@@ -624,7 +632,9 @@ public class WSRESTUtil {
                                         .append("]");
                                 // get text between start of current and end of previous
                                 if (previous.getEndIDX() > current.getStartIDX()) {
-                                    ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= previous.getEndIDX()) {
+                                        ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 current.setEffectiveStartIDX(previous.getEndIDX());
                                 containing.setEffectiveStartIDX(previous.getEndIDX());
@@ -642,7 +652,9 @@ public class WSRESTUtil {
                                 // 1. previous is not overlapping with current
                                 // close previous
                                 if (previous.getEffectiveStartIDX() < previous.getEndIDX()) {
-                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= previous.getEndIDX()) {
+                                        ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 ref.append("[E")
                                         .append(previous.getTag())
@@ -666,7 +678,9 @@ public class WSRESTUtil {
                                                 .append("\">");
                                         // add remaining text of the latest containing reference
                                         if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
-                                            ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            if (originalText.length() >= prevContaining.getEndIDX()) {
+                                                ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            }
                                         }
                                         // close the latest containing reference
                                         ref.append("[E")
@@ -703,13 +717,17 @@ public class WSRESTUtil {
                                                 .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
                                                 .append(containing.getColor())
                                                 .append("\">");
-                                        ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"))
-                                                .append("</FONT></a>");
+                                        if (originalText.length() >= current.getStartIDX()) {
+                                            ref.append(originalText.substring(containing.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                        }
+                                        ref.append("</FONT></a>");
                                     }
                                     containing.setEffectiveStartIDX(current.getStartIDX());
                                 } else {
                                     if (latestPosition < current.getStartIDX()) {
-                                        ref.append(originalText.substring(latestPosition, current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                        if (originalText.length() >= current.getStartIDX()) {
+                                            ref.append(originalText.substring(latestPosition, current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                        }
                                     }
                                 }
                                 // start current
@@ -726,7 +744,9 @@ public class WSRESTUtil {
                                     if (((Reference) latestOpenReference.peek()).getEndIDX() <= current.getEndIDX()) {
                                         Reference prevContaining = (Reference) latestOpenReference.pop();
                                         if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
-                                            ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            if (originalText.length() >= prevContaining.getEndIDX()) {
+                                                ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            }
                                         }
                                         // close prevContaining
                                         ref.append("[E")
@@ -751,7 +771,9 @@ public class WSRESTUtil {
                                 // 2. previous is overlapping with current
                                 // add text before current starts
                                 if (previous.getEffectiveStartIDX() < current.getStartIDX()) {
-                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= current.getStartIDX()) {
+                                        ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 // close prev anchor and start current
                                 ref.append("</FONT></a><a href=\"#")
@@ -765,7 +787,9 @@ public class WSRESTUtil {
                                         .append("]");
                                 // get text between start of current and end of previous
                                 if (previous.getEndIDX() > current.getStartIDX()) {
-                                    ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    if (originalText.length() >= current.getStartIDX()) {
+                                        ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                    }
                                 }
                                 current.setEffectiveStartIDX(previous.getEndIDX());
                                 containing.setEffectiveStartIDX(previous.getEndIDX());
@@ -781,7 +805,9 @@ public class WSRESTUtil {
                                     if (((Reference) latestOpenReference.peek()).getEndIDX() <= current.getEndIDX()) {
                                         Reference prevContaining = (Reference) latestOpenReference.pop();
                                         if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
-                                            ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            if (originalText.length() >= prevContaining.getEndIDX()) {
+                                                ref.append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                            }
                                         }
                                         // close prevContaining
                                         ref.append("[E")
@@ -810,14 +836,22 @@ public class WSRESTUtil {
                     if (previous.getEndIDX() <= current.getStartIDX()) {
                         // 1. previous is not overlapping with current: prev.start -> prev.end, close, add between text then open
                         if (previous.getEffectiveStartIDX() < previous.getEndIDX()) {
-                            ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= previous.getEndIDX()) {
+                                if (originalText.length() >= previous.getEndIDX()) {
+                                    ref.append(originalText.substring(previous.getEffectiveStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                                }
+                            }
                         }
                         ref.append("[E")
                                 .append(previous.getTag())
                                 .append(previous.getLocalIDX())
                                 .append("]</FONT></a>");
                         if (previous.getEndIDX() < current.getStartIDX()) {
-                            ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= current.getStartIDX()) {
+                                if (originalText.length() >= current.getStartIDX()) {
+                                    ref.append(originalText.substring(previous.getEndIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                                }
+                            }
                         }
                         ref.append("<a href=\"#")
                                 .append(current.getGlobalIDX())
@@ -832,7 +866,9 @@ public class WSRESTUtil {
                     } else {
                         // 2. previous is overlapping with current. prev.start -> curr.start, then open current, close previous 
                         if (previous.getEffectiveStartIDX() < current.getStartIDX()) {
-                            ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= current.getStartIDX()) {
+                                ref.append(originalText.substring(previous.getEffectiveStartIDX(), current.getStartIDX()).replaceAll("\n", "<br/><br/>"));
+                            }
                         }
                         ref.append("</FONT></a><a href=\"#")
                                 .append(current.getGlobalIDX())
@@ -845,7 +881,9 @@ public class WSRESTUtil {
                                 .append(current.getLocalIDX())
                                 .append("]");
                         if (previous.getEndIDX() > current.getStartIDX()) {
-                            ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= previous.getEndIDX()) {
+                                ref.append(originalText.substring(current.getStartIDX(), previous.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                            }
                             current.setEffectiveStartIDX(previous.getEndIDX());
                         }
                         ref.append("[E")
@@ -878,13 +916,17 @@ public class WSRESTUtil {
                 // last reference and no other reference to close, add the highlighted text and the remining test of the document
                 if (latestOpenReference.isEmpty()) {
                     if (current.getEffectiveStartIDX() < current.getEndIDX()) {
-                        ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                        if (originalText.length() >= current.getEndIDX()) {
+                            ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                        }
                     }
                     ref.append("[E")
                             .append(current.getTag())
                             .append(current.getLocalIDX())
                             .append("]</FONT></a>");
-                    ref.append(originalText.substring(current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                    if (originalText.length() >= current.getEndIDX()) {
+                        ref.append(originalText.substring(current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                    }
                 } else {
                     // Any remaining reference in the stack is a containing reference for the current
                     Reference containing = null;
@@ -892,7 +934,9 @@ public class WSRESTUtil {
                         containing = (Reference) latestOpenReference.peek();
                     }
                     if (current.getEffectiveStartIDX() < current.getEndIDX()) {
-                        ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                        if (originalText.length() >= current.getEndIDX()) {
+                            ref.append(originalText.substring(current.getEffectiveStartIDX(), current.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                        }
                     }
                     ref.append("[E")
                             .append(current.getTag())
@@ -915,7 +959,9 @@ public class WSRESTUtil {
                                 .append(containing.getLocalIDX())
                                 .append("]");
                         if (containing.getEffectiveStartIDX() < containing.getEndIDX()) {
-                            ref.append(originalText.substring(containing.getEffectiveStartIDX(), containing.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                            if (originalText.length() >= containing.getEndIDX()) {
+                                ref.append(originalText.substring(containing.getEffectiveStartIDX(), containing.getEndIDX()).replaceAll("\n", "<br/><br/>"));
+                            }
                         }
                         ref.append("[E")
                                 .append(current.getTag())

@@ -69,6 +69,7 @@
 <td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</td>
 <td>99.6 %</td>
 <td>T1, T2, T3, T4, </td></tr>
+<tr>
 <td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</td>
 <td>15.0 %</td>
 <td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, </td></tr>
@@ -104,7 +105,7 @@
 <td>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦PLT¦PLT_CE_V_5.doc.txt</td>
 <td> &lt;1 %</td>
 <td>J4, J6, J7, J8, J13, J16, J18, J19, J20, J21, J23, J24, J25, J26, J28, J29, J31, J32, J33, J35, J37, J40, J41, J43, J45, J46, J47, J48, J49, J50, J52, J54, J55, J56, J57, J58, J60, J61, J62, J63, J64, J65, J66, J68, J70, J71, J72, J75, J76, J77, J78, J79, J80, J81, J82, J83, J84, J85, J86, J87, J88, J1, J2, J3, J4, J5, J7, J8, J9, J10, J11, J12, J13, J14, J16, J17, J19, J20, J22, J23, J26, J28, J29, J31, J32, J35, J37, J38, J39, J40, J41, J42, J43, J45, J47, J48, J49, J52, J54, J56, J57, J58, J60, J62, J65, J66, J68, J70, J74, J75, J76, J77, J83, J85, J89, J1, J2, J3, J4, J7, J8, J10, J13, J16, J19, J20, J26, J27, J28, J29, J30, J31, J32, J34, J35, J37, J39, J40, J41, J43, J44, J45, J47, J48, J49, J51, J52, J54, J56, J57, J58, J59, J60, J62, J65, J66, J67, J68, J69, J70, J74, J75, J76, J77, J83, J85, J20, J36, J43, J53, J73, J85, J5, J17, J38, J42, J5, J17, J38, J42, J9, J11, J15, J53, </td></tr>
-</p><table BORDER="1">
+</table></p><table BORDER="1">
 <caption><b>Statistics by referenced texts</b></caption>
 <tr>
 <th>Reference</br>Number</th>
