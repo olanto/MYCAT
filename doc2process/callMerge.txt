@@ -12,7 +12,6 @@ http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocS
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_ENFR_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
 
-
 -- sur les doc test1
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST1_SEQ1_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST1_SEQ2_V1_01_EN_FR_OnlyThisJob_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST1_ENFR_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
