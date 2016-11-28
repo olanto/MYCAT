@@ -821,11 +821,11 @@ public class WSRESTUtil {
                                         if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
                                             if (originalText.length() >= prevContaining.getEndIDX()) {
                                                 ref.append("<a href=\"#")
-                                                        .append(prevContaining.getGlobalIDX())
+                                                        .append(current.getGlobalIDX())
                                                         .append("\" id=\"ref")
-                                                        .append(prevContaining.getGlobalIDX())
+                                                        .append(current.getGlobalIDX())
                                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
-                                                        .append(prevContaining.getColor())
+                                                        .append(current.getColor())
                                                         .append("\">")
                                                         .append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"))
                                                         .append("</FONT></a>");
@@ -919,11 +919,11 @@ public class WSRESTUtil {
                                         if (prevContaining.getEffectiveStartIDX() < prevContaining.getEndIDX()) {
                                             if (originalText.length() >= prevContaining.getEndIDX()) {
                                                 ref.append("<a href=\"#")
-                                                        .append(prevContaining.getGlobalIDX())
+                                                        .append(current.getGlobalIDX())
                                                         .append("\" id=\"ref")
-                                                        .append(prevContaining.getGlobalIDX())
+                                                        .append(current.getGlobalIDX())
                                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
-                                                        .append(prevContaining.getColor())
+                                                        .append(current.getColor())
                                                         .append("\">").append(originalText.substring(prevContaining.getEffectiveStartIDX(), prevContaining.getEndIDX()).replaceAll("\n", "<br/><br/>"))
                                                         .append("</FONT></a>");
                                             }
