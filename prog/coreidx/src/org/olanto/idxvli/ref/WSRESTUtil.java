@@ -584,7 +584,14 @@ public class WSRESTUtil {
                                     }
                                 }
                                 // close previous ans its anchor
-                                ref.append("[E").append(previous.getTag())
+                                ref.append("<a href=\"#")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(previous.getColor())
+                                        .append("\">[E")
+                                        .append(previous.getTag())
                                         .append(previous.getLocalIDX())
                                         .append("]</FONT></a>");
                                 // get text before current and open the anchor of the containing reference
@@ -608,7 +615,8 @@ public class WSRESTUtil {
                                         .append("\" id=\"ref")
                                         .append(current.getGlobalIDX())
                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
-                                        .append(current.getColor()).append("\">[R")
+                                        .append(current.getColor())
+                                        .append("\">[R")
                                         .append(current.getTag())
                                         .append(current.getLocalIDX())
                                         .append("]");
@@ -626,7 +634,8 @@ public class WSRESTUtil {
                                         .append("\" id=\"ref")
                                         .append(current.getGlobalIDX())
                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
-                                        .append(current.getColor()).append("\">[R")
+                                        .append(current.getColor())
+                                        .append("\">[R")
                                         .append(current.getTag())
                                         .append(current.getLocalIDX())
                                         .append("]");
@@ -639,10 +648,16 @@ public class WSRESTUtil {
                                 current.setEffectiveStartIDX(previous.getEndIDX());
                                 containing.setEffectiveStartIDX(previous.getEndIDX());
                                 // close previous
-                                ref.append("[E")
+                                ref.append("<a href=\"#")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(previous.getColor())
+                                        .append("\">[E")
                                         .append(previous.getTag())
                                         .append(previous.getLocalIDX())
-                                        .append("]");
+                                        .append("]</FONT></a>");
                             }
                         } else {
                             // Anything ending before the current starts should be ended
@@ -737,7 +752,10 @@ public class WSRESTUtil {
                                         .append(current.getGlobalIDX())
                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
                                         .append(current.getColor())
-                                        .append("\">");
+                                        .append("\">[R")
+                                        .append(current.getTag())
+                                        .append(current.getLocalIDX())
+                                        .append("]");
                                 // close anything before end of current
                                 stop = false;
                                 while (!latestOpenReference.isEmpty() && !stop) {
@@ -749,10 +767,16 @@ public class WSRESTUtil {
                                             }
                                         }
                                         // close prevContaining
-                                        ref.append("[E")
+                                        ref.append("<a href=\"#")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" id=\"ref")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                                .append(prevContaining.getColor())
+                                                .append("\">[E")
                                                 .append(prevContaining.getTag())
                                                 .append(prevContaining.getLocalIDX())
-                                                .append("]");
+                                                .append("]</FONT></a>");
                                         current.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         // if something is still in the stack then it references the text 
                                         // between the last close and the current start
@@ -781,7 +805,8 @@ public class WSRESTUtil {
                                         .append("\" id=\"ref")
                                         .append(current.getGlobalIDX())
                                         .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
-                                        .append(current.getColor()).append("\">[R")
+                                        .append(current.getColor())
+                                        .append("\">[R")
                                         .append(current.getTag())
                                         .append(current.getLocalIDX())
                                         .append("]");
@@ -794,11 +819,16 @@ public class WSRESTUtil {
                                 current.setEffectiveStartIDX(previous.getEndIDX());
                                 containing.setEffectiveStartIDX(previous.getEndIDX());
                                 // close previous
-                                ref.append("[E")
+                                ref.append("<a href=\"#")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(previous.getColor())
+                                        .append("\">[E")
                                         .append(previous.getTag())
                                         .append(previous.getLocalIDX())
-                                        .append("]");
-
+                                        .append("]</FONT></a>");
                                 // close anything before end of current
                                 boolean stop = false;
                                 while (!latestOpenReference.isEmpty() && !stop) {
@@ -810,10 +840,16 @@ public class WSRESTUtil {
                                             }
                                         }
                                         // close prevContaining
-                                        ref.append("[E")
+                                        ref.append("<a href=\"#")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" id=\"ref")
+                                                .append(prevContaining.getGlobalIDX())
+                                                .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                                .append(prevContaining.getColor())
+                                                .append("\">[E")
                                                 .append(prevContaining.getTag())
                                                 .append(prevContaining.getLocalIDX())
-                                                .append("]");
+                                                .append("]</FONT></a>");
                                         current.setEffectiveStartIDX(prevContaining.getEndIDX());
                                         // if something is still in the stack then it references the text 
                                         // between the last close and the current start
@@ -886,10 +922,16 @@ public class WSRESTUtil {
                             }
                             current.setEffectiveStartIDX(previous.getEndIDX());
                         }
-                        ref.append("[E")
-                                .append(previous.getTag())
-                                .append(previous.getLocalIDX())
-                                .append("]");
+                        ref.append("<a href=\"#")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" id=\"ref")
+                                        .append(previous.getGlobalIDX())
+                                        .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
+                                        .append(previous.getColor())
+                                        .append("\">[E")
+                                        .append(previous.getTag())
+                                        .append(previous.getLocalIDX())
+                                        .append("]</FONT></a>");
                     }
                 }
             } else {
@@ -912,8 +954,10 @@ public class WSRESTUtil {
                 if (current.getEndIDX() > next.getEndIDX()) {
                     latestOpenReference.push(current);
                 }
-            } else {
-                // last reference and no other reference to close, add the highlighted text and the remining test of the document
+            }
+            if (i == (references.size() - 1)) {
+                // last reference and no other reference to close, 
+                // add the highlighted text and the remining text of the document
                 if (latestOpenReference.isEmpty()) {
                     if (current.getEffectiveStartIDX() < current.getEndIDX()) {
                         if (originalText.length() >= current.getEndIDX()) {
@@ -954,18 +998,15 @@ public class WSRESTUtil {
                                 .append(containing.getGlobalIDX())
                                 .append("\" onClick=\"return gwtnav(this);\"><FONT style=\"BACKGROUND-COLOR: ")
                                 .append(containing.getColor())
-                                .append("\">[R")
-                                .append(containing.getTag())
-                                .append(containing.getLocalIDX())
-                                .append("]");
+                                .append("\">");
                         if (containing.getEffectiveStartIDX() < containing.getEndIDX()) {
                             if (originalText.length() >= containing.getEndIDX()) {
                                 ref.append(originalText.substring(containing.getEffectiveStartIDX(), containing.getEndIDX()).replaceAll("\n", "<br/><br/>"));
                             }
                         }
                         ref.append("[E")
-                                .append(current.getTag())
-                                .append(current.getLocalIDX())
+                                .append(containing.getTag())
+                                .append(containing.getLocalIDX())
                                 .append("]</FONT></a>");
                         lastClosingPosition = containing.getEndIDX();
                         Reference prevPrevContaining = null;
