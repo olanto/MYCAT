@@ -765,7 +765,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             int start = doc1.getElementsByTagName("reference").getLength();
             mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
             // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start);
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start, RepTag1, RepTag2);
             // get the original text
             mergedRefDoc += "<origText>\n"
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()

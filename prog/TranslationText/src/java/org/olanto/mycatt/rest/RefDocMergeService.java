@@ -70,10 +70,10 @@ public class RefDocMergeService {
         if (DocSrc1.isEmpty() || DocSrc2.isEmpty() || DocTgt.isEmpty()) {
             return "You need to specifiy source and target documents\n";
         }
-        if (RepTag1.isEmpty() || RepTag2.isEmpty()) {
-            return "You need to specifiy replacement tages for both documents to merge\n";
+        if (RepTag2.isEmpty()) {
+            return "You need to specifiy a replacement tag for the target document to merge\n";
         }
-        if (Color2.isEmpty() || Color2.isEmpty()) {
+        if (Color2.isEmpty()) {
             return "You need to specifiy second document's references color\n";
         }
         try {

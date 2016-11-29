@@ -69,7 +69,7 @@ public class WSRESTUtil {
             int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
             mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, doc, doc1, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength());
+            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength(), "T", "J");
             mergedRefDoc += "<origText>\n"
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
                     + "</origText>";
@@ -266,11 +266,11 @@ public class WSRESTUtil {
         return res.toString();
     }
 
-    public static String mergeInfo(Document doc1, Document doc2, String color, int start) {
+    public static String mergeInfo(Document doc1, Document doc2, String color, int start, String tag1, String tag2) {
         return "<Info>\n"
                 + "<references>"
-                + getReferencesFromDocument(doc1, "", 0)
-                + getReferencesFromDocument(doc2, color, start)
+                + getReferencesFromDocument(doc1, "", 0, tag1)
+                + getReferencesFromDocument(doc2, color, start, tag2)
                 + "</references>"
                 + "</Info>\n";
     }
@@ -279,7 +279,7 @@ public class WSRESTUtil {
         return s.replace("&", "&amp;").replace("<", "&lt;");
     }
 
-    public static String getReferencesFromDocument(Document doc, String color, int start) {
+    public static String getReferencesFromDocument(Document doc, String color, int start, String tag) {
         String references = "";
         NodeList referencesList = doc.getElementsByTagName("reference");
         for (int j = 0; j < referencesList.getLength(); ++j) {
@@ -295,13 +295,23 @@ public class WSRESTUtil {
                 references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
             }
             references += "</documents>\n";
-            if (!color.isEmpty()) {
-                references += "<color>" + color + "</color>\n";
+
+            if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
             } else {
-                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                    references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
+                if (!color.isEmpty()) {
+                    references += "<color>" + color + "</color>\n";
                 } else {
                     references += "<color>yellow</color>\n";
+                }
+            }
+            if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
+                references += "<tag>" + reference.getElementsByTagName("tag").item(0).getTextContent() + "</tag>\n";
+            } else {
+                if (!tag.isEmpty()) {
+                    references += "<tag>" + tag + "</tag>\n";
+                } else {
+                    references += "<tag>T</tag>\n";
                 }
             }
             references += "</reference>\n";
@@ -448,13 +458,22 @@ public class WSRESTUtil {
                 Reference ref = new Reference();
                 ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
                 ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
-                if (!targetColor.isEmpty()) {
-                    ref.setColor(targetColor);
+                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                    ref.setColor(reference.getElementsByTagName("color").item(0).getTextContent());
                 } else {
-                    if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                        ref.setColor(reference.getElementsByTagName("color").item(0).getTextContent());
+                    if (!targetColor.isEmpty()) {
+                        ref.setColor(targetColor);
                     } else {
                         ref.setColor("yellow");
+                    }
+                }
+                if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
+                    ref.setTag(reference.getElementsByTagName("tag").item(0).getTextContent());
+                } else {
+                    if (!repTag.isEmpty()) {
+                        ref.setTag(repTag);
+                    } else {
+                        ref.setTag("T");
                     }
                 }
                 Element documents = (Element) reference.getElementsByTagName("documents").item(0);
@@ -465,7 +484,6 @@ public class WSRESTUtil {
                 }
                 int currentpos = remainingText.indexOf(ref.getTextOfRef());
                 remainingText = remainingText.substring(currentpos + 1);
-                ref.setTag(repTag);
                 if (j > 0) {
                     fromStart += currentpos + 1;
                 } else {
