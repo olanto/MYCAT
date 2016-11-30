@@ -19,14 +19,27 @@ http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocS
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST1_SEQ1_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST1_SEQ2_V1_01_EN_FR_OnlyThisJob_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST1_ENFR_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
 
--- sur merge de tes1 + seq3 (EN ERREUR)
+-- sur merge de tes1 + seq3 
 
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST1_ENFR_MERGED.xml&DocSrc2=C:/MYCAT/doc2process/TEST1_SEQ3_V1_01_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST1_ENFR_MERGEDMERGED.xml&&RepTag2=X&Color2=orange
 
 
 
--- sur les doc test2 (EN ERREUR)
+-- sur les doc test2 
 
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
+
+-- sur les doc test3 
+
+-- erreur
+
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\\TEST3_ORIG_V1_01_EN_ES_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST3_ORIG_V1_01_EN_FR_TUV_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST3_ENFR_ENE_MERGED.xml&RepTag1=T&Color2=red&RepTag2=J&Color2=orange
+
+
+--erreur
+
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\\TEST3_ORIG_V1_01_EN_ES_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST3_ORIG_V1_01_EN_FR_TUV_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST3_ENFR_ENE_MERGED.xml&RepTag1=T&RepTag2=J&Color2=orange
+
+
