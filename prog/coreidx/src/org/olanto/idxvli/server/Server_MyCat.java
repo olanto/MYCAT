@@ -739,7 +739,12 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
-        String mergedRefDoc = "", msg = "";
+        String mergedRefDoc = "";
+        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2);
+        
+        if (msg.startsWith("ERROR")) {
+            return msg;
+        }
         File fXmlFile = new File(DocSrc1);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         dbFactory.setIgnoringComments(false);
@@ -791,7 +796,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             String filePath = UtilsFiles.String2File(DocTgt, doctosave);
             if (filePath != null) {
                 msg += "SUCCESSFUL Merge!\n File Saved at : " + filePath;
-            }else{
+            } else {
                 msg = "ERROR Saving file, something went wrong in the server side";
             }
         } catch (ParserConfigurationException ex) {

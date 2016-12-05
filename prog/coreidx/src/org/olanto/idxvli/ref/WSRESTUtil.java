@@ -120,7 +120,7 @@ public class WSRESTUtil {
                 + "</parameters>\n";
 
     }
-    
+
     public static String niceXMLParams(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
 
         return "<params>\n"
@@ -184,6 +184,17 @@ public class WSRESTUtil {
         }
 
         return ret;
+    }
+
+    public static String CheckIfFilesExist(String doc1, String doc2) {
+        String response = "Input Files Exist and are valid";
+        File f1 = new File(doc1);
+        File f2 = new File(doc2);
+
+        if (!f1.exists() || f1.isDirectory() || !f2.exists() || f2.isDirectory()) {
+            return "ERROR: One or both input files do not exist or are not valid files";
+        }
+        return response;
     }
 
     public static String validateInputs(Document doc1, Document doc2) {
@@ -1370,5 +1381,4 @@ public class WSRESTUtil {
         finalText.append("</P>\n");
         return finalText.toString();
     }
-    
 }
