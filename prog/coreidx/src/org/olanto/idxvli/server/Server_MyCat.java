@@ -739,7 +739,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
-        String mergedRefDoc = "";
+        String mergedRefDoc = "", msg = "";
         File fXmlFile = new File(DocSrc1);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         dbFactory.setIgnoringComments(false);
@@ -756,13 +756,26 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
             Document doc1 = dBuilder1.parse(fXmlFile1);
             doc1.getDocumentElement().normalize();
+
+            msg = WSRESTUtil.validateInputs(doc, doc1);
+
+            if (msg.startsWith("ERROR")) {
+                return msg;
+            }
             // merge params
             mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
             // merge statistics
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
-            int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
-            int start = doc1.getElementsByTagName("reference").getLength();
+            int totalRefs = 0;
+            if ((doc.getElementsByTagName("reference") != null)
+                    && (doc1.getElementsByTagName("reference") != null)) {
+                totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
+            }
+            int start = 0;
+            if (doc1.getElementsByTagName("reference") != null) {
+                start = doc1.getElementsByTagName("reference").getLength();
+            }
             mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
             // merge details
             mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start, RepTag1, RepTag2);
@@ -772,18 +785,15 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
                     + "</origText>";
             // save document in given location
             String doctosave = "<QD>"
-                    + "<params>\n"
-                    + "   <RefType>" + RefType + "</RefType>\n"
-                    + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
-                    + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"
-                    + "   <DocTgt>" + DocTgt + "</DocTgt>\n"
-                    + "   <RepTag1>" + RepTag1 + "</RepTag1>\n"
-                    + "   <RepTag2>" + RepTag2 + "</RepTag2>\n"
-                    + "   <Color2>" + Color2 + "</Color2>\n"
-                    + "</params>\n"
+                    + WSRESTUtil.niceXMLParams(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
                     + mergedRefDoc
                     + "</QD>";
-            UtilsFiles.String2File(DocTgt, doctosave);
+            String filePath = UtilsFiles.String2File(DocTgt, doctosave);
+            if (filePath != null) {
+                msg += "SUCCESSFUL Merge!\n File Saved at : " + filePath;
+            }else{
+                msg = "ERROR Saving file, something went wrong in the server side";
+            }
         } catch (ParserConfigurationException ex) {
             Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {
@@ -791,6 +801,6 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         } catch (IOException ex) {
             Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return mergedRefDoc;
+        return msg;
     }
 }

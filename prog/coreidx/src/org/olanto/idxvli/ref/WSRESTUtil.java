@@ -96,17 +96,6 @@ public class WSRESTUtil {
         return s;
     }
 
-    /*
-     * (@DefaultValue("") @QueryParam("TxtSrc") String TxtSrc,
-     @DefaultValue("") @QueryParam("TxtTgt") String DocSrc,
-     @DefaultValue("") @QueryParam("TxtTgt") String DocTgt,
-     @DefaultValue("EN") @QueryParam("LngSrc") String LngSrc,
-     @DefaultValue("FR") @QueryParam("LngTgt") String LngTgt,
-     @DefaultValue("") @QueryParam("Filter") String Filter,
-     @DefaultValue("3") @QueryParam("MinLen") Integer MinLen,
-     @DefaultValue("FALSE") @QueryParam("RemFirst") Boolean RemFirst,
-     @DefaultValue("FALSE") @QueryParam("Fast") Boolean Fast) 
-     */
     public static String niceXMLParameters(String msg, String TxtSrc, String RefType, String DocSrc, String DocTgt,
             String LngSrc, String LngTgt, String[] Filter, Integer MinLen, Boolean RemFirst, Boolean Fast) {
 
@@ -117,19 +106,32 @@ public class WSRESTUtil {
             }
         }
         return "<parameters>\n"
-                + "   <msg>" + msg + "</msg>\n"
-                + "   <TxtSrc>" + TxtSrc + "</TxtSrc>\n"
-                + "   <RefType>" + RefType + "</RefType>\n"
-                + "   <DocSrc>" + DocSrc + "</DocSrc>\n"
-                + "   <DocTgt>" + DocTgt + "</DocTgt>\n"
-                + "   <LngSrc>" + LngSrc + "</LngSrc>\n"
-                + "   <LngTgt>" + LngTgt + "</LngTgt>\n"
-                + "   <Filter>" + collections + "</Filter>\n"
-                + "   <MinLen>" + MinLen + "</MinLen>\n"
-                + "   <RemFirst>" + RemFirst + "</RemFirst>\n"
-                + "   <Fast>" + Fast + "</Fast>\n"
+                + "<msg>" + msg + "</msg>\n"
+                + "<TxtSrc>" + TxtSrc + "</TxtSrc>\n"
+                + "<RefType>" + RefType + "</RefType>\n"
+                + "<DocSrc>" + DocSrc + "</DocSrc>\n"
+                + "<DocTgt>" + DocTgt + "</DocTgt>\n"
+                + "<LngSrc>" + LngSrc + "</LngSrc>\n"
+                + "<LngTgt>" + LngTgt + "</LngTgt>\n"
+                + "<Filter>" + collections + "</Filter>\n"
+                + "<MinLen>" + MinLen + "</MinLen>\n"
+                + "<RemFirst>" + RemFirst + "</RemFirst>\n"
+                + "<Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
 
+    }
+    
+    public static String niceXMLParams(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
+
+        return "<params>\n"
+                + "   <RefType>" + RefType + "</RefType>\n"
+                + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
+                + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"
+                + "   <DocTgt>" + DocTgt + "</DocTgt>\n"
+                + "   <RepTag1>" + RepTag1 + "</RepTag1>\n"
+                + "   <RepTag2>" + RepTag2 + "</RepTag2>\n"
+                + "   <Color2>" + Color2 + "</Color2>\n"
+                + "</params>\n";
     }
 
     public static String niceXMLInfo(String RefDocFullName, String RefDocType,
@@ -184,55 +186,204 @@ public class WSRESTUtil {
         return ret;
     }
 
+    public static String validateInputs(Document doc1, Document doc2) {
+        String response = "Documents are Valid.\n";
+        if ((doc1.getDocumentElement().getElementsByTagName("origText") == null)
+                || (doc2.getDocumentElement().getElementsByTagName("origText") == null)) {
+            return "ERROR: Missing original text in both documents.\n Please make sure you are merging valid compatibe documents";
+        }
+        String origText1 = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "").trim();
+        String origText2 = doc2.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "").trim();
+        if (origText1.isEmpty() || origText2.isEmpty()) {
+            response = "ERROR: One of the documents has an empty original text.\n Please make sure you are merging valid compatibe documents";
+        }
+        if (!origText1.equalsIgnoreCase(origText2)) {
+            return "ERROR: Original text is not the same in both documents.\n Please make sure you are merging valid compatibe documents";
+        }
+        return response;
+    }
+
     public static String mergeXMLParameters(Document doc1, Document doc2) {
-        return "<parameters>\n"
-                + "   <msg>" + doc1.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent() + "</msg>\n"
-                + "   <TxtSrc>" + doc1.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent() + "</TxtSrc>\n"
-                + "   <RefType>" + doc1.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent() + "</RefType>\n"
-                + "   <DocSrc>" + doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent() + "</DocSrc>\n"
-                + "   <DocTgt>" + doc1.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent() + "</DocTgt>\n"
-                + "   <LngSrc>" + doc1.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent() + "</LngSrc>\n"
-                + "   <LngTgt>" + doc1.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent() + "</LngTgt>\n"
-                + "   <Filter>" + doc1.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent() + "</Filter>\n"
-                + "   <MinLen>" + doc1.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent() + "</MinLen>\n"
-                + "   <Fast>" + doc1.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent() + "</Fast>\n"
-                + "</parameters>\n";
+        StringBuilder res = new StringBuilder("");
+        res.append("<parameters>\n")
+                .append("<msg>");
+        if (doc1.getDocumentElement().getElementsByTagName("msg") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("msg") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent());
+            }
+        }
+        res.append("</msg>\n")
+                .append("<TxtSrc>");
+        if (doc1.getDocumentElement().getElementsByTagName("TxtSrc") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("TxtSrc") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent());
+            }
+        }
+        res.append("</TxtSrc>\n")
+                .append("<RefType>");
+        if (doc1.getDocumentElement().getElementsByTagName("RefType") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefType") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent());
+            }
+        }
+        res.append("</RefType>\n")
+                .append("<DocSrc>");
+        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
+            }
+        }
+        res.append("</DocSrc>\n")
+                .append("<DocSrc>");
+        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
+            }
+        }
+        res.append("</DocSrc>\n")
+                .append("<DocTgt>");
+        if (doc1.getDocumentElement().getElementsByTagName("DocTgt") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("DocTgt") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent());
+            }
+        }
+        res.append("</DocTgt>\n")
+                .append("<LngSrc>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("LngSrc") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("LngSrc") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent());
+            }
+        }
+        res.append("</LngSrc>\n")
+                .append("<LngTgt>");
+        if (doc1.getDocumentElement().getElementsByTagName("LngTgt") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("LngTgt") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent());
+            }
+        }
+        res.append("</LngTgt>\n")
+                .append("<Filter>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("Filter") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("Filter") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent());
+            }
+        }
+        res.append("</Filter>\n")
+                .append("<MinLen>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("MinLen") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("MinLen") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent());
+            }
+        }
+        res.append("</MinLen>\n")
+                .append("<Fast>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("Fast") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("Fast") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent());
+            }
+        }
+        res.append("</Fast>\n")
+                .append("</parameters>\n");
+
+        return res.toString();
     }
 
     public static String mergeXMLStatistics(Document doc1, Document doc2) {
         String organization = "";
         NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
         NodeList nodes1 = doc2.getDocumentElement().getElementsByTagName("organisation");
-        for (int i = 0; i < nodes.item(0).getChildNodes().getLength(); i++) {
-            if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
-                organization += "";
-            } else if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
-                organization += "<!--" + nodes.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
-            } else {
-                organization += "<" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+        if (nodes != null) {
+            for (int i = 0; i < nodes.item(0).getChildNodes().getLength(); i++) {
+                if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
+                    organization += "";
+                } else if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
+                    organization += "<!--" + nodes.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
+                } else {
+                    organization += "<" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+                }
             }
         }
-        for (int i = 0; i < nodes1.item(0).getChildNodes().getLength(); i++) {
-            if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
-                organization += "";
-            } else if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
-                organization += "<!--" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
-            } else {
-                organization += "<" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+        if (nodes1 != null) {
+            for (int i = 0; i < nodes1.item(0).getChildNodes().getLength(); i++) {
+                if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
+                    organization += "";
+                } else if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("comment")) {
+                    organization += "<!--" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "-->\n";
+                } else {
+                    organization += "<" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">" + nodes1.item(0).getChildNodes().item(i).getTextContent() + "</" + nodes1.item(0).getChildNodes().item(i).getNodeName() + ">\n";
+                }
             }
         }
-        return "<statistics>\n"
-                + "  <mycat>\n"
-                + "    <RefDocFullName>" + doc1.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent() + "</RefDocFullName>\n"
-                + "    <RefDocType>" + doc1.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent() + "</RefDocType>\n"
-                + "    <RefDocLng>" + doc1.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent() + "</RefDocLng>\n"
-                + "    <RefDocPerCent>" + doc1.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent() + "</RefDocPerCent>\n"
-                + "    <RefDocOccurences>" + doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "|" + doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent() + "</RefDocOccurences>\n"
-                + "  </mycat>\n"
-                + "  <organisation>\n"
-                + organization
-                + "  </organisation>\n"
-                + "</statistics>\n";
+        StringBuilder res = new StringBuilder("");
+
+        res.append("<statistics>\n")
+                .append("<mycat>\n")
+                .append("<RefDocFullName>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocFullName") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocFullName") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent());
+            }
+        }
+        res.append("</RefDocFullName>\n")
+                .append("<RefDocType>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocType") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocType") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent());
+            }
+        }
+        res.append("</RefDocType>\n")
+                .append("<RefDocLng>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocLng") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocLng") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent());
+            }
+        }
+        res.append("</RefDocLng>\n")
+                .append("<RefDocPerCent>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocPerCent") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocPerCent") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent());
+            }
+        }
+        res.append("</RefDocPerCent>\n")
+                .append("<RefDocOccurences>");
+
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocOccurences") != null) {
+            res.append(doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent());
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocOccurences") != null) {
+                res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent());
+            }
+        }
+        res.append("</RefDocOccurences>\n")
+                .append("  </mycat>\n")
+                .append("  <organisation>\n")
+                .append(organization)
+                .append("  </organisation>\n")
+                .append("</statistics>\n");
+        return res.toString();
     }
 
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
@@ -280,42 +431,50 @@ public class WSRESTUtil {
     }
 
     public static String getReferencesFromDocument(Document doc, String color, int start, String tag) {
-        String references = "";
-        NodeList referencesList = doc.getElementsByTagName("reference");
-        for (int j = 0; j < referencesList.getLength(); ++j) {
-            Element reference = (Element) referencesList.item(j);
-            references += "<reference>\n"
-                    + "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
-                    + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n"
-                    + "<quote>" + clean4xml(reference.getElementsByTagName("quote").item(0).getTextContent()) + "</quote>\n"
-                    + "<documents>\n";
-            Element documents = (Element) reference.getElementsByTagName("documents").item(0);
-            NodeList documentsList = documents.getElementsByTagName("document");
-            for (int i = 0; i < documentsList.getLength(); ++i) {
-                references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
-            }
-            references += "</documents>\n";
+        String references = "<reference>\n";
 
-            if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
-            } else {
-                if (!color.isEmpty()) {
-                    references += "<color>" + color + "</color>\n";
+        NodeList referencesList = doc.getElementsByTagName("reference");
+        if (referencesList != null) {
+            for (int j = 0; j < referencesList.getLength(); ++j) {
+                Element reference = (Element) referencesList.item(j);
+                if (reference.getElementsByTagName("id") != null) {
+                    references += "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
+                            + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n";
+                }
+                if (reference.getElementsByTagName("quote") != null) {
+                    references += "<quote>" + clean4xml(reference.getElementsByTagName("quote").item(0).getTextContent()) + "</quote>\n";
+                }
+                references += "<documents>\n";
+                Element documents = (Element) reference.getElementsByTagName("documents").item(0);
+                NodeList documentsList = documents.getElementsByTagName("document");
+                if (documentsList != null) {
+                    for (int i = 0; i < documentsList.getLength(); ++i) {
+                        references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
+                    }
+                }
+                references += "</documents>\n";
+
+                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                    references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
                 } else {
-                    references += "<color>yellow</color>\n";
+                    if (!color.isEmpty()) {
+                        references += "<color>" + color + "</color>\n";
+                    } else {
+                        references += "<color>yellow</color>\n";
+                    }
+                }
+                if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
+                    references += "<tag>" + reference.getElementsByTagName("tag").item(0).getTextContent() + "</tag>\n";
+                } else {
+                    if (!tag.isEmpty()) {
+                        references += "<tag>" + tag + "</tag>\n";
+                    } else {
+                        references += "<tag>T</tag>\n";
+                    }
                 }
             }
-            if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
-                references += "<tag>" + reference.getElementsByTagName("tag").item(0).getTextContent() + "</tag>\n";
-            } else {
-                if (!tag.isEmpty()) {
-                    references += "<tag>" + tag + "</tag>\n";
-                } else {
-                    references += "<tag>T</tag>\n";
-                }
-            }
-            references += "</reference>\n";
         }
+        references += "</reference>\n";
         return references;
     }
 
@@ -452,47 +611,59 @@ public class WSRESTUtil {
         String remainingText = originalText;
         int fromStart = 0;
         List<Reference> references = new ArrayList<Reference>();
-        if (referencesList.getLength() > 0) {
-            for (int j = 0; j < referencesList.getLength(); j++) {
-                Element reference = (Element) referencesList.item(j);
-                Reference ref = new Reference();
-                ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
-                ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
-                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                    ref.setColor(reference.getElementsByTagName("color").item(0).getTextContent());
-                } else {
-                    if (!targetColor.isEmpty()) {
-                        ref.setColor(targetColor);
-                    } else {
-                        ref.setColor("yellow");
+        if (referencesList != null) {
+            if (referencesList.getLength() > 0) {
+                for (int j = 0; j < referencesList.getLength(); j++) {
+                    Element reference = (Element) referencesList.item(j);
+                    Reference ref = new Reference();
+                    if (reference.getElementsByTagName("quote") != null) {
+                        ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
                     }
-                }
-                if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
-                    ref.setTag(reference.getElementsByTagName("tag").item(0).getTextContent());
-                } else {
-                    if (!repTag.isEmpty()) {
-                        ref.setTag(repTag);
-                    } else {
-                        ref.setTag("T");
+                    if (reference.getElementsByTagName("id") != null) {
+                        ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
                     }
+                    if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
+                        ref.setColor(reference.getElementsByTagName("color").item(0).getTextContent());
+                    } else {
+                        if (!targetColor.isEmpty()) {
+                            ref.setColor(targetColor);
+                        } else {
+                            ref.setColor("yellow");
+                        }
+                    }
+                    if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
+                        ref.setTag(reference.getElementsByTagName("tag").item(0).getTextContent());
+                    } else {
+                        if (!repTag.isEmpty()) {
+                            ref.setTag(repTag);
+                        } else {
+                            ref.setTag("T");
+                        }
+                    }
+                    List<String> docs = new ArrayList<String>();
+
+                    if (reference.getElementsByTagName("documents") != null) {
+                        Element documents = (Element) reference.getElementsByTagName("documents").item(0);
+                        NodeList documentsList = documents.getElementsByTagName("document");
+                        if (documentsList != null) {
+                            for (int i = 0; i < documentsList.getLength(); ++i) {
+                                docs.add(documentsList.item(i).getTextContent());
+                            }
+                        }
+                    }
+                    ref.setReferencedDocs(docs);
+
+                    int currentpos = remainingText.indexOf(ref.getTextOfRef());
+                    remainingText = remainingText.substring(currentpos + 1);
+                    if (j > 0) {
+                        fromStart += currentpos + 1;
+                    } else {
+                        fromStart = currentpos;
+                    }
+                    ref.setStartIDX(fromStart);
+                    ref.setEndIDX(fromStart + ref.getTextOfRef().length());
+                    references.add(ref);
                 }
-                Element documents = (Element) reference.getElementsByTagName("documents").item(0);
-                NodeList documentsList = documents.getElementsByTagName("document");
-                List<String> docs = new ArrayList<String>();
-                for (int i = 0; i < documentsList.getLength(); ++i) {
-                    docs.add(documentsList.item(i).getTextContent());
-                }
-                int currentpos = remainingText.indexOf(ref.getTextOfRef());
-                remainingText = remainingText.substring(currentpos + 1);
-                if (j > 0) {
-                    fromStart += currentpos + 1;
-                } else {
-                    fromStart = currentpos;
-                }
-                ref.setStartIDX(fromStart);
-                ref.setEndIDX(fromStart + ref.getTextOfRef().length());
-                ref.setReferencedDocs(docs);
-                references.add(ref);
             }
             return references;
         }
@@ -1199,4 +1370,5 @@ public class WSRESTUtil {
         finalText.append("</P>\n");
         return finalText.toString();
     }
+    
 }

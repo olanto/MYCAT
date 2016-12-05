@@ -66,30 +66,32 @@ public class RefDocMergeService {
             @DefaultValue("") @QueryParam("RepTag1") String RepTag1,
             @DefaultValue("") @QueryParam("RepTag2") String RepTag2,
             @DefaultValue("") @QueryParam("Color2") String Color2) {
-        String refDoc = "empty ref";
+        String response = "";
         if (DocSrc1.isEmpty() || DocSrc2.isEmpty() || DocTgt.isEmpty()) {
-            return "You need to specifiy source and target documents\n";
+            response = "ERROR: You need to specifiy source and target documents\n";
         }
         if (RepTag2.isEmpty()) {
-            return "You need to specifiy a replacement tag for the target document to merge\n";
+            response = "ERROR: You need to specifiy a replacement tag for the target document to merge\n";
         }
         if (Color2.isEmpty()) {
-            return "You need to specifiy second document's references color\n";
+            response = "ERROR: You need to specifiy second document's references color\n";
         }
         try {
             Remote r = Naming.lookup("rmi://localhost/VLI");
             if (r instanceof IndexService_MyCat) {
                 IndexService_MyCat is = ((IndexService_MyCat) r);
                 _logger.info(is.getInformation());
-                refDoc = is.mergeXMLReferences(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2);
+                response = is.mergeXMLReferences(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2);
             }
         } catch (NotBoundException | IOException ex) {
             _logger.error(ex);
-            return "RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
+            response = "ERROR: RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
         }
         String result = "<QD>"
-                + WSMergeUtil.niceXMLParameters(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
-                + refDoc
+                + WSTUtil.niceXMLParams(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
+                + "<response>\n"
+                + response
+                + "</response>\n"
                 + "</QD>";
         return result;
     }

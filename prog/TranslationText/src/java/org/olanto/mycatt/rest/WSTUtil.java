@@ -59,4 +59,17 @@ public class WSTUtil {
                 + "   <Fast>" + Fast + "</Fast>\n"
                 + "</parameters>\n";
     }
+    
+    public static String niceXMLParams(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
+
+        return "<params>\n"
+                + "   <RefType>" + RefType + "</RefType>\n"
+                + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
+                + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"
+                + "   <DocTgt>" + DocTgt + "</DocTgt>\n"
+                + "   <RepTag1>" + RepTag1 + "</RepTag1>\n"
+                + "   <RepTag2>" + RepTag2 + "</RepTag2>\n"
+                + "   <Color2>" + Color2 + "</Color2>\n"
+                + "</params>\n";
+    }
 }
