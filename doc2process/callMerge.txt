@@ -7,11 +7,16 @@ http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocS
 
 -- sur les doc small-test
 
+PREPARE FUSION
+
+http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&MinLen=3&RemFirst=False&Fast=False
+http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&MinLen=3&RemFirst=True&Fast=False
+
+fusion
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\full_A_RES_53_144_EN.xml&DocSrc2=C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml&DocTgt=C:\MYCAT\doc2process\full_rem_A_RES_53_144_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
 
 
-http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_ENFR_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
 
 
 -- sur les doc test1
@@ -28,8 +33,17 @@ http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocS
 
 -- sur les doc test2 
 
+--ok
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
+--parameter in error
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\ERROR\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
+
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/ERROR/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
+
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\ERROR\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
 
 http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T&RepTag2=J&Color2=red
+http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocSrc1=C:\MYCAT\doc2process\TEST2_V1_01_EN_FR_TUV_RefDoc.xml&DocSrc2=C:/MYCAT/doc2process/TEST2_EN_FR_Glossaries_RefDoc.xml&DocTgt=C:\MYCAT\doc2process\TEST2_EN_MERGED.xml&RepTag1=T
 
 -- sur les doc test3 
 
