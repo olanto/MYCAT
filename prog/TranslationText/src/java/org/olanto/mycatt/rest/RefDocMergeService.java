@@ -88,10 +88,7 @@ public class RefDocMergeService {
             response = "ERROR: RMI call unsuccessful because of unmarshalling issue \n(Check if myCat service is up/ restart tomcat)";
         }
         String result = "<QD>"
-                + WSTUtil.niceXMLParams(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
-                + "<response>\n"
-                + response
-                + "</response>\n"
+                + WSTUtil.niceXMLParams(response, RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
                 + "</QD>";
         return result;
     }

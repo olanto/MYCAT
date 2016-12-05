@@ -60,9 +60,10 @@ public class WSTUtil {
                 + "</parameters>\n";
     }
     
-    public static String niceXMLParams(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
+    public static String niceXMLParams(String response, String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
 
         return "<params>\n"
+                + "   <Response>" + response + "</Response>\n"
                 + "   <RefType>" + RefType + "</RefType>\n"
                 + "   <DocSrc1>" + DocSrc1 + "</DocSrc1>\n"
                 + "   <DocSrc2>" + DocSrc2 + "</DocSrc2>\n"
