@@ -8,24 +8,25 @@
    <Color2>red</Color2>
 </params>
 <parameters>
-   <msg>process by WebService|process by WebService</msg>
-   <TxtSrc>|</TxtSrc>
-   <RefType>|</RefType>
-   <DocSrc>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</DocSrc>
-   <DocTgt>C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml|C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml</DocTgt>
-   <LngSrc>EN|EN</LngSrc>
-   <LngTgt>FR|FR</LngTgt>
-   <Filter>|</Filter>
-   <MinLen>3|3</MinLen>
-   <Fast>false|false</Fast>
+<msg>process by WebService|process by WebService</msg>
+<TxtSrc>|</TxtSrc>
+<RefType>|</RefType>
+<DocSrc>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</DocSrc>
+<DocSrc>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</DocSrc>
+<DocTgt>C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml|C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml</DocTgt>
+<LngSrc>EN|EN</LngSrc>
+<LngTgt>FR|FR</LngTgt>
+<Filter>|</Filter>
+<MinLen>3|3</MinLen>
+<Fast>false|false</Fast>
 </parameters>
 <statistics>
-  <mycat>
-    <RefDocFullName>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</RefDocFullName>
-    <RefDocType>|</RefDocType>
-    <RefDocLng>2604|2604</RefDocLng>
-    <RefDocPerCent>2594|517</RefDocPerCent>
-    <RefDocOccurences>99.6%|19.9%</RefDocOccurences>
+<mycat>
+<RefDocFullName>C:/MYCAT/doc2process/A_RES_53_144_EN.pdf|C:/MYCAT/doc2process/A_RES_53_144_EN.pdf</RefDocFullName>
+<RefDocType>|</RefDocType>
+<RefDocLng>2604|2604</RefDocLng>
+<RefDocPerCent>2594|517</RefDocPerCent>
+<RefDocOccurences>99.6%|19.9%</RefDocOccurences>
   </mycat>
   <organisation>
 <!-- imported template from /config -->
@@ -1350,8 +1351,7 @@ Universal Declaration of Human Rights 2</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>2</number>
 <id>2</id>
 <quote>International Covenants on Human</quote>
@@ -1359,8 +1359,7 @@ Universal Declaration of Human Rights 2</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>3</number>
 <id>3</id>
 <quote>international instruments and commitments applicable in this field.
@@ -1390,8 +1389,7 @@ Article 8
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>4</number>
 <id>4</id>
 <quote>basis, to participation in the government of his or her country and in the conduct of public
@@ -1518,6 +1516,7 @@ provisions of the Charter of the United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_53_144.pdf.txt</document>
 </documents>
 <color>yellow</color>
+<tag>T</tag>
 </reference>
 <reference>
 <number>90</number>
@@ -1530,8 +1529,7 @@ General Assembly</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>91</number>
 <id>2</id>
 <quote>session
@@ -1541,8 +1539,7 @@ Agenda item</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>92</number>
 <id>3</id>
 <quote>RESOLUTION ADOPTED BY THE GENERAL ASSEMBLY</quote>
@@ -1551,8 +1548,7 @@ Agenda item</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>93</number>
 <id>4</id>
 <quote>Human
@@ -1563,8 +1559,7 @@ Rights and Fundamental Freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>94</number>
 <id>5</id>
 <quote>Charter of the
@@ -1575,8 +1570,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>95</number>
 <id>6</id>
 <quote>United Nations for the promotion</quote>
@@ -1584,8 +1578,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>96</number>
 <id>7</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1595,8 +1588,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>97</number>
 <id>8</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1606,8 +1598,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>98</number>
 <id>9</id>
 <quote>Economic and Social Council</quote>
@@ -1616,8 +1607,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>99</number>
 <id>10</id>
 <quote>anniversary of the Universal Declaration of Human Rights</quote>
@@ -1626,8 +1616,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>100</number>
 <id>11</id>
 <quote>Economic and Social Council</quote>
@@ -1636,8 +1625,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/XX/GLOSSARIES/GLOSSARIES_WTO_3. COUNTRIES_BAHRAIN_EN_FR.DOC.txt.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>101</number>
 <id>12</id>
 <quote>Resolution 217 A (III</quote>
@@ -1645,8 +1633,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>102</number>
 <id>13</id>
 <quote>Human Rights and Fundamental Freedoms</quote>
@@ -1656,8 +1643,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>103</number>
 <id>14</id>
 <quote>United Nations system</quote>
@@ -1665,8 +1651,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>104</number>
 <id>15</id>
 <quote>intergovernmental and non-governmental organizations</quote>
@@ -1674,8 +1659,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦WO_GA/WO_GA_31_4.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>105</number>
 <id>16</id>
 <quote>Human Rights and Fundamental Freedoms</quote>
@@ -1685,8 +1669,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>106</number>
 <id>17</id>
 <quote>Charter of the
@@ -1697,8 +1680,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>107</number>
 <id>18</id>
 <quote>United Nations for the promotion</quote>
@@ -1706,8 +1688,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>108</number>
 <id>19</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1717,8 +1698,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>109</number>
 <id>20</id>
 <quote>Universal Declaration of Human</quote>
@@ -1729,8 +1709,7 @@ United Nations</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>110</number>
 <id>21</id>
 <quote>universal respect for and
@@ -1739,8 +1718,7 @@ observance of human rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>111</number>
 <id>22</id>
 <quote>United Nations system</quote>
@@ -1748,8 +1726,7 @@ observance of human rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>112</number>
 <id>23</id>
 <quote>respect for human rights and fundamental freedoms</quote>
@@ -1758,8 +1735,7 @@ observance of human rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>113</number>
 <id>24</id>
 <quote>without distinction of any kind</quote>
@@ -1767,8 +1743,7 @@ observance of human rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>114</number>
 <id>25</id>
 <quote>race, colour, sex, language, religion, political
@@ -1777,8 +1752,7 @@ or other opinion, national or social origin, property, birth or other status</qu
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>115</number>
 <id>26</id>
 <quote>human rights and
@@ -1789,8 +1763,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>116</number>
 <id>27</id>
 <quote>enjoyment of human
@@ -1799,8 +1772,7 @@ rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>117</number>
 <id>28</id>
 <quote>human
@@ -1811,8 +1783,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>118</number>
 <id>29</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1822,8 +1793,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>119</number>
 <id>30</id>
 <quote>promote and protect human rights</quote>
@@ -1831,8 +1801,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>120</number>
 <id>31</id>
 <quote>human rights and fundamental
@@ -1843,8 +1812,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>121</number>
 <id>32</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1854,8 +1822,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>122</number>
 <id>33</id>
 <quote>1
@@ -1864,8 +1831,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>123</number>
 <id>34</id>
 <quote>realization of human rights</quote>
@@ -1873,8 +1839,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>124</number>
 <id>35</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1884,8 +1849,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>125</number>
 <id>36</id>
 <quote>Article 2
@@ -1894,8 +1858,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>126</number>
 <id>37</id>
 <quote>human rights and
@@ -1906,8 +1869,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>127</number>
 <id>38</id>
 <quote>Charter of the United Nations</quote>
@@ -1917,8 +1879,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>128</number>
 <id>39</id>
 <quote>field of human rights</quote>
@@ -1927,8 +1888,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>129</number>
 <id>40</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1938,8 +1898,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>130</number>
 <id>41</id>
 <quote>human
@@ -1950,8 +1909,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>131</number>
 <id>42</id>
 <quote>Charter of the United Nations</quote>
@@ -1961,8 +1919,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WTO¦WTO_AGREEMENT.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>132</number>
 <id>43</id>
 <quote>Universal Declaration of Human Rights</quote>
@@ -1973,8 +1930,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>133</number>
 <id>44</id>
 <quote>promoting and protecting human rights</quote>
@@ -1982,8 +1938,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>134</number>
 <id>45</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -1993,8 +1948,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>135</number>
 <id>46</id>
 <quote>Article 6
@@ -2003,8 +1957,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>136</number>
 <id>47</id>
 <quote>human rights and fundamental
@@ -2015,8 +1968,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>137</number>
 <id>48</id>
 <quote>human rights and fundamental
@@ -2027,8 +1979,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>138</number>
 <id>49</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2038,8 +1989,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>139</number>
 <id>50</id>
 <quote>1. Everyone has the right</quote>
@@ -2047,8 +1997,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>140</number>
 <id>51</id>
 <quote>realization of human rights</quote>
@@ -2056,8 +2005,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>141</number>
 <id>52</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2067,8 +2015,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>142</number>
 <id>53</id>
 <quote>Article 9
@@ -2078,8 +2025,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>143</number>
 <id>54</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2089,8 +2035,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>144</number>
 <id>55</id>
 <quote>public hearing before an independent, impartial</quote>
@@ -2098,8 +2043,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>145</number>
 <id>56</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2109,8 +2053,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>146</number>
 <id>57</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2120,8 +2063,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>147</number>
 <id>58</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2131,8 +2073,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>148</number>
 <id>59</id>
 <quote>violation of human rights and fundamental freedoms</quote>
@@ -2140,8 +2081,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>149</number>
 <id>60</id>
 <quote>human rights and
@@ -2152,8 +2092,7 @@ fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>150</number>
 <id>61</id>
 <quote>6
@@ -2162,8 +2101,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>151</number>
 <id>62</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2173,8 +2111,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>152</number>
 <id>63</id>
 <quote>respect those rights and freedoms</quote>
@@ -2182,8 +2119,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>153</number>
 <id>64</id>
 <quote>1. Everyone has the right</quote>
@@ -2191,8 +2127,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>154</number>
 <id>65</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2202,8 +2137,7 @@ Everyone has the right</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>155</number>
 <id>66</id>
 <quote>human rights and fundamental
@@ -2214,8 +2148,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>156</number>
 <id>67</id>
 <quote>enjoyment of human
@@ -2224,8 +2157,7 @@ rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>157</number>
 <id>68</id>
 <quote>human
@@ -2236,8 +2168,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>158</number>
 <id>69</id>
 <quote>promoting and protecting human rights</quote>
@@ -2245,8 +2176,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_116.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>159</number>
 <id>70</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2256,8 +2186,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>160</number>
 <id>71</id>
 <quote>Article 14
@@ -2266,8 +2195,7 @@ rights and fundamental freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>161</number>
 <id>72</id>
 <quote>economic, social and
@@ -2276,8 +2204,7 @@ cultural rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>162</number>
 <id>73</id>
 <quote>include, inter alia</quote>
@@ -2285,8 +2212,7 @@ cultural rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>163</number>
 <id>74</id>
 <quote>field of human rights</quote>
@@ -2295,8 +2221,7 @@ cultural rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>164</number>
 <id>75</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2306,8 +2231,7 @@ cultural rights</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>165</number>
 <id>76</id>
 <quote>human rights and fundamental
@@ -2318,8 +2242,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>166</number>
 <id>77</id>
 <quote>human rights and fundamental
@@ -2330,8 +2253,7 @@ freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>167</number>
 <id>78</id>
 <quote>racial and religious
@@ -2340,8 +2262,7 @@ groups</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>168</number>
 <id>79</id>
 <quote>exercise of the rights and freedoms</quote>
@@ -2349,8 +2270,7 @@ groups</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>169</number>
 <id>80</id>
 <quote>determined by law solely for the purpose of securing due
@@ -2360,8 +2280,7 @@ public order and the general welfare in a democratic society</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>170</number>
 <id>81</id>
 <quote>1. Everyone has duties</quote>
@@ -2369,8 +2288,7 @@ public order and the general welfare in a democratic society</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>171</number>
 <id>82</id>
 <quote>community, in which alone the free and full development of
@@ -2380,8 +2298,7 @@ his or her personality is possible.
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>172</number>
 <id>83</id>
 <quote>human rights and fundamental freedoms</quote>
@@ -2391,8 +2308,7 @@ his or her personality is possible.
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>173</number>
 <id>84</id>
 <quote>social and
@@ -2401,8 +2317,7 @@ international order in which the rights and freedoms set forth</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>174</number>
 <id>85</id>
 <quote>Universal Declaration of Human Rights</quote>
@@ -2413,8 +2328,7 @@ international order in which the rights and freedoms set forth</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦WIPO¦SCT/SCT_24_4.pdf.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>175</number>
 <id>86</id>
 <quote>fully realized.
@@ -2423,8 +2337,7 @@ Article</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>176</number>
 <id>87</id>
 <quote>Declaration shall be interpreted as implying</quote>
@@ -2432,8 +2345,7 @@ Article</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>177</number>
 <id>88</id>
 <quote>right to engage in any activity or to perform any act aimed at the destruction of the
@@ -2442,8 +2354,7 @@ rights and freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦HR_DECLARATION.docx.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>178</number>
 <id>89</id>
 <quote>provisions of the Charter of the United Nations</quote>
@@ -2451,6 +2362,7 @@ rights and freedoms</quote>
 <document>C:/MYCAT/corpus/txt/EN/SMALL-COLLECTION¦UNO¦A_RES_63_25.pdf.txt</document>
 </documents>
 <color>red</color>
+<tag>J</tag>
 </reference>
 </references></Info>
 <origText>

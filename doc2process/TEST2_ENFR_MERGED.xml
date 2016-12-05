@@ -8,24 +8,25 @@
    <Color2>red</Color2>
 </params>
 <parameters>
-   <msg>process by WebService|process by WebService</msg>
-   <TxtSrc>|</TxtSrc>
-   <RefType>|</RefType>
-   <DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</DocSrc>
-   <DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01_EN_FR_TUV_RefDoc.xml|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01_EN_FR_Glossaries_RefDoc.xml</DocTgt>
-   <LngSrc>EN|EN</LngSrc>
-   <LngTgt>FR|FR</LngTgt>
-   <Filter>|COLLECTION.GLOSSARIES;</Filter>
-   <MinLen>6|3</MinLen>
-   <Fast>false|false</Fast>
+<msg>process by WebService|process by WebService</msg>
+<TxtSrc>|</TxtSrc>
+<RefType>|</RefType>
+<DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+<DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+<DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01_EN_FR_TUV_RefDoc.xml|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01_EN_FR_Glossaries_RefDoc.xml</DocTgt>
+<LngSrc>EN|EN</LngSrc>
+<LngTgt>FR|FR</LngTgt>
+<Filter>|COLLECTION.GLOSSARIES;</Filter>
+<MinLen>6|3</MinLen>
+<Fast>false|false</Fast>
 </parameters>
 <statistics>
-  <mycat>
-    <RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
-    <RefDocType>|</RefDocType>
-    <RefDocLng>339|339</RefDocLng>
-    <RefDocPerCent>379|40</RefDocPerCent>
-    <RefDocOccurences>111.8%|11.8%</RefDocOccurences>
+<mycat>
+<RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
+<RefDocType>|</RefDocType>
+<RefDocLng>339|339</RefDocLng>
+<RefDocPerCent>379|40</RefDocPerCent>
+<RefDocOccurences>111.8%|11.8%</RefDocOccurences>
   </mycat>
   <organisation>
 <!-- imported template from /config -->
@@ -1421,8 +1422,7 @@ Mandate
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦323.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>2</number>
 <id>2</id>
 <quote>mandate of the EIFSC is to provide strategic advice and guidelines to the EIF stakeholders on the implementation</quote>
@@ -1430,8 +1430,7 @@ Mandate
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦345.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>3</number>
 <id>3</id>
 <quote>programme and its overall goals. Bearing in mind the objective of integration of the LDCs into the multilateral trading system, the EIFSC will consider and transmit through the existing system-wide reporting mechanism on the LDCs the contributions of the EIF towards the 2030 Sustainable Development Agenda and the implementation of the Istanbul Programme of Action</quote>
@@ -1439,8 +1438,7 @@ Mandate
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦345.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>4</number>
 <id>4</id>
 <quote>EIFSC will also provide a forum for transparency, information and experience exchanges</quote>
@@ -1448,8 +1446,7 @@ Mandate
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦345.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>5</number>
 <id>5</id>
 <quote>provide a forum for transparency, information and experience exchanges. 
@@ -1464,8 +1461,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INTERNAL2014¦7178.pdf.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>6</number>
 <id>6</id>
 <quote>functions of the EIFSC are to:
@@ -1477,8 +1473,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦323.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>7</number>
 <id>7</id>
 <quote>strategic plans and the evaluation presented by the EIF Board; ensure transparency of the EIF process;
@@ -1493,8 +1488,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦323.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>8</number>
 <id>8</id>
 <quote>Mechanisms to leverage additional funding of EIF activities; and
@@ -1504,8 +1498,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INTERNAL2014¦7178.pdf.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>9</number>
 <id>9</id>
 <quote>Review the EIF Board's recommendations on the results and lessons of the EIF programme and determine action as appropriate</quote>
@@ -1516,8 +1509,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-EIF¦323.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>10</number>
 <id>10</id>
 <quote>CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE</quote>
@@ -1526,8 +1518,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/WT¦GC¦180.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>11</number>
 <id>11</id>
 <quote>34 with WTO2TXT.EXE version:2016-05-11 12:01</quote>
@@ -1596,6 +1587,7 @@ Functions
 <document>E:/MYCAT/corpus/txt/EN/WT¦TPR¦S345.doc.txt</document>
 </documents>
 <color>yellow</color>
+<tag>T</tag>
 </reference>
 <reference>
 <number>11</number>
@@ -1612,8 +1604,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦GLOSSARIES¦DATABASE 4 [EFG] ESA 1999_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>12</number>
 <id>2</id>
 <quote>EIF Steering Committee</quote>
@@ -1625,8 +1616,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦NEPAL_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>13</number>
 <id>3</id>
 <quote>multilateral trading system</quote>
@@ -1645,8 +1635,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KAZAKHSTAN_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>14</number>
 <id>4</id>
 <quote>Sustainable Development Agenda</quote>
@@ -1654,8 +1643,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦CAWA (A-J) [EF] WHO 1998_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>15</number>
 <id>5</id>
 <quote>Istanbul Programme of Action</quote>
@@ -1666,8 +1654,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>16</number>
 <id>6</id>
 <quote>Mainstreaming of trade into national development</quote>
@@ -1675,8 +1662,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>17</number>
 <id>7</id>
 <quote>national development plans</quote>
@@ -1689,8 +1675,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦EAC_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>18</number>
 <id>8</id>
 <quote>Private sector participation</quote>
@@ -1702,8 +1687,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GUINEA_FR_EN.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>19</number>
 <id>9</id>
 <quote>CWR.WTO.ORG\DFSROOT\MDRIVE</quote>
@@ -1802,8 +1786,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦UNCLOS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>20</number>
 <id>10</id>
 <quote>with WTO2TXT.EXE version:2016-05-11 12:01</quote>
@@ -1847,6 +1830,7 @@ Terms of Reference</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦USA_EN_FR.doc.txt</document>
 </documents>
 <color>red</color>
+<tag>J</tag>
 </reference>
 </references></Info>
 <origText>

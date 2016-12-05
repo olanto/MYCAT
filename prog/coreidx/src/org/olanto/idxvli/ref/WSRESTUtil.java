@@ -199,112 +199,113 @@ public class WSRESTUtil {
 
     public static String validateInputs(Document doc1, Document doc2) {
         String response = "Documents are Valid.\n";
-        if ((doc1.getDocumentElement().getElementsByTagName("origText") == null)
-                || (doc2.getDocumentElement().getElementsByTagName("origText") == null)) {
-            return "ERROR: Missing original text in both documents.\n Please make sure you are merging valid compatibe documents";
+        if ((doc1.getDocumentElement().getElementsByTagName("origText") == null) || (doc1.getDocumentElement().getElementsByTagName("origText").item(0) == null)
+                || (doc2.getDocumentElement().getElementsByTagName("origText") == null) || (doc2.getDocumentElement().getElementsByTagName("origText").item(0) == null)) {
+            return "ERROR: Missing original text in one or both documents.\n Please make sure you are merging valid compatibe documents";
+        } else {
+            String origText1 = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
+            String origText2 = doc2.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
+            if (origText1 == null || origText2 == null || origText1.isEmpty() || origText2.isEmpty()) {
+                return "ERROR: One of the documents has an empty original text.\n Please make sure you are merging valid compatibe documents";
+            } else if (!origText1.equalsIgnoreCase(origText2)) {
+                return "ERROR: Original text is not the same in both documents.\n Please make sure you are merging valid compatibe documents";
+            } else {
+                return response;
+            }
         }
-        String origText1 = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "").trim();
-        String origText2 = doc2.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "").trim();
-        if (origText1.isEmpty() || origText2.isEmpty()) {
-            response = "ERROR: One of the documents has an empty original text.\n Please make sure you are merging valid compatibe documents";
-        }
-        if (!origText1.equalsIgnoreCase(origText2)) {
-            return "ERROR: Original text is not the same in both documents.\n Please make sure you are merging valid compatibe documents";
-        }
-        return response;
     }
 
     public static String mergeXMLParameters(Document doc1, Document doc2) {
         StringBuilder res = new StringBuilder("");
         res.append("<parameters>\n")
                 .append("<msg>");
-        if (doc1.getDocumentElement().getElementsByTagName("msg") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("msg") != null && doc1.getDocumentElement().getElementsByTagName("msg").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("msg") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("msg") != null && doc2.getDocumentElement().getElementsByTagName("msg").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("msg").item(0).getTextContent());
             }
         }
         res.append("</msg>\n")
                 .append("<TxtSrc>");
-        if (doc1.getDocumentElement().getElementsByTagName("TxtSrc") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("TxtSrc") != null && doc1.getDocumentElement().getElementsByTagName("TxtSrc").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("TxtSrc") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("TxtSrc") != null && doc2.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent() != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("TxtSrc").item(0).getTextContent());
             }
         }
         res.append("</TxtSrc>\n")
                 .append("<RefType>");
-        if (doc1.getDocumentElement().getElementsByTagName("RefType") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefType") != null && doc1.getDocumentElement().getElementsByTagName("RefType").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefType") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefType") != null && doc2.getDocumentElement().getElementsByTagName("RefType").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefType").item(0).getTextContent());
             }
         }
         res.append("</RefType>\n")
                 .append("<DocSrc>");
-        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null && doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null && doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
             }
         }
         res.append("</DocSrc>\n")
                 .append("<DocSrc>");
-        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("DocSrc") != null && doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("DocSrc") != null && doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocSrc").item(0).getTextContent());
             }
         }
         res.append("</DocSrc>\n")
                 .append("<DocTgt>");
-        if (doc1.getDocumentElement().getElementsByTagName("DocTgt") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("DocTgt") != null && doc1.getDocumentElement().getElementsByTagName("DocTgt").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("DocTgt") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("DocTgt") != null && doc2.getDocumentElement().getElementsByTagName("DocTgt").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("DocTgt").item(0).getTextContent());
             }
         }
         res.append("</DocTgt>\n")
                 .append("<LngSrc>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("LngSrc") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("LngSrc") != null && doc1.getDocumentElement().getElementsByTagName("LngSrc").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("LngSrc") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("LngSrc") != null && doc2.getDocumentElement().getElementsByTagName("LngSrc").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("LngSrc").item(0).getTextContent());
             }
         }
         res.append("</LngSrc>\n")
                 .append("<LngTgt>");
-        if (doc1.getDocumentElement().getElementsByTagName("LngTgt") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("LngTgt") != null && doc1.getDocumentElement().getElementsByTagName("LngTgt").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("LngTgt") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("LngTgt") != null && doc2.getDocumentElement().getElementsByTagName("LngTgt").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("LngTgt").item(0).getTextContent());
             }
         }
         res.append("</LngTgt>\n")
                 .append("<Filter>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("Filter") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("Filter") != null && doc1.getDocumentElement().getElementsByTagName("Filter").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("Filter") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("Filter") != null && doc2.getDocumentElement().getElementsByTagName("Filter").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("Filter").item(0).getTextContent());
             }
         }
         res.append("</Filter>\n")
                 .append("<MinLen>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("MinLen") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("MinLen") != null && doc1.getDocumentElement().getElementsByTagName("MinLen").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("MinLen") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("MinLen") != null && doc2.getDocumentElement().getElementsByTagName("MinLen").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("MinLen").item(0).getTextContent());
             }
         }
         res.append("</MinLen>\n")
                 .append("<Fast>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("Fast") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("Fast") != null && doc1.getDocumentElement().getElementsByTagName("Fast").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("Fast") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("Fast") != null && doc2.getDocumentElement().getElementsByTagName("Fast").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("Fast").item(0).getTextContent());
             }
         }
@@ -318,7 +319,7 @@ public class WSRESTUtil {
         String organization = "";
         NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
         NodeList nodes1 = doc2.getDocumentElement().getElementsByTagName("organisation");
-        if (nodes != null) {
+        if (nodes != null && nodes.item(0) != null && nodes.item(0).getChildNodes() != null) {
             for (int i = 0; i < nodes.item(0).getChildNodes().getLength(); i++) {
                 if (nodes.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
                     organization += "";
@@ -329,7 +330,7 @@ public class WSRESTUtil {
                 }
             }
         }
-        if (nodes1 != null) {
+        if (nodes1 != null && nodes1.item(0) != null && nodes1.item(0).getChildNodes() != null) {
             for (int i = 0; i < nodes1.item(0).getChildNodes().getLength(); i++) {
                 if (nodes1.item(0).getChildNodes().item(i).getNodeName().contains("text")) {
                     organization += "";
@@ -346,45 +347,45 @@ public class WSRESTUtil {
                 .append("<mycat>\n")
                 .append("<RefDocFullName>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("RefDocFullName") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocFullName") != null && doc1.getDocumentElement().getElementsByTagName("RefDocFullName").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefDocFullName") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocFullName") != null && doc2.getDocumentElement().getElementsByTagName("RefDocFullName").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocFullName").item(0).getTextContent());
             }
         }
         res.append("</RefDocFullName>\n")
                 .append("<RefDocType>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("RefDocType") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocType") != null && doc1.getDocumentElement().getElementsByTagName("RefDocType").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefDocType") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocType") != null && doc2.getDocumentElement().getElementsByTagName("RefDocType").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocType").item(0).getTextContent());
             }
         }
         res.append("</RefDocType>\n")
                 .append("<RefDocLng>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("RefDocLng") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocLng") != null && doc1.getDocumentElement().getElementsByTagName("RefDocLng").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefDocLng") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocLng") != null && doc2.getDocumentElement().getElementsByTagName("RefDocLng").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocLng").item(0).getTextContent());
             }
         }
         res.append("</RefDocLng>\n")
                 .append("<RefDocPerCent>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("RefDocPerCent") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocPerCent") != null && doc1.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefDocPerCent") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocPerCent") != null && doc2.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocPerCent").item(0).getTextContent());
             }
         }
         res.append("</RefDocPerCent>\n")
                 .append("<RefDocOccurences>");
 
-        if (doc1.getDocumentElement().getElementsByTagName("RefDocOccurences") != null) {
+        if (doc1.getDocumentElement().getElementsByTagName("RefDocOccurences") != null && doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0) != null) {
             res.append(doc1.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent());
-            if (doc2.getDocumentElement().getElementsByTagName("RefDocOccurences") != null) {
+            if (doc2.getDocumentElement().getElementsByTagName("RefDocOccurences") != null && doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0) != null) {
                 res.append("|").append(doc2.getDocumentElement().getElementsByTagName("RefDocOccurences").item(0).getTextContent());
             }
         }
@@ -398,12 +399,7 @@ public class WSRESTUtil {
     }
 
     public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
-        String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent().replace("Â", "");
-
-        List<Reference> references = getReferences(doc1, origText, repTag1, "");
-        references.addAll(getReferences(doc2, origText, repTag2, color2));
-        Collections.sort(references);
-
+        String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
         StringBuilder res = new StringBuilder("");
         res.append("<htmlRefDoc>\n");
         res.append("<!-- <html>\n");
@@ -412,17 +408,26 @@ public class WSRESTUtil {
         res.append("<title>myQuote</title>");
         res.append("</head>\n");
         res.append("<body>\n");
-        res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
-                .append(IdxConstant.MSG.get("server.qd.MSG_19"))
-                .append("</A><br/>");
+        if (origText != null && !origText.isEmpty()) {
+            origText = origText.replace("Â", "");
 
-        res.append(mergeReferences(references, origText));
-        res.append("<br/><br/><A NAME=\"STATISTIC\"></A><A HREF=\"#TOP\">TOP</A><br/>");
-        res.append(parseHtmlAndGetStats(docSource1));
-        res.append(parseHtmlAndGetStats(docSource2));
-        res.append(parseHtmlAndGetStatsTables(docSource1, repTag1, docSource2, repTag2));
-        res.append(generateStatsTable(references));
-        res.append(generateHTMLComments(references));
+            List<Reference> references = getReferences(doc1, origText, repTag1, "");
+            references.addAll(getReferences(doc2, origText, repTag2, color2));
+            Collections.sort(references);
+
+
+            res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
+                    .append(IdxConstant.MSG.get("server.qd.MSG_19"))
+                    .append("</A><br/>");
+
+            res.append(mergeReferences(references, origText));
+            res.append("<br/><br/><A NAME=\"STATISTIC\"></A><A HREF=\"#TOP\">TOP</A><br/>");
+            res.append(parseHtmlAndGetStats(docSource1));
+            res.append(parseHtmlAndGetStats(docSource2));
+            res.append(parseHtmlAndGetStatsTables(docSource1, repTag1, docSource2, repTag2));
+            res.append(generateStatsTable(references));
+            res.append(generateHTMLComments(references));
+        }
         res.append("</body> </html> -->\n"
                 + "</htmlRefDoc>\n");
         return res.toString();
@@ -448,19 +453,21 @@ public class WSRESTUtil {
         if (referencesList != null) {
             for (int j = 0; j < referencesList.getLength(); ++j) {
                 Element reference = (Element) referencesList.item(j);
-                if (reference.getElementsByTagName("id") != null) {
+                if (reference.getElementsByTagName("id") != null && reference.getElementsByTagName("id").item(0) != null) {
                     references += "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
                             + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n";
                 }
-                if (reference.getElementsByTagName("quote") != null) {
+                if (reference.getElementsByTagName("quote") != null && reference.getElementsByTagName("quote").item(0) != null) {
                     references += "<quote>" + clean4xml(reference.getElementsByTagName("quote").item(0).getTextContent()) + "</quote>\n";
                 }
                 references += "<documents>\n";
-                Element documents = (Element) reference.getElementsByTagName("documents").item(0);
-                NodeList documentsList = documents.getElementsByTagName("document");
-                if (documentsList != null) {
-                    for (int i = 0; i < documentsList.getLength(); ++i) {
-                        references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
+                if (reference.getElementsByTagName("documents").item(0) != null) {
+                    Element documents = (Element) reference.getElementsByTagName("documents").item(0);
+                    NodeList documentsList = documents.getElementsByTagName("document");
+                    if (documentsList != null) {
+                        for (int i = 0; i < documentsList.getLength(); ++i) {
+                            references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
+                        }
                     }
                 }
                 references += "</documents>\n";
@@ -627,10 +634,10 @@ public class WSRESTUtil {
                 for (int j = 0; j < referencesList.getLength(); j++) {
                     Element reference = (Element) referencesList.item(j);
                     Reference ref = new Reference();
-                    if (reference.getElementsByTagName("quote") != null) {
+                    if (reference.getElementsByTagName("quote") != null && reference.getElementsByTagName("quote").getLength() > 0) {
                         ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
                     }
-                    if (reference.getElementsByTagName("id") != null) {
+                    if (reference.getElementsByTagName("id") != null && reference.getElementsByTagName("id").getLength() > 0) {
                         ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
                     }
                     if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
@@ -653,7 +660,7 @@ public class WSRESTUtil {
                     }
                     List<String> docs = new ArrayList<String>();
 
-                    if (reference.getElementsByTagName("documents") != null) {
+                    if (reference.getElementsByTagName("documents").item(0) != null) {
                         Element documents = (Element) reference.getElementsByTagName("documents").item(0);
                         NodeList documentsList = documents.getElementsByTagName("document");
                         if (documentsList != null) {

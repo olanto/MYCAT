@@ -8,24 +8,25 @@
    <Color2>red</Color2>
 </params>
 <parameters>
-   <msg>process by WebService|process by WebService</msg>
-   <TxtSrc>|</TxtSrc>
-   <RefType>|</RefType>
-   <DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC</DocSrc>
-   <DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01_EN_FR_TUV_RefDoc.xml|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01_EN_FR_OnlyThisJob_RefDoc.xml</DocTgt>
-   <LngSrc>EN|EN</LngSrc>
-   <LngTgt>FR|FR</LngTgt>
-   <Filter>|COLLECTION.9949.16;</Filter>
-   <MinLen>6|6</MinLen>
-   <Fast>false|false</Fast>
+<msg>process by WebService|process by WebService</msg>
+<TxtSrc>|</TxtSrc>
+<RefType>|</RefType>
+<DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+<DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+<DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01_EN_FR_TUV_RefDoc.xml|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01_EN_FR_OnlyThisJob_RefDoc.xml</DocTgt>
+<LngSrc>EN|EN</LngSrc>
+<LngTgt>FR|FR</LngTgt>
+<Filter>|COLLECTION.9949.16;</Filter>
+<MinLen>6|6</MinLen>
+<Fast>false|false</Fast>
 </parameters>
 <statistics>
-  <mycat>
-    <RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
-    <RefDocType>|</RefDocType>
-    <RefDocLng>4386|4386</RefDocLng>
-    <RefDocPerCent>3912|3896</RefDocPerCent>
-    <RefDocOccurences>89.2%|88.8%</RefDocOccurences>
+<mycat>
+<RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC|\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\9949.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
+<RefDocType>|</RefDocType>
+<RefDocLng>4386|4386</RefDocLng>
+<RefDocPerCent>3912|3896</RefDocPerCent>
+<RefDocOccurences>89.2%|88.8%</RefDocOccurences>
   </mycat>
   <organisation>
 <!-- imported template from /config -->
@@ -2324,8 +2325,7 @@ The purpose of this survey is to assist the WTO Secretariat in obtaining informa
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-TBT¦81.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>2</number>
 <id>2</id>
 <quote>Responses to questions will not be attributed to specific Members, and will be kept anonymous by the Secretariat. 
@@ -3052,8 +3052,7 @@ Scope of work (if more than one Enquiry Point exists</quote>
 <document>E:/MYCAT/corpus/txt/EN/JOBS¦INT-SUB-TBT¦81.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>3</number>
 <id>3</id>
 <quote>1
@@ -3068,8 +3067,7 @@ Scope of work (if more than one Enquiry Point exists</quote>
 <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL CRISIS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>4</number>
 <id>4</id>
 <quote>CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE</quote>
@@ -3078,8 +3076,7 @@ Scope of work (if more than one Enquiry Point exists</quote>
 <document>E:/MYCAT/corpus/txt/EN/WT¦GC¦180.doc.txt</document>
 </documents>
 <color>yellow</color>
-</reference>
-<reference>
+<tag>T</tag>
 <number>5</number>
 <id>5</id>
 <quote>37 with WTO2TXT.EXE version:2016-05-11 12:01</quote>
@@ -3228,6 +3225,7 @@ Scope of work (if more than one Enquiry Point exists</quote>
 <document>E:/MYCAT/corpus/txt/EN/WT¦TPR¦M336A1.doc.txt</document>
 </documents>
 <color>yellow</color>
+<tag>T</tag>
 </reference>
 <reference>
 <number>3</number>
@@ -3239,8 +3237,7 @@ The purpose of this survey is to assist the WTO Secretariat in obtaining informa
 <document>E:/MYCAT/corpus/txt/EN/9949.16¦JOBS_INT-SUB-TBT_81.doc.txt</document>
 </documents>
 <color>red</color>
-</reference>
-<reference>
+<tag>J</tag>
 <number>4</number>
 <id>2</id>
 <quote>Responses to questions will not be attributed to specific Members, and will be kept anonymous by the Secretariat. 
@@ -3967,6 +3964,7 @@ Scope of work (if more than one Enquiry Point exists</quote>
 <document>E:/MYCAT/corpus/txt/EN/9949.16¦JOBS_INT-SUB-TBT_81.doc.txt</document>
 </documents>
 <color>red</color>
+<tag>J</tag>
 </reference>
 </references></Info>
 <origText>
