@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<converter>
+    <common>
+        <targetFormat>txt</targetFormat>
+        <badPath>C:/MYCAT/corpus/bad</badPath>
+        <docPath>C:/MYCAT/corpus/docs</docPath>
+        <sourcePath>C:/MYCAT/corpus/source</sourcePath>
+        <tempPath>C:/MYCAT/temp</tempPath>
+        <maxRetry>2</maxRetry>
+        <keepExtension>true</keepExtension>
+        <outputEncoding>UTF-8</outputEncoding>
+    </common> 
+	<!-- examples of plugins -->
+	<!-- 
+    <plugins>
+        <plugin>
+            <plugName>antiword</plugName>
+            <envVar name="ANTIWORDHOME">C:/MYCAT/Plugins/antiword</envVar>
+            <plugCommand>C:/MYCAT/Plugins/antiword/antiword.exe %source% >> %target%</plugCommand>
+            <plugProcessWindows>antiword.exe</plugProcessWindows>
+        </plugin>
+        <plugin>
+            <plugName>pdf2txt</plugName>
+            <plugCommand>C:/MYCAT/Plugins/pdf2txt/pdf2txt.exe -u -! x -z %source% %target%</plugCommand>
+            <plugProcessWindows>pdf2txt.exe</plugProcessWindows>               
+        </plugin>
+        <plugin>
+            <plugName>superconverter</plugName>
+            <plugCommand>C:/MYCAT/prog/sc.exe -u -x -z %source% %target%</plugCommand>
+            <plugProcessWindows>sc.exe</plugProcessWindows>
+        </plugin>
+        <maps>
+            <ext>
+                <extName>doc</extName>
+               <conv>superconverter</conv>
+               <conv>antiword</conv>
+                <builtin>no</builtin>
+            </ext>
+            <ext>
+                <extName>pdf</extName>
+                <conv>pdf2txt</conv>
+                <conv>superconverter</conv>
+                <builtin>no</builtin>
+            </ext>
+        </maps>
+    </plugins>
+	-->
+</converter>
