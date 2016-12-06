@@ -724,13 +724,17 @@ public class WSRESTUtil {
     private static String generateHTMLComments(List<Reference> references) {
         StringBuilder s = new StringBuilder("");
         s.append("\n</htmlstartcomment>MYQUOTEREF");
-        s.append("\n").append(references.size());
+        s.append("\n")
+                .append(references.size());
         for (int i = 0; i < references.size(); i++) {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef().replace("\n", " ").replace("  ", " ").replace("&amp;", "&").replace("&lt;", "<"));
+                    .append(references.get(i).getTextOfRef().replace("&amp;", "&").replace("&lt;", "<"));
             StringBuilder dlist = new StringBuilder("");
+            if (references.get(i).getReferencedDocs().isEmpty()) {
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR);
+            }
             for (String doc : references.get(i).getReferencedDocs()) {
                 dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc.replace("&amp;", "&").replace("&lt;", "<"));
             }
