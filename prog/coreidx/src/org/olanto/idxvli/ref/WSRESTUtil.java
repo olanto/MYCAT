@@ -615,7 +615,7 @@ public class WSRESTUtil {
                     Element reference = (Element) referencesList.item(j);
                     Reference ref = new Reference();
                     if (reference.getElementsByTagName("quote") != null && reference.getElementsByTagName("quote").getLength() > 0) {
-                        ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
+                        ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent().replace("&amp;", "&").replace("&lt;", "<"));
                     }
                     if (reference.getElementsByTagName("id") != null && reference.getElementsByTagName("id").getLength() > 0) {
                         ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
@@ -645,7 +645,7 @@ public class WSRESTUtil {
                         NodeList documentsList = documents.getElementsByTagName("document");
                         if (documentsList != null) {
                             for (int i = 0; i < documentsList.getLength(); ++i) {
-                                docs.add(documentsList.item(i).getTextContent());
+                                docs.add(documentsList.item(i).getTextContent().replace("&amp;", "&").replace("&lt;", "<"));
                             }
                         }
                     }
@@ -710,13 +710,13 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef().replace("&amp;", "&").replace("&lt;", "<"));
+                    .append(references.get(i).getTextOfRef());
             StringBuilder dlist = new StringBuilder("");
             if (references.get(i).getReferencedDocs().isEmpty()) {
                 dlist.append(REFResultNice.DOC_REF_SEPARATOR);
             }
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc.replace("&amp;", "&").replace("&lt;", "<"));
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
             }
             s.append(dlist);
         }
