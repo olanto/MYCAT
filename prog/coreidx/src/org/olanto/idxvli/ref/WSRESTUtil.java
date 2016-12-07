@@ -445,7 +445,7 @@ public class WSRESTUtil {
 
     public static String getInfoForDocument(List<Reference> refs) {
         String references = "<references>\n";
-
+        
         for (int j = 0; j < refs.size(); ++j) {
             references += "<reference>\n";
 
@@ -457,8 +457,6 @@ public class WSRESTUtil {
                 for (int i = 0; i < refs.get(j).getReferencedDocs().size(); ++i) {
                     references += "<document>" + clean4xml(refs.get(j).getReferencedDocs().get(i)) + "</document>\n";
                 }
-                references += "</documents>\n";
-
                 if (refs.get(j).getColor() != null && !refs.get(j).getColor().isEmpty()) {
                     references += "<color>" + refs.get(j).getColor() + "</color>\n";
                 } else {
@@ -471,6 +469,7 @@ public class WSRESTUtil {
                     references += "<tag>T</tag>\n";
                 }
             }
+            references += "</documents>\n";
             references += "</reference>\n";
         }
         references += "</references>\n";
