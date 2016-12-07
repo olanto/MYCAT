@@ -32,6 +32,7 @@ public class Reference implements Comparable<Reference> {
 
     private Integer localIDX;
     private String textOfRef;
+    private String refTextInDoc;
     private Integer startIDX;
     private Integer effectiveStartIDX;
     private Integer endIDX;
@@ -66,6 +67,14 @@ public class Reference implements Comparable<Reference> {
 
     public String getTextOfRef() {
         return this.textOfRef;
+    }
+    
+     public void setRefTextInDoc(String refTextInDoc) {
+        this.refTextInDoc = refTextInDoc;
+    }
+
+    public String getRefTextInDoc() {
+        return this.refTextInDoc;
     }
 
     public void setStartIDX(Integer startIDX) {

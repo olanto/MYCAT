@@ -740,8 +740,8 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
         String mergedRefDoc = "";
-        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2);
-        
+        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2, DocTgt);
+
         if (msg.startsWith("ERROR")) {
             return msg;
         }
@@ -781,9 +781,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
             if (doc1.getElementsByTagName("reference") != null) {
                 start = doc1.getElementsByTagName("reference").getLength();
             }
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
-            // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, Color2, start, RepTag1, RepTag2);
+            mergedRefDoc += WSRESTUtil.mergeHTMLContentAndGenerateInfo(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
             // get the original text
             mergedRefDoc += "<origText>\n"
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()

@@ -67,9 +67,8 @@ public class WSRESTUtil {
             mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
             // merge HTML
             int totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
-            mergedRefDoc += WSRESTUtil.mergeHTMLContent(file1, file2, doc, doc1, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
+            mergedRefDoc += WSRESTUtil.mergeHTMLContentAndGenerateInfo(file1, file2, doc, doc1, "T", "J", "red", doc.getElementsByTagName("reference").getLength(), totalRefs);
             // merge details
-            mergedRefDoc += WSRESTUtil.mergeInfo(doc, doc1, "red", doc.getElementsByTagName("reference").getLength(), "T", "J");
             mergedRefDoc += "<origText>\n"
                     + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
                     + "</origText>";
@@ -186,13 +185,22 @@ public class WSRESTUtil {
         return ret;
     }
 
-    public static String CheckIfFilesExist(String doc1, String doc2) {
+    public static String CheckIfFilesExist(String doc1, String doc2, String tgtDoc) {
         String response = "Input Files Exist and are valid";
         File f1 = new File(doc1);
         File f2 = new File(doc2);
 
         if (!f1.exists() || f1.isDirectory() || !f2.exists() || f2.isDirectory()) {
             return "ERROR: One or both input files do not exist or are not valid files";
+        }
+        File file = new File(tgtDoc);
+        if (!file.isDirectory()) {
+            file = file.getParentFile();
+            if (!file.exists()) {
+                return "ERROR: The directory for saving the output file does not exist!";
+            }
+        } else {
+            return "ERROR: The target file should not be a directory";
         }
         return response;
     }
@@ -398,7 +406,7 @@ public class WSRESTUtil {
         return res.toString();
     }
 
-    public static String mergeHTMLContent(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
+    public static String mergeHTMLContentAndGenerateInfo(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
         StringBuilder res = new StringBuilder("");
         res.append("<htmlRefDoc>\n");
@@ -408,13 +416,19 @@ public class WSRESTUtil {
         res.append("<title>myQuote</title>");
         res.append("</head>\n");
         res.append("<body>\n");
+        List<Reference> references = new ArrayList();
+        List<Reference> references1 = new ArrayList();
         if (origText != null && !origText.isEmpty()) {
             origText = origText.replace("Â", "");
 
-            List<Reference> references = getReferences(doc1, origText, repTag1, "");
-            references.addAll(getReferences(doc2, origText, repTag2, color2));
-            Collections.sort(references);
+            references = getReferences(doc1, origText, repTag1, "");
+            addRefText(references, docSource1);
 
+            references1 = getReferences(doc2, origText, repTag2, color2);
+            addRefText(references1, docSource2);
+
+            references.addAll(references1);
+            Collections.sort(references);
 
             res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
                     .append(IdxConstant.MSG.get("server.qd.MSG_19"))
@@ -430,70 +444,48 @@ public class WSRESTUtil {
         }
         res.append("</body> </html> -->\n"
                 + "</htmlRefDoc>\n");
-        return res.toString();
-    }
-
-    public static String mergeInfo(Document doc1, Document doc2, String color, int start, String tag1, String tag2) {
-        return "<Info>\n"
-                + "<references>"
-                + getReferencesFromDocument(doc1, "", 0, tag1)
-                + getReferencesFromDocument(doc2, color, start, tag2)
-                + "</references>"
-                + "</Info>\n";
+        return res.toString()
+                + getInfoForDocument(references);
     }
 
     public static String clean4xml(String s) {
         return s.replace("&", "&amp;").replace("<", "&lt;");
     }
 
-    public static String getReferencesFromDocument(Document doc, String color, int start, String tag) {
-        String references = "<reference>\n";
+    public static String getInfoForDocument(List<Reference> refs) {
+        String references = "<references>\n";
 
-        NodeList referencesList = doc.getElementsByTagName("reference");
-        if (referencesList != null) {
-            for (int j = 0; j < referencesList.getLength(); ++j) {
-                Element reference = (Element) referencesList.item(j);
-                if (reference.getElementsByTagName("id") != null && reference.getElementsByTagName("id").item(0) != null) {
-                    references += "<number>" + getReferenceNumberAsString(reference.getElementsByTagName("id").item(0).getTextContent(), start) + "</number>\n"
-                            + "<id>" + reference.getElementsByTagName("id").item(0).getTextContent() + "</id>\n";
-                }
-                if (reference.getElementsByTagName("quote") != null && reference.getElementsByTagName("quote").item(0) != null) {
-                    references += "<quote>" + clean4xml(reference.getElementsByTagName("quote").item(0).getTextContent()) + "</quote>\n";
-                }
-                references += "<documents>\n";
-                if (reference.getElementsByTagName("documents").item(0) != null) {
-                    Element documents = (Element) reference.getElementsByTagName("documents").item(0);
-                    NodeList documentsList = documents.getElementsByTagName("document");
-                    if (documentsList != null) {
-                        for (int i = 0; i < documentsList.getLength(); ++i) {
-                            references += "<document>" + clean4xml(documentsList.item(i).getTextContent()) + "</document>\n";
-                        }
-                    }
-                }
-                references += "</documents>\n";
+        for (int j = 0; j < refs.size(); ++j) {
+            references += "<reference>\n";
 
-                if (reference.getElementsByTagName("color") != null && (reference.getElementsByTagName("color").getLength() > 0)) {
-                    references += "<color>" + reference.getElementsByTagName("color").item(0).getTextContent() + "</color>\n";
-                } else {
-                    if (!color.isEmpty()) {
-                        references += "<color>" + color + "</color>\n";
-                    } else {
-                        references += "<color>yellow</color>\n";
-                    }
+            references += "<number>" + refs.get(j).getGlobalIDX() + "</number>\n"
+                    + "<id>" + refs.get(j).getLocalIDX() + "</id>\n";
+            references += "<quote>" + clean4xml(refs.get(j).getTextOfRef()) + "</quote>\n";
+            references += "<documents>\n";
+            if (!refs.get(j).getReferencedDocs().isEmpty()) {
+                for (int i = 0; i < refs.get(j).getReferencedDocs().size(); ++i) {
+                    references += "<document>" + clean4xml(refs.get(j).getReferencedDocs().get(i)) + "</document>\n";
                 }
-                if (reference.getElementsByTagName("tag") != null && (reference.getElementsByTagName("tag").getLength() > 0)) {
-                    references += "<tag>" + reference.getElementsByTagName("tag").item(0).getTextContent() + "</tag>\n";
+                if (refs.get(j).getColor() != null && !refs.get(j).getColor().isEmpty()) {
+                    references += "<color>" + refs.get(j).getColor() + "</color>\n";
                 } else {
-                    if (!tag.isEmpty()) {
-                        references += "<tag>" + tag + "</tag>\n";
-                    } else {
-                        references += "<tag>T</tag>\n";
-                    }
+                    references += "<color>yellow</color>\n";
+                }
+
+                if (refs.get(j).getTag() != null && !refs.get(j).getTag().isEmpty()) {
+                    references += "<tag>" + refs.get(j).getTag() + "</tag>\n";
+                } else {
+                    references += "<tag>T</tag>\n";
                 }
             }
+            references += "</documents>\n";
+            references += "</reference>\n";
         }
-        references += "</reference>\n";
-        return references;
+        references += "</references>\n";
+
+        return "<Info>\n"
+                + references
+                + "</Info>\n";
     }
 
     private static Integer getReferenceNumber(String refId) {
@@ -502,14 +494,6 @@ public class WSRESTUtil {
             refNumber = Integer.parseInt(refId);
         }
         return refNumber;
-    }
-
-    private static String getReferenceNumberAsString(String refId, int start) {
-        int refNumber = 0;
-        if (refId.matches("\\d+")) {
-            refNumber = Integer.parseInt(refId) + start;
-        }
-        return "" + refNumber;
     }
 
     private static String parseHtmlAndGetStats(String docSource) {
@@ -635,7 +619,7 @@ public class WSRESTUtil {
                     Element reference = (Element) referencesList.item(j);
                     Reference ref = new Reference();
                     if (reference.getElementsByTagName("quote") != null && reference.getElementsByTagName("quote").getLength() > 0) {
-                        ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent());
+                        ref.setTextOfRef(reference.getElementsByTagName("quote").item(0).getTextContent().replace("&amp;", "&").replace("&lt;", "<"));
                     }
                     if (reference.getElementsByTagName("id") != null && reference.getElementsByTagName("id").getLength() > 0) {
                         ref.setLocalIDX(getReferenceNumber(reference.getElementsByTagName("id").item(0).getTextContent()));
@@ -665,7 +649,7 @@ public class WSRESTUtil {
                         NodeList documentsList = documents.getElementsByTagName("document");
                         if (documentsList != null) {
                             for (int i = 0; i < documentsList.getLength(); ++i) {
-                                docs.add(documentsList.item(i).getTextContent());
+                                docs.add(documentsList.item(i).getTextContent().replace("&amp;", "&").replace("&lt;", "<"));
                             }
                         }
                     }
@@ -686,6 +670,34 @@ public class WSRESTUtil {
             return references;
         }
         return null;
+    }
+
+    private static void addRefText(List<Reference> refs, String docSource) {
+        FileInputStream in;
+        try {
+            in = new FileInputStream(docSource);
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
+            if (html.contains("<body>")) {
+                String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
+                if (comments.contains("0|")) {
+                    String curlines = comments.substring(comments.indexOf("0"));
+                    int j = 0;
+                    String[] Lines = curlines.split("\\n+");
+                    for (int i = 0; i < Lines.length; i++) {
+                        if ((!(Lines[i].isEmpty())) && (Lines[i].contains(REFResultNice.DOC_REF_SEPARATOR))) {
+                            curlines = Lines[i].substring(Lines[i].indexOf(REFResultNice.DOC_REF_SEPARATOR) + 1);
+                            if ((!(curlines.isEmpty())) && (curlines.contains(REFResultNice.DOC_REF_SEPARATOR))) {
+                                refs.get(j).setRefTextInDoc(curlines.substring(0, curlines.indexOf(REFResultNice.DOC_REF_SEPARATOR)));
+                                j++;
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private static String generateStatsTable(List<Reference> references) {
@@ -730,13 +742,13 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef().replace("&amp;", "&").replace("&lt;", "<"));
+                    .append(references.get(i).getRefTextInDoc());
             StringBuilder dlist = new StringBuilder("");
             if (references.get(i).getReferencedDocs().isEmpty()) {
                 dlist.append(REFResultNice.DOC_REF_SEPARATOR);
             }
             for (String doc : references.get(i).getReferencedDocs()) {
-                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc.replace("&amp;", "&").replace("&lt;", "<"));
+                dlist.append(REFResultNice.DOC_REF_SEPARATOR).append(doc);
             }
             s.append(dlist);
         }
