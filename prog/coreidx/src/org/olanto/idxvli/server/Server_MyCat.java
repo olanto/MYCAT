@@ -740,7 +740,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
         String mergedRefDoc = "";
-        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2);
+        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2, DocTgt);
         
         if (msg.startsWith("ERROR")) {
             return msg;
