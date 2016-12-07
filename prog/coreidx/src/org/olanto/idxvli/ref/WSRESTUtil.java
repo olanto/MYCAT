@@ -477,7 +477,6 @@ public class WSRESTUtil {
 
         return "<Info>\n"
                 + references
-                + "</references>"
                 + "</Info>\n";
     }
 
