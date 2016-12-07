@@ -196,7 +196,7 @@ public class WSRESTUtil {
         File file = new File(tgtDoc);
         if (!file.isDirectory()) {
             file = file.getParentFile();
-            if (file.exists()) {
+            if (!file.exists()) {
                 return "ERROR: The directory for saving the output file does not exist!";
             }
         } else {
