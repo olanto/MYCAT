@@ -408,13 +408,18 @@ public class WSRESTUtil {
         res.append("</head>\n");
         res.append("<body>\n");
         List<Reference> references = new ArrayList();
+        List<Reference> references1 = new ArrayList();
         if (origText != null && !origText.isEmpty()) {
             origText = origText.replace("Â", "");
 
             references = getReferences(doc1, origText, repTag1, "");
-            references.addAll(getReferences(doc2, origText, repTag2, color2));
-            Collections.sort(references);
+            addRefText(references, docSource1);
 
+            references1 = getReferences(doc2, origText, repTag2, color2);
+            addRefText(references1, docSource2);
+
+            references.addAll(references1);
+            Collections.sort(references);
 
             res.append("<A NAME=\"TOP\">" + "</A>" + "<A HREF=\"#STATISTIC\">")
                     .append(IdxConstant.MSG.get("server.qd.MSG_19"))
@@ -482,14 +487,6 @@ public class WSRESTUtil {
             refNumber = Integer.parseInt(refId);
         }
         return refNumber;
-    }
-
-    private static String getReferenceNumberAsString(String refId, int start) {
-        int refNumber = 0;
-        if (refId.matches("\\d+")) {
-            refNumber = Integer.parseInt(refId) + start;
-        }
-        return "" + refNumber;
     }
 
     private static String parseHtmlAndGetStats(String docSource) {
@@ -668,6 +665,34 @@ public class WSRESTUtil {
         return null;
     }
 
+    private static void addRefText(List<Reference> refs, String docSource) {
+        FileInputStream in;
+        try {
+            in = new FileInputStream(docSource);
+            String xmlContent = UtilsFiles.file2String(in, "UTF-8");
+            String html = xmlContent.substring(xmlContent.indexOf("<html>"), xmlContent.indexOf("</html>"));
+            if (html.contains("<body>")) {
+                String comments = html.substring(html.indexOf("MYQUOTEREF") + 12, html.lastIndexOf("MYQUOTEREF"));
+                if (comments.contains("0|")) {
+                    String curlines = comments.substring(comments.indexOf("0"));
+                    int j = 0;
+                    String[] Lines = curlines.split("\\n+");
+                    for (int i = 0; i < Lines.length; i++) {
+                        if ((!(Lines[i].isEmpty())) && (Lines[i].contains(REFResultNice.DOC_REF_SEPARATOR))) {
+                            curlines = Lines[i].substring(Lines[i].indexOf(REFResultNice.DOC_REF_SEPARATOR) + 1);
+                            if ((!(curlines.isEmpty())) && (curlines.contains(REFResultNice.DOC_REF_SEPARATOR))) {
+                                refs.get(j).setRefTextInDoc(curlines.substring(0, curlines.indexOf(REFResultNice.DOC_REF_SEPARATOR)));
+                                j++;
+                            }
+                        }
+                    }
+                }
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
     private static String generateStatsTable(List<Reference> references) {
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
@@ -710,7 +735,7 @@ public class WSRESTUtil {
             s.append("\n")
                     .append(i)
                     .append(REFResultNice.DOC_REF_SEPARATOR)
-                    .append(references.get(i).getTextOfRef());
+                    .append(references.get(i).getRefTextInDoc());
             StringBuilder dlist = new StringBuilder("");
             if (references.get(i).getReferencedDocs().isEmpty()) {
                 dlist.append(REFResultNice.DOC_REF_SEPARATOR);
