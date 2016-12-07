@@ -185,13 +185,22 @@ public class WSRESTUtil {
         return ret;
     }
 
-    public static String CheckIfFilesExist(String doc1, String doc2) {
+    public static String CheckIfFilesExist(String doc1, String doc2, String tgtDoc) {
         String response = "Input Files Exist and are valid";
         File f1 = new File(doc1);
         File f2 = new File(doc2);
 
         if (!f1.exists() || f1.isDirectory() || !f2.exists() || f2.isDirectory()) {
             return "ERROR: One or both input files do not exist or are not valid files";
+        }
+        File file = new File(tgtDoc);
+        if (!file.isDirectory()) {
+            file = file.getParentFile();
+            if (file.exists()) {
+                return "ERROR: The directory for saving the output file does not exist!";
+            }
+        } else {
+            return "ERROR: The target file should not be a directory";
         }
         return response;
     }
@@ -445,7 +454,7 @@ public class WSRESTUtil {
 
     public static String getInfoForDocument(List<Reference> refs) {
         String references = "<references>\n";
-        
+
         for (int j = 0; j < refs.size(); ++j) {
             references += "<reference>\n";
 
