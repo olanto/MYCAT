@@ -1,0 +1,2 @@
+DEF1	\\cwr.wto.org\DFSRoot\MDrive\Terminology\Wto	Glossaries	WTO
+DEF2	\\cwr.wto.org\DFSRoot\MDrive\Terminology\Terminology Resources	Glossaries	External

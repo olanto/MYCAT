@@ -44,6 +44,7 @@ import org.olanto.idxvli.server.IndexService_MyCat;
 import org.olanto.idxvli.server.QLResultNice;
 import org.olanto.idxvli.server.REFResultNice;
 import org.olanto.mapman.server.AlignBiText;
+import org.olanto.mycatt.rest.WSTUtil;
 import org.olanto.senseos.SenseOS;
 
 /**
@@ -525,19 +526,22 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
     }
 
     @Override
-    public GwtRef getHtmlRef(String Content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
+    public GwtRef getHtmlRef(String content, String fileName, int minCons, String langS, String LangT, ArrayList<String> collections, String QDFileExtension, boolean removeFirst, boolean fast) {
         String ref;
         GwtRef gref = null;
         String[] co;
         System.out.println("uploaded file:" + fileName);
 //        System.out.println("Content:" + Content);
         if (fileName.contains(QDFileExtension)) {
-            gref = html2GwtRef(Content);
+            gref = html2GwtRef(content);
+        } else if (fileName.contains(".xml") && content.startsWith("<QD>")) {
+            content = WSTUtil.extractHTML(content);
+            gref = html2GwtRef(content);
         } else {
             if (is == null) {
                 is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
             }
-            UploadedFile up = new UploadedFile(Content, fileName);
+            UploadedFile up = new UploadedFile(content, fileName);
 //        System.out.println(up.getFileName() + "\n" + up.getContentString());
             try {
 //                Timer t1 = new Timer("-------------  ref ");
@@ -747,57 +751,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         }
         return getPositionsAO(Pos, PosSt, PosLn);
     }
-
-    private int[][] getPositionsAO_Old(ArrayList<String> Pos/*, int[] totocc*/) {
-        int[][] posit;
-        int i, k, pos, ln, j, len, l, m, idx, occ, tocc, before;
-        String curr, curr0;
-        if (!Pos.isEmpty()) {
-            posit = new int[Pos.size()][3];
-            for (int s = 0; s < Pos.size(); s++) {
-                curr = Pos.get(s);
-                curr0 = curr;
-
-                i = curr.indexOf("¦");
-
-                before = curr0.substring(0, i).length() + 1;
-                curr = curr0.substring(i + 1);
-                j = before + curr.indexOf("¦");
-                k = curr0.length();
-
-//                before = curr0.substring(0, j).length() + 1;
-//                curr = curr0.substring(j + 1);
-//                k = before + curr.indexOf("¦");
-//                
-//                before = curr0.substring(0, k).length() + 1;
-//                curr = curr0.substring(k + 1);
-//                l = before + curr.indexOf("¦");
-//                
-//                m = curr0.length();
-
-                pos = Integer.parseInt(curr0.substring(0, i));
-                ln = Integer.parseInt(curr0.substring(i + 1, j));
-                ln = (ln > 0) ? ln + 1 : ln;
-                len = Integer.parseInt(curr0.substring(j + 1, k));
-//                idx = Integer.parseInt(curr0.substring(k + 1, l));
-//                occ = Integer.parseInt(curr0.substring(l + 1, m));
-//                tocc = totocc[idx];
-
-
-                posit[s][0] = pos; // index de la ligne qui contient le mot
-                posit[s][1] = ln; // index du mot dans la phrase
-                posit[s][2] = len; // longueur à highlighter
-//                posit[s][3] = idx; // index du mot actuel dans la list de requêtes donnée
-//                posit[s][4] = occ; // occurrence actuelle du mot
-//                posit[s][5] = tocc; // total des occurrences du mot actuel
-            }
-        } else {
-            posit = new int[1][1];
-            posit[0][0] = -1;
-        }
-        return posit;
-    }
-
+    
     private int[][] getPositionsAO(ArrayList<Integer> Pos, ArrayList<Integer> PosSt, ArrayList<Integer> PosLn) {
         int[][] posit;
         int pos, ln, len;
@@ -1081,7 +1035,6 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
             refL.htmlref = htmlref;
             getRefDocText(refL, comments, refL.DOC_REF_SEPARATOR);
         }
-        // treat this properly!!!
         return refL;
     }
 
@@ -1089,7 +1042,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         int i = 0;
         if (!(comments.isEmpty())) {
             if (comments.contains("0|")) {
-                String number = comments.substring(15, comments.indexOf("0|") - 1);
+                String number = comments.substring(15, comments.indexOf("0|") - 1).replaceAll("[^\\d]", "");
                 if ((!(number.isEmpty())) && (number.matches("^\\d+"))) {
                     i = Integer.parseInt(number);
 //                    System.out.println("Ref number = " + i);
@@ -1106,9 +1059,9 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
                 refL.listofref = new String[refL.nbref];
                 refL.reftext = new String[refL.nbref];
                 int j = 0;
-                String[] Lines = curlines.split("[\n]+");
+                String[] Lines = curlines.split("\\n+");
                 for (int i = 0; i < Lines.length; i++) {
-                    if ((!(Lines[i].isEmpty())) && (Lines[i].matches("(^\\d+)(.*)")) && (Lines[i].contains(separator))) {
+                    if ((!(Lines[i].isEmpty())) && (Lines[i].contains(separator))) {
                         curlines = Lines[i].substring(Lines[i].indexOf(separator) + 1);
                         if ((!(curlines.isEmpty())) && (curlines.contains(separator))) {
                             refL.reftext[j] = curlines.substring(0, curlines.indexOf(separator));

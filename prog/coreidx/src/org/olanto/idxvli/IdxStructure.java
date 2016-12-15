@@ -782,11 +782,13 @@ public class IdxStructure {
         IdxReference ref = new IdxReference(this, upfile.getContentString(), limit, source, target, true, selectedCollection, removefirst, fast);
         ref.postInit(upfile.getFileName());
         String html = ref.getHTML();
+        String xmlInfo=ref.getXMLInfo();
         String[] multiref = new String[ref.docMultiRef.size()];
         ref.docMultiRef.toArray(multiref);
         String[] txtref = new String[ref.txtRef.size()];
         ref.txtRef.toArray(txtref);
-        return new REFResultNice(ref.posRef, multiref, txtref, html, ref.nbref, 3000);
+        return new REFResultNice(ref.posRef, multiref, txtref,  html, xmlInfo,ref.nbref, 3000,
+                ref.getXMLtotword(),ref.getXMLtotwordref(),ref.getXMLpctref());
 //        }
 //        return null;
     }

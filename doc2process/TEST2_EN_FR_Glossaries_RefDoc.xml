@@ -1,0 +1,1163 @@
+<QD><parameters>
+   <msg>process by WebService</msg>
+   <TxtSrc></TxtSrc>
+   <RefType></RefType>
+   <DocSrc>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</DocSrc>
+   <DocTgt>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01_EN_FR_Glossaries_RefDoc.xml</DocTgt>
+   <LngSrc>EN</LngSrc>
+   <LngTgt>FR</LngTgt>
+   <Filter>COLLECTION.GLOSSARIES;</Filter>
+   <MinLen>3</MinLen>
+   <RemFirst>false</RemFirst>
+   <Fast>false</Fast>
+</parameters>
+<statistics>
+  <mycat>
+    <RefDocFullName>\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</RefDocFullName>
+    <RefDocType></RefDocType>
+    <RefDocLng>339</RefDocLng>
+    <RefDocPerCent>40</RefDocPerCent>
+    <RefDocOccurences>11.8%</RefDocOccurences>
+  </mycat>
+  <organisation>
+     <!-- imported template from /config -->﻿<!-- Template - inserted into organisation element in xml QD -->
+    <TranslatedE>Put a default value here</TranslatedE>
+    <TranslatedF>Put a default value here</TranslatedF>
+    <TranslatedS>Put a default value here</TranslatedS>
+    <RevisedE>Put a default value here</RevisedE>
+    <RevisedF>Put a default value here</RevisedF>
+    <RevisedS>Put a default value here</RevisedS>
+    <Finished>Put a default value here</Finished>
+  </organisation>
+</statistics>
+<htmlRefDoc>
+<!--
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>myQuote</title></head>
+<body>
+<A NAME="TOP"></A><A HREF="#STATISTIC">(Statistics)</A><br/><P><br/><br/><br/>﻿INT/SUB/EIF/458<br/><br/><a href="#1" id="ref1" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R1]<br/><br/>- 1 -<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>Terms of Reference [E1]</FONT></a><br/><br/><br/><br/>EIF Phase Two <a href="#2" id="ref2" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R2]<br/><br/><br/><br/>EIF Steering Committee<br/><br/>[E2]</FONT></a><br/><br/>Mandate<br/><br/><br/><br/>1.   The mandate of the EIFSC is to provide strategic advice and guidelines to the EIF stakeholders on the implementation of the EIF programme and its overall goals. Bearing in mind the objective of integration of the LDCs into the <a href="#3" id="ref3" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R3]multilateral trading system,[E3]</FONT></a> the EIFSC will consider and transmit through the existing system-wide reporting mechanism on the LDCs the contributions of the EIF towards the 2030 <a href="#4" id="ref4" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R4]Sustainable Development Agenda [E4]</FONT></a>and the implementation of the <a href="#5" id="ref5" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R5]Istanbul Programme of Action.[E5]</FONT></a> The EIFSC will also provide a forum for transparency, information and experience exchanges. <br/><br/><br/><br/>Functions<br/><br/><br/><br/>2.   The functions of the EIFSC are to:<br/><br/><br/><br/>   Provide advice, guidance and recommendations on the overall goals of the EIF and on the overall implementation and effectiveness of the EIF programme; <br/><br/>   Receive and advise on annual progress reports, including progress against the change management plan, the programme logframe, strategic plans and the evaluation presented by the EIF Board; ensure transparency of the EIF process;<br/><br/>   Be a forum to share information, experiences and best practices by all the EIF partners and other stakeholders such as the private sector, including on:<a href="#6" id="ref6" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R6]<br/><br/>   Mainstreaming of trade </a>into <a href="#7" id="ref7" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R7]national development [E6]</FONT>plans [E7]</FONT></a>and strategies of EIF Countries;<br/><br/>   Coherence and alignment of donor trade capacity-building programmes with country policies in EIF Countries;<br/><br/>   Mainstreaming of other development concerns into country trade policies, in particular gender equality and environmental sustainability;<a href="#8" id="ref8" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R8]<br/><br/>   Private sector participation [E8]</FONT></a>in the EIF processes on the ground; and<br/><br/>   Mechanisms to leverage additional funding of EIF activities; and<br/><br/>   Review the EIF Board's recommendations on the results and lessons of the EIF programme and determine action as appropriate.<a href="#9" id="ref9" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R9]<br/><br/><br/><br/><br/><br/>__________<br/><br/><br/><br/><br/><br/>\\CWR.WTO.ORG\DFSROOT\MDRIVE\[E9]</FONT></a>REOFFICE\10039.16\JOB\_Orig_v1_01.doc (136 kb) converted on 20161121-08:34 <a href="#10" id="ref10" onClick="return gwtnav(this);"><FONT style="BACKGROUND-COLOR: yellow">[R10]with WTO2TXT.EXE version:2016-05-11 12:01<br/><br/>[E10]</FONT></a></P><br/><br/><A NAME="STATISTIC"></A><A HREF="#TOP">(Text)</A><br/><P>
+<hr/>
+</p> Statistics of document \\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_ORIG_V1_01.DOC</p> Total number of words: 339</p> Number of references found: 155</p> Number of words found in references: 40 (11.8%)</p> Minimum of consecutive words: 3</p> Collection:  GLOSSARIES</p> Date: Wed Nov 23 09:54:00 CET 2016</p> Remove first: false, Fast: false</p> Removed file: E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt (4.1%)<hr/>
+</p><table BORDER="1">
+<caption><b>Statistics on referenced documents</b></caption>
+<tr>
+<th>Reference</br>Document</th>
+<th>%</th>
+<th>References</th>
+</tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</td>
+<td>4.1 %</td>
+<td>2, 3, 5, 10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</td>
+<td>3.8 %</td>
+<td>2, 5, 6, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦GLOSSARIES¦DATABASE 4 [EFG] ESA 1999_EN_FR.doc.txt</td>
+<td>2.9 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (T) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td>2.9 %</td>
+<td>1, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt</td>
+<td>2.4 %</td>
+<td>5, 10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</td>
+<td>2.4 %</td>
+<td>5, 10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt</td>
+<td>2.1 %</td>
+<td>3, 10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt</td>
+<td>2.1 %</td>
+<td>2, 10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NÉGOCIATIONS (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_SHORT TITLES_EN_FR_ES.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦USA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SIGLES ET TITRES (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>2, 9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NOUVELLES QUESTIONS (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GROUPES SPÉCIAUX 2008 (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GLOSSAIRE TPR GÉNÉRAL_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_VADE-MECUM__EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦WTO¦1. LEXIQUES¦Z_TEST_AGRICULTURE (EF).doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦RUSSIA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_PRIERES DE NOTER_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOROCCO_FR_EN.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦ALBANIA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦SITC-REV3 [EFS] UNNY 1989.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KOREA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SOLOMON ISLANDS_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CABO VERDE_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦AGRICULTURE (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SRI LANKA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALAWI_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_CITATIONS_EN_FR_ES.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALDIVES_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦INSTRUCCIONES TPR REV.3_EN_FR_ES.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GEORGIA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE ECONOMIE - FINANCES (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CHINA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦FIJI_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SERVICES (EF)_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOLDOVA_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦PAKISTAN_EN_FR.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.0 [EFS] UNNY 1998.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.1 [EFS] UNNY 2005.doc.txt</td>
+<td>1.2 %</td>
+<td>10, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 2000 [N-Q]_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>8, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 3 (Q-Z) [EF] ESCAP 2001_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 1 (A-F) [EF] ESCAP 2001_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>8, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CONGO (DEM. REP.)_FR_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNCTAD X [EFS] UNOG 2000_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNTERM 5 [EFSR] UNNY 2000_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE GENERAL  II [EF] CESAP 1992_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦EAC_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦CAWA (A-J) [EF] WHO 1998_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>4, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GUINEA_FR_EN.doc.txt</td>
+<td> &lt;1 %</td>
+<td>8, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦FINALACT_EN_FR_ES.docx.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦GLOSSAIRE DES ÉCHANGES [EF] OECD 2012_EN_FR.pdf.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦TESORIX_15_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KAZAKHSTAN_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 2 (G-P) [EF] ESCAP 2001_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 5 [EFS] UNOG 2001_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 1999 [P-S]_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>8, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦NEPAL_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>2, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦BOTSWANA_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>8, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦TITRES DOCUMENTS (EF)_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦NEW YORK DATA BANK [EFS] UNNY 1997 [SA-SPARK]_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>7, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-M_EN_FR_ES.docx.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 4 [EFS] UNOG 2001_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>3, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBT & FINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENERGY SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IAEA¦ADMINISTRATIVE GLOSSARY [EF] IAEA 1994_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPING & SUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (K) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦MULTILINGUAL AND MULTIMEDIA TOOL ON ENVIRONMENT, TOWN AND COUNTRY PLANNING, BUILDING AND ARCHITECTURE CCE_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (U) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦LIECHTENSTEIN_SWITZERLAND_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAOTERM FAO_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENVIRONMENT AND CLIMATE CHANGE (INTERPRETERS) (EF)_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO GLOSSARY OF BIOTECHNOLOGY FOR FOOD AND AGRICULTURE_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1992_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦CANCUN(EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 11 (Q) [EF] CE1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦OPERATIONS DE PAIX [EF] UNNY 1997_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FOOD AND BEVERAGES¦BOOKMARKS¦CATALOGUE DÉCOUPE DE VIANDE_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦E-COMMERCE (INTERPRETERS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦SEXUALLY TRANSMITTED DISEASES [EF] WHO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TRAITEMENTS ANTIRETOVIRAUX ET SIDA [EF] WHO 1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦PENSIONS (INTERPRETERS) (EF)_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦TERMINOLOGIE DE L'HORLOGERIE_EN_FR.website.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Y) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦UNCLOS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 5 (J) [EF] CE1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (X) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Z) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦ADPIC (EF)_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦FORMULES LATINES [LF] UN 1994_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME [EF] WHO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (G) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME, ÉPIDEMIOLOGIE [EF] WHO 2001_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S&D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SAFEGUARDS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (V) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (B) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (H) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LICENSING (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FINANCE¦BOOKMARKS¦DICTIONARY OF BANKING_EN_FR.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIF & AFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DISPUTE SETTLEMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Z_EN_FR_ES.docx.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Q) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WCO¦GLOSSAIRE ORIGINE MARCHANDISES [EFS] WCO 1996_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦INTERNATIONAL INDEX AND DICTIONARY OF REHABILITATION AND SOCIAL INTEGRATION_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULES & CSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (W) [EF] NATO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦NATIONAL CONSTITUTIONS_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦ASTRONOMY THESAURUS INDEX_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦DOSSIER COTON (EF)_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦EURO DICO VERRIER_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦THE MULTILINGUAL BIRDSEARCH ENGINE_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦ECONOMIE-FINANCES [EF] FRANCE CGTN 1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦LOS PÁJAROS Y SUS NOMBRES_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦CUSTOMS VALUATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦GLOSSARY OF PLASTICS TERMINOLOGY_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦DICCIONARIO DE GENOTOXICOLOGÍA_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦UKRAINE_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MALNUTRITION DE L'ENFANT [EF] WHO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL CRISIS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-K_EN_FR_ES.docx.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO AGROVOC-AGRICULTURAL INFORMATION MANAGEMENT SYSTEM_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Y_EN_FR_ES.docx.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FOOD AID (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MENINGITES [EF] WHO 1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦GLOSSARIES¦INTERNET [EF] FRANCE JO 2000_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1996_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦BOOKMARKS¦MICROSOFT LANGUAGE PORTAL_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦AIR TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦COUNTRIES AND CURRENCIES¦NOMS DE CAPITALES [EF] UNNY 1998_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦GUÍA DE PECES MARINOS_EN_FR_ES.url.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DOMESTIC REGULATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+<tr>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦MINING AND RESOURCES EXPLOITATION¦GLOSSARIES¦EAU ET ASSAINISSEMENT [EF] ICRC 1999_EN_FR.doc.txt</td>
+<td> &lt;1 %</td>
+<td>9, </td></tr>
+</table>
+<hr/>
+</p><table BORDER="1">
+<caption><b>Statistics by referenced texts</b></caption>
+<tr>
+<th>Reference</br>Number</th>
+<th>Referenced Text</th>
+<th>Reference File</th>
+</tr>
+<tr>
+<td>1</td>
+<td>1 -
+
+
+
+
+
+Terms of Reference</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (T) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦GLOSSARIES¦DATABASE 4 [EFG] ESA 1999_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>2</td>
+<td>EIF Steering Committee</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦NEPAL_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>3</td>
+<td>multilateral trading system</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦GLOSSAIRE DES ÉCHANGES [EF] OECD 2012_EN_FR.pdf.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 3 (Q-Z) [EF] ESCAP 2001_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 4 [EFS] UNOG 2001_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 5 [EFS] UNOG 2001_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNCTAD X [EFS] UNOG 2000_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦TITRES DOCUMENTS (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦FINALACT_EN_FR_ES.docx.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-M_EN_FR_ES.docx.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CONGO (DEM. REP.)_FR_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KAZAKHSTAN_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>4</td>
+<td>Sustainable Development Agenda</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦CAWA (A-J) [EF] WHO 1998_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>5</td>
+<td>Istanbul Programme of Action</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>6</td>
+<td>Mainstreaming of trade into national development</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>7</td>
+<td>national development plans</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE GENERAL  II [EF] CESAP 1992_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 2 (G-P) [EF] ESCAP 2001_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦NEW YORK DATA BANK [EFS] UNNY 1997 [SA-SPARK]_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNTERM 5 [EFSR] UNNY 2000_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦TESORIX_15_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦EAC_EN_FR.doc.txt</br>
+</td></tr>
+<tr>
+<td>8</td>
+<td>Private sector participation</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 1 (A-F) [EF] ESCAP 2001_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 1999 [P-S]_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 2000 [N-Q]_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦BOTSWANA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GUINEA_FR_EN.doc.txt</br>
+</td></tr>
+<tr>
+<td>9</td>
+<td>CWR.WTO.ORG\DFSROOT\MDRIVE</td>
+<td>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO AGROVOC-AGRICULTURAL INFORMATION MANAGEMENT SYSTEM_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO GLOSSARY OF BIOTECHNOLOGY FOR FOOD AND AGRICULTURE_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAOTERM FAO_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦GUÍA DE PECES MARINOS_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦ECONOMIE-FINANCES [EF] FRANCE CGTN 1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FINANCE¦BOOKMARKS¦DICTIONARY OF BANKING_EN_FR.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FOOD AND BEVERAGES¦BOOKMARKS¦CATALOGUE DÉCOUPE DE VIANDE_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦EURO DICO VERRIER_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦GLOSSARY OF PLASTICS TERMINOLOGY_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦TERMINOLOGIE DE L'HORLOGERIE_EN_FR.website.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦BOOKMARKS¦MICROSOFT LANGUAGE PORTAL_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦GLOSSARIES¦INTERNET [EF] FRANCE JO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦COUNTRIES AND CURRENCIES¦NOMS DE CAPITALES [EF] UNNY 1998_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦OPERATIONS DE PAIX [EF] UNNY 1997_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1992_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1996_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IAEA¦ADMINISTRATIVE GLOSSARY [EF] IAEA 1994_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (B) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (G) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (H) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (K) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Q) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (U) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (V) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (W) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (X) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Y) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Z) [EF] NATO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WCO¦GLOSSAIRE ORIGINE MARCHANDISES [EFS] WCO 1996_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MALNUTRITION DE L'ENFANT [EF] WHO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MENINGITES [EF] WHO 1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦SEXUALLY TRANSMITTED DISEASES [EF] WHO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME [EF] WHO 2000_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME, ÉPIDEMIOLOGIE [EF] WHO 2001_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TRAITEMENTS ANTIRETOVIRAUX ET SIDA [EF] WHO 1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦FORMULES LATINES [LF] UN 1994_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦MULTILINGUAL AND MULTIMEDIA TOOL ON ENVIRONMENT, TOWN AND COUNTRY PLANNING, BUILDING AND ARCHITECTURE CCE_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦NATIONAL CONSTITUTIONS_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦MINING AND RESOURCES EXPLOITATION¦GLOSSARIES¦EAU ET ASSAINISSEMENT [EF] ICRC 1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦ASTRONOMY THESAURUS INDEX_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦DICCIONARIO DE GENOTOXICOLOGÍA_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦INTERNATIONAL INDEX AND DICTIONARY OF REHABILITATION AND SOCIAL INTEGRATION_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦LOS PÁJAROS Y SUS NOMBRES_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦THE MULTILINGUAL BIRDSEARCH ENGINE_EN_FR_ES.url.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 11 (Q) [EF] CE1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 5 (J) [EF] CE1999_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦ADPIC (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦CANCUN(EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦DOSSIER COTON (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-K_EN_FR_ES.docx.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Y_EN_FR_ES.docx.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Z_EN_FR_ES.docx.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦LIECHTENSTEIN_SWITZERLAND_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦UKRAINE_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦AIR TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPING & SUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦CUSTOMS VALUATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DISPUTE SETTLEMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DOMESTIC REGULATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦E-COMMERCE (INTERPRETERS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENERGY SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENVIRONMENT AND CLIMATE CHANGE (INTERPRETERS) (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL CRISIS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FOOD AID (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULES & CSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIF & AFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LICENSING (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦PENSIONS (INTERPRETERS) (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SAFEGUARDS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S&D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBT & FINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦UNCLOS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</br>
+</td></tr>
+<tr>
+<td>10</td>
+<td>with WTO2TXT.EXE version:2016-05-11 12:01</td>
+<td>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.0 [EFS] UNNY 1998.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.1 [EFS] UNNY 2005.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦SITC-REV3 [EFS] UNNY 1989.doc.txt</br>
+E:/MYCAT/corpus/txt/EN/GLOSSARIES¦WTO¦1. LEXIQUES¦Z_TEST_AGRICULTURE (EF).doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦AGRICULTURE (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE ECONOMIE - FINANCES (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦INSTRUCCIONES TPR REV.3_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NOUVELLES QUESTIONS (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NÉGOCIATIONS (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_CITATIONS_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_SHORT TITLES_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SERVICES (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SIGLES ET TITRES (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GLOSSAIRE TPR GÉNÉRAL_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GROUPES SPÉCIAUX 2008 (EF)_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_PRIERES DE NOTER_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_VADE-MECUM__EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦ALBANIA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CABO VERDE_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CHINA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦FIJI_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GEORGIA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KOREA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALAWI_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALDIVES_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOLDOVA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOROCCO_FR_EN.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦PAKISTAN_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦RUSSIA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SOLOMON ISLANDS_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SRI LANKA_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</br>
+E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦USA_EN_FR.doc.txt</br>
+</td></tr>
+</table>
+<hr/>
+
+</htmlstartcomment>MYQUOTEREF
+10
+0|1 terms reference|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (T) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦GLOSSARIES¦DATABASE 4 [EFG] ESA 1999_EN_FR.doc.txt
+1|eif steering committee|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦NEPAL_EN_FR.doc.txt
+2|multilateral trading system|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦GLOSSAIRE DES ÉCHANGES [EF] OECD 2012_EN_FR.pdf.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 3 (Q-Z) [EF] ESCAP 2001_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 4 [EFS] UNOG 2001_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 5 [EFS] UNOG 2001_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNCTAD X [EFS] UNOG 2000_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦TITRES DOCUMENTS (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦FINALACT_EN_FR_ES.docx.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-M_EN_FR_ES.docx.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CONGO (DEM. REP.)_FR_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KAZAKHSTAN_EN_FR.doc.txt
+3|sustainable development agenda|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦CAWA (A-J) [EF] WHO 1998_EN_FR.doc.txt
+4|istanbul programme action|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt
+5|mainstreaming trade national development|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt
+6|national development plans|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE GENERAL  II [EF] CESAP 1992_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 2 (G-P) [EF] ESCAP 2001_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦NEW YORK DATA BANK [EFS] UNNY 1997 [SA-SPARK]_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNTERM 5 [EFSR] UNNY 2000_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦TESORIX_15_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦EAC_EN_FR.doc.txt
+7|private sector participation|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 1 (A-F) [EF] ESCAP 2001_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 1999 [P-S]_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 2000 [N-Q]_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦BOTSWANA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GUINEA_FR_EN.doc.txt
+8|cwr wto org dfsroot mdrive|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO AGROVOC-AGRICULTURAL INFORMATION MANAGEMENT SYSTEM_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO GLOSSARY OF BIOTECHNOLOGY FOR FOOD AND AGRICULTURE_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAOTERM FAO_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦GUÍA DE PECES MARINOS_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦ECONOMIE-FINANCES [EF] FRANCE CGTN 1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FINANCE¦BOOKMARKS¦DICTIONARY OF BANKING_EN_FR.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FOOD AND BEVERAGES¦BOOKMARKS¦CATALOGUE DÉCOUPE DE VIANDE_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦EURO DICO VERRIER_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦GLOSSARY OF PLASTICS TERMINOLOGY_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦TERMINOLOGIE DE L'HORLOGERIE_EN_FR.website.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦BOOKMARKS¦MICROSOFT LANGUAGE PORTAL_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦GLOSSARIES¦INTERNET [EF] FRANCE JO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦COUNTRIES AND CURRENCIES¦NOMS DE CAPITALES [EF] UNNY 1998_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦OPERATIONS DE PAIX [EF] UNNY 1997_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1992_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1996_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IAEA¦ADMINISTRATIVE GLOSSARY [EF] IAEA 1994_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (B) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (G) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (H) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (K) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Q) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (U) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (V) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (W) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (X) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Y) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Z) [EF] NATO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WCO¦GLOSSAIRE ORIGINE MARCHANDISES [EFS] WCO 1996_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MALNUTRITION DE L'ENFANT [EF] WHO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MENINGITES [EF] WHO 1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦SEXUALLY TRANSMITTED DISEASES [EF] WHO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME [EF] WHO 2000_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME, ÉPIDEMIOLOGIE [EF] WHO 2001_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TRAITEMENTS ANTIRETOVIRAUX ET SIDA [EF] WHO 1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦FORMULES LATINES [LF] UN 1994_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦MULTILINGUAL AND MULTIMEDIA TOOL ON ENVIRONMENT, TOWN AND COUNTRY PLANNING, BUILDING AND ARCHITECTURE CCE_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦NATIONAL CONSTITUTIONS_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦MINING AND RESOURCES EXPLOITATION¦GLOSSARIES¦EAU ET ASSAINISSEMENT [EF] ICRC 1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦ASTRONOMY THESAURUS INDEX_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦DICCIONARIO DE GENOTOXICOLOGÍA_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦INTERNATIONAL INDEX AND DICTIONARY OF REHABILITATION AND SOCIAL INTEGRATION_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦LOS PÁJAROS Y SUS NOMBRES_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦THE MULTILINGUAL BIRDSEARCH ENGINE_EN_FR_ES.url.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 11 (Q) [EF] CE1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 5 (J) [EF] CE1999_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦ADPIC (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦CANCUN(EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦DOSSIER COTON (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-K_EN_FR_ES.docx.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Y_EN_FR_ES.docx.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Z_EN_FR_ES.docx.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦LIECHTENSTEIN_SWITZERLAND_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦UKRAINE_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦AIR TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPING & SUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦CUSTOMS VALUATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DISPUTE SETTLEMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DOMESTIC REGULATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦E-COMMERCE (INTERPRETERS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENERGY SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENVIRONMENT AND CLIMATE CHANGE (INTERPRETERS) (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL CRISIS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FOOD AID (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULES & CSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIF & AFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LICENSING (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦PENSIONS (INTERPRETERS) (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SAFEGUARDS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S&D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBT & FINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦UNCLOS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt
+9|with wto2txt exe version 2016-05-11 12 01|E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.0 [EFS] UNNY 1998.doc.txt|E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.1 [EFS] UNNY 2005.doc.txt|E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦SITC-REV3 [EFS] UNNY 1989.doc.txt|E:/MYCAT/corpus/txt/EN/GLOSSARIES¦WTO¦1. LEXIQUES¦Z_TEST_AGRICULTURE (EF).doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦AGRICULTURE (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE ECONOMIE - FINANCES (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦INSTRUCCIONES TPR REV.3_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NOUVELLES QUESTIONS (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NÉGOCIATIONS (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_CITATIONS_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_SHORT TITLES_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SERVICES (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SIGLES ET TITRES (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GLOSSAIRE TPR GÉNÉRAL_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GROUPES SPÉCIAUX 2008 (EF)_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_PRIERES DE NOTER_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_VADE-MECUM__EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦ALBANIA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CABO VERDE_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CHINA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦FIJI_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GEORGIA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KOREA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALAWI_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALDIVES_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOLDOVA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOROCCO_FR_EN.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦PAKISTAN_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦RUSSIA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SOLOMON ISLANDS_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SRI LANKA_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt|E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦USA_EN_FR.doc.txt
+MYQUOTEREF</htmlendcomment></P>
+</body>
+</html>
+-->
+</htmlRefDoc>
+<Info>
+<references>
+<reference>
+  <id>1</id>
+  <quote>1 -
+
+
+
+
+
+Terms of Reference</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (T) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦GLOSSARIES¦DATABASE 4 [EFG] ESA 1999_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>2</id>
+  <quote>EIF Steering Committee</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦NEPAL_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>3</id>
+  <quote>multilateral trading system</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦GLOSSAIRE DES ÉCHANGES [EF] OECD 2012_EN_FR.pdf.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 3 (Q-Z) [EF] ESCAP 2001_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 4 [EFS] UNOG 2001_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦TITLES, REFERENCES LIST 5 [EFS] UNOG 2001_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNCTAD X [EFS] UNOG 2000_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦TITRES DOCUMENTS (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦FINALACT_EN_FR_ES.docx.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-M_EN_FR_ES.docx.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CONGO (DEM. REP.)_FR_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KAZAKHSTAN_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>4</id>
+  <quote>Sustainable Development Agenda</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦CAWA (A-J) [EF] WHO 1998_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>5</id>
+  <quote>Istanbul Programme of Action</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>6</id>
+  <quote>Mainstreaming of trade into national development</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PMA (EF)_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>7</id>
+  <quote>national development plans</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE GENERAL  II [EF] CESAP 1992_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 2 (G-P) [EF] ESCAP 2001_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦NEW YORK DATA BANK [EFS] UNNY 1997 [SA-SPARK]_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦UN¦UNTERM 5 [EFSR] UNNY 2000_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦TESORIX_15_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦EAC_EN_FR.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>8</id>
+  <quote>Private sector participation</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦ESCAP¦LEXIQUE OPERATIONNEL 1 (A-F) [EF] ESCAP 2001_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 1999 [P-S]_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IMF¦IMFTERM [EFS] IMF 2000 [N-Q]_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦BOTSWANA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GUINEA_FR_EN.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>9</id>
+  <quote>CWR.WTO.ORG\DFSROOT\MDRIVE</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO AGROVOC-AGRICULTURAL INFORMATION MANAGEMENT SYSTEM_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAO GLOSSARY OF BIOTECHNOLOGY FOR FOOD AND AGRICULTURE_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦FAOTERM FAO_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦AGRICULTURE, ANIMAL HUSBANDRY, FORESTRY AND FISHING¦BOOKMARKS¦GUÍA DE PECES MARINOS_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦ECONOMICS AND TRADE¦GLOSSARIES¦ECONOMIE-FINANCES [EF] FRANCE CGTN 1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FINANCE¦BOOKMARKS¦DICTIONARY OF BANKING_EN_FR.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦FOOD AND BEVERAGES¦BOOKMARKS¦CATALOGUE DÉCOUPE DE VIANDE_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦EURO DICO VERRIER_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦GLOSSARY OF PLASTICS TERMINOLOGY_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INDUSTRY¦BOOKMARKS¦TERMINOLOGIE DE L'HORLOGERIE_EN_FR.website.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦BOOKMARKS¦MICROSOFT LANGUAGE PORTAL_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INFORMATION AND COMMUNICATION TECHNOLOGIES¦GLOSSARIES¦INTERNET [EF] FRANCE JO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦COUNTRIES AND CURRENCIES¦NOMS DE CAPITALES [EF] UNNY 1998_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦OPERATIONS DE PAIX [EF] UNNY 1997_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1992_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL COOPERATION¦GLOSSARIES¦PEACE KEEPING¦PEACE-KEEPING OPERATIONS [EF] UNNY 1996_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦IAEA¦ADMINISTRATIVE GLOSSARY [EF] IAEA 1994_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (B) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (G) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (H) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (K) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Q) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (U) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (V) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (W) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (X) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Y) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦NATO¦ABBREVIATIONS GLOSSARY (Z) [EF] NATO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WCO¦GLOSSAIRE ORIGINE MARCHANDISES [EFS] WCO 1996_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MALNUTRITION DE L'ENFANT [EF] WHO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦MENINGITES [EF] WHO 1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦SEXUALLY TRANSMITTED DISEASES [EF] WHO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME [EF] WHO 2000_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TABAGISME, ÉPIDEMIOLOGIE [EF] WHO 2001_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦INTERNATIONAL ORGANIZATIONS¦GLOSSARIES¦WHO¦TRAITEMENTS ANTIRETOVIRAUX ET SIDA [EF] WHO 1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LANGUAGE¦GLOSSARIES¦FORMULES LATINES [LF] UN 1994_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦MULTILINGUAL AND MULTIMEDIA TOOL ON ENVIRONMENT, TOWN AND COUNTRY PLANNING, BUILDING AND ARCHITECTURE CCE_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦LAW AND PUBLIC ADMINISTRATION¦BOOKMARKS¦NATIONAL CONSTITUTIONS_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦MINING AND RESOURCES EXPLOITATION¦GLOSSARIES¦EAU ET ASSAINISSEMENT [EF] ICRC 1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦ASTRONOMY THESAURUS INDEX_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦DICCIONARIO DE GENOTOXICOLOGÍA_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦INTERNATIONAL INDEX AND DICTIONARY OF REHABILITATION AND SOCIAL INTEGRATION_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦LOS PÁJAROS Y SUS NOMBRES_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SCIENCE, HARD AND SOFT¦BOOKMARKS¦THE MULTILINGUAL BIRDSEARCH ENGINE_EN_FR_ES.url.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 11 (Q) [EF] CE1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦EXTERNAL¦SOCIAL SCIENCES¦GLOSSARIES¦SOCIAL SECURITY 5 (J) [EF] CE1999_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦ADPIC (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦CANCUN(EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦DOSSIER COTON (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE_CIR_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-K_EN_FR_ES.docx.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Y_EN_FR_ES.docx.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦GATT-Z_EN_FR_ES.docx.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦LIECHTENSTEIN_SWITZERLAND_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦UKRAINE_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦AIR TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ANTI-DUMPING &amp; SUBSIDIES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BALANCE OF PAYMENTS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦BASIC TELECOMMUNICATIONS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦COMPETITION POLICY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦CUSTOMS VALUATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DISPUTE SETTLEMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦DOMESTIC REGULATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦E-COMMERCE (INTERPRETERS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENERGY SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ENVIRONMENT AND CLIMATE CHANGE (INTERPRETERS) (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦EXPORT CREDITS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL CRISIS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FINANCIAL SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦FOOD AID (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GATS RULES &amp; CSC (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦GOVERNMENT PROCUREMENT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦ITA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LDCS, EIF &amp; AFT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦LICENSING (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARITIME TRANSPORT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦MARKET ACCESS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦NAMA (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦PENSIONS (INTERPRETERS) (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦RULES OF ORIGIN (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SAFEGUARDS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS - S&amp;D (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦SPS DISEASES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TBT (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TOURISM SERVICES (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE AND TRANSFER OF TECHNOLOGY (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE FACILITATION (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRADE, DEBT &amp; FINANCE (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦TRIMS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦4. INTERPRETERS¦UNCLOS (INTERPRETERS) (EFS)_EN_FR_ES.doc.txt</document>
+</documents></reference>
+<reference>
+  <id>10</id>
+  <quote>with WTO2TXT.EXE version:2016-05-11 12:01</quote>
+  <documents>    <document>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.0 [EFS] UNNY 1998.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦CPC VER 1.1 [EFS] UNNY 2005.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦EXTERNAL¦CLASSIFICATIONS¦2. UN CLASSIFICATIONS¦SITC-REV3 [EFS] UNNY 1989.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/EN/GLOSSARIES¦WTO¦1. LEXIQUES¦Z_TEST_AGRICULTURE (EF).doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦AGRICULTURE (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦GLOSSAIRE ECONOMIE - FINANCES (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦INSTRUCCIONES TPR REV.3_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NOUVELLES QUESTIONS (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦NÉGOCIATIONS (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_CITATIONS_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦PANELS_WTO_SHORT TITLES_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SERVICES (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦SIGLES ET TITRES (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GLOSSAIRE TPR GÉNÉRAL_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_GROUPES SPÉCIAUX 2008 (EF)_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_PRIERES DE NOTER_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦1. LEXIQUES¦_VADE-MECUM__EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(A-E)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(F-O)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_(P-Z)_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦2. WTOTERM¦OMC_EN_FR_ES.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦ALBANIA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CABO VERDE_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦CHINA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦FIJI_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦GEORGIA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦KOREA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALAWI_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MALDIVES_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOLDOVA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦MOROCCO_FR_EN.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦PAKISTAN_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦RUSSIA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SOLOMON ISLANDS_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦SRI LANKA_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦TURKEY_EN_FR.doc.txt</document>
+    <document>E:/MYCAT/corpus/txt/XX/GLOSSARIES¦WTO¦3. COUNTRIES¦USA_EN_FR.doc.txt</document>
+</documents></reference>
+</references>
+</Info>
+<origText>
+﻿INT/SUB/EIF/458
+
+- 1 -
+
+
+
+
+
+Terms of Reference 
+
+EIF Phase Two 
+
+EIF Steering Committee
+
+Mandate
+
+1.   The mandate of the EIFSC is to provide strategic advice and guidelines to the EIF stakeholders on the implementation of the EIF programme and its overall goals. Bearing in mind the objective of integration of the LDCs into the multilateral trading system, the EIFSC will consider and transmit through the existing system-wide reporting mechanism on the LDCs the contributions of the EIF towards the 2030 Sustainable Development Agenda and the implementation of the Istanbul Programme of Action. The EIFSC will also provide a forum for transparency, information and experience exchanges. 
+
+Functions
+
+2.   The functions of the EIFSC are to:
+
+   Provide advice, guidance and recommendations on the overall goals of the EIF and on the overall implementation and effectiveness of the EIF programme; 
+   Receive and advise on annual progress reports, including progress against the change management plan, the programme logframe, strategic plans and the evaluation presented by the EIF Board; ensure transparency of the EIF process;
+   Be a forum to share information, experiences and best practices by all the EIF partners and other stakeholders such as the private sector, including on:
+   Mainstreaming of trade into national development plans and strategies of EIF Countries;
+   Coherence and alignment of donor trade capacity-building programmes with country policies in EIF Countries;
+   Mainstreaming of other development concerns into country trade policies, in particular gender equality and environmental sustainability;
+   Private sector participation in the EIF processes on the ground; and
+   Mechanisms to leverage additional funding of EIF activities; and
+   Review the EIF Board's recommendations on the results and lessons of the EIF programme and determine action as appropriate.
+
+
+__________
+
+
+\\CWR.WTO.ORG\DFSROOT\MDRIVE\REOFFICE\10039.16\JOB\_Orig_v1_01.doc (136 kb) converted on 20161121-08:34 with WTO2TXT.EXE version:2016-05-11 12:01
+</origText></QD>

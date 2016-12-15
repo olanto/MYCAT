@@ -38,21 +38,30 @@ public class REFResultNice implements Serializable {
     public String[] reftext;
     /* visualisation des ref en html */
     public String htmlref;
+   /* visualisation des info en xml */
+    public String xmlInfo;
     /* nbr de références */
     public int nbref;
     /* la durée d'exécution */
     public long duration;  // en ms
-
+   public int XMLtotword;
+    public int XMLtotwordref;
+    public String XMLpctref;
+    
     /** crée un résultat
      * @param result id des documents
      * @param duration durée
      */
-    public REFResultNice(int[] posref, String[] listofref, String[] reftext, String htmlref, int nbref, long duration) {
+    public REFResultNice(int[] posref, String[] listofref, String[] reftext, String htmlref, String xmlInfo, int nbref, long duration,
+               int XMLtotword, int XMLtotwordref, String XMLpctref) {
         this.posref = posref;
         this.listofref = listofref;
         this.reftext = reftext;
         this.htmlref = htmlref;
-        this.nbref = nbref;
+      this.XMLtotword = XMLtotword;
+      this.XMLtotwordref = XMLtotwordref;
+      this.xmlInfo = xmlInfo;
+        this.XMLpctref = XMLpctref;
         this.duration = duration;
     }
 

@@ -37,22 +37,23 @@ public class ReferenceStatistic {
     private String[] multiref;
     private String[] txt;
     private int[] txtlength;
-    private int totword;
-    private int totwordref;
+    public int totword;
+    public int totwordref;
+    public String pctref = "0%";
     private HashMap<String, InverseRef> invmap = new HashMap<String, InverseRef>(1000);
     private InverseRef[] alldoc;  // la liste des documents
     private Pattern p = Pattern.compile("[" + REFResultNice.DOC_REF_SEPARATOR + "]");  // le |
     private Pattern ps = Pattern.compile("[\\s]");  // le blanc
     private NumberFormat formatter = new DecimalFormat("#0.0");
-  private boolean removefirst; // true=remove first reference
-  private boolean fast;  // false=remove fantome
-  private String removedFile="no file";
+    private boolean removefirst; // true=remove first reference
+    private boolean fast;  // false=remove fantome
+    private String removedFile = "no file";
 
     public ReferenceStatistic(List<String> txtRefOrigin, List<String> docMultiRef, int totword, boolean removefirst, boolean fast, String removedFile) {
-        this.removefirst=removefirst;
-        this.fast=fast;
-        this.removedFile=removedFile;
-        
+        this.removefirst = removefirst;
+        this.fast = fast;
+        this.removedFile = removedFile;
+
         this.multiref = new String[docMultiRef.size()];
         docMultiRef.toArray(this.multiref);
         this.txt = new String[txtRefOrigin.size()];
@@ -69,12 +70,13 @@ public class ReferenceStatistic {
 
 
     }
-    
-    public InverseRef getFirsReference (){
-        if (alldoc.length==0) return null;
+
+    public InverseRef getFirsReference() {
+        if (alldoc.length == 0) {
+            return null;
+        }
         return alldoc[0];
     }
-    
 
     public void computeStatByRef() {
         for (int i = 0; i < txt.length; i++) {
@@ -103,8 +105,9 @@ public class ReferenceStatistic {
         res.append("</p> " + MSG.get("server.qd.MSG_1") + " " + fileName);
         res.append("</p> " + MSG.get("server.qd.MSG_2") + " " + totword);
         res.append("</p> " + MSG.get("server.qd.MSG_3") + " " + alldoc.length);
+        pctref = formatter.format((float) totwordref * 100.0f / (float) totword + 0.0000001f) + "%";
         res.append("</p> " + MSG.get("server.qd.MSG_4") + " " + totwordref
-                + " (" + formatter.format((float) totwordref * 100.0f / (float) totword + 0.0000001f) + "%)");
+                + " (" + pctref + ")");
         res.append("</p> " + MSG.get("server.qd.MSG_5") + " " + min);
         if (Collections.equals("")) {
             res.append("</p> " + MSG.get("server.qd.MSG_6"));
@@ -112,7 +115,7 @@ public class ReferenceStatistic {
             res.append("</p> " + MSG.get("server.qd.MSG_7") + " " + Collections);
         }
         res.append("</p> " + MSG.get("server.qd.MSG_8") + " " + Calendar.getInstance().getTime());
-        res.append("</p> " + MSG.get("server.qd.MSG_23") + ": " + removefirst+", "+MSG.get("server.qd.MSG_24") + ": " + fast);
+        res.append("</p> " + MSG.get("server.qd.MSG_23") + ": " + removefirst + ", " + MSG.get("server.qd.MSG_24") + ": " + fast);
         res.append("</p> " + MSG.get("server.qd.MSG_25") + ": " + removedFile);
         return res.toString();
     }
@@ -166,13 +169,40 @@ public class ReferenceStatistic {
             res.append("<td>" + txt[i] + "</td>\n");  //la ref
             res.append("<td>"); // bloc des références
             for (int j = 0; j < refs.length; j++) {
-                res.append(refs[j].replace(IdxConstant.SEPARATOR, "/") + "</br>\n");
+                res.append(refs[j] + "</br>\n");
             }
             res.append("</td>"); // fin de bloc des références
             res.append("</tr>\n");
         }
         res.append("</table>\n");
         return res.toString();
+
+    }
+
+    public String getXMLStatByQuote() {
+        StringBuilder res = new StringBuilder("");
+        res.append("<references>\n");
+
+        for (int i = 0; i < txt.length; i++) {
+            String[] refs = p.split(multiref[i]);
+            res.append("<reference>\n");
+            res.append("  <id>" + (i + 1) + "</id>\n");  // numéro de la ref
+            res.append("  <quote>" + clean4xml(txt[i]) + "</quote>\n");  //la ref
+            res.append("  <documents>"); // bloc des références
+            for (int j = 0; j < refs.length; j++) {
+                res.append("    <document>"); // bloc des références
+                res.append(clean4xml(refs[j]) + "</document>\n");
+            }
+            res.append("</documents>"); // fin de bloc des références
+            res.append("</reference>\n");
+        }
+        res.append("</references>\n");
+        return res.toString();
+
+    }
+
+    public static String clean4xml(String s) {
+        return s.replace("&", "&amp;").replace("<", "&lt;");
 
     }
 }

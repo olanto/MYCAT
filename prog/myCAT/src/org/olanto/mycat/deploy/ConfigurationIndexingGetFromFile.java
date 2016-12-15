@@ -206,6 +206,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
 
 
         IDX_DONTINDEXTHIS = prop.getProperty("IDX_DONTINDEXTHIS", "C:/SIMPLE/config/dontindexthiswords.txt");
+IDX_XML_ORGANISATION_TEMPLATE=prop.getProperty("IDX_XML_ORGANISATION_TEMPLATE", "C:/SIMPLE/config/organisation_template.xml");
 
         SERVER_MESSAGE_PATH = prop.getProperty("SERVER_MESSAGE_PATH", "C:/MYCAT/config/messages/interface/initserver");
         SERVER_MESSAGE_LANG = prop.getProperty("SERVER_MESSAGE_LANG", "");

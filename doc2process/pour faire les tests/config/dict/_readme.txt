@@ -1,0 +1,4 @@
+- Abbreviations should be preceded by a separator character (usually a space)
+- Abbreviations should not have a dot at the end.
+- Abbreviations should be specific to each language.
+- The file must be in UTF-8 (without BOM)

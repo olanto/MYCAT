@@ -49,6 +49,14 @@ public interface ConvertService extends Remote {
     public String File2Txt(byte[] content, String fileName) throws RemoteException;
 
    /**
+     * Pour convertir un fichier dont on connait le nom (sans passer par le TempDir
+     * @param fileName nom du fichier (utiliser les extensions pour la conversion)  
+     * @return le txt convertit
+     * @throws java.rmi.RemoteException
+     */
+    public String File2Txt(String fileName) throws RemoteException;
+
+   /**
      * Pour convertir un fichier dont on connait le nom
      * @param fileName nom du fichier (utiliser les extensions pour la conversion)
      * @return le fichier html  au format UTF8 convertit

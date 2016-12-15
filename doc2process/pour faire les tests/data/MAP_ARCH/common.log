@@ -1,0 +1,112 @@
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@1dcd8d1f
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:41 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:41 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@60f9d924
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Dec 05, 2016 4:52:52 PM org.olanto.mapman.MapArchiveConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of idx save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of docstable save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of zipCache save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of wordstable save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of other save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: START objstore close 
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: FINISH objstore close 
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:58 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:58 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@c5d53c3
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Dec 06, 2016 9:10:42 AM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 06, 2016 9:10:42 AM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@4ba56ca0
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES

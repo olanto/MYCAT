@@ -104,6 +104,42 @@ public class ConvertService_BASIC extends UnicastRemoteObject implements Convert
         return ret;
     }
 
+     public String File2Txt(String fileName) throws RemoteException {  // No temp
+        serverW.lock();
+
+        _logger.info("Try to convert file:" + fileName);
+
+        String ret = "Seems not working. ";
+
+        try {
+
+            File f = new File(fileName);
+//            FileOutputStream out = new FileOutputStream(f);
+//            out.write(content);
+//            out.flush();
+//            out.close();
+            ret += " File: " + f.getAbsolutePath();
+
+            Document src = new Document(f.getAbsolutePath());
+            Document dest = new Document(f.getAbsolutePath() + ".txt");
+
+            SimpleConverterApplication converter = SimpleConverterApplication.getInstance();
+            converter.setMaxRetry(ConfigUtil.getMaxRetry());
+            converter.setOutputFormat(ConfigUtil.getTargetFormat());
+
+            converter.convertObject(src, dest, null);
+            ret = UtilsFiles.file2String(new FileInputStream(dest), ConfigUtil.getOutputEncoding());
+
+            return ret;
+        } catch (Exception e) {
+            _logger.error("Failed to convert file " + fileName + ": " + e.getMessage());
+        } finally {
+            serverW.unlock();
+        }
+        return ret;
+    }
+  
+    
     public byte[] File2UTF8(byte[] content, String fileName) throws RemoteException {
         serverW.lock();
         String ret = "Seems not working. ";

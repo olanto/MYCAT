@@ -22,6 +22,9 @@
 package org.olanto.idxvli.server;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Arrays;
@@ -29,7 +32,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Pattern;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import org.olanto.conman.server.ContentService;
 import static org.olanto.conman.server.GetContentService.getServiceCM;
 import org.olanto.idxvli.IdxConstant;
@@ -47,6 +55,9 @@ import static org.olanto.util.Messages.msg;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 import org.olanto.util.TimerNano;
 import org.olanto.idxvli.ref.UtilsFiles;
+import org.olanto.idxvli.ref.WSRESTUtil;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  * service mycat.
@@ -659,6 +670,64 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     @Override
+    public String getXMLReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
+            boolean removefirst, boolean fast, boolean fromFile, String DocSrc, String DocTgt, String RefType) throws RemoteException {
+        if (!fromFile) {
+            REFResultNice refres = id.getReferences(upfile, limit, source, target, selectedCollection, removefirst, fast);
+            String htmlref = refres.htmlref;
+            String xmlInfo = refres.xmlInfo;
+            htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
+            htmlref = htmlref.replace("-->", "</htmlendcomment>");
+            return "<htmlRefDoc>\n"
+                    + "<!--\n"
+                    + htmlref
+                    + "-->\n"
+                    + "</htmlRefDoc>\n"
+                    + xmlInfo
+                    + "<origText>\n"
+                    + "<!-- "
+                    + upfile.getContentString()
+                    + " -->\n"
+                    + "</origText>";
+        } else {
+            String content = WSRESTUtil.convertFileWithRMI(DocSrc);
+            UploadedFile getfromfile = new UploadedFile(content, DocSrc);
+            REFResultNice refres = id.getReferences(getfromfile, limit, source, target, selectedCollection, removefirst, fast);
+            String htmlref = refres.htmlref;
+            String xmlInfo = refres.xmlInfo;
+            htmlref = htmlref.replace("<!--", "</htmlstartcomment>");
+            htmlref = htmlref.replace("-->", "</htmlendcomment>");
+            String htmlresult = "<htmlRefDoc>\n"
+                    + "<!--\n"
+                    + htmlref
+                    + "-->\n"
+                    + "</htmlRefDoc>\n"
+                    + xmlInfo
+                    + "<origText>\n"
+                    + getfromfile.getContentString()
+                    + "</origText>";
+            String xmlresult = "<QD>"
+                    + WSRESTUtil.niceXMLParameters("process by WebService", "", RefType, DocSrc, DocTgt, source, target, selectedCollection, limit, removefirst, fast)
+                    + WSRESTUtil.niceXMLInfo(DocSrc, RefType, "" + refres.XMLtotword, "" + refres.XMLtotwordref, refres.XMLpctref)
+                    + htmlresult
+                    + "</QD>";
+            try {
+                OutputStreamWriter outxml = new OutputStreamWriter(new FileOutputStream(DocTgt), "UTF-8");
+                outxml.append(xmlresult);
+                outxml.close();
+                System.out.println("WSREF:" + DocSrc + " --> " + DocTgt);
+            } catch (Exception ex) {
+                Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return "<FileRefDoc>\n"
+                    + "<!--\n"
+                    + "WSREF process :" + DocSrc + " result in " + DocTgt
+                    + "-->\n"
+                    + "</FileRefDoc>\n";
+        }
+    }
+
+    @Override
     public String createTemp(String FileName, String Content) throws RemoteException {
         return UtilsFiles.String2File(FileName, Content, TEMP_FOLDER);
     }
@@ -666,5 +735,75 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     @Override
     public byte[] getTemp(String FileName) throws RemoteException {
         return UtilsFiles.file2byte(new File(TEMP_FOLDER + "/" + FileName));
+    }
+
+    @Override
+    public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
+        String mergedRefDoc = "";
+        String msg = WSRESTUtil.CheckIfFilesExist(DocSrc1, DocSrc2, DocTgt);
+
+        if (msg.startsWith("ERROR")) {
+            return msg;
+        }
+        File fXmlFile = new File(DocSrc1);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        dbFactory.setIgnoringComments(false);
+
+        File fXmlFile1 = new File(DocSrc2);
+        DocumentBuilderFactory dbFactory1 = DocumentBuilderFactory.newInstance();
+        dbFactory1.setIgnoringComments(false);
+
+        try {
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+            doc.getDocumentElement().normalize();
+
+            DocumentBuilder dBuilder1 = dbFactory1.newDocumentBuilder();
+            Document doc1 = dBuilder1.parse(fXmlFile1);
+            doc1.getDocumentElement().normalize();
+
+            msg = WSRESTUtil.validateInputs(doc, doc1);
+
+            if (msg.startsWith("ERROR")) {
+                return msg;
+            }
+            // merge params
+            mergedRefDoc += WSRESTUtil.mergeXMLParameters(doc, doc1);
+            // merge statistics
+            mergedRefDoc += WSRESTUtil.mergeXMLStatistics(doc, doc1);
+            // merge HTML
+            int totalRefs = 0;
+            if ((doc.getElementsByTagName("reference") != null)
+                    && (doc1.getElementsByTagName("reference") != null)) {
+                totalRefs = doc.getElementsByTagName("reference").getLength() + doc1.getElementsByTagName("reference").getLength();
+            }
+            int start = 0;
+            if (doc1.getElementsByTagName("reference") != null) {
+                start = doc1.getElementsByTagName("reference").getLength();
+            }
+            mergedRefDoc += WSRESTUtil.mergeHTMLContentAndGenerateInfo(DocSrc1, DocSrc2, doc, doc1, RepTag1, RepTag2, Color2, start, totalRefs);
+            // get the original text
+            mergedRefDoc += "<origText>\n"
+                    + doc.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent()
+                    + "</origText>";
+            // save document in given location
+            String doctosave = "<QD>"
+                    + WSRESTUtil.niceXMLParams(RefType, DocSrc1, DocSrc2, DocTgt, RepTag1, RepTag2, Color2)
+                    + mergedRefDoc
+                    + "</QD>";
+            String filePath = UtilsFiles.String2File(DocTgt, doctosave);
+            if (filePath != null) {
+                msg += "SUCCESSFUL Merge!\n File Saved at : " + filePath;
+            } else {
+                msg = "ERROR Saving file, something went wrong in the server side";
+            }
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(Server_MyCat.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(WSRESTUtil.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return msg;
     }
 }

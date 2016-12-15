@@ -139,4 +139,16 @@ public class UtilsFiles {
         }
         return null;
     }
+    public static String String2File(String FilePath, String Content) {
+        try {
+            OutputStreamWriter fstream = new OutputStreamWriter(new FileOutputStream(FilePath), "UTF-8");
+            BufferedWriter out = new BufferedWriter(fstream);
+            out.write(Content);
+            out.close();
+            return FilePath;
+        } catch (IOException ex) {
+            Logger.getLogger(UtilsFiles.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
 }

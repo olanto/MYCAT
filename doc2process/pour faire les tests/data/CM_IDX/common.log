@@ -1,0 +1,508 @@
+Mar 04, 2016 12:50:00 PM org.olanto.idxvli.IdxConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Mar 04, 2016 12:50:00 PM org.olanto.idxvli.IdxConstant show
+Infos: VERSION 3.2.3
+HOSTS
+    EXPERIMENT_NOTFORPROD: false
+    CHECK_CONSISTENT: false
+    ORIGINAL_FULL_URL: /original/
+    ORIGINAL_HOST: localhost
+    PRODUCTION_MODE: true
+MESSAGES
+    SERVER_MESSAGE_PATH: C:/MYCAT/config/messages/interface/initserver
+    SERVER_MESSAGE_LANG: 
+CONFIGURATION
+    MODE_IDX: NEW
+    MODE_CONTINUE: MIX
+    MODE_RANKING: BM25
+FLAG
+    IDX_WITHDOCBAG: false
+    IDX_SAVE_POSITION: true
+    IDX_MORE_INFO: false
+    IDX_CONCEPTUAL: true
+    IDX_ZIP_CACHE: true
+STRATEGIES
+    DOC_IMPLEMENTATION: FAST
+         DOC_MAX: 65536
+         IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+         DOC_ENCODING: UTF-8
+         DOC_SIZE_NAME: 256
+         DOC_MAXOCCLENGTH: 5000000
+         SEPARATOR: ¦
+       GLOSS_NAME: Glossaries
+       RENAMING
+         FILE_RENAME: true
+         FILE_COLLECTION_CASE: UPPER
+         FILE_NAME_CASE: UPPER
+         FILE_EXTENTION_CASE: LOWER
+       PROPERTIES
+         DOC_PROPERTIES_MAXBIT: 12
+         DOC_PROPERTIES_MAX_LENGHT: 256
+         HOPE_COMPRESSION: 64
+         MAX_IN_ZIP_CACHE: 64
+    WORD_IMPLEMENTATION: FAST
+         WORD_MAX: 1048576
+         IDX_MFLF_ENCODING :UTF-8
+         WORD_MINLENGTH: 1
+         WORD_MAXLENGTH: 48
+         WORD_NFIRSTOFDOC: 10000000
+     STEMMER
+         WORD_USE_STEMMER: false
+         STEM_DOC: true
+         WORD_STEMMING_LANG: english
+         STEM_CACHE_COUNT: 262144
+         STEM_KEEP_LIST: false
+         ACTUAL_LANGUAGE: 
+     QUOTEREF
+         REALREF_MAX_CHECK: 12
+         REF_MAX_THREAD: 4
+     WILDCHAR
+         WORD_EXPANSION: true
+         WORD_EXPANSION_RELOAD: true
+         WORD_MAX_EXPANSION: 100
+         DOCNAME_EXPANSION: true
+         DOCNAME_EXPANSION_RELOAD: true
+         DOCNAME_MAX_EXPANSION: 1000
+         DOCNAME_BROWSE_INSENSITIVE: true
+    OBJSTO_IMPLEMENTATION: XL
+         OBJ_PW2: 0
+         OBJ_NB: 1
+         OBJ_SMALL_SIZE: 64
+         OBJ_STORE_ASYNC: false
+         OBJ_STORE_MAX_QUEUE: 8192
+         OBJ_COMPRESSION: YES
+CACHE WRITE
+         CACHE_IMPLEMENTATION_INDEXING: BIG
+         INDEXING_CACHE_SIZE: 1048576000
+         KEEP_IN_CACHE: 90
+         IDX_CACHE_COUNT: 8388608
+         IDX_RESERVE: 2048
+CACHE READ
+         CACHE_IMPLEMENTATION_READ: BIG
+         QUERY_CACHE_SIZE: 1048576000
+         QUERY_CACHE_COUNT: 262144
+QUERY OPTION
+    NEAR_DISTANCE: 8
+    MAX_CITATION: 100
+    MAX_RESPONSE: 200
+Mar 04, 2016 12:50:02 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open ObjectStore4 RW
+Mar 04, 2016 12:50:02 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open wordstable RW
+Mar 04, 2016 12:50:03 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open docstable
+Mar 04, 2016 12:50:03 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open zipCache
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of idx save
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of docstable save
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of zipCache save
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of wordstable save
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of other save
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: START objstore close 
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: FINISH objstore close 
+Mar 04, 2016 12:50:04 PM org.olanto.idxvli.IdxConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@1dcd8d1f
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Mar 04, 2016 12:50:04 PM org.olanto.mapman.MapArchiveConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:38 PM org.olanto.idxvli.IdxConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:38 PM org.olanto.idxvli.IdxConstant show
+Infos: VERSION 3.2.3
+HOSTS
+    EXPERIMENT_NOTFORPROD: false
+    CHECK_CONSISTENT: false
+    ORIGINAL_FULL_URL: /original/
+    ORIGINAL_HOST: localhost
+    PRODUCTION_MODE: true
+MESSAGES
+    SERVER_MESSAGE_PATH: C:/MYCAT/config/messages/interface/initserver
+    SERVER_MESSAGE_LANG: 
+CONFIGURATION
+    MODE_IDX: INCREMENTAL
+    MODE_CONTINUE: MIX
+    MODE_RANKING: BM25
+FLAG
+    IDX_WITHDOCBAG: false
+    IDX_SAVE_POSITION: true
+    IDX_MORE_INFO: false
+    IDX_CONCEPTUAL: true
+    IDX_ZIP_CACHE: true
+STRATEGIES
+    DOC_IMPLEMENTATION: FAST
+         DOC_MAX: 65536
+         IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+         DOC_ENCODING: UTF-8
+         DOC_SIZE_NAME: 256
+         DOC_MAXOCCLENGTH: 5000000
+         SEPARATOR: ¦
+       GLOSS_NAME: Glossaries
+       RENAMING
+         FILE_RENAME: true
+         FILE_COLLECTION_CASE: UPPER
+         FILE_NAME_CASE: UPPER
+         FILE_EXTENTION_CASE: LOWER
+       PROPERTIES
+         DOC_PROPERTIES_MAXBIT: 12
+         DOC_PROPERTIES_MAX_LENGHT: 256
+         HOPE_COMPRESSION: 64
+         MAX_IN_ZIP_CACHE: 64
+    WORD_IMPLEMENTATION: FAST
+         WORD_MAX: 1048576
+         IDX_MFLF_ENCODING :UTF-8
+         WORD_MINLENGTH: 1
+         WORD_MAXLENGTH: 48
+         WORD_NFIRSTOFDOC: 10000000
+     STEMMER
+         WORD_USE_STEMMER: false
+         STEM_DOC: true
+         WORD_STEMMING_LANG: english
+         STEM_CACHE_COUNT: 262144
+         STEM_KEEP_LIST: false
+         ACTUAL_LANGUAGE: 
+     QUOTEREF
+         REALREF_MAX_CHECK: 12
+         REF_MAX_THREAD: 4
+     WILDCHAR
+         WORD_EXPANSION: true
+         WORD_EXPANSION_RELOAD: true
+         WORD_MAX_EXPANSION: 100
+         DOCNAME_EXPANSION: true
+         DOCNAME_EXPANSION_RELOAD: true
+         DOCNAME_MAX_EXPANSION: 1000
+         DOCNAME_BROWSE_INSENSITIVE: true
+    OBJSTO_IMPLEMENTATION: XL
+         OBJ_PW2: 0
+         OBJ_NB: 1
+         OBJ_SMALL_SIZE: 64
+         OBJ_STORE_ASYNC: false
+         OBJ_STORE_MAX_QUEUE: 8192
+         OBJ_COMPRESSION: YES
+CACHE WRITE
+         CACHE_IMPLEMENTATION_INDEXING: BIG
+         INDEXING_CACHE_SIZE: 1048576000
+         KEEP_IN_CACHE: 90
+         IDX_CACHE_COUNT: 8388608
+         IDX_RESERVE: 2048
+CACHE READ
+         CACHE_IMPLEMENTATION_READ: BIG
+         QUERY_CACHE_SIZE: 1048576000
+         QUERY_CACHE_COUNT: 262144
+QUERY OPTION
+    NEAR_DISTANCE: 8
+    MAX_CITATION: 100
+    MAX_RESPONSE: 200
+Dec 05, 2016 4:52:38 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open ObjectStore4 RW
+Dec 05, 2016 4:52:39 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open wordstable RW
+Dec 05, 2016 4:52:40 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open docstable
+Dec 05, 2016 4:52:40 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open zipCache
+Dec 05, 2016 4:52:41 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:41 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@60f9d924
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Dec 05, 2016 4:52:52 PM org.olanto.mapman.MapArchiveConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of idx save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of docstable save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of zipCache save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of wordstable save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: end of other save
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: START objstore close 
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxIO saveindexdoc
+Infos: FINISH objstore close 
+Dec 05, 2016 4:52:52 PM org.olanto.idxvli.IdxConstant closeLogger
+Infos: CLOSE Common Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:55 PM org.olanto.idxvli.IdxConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:55 PM org.olanto.idxvli.IdxConstant show
+Infos: VERSION 3.2.3
+HOSTS
+    EXPERIMENT_NOTFORPROD: false
+    CHECK_CONSISTENT: false
+    ORIGINAL_FULL_URL: /original/
+    ORIGINAL_HOST: localhost
+    PRODUCTION_MODE: true
+MESSAGES
+    SERVER_MESSAGE_PATH: C:/MYCAT/config/messages/interface/initserver
+    SERVER_MESSAGE_LANG: 
+CONFIGURATION
+    MODE_IDX: INCREMENTAL
+    MODE_CONTINUE: MIX
+    MODE_RANKING: BM25
+FLAG
+    IDX_WITHDOCBAG: false
+    IDX_SAVE_POSITION: true
+    IDX_MORE_INFO: false
+    IDX_CONCEPTUAL: true
+    IDX_ZIP_CACHE: true
+STRATEGIES
+    DOC_IMPLEMENTATION: FAST
+         DOC_MAX: 65536
+         IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+         DOC_ENCODING: UTF-8
+         DOC_SIZE_NAME: 256
+         DOC_MAXOCCLENGTH: 5000000
+         SEPARATOR: ¦
+       GLOSS_NAME: Glossaries
+       RENAMING
+         FILE_RENAME: true
+         FILE_COLLECTION_CASE: UPPER
+         FILE_NAME_CASE: UPPER
+         FILE_EXTENTION_CASE: LOWER
+       PROPERTIES
+         DOC_PROPERTIES_MAXBIT: 12
+         DOC_PROPERTIES_MAX_LENGHT: 256
+         HOPE_COMPRESSION: 64
+         MAX_IN_ZIP_CACHE: 64
+    WORD_IMPLEMENTATION: FAST
+         WORD_MAX: 1048576
+         IDX_MFLF_ENCODING :UTF-8
+         WORD_MINLENGTH: 1
+         WORD_MAXLENGTH: 48
+         WORD_NFIRSTOFDOC: 10000000
+     STEMMER
+         WORD_USE_STEMMER: false
+         STEM_DOC: true
+         WORD_STEMMING_LANG: english
+         STEM_CACHE_COUNT: 262144
+         STEM_KEEP_LIST: false
+         ACTUAL_LANGUAGE: 
+     QUOTEREF
+         REALREF_MAX_CHECK: 12
+         REF_MAX_THREAD: 4
+     WILDCHAR
+         WORD_EXPANSION: true
+         WORD_EXPANSION_RELOAD: true
+         WORD_MAX_EXPANSION: 100
+         DOCNAME_EXPANSION: true
+         DOCNAME_EXPANSION_RELOAD: true
+         DOCNAME_MAX_EXPANSION: 1000
+         DOCNAME_BROWSE_INSENSITIVE: true
+    OBJSTO_IMPLEMENTATION: XL
+         OBJ_PW2: 0
+         OBJ_NB: 1
+         OBJ_SMALL_SIZE: 64
+         OBJ_STORE_ASYNC: false
+         OBJ_STORE_MAX_QUEUE: 8192
+         OBJ_COMPRESSION: YES
+CACHE WRITE
+         CACHE_IMPLEMENTATION_INDEXING: BIG
+         INDEXING_CACHE_SIZE: 1048576000
+         KEEP_IN_CACHE: 90
+         IDX_CACHE_COUNT: 8388608
+         IDX_RESERVE: 2048
+CACHE READ
+         CACHE_IMPLEMENTATION_READ: BIG
+         QUERY_CACHE_SIZE: 1048576000
+         QUERY_CACHE_COUNT: 262144
+QUERY OPTION
+    NEAR_DISTANCE: 8
+    MAX_CITATION: 100
+    MAX_RESPONSE: 200
+Dec 05, 2016 4:52:56 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open ObjectStore4 RW
+Dec 05, 2016 4:52:56 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open wordstable RW
+Dec 05, 2016 4:52:57 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open docstable
+Dec 05, 2016 4:52:57 PM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open zipCache
+Dec 05, 2016 4:52:58 PM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 05, 2016 4:52:58 PM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@c5d53c3
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES
+Dec 06, 2016 9:10:39 AM org.olanto.idxvli.IdxConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 06, 2016 9:10:39 AM org.olanto.idxvli.IdxConstant show
+Infos: VERSION 3.2.3
+HOSTS
+    EXPERIMENT_NOTFORPROD: false
+    CHECK_CONSISTENT: false
+    ORIGINAL_FULL_URL: /original/
+    ORIGINAL_HOST: localhost
+    PRODUCTION_MODE: true
+MESSAGES
+    SERVER_MESSAGE_PATH: C:/MYCAT/config/messages/interface/initserver
+    SERVER_MESSAGE_LANG: 
+CONFIGURATION
+    MODE_IDX: INCREMENTAL
+    MODE_CONTINUE: MIX
+    MODE_RANKING: BM25
+FLAG
+    IDX_WITHDOCBAG: false
+    IDX_SAVE_POSITION: true
+    IDX_MORE_INFO: false
+    IDX_CONCEPTUAL: true
+    IDX_ZIP_CACHE: true
+STRATEGIES
+    DOC_IMPLEMENTATION: FAST
+         DOC_MAX: 65536
+         IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+         DOC_ENCODING: UTF-8
+         DOC_SIZE_NAME: 256
+         DOC_MAXOCCLENGTH: 5000000
+         SEPARATOR: ¦
+       GLOSS_NAME: Glossaries
+       RENAMING
+         FILE_RENAME: true
+         FILE_COLLECTION_CASE: UPPER
+         FILE_NAME_CASE: UPPER
+         FILE_EXTENTION_CASE: LOWER
+       PROPERTIES
+         DOC_PROPERTIES_MAXBIT: 12
+         DOC_PROPERTIES_MAX_LENGHT: 256
+         HOPE_COMPRESSION: 64
+         MAX_IN_ZIP_CACHE: 64
+    WORD_IMPLEMENTATION: FAST
+         WORD_MAX: 1048576
+         IDX_MFLF_ENCODING :UTF-8
+         WORD_MINLENGTH: 1
+         WORD_MAXLENGTH: 48
+         WORD_NFIRSTOFDOC: 10000000
+     STEMMER
+         WORD_USE_STEMMER: false
+         STEM_DOC: true
+         WORD_STEMMING_LANG: english
+         STEM_CACHE_COUNT: 262144
+         STEM_KEEP_LIST: false
+         ACTUAL_LANGUAGE: 
+     QUOTEREF
+         REALREF_MAX_CHECK: 12
+         REF_MAX_THREAD: 4
+     WILDCHAR
+         WORD_EXPANSION: true
+         WORD_EXPANSION_RELOAD: true
+         WORD_MAX_EXPANSION: 100
+         DOCNAME_EXPANSION: true
+         DOCNAME_EXPANSION_RELOAD: true
+         DOCNAME_MAX_EXPANSION: 1000
+         DOCNAME_BROWSE_INSENSITIVE: true
+    OBJSTO_IMPLEMENTATION: XL
+         OBJ_PW2: 0
+         OBJ_NB: 1
+         OBJ_SMALL_SIZE: 64
+         OBJ_STORE_ASYNC: false
+         OBJ_STORE_MAX_QUEUE: 8192
+         OBJ_COMPRESSION: YES
+CACHE WRITE
+         CACHE_IMPLEMENTATION_INDEXING: BIG
+         INDEXING_CACHE_SIZE: 1048576000
+         KEEP_IN_CACHE: 90
+         IDX_CACHE_COUNT: 8388608
+         IDX_RESERVE: 2048
+CACHE READ
+         CACHE_IMPLEMENTATION_READ: BIG
+         QUERY_CACHE_SIZE: 1048576000
+         QUERY_CACHE_COUNT: 262144
+QUERY OPTION
+    NEAR_DISTANCE: 8
+    MAX_CITATION: 100
+    MAX_RESPONSE: 200
+Dec 06, 2016 9:10:39 AM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open ObjectStore4 RW
+Dec 06, 2016 9:10:40 AM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open wordstable RW
+Dec 06, 2016 9:10:41 AM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open docstable
+Dec 06, 2016 9:10:41 AM org.olanto.idxvli.IdxIO loadindexdoc
+Infos: open zipCache
+Dec 06, 2016 9:10:42 AM org.olanto.mapman.MapArchiveConstant openLogger
+Infos: OPEN Log File ---------------------------------------------------------
+Dec 06, 2016 9:10:42 AM org.olanto.mapman.MapArchiveConstant show
+Infos: MAP
+LANGUAGES
+    LANGPAIR_MAXBIT: 5
+    LANGPAIR_MAX: 32
+    LANGUAGE IN MAP: EN FR BG CS DA DE EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH JP FA ?? ?? ?? ??
+PARSING
+    IDX_DONTINDEXTHIS: C:/MYCAT/config/dontindexthiswords.txt
+    WORD_MINLENGTH: 3
+    WORD_MAXLENGTH: 40
+    WORD_DEFINITION: org.olanto.mapman.mapper.TokenNative@4ba56ca0
+    GLOSS_NAME: Glossaries
+STRATEGIES
+    MAP_MAX: 65536
+    OBJSTO_IMPLEMENTATION: FAST
+    OBJ_PW2: 0
+    OBJ_NB: 1
+    OBJ_SMALL_SIZE: 64
+    OBJ_STORE_ASYNC: false
+    OBJ_STORE_MAX_QUEUE: 8192
+    OBJ_COMPRESSION: YES

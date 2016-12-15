@@ -82,5 +82,8 @@ public class ConfigurationAlignBiTextFromFile implements BiTextInit {
 
         BITEXT = ps.split(LIST_OF_BITEXT_LANG);
         MIN_DICT_LEVEL = Float.parseFloat(prop.getProperty("MIN_DICT_LEVEL", "0.1"));
+      MIN_SIM_LEVEL = Float.parseFloat(prop.getProperty("MIN_SIM_LEVEL", "0.2"));
+      DONT_CHECK_LENGTH = Boolean.parseBoolean(prop.getProperty("DONT_CHECK_LENGTH", "false"));
+      
     }
 }

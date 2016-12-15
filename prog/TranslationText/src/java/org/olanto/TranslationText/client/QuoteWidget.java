@@ -453,6 +453,8 @@ public class QuoteWidget extends Composite {
                     fileUpload.setTitle(GuiMessageConst.MSG_42 + fileName);
                     if (fileName.endsWith(GuiConstant.QD_FILE_EXT)) {
                         drawReferences(null);
+                    } else if (fileName.endsWith(".xml") && fileContent.startsWith("<QD>")) {
+                        drawReferences(null);
                     } else if (fileName.endsWith(GuiConstant.QD_GENERAL_EXT)) {
                         setMessage("error", GuiMessageConst.MSG_58);
                         Window.alert("Ereur: " + GuiMessageConst.MSG_58);
@@ -486,10 +488,6 @@ public class QuoteWidget extends Composite {
         next.removeAllListeners();
         setMessage("info", "");
         save.removeAllListeners();
-    }
-
-    public void triggerUpload(String fileName) {
-        //trigger the file upload automatically
     }
 
     public void drawReferences(final ArrayList<String> collections) {
@@ -529,7 +527,7 @@ public class QuoteWidget extends Composite {
                             if (!(fileName.endsWith(GuiConstant.QD_FILE_EXT))) {
                                 GoSrch.enable();
                             }
-
+                            DrawDocumentList();
                             if (refDoc.nbref > 0) {
                                 refIndic.setText(refIdx + " / " + refDoc.nbref);
                                 setMessage("info", GuiMessageConst.MSG_8 + refIdx + " / " + refDoc.nbref);
@@ -560,7 +558,7 @@ public class QuoteWidget extends Composite {
             GoSrch.enable();
         } else {
             setMessage("info", GuiMessageConst.MSG_61 + fileName);
-                rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
+            rpcRef.getHtmlRef(fileContent, fileName, consMin, lgs, lgt, collections, GuiConstant.QD_FILE_EXT, removeFirst.getValue(), fastCheckbox.getValue(), new AsyncCallback<GwtRef>() {
                 @Override
                 public void onFailure(Throwable caught) {
                     setMessage("error", GuiMessageConst.MSG_45);
@@ -584,6 +582,7 @@ public class QuoteWidget extends Composite {
                         });
                         staticTreeWrapper.clear();
                         docList = Utility.getDocumentlist(refDoc.listofref[refIdx - 1] + "|", refDoc.DOC_REF_SEPARATOR);
+                        DrawDocumentList();
                         if (!(fileName.endsWith(GuiConstant.QD_FILE_EXT))) {
                             GoSrch.enable();
                         }
@@ -623,9 +622,6 @@ public class QuoteWidget extends Composite {
                     setMessage("info", GuiMessageConst.MSG_8 + refIdx + " / " + refDoc.nbref);
                     docList = Utility.getDocumentlist(refDoc.listofref[refIdx - 1] + "|", refDoc.DOC_REF_SEPARATOR);
                     DrawDocumentList();
-                } else {
-                    setMessage("info", GuiMessageConst.MSG_50 + " / " + refDoc.nbref);
-                    DOM.getElementById("ref" + refIdx).scrollIntoView();
                 }
             }
         });
@@ -634,7 +630,7 @@ public class QuoteWidget extends Composite {
         prev.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
-                if (refIdx > 0) {
+                if (refIdx > 1) {
                     refIdx--;
                     setMessage("info", GuiMessageConst.MSG_8 + refIdx + " / " + refDoc.nbref);
                     if (refIdx == refDoc.nbref) {
@@ -648,9 +644,6 @@ public class QuoteWidget extends Composite {
                     refIndic.setText(refIdx + " / " + refDoc.nbref);
                     docList = Utility.getDocumentlist(refDoc.listofref[refIdx - 1] + "|", refDoc.DOC_REF_SEPARATOR);
                     DrawDocumentList();
-                } else {
-                    setMessage("info", GuiMessageConst.MSG_49 + " / " + refDoc.nbref);
-                    DOM.getElementById("ref" + refIdx).scrollIntoView();
                 }
             }
         });
@@ -684,7 +677,6 @@ public class QuoteWidget extends Composite {
             setMessage("error", GuiMessageConst.MSG_59);
             docListContainer.setHeading(GuiMessageConst.MSG_59);
         }
-
     }
 
     private void createSourceTree() {
