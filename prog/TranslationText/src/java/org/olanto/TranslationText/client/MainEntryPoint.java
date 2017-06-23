@@ -62,6 +62,7 @@ public class MainEntryPoint implements EntryPoint {
     private ResearchWidget textAlignerWidget;
     private QuoteWidget quoteDetectorWidget;
     private String fileName = "";
+    String searchQuery = "";
     private BitextWidget tS;
     private TranslateServiceAsync rpcM;
     public static ArrayList<String> stopWords;
@@ -86,6 +87,7 @@ public class MainEntryPoint implements EntryPoint {
     public static String afterWildTerm;
     public static InterfaceMeasures IMeasures = new InterfaceMeasures();
     private static boolean isExternalForQD = false;
+    private static boolean isExternalForSearchQuery = false;
     private static final String fileContentURLBase = GWT.getModuleBaseURL() + "ContentServlet?filename=";
 
     /**
@@ -108,6 +110,7 @@ public class MainEntryPoint implements EntryPoint {
             String QDfile = "undefined";
             String qdfile = "undefined";
             String file = "undefined";
+            String searchQry = "undefinded";
             final Map<String, List<String>> params = Window.Location.getParameterMap();
 
             if (params.containsKey("QDfile")) {
@@ -119,18 +122,25 @@ public class MainEntryPoint implements EntryPoint {
             if (params.containsKey("file")) {
                 file = Window.Location.getParameter("file");
             }
-            if (!QDfile.equalsIgnoreCase("undefined")) {
+            if (params.containsKey("searchquery")) {
+                searchQry = Window.Location.getParameter("searchquery");
+            }
+            if (!searchQry.equalsIgnoreCase("undefined")) {
+                isExternalForSearchQuery = true;
+                searchQuery = searchQry;
+                setMainWidgetPropertiesFomExternalCall();
+            } else if (!QDfile.equalsIgnoreCase("undefined")) {
                 isExternalForQD = true;
                 fileName = QDfile;
-                setMyQuoteWidgetFomExternalCall();
+                setMainWidgetPropertiesFomExternalCall();
             } else if (!qdfile.equalsIgnoreCase("undefined")) {
                 isExternalForQD = true;
                 fileName = qdfile;
-                setMyQuoteWidgetFomExternalCall();
+                setMainWidgetPropertiesFomExternalCall();
             } else if (!file.equalsIgnoreCase("undefined")) {
                 isExternalForQD = true;
                 fileName = file;
-                setMyQuoteWidgetFomExternalCall();
+                setMainWidgetPropertiesFomExternalCall();
             } else {
                 rpcM.InitPropertiesFromFile("en", new AsyncCallback<GwtProp>() {
                     @Override
@@ -141,9 +151,6 @@ public class MainEntryPoint implements EntryPoint {
                     @Override
                     public void onSuccess(GwtProp result) {
                         InitProperties(result);
-
-//                    Window.alert(GuiConstant.show());
-//                    Window.alert(GuiMessageConst.show());
                         if (GuiConstant.MAXIMIZE_ON) {
                             Window.moveTo(0, 0);
                             Window.resizeTo(getScreenWidth(), getScreenHeight());
@@ -195,7 +202,7 @@ public class MainEntryPoint implements EntryPoint {
         });
     }
 
-    public void setMyQuoteWidgetFomExternalCall() {
+    public void setMainWidgetPropertiesFomExternalCall() {
         RootPanel.get("content").add(mainWidget);
         mainWidget.setWidth("100%");
         mainWidget.setStyleName("mainPage");
@@ -228,9 +235,6 @@ public class MainEntryPoint implements EntryPoint {
             @Override
             public void onSuccess(GwtProp result) {
                 InitProperties(result);
-
-//                Window.alert(GuiConstant.show());
-//                Window.alert(GuiMessageConst.show());
                 if (GuiConstant.MAXIMIZE_ON) {
                     Window.moveTo(0, 0);
                     Window.resizeTo(getScreenWidth(), getScreenHeight());
@@ -265,6 +269,9 @@ public class MainEntryPoint implements EntryPoint {
                 if (isExternalForQD) {
                     setMyQuoteWidget(languages);
                     getContentListMyQuoteByFileName();
+                } else if (isExternalForSearchQuery) {
+                    setMyCatWidget();
+                    getcontentlistMyCat();
                 } else {
                     setMyCatWidget();
                 }
@@ -420,7 +427,12 @@ public class MainEntryPoint implements EntryPoint {
 
     public void getcontentlistMyCat() {
         textAlignerWidget.msg.setStyleName("gwt-TA-warning");
-        QUERY = Utility.replaceAll2(textAlignerWidget.search.getText()).trim();
+        if (isExternalForSearchQuery) {
+            QUERY = Utility.replaceAll2(searchQuery).trim();
+            textAlignerWidget.search.setText(QUERY);
+        } else {
+            QUERY = Utility.replaceAll2(textAlignerWidget.search.getText()).trim();
+        }
         if (textAlignerWidget.search.getText().equals("AUTO_ON")) {
             textAlignerWidget.msg.setText(GuiMessageConst.MSG_15);
             GuiConstant.AUTO_ON = true;
@@ -524,7 +536,7 @@ public class MainEntryPoint implements EntryPoint {
                         String Query2 = Utility.ExactCloseQueryBuilder(words.get(1), textAlignerWidget.langS.getItemText(textAlignerWidget.langS.getSelectedIndex()), textAlignerWidget.langT.getItemText(textAlignerWidget.langT.getSelectedIndex()), stopWords, collectionWidgetTA.Selection);
                         tS.queryLength = QUERY.length() - 9;
                         tS.words = words;
-//                        Window.alert(tS.words.get(0) + " " + tS.words.get(1));
+                        //                        Window.alert(tS.words.get(0) + " " + tS.words.get(1));
                         textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query1 + " CLOSE " + Query2);
                         textAlignerWidget.DrawDocumentList(Query1 + "---CLOSE---" + Query2, tS, collectionWidgetTA.Selection);
                     } else {
@@ -538,7 +550,7 @@ public class MainEntryPoint implements EntryPoint {
                             tS.words = words;
                             textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
                             textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
-//                        GuiConstant.EXACT_NBR_FLG = false;
+                            //                        GuiConstant.EXACT_NBR_FLG = false;
                         } else if (QUERY.startsWith("#\"")) {
                             GuiConstant.EXACT_FLG = true;
                             GuiConstant.EXACT_CLOSE = false;
@@ -549,7 +561,7 @@ public class MainEntryPoint implements EntryPoint {
                             tS.words = words;
                             textAlignerWidget.GoSrch.setToolTip(GuiMessageConst.MSG_27 + Query);
                             textAlignerWidget.DrawDocumentList(Query, tS, collectionWidgetTA.Selection);
-//                        GuiConstant.EXACT_NBR_FLG = true;
+                            //                        GuiConstant.EXACT_NBR_FLG = true;
                         } else {
                             GuiConstant.EXACT_FLG = false;
                             GuiConstant.EXACT_NBR_FLG = false;
@@ -669,6 +681,8 @@ public class MainEntryPoint implements EntryPoint {
         textAlignerWidget.GoSrch.addListener(Events.OnClick, new Listener<BaseEvent>() {
             @Override
             public void handleEvent(BaseEvent be) {
+                isExternalForSearchQuery = false;
+                searchQuery = "";
                 textAlignerWidget.docListContainer.setHeading(GuiMessageConst.MSG_41 + "0" + GuiMessageConst.MSG_52);
                 textAlignerWidget.GoSrch.disable();
                 getcontentlistMyCat();
@@ -693,6 +707,8 @@ public class MainEntryPoint implements EntryPoint {
                 textAlignerWidget.GoSrch.disable();
                 QUERY = textAlignerWidget.search.getText();
                 if (event.getNativeEvent().getKeyCode() == KeyCodes.KEY_ENTER) {
+                    isExternalForSearchQuery = false;
+                    searchQuery = "";
                     getcontentlistMyCat();
                 } else {
                     textAlignerWidget.GoSrch.enable();
@@ -801,7 +817,7 @@ public class MainEntryPoint implements EntryPoint {
         quoteDetectorWidget.refIndic.setText("/");
         quoteDetectorWidget.drawReferences(collectionWidgetQD.Selection);
     }
-    
+
     public void getContentListMyQuoteByFileName() {
         quoteDetectorWidget.refArea.setHtml("");
         quoteDetectorWidget.refIndic.setText("/");
