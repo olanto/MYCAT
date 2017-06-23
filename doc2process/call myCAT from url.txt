@@ -1,0 +1,7 @@
+ 
+
+http://localhost:8080/TranslationText?searchquery="report"
+
+http://localhost:8080/TranslationText/?searchquery=global economic
+
+http://localhost:8080/TranslationText/?searchquery=global*
