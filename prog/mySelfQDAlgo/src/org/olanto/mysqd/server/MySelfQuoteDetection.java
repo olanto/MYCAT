@@ -47,13 +47,15 @@ public class MySelfQuoteDetection {
     public boolean verbose = false;
     public static ConstStringManager MsgManager;
 
-    public MySelfQuoteDetection(String fileName, int minFreq, int minLength, ConstStringManager messageMan) {  // to debug
+    public MySelfQuoteDetection(String fileName, int minFreq, int minLength, ConstStringManager messageMan, boolean verbose) {  // to debug
         MySelfQuoteDetection.MsgManager = messageMan;
         this.fileName = fileName;
         this.minFreq = minFreq;
         this.minLength = minLength;
+        this.verbose=verbose;
         toBeProcess = file2String(fileName, "UTF-8");
-        computeNGram();
+        //computeNGram();
+        init();
     }
 
     public MySelfQuoteDetection(String _toBeProcess, int minFreq, int minLength) {  // to extract Ngram
@@ -80,7 +82,7 @@ public class MySelfQuoteDetection {
     }
 
     public MySelfQuoteDetection(String fileName, String toBeProcess, int minFreq, int minLength, boolean verbose, ConstStringManager messageMan) {
-        //  System.out.println(toBeProcess);
+          System.out.println(toBeProcess);
         MySelfQuoteDetection.MsgManager = messageMan;
         this.fileName = fileName;
         this.minFreq = minFreq;

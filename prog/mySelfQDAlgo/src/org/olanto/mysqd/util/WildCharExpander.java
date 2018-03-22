@@ -19,14 +19,8 @@ along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
  **********/
 package org.olanto.mysqd.util;
 
-import org.olanto.util.Timer;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
-import java.util.Vector;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import static org.olanto.util.Messages.*;
 
 /**
  *  cette classe fournit les méthodes pour retrouver les mots avec des wildchar
