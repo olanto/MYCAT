@@ -1,3 +1,8 @@
  
+Call myCAT
 
 http://localhost:8080/TranslationText?searchquery="report"
+
+Call QuoteDetector
+
+http://localhost:8080/TranslationText?QDfile=C:/MYCAT/corpus/reftest/Doc_EN_XXX_Refdoc.html
