@@ -122,7 +122,7 @@
 	<!-- File Renaming = -->
 	<!-- Modified on August 25th, 2015 = -->
 	<!-- renaming file name for idx false=disable (LINUX) / true=enable (MS OK but you need for original and save buttons access directly through a drive or a share) -->
-	<entry key="FILE_RENAME">true</entry>
+	<entry key="FILE_RENAME">false</entry>
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->
 	<entry key="FILE_COLLECTION_CASE">UPPER</entry>
 	<!-- renaming file name to LOWER, UPPER, NOCHANGE -->

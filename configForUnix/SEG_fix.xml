@@ -21,6 +21,8 @@
  <entry key="FOLDER_CONVERTED">/home/olanto/MYCAT/corpus/source</entry> 
 <!--Folder for the glossaries (if activated)-->
  <entry key="FOLDER_CONVERTED_GLOSSARIES">/home/olanto/MYCAT/corpus/source/Glossaries</entry> 
+<!--Folder for the glossaries (if activated) must be sychronise with GLOSS_NAME-->
+ <entry key="FOLDER_CONVERTED_GLOSSARIES">/home/olanto/MYCAT/corpus/source/Glossaries</entry> 
 <!--Folder for the segmented files-->
  <entry key="FOLDER_SEGMENTED">/home/olanto/MYCAT/corpus/txt</entry>
  </properties>

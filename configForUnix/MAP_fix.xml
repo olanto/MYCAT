@@ -21,5 +21,7 @@
     <entry key="COMMON_ROOT">/home/olanto/MYCAT/data/MAP_ARCH</entry>
     <entry key="OBJ_ROOT_0">/home/olanto/MYCAT/data/MAP_ARCH/map0</entry>
      <entry key="IDX_DONTINDEXTHIS">/home/olanto/MYCAT/config/dontindexthiswords.txt</entry>
+ <!--A Glossaries folderName. this entry must be the same in IDX_fix.xml, MAP_fix.xml and SEG_fix.xml-->
+<entry key="GLOSS_NAME">Glossaries</entry>
  
 </properties>

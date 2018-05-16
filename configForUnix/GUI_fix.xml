@@ -151,4 +151,14 @@
 	<entry key="REMOVE_AGLUTINATED_SPACE">true</entry>
 	<!-- List of languages where to remove the space between it items separated by ";"(case of chinese) -->
 	<entry key="AGLUTINATED_LANG_LIST">ZH</entry>
+		<entry key="TOKENIZE_LIST">/_-</entry>
+	<!-- Control parameter to show check box to remove first document -->
+	<entry key="SHOW_REMOVE_FIRST">true</entry>
+	<!-- Control parameter for to choose the to show the remove first by default (from cookies)-->
+	<entry key="REMOVE_FIRST_DEFAULT">true</entry>
+	<!-- Control parameter for the QD algorithm true=remove the first document false=keep it-->
+	<entry key="SHOW_GUI_FAST">true</entry>
+	<!-- Control parameter for to choose the fast algorithm by default (from cookies)-->
+	<entry key="CHOOSE_GUI_FAST_DEFAULT">true</entry>
+
 </properties>
