@@ -55,7 +55,7 @@ public class TestNGram {
     public static void test(String fileName, int minFreq, int minLength, String resultName) {
         try {
             ConstStringManager messageMan = new ConstStringManager(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/messages/interface/initserver_en.properties");
-            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan);
+            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan,false);
             FileOutputStream out = new FileOutputStream(resultName);
             out.write(mysqd.getHTML().getBytes());
             out.close();
@@ -67,7 +67,7 @@ public class TestNGram {
     public static void test1(String fileName, int minFreq, int minLength, String resultName) {
         try {
             ConstStringManager messageMan = new ConstStringManager(SenseOS.getMYCAT_HOME("MYCAT_TMX") + "/config/messages/interface/initserver_en.properties");
-            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan);
+            MySelfQuoteDetection mysqd = new MySelfQuoteDetection(fileName, minFreq, minLength, messageMan,false);
          } catch (Exception ex) {
             Logger.getLogger(TestNGram.class.getName()).log(Level.SEVERE, null, ex);
         }
