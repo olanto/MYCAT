@@ -42,6 +42,8 @@ public class IdxConstant {
     
     public static String REGEX_EXACT_AFTER_TOKEN = "([^\\p{L}\\p{N}]|$)";
     
+    public static boolean FULL_LOAD = true; // // évite de charger les doc et les idx for classification
+    
     public static boolean CHECK_CONSISTENT = false;
     // constante pour être compatible avec la version du classifieur
     /**
@@ -661,6 +663,7 @@ public class IdxConstant {
                 + "\n    IDX_MORE_INFO: " + IDX_MORE_INFO
                 + "\n    IDX_CONCEPTUAL: " + IDX_CONCEPTUAL
                 + "\n    IDX_ZIP_CACHE: " + IDX_CONCEPTUAL
+               + "\n     FULL_LOAD: " + FULL_LOAD
                 + "\nSTRATEGIES"
                 + "\n    DOC_IMPLEMENTATION: " + DOC_IMPLEMENTATION
                 + "\n         DOC_MAX: " + DOC_MAX

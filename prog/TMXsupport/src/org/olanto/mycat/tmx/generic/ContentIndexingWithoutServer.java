@@ -46,4 +46,4 @@ public class ContentIndexingWithoutServer {      // is an application, not an ap
         t1.stop();
 
     }
-}
+            }

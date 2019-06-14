@@ -453,24 +453,25 @@ public class IdxIO {
             compactMemory("word table OK");
             // create idx
             if (MODE_IDX == IdxMode.NEW) {
-                for (int i = 0; i < OBJ_NB; i++) {
-                    if (IDX_SAVE_POSITION) {  // sauve avec les positions
+                if (FULL_LOAD) {
+                    for (int i = 0; i < OBJ_NB; i++) {
+                        if (IDX_SAVE_POSITION) {  // sauve avec les positions
 
-                        ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
-                                OBJ_ROOT[i], WORD_MAXBIT + 1 - OBJ_PW2, OBJ_SMALL_SIZE);  // +1 car idx+pos -OBJ_PW2 car 2^n obsto
+                            ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
+                                    OBJ_ROOT[i], WORD_MAXBIT + 1 - OBJ_PW2, OBJ_SMALL_SIZE);  // +1 car idx+pos -OBJ_PW2 car 2^n obsto
 
-                        objsto0 = null; // fuite m�moire
+                            objsto0 = null; // fuite m�moire
 
-                    } else {
-                        ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
-                                OBJ_ROOT[i], WORD_MAXBIT + 0 - OBJ_PW2, OBJ_SMALL_SIZE);  // +0 car seulement idx -OBJ_PW2 car 2^n obsto
+                        } else {
+                            ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
+                                    OBJ_ROOT[i], WORD_MAXBIT + 0 - OBJ_PW2, OBJ_SMALL_SIZE);  // +0 car seulement idx -OBJ_PW2 car 2^n obsto
 
-                        objsto0 = null; // fuite m�moire
+                            objsto0 = null; // fuite m�moire
 
+                        }
                     }
-                }
-                MODE_IDX = IdxMode.INCREMENTAL; // maintenant on peut passer dans ce mode
-
+                    MODE_IDX = IdxMode.INCREMENTAL; // maintenant on peut passer dans ce mode
+                } else COMLOG.info("no load of idx info");
             } else {
                 error_fatal("mode must be :IdxMode.NEW");
             }
@@ -498,24 +499,26 @@ public class IdxIO {
             sf = new RandomAccessFile(COMMON_ROOT + "/" + currentf + ".seq", "rw");
             pcf = new RandomAccessFile(COMMON_ROOT + "/" + currentf + ".pch", "rw");
             // restore idx
-            objsto = new ObjectStorage4[OBJ_NB];
-            if (MODE_IDX == IdxMode.QUERY || MODE_CONTINUE == ContinueMode.ALT) {
-                COMLOG.info("open ObjectStore4 R");
-                for (int i = 0; i < OBJ_NB; i++) {
-                    objsto[i] = (new ObjectStore4()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.r);
-                }
-            }
-            if ((MODE_IDX == IdxMode.INCREMENTAL || MODE_IDX == IdxMode.DIFFERENTIAL) && MODE_CONTINUE == ContinueMode.MIX) {
-                COMLOG.info("open ObjectStore4 RW");
-                for (int i = 0; i < OBJ_NB; i++) {
-                    signalAOpeningObjSto();
-                    if (OBJ_STORE_ASYNC) {
-                        objsto[i] = (new ObjectStore4_Async()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.rw);
-                    } else {
-                        objsto[i] = (new ObjectStore4()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.rw);
+            if (FULL_LOAD) {
+                objsto = new ObjectStorage4[OBJ_NB];
+                if (MODE_IDX == IdxMode.QUERY || MODE_CONTINUE == ContinueMode.ALT) {
+                    COMLOG.info("open ObjectStore4 R");
+                    for (int i = 0; i < OBJ_NB; i++) {
+                        objsto[i] = (new ObjectStore4()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.r);
                     }
                 }
-            }
+                if ((MODE_IDX == IdxMode.INCREMENTAL || MODE_IDX == IdxMode.DIFFERENTIAL) && MODE_CONTINUE == ContinueMode.MIX) {
+                    COMLOG.info("open ObjectStore4 RW");
+                    for (int i = 0; i < OBJ_NB; i++) {
+                        signalAOpeningObjSto();
+                        if (OBJ_STORE_ASYNC) {
+                            objsto[i] = (new ObjectStore4_Async()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.rw);
+                        } else {
+                            objsto[i] = (new ObjectStore4()).open(OBJ_IMPLEMENTATION, OBJ_ROOT[i], readWriteMode.rw);
+                        }
+                    }
+                }
+            } else COMLOG.info("no load of idx info");
             // restore words
             if (MODE_IDX == IdxMode.QUERY || MODE_CONTINUE == ContinueMode.ALT) {
                 COMLOG.info("open wordstable R");
@@ -530,20 +533,21 @@ public class IdxIO {
             glue.lastRecordedWord = glue.wordstable.getCount();
             glue.lastUpdatedWord = glue.lastRecordedWord;  // read=write
             // restore docs
+            if (FULL_LOAD) {
+                COMLOG.info("open docstable");
+                glue.docstable = (new Documents1()).open(DOC_IMPLEMENTATION, DOC_LANGUAGE, DOC_COLLECTION, MODE_IDX, DOC_ROOT, DOC_NAME);
+                glue.lastRecordedDoc = glue.docstable.getCount();
+                glue.lastUpdatedDoc = glue.lastRecordedDoc;  // read=write
+                if (IDX_ZIP_CACHE) {
+                    COMLOG.info("open zipCache");
+                    if (IDX_ZIP_CACHE_FASTLOAD) {
+                        glue.zipCache = (new ZipVector_InMemory_FastLoad()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+                    } else {
+                        glue.zipCache = (new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
+                    }
 
-            COMLOG.info("open docstable");
-            glue.docstable = (new Documents1()).open(DOC_IMPLEMENTATION, DOC_LANGUAGE, DOC_COLLECTION, MODE_IDX, DOC_ROOT, DOC_NAME);
-            glue.lastRecordedDoc = glue.docstable.getCount();
-            glue.lastUpdatedDoc = glue.lastRecordedDoc;  // read=write
-            if (IDX_ZIP_CACHE) {
-                COMLOG.info("open zipCache");
-                if (IDX_ZIP_CACHE_FASTLOAD) {
-                    glue.zipCache = (new ZipVector_InMemory_FastLoad()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
-                } else {
-                    glue.zipCache = (new ZipVector_InMemory()).open(DOC_ROOT, ZIP_NAME, readWriteMode.rw);
                 }
-
-            }
+            } else COMLOG.info("no load of docs info");
 
             if (WORD_EXPANSION) {  // pour les wildchar
                 glue.wordExpander = new WildCharExpander(glue.getVocabulary());

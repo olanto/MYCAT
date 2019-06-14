@@ -71,7 +71,7 @@ public class IdxStatistic {
         long totidx = 0;
         long totidxld = 0;
         long totidxpos = 0;
-        if (MODE_IDX == IdxMode.QUERY) {
+        if (MODE_IDX == IdxMode.QUERY && FULL_LOAD) {
             for (int i = 0; i < glue.lastRecordedWord; i++) {
                 totidx += glue.getOccOfW(i);
             }
@@ -122,7 +122,7 @@ public class IdxStatistic {
 //            System.out.println("dist100000000: "+dist100000000);
 
         glue.wordstable.printStatistic();
-        glue.docstable.printStatistic();
+        if (FULL_LOAD) glue.docstable.printStatistic();
 
         //timing.stop();
     }

@@ -41,7 +41,7 @@ public class DocBag {
 
     // public static final int MAXOCCINDOC=1000; // ->> max word = 2'000'000
     /** Nombre maximum d'occurence dans un document d'un terme */
-    public static final int MAXOCCINDOC = 100; // ->> max word = 20'000'000
+    public static final int MAXOCCINDOC = 10; // ->> max word = 200'000'000
     public static final int MAXTERMINDOC = 20000;
     static Random gen = new Random(13);  // THE TEST
     private static int[] listOfWord;

@@ -52,7 +52,7 @@ public class RunAllServers {
 
 
         try {
-            System.out.println("initialize map server ...");
+            System.out.println("initialize index server ...");
 
             IndexService_MyCat idxsrv = GetIndexService.runServiceIDX(new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME()+"/config/IDX_fix.xml"), "rmi://localhost/VLI");
             System.out.println("index server is ready ...");
