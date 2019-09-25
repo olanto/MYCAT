@@ -37,8 +37,10 @@ public class OrderByName implements Comparator{
         r1 = r1.substring(r1.lastIndexOf("/")+1).toLowerCase();  // enlever les EN/        
         r2 = r2.substring(r2.lastIndexOf("/")+1).toLowerCase();  // enlever les XX/
        
+        if (IdxConstant.GLOSS_FIRST_IN_LIST){
         if (r1.startsWith(IdxConstant.GLOSS_NAME.toLowerCase()+"¦"))r1="#"+r1;
-       if (r2.startsWith(IdxConstant.GLOSS_NAME.toLowerCase()+"¦"))r2="#"+r2;
+        if (r2.startsWith(IdxConstant.GLOSS_NAME.toLowerCase()+"¦"))r2="#"+r2;
+        }
         
     //    System.out.println(r1+" , "+r2);
         return r1.compareTo(r2);    

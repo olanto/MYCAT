@@ -237,6 +237,10 @@ public class IdxConstant {
     public static RenameOption FILE_EXTENTION_CASE = RenameOption.NOCHANGE;
         public static String GLOSS_NAME = "Glossaries";
     /**
+     * adding a parameter to modify the order_by_name
+     */
+        public static boolean GLOSS_FIRST_IN_LIST = true;
+    /**
      * sauvegarde des positions
      */
     public static boolean IDX_SAVE_POSITION = true;
@@ -673,6 +677,7 @@ public class IdxConstant {
                 + "\n         DOC_MAXOCCLENGTH: " + DOC_MAXOCCLENGTH
                 + "\n         SEPARATOR: " + SEPARATOR
                 + "\n       GLOSS_NAME: " + GLOSS_NAME
+                + "\n       GLOSS_FIRST_IN_LIST: " + GLOSS_FIRST_IN_LIST
                 + "\n       RENAMING"
                 + "\n         FILE_RENAME: " + FILE_RENAME
                 + "\n         FILE_COLLECTION_CASE: " + FILE_COLLECTION_CASE

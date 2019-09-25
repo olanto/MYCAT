@@ -137,5 +137,7 @@
    <entry key="REALREF_MAX_CHECK">12</entry>
 <!--maximum Cpus (cores) used during QD min=1 max=maxcorehost default=4-->
    <entry key="REF_MAX_THREAD">4</entry>
+<!--Document's list order. this entry change the list order for glossaries if true then glossaries are moving in the head of list-->
+   <entry key="GLOSS_FIRST_IN_LIST">true</entry>
 
 </properties>

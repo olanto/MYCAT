@@ -127,6 +127,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
         FILE_NAME_CASE = RenameOption.valueOf(prop.getProperty("FILE_NAME_CASE", "NOCHANGE"));
         FILE_EXTENTION_CASE = RenameOption.valueOf(prop.getProperty("FILE_EXTENTION_CASE", "NOCHANGE"));
         GLOSS_NAME = prop.getProperty("GLOSS_NAME", "Glossaries");
+        GLOSS_FIRST_IN_LIST = Boolean.parseBoolean(prop.getProperty("GLOSS_FIRST_IN_LIST", "true"));
 
         CHECK_CONSISTENT = Boolean.parseBoolean(prop.getProperty("CHECK_CONSISTENT", "false"));
 
