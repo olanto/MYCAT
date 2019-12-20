@@ -110,7 +110,7 @@ public class MainEntryPoint implements EntryPoint {
             String QDfile = "undefined";
             String qdfile = "undefined";
             String file = "undefined";
-            String searchQry = "undefinded";
+            String searchQry = "undefined";
             final Map<String, List<String>> params = Window.Location.getParameterMap();
 
             if (params.containsKey("QDfile")) {
