@@ -269,11 +269,15 @@ public class MainEntryPoint implements EntryPoint {
                 if (isExternalForQD) {
                     setMyQuoteWidget(languages);
                     getContentListMyQuoteByFileName();
-                } else if (isExternalForSearchQuery) {
-                    setMyCatWidget();
-                    getcontentlistMyCat();
-                } else {
-                    setMyCatWidget();
+                } else if (!GuiConstant.REMOVE_TA_INTERFACE) {
+                    if (isExternalForSearchQuery) {
+                        setMyCatWidget();
+                        getcontentlistMyCat();
+                    } else {
+                        setMyCatWidget();
+                    }
+                } else { // QD
+                    setMyQuoteWidget(languages);
                 }
             }
         });
@@ -958,6 +962,7 @@ public class MainEntryPoint implements EntryPoint {
         GuiConstant.CHOOSE_GUI_FAST_DEFAULT = CONST.CHOOSE_GUI_FAST_DEFAULT;
         GuiConstant.SHOW_REMOVE_FIRST = CONST.SHOW_REMOVE_FIRST;
         GuiConstant.REMOVE_FIRST_DEFAULT = CONST.REMOVE_FIRST_DEFAULT;
+        GuiConstant.REMOVE_TA_INTERFACE = CONST.REMOVE_TA_INTERFACE;
         /**
          * client interface parameters
          * **********************************************************************************

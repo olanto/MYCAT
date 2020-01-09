@@ -146,7 +146,9 @@ public class QuoteWidget extends Composite {
         headerPanel.add(prev);
         headerPanel.add(next);
         headerPanel.add(refIndic);
+        if (!GuiConstant.REMOVE_TA_INTERFACE) {
         headerPanel.add(TextAligner);
+        }
         headerPanel.add(help);
         if (GuiConstant.SAVE_ON) {
             headerPanel.add(save);
@@ -405,7 +407,9 @@ public class QuoteWidget extends Composite {
         headerPanel.add(prev);
         headerPanel.add(next);
         headerPanel.add(refIndic);
-        headerPanel.add(TextAligner);
+        if (GuiConstant.REMOVE_TA_INTERFACE) {
+            headerPanel.add(TextAligner);
+        }
         headerPanel.add(help);
         if (GuiConstant.SAVE_ON) {
             headerPanel.add(save);

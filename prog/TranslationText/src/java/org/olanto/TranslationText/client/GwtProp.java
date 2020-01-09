@@ -108,6 +108,7 @@ public class GwtProp implements IsSerializable {
     public boolean CHOOSE_GUI_FAST_DEFAULT;
     public boolean SHOW_REMOVE_FIRST;
     public boolean REMOVE_FIRST_DEFAULT;
+    public boolean REMOVE_TA_INTERFACE;
     public HashMap<String, String> entryToReplace = new HashMap<String, String>();
     /**
      * client interface parameters

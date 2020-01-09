@@ -109,6 +109,7 @@ public class GuiConstant {
     public static boolean CHOOSE_GUI_FAST_DEFAULT;
     public static boolean SHOW_REMOVE_FIRST;
     public static boolean REMOVE_FIRST_DEFAULT;
+    public static boolean REMOVE_TA_INTERFACE;
     
     public static HashMap<String, String> entryToReplace = new HashMap<String, String>();
 
@@ -148,6 +149,7 @@ public class GuiConstant {
                 + "\n    TA_DL_SORTBY: " + SHOW_REMOVE_FIRST
                 + "\n    TA_DL_SORTBY: " + REMOVE_FIRST_DEFAULT
                 + "\n    TA_DL_SORTBY: " + SHOW_GUI_FAST
-                + "\n    TA_DL_SORTBY: " + CHOOSE_GUI_FAST_DEFAULT;
+                + "\n    TA_DL_SORTBY: " + CHOOSE_GUI_FAST_DEFAULT
+                + "\n    REMOVE_TA_INTERFACE: " + REMOVE_TA_INTERFACE;
     }
 }

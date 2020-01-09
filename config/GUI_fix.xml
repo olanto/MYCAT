@@ -163,5 +163,7 @@
 	<entry key="SHOW_GUI_FAST">true</entry>
 	<!-- Control parameter for to choose the fast algorithm by default (from cookies)-->
 	<entry key="CHOOSE_GUI_FAST_DEFAULT">true</entry>
+	<!-- Control parameter to hide TA Interface-->
+	<entry key="REMOVE_TA_INTERFACE">false</entry>
 	
 </properties>

@@ -9,11 +9,16 @@ http://localhost:8080/TranslationText/?searchquery=global*
 
 
 
-http://localhost:8080/TranslationText?QDfile=C:/Users/simple/Desktop/TEST/reftest/HR_Declaration_EN_XXX_Refdoc.html
 
-
+-- dont put quote over the filename!!!
 
 http://localhost:8080/TranslationText?QDfile="C:/Users/simple/Desktop/TEST/reftest/HR_Declaration_EN_XXX_Refdoc.html"
 
 
 http://localhost:8080/TranslationText?QDfile=C:\Users\simple\Desktop\TEST\reftest\HR_Declaration_EN_XXX_Refdoc.html
+
+
+http://localhost:8080/TranslationText?xxx="report"
+
+
+http://localhost:8080/TranslationText?qdfile=C:/Users/simple/Desktop/TEST/reftest/HR_Declaration_EN_XXX_Refdoc.html

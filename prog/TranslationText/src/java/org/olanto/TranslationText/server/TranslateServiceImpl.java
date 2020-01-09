@@ -1263,6 +1263,7 @@ public class TranslateServiceImpl extends RemoteServiceServlet implements Transl
         CONST.CHOOSE_GUI_FAST_DEFAULT = Boolean.valueOf(prop.getProperty("CHOOSE_GUI_FAST_DEFAULT", "true"));
         CONST.SHOW_REMOVE_FIRST = Boolean.valueOf(prop.getProperty("SHOW_REMOVE_FIRST", "true"));
         CONST.REMOVE_FIRST_DEFAULT = Boolean.valueOf(prop.getProperty("REMOVE_FIRST_DEFAULT", "true"));
+        CONST.REMOVE_TA_INTERFACE = Boolean.valueOf(prop.getProperty("REMOVE_TA_INTERFACE", "false"));
 
         for (Character c : CONST.TOKENIZE_LIST.toCharArray()) {
             charList.add(c);
