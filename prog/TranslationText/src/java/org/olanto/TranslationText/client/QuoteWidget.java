@@ -407,7 +407,7 @@ public class QuoteWidget extends Composite {
         headerPanel.add(prev);
         headerPanel.add(next);
         headerPanel.add(refIndic);
-        if (GuiConstant.REMOVE_TA_INTERFACE) {
+        if (!GuiConstant.REMOVE_TA_INTERFACE) {
             headerPanel.add(TextAligner);
         }
         headerPanel.add(help);
