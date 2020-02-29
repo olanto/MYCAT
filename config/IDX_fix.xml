@@ -82,7 +82,7 @@
     <entry key="------OBJ_ROOT_7"></entry>
 	
 	 <!--Supported languages (they appear in the GUI drop menus in the following order:) -->
-     <entry key="ROOT_CORPUS_LANG">EN FR DE BG CS DA EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH FA</entry>
+     <entry key="ROOT_CORPUS_LANG">EN FR DE BG CS DA EL ES ET FI GA HU IT LT LV MT NL PL PT RO SK SL SV AR RU ZH FA JP</entry>
 	 
 	 <!--Limit marks and highlight parameters for the Quote Detector -->
 	 <entry key="OPEN_REF_BEG">&lt;FONT style="BACKGROUND-COLOR: yellow">[R</entry>

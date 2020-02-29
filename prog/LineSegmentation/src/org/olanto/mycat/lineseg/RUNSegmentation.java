@@ -89,6 +89,12 @@ public class RUNSegmentation {
         if (s.equals("EN")) {
             return "ENGLISH";
         }
+        if (s.equals("PT")) {
+            return "PORTUGUESE";
+        }
+        if (s.equals("JP")) {
+            return "JAPANESE";
+        }
         return "???";
     }
 }

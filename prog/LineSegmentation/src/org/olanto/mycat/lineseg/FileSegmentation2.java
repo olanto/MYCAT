@@ -86,6 +86,9 @@ public class FileSegmentation2 {
         if (_language.equals("PORTUGUESE")) {
             boundary = BreakIterator.getSentenceInstance(new ULocale("pt"));
         }
+        if (_language.equals("JAPANESE")) {
+            boundary = BreakIterator.getSentenceInstance(ULocale.JAPANESE);
+        }
     }
 
     public static long getLastModified(String path) {
@@ -136,6 +139,10 @@ public class FileSegmentation2 {
                     s = s.trim();
                     if (!s.equals("")) {
                         if (language.equals("CHINESE")) {
+                            //System.out.println("add-space");
+                            s = stringManip.addSpace(s);
+                        }
+                        if (language.equals("JAPANESE")) {
                             //System.out.println("add-space");
                             s = stringManip.addSpace(s);
                         }
