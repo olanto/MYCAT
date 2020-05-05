@@ -71,7 +71,7 @@ public class ContentServlet extends HttpServlet {
         if ((filename.toLowerCase().endsWith(".txt")) || (filename.endsWith(ext))) { // charge sous forme de txt
             String content = new String(getBytesFormServer(filename), StandardCharsets.UTF_8);
             response.getWriter().write(cleanConvertedFile(addMissingIds(content)));
-            System.out.println("File converted successfully ");
+            System.out.println("File converted successfully(1)");
         } else if (filename.toLowerCase().endsWith(".xml")) { // extract html from xml ref doc if it starts with <QD>
             String content = new String(getBytesFormServer(filename), StandardCharsets.UTF_8).replace("Â", "");
             if (content.startsWith("<QD>")) {
@@ -81,12 +81,12 @@ public class ContentServlet extends HttpServlet {
             } else {
                 // need conversion
                 response.getWriter().write(cleanConvertedFile(convertFileWithRMI(getBytesFormServer(filename), filename)));
-                System.out.println("File converted successfully");
+                System.out.println("File converted successfully (2)");
             }
         } else {
             // need conversion
             response.getWriter().write(cleanConvertedFile(convertFileWithRMI(getBytesFormServer(filename), filename)));
-            System.out.println("File converted successfully");
+            System.out.println("File converted successfully (3)");
         }
     }
 

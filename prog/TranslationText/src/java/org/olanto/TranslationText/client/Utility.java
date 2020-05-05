@@ -450,7 +450,7 @@ public class Utility {
     }
 
     public static boolean isCJKChar(char s) {
-        if ((s > 0x4E00) && (s < 0x9FFF)) {
+        if ((s > 0x3000) && (s < 0x9FFF)) {
             return true;
         }
         return false;

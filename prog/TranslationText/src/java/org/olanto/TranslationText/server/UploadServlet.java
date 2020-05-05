@@ -76,12 +76,13 @@ public class UploadServlet extends UploadAction {
                         } else {
                             // need conversion
                             response += cleanConvertedFile(convertFileWithRMI(item.get(), item.getName()));
-                            System.out.println("File converted successfully");
+                            System.out.println("File converted successfully (4)");
                         }
                     } else {
                         // need conversion
                         response += cleanConvertedFile(convertFileWithRMI(item.get(), item.getName()));
-                        System.out.println("File converted successfully");
+                        System.out.println("File converted successfully (5)");
+//                      System.out.println("uploaded file:"+response);
                     }
                 } catch (Exception ex2) {
                     _logger.error(ex2);

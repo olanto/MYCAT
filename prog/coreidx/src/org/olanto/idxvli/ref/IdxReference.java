@@ -329,7 +329,7 @@ public class IdxReference {
         for (int i = 0; i < s.length(); i++) {
             res.append(s.charAt(i));
             int v = s.charAt(i);
-            if ((v >= 0x4e00 && v <= 0x9FFF) // unified ideographs
+            if ((v >= 0x3000 && v <= 0x9FFF) // unified ideographs +japanese
                     || (v >= 0x3400 && v <= 0x4DFF) // extension A  
                     || (v >= 0x3400 && v <= 0x4DFF) // extension A  
                     || (v >= 0x20000 && v <= 0x2a6df) // extension A  
