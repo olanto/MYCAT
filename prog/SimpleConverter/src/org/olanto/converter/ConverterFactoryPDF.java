@@ -29,8 +29,8 @@ import java.io.Writer;
 import java.nio.charset.Charset;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.PDFText2HTML;
-import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.tools.PDFText2HTML;
+import org.apache.pdfbox.text.PDFTextStripper;
 
 /**
  * pour les PDF.
@@ -79,9 +79,9 @@ public class ConverterFactoryPDF extends AbstractConverterFactory {
             PDFTextStripper stripper = null;
             if (outputFormat.equalsIgnoreCase(Constants.HTML)
                     || outputFormat.equalsIgnoreCase(Constants.HTM)) {
-                stripper = new PDFText2HTML(fixEncoding);
+                stripper = new PDFText2HTML();
             } else if (outputFormat.equalsIgnoreCase(Constants.TXT)) {
-                stripper = new PDFTextStripper(fixEncoding);
+                stripper = new PDFTextStripper();
             } else {
                 _logger.warn("Could not convert PDF file to " + outputFormat);
             }
