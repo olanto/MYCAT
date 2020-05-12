@@ -84,7 +84,7 @@ public abstract class ConverterFactoryOffice extends AbstractConverterFactory {
                 process = new LinuxProcessManager();
                 System.out.println("Linux Platform.");
             } else {
-                process = new SigarProcessManager();
+                //process = new SigarProcessManager();
                 System.out.println("Non-Linux Platform.");
             }
             ProcessQuery query = new ProcessQuery("soffice.*", "socket,host=127.0.0.1,port=2002");
