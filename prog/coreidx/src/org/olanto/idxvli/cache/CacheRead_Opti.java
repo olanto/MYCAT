@@ -19,15 +19,13 @@ along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
  **********/
 package org.olanto.idxvli.cache;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.*;
 import org.olanto.idxvli.*;
 import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.idxvli.util.SetOperation.*;
 import static org.olanto.idxvli.IdxConstant.*;
-
+import org.olanto.util.TimerNano;
 /**
  * Cette classe est une quasi implémentation de CacheRead.
  * 
@@ -393,6 +391,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     /** doit �tre appel�e depuis mark qui est prot�g� */
     private final void load(int wordid, UsageMark _usage) {
         loadAsk++;
+//        TimerNano t1=new TimerNano("load index for:"+wordid,false);
         switch (_usage) {
             case BASIC:
                 basicLoad(wordid);
@@ -407,7 +406,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
                 error_fatal("Unknow usage:" + _usage.name());
                 break;
         }
-
+//t1.stop(false);
     }
 
     /** doit �tre appel�e depuis mark qui est prot�g� */

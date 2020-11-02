@@ -75,7 +75,7 @@ public class Okapi implements KNNManager {
      * @param formulaIDF inverse document frequency formula.
      */
     public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose,
-            int formulaIDF, int _formulaTF) {
+            int formulaIDF, int _formulaTF, float _offset) {
         Timer t1 = null;
         glue = _glue;
         lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incr�mentale
@@ -126,6 +126,9 @@ public class Okapi implements KNNManager {
 
     public final synchronized void showKNNWithName(int[][] res) {
         error("not implemented");
+    }
+      public final void showKNNWithContent(int[][] res) {
+        error("not implemented");     
     }
 
     /** Chercher les N premiers voisins du texte request, sans formattage.

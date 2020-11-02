@@ -63,8 +63,8 @@ public class TESTKNNMode_1 {
                 50, // Max en o/oo d'apparition dans le corpus (par mille!)
                 true, // montre les dï¿½tails
                 1, // formule IDF (1,2)
-                1 // formule TF (1,2,3) toujours 1
-                );
+                1, // formule TF (1,2,3) toujours 1
+                0.005f);
         t2.stop();
 
         test("telecomunication wifi computer", 10);
@@ -86,8 +86,8 @@ public class TESTKNNMode_1 {
                 50, // Max en o/oo d'apparition dans le corpus (par mille!)
                 true, // montre les dï¿½tails
                 1, // formule IDF (1,2)
-                1 // formule TF (1,2,3) toujours 1
-                );
+                1, // formule TF (1,2,3) toujours 1
+                0.005f);
         t2.stop();
 
         test("telecomunication wifi computer", 10);

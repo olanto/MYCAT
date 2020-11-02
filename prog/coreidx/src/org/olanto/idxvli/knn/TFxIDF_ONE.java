@@ -54,7 +54,21 @@ public class TFxIDF_ONE implements KNNManager {
     private static int[] topdoc;
     private static boolean verbose;
     private static boolean[] KNNFilter;
+    private static float offset = 0.0005f; // must be set for each collection !!
 
+    /**
+     * @return the offset
+     */
+    public static float getOffset() {
+        return offset;
+    }
+
+    /**
+     * @param aOffset the offset to set
+     */
+    public static void setOffset(float aOffset) {
+        offset = aOffset;
+    }
     /** cr�e une classe pour les recheches KNN*/
     public TFxIDF_ONE() {
     }
@@ -72,9 +86,11 @@ public class TFxIDF_ONE implements KNNManager {
      *       2 -> ln(N/f(t)-1)
      * @param formulaTF toujours � 1. (ce param�tre est purement formel, pour des raisons de compatibilit�)
      */
-    public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF) {
+    public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF, float _offset) {
         Timer t1 = null;
+        offset=_offset;
         glue = _glue;
+        
         lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incr�mentale
 
         lastword = glue.lastUpdatedWord; // ??? plus possible ???   il faut un initialisation incr�mentale
@@ -185,7 +201,11 @@ public class TFxIDF_ONE implements KNNManager {
         }
         DoParse a = new DoParse(request, glue.dontIndexThis);
         int[] requestDB = a.getDocBag(glue); // get the docBag of the request
-        //id.showVector(requestDB);
+//        if (verbose) {
+//            for (int i=0;i<requestDB.length;i++){
+//                System.out.println("parse w"+requestDB[i]+": "+glue.getStringforW(requestDB[i]/10));
+//            }
+//        }
 
         if (verbose) {
             t1.stop();
@@ -202,7 +222,9 @@ public class TFxIDF_ONE implements KNNManager {
         if (verbose) {
             t1 = new Timer("sorting KNN:");
         }
-        int[][] knndoc = topNDoc(N);
+//        int[][] knndoc = topNDoc(N); 
+        int[][] knndoc = boostedTopNDoc (N);
+        
         //id.showVector(knndoc);
         if (verbose) {
             t1.stop();
@@ -252,6 +274,17 @@ public class TFxIDF_ONE implements KNNManager {
         }
     }
 
+      /** visualiser le résultat d'une réponse knn
+     * @param res Résultat d'une requête KNN (getKNN)
+     */
+    public final void showKNNWithContent(int[][] res) {
+        for (int i = 0; i < res.length; i++) {
+            System.out.println(i + ":" + glue.getFileNameForDocument(res[i][0]) + "/" + res[i][1]+
+                    "\n"+glue.getDoc(res[i][0]));
+        }
+    }
+ 
+    
     /** Chercher les N premiers voisins du texte request
      * @param request texte de r�f�rence
      * @param N nombre de voisins
@@ -297,21 +330,22 @@ public class TFxIDF_ONE implements KNNManager {
 
             int wordinDB = docbag[i] / DocBag.MAXOCCINDOC;
             if (KNNFilter[wordinDB]) {  // pas filtr�
-                //System.out.println("knn word "+wordinDB+" - "+glue.getStringforW(wordinDB));
+                System.out.println("knn word "+wordinDB+" - "+glue.getStringforW(wordinDB));
 
-                int weightinDB = docbag[i] % DocBag.MAXOCCINDOC;
-                glue.indexread.lockForBasic(wordinDB);  // prot�ge l'utilisation du mot
+               // int weightinDB = docbag[i] % DocBag.MAXOCCINDOC; not used
+                
+                glue.indexread.lockForBasic(wordinDB);  // protège l'utilisation du mot
 
                 int[] doc = glue.indexread.getReferenceOnDoc(wordinDB);
 
-                //    int lastwi = glue.indexread.getNbDoc(wordinDB); // # doc poss�dant le mot i
-                int lastwi = doc.length;
-                //System.out.println("# doc "+lastwi);
+                //System.out.println("# doc by method:"+glue.indexread.getNbDoc(wordinDB)); // # doc poss�dant le mot i
+                int lastwi = doc.length/2;
+                System.out.println("# doc by legnth:"+lastwi);
 
 
                 for (int j = 0; j < lastwi; j++) { // pour chaque document commun de ce mot i
                     //  cumul[indexread.vDoc(wordinDB, j)] += wt[wordinDB];
-
+                    //System.out.println("# doc["+j+"] "+doc[j]);  
                     cumul[doc[j]] += wt[wordinDB];
                     wdb += 1;
                 }
@@ -384,7 +418,8 @@ public class TFxIDF_ONE implements KNNManager {
 
     private final static int[][] boostedTopNDoc(int n) { // must be optimise !!!
 
-        final float offset = 0.0005f; // must be set for each collection !!
+  //      final float offset = 0.0005f; // must be set for each collection !!
+
 
         int[][] res = new int[n][2];
         for (int j = 0; j < n; j++) {
@@ -395,6 +430,7 @@ public class TFxIDF_ONE implements KNNManager {
         for (int i = 1; i < lastdoc; i++) { // for each document
 
             if (cumul[i] > offset) {
+//                System.out.println("debug cumul["+i+"]="+cumul[i]);
                 topdoc[nonzero] = i;
                 nonzero++;
             }

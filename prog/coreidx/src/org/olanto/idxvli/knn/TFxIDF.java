@@ -60,7 +60,7 @@ public class TFxIDF implements KNNManager {
     private static int[][] wi;
     private static float[] cumul;
     static boolean verbose;
-
+    private static int[] topdoc;
     /** cr�e une classe pour les recheches KNN*/
     public TFxIDF() {
     }
@@ -75,7 +75,7 @@ public class TFxIDF implements KNNManager {
      * @param formulaIDF inverse document frequency formula.
      */
     public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose,
-            int formulaIDF, int _formulaTF) {
+            int formulaIDF, int _formulaTF, float _offset) {
         Timer t1 = null;
         glue = _glue;
         lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incr�mentale
@@ -114,7 +114,7 @@ public class TFxIDF implements KNNManager {
      * @param N nombre de voisins
      * @return r�ponse
      */
-    public final int[][] getKNNForDoc(int doc, int N) {
+ public final int[][] getKNNForDoc(int doc, int N) {
         error("not implemented");
         return null;
     }
@@ -126,25 +126,27 @@ public class TFxIDF implements KNNManager {
 
     public final synchronized void showKNNWithName(int[][] res) {
         error("not implemented");
+        }
+      public final void showKNNWithContent(int[][] res) {
+        error("not implemented");     
     }
-
     /** Chercher les N premiers voisins du texte request, sans formattage.
      * @param doc id doc
      * @param N nombre de voisins
      * @return r�ponse
      */
     public final KNNResult KNNForDoc(int doc, int N) {
-        error("not implemented");
+        error("not implemented KNNForDoc");
         return null;
     }
 
     public final KNNResult getKNNinTopic(int[] topic, String request, int N) {
-        error("not implemented");
+        error("not implemented getKNNinTopic");
         return null;
     }
 
     public final KNNResult getKNN1(String request, int N) {
-        error("not implemented");
+        error("not implemented getKNN1");
         return null;
     }
 

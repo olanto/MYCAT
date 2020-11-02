@@ -38,8 +38,9 @@ public interface KNNManager {
      * @param maxlevel maximum d'occurences  en 0/00 du corpus pour Ãªtre dans a prÃ©sÃ©lection.
      * @param formulaIDF inverse document frequency formula.
      * @param formulaTF terme frequency formula.
+     * @param offset valeur to boost the topN.
      */
-    public void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF);
+    public void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF, float offset);
 
     /** Chercher les N premiers voisins du document d, sans formattage.
      * @param doc document
@@ -81,6 +82,8 @@ public interface KNNManager {
     public void showKNN(int[][] res);
 
     public void showKNNWithName(int[][] res);
+    
+    public void showKNNWithContent(int[][] res);
 
     /** Chercher les N premiers voisins du texte request
      * @param request texte de rÃ©fÃ©rence

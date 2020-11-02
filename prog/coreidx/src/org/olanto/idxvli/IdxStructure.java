@@ -1032,6 +1032,17 @@ public class IdxStructure {
 
     }
 
+        public String getDoc(int docId)  {
+        if (IDX_ZIP_CACHE) {
+//           msg("Zip decompress id doc: " + docId );
+                return zipCache.get(docId+1);
+        } else {
+           error("need to set IDX_ZIP_CACHE to true");
+            return null;
+        }
+    }
+
+    
     /**
      * check if a expression is content in a document
      */

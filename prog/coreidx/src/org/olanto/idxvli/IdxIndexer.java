@@ -84,12 +84,12 @@ class IdxIndexer {
             // f.setReadOnly();  // marque le fichier en lecture seulement, mis en commentaire car ralentit
             long fdate = f.lastModified(); // date de la derniï¿½re modification
             //long fdate = f.lastModified() + (long) (100000L * Math.random()); // provoque des  modifications
-   
+
             String newName = path;
             if (FILE_RENAME) {
                 newName = renameFileForIdx(path);
             }
-            
+
             if (glue.docstable.IndexThisDocument(newName, fdate)) {
                 if (path.endsWith(".htm") || path.endsWith(".txt") || path.endsWith(".TXT") || path.endsWith(".html") || path.endsWith(".xml") || path.endsWith(".java") || path.endsWith(".sql") || path.endsWith(".lzy")) {
                     onePassIndexdoc(f, path, fdate);
@@ -111,11 +111,12 @@ class IdxIndexer {
 
     private final void onePassFastmflf(String f, long fdate) {
         // no mfl no stemming no moreinfo
-        if (IDX_ZIP_CACHE) {
-            error("FATAL ERROR: IndexThisContent cant used IDX_ZIP_CACHE=true (code need to be upgraded)...");
-            error("IDX_ZIP_CACHE must be set to false");
-            System.exit(0);
-        }
+//        if (IDX_ZIP_CACHE) {
+//                    glue.zipCache.set(glue.lastRecordedDoc, content); // enregistre le document dans le zipcache
+//            error("FATAL ERROR: IndexThisContent cant used IDX_ZIP_CACHE=true (code need to be upgraded)...");
+//            error("IDX_ZIP_CACHE must be set to false");
+//            System.exit(0);
+//        }
 
         if (WORD_USE_STEMMER) {
             error("WORD_USE_STEMMER must be set to false");
@@ -196,6 +197,10 @@ class IdxIndexer {
                         glue.docstable.setSize(glue.lastRecordedDoc, a.nbToken); // enregistre la taille du document
 
                         glue.lastRecordedDoc = glue.docstable.getCount();
+
+                        if (IDX_ZIP_CACHE) {
+                            glue.zipCache.set(glue.lastRecordedDoc, fshort+" - "+news.toString()); // enregistre le document dans le zipcache
+                        }
                     } else {
                         glue.lastRecordedDoc++;
                     }  // avance le compteur de doc quand mï¿½me
