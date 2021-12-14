@@ -595,6 +595,11 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     @Override
+    public boolean getDocumentPropertie(int docID, String properties) throws RemoteException {
+        return id.getDocumentPropertie(docID, properties);
+    }
+
+    @Override
     public void clearDocumentPropertie(int docID, String properties) throws RemoteException {
         id.clearDocumentPropertie(docID, properties);
     }

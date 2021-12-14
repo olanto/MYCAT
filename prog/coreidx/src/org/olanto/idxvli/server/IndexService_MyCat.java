@@ -428,6 +428,16 @@ public interface IndexService_MyCat extends Remote {
     public void setDocumentPropertie(int docID, String properties) throws RemoteException;
 
     /**
+     * pour retrouver une propriété associée  à un document
+     *
+     * @param docID id
+     * @param properties nom de la propiété
+     * @throws java.rmi.RemoteException
+     */
+    public boolean getDocumentPropertie(int docID, String properties) throws RemoteException;
+    
+    
+    /**
      * pour enlever une propriété à un document
      *
      * @param docID id

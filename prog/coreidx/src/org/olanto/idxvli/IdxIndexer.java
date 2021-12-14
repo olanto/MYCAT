@@ -199,7 +199,7 @@ class IdxIndexer {
                         glue.lastRecordedDoc = glue.docstable.getCount();
 
                         if (IDX_ZIP_CACHE) {
-                            glue.zipCache.set(glue.lastRecordedDoc, fshort+" - "+news.toString()); // enregistre le document dans le zipcache
+                            glue.zipCache.set(glue.lastRecordedDoc, fshort + " - " + news.toString()); // enregistre le document dans le zipcache
                         }
                     } else {
                         glue.lastRecordedDoc++;
@@ -221,6 +221,57 @@ class IdxIndexer {
             fin.close();
         } catch (IOException e) {
             error("IO error", e);
+        }
+    }
+
+    /**
+     * pour des strings individuels
+     */
+    protected final void indexThisContentNoDuplicate(String f, String content) {
+
+        int iddoc = glue.docstable.get(f);// cherche si le document existe déjà
+
+        if (!(iddoc == -1)) {
+            String idHash = glue.getFileNameForDocument(iddoc);
+            if (!idHash.equals(f)) { // real confusion
+                System.out.println(iddoc + " old:" + idHash + " new:" + f);
+            }
+        } else {
+            DoParse a = new DoParse(content, glue.dontIndexThis);
+            if (IDX_WITHDOCBAG && DO_DOCBAG) {
+                DocBag.reset();
+            } // for winnow or perceptron
+
+            if (IDX_MORE_INFO) {
+                DocSeq.reset();
+                DocPosChar.reset();
+            } // for more info ...
+
+            a.start(glue);
+            if (IDX_WITHDOCBAG && DO_DOCBAG) {
+                glue.IO.saveBag(glue.lastRecordedDoc, DocBag.compact());
+            }
+            if (IDX_MORE_INFO) {
+                glue.IO.saveSeq(glue.lastRecordedDoc, DocSeq.compact());
+                glue.IO.savePosChar(glue.lastRecordedDoc, DocPosChar.compact());
+            }
+            if (DO_DOCRECORD) {
+                glue.docstable.put(f);// enregistre le nom du document
+
+                glue.docstable.setSize(glue.lastRecordedDoc, a.nbToken); // enregistre la taille du document
+
+                if (IDX_ZIP_CACHE) {
+                    glue.zipCache.set(glue.lastRecordedDoc, content); // enregistre le document dans le zipcache
+                }
+
+                glue.lastRecordedDoc = glue.docstable.getCount();
+            } else {
+                glue.lastRecordedDoc++;
+            }  // avance le compteur de doc quand mï¿½me
+
+            if (glue.indexCoord.cacheOverFlow()) {
+                glue.indexCoord.freecache();
+            } // start saving memory
         }
     }
 

@@ -1,0 +1,108 @@
+
+force to have user/password
+---------------------------
+
+
+--> add into tomcat-users.xml
+
+
+  <role rolename="mycat"/>
+  <user username="admin" password="x" roles="mycat"/>
+  <user username="user1" password="x" roles="mycat"/>
+  <user username="user2" password="x" roles="mycat"/>
+ 
+
+--> add this into web.xml (.../TranslationText)
+
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>GET</http-method>
+			<http-method>POST</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>mycat</role-name>
+		</auth-constraint>
+
+		<user-data-constraint>
+			<!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+
+
+configure https tomcat
+----------------------
+
+
+--> modify into tomcat-users.xml
+
+uncomment this
+
+
+    <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" sslProtocol="TLS"  
+	       keystorePass="mycatx"
+	/>
+
+
+generate a key
+
+
+------>"%JAVA_HOME%\bin\keytool" -genkey -alias tomcat -keyalg RSA
+
+
+"C:\Program Files\Java\jdk1.7.0_05\bin\keytool" -genkey -alias tomcat -keyalg RSA
+
+password: mycatx
+
+
+C:\Users\simple>"C:\Program Files\Java\jdk1.7.0_05\bin\keytool" -genkey -alias t
+omcat -keyalg RSA
+Le mot de passe du fichier de clÚs est trop court : il doit comporter au moins 6
+ caractÞres
+Entrez le mot de passe du fichier de clÚs :
+Ressaisissez le nouveau mot de passe :
+Quels sont vos nom et prÚnom ?
+  [Unknown]:  jG
+Quel est le nom de votre unitÚ organisationnelle ?
+  [Unknown]:  mycat
+Quel est le nom de votre entreprise ?
+  [Unknown]:  olanto
+Quel est le nom de votre ville de rÚsidence ?
+  [Unknown]:  geneva
+Quel est le nom de votre Útat ou province ?
+  [Unknown]:  ch
+Quel est le code pays Ó deux lettres pour cette unitÚ ?
+  [Unknown]:  ch
+Est-ce CN=jG, OU=mycat, O=olanto, L=geneva, ST=ch, C=ch ?
+  [non]:  oui
+
+Entrez le mot de passe de la clÚ pour <tomcat>
+        (appuyez sur EntrÚe s'il s'agit du mot de passe du fichier de clÚs) :
+Ressaisissez le nouveau mot de passe :
+
+C:\Users\simple>
+
+
+------>copy .keystore under C:/
+
+
+keystorePass must set like "mycatx"
+tomcat Pass must set like "mycatx"
+
+
+https://localhost:8443/TranslationText/#
+
+
+--------------------------------------------
+
+add a certificate to skip the warning ... about your self key,
+

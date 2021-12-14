@@ -25,6 +25,7 @@ import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.idxvli.IdxConstant.*;
 import java.util.concurrent.locks.*;
+import org.olanto.idxvli.IdxConstant;
 
 /**
  * Comportements d'un tableau de bit[2^maxSize][fixedArraySize] Zipp� avec un cache.
@@ -57,7 +58,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
     private HashMap<Integer, SetOfBits> inMemory;
     private int countInCache = 0;
     private int countRefresh = 0;
-    private int maxInCache = 16;
+    private int maxInCache = IdxConstant.BitArrayVector_ZIP_WithCache_MAXINCACHE;  // 16 is default
     private readWriteMode RW = readWriteMode.rw;
     private int countOp = 0;
     private int countOpInCache = 0;

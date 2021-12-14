@@ -33,6 +33,8 @@ public class WildCharExpander {
     private String target;
     public static final char ITEM_START = '\n';
     public static final char ITEM_STOP = '\r';
+    public static final String ITEM_START_OPTI = "\n.* ";
+    public static final String ITEM_STOP_OPTI = " .*\r";
 
     /**
      * @return the target
@@ -45,32 +47,38 @@ public class WildCharExpander {
         target = list.toString();
     }
 
-    public String getFirstExpand(String regex) {
-//       System.out.println("---------- target size :" + target.length());
-//           System.out.println("---------- look 0 for :" + regex);
-        regex = regex.replaceAll("\\*", ".*");
-//        System.out.println("---------- look 1 for :" + regex);
-
-        regex = ITEM_START + regex + ITEM_STOP;
-////         System.out.println("---------- look 2 for :" + regex);
-        Pattern pattern = Pattern.compile(regex);
-        // Get a Matcher based on the target string. 
-        Matcher matcher = pattern.matcher(target);
-        String match = "";
-        if (matcher.find()) {
-            match = matcher.group();
-        }
-        return match;
-    }
+//    public String getFirstExpand(String regex) {
+////       System.out.println("---------- target size :" + target.length());
+////           System.out.println("---------- look 0 for :" + regex);
+//        regex = regex.replaceAll("\\*", ".*");
+////        System.out.println("---------- look 1 for :" + regex);
+//
+//        regex = ITEM_START + regex + ITEM_STOP;
+//////         System.out.println("---------- look 2 for :" + regex);
+//        Pattern pattern = Pattern.compile(regex);
+//        // Get a Matcher based on the target string. 
+//        Matcher matcher = pattern.matcher(target);
+//        String match = "";
+//        if (matcher.find()) {
+//            match = matcher.group();
+//        }
+//        return match;
+//    }
 
     public boolean Contains(String regex) {
-//       System.out.println("---------- target size :" + target.length());
-//           System.out.println("---------- look 0 for :" + regex);
-        regex = regex.replaceAll("\\*", ".*");
+//       System.out.println("---------- target size :" + target.length());           System.out.println("---------- look 0 for :" + regex);
+//        regex = regex.replaceAll("\\*", ".*");
 //        System.out.println("---------- look 1 for :" + regex);
 
-        regex = ITEM_START + regex + ITEM_STOP;
-////         System.out.println("---------- look 2 for :" + regex);
+        regex = ITEM_START_OPTI + regex + ITEM_STOP_OPTI;
+//         System.out.println("---------- look 2 for :" + regex);
+        
+//        Pattern pattern = Pattern.compile(regex);
+//        // Get a Matcher based on the target string. 
+//        Matcher matcher = pattern.matcher(target);
+        return ContainsTest(regex);
+    }
+        public boolean ContainsTest(String regex) {
         Pattern pattern = Pattern.compile(regex);
         // Get a Matcher based on the target string. 
         Matcher matcher = pattern.matcher(target);

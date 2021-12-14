@@ -85,7 +85,8 @@ public class NGramList {
         for (Iterator<String> iter = predng.ng.keySet().iterator(); iter.hasNext();) {
             String key = iter.next();
             Occurences occ = predng.ng.get(key);
-            boolean notKeep = tester.Contains("* " + key + " *");
+//           boolean notKeep = tester.Contains("* " + key + " *");
+            boolean notKeep = tester.Contains(key);
             //System.out.println("search: " + key + " find:" + notKeep + " in: " + tester.getFirstExpand("* " + key + " *"));
             if (!notKeep) {
                 newNg.put(key, occ);

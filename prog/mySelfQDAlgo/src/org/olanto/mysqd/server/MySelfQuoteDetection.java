@@ -40,7 +40,7 @@ public class MySelfQuoteDetection {
     public TermList terms; // la liste des termes parsés
     public int minFreq; // fréquence min
     public int minLength; // longueur min
-    public int maxLength = Integer.MAX_VALUE; // longueur max
+    public int maxLength = 10000 ; //Integer.MAX_VALUE; // longueur max
     public List<NGramList> ngl; // Liste des listes de ngram
     public static final String MARKBREAK = "éééêèèè";
     public static boolean removeBREAK = false;
@@ -106,7 +106,7 @@ public class MySelfQuoteDetection {
             ngl.add(current);
             //System.out.println("record level:" + currentlevel);
             if (verbose) {
-                System.out.println("record level:" + currentlevel);
+                System.out.println("record level:" + currentlevel+ " < "+ maxLength);
             }
             currentlevel++;
             current = computeNextNGL(terms, current, currentlevel, minFreq);
@@ -131,7 +131,7 @@ public class MySelfQuoteDetection {
         while (current.size() > 0) { //&& currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
             ngl.add(current);
             if (verbose) {
-                System.out.println("record level:" + currentlevel);
+                System.out.println("record level:" + currentlevel+ " < "+ maxLength);
             }
             currentlevel++;
             current = computeNextNGL(terms, current, currentlevel, minFreq);
@@ -151,16 +151,16 @@ public class MySelfQuoteDetection {
         terms = new TermList(toBeProcess); // cherche la liste des termes
         System.out.println("Nbr terms:" + terms.size());
         if (verbose) {
-            terms.show();
+            //terms.show();
         }
         ngl = new Vector<NGramList>();
         initFirstNGL(terms, minLength, minFreq);
         NGramList current = initFirstNGL(terms, minLength, minFreq);  // init
         int currentlevel = minLength;
-        while (current.size() > 0) { // calcul tous les set jusqu a épuissement
+        while (current.size() > 0 && currentlevel<maxLength) { // calcul tous les set jusqu a épuissement
             ngl.add(current);
             if (verbose) {
-                System.out.println("record level:" + currentlevel);
+                System.out.println("(BATCH) record level:" + currentlevel+ " < "+ maxLength);
             }
             currentlevel++;
             current = computeNextNGL(terms, current, currentlevel, minFreq);

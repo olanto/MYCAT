@@ -21,6 +21,7 @@
 package org.olanto.idxvli.util;
 
 import java.io.*;
+import org.olanto.idxvli.IdxConstant;
 import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 import static org.olanto.idxvli.IdxEnum.*;
@@ -32,7 +33,7 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public class ByteArrayVector_OnDisk implements ByteArrayVector {
 
-    static final int minInit = 128;  // nbr de blocs pour l'initialisation
+    static final int minInit = IdxConstant.ByteArrayVector_OnDisk_MININIT;  // nbr de blocs pour l'initialisation
     /* constantes d'un gestionnaire du dictionaire -------------------------------------- */
     static final String SOFT_VERSION = "ByteArrayVector_InMemory 2.1";
     /* variables du gestionnaire  -------------------------------------- */
@@ -107,6 +108,16 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
 
     private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
         // alloue la totalit� a l'initialisation
+        System.out.println("---------debug properties");
+        
+        System.out.println("pathName: "+pathName);
+        System.out.println("fileName: "+fileName);
+        System.out.println("fixedArraySize: "+fixedArraySize);
+        System.out.println("fixedDiskSize: "+fixedDiskSize);
+        System.out.println("size: "+size);
+        System.out.println("minInit * fixedDiskSize: "+minInit * fixedDiskSize);
+        
+        
         byte[] b = new byte[minInit * fixedDiskSize];
         for (int i = 0; i < size / minInit; i++) {
             writeBytes(b, (long) i * (long) b.length, rdoc); // marque vide
@@ -118,7 +129,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
             if (RW == readWriteMode.rw) {
                 FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
                 ObjectOutputStream p = new ObjectOutputStream(ostream);
-                p.writeObject(VERSION); // �crire les flags
+                p.writeObject(VERSION); // écrire les flags
                 p.writeInt(size);
                 p.writeInt(fixedArraySize);
                 p.writeInt(fixedDiskSize);

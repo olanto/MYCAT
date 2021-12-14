@@ -388,6 +388,18 @@ public class IdxStructure {
         Indexer.IndexThisContent(fname, content);
     }
 
+      /**
+     * Index ce contenu avec cet identifiant.
+     *
+     * @param fname identifiant
+     * @param content contenu � indexer
+     */
+    public final void indexThisContentNoDuplicate(String fname, String content) {
+        Indexer.indexThisContentNoDuplicate(fname, content);
+    }
+
+    
+    
     /**
      * sauvegarder les donn�es encore dans les caches de l'index
      */
@@ -682,15 +694,20 @@ public class IdxStructure {
             // zone prot�g�e
             int r1[] = indexread.getReferenceOnDoc(n1);
             int il1 = indexread.getNbDoc(n1);
+            
+//           int[] postot = indexread.getvPos(n1, indexread.vDoc(n1, 0 * VEC + il1), indexread.vDoc(n1, 0 * OCC + il1));
+           int[] postot = indexread.getvPos(n1, 0, 20);
             if (verbose) {
                 msg("indexdoc:" + il1 + " #n1:" + n1);
-                //showVector(r1);
+                showVector(r1);
+                showVector(postot);
             }
             for (int i = 0; i < il1; i++) {
-                //msg(" doc:"+r1[i]+", n1:"+n1+", i:"+i);
+                msg(" doc:"+r1[i]+", n1:"+n1+", i:"+i);
                 int[] pos = getWposition(n1, i);
-                //msg ("doc:"+r1[i]);showVector(pos);
+                msg ("doc:"+r1[i]);showVector(pos);
                 int prevVal = -1;
+                
                 for (int j = 0; j < pos.length; j++) {
                     if (pos[j] <= prevVal) {
                         msg("integrity failure:" + w + " doc:" + r1[i] + " pos:" + pos[j] + "<=:" + prevVal);
@@ -861,6 +878,7 @@ public class IdxStructure {
         return docstable.satisfyThisProperty(properties);
     }
 
+    
     /**
      * �limine tous les documents satisfaisants une propri�t�
      *
@@ -883,6 +901,19 @@ public class IdxStructure {
 
     }
 
+       /**
+     * rapporter la valeur de la propriété
+     *
+     * @param docID identifiant
+     * @param properties nom de la propriété
+     */
+    public boolean getDocumentPropertie(int docID, String properties) {
+        return docstable.getPropertie(docID, properties);
+
+    }
+
+    
+    
     /**
      * �liminer une propri�t� pour un document
      *

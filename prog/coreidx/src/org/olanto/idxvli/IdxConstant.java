@@ -37,13 +37,9 @@ import org.olanto.idxvli.server.PreProcessingService_Default;
 public class IdxConstant {
 
     public static final String VERSION = "3.2.3";
-    
     public static String REGEX_EXACT_BEFORE_TOKEN = "([^\\p{L}\\p{N}]|^)";
-    
     public static String REGEX_EXACT_AFTER_TOKEN = "([^\\p{L}\\p{N}]|$)";
-    
     public static boolean FULL_LOAD = true; // // évite de charger les doc et les idx for classification
-    
     public static boolean CHECK_CONSISTENT = false;
     // constante pour être compatible avec la version du classifieur
     /**
@@ -56,6 +52,11 @@ public class IdxConstant {
      * nom du fichier pour les documents non-indexables
      */
     public static String IDX_XML_ORGANISATION_TEMPLATE = "C:/MYCAT/config/organisation_template.xml";
+    // ------------------------------------------------------------------- 
+    // valeurs pour des structures de bas niveaux 
+    // les valeurs sont celles par défaut de ces strucrures
+    public static int BitArrayVector_ZIP_WithCache_MAXINCACHE = 16;
+    public static int ByteArrayVector_OnDisk_MININIT = 128;
     // -------------------------------------------------------------------   
 
     /* LOGGER DEFINITION */
@@ -174,7 +175,7 @@ public class IdxConstant {
     public static int MAX_CITATION = 100;
     public static int MAX_RESPONSE = 1000;
     public static int MAX_QUERY_IN_CACHE = 1000;  //taille en byte approx MAX_QUERY_IN_CACHE*WINDOW_SIZE*2*1000 ?
-   public static boolean CACHE_QUERY = true;  // active cacheQuery
+    public static boolean CACHE_QUERY = true;  // active cacheQuery
     /**
      * **********************************************************************************
      */
@@ -219,7 +220,7 @@ public class IdxConstant {
      * modification du nom du fichier
      */
     public static String SEPARATOR = "¦";
-   /**
+    /**
      * modification du nom du fichier
      */
     public static boolean FILE_RENAME = false;
@@ -227,19 +228,19 @@ public class IdxConstant {
      * modification du nom des collections
      */
     public static RenameOption FILE_COLLECTION_CASE = RenameOption.NOCHANGE;
-   /**
+    /**
      * modification du nom du fichier
      */
     public static RenameOption FILE_NAME_CASE = RenameOption.NOCHANGE;
-     /**
+    /**
      * modification du nom du fichier
      */
     public static RenameOption FILE_EXTENTION_CASE = RenameOption.NOCHANGE;
-        public static String GLOSS_NAME = "Glossaries";
+    public static String GLOSS_NAME = "Glossaries";
     /**
      * adding a parameter to modify the order_by_name
      */
-        public static boolean GLOSS_FIRST_IN_LIST = true;
+    public static boolean GLOSS_FIRST_IN_LIST = true;
     /**
      * sauvegarde des positions
      */
@@ -365,7 +366,7 @@ public class IdxConstant {
      * facteur de compression esp�r�, utilis� dans les impl�mentations BIG, !
      * allocation fixe
      */
-    public static  int HOPE_COMPRESSION = 64;
+    public static int HOPE_COMPRESSION = 64;
     /**
      * maximum en cache, utilis� dans les impl�mentations BIG, ! allocation fixe
      */
@@ -478,11 +479,11 @@ public class IdxConstant {
      * longueur max des check pour les reférences trouvées
      */
     public static int REALREF_MAX_CHECK = 12;
-     /**
+    /**
      * longueur max des check pour les reférences trouvées
      */
     public static int REF_MAX_THREAD = 4;
-   /**
+    /**
      * search expression are insensitive by default
      */
     public static boolean DOCNAME_BROWSE_INSENSITIVE = true;
@@ -667,7 +668,7 @@ public class IdxConstant {
                 + "\n    IDX_MORE_INFO: " + IDX_MORE_INFO
                 + "\n    IDX_CONCEPTUAL: " + IDX_CONCEPTUAL
                 + "\n    IDX_ZIP_CACHE: " + IDX_CONCEPTUAL
-               + "\n     FULL_LOAD: " + FULL_LOAD
+                + "\n     FULL_LOAD: " + FULL_LOAD
                 + "\nSTRATEGIES"
                 + "\n    DOC_IMPLEMENTATION: " + DOC_IMPLEMENTATION
                 + "\n         DOC_MAX: " + DOC_MAX
@@ -740,34 +741,46 @@ public class IdxConstant {
      */
     public static void openLogger() {
         // initialisation du logger
-        try {
-            // logfile est de type append ou replace
-            handler_COMLOG = new FileHandler(COMLOG_FILE, COMLOG_APPEND);
-            if (COMLOG_FORMAT_XML) {
-                handler_COMLOG.setFormatter(new XMLFormatter());
-            } else {
-                handler_COMLOG.setFormatter(new SimpleFormatter());
-            }
+       
+            try {
+                if (COMLOG != null) {
+                    COMLOG.removeHandler(handler_COMLOG);
+                    handler_COMLOG.close();
+                }
+                // logfile est de type append ou replace
+                handler_COMLOG = new FileHandler(COMLOG_FILE, COMLOG_APPEND);
+                if (COMLOG_FORMAT_XML) {
+                    handler_COMLOG.setFormatter(new XMLFormatter());
+                } else {
+                    handler_COMLOG.setFormatter(new SimpleFormatter());
+                }
 
-            // Add to the desired logger
-            COMLOG = Logger.getLogger("common log for VLI");
-            COMLOG.addHandler(handler_COMLOG);
-        } catch (Exception e) {
-            error("append during open log file", e);
-        }
-        COMLOG.info("OPEN Log File ---------------------------------------------------------");
-        try {
-            handler_DETLOG = new FileHandler(DETLOG_FILE, DETLOG_APPEND);
-            if (DETLOG_FORMAT_XML) {
-                handler_DETLOG.setFormatter(new XMLFormatter());
-            } else {
-                handler_DETLOG.setFormatter(new SimpleFormatter());
+                // Add to the desired logger
+                COMLOG = Logger.getLogger("common log for VLI");
+                COMLOG.addHandler(handler_COMLOG);
+            } catch (Exception e) {
+                error("append during open log file", e);
             }
-            DETLOG = Logger.getLogger("detail log for VLI");
-            DETLOG.addHandler(handler_DETLOG);
-        } catch (Exception e) {
-            error("append during open log file", e);
-        }
+        
+        COMLOG.info("OPEN Log File ---------------------------------------------------------");
+        
+            try {
+                 if (DETLOG != null) {
+                    DETLOG.removeHandler(handler_DETLOG);
+                    handler_DETLOG.close();
+                }
+                handler_DETLOG = new FileHandler(DETLOG_FILE, DETLOG_APPEND);
+                if (DETLOG_FORMAT_XML) {
+                    handler_DETLOG.setFormatter(new XMLFormatter());
+                } else {
+                    handler_DETLOG.setFormatter(new SimpleFormatter());
+                }
+                DETLOG = Logger.getLogger("detail log for VLI");
+                DETLOG.addHandler(handler_DETLOG);
+            } catch (Exception e) {
+                error("append during open log file", e);
+            }
+        
         DETLOG.info("OPEN Log File ---------------------------------------------------------");
 
     }

@@ -44,10 +44,12 @@ public class TestFromFile {
 
 //        String FN = "C:/MYCAT/test/bug/Final_Act_FR.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/bug/Final_Act_FR.doc.res.html");
-        String FN = "C:/Users/simple/Desktop/TEST/termsAndConditions/facebook.html";
-      // String FN = "C:/Users/simple/Desktop/TEST/testmyparse/unquart.txt";
-     // String FN = "C:/Users/simple/Desktop/TEST/testmyparse/small.txt";
-        test(FN, 2, 3, FN+".html");
+ //        String FN = "C:/Users/simple/Desktop/TEST/termsAndConditions/facebook.html";
+  //    String FN = "C:/Users/simple/Desktop/TEST/testmyparse/big.txt";
+   //   String FN = "C:/Users/simple/Desktop/TEST/testmyparse/bugfebparsedoc.docx.txt";
+      String FN = "C:/Users/simple/Desktop/TEST/testmyparse/unquart.txt";
+   //   String FN = "C:/Users/simple/Desktop/TEST/testmyparse/small.txt";
+        test(FN, 3, 9, FN+".html");
 //        String FN = "C:/MYCAT/test/G245-UTF8.html";
 //        test(FN, 2, 6, "C:/MYCAT/test/G245-UTF8.res.html");
 //              String FN = "C:/MYCAT/test/test simple.html";

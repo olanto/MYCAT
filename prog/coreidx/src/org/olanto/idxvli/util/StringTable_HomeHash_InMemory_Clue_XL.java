@@ -1,23 +1,24 @@
-/**********
-    Copyright © 2010-2012 Olanto Foundation Geneva
-
-   This file is part of myCAT.
-
-   myCAT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as
-    published by the Free Software Foundation, either version 3 of
-    the License, or (at your option) any later version.
-
-    myCAT is distributed in the hope that it will be useful, but
-    WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-    See the GNU Affero General Public License for more details.
-
-    You should have received a copy of the GNU Affero General Public License
-    along with myCAT.  If not, see <http://www.gnu.org/licenses/>.
-
-**********/
-
+/**
+ * ********
+ * Copyright © 2010-2012 Olanto Foundation Geneva
+ *
+ * This file is part of myCAT.
+ *
+ * myCAT is free software: you can redistribute it and/or modify it under the
+ * terms of the GNU Affero General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * myCAT is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+ * A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with myCAT. If not, see <http://www.gnu.org/licenses/>.
+ *
+ *********
+ */
 package org.olanto.idxvli.util;
 
 import java.io.*;
@@ -25,9 +26,9 @@ import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 
 /**
- * gestionaire de mots g�r� sur disque avec des IO Map avec 2 hash (stock� dans un long).
- * <p>
- * 
+ * gestionaire de mots g�r� sur disque avec des IO Map avec 2 hash (stock� dans
+ * un long). <p>
+ *
  *
  * <p>
  */
@@ -38,44 +39,65 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     static final int minSize = 10;  // 2^n; taille des blocs d'initialisation
     static final String ENCODE = "UTF-8";   // encodage utilis�
     /* variables d'un gestionnaire du dictionaire -------------------------------------- */
-    /** definit la version */
+    /**
+     * definit la version
+     */
     String VERSION;
-    /** definit le nom g�n�rique des fichiers */
+    /**
+     * definit le nom g�n�rique des fichiers
+     */
     String GENERIC_NAME;
-    /** definit le path pour l'ensemble des fichiers d�pendant de ce Dictionnaire */
+    /**
+     * definit le path pour l'ensemble des fichiers d�pendant de ce Dictionnaire
+     */
     String pathName;
-    /** definit le fichier */
+    /**
+     * definit le fichier
+     */
     String idxName;
     private int lengthString = 128;  // longueur fixe occup�e par un String
     private int maxSize = 12; //  2^n;
     private int comp32 = 32 - maxSize;
     private int utilSize = (int) Math.pow(2, maxSize) - 1;
     private long collision = 0;
-    /** nbr de mots actuellement dans le dictionnaire */
+    /**
+     * nbr de mots actuellement dans le dictionnaire
+     */
     private int count = 0;
-    /** fichier associ� avec les documents */
+    /**
+     * fichier associ� avec les documents
+     */
     private RandomAccessFile rdoc;
     private LongVector hdocclue; // on stock un indice pour �viter de lire le string
 
     public StringTable_HomeHash_InMemory_Clue_XL() {
     }
 
-    /**  cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu� par le path */
+    /**
+     * cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu�
+     * par le path
+     */
     public final StringRepository create(String _pathName, String _idxName, int _maxSize, int _lengthString) {
         return (new StringTable_HomeHash_InMemory_Clue_XL(_pathName, _idxName, "ext", _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path */
+    /**
+     * ouvre un gestionnaire de mots � l'endroit indiqu� par le _path
+     */
     public final StringRepository open(String _path, String _idxName) {
         return (new StringTable_HomeHash_InMemory_Clue_XL(_path, _idxName));
     }
 
-    /** cr�er une nouvelle instance de StringTable*/
+    /**
+     * cr�er une nouvelle instance de StringTable
+     */
     private StringTable_HomeHash_InMemory_Clue_XL(String _pathName, String _idxName, String _generic_name, int _maxSize, int _lengthString) {
         createStringTable_HomeHash_InMemory_Clue_XL(_pathName, _idxName, _generic_name, _maxSize, _lengthString);
     }
 
-    /** cr�er une nouvelle instance de StringTable � partir des donn�es existantes*/
+    /**
+     * cr�er une nouvelle instance de StringTable � partir des donn�es existantes
+     */
     private StringTable_HomeHash_InMemory_Clue_XL(String _pathName, String _idxName) {  // recharge un gestionnaire
         pathName = _pathName;
         idxName = _idxName;
@@ -193,14 +215,17 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
         msg("collision: " + collision);
     }
 
-    /**  ferme un gestionnaire de mots  (et sauve les modifications*/
+    /**
+     * ferme un gestionnaire de mots (et sauve les modifications
+     */
     public final void close() {
         saveMasterFile();
         msg("--- StringTable is closed now ");
     }
 
-    /**  ajoute un terme au gestionnaire retourne le num�ro du terme, retourne EMPTY s'il y a une erreur,
-     * retourne son id s'il existe d�ja
+    /**
+     * ajoute un terme au gestionnaire retourne le num�ro du terme, retourne
+     * EMPTY s'il y a une erreur, retourne son id s'il existe d�ja
      */
     public final int put(String w) {
         //  msg(w);
@@ -271,25 +296,35 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     private final int clueHash(String s) {  // ok
         String s1 = s;
         if (s.length() > 1) {
-            s1 = s.substring(1) + s.substring(0, 1);
+            if (s.length() > 10) {
+                s1 = s.substring(10) + s.substring(0, 10);
+            } else {
+                s1 = s.substring(1) + s.substring(0, 1);
+            }
         }
         // msg(s+","+s1);
         return s1.hashCode();
     }
 
-    /**  imprime des statistiques */
+    /**
+     * imprime des statistiques
+     */
     public final void printStatistic() {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**
+     * imprime des statistiques
+     */
     public final String getStatistic() {
         return "String Table statistics :" + pathName + "/" + idxName + " id: " + GENERIC_NAME
                 + "\n  Current version: " + SOFT_VERSION
                 + "\n  utilSize: " + utilSize + " count: " + count + " collision: " + collision;
     }
 
-    /**  retourne le nbr de mots dans le dictionnaire */
+    /**
+     * retourne le nbr de mots dans le dictionnaire
+     */
     public final int getCount() {
         return count;
     }

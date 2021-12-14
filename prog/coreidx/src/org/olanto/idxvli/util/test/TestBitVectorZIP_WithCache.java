@@ -37,14 +37,15 @@ public class TestBitVectorZIP_WithCache {
     public static void main(String[] args) {
         implementationMode imp = implementationMode.BIG;
         String s;
-        o = (new BitArrayVector_ZIP_WithCache()).create(imp, "C:/JG/gigaversion/data/objsto", "test", 10, 1 * 1024 * 1024);
-        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/JG/gigaversion/data/objsto", "test", readWriteMode.rw);
+        int multi=1024;
+        o = (new BitArrayVector_ZIP_WithCache()).create(imp, "C:/AJETER", "test", 8, 1 * 1024 * 1024*multi);
+        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/AJETER", "test", readWriteMode.rw);
         msg("12,123:" + o.get(12, 123));
         o.set(12, 123, true);
         msg("12,123:" + o.get(12, 123));
 
         o.close();
-        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/JG/gigaversion/data/objsto", "test", readWriteMode.rw);
+        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/AJETER", "test", readWriteMode.rw);
         msg("12,123:" + o.get(12, 123));
         o.set(12, 123, false);
         msg("12,123:" + o.get(12, 123));
@@ -56,11 +57,11 @@ public class TestBitVectorZIP_WithCache {
         o.printStatistic();
 
         for (int j = 0; j < 8 * 1024; j++) {
-            o.set(100, (int) (Math.random() * 1024 * 1024), true);
+            o.set(100, (int) (Math.random() * 1024 * 1024*multi), true);
         }
         o.close();
 
-        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/JG/gigaversion/data/objsto", "test", readWriteMode.rw);
+        o = (new BitArrayVector_ZIP_WithCache()).open(imp, "C:/AJETER", "test", readWriteMode.rw);
         o.printStatistic();
         o.close();
 
