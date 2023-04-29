@@ -9,7 +9,7 @@ http://localhost:8080/TranslationText/MyCATT/RefDocMerge/params?RefType=ref&DocS
 
 PREPARE FUSION
 
-http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&MinLen=3&RemFirst=False&Fast=False
+http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/Users/simple/Desktop/bug mars 28/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/full_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&MinLen=3&RemFirst=False&Fast=False
 http://localhost:8080/TranslationText/MyCATT/RefDoc/params?DocSrc=C:/MYCAT/doc2process/A_RES_53_144_EN.pdf&DocTgt=C:/MYCAT/doc2process/rem_A_RES_53_144_EN.xml&LngSrc=EN&LngTgt=FR&MinLen=3&RemFirst=True&Fast=False
 
 fusion
