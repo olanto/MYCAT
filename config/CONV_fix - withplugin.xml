@@ -8,7 +8,8 @@
         <tempPath>C:/MYCAT/temp</tempPath>
         <maxRetry>2</maxRetry>
         <keepExtension>true</keepExtension>
-        <outputEncoding>UTF-8</outputEncoding>
+        <shortTempoName>false</shortTempoName>
+		<outputEncoding>UTF-8</outputEncoding>
     </common> 
 	<!-- examples of plugins -->
 	<!-- 

@@ -34,7 +34,8 @@ public class ConfigUtil {
     private static String docPath;
     private static String tempPath;    
     private static Integer maxRetry;
-    private static Boolean keepExtension;            
+    private static Boolean keepExtension; 
+    private static Boolean shortTempoName;
     private static String outputEncoding;            
     
     private static HashMap<String, ConverterPlugin> plugins = new HashMap<String, ConverterPlugin>();
@@ -61,6 +62,8 @@ public class ConfigUtil {
         maxRetry=Integer.parseInt(node.getTextContent());
 	node = doc.getElementsByTagName("keepExtension").item(0);
         keepExtension=Boolean.valueOf(node.getTextContent());
+	node = doc.getElementsByTagName("shortTempoName").item(0);
+        shortTempoName=Boolean.valueOf(node.getTextContent());
 	node = doc.getElementsByTagName("outputEncoding").item(0);
         outputEncoding=node.getTextContent();
         
@@ -187,5 +190,19 @@ public class ConfigUtil {
          
     public static String getOutputEncoding(){
         return outputEncoding;
+    }
+
+    /**
+     * @return the shortTempoName
+     */
+    public static Boolean getShortTempoName() {
+        return shortTempoName;
+    }
+
+    /**
+     * @param aShortTempoName the shortTempoName to set
+     */
+    public static void setShortTempoName(Boolean aShortTempoName) {
+        shortTempoName = aShortTempoName;
     }
 }
