@@ -84,7 +84,6 @@ public class ConvertService_BASIC extends UnicastRemoteObject implements Convert
         String ret = "Seems not working. ";
         String prefix = "toConvert"; // "toConvert"
         String sufix = fileName;
-        Boolean shortName = true;
         File f = null;
         try {
             if (SHORTTEMPONAME) {
@@ -202,14 +201,35 @@ public class ConvertService_BASIC extends UnicastRemoteObject implements Convert
 
     public String File2HtmlUTF8(byte[] content, String fileName) throws RemoteException {
         serverW.lock();
-
         _logger.info("Try to convert file:" + fileName);
 
         String ret = "Seems not working. ";
+        String prefix = "toConvert"; // "toConvert"
+        String sufix = fileName;
+        File f = null;
 
         try {
+           if (SHORTTEMPONAME) {
+                if (sufix.lastIndexOf('.') >= 0) { // get extension
+                    sufix = sufix.substring(sufix.lastIndexOf('.'));
+                } else {
+                    return ".unk";
+                }
+                Date date = new Date();
+                String timePattern = "HHmmssSSS";
+                SimpleDateFormat dateFormat = new SimpleDateFormat(timePattern);
+                String time = dateFormat.format(date).substring(0, 8);
+                sufix = time + sufix;
+                prefix = "";
+                f = new File(TEMPDIR +"\\"+ prefix + sufix);              
 
-            File f = File.createTempFile("toConvert", fileName, new File(TEMPDIR));
+            } else { // 
+                f = File.createTempFile(prefix, sufix, new File(TEMPDIR));
+            }
+            System.out.println("tempo file for" + fileName + "=" + f.getAbsolutePath()+" shortName="+SHORTTEMPONAME);
+
+         
+            
             FileOutputStream out = new FileOutputStream(f);
             out.write(content);
             out.flush();
