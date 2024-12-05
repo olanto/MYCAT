@@ -3954,7 +3954,7 @@ td.x-date-mp-sep {
   outline: 0 none;
   -moz-user-select: none;
   -khtml-user-select: none;
-   -webkit-user-select: ignore
+   -webkit-user-select: ignore;
   overflow: hidden;
   display: block;
 }
@@ -5078,7 +5078,7 @@ body.ext-ie6.x-body-masked .x-window select {
     outline:0 none;
     -moz-user-select: none;
     -khtml-user-select: none;
-    -webkit-user-select: ignore
+    -webkit-user-select: ignore;
 	display:block;
 	overflow:hidden;  
 }

@@ -1,4 +1,4 @@
-net stop tomcat7
+net stop tomcat9
 
 call C:\MYCAT\run\StopMYCATAgents.bat
 
