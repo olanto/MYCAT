@@ -42,6 +42,9 @@ public class TaggedFile {
         }
     }
 
+    /**
+     * cherche le suivant
+     */
     public void getNext() {
         news = new StringBuffer("");
         try {
@@ -59,6 +62,10 @@ public class TaggedFile {
         idx = 0;
     }
 
+    /**
+     *
+     * @return valeur
+     */
     public String getrecord() {
         int begrec = fulltext.indexOf("<DOC>", idx);
         int endrec = fulltext.indexOf("</DOC>", idx);

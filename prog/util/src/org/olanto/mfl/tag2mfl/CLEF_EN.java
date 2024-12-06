@@ -24,7 +24,7 @@ import java.io.*;
 import java.lang.reflect.*;
 
 /** génération de mfl.
- * 
+ *  
  */
 public class CLEF_EN {
 
@@ -32,6 +32,10 @@ public class CLEF_EN {
     static MFLFile all;
     static String LANG, EXT;
 
+    /**
+     * pour les tests
+     * @param args arguments
+     */
     public static void main(String[] args) {
         LANG = "EN";
         String FN = "C:/AAA/CLEF2005/DOC/" + LANG;
@@ -45,6 +49,10 @@ public class CLEF_EN {
 
     }
 
+    /**
+     * indexing test
+     * @param path nom de dossier 
+     */
     public static void indexdir(String path) {
         File f = new File(path);
         if (f.isFile()) {
@@ -60,6 +68,10 @@ public class CLEF_EN {
         }
     }
 
+    /**
+     *
+     * @param f nom de fichier
+     */
     public static void indexdoc(String f) {
         try {
             TaggedFile LF = new TaggedFile(f);
@@ -85,6 +97,13 @@ public class CLEF_EN {
         }
     }
 
+    /**
+     * extraire un string
+     * @param s chaine de départ
+     * @param start début
+     * @param end fin
+     * @return chaine extraite
+     */
     static public String extract(String s, String start, String end) {
         //System.out.println(" start:"+start+" end:"+end);
         int begrec = s.indexOf(start);

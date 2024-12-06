@@ -37,6 +37,11 @@ public class MFLFile {
         }
     }
 
+    /**
+     *
+     * @param filename nom de fichier
+     * @param news texte
+     */
     public void writeInDir(String filename, String news) {
         try {
             out.write("\n#####" + filename + "#####\n");
@@ -46,6 +51,10 @@ public class MFLFile {
         }
     }
 
+    /**
+     *
+     * @param filenameAndCat nom de fichier
+     */
     public void writeInDir(String filenameAndCat) {
         try {
             out.write(filenameAndCat + "\n");
@@ -54,6 +63,9 @@ public class MFLFile {
         }
     }
 
+    /**
+     * ferme le fichier
+     */
     public void close() {
         try {
             out.write("\n#####ENDOFFILE#####\n");

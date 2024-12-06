@@ -28,7 +28,7 @@ import java.util.Date;
  * Gestion de timer en milli seconde.
  * Une classe pour déclencher un chronomètre et pour mesurer facilement l'efficacité du code.
  * Par exemple: 
- * <pre> 
+ * 
  * Timer t1 = new Timer("section A du code");  // le chrono a démarrer!
  *    ...section A ... 
  * t1.stop(); // affiche le temps en milliseconde ...
@@ -60,6 +60,7 @@ DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
      * la console le commentaire associé
      * 
      * @param s le commentaire associé au chrono. 
+     * @param silent mode silencieux
      */
     public Timer(String s, boolean silent) {
         activity = s;
@@ -80,6 +81,7 @@ DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
      * stope le chronomètre. Et affiche dans la console le commentaire associé
      * et le temps mesuré en milliseconde
      * 
+     * @return retourne le temps en msec
      */
     public long getstop() {
         return System.currentTimeMillis() - start;

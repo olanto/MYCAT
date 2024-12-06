@@ -25,7 +25,6 @@ import org.olanto.dtk.*;
 
 /**
  * permet de tester les différentes fonctions des automates de Markov.
- * <p>
  */
 public class TestMAutomata {
 

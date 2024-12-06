@@ -25,9 +25,7 @@ import org.olanto.dtk.*;
 
 /**
  * permet de tester les performances d'un automatique pour la reconnaissance de la langue d'un document.
- * <p>
- * <p>
- *
+ * 
  */
 public class TestDetectLang {
 

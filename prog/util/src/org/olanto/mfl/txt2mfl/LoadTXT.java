@@ -37,6 +37,10 @@ public class LoadTXT {
         }
     }
 
+    /**
+     *
+     * @return next value
+     */
     public String getNext() {
         StringBuffer txt = new StringBuffer("");
         try {

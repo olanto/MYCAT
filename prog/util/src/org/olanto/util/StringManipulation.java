@@ -28,6 +28,11 @@ package org.olanto.util;
  */
 public class StringManipulation {
 
+    /**
+     * ajoute des espaces entre les caractères Chinois CJK
+     * @param s à traiter
+     * @return traitée
+     */
     public String addSpace(String s) {
         StringBuilder res = new StringBuilder("");
 
@@ -40,6 +45,11 @@ public class StringManipulation {
         return res.toString();
     }
     
+    /**
+     * méthode simple pour les CJK caractère (sans doute à reprondre)
+     * @param s à tester
+     * @return valeur
+     */
     public static boolean isCJKChar(char s) {
         if (s > 0x0370) {
             return true;
@@ -47,6 +57,11 @@ public class StringManipulation {
         return false;
     }
 
+    /**
+     * enlève les blancs
+     * @param s à traiter
+     * @return traitée
+     */
     public String removeSpace(String s) {
         if ((!(s == null)) && (!s.isEmpty())) {
             if (s.length() < 3) {

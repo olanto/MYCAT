@@ -26,10 +26,10 @@ import org.olanto.dtk.*;
 
 /**
  * permet de générer des familles de documents synthétiques à partir d'un automate de Markov.
- * <p>
+ * 
  * La famille de documents synthétique est au format MFL, on choisit la langue, l'ordre de l'automate,
  * le nombre de documents, la taille des documents
- * <p>
+ * 
  *
  */
 public class GenerateMFL {

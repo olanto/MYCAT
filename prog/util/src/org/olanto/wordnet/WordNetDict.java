@@ -35,14 +35,17 @@ public class WordNetDict {
     private static Pattern p = Pattern.compile("[\\s\\.+~*,\"\\(\\)]");  // les fins de mots
 
     /**
-     * application de test
-     * @param args sans
+     * application de test WordNet (ontologie)
      */
     public WordNetDict() {
         readNativeWN("C:/AAA/WN/ADJ.DAT.dic");
         readNativeWN("C:/AAA/WN/NOUN.DAT.dic");
     }
 
+    /**
+     * test
+     * @param args arguments
+     */
     public static void main(String[] args) {  // only for test
 
         WordNetDict wn = new WordNetDict();
@@ -55,10 +58,20 @@ public class WordNetDict {
 
     }
 
+    /**
+     *
+     * @param wsd word word
+     * @return value
+     */
     public String getForm(String wsd) {
         return id2form.get(wsd);
     }
 
+    /**
+     *
+     * @param wsd word
+     * @return value
+     */
     public String getGen(String wsd) {
         return id2gen.get(wsd);
     }

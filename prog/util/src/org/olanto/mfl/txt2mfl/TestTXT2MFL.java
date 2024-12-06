@@ -31,7 +31,11 @@ public class TestTXT2MFL{
    
    static int idSeq=0;
 
-   public static void main(String[] args)   {
+    /**
+     *
+     * @param args arguments
+     */
+    public static void main(String[] args)   {
 
      String FN="C:/JG/uit/doc";
      ExportMFL.init("C:/JG/uit/uit");
@@ -40,7 +44,11 @@ public class TestTXT2MFL{
 
    }
 
-  public static void indexdir(String path){
+    /**
+     *
+     * @param path dossier
+     */
+    public static void indexdir(String path){
      File f=new File(path);
      if (f.isFile()){
        if (path.endsWith(".txt")) indexdoc(path);
@@ -53,7 +61,11 @@ public class TestTXT2MFL{
      }
    }
 
-  public static void indexdoc(String f)   {
+    /**
+     *
+     * @param f nom de fichier
+     */
+    public static void indexdoc(String f)   {
      try {
           System.out.println("file:"+f+" from idseq:"+idSeq);
            LoadTXT LF=new LoadTXT(f);

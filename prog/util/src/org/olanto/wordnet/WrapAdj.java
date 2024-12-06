@@ -51,6 +51,12 @@ public class WrapAdj {
 
     }
 
+    /**
+     *
+     * @param id id 
+     * @param form word
+     * @param hyper hyperonyme
+     */
     public static void write(String id, String form, String hyper) {
         try {
             out.write(id + " " + form + " " + hyper + "\n");

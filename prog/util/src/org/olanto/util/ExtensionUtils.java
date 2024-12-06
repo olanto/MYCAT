@@ -30,6 +30,10 @@ public class ExtensionUtils {
     static HashMap<String, String> extension = new HashMap<String, String>();
     static boolean verbose = true;
 
+    /**
+     * gère la liste des langues
+     * @param SetOfLang liste de langues
+     */
     public ExtensionUtils(String[] SetOfLang){
             for (int i = 0; i < SetOfLang.length; i++) { // génére les _XX
             extension.put("_" + SetOfLang[i], "ok");
@@ -41,7 +45,10 @@ public class ExtensionUtils {
     }
     
  
-    /** retourne l'extension linguistique */
+    /** retourne l'extension linguistique
+     * @param name lang
+     * @return extension
+     */
     public  String getNExt(String name) {
         String res = "";
         int lastposOflang = name.lastIndexOf("_");
