@@ -33,38 +33,61 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public interface ZipVector {
 
-    /**  crée un vecteur 2^_maxSize par defaut à  l'endroit indiqué par le path, (maximum=2^31), objet=byte[] qui représente le zip d'un fichier */
+    /**  crée un vecteur 2^_maxSize par defaut à  l'endroit indiqué par le path, (maximum=2^31), objet=byte[] qui représente le zip d'un fichier
+     * @param _path
+     * @param _file
+     * @param _maxSize
+     * @return valeur */
     public ZipVector create(String _path, String _file, int _maxSize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiqué par le path */
+    /**  ouvre un vecteur Ã  l'endroit indiqué par le path
+     * @param _path
+     * @param _RW
+     * @param _file
+     * @return valeur */
     public ZipVector open(String _path, String _file, readWriteMode _RW);
 
     /**  ferme un gestionnaire de vecteurs  (et sauve les modifications*/
     public void close();
 
-    /** mets à  jour la position pos avec txt */
+    /** mets à  jour la position pos avec txt
+     * @param pos
+     * @param txt */
     public void set(int pos, String txt);
-   /** mets à  jour la position pos avec le fichier filename */
+   /** mets à  jour la position pos avec le fichier filename
+     * @param pos
+     * @param encoding
+     * @param filename */
     public void set(int pos, String filename, String encoding);
 
-    /** élimine le vecteur a la position pos */
+    /** élimine le vecteur a la position pos
+     * @param pos */
     public void clear(int pos);
 
-    /**  cherche la valeur à  la position pos  */
+    /**  cherche la valeur à  la position pos
+     * @param pos
+     * @return valeur */
     public String get(int pos);
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public int length();
 
-    /**  retourne la taille du vecteur à  la position pos*/
+    /**  retourne la taille du vecteur à  la position po
+     * @param pos
+     * @return s*/
     public int lengthZip(int pos);
  
-    /**  retourne la taille du vecteur décompressé à  la position pos*/
+    /**  retourne la taille du vecteur décompressé à  la position po
+     * @param pos
+     * @return s*/
     public int lengthString(int pos);
 
-    /**  retourne la taille total des vecteurs stockés*/
+    /**  retourne la taille total des vecteurs stocké
+     * @return s*/
     public long totalLengthZip();
-   /**  retourne la taille total des vecteurs stockés*/
+   /**  retourne la taille total des vecteurs stocké
+     * @return s*/
     public long totalLengthString();
 
     /**  imprime des statistiques */

@@ -55,6 +55,11 @@ public class Marker implements MarkerManager {
     static DetectLang detectLang;
     static CollectionRules collections;
 
+    /**
+     *
+     * @param rootlangfile
+     * @param collectClassFile
+     */
     public Marker(String rootlangfile, String collectClassFile) {
         initLanguageDetector(rootlangfile);
         collections = new CollectionRules(collectClassFile);

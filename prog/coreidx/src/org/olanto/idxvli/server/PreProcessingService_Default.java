@@ -33,6 +33,8 @@ public  class PreProcessingService_Default implements PreProcessingService {
 
     /**
      * Pour demander avoir une url à partir d'un nom de fichier indexé
+     * @param arg
+     * @throws java.rmi.RemoteException
      */
 
   public void main(String[] arg) throws RemoteException{

@@ -73,12 +73,20 @@ public class StringTable_Classic implements StringRepository {
     public StringTable_Classic() {
     }
 
-    /**  crï¿½e une word table (la taille et la longueur max ne sont pas utilisï¿½s) par dï¿½faut ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e une word table (la taille et la longueur max ne sont pas utilisï¿½s) par dï¿½faut ï¿½ l'endroit indiquï¿½ par le path
+     * @param _path
+     * @param _idxName
+     * @param _maxSize
+     * @param _lengthString
+     * @return valeur */
     public final StringRepository create(String _path, String _idxName, int _maxSize, int _lengthString) {
         return (new StringTable_Classic(_path, _idxName, "ext", _maxSize));
     }
 
-    /**  ouvre un gestionnaire de mots  ï¿½ l'endroit indiquï¿½ par le _path */
+    /**  ouvre un gestionnaire de mots  ï¿½ l'endroit indiquï¿½ par le _path
+     * @param _path
+     * @param _idxName
+     * @return valeur */
     public final StringRepository open(String _path, String _idxName) {
         return (new StringTable_Classic(_path, _idxName));
     }
@@ -160,7 +168,9 @@ public class StringTable_Classic implements StringRepository {
         msg("count: " + count);
     }
 
-    /**  ajoute un terme au gestionnaire retourne le numï¿½ro du terme, retourne EMPTY s'il y a une erreur */
+    /**  ajoute un terme au gestionnaire retourne le numï¿½ro du terme, retourne EMPTY s'il y a une erreur
+     * @param w
+     * @return valeur */
     public final int put(String w) {
         if ((words.get(w)) != null) {
             return words.get(w);
@@ -172,7 +182,9 @@ public class StringTable_Classic implements StringRepository {
         return count - 1;
     }
 
-    /**  cherche le numï¿½ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le numï¿½ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param w
+     * @return valeur */
     public final int get(String w) {
         Integer n = words.get(w);
         if (n == null) {
@@ -181,7 +193,9 @@ public class StringTable_Classic implements StringRepository {
         return n.intValue();
     }
 
-    /**  cherche le terme associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le terme associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
+     * @param i
+     * @return e*/
     public final String get(int i) {
         if (i < 0 || i > count) {
             return NOTINTHIS;
@@ -194,13 +208,15 @@ public class StringTable_Classic implements StringRepository {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "String Table statistics -> "
                 + "/n count: " + count;
     }
 
-    /**  retourne le nbr de mots dans le dictionnaire */
+    /**  retourne le nbr de mots dans le dictionnaire
+     * @return valeur */
     public final int getCount() {
         return count;
     }

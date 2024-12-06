@@ -102,6 +102,7 @@ public interface BitArrayVector {
     /**  imprime des statistiques */
     public void printStatistic();
 
-    /**  retourne des statistiques */
+    /**  retourne des statistiques
+     * @return valeur */
     public String getStatistic();
 }

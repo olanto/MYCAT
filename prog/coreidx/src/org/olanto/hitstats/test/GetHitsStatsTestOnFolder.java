@@ -36,6 +36,11 @@ public class GetHitsStatsTestOnFolder {
     static SearchHits sHits = new SearchHits();
     static int count=0;
  
+    /**
+     *
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
       //   String path="C:/MYCAT/corpus/txt/EN";
       //   String path="C:/MYCAT/corpus_cern/txt/EN";
@@ -47,6 +52,12 @@ public class GetHitsStatsTestOnFolder {
          test(path,"flat tariff");
       
     }
+
+    /**
+     *
+     * @param path
+     * @param exp
+     */
     public static void test(String path, String exp) {
 count=0;
         Timer t = new Timer("GetHighlight_Occurrences on folder"+path+", exp:"+exp);

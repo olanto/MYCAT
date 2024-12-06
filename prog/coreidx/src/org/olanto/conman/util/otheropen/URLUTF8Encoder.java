@@ -116,6 +116,11 @@ public class URLUTF8Encoder {
         return sbuf.toString();
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String unescape(String s) {
         StringBuffer sbuf = new StringBuffer();
         // System.out.println("unescape:"+s);

@@ -34,6 +34,12 @@ import org.pdfbox.util.PDFTextStripper;
  */
 public class PDF2TXT {
 
+    /**
+     *
+     * @param pdfbuf
+     * @param pdfFile
+     * @return
+     */
     public static String pdf2txt(byte[] pdfbuf, String pdfFile) {
         boolean toHTML = false;
         boolean sort = true;

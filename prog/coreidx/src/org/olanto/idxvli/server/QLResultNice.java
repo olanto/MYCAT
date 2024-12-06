@@ -43,20 +43,68 @@ import org.olanto.idxvli.ql.OrderResult;
 public class QLResultNice implements Serializable, Cloneable {
 
     /* les documents résultats */
+
+    /**
+     *
+     */
+
     public int[] result;
     /* les partie du results */
+
+    /**
+     *
+     */
+
     public String[] docname;
     private long[] docdate;  // initialisé seulement en cas de tri ...
+
+    /**
+     *
+     */
     public String[] title;
+
+    /**
+     *
+     */
     public String[] clue;
     /* la durée d'exécution */
+
+    /**
+     *
+     */
+
     public long duration;  // en ms
     /* autour de la requête */
+
+    /**
+     *
+     */
+
     public String[] termsOfQuery;
+
+    /**
+     *
+     */
     public String query;
+
+    /**
+     *
+     */
     public String query2;
+
+    /**
+     *
+     */
     public String properties;
+
+    /**
+     *
+     */
     public String profile;
+
+    /**
+     *
+     */
     public String alternative;
     /*  exact filtering */
     private long durationExactFiltering;  // en ms
@@ -69,8 +117,6 @@ public class QLResultNice implements Serializable, Cloneable {
     /**
      * crée un résultat
      *
-     * @param result id des documents
-     * @param duration dur�e
      */
     @Override
     public QLResultNice clone() {
@@ -82,6 +128,20 @@ public class QLResultNice implements Serializable, Cloneable {
         return null;
     }
 
+    /**
+     *
+     * @param query1
+     * @param query2
+     * @param properties
+     * @param profile
+     * @param termsOfQuery
+     * @param result
+     * @param docname
+     * @param title
+     * @param clue
+     * @param duration
+     * @param alternative
+     */
     public QLResultNice(String query1, String query2, String properties, String profile, String[] termsOfQuery, int[] result, String[] docname, String[] title, String[] clue, long duration, String alternative) {
         this.query2 = query2;
         this.query = query1;
@@ -99,8 +159,16 @@ public class QLResultNice implements Serializable, Cloneable {
     /**
      * crée un résultat
      *
+     * @param query
      * @param result id des documents
+     * @param properties
+     * @param profile
      * @param duration dur�e
+     * @param docname
+     * @param termsOfQuery
+     * @param clue
+     * @param title
+     * @param alternative
      */
     public QLResultNice(String query, String properties, String profile, String[] termsOfQuery, int[] result, String[] docname, String[] title, String[] clue, long duration, String alternative) {
         this.query = query;
@@ -115,6 +183,10 @@ public class QLResultNice implements Serializable, Cloneable {
         this.alternative = alternative;
     }
 
+    /**
+     *
+     * @param s
+     */
     public void dump(String s) {
         System.out.println("--- dump QLResult at :" + s);
         for (int i = 0; i < result.length; i++) {
@@ -122,6 +194,10 @@ public class QLResultNice implements Serializable, Cloneable {
         }
     }
 
+    /**
+     *
+     * @param entry
+     */
     public void hilite(int entry) {
         for (int i = 0; i < termsOfQuery.length; i++) {
             //     docname[entry]=showTerm(docname[entry],voc[i]);
@@ -130,6 +206,12 @@ public class QLResultNice implements Serializable, Cloneable {
         }
     }
 
+    /**
+     *
+     * @param s
+     * @param term
+     * @return
+     */
     public static String showTerm(String s, String term) {
         if (s != null && term.length() > 2) // au moins trois caract�res
         {
@@ -138,6 +220,10 @@ public class QLResultNice implements Serializable, Cloneable {
         return s;
     }
 
+    /**
+     *
+     * @param tobejoined
+     */
     public void fusionResult(int[] tobejoined) {
         boolean verbose = true;
         if (verbose) {
@@ -198,6 +284,12 @@ public class QLResultNice implements Serializable, Cloneable {
 
     }
 
+    /**
+     *
+     * @param id
+     * @param size
+     * @param chardist
+     */
     public void checkIfRealyNear(IdxStructure id, int size, int chardist) {
 
         String close1 = getExactExp(query);
@@ -269,12 +361,23 @@ public class QLResultNice implements Serializable, Cloneable {
         // finish
     }
 
+    /**
+     *
+     * @param id
+     * @param size
+     * @param close2
+     */
     public void checkExactClose(IdxStructure id, int size, String close2) {
         query2 = close2;
         checkExactInternal(id, Integer.MAX_VALUE, query);  // first expression
         checkExactInternal(id, Integer.MAX_VALUE, query2);  // second expression
     }
 
+    /**
+     *
+     * @param id
+     * @param size
+     */
     public void checkExact(IdxStructure id, int size) {
         if (!exactDone) { // dont do this many times !!
             exactDone = true;
@@ -368,6 +471,11 @@ public class QLResultNice implements Serializable, Cloneable {
         return exactexp.substring(beg + 11, end);
     }
 
+    /**
+     *
+     * @param id
+     * @param kind
+     */
     public void orderBy(IdxStructure id, String kind) {
 //        System.out.println("orderBy: " + kind);
         if (kind.equals("DATE")) { // by date
@@ -418,6 +526,15 @@ public class QLResultNice implements Serializable, Cloneable {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param start
+     * @param size
+     * @param fullresult
+     */
     public void update(IdxStructure id, ContentService cs, String request, int start, int size, boolean fullresult) { // pour le search engine
         if (!fullresult) {
             boolean contentservice = cs != null;

@@ -38,7 +38,8 @@ public class SponsorRules {
     private static Pattern p;
     private static String SEPARATOR = ";";
 
-    /** Creates a new instance of Rule */
+    /** Creates a new instance of Rule
+     * @param fname */
     public SponsorRules(String fname) {
         sponsorfilename = fname;
         sponsors = new HashMap<String, String[]>();
@@ -75,6 +76,11 @@ public class SponsorRules {
         }
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public String[] eval(String s) {
         //msg(s);
         String[] links = sponsors.get(s);
@@ -84,6 +90,10 @@ public class SponsorRules {
         return null;
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) { // pour les tests
         SponsorRules ar = new SponsorRules("C:/JG/VLI_RW/data/urlsponsor.txt");
         showVector(ar.eval("java"));

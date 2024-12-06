@@ -36,14 +36,17 @@ public interface CacheCoordinator {
     public void incTotalIdx();
 
     /** retourne la taille total des caches coordonsÃ©s
+     * @return 
      */
     public long cacheCurrentSize();
 
     /** retourne le nombre de termes actifs dans les caches
+     * @return 
      */
     public int allocate();
 
     /** indique si les caches sont Ã  nettoyer
+     * @return 
      */
     public boolean cacheOverFlow();
 

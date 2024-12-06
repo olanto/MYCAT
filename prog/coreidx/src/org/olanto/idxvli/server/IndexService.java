@@ -64,6 +64,7 @@ public interface IndexService extends Remote {
      * Pour demander l'ouverture d'un indexeur existant
      * @param client configuration de la structure
      * @param mode (QUERY,INCREMENTAL,DIFFERENTIAL)
+     * @param OpenCM
      * @throws java.rmi.RemoteException
      */
     public void getAndInit(IdxInit client, String mode, boolean OpenCM) throws RemoteException;
@@ -226,11 +227,13 @@ public interface IndexService extends Remote {
      * @param doc document
      * @param N nombre de voisins
      * @return r�ponse
+     * @throws java.rmi.RemoteException
      */
     public KNNResult KNNForDoc(int doc, int N) throws RemoteException;
 
     /** Cherche l'encodage d'un document
      * @return encodage
+     * @throws java.rmi.RemoteException
      */
     public String getDOC_ENCODING() throws RemoteException;
 
@@ -245,6 +248,7 @@ public interface IndexService extends Remote {
     /**
      *  r�cup�re le dictionnaire de propri�t�s
      * @return liste des propri�t�s actives
+     * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary() throws RemoteException;
 
@@ -252,6 +256,7 @@ public interface IndexService extends Remote {
      *  r�cup�re le dictionnaire de propri�t�s ayant un certain pr�fix (COLECT., LANG.)
      * @param prefix pr�fixe des propri�t�s
      * @return liste des propri�t�s actives
+     * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary(String prefix) throws RemoteException;
 

@@ -28,11 +28,16 @@ import org.olanto.idxvli.util.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository {
 
     static StringRepository o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         int i;

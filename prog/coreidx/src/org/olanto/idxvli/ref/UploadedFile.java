@@ -47,12 +47,22 @@ public class UploadedFile implements Serializable {
         fileName = (String) in.readObject();
     }
 
+    /**
+     *
+     * @param content
+     * @param fileName
+     */
     public UploadedFile(String content, String fileName) {
         this.contentString = content;
         this.contentBytes = null;
         this.fileName = fileName;
     }
 
+    /**
+     *
+     * @param content
+     * @param fileName
+     */
     public UploadedFile(byte[] content, String fileName) {
         this.contentString = null;
         this.contentBytes = content;
@@ -73,14 +83,26 @@ public class UploadedFile implements Serializable {
         return fileName;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isTxt() {
         return fileName.toLowerCase().endsWith(".txt");
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isSdlxliff() {
         return fileName.toLowerCase().endsWith(".sdlxliff");
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isDocx() {
         return fileName.toLowerCase().endsWith(".docx");
     }

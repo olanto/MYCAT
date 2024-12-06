@@ -41,16 +41,41 @@ public class SearchHits {
 
     private String REGEX_BEFORE_TOKEN = "([^a-zA-Z0-9]|[\\s\\p{Punct}\\r\\n\\(\\{\\[\\)\\}\\]]|^)";
     private String REGEX_AFTER_TOKEN = "([^a-zA-Z0-9\\-\\_\\/]|[\\s\\p{Punct}\\r\\n\\)\\}\\(\\{\\[\\]]|$)";
+
+    /**
+     *
+     */
     public IndexService_MyCat is;
+
+    /**
+     *
+     */
     public Utility utils = new Utility();
+
+    /**
+     *
+     */
     public float reFactor = 1.7f;
+
+    /**
+     *
+     */
     public int minRefLn = 20;
     static ArrayList<String> stopWords;
 
+    /**
+     *
+     */
     public SearchHits() {
         stopWords = getStopWords();
     }
 
+    /**
+     *
+     * @param fileNameIn
+     * @param expression
+     * @throws FileNotFoundException
+     */
     public void getRefWordsPos(String fileNameIn, String expression) throws FileNotFoundException {
         boolean verbose = false;
         boolean notask = false; // to test read load
@@ -124,6 +149,12 @@ public class SearchHits {
 //        return getPositionsRef(Pos);
     }
 
+    /**
+     *
+     * @param content
+     * @param Query
+     * @return
+     */
     public boolean getAllWords(String content, ArrayList<String> Query) {
         String curHit;
         boolean allfound = true;
@@ -175,6 +206,10 @@ public class SearchHits {
 //        return posit;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getStopWords() {
 
         ArrayList<String> stopWords = new ArrayList<String>();

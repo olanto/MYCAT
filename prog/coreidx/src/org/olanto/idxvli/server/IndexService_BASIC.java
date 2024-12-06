@@ -52,6 +52,10 @@ public class IndexService_BASIC extends UnicastRemoteObject implements IndexServ
     private KNNManager KNN;
     private ContentService cs;  // service associï¿½
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public IndexService_BASIC() throws RemoteException {
         super();
     }

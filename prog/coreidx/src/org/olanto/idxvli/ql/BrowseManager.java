@@ -32,5 +32,17 @@ import org.olanto.idxvli.server.*;
  */
 public interface BrowseManager {
 
+    /**
+     *
+     * @param id
+     * @param request
+     * @param langS
+     * @param start
+     * @param size
+     * @param collections
+     * @param order
+     * @param onlyOnFileName
+     * @return
+     */
     public QLResultNice get(IdxStructure id, String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName);
 }

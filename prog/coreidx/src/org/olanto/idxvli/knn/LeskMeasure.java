@@ -65,6 +65,10 @@ class AlignSegment {
     }
 }
 
+/**
+ *
+ * @author xtern
+ */
 public class LeskMeasure {
 
     static IdxStructure id;
@@ -88,16 +92,30 @@ public class LeskMeasure {
         /**classique inverse document frequency * term document frequency */
         IDFxTDF,}
 
+    /**
+     *
+     * @param ref
+     */
     public LeskMeasure(int[] ref) {
         this.ref = ref;
         initRef();
     }
 
+    /**
+     *
+     * @param _id
+     * @param _leskmode
+     */
     public static void init(IdxStructure _id, LeskMode _leskmode) {
         id = _id;
         leskmode = _leskmode;
     }
 
+    /**
+     *
+     * @param doc
+     * @return
+     */
     public double getSimilarityWith(int[] doc) {
         double sim = 0;
 
@@ -192,6 +210,11 @@ public class LeskMeasure {
         System.out.println();
     }
 
+    /**
+     *
+     * @param doc
+     * @return
+     */
     public static double getWgtOfDoc(int[] doc) {
         switch (leskmode) {
             case NO:
@@ -209,6 +232,11 @@ public class LeskMeasure {
         return 0;
     }
 
+    /**
+     *
+     * @param i
+     * @return
+     */
     public static double getWgtOfWordIDFxTF(int i) {
         return Math.log(1 + (double) id.lastRecordedDoc / (double) id.getOccOfW(i));
     }

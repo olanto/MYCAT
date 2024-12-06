@@ -49,29 +49,78 @@ public class QL_Basic implements QLManager {
     private static long totalTime = 0;
 
     /**
-     * retourne la liste des documents valides correspondants � la requ�te pour
+     * retourne la liste des documents valides correspondants à la requ�te pour
      * rester compatible avec les versions pr�cendentes
      */
     public final int[] get(String request, IdxStructure id) {
         return (new QLCompiler_simple(new StringReader(request), id)).execute();
     }
 
+    /**
+     *
+     * @param request
+     * @param id
+     * @return
+     */
     public final QLResultAndRank getMore(String request, IdxStructure id) {
         return (new QLCompiler_simple(new StringReader(request), id)).executeMore();
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public final QLResultNice get(IdxStructure id, ContentService cs, String request, int start, int size, boolean fullresult) {
         return get(id, cs, request, "", "", start, size, fullresult);
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request1
+     * @param request2
+     * @param start
+     * @param size1
+     * @param size2
+     * @return
+     */
     public final QLResultNice get(IdxStructure id, ContentService cs, String request1, String request2, int start, int size1, int size2) {
         return getTwice(id, cs, request1, request2, "", "", start, size1, size2);
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param properties
+     * @param start
+     * @param size
+     * @return
+     */
     public final QLResultNice get(IdxStructure id, ContentService cs, String request, String properties, int start, int size) {
         return get(id, cs, request, properties, "", start, size, false);
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public final QLResultNice get(IdxStructure id, ContentService cs, String request, String properties, String profile, int start, int size, boolean fullresult) {
         get++;
         if (InMemory == null) {
@@ -99,6 +148,19 @@ public class QL_Basic implements QLManager {
         return nice;
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request1
+     * @param request2
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size1
+     * @param size2
+     * @return
+     */
     public final QLResultNice getTwice(IdxStructure id, ContentService cs, String request1,
             String request2, String properties, String profile, int start, int size1, int size2) {
         get++;
@@ -125,15 +187,28 @@ public class QL_Basic implements QLManager {
         return nice;
     }
 
+    /**
+     *
+     */
     public void initCache() {
         InMemory = new HashMap<String, QLResultNice>();
         curentSize = 0;
     }
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     public final QLResultNice getFromCache(String request) {
         return InMemory.get(request);
     }
 
+    /**
+     *
+     * @param request
+     * @param nice
+     */
     public final synchronized void putInCache(String request, QLResultNice nice) {
         if (curentSize > MAX_QUERY_IN_CACHE) {  // on doit purger
 
@@ -155,6 +230,7 @@ public class QL_Basic implements QLManager {
 
     /**
      * imprime des statistiques
+     * @return 
      */
     public final String getStatistic() {
         return "QUERY cache statistics -> "
@@ -162,6 +238,18 @@ public class QL_Basic implements QLManager {
                 + "\n totalTime for queries: " + totalTime / 1000 + " [s] meanTime: " + totalTime / get + " [ms]";
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public QLResultNice evalQLNice(IdxStructure id, ContentService cs, String request, String properties, String profile, int start, int size, boolean fullresult) {
         QLResultNice res = null;
         boolean contentservice = cs != null;
@@ -227,6 +315,19 @@ public class QL_Basic implements QLManager {
         return res;
     }
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request1
+     * @param request2
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size1
+     * @param size2
+     * @return
+     */
     public QLResultNice evalQLTwiceNice(IdxStructure id, ContentService cs, String request1,
             String request2, String properties, String profile, int start, int size1, int size2) {
         QLResultNice res = null;

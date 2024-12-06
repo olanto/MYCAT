@@ -39,6 +39,11 @@ public class TestClientReferenceWithoutServer_noThread {
 
     static IdxStructure id;
 
+    /**
+     *
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
 
         id = new IdxStructure("QUERY", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME() + "/config/IDX_fix.xml"));
@@ -51,6 +56,14 @@ public class TestClientReferenceWithoutServer_noThread {
 
     }
 
+    /**
+     *
+     * @param fileNameIn
+     * @param fileNameOut
+     * @param collect
+     * @param nbref
+     * @throws FileNotFoundException
+     */
     public static void testref(String fileNameIn, String fileNameOut, String[] collect, int nbref) throws FileNotFoundException {
 
         // test ref

@@ -28,9 +28,14 @@ import static org.olanto.util.Messages.*;
  *
  * 
  *
+ * @author xtern
  */
 public class StressClientWrite {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

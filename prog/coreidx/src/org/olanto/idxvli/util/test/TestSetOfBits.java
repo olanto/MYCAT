@@ -29,11 +29,16 @@ import static org.olanto.util.Messages.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestSetOfBits {
 
     static SetOfBits o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         o = new SetOfBits(1024 * 1024);

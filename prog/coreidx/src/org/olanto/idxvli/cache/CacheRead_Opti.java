@@ -46,10 +46,21 @@ import org.olanto.util.TimerNano;
 /* les méthodes du query doivent être optimisées pour utiliser les méthodes directes */
 public class CacheRead_Opti /* implements CacheRead */ {
 
+    /**
+     *
+     */
     public static CacheIdx_ExtGC_InMemory doc;
+
+    /**
+     *
+     */
     public static CacheIdx_ExtGC_InMemory pos;
     static int[] lock;
     static UsageMark[] usage;
+
+    /**
+     *
+     */
     public static int[] nbDoc;
     static int[] countUsage; // count les utilisations
     static int maxSize;
@@ -105,7 +116,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne la valeur du cache du terme i � la position j
+     * retourne la valeur du cache du terme i à la position j
      * @param i terme
      * @param j position
      * @return valeur
@@ -115,7 +126,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne la valeur du cache du terme cacheID � la position j
+     * retourne la valeur du cache du terme cacheID à la position j
      * @param cacheID identifiant du cache
      * @param j position
      * @return valeur
@@ -324,7 +335,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
         }
         if (nextCacheId == maxSize) {
             return nextCacheId();
-        } // on a rencontr� la fin
+        } // on a rencontrà la fin
         return nextCacheId; // on a le bon candidat
     }
 
@@ -518,6 +529,10 @@ public class CacheRead_Opti /* implements CacheRead */ {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getStatistic() {
         String res = "not enough data for cache statistic";
        if (cacheSize!=0&&loadAsk!=0){
@@ -531,7 +546,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
         return res;
     }
 
-    /** test si le terme n1 appara�t dans le document d � la position p
+    /** test si le terme n1 appara�t dans le document d à la position p
      * ! Doit-�tre utilis� sur un terme prot�g�
      * @param n1 terme
      * @param d  document
@@ -544,7 +559,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * test si le terme n1 appara�t dans le document d � la position p
+     * test si le terme n1 appara�t dans le document d à la position p
      * ! Doit-�tre utilis� sur un terme prot�g�
      * @return vrai si ...
      * @param cacheId terme

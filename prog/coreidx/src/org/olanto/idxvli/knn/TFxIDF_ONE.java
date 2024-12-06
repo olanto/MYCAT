@@ -82,9 +82,10 @@ public class TFxIDF_ONE implements KNNManager {
      * @param maxlevel maximum d'occurences  en 0/00 du corpus pour �tre dans a pr�s�lection. (ce param�tre est purement formel, pour des raisons de compatibilit�)
      * @param _verbose montre les d�tails
      * @param formulaIDF inverse document frequency formula.
-     *       1 -> ln(1+N/f(t));
-     *       2 -> ln(N/f(t)-1)
+     *       1 -- ln(1+N/f(t));
+     *       2 -- ln(N/f(t)-1)
      * @param formulaTF toujours � 1. (ce param�tre est purement formel, pour des raisons de compatibilit�)
+     * @param _offset
      */
     public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF, float _offset) {
         Timer t1 = null;
@@ -139,6 +140,12 @@ public class TFxIDF_ONE implements KNNManager {
         return knndoc;
     }
 
+    /**
+     *
+     * @param doc
+     * @param N
+     * @return
+     */
     public final KNNResult KNNForDoc(int doc, int N) {
         TimerNano time = new TimerNano("knn", true);
         int[][] res = getKNNForDoc(doc, N);
@@ -173,6 +180,11 @@ public class TFxIDF_ONE implements KNNManager {
         return null;
     }
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     public final synchronized float[] getRawKNN(String request) {
         Timer t1 = null;
         if (verbose) {
@@ -194,6 +206,12 @@ public class TFxIDF_ONE implements KNNManager {
 
     }
 
+    /**
+     *
+     * @param request
+     * @param N
+     * @return
+     */
     public final synchronized int[][] getKNN(String request, int N) {
         Timer t1 = null;
         if (verbose) {

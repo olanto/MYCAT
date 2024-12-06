@@ -30,9 +30,14 @@ import org.olanto.idxvli.word.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository_Stress_Get {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

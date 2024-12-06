@@ -30,12 +30,32 @@ import java.io.*;
 public class QLResultAndRank implements Serializable {
 
     /* les documents r�sultats */
+
+    /**
+     *
+     */
+
     public int[] result;
     /* les poids des r�sultats */
+
+    /**
+     *
+     */
+
     public float[] rank;
     /* les poids des r�sultats */
+
+    /**
+     *
+     */
+
     public String[] docName;
     /* la dur�e d'ex�cution */
+
+    /**
+     *
+     */
+
     public long duration;  // en ms
 
     /** cr�e un r�sultat

@@ -40,7 +40,7 @@ public class TokenAlphaNumeric implements TokenDefinition {
     /**
      * Cherche le symbole suivant.
      * d�finition symbole= commence avec une lettre ou des chiffres(au sens unicode)
-     * et n'est pas dans un tag <> (peut occasioner une erreur d'indexation dans les mauvais html)
+     * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
      * s'arr�te quand on rencontre autre chose qu'une lettre (au sens unicode)ou des chiffres ou . ou -
      * pour rendre active cette m�thode, il faut la renommer next !
      */
@@ -75,7 +75,7 @@ public class TokenAlphaNumeric implements TokenDefinition {
 
     /** normalise le mot. actuellement<br>
      * - mis en minuscule<br>
-     * - tronquer � la longueur fix�e.<br>
+     * - tronquer à la longueur fix�e.<br>
      * - lemmatiser si le stemming est actif.<br>
      * @param id l'indexeur de r�f�rence
      * @param w le mot � normaliser

@@ -29,9 +29,14 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestCompression {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         int sl = 10000000;

@@ -67,12 +67,17 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
     public BitArrayVector_ZIP_WithCache() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _ManagerImplementation
+     * @param _fileName
+     * @param _pathName */
     public final BitArrayVector create(implementationMode _ManagerImplementation, String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         return (new BitArrayVector_ZIP_WithCache(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _fileName
+     * @param _pathName */
     public final BitArrayVector open(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {
         return (new BitArrayVector_ZIP_WithCache(_ManagerImplementation, _pathName, _fileName, _RW));
     }
@@ -153,7 +158,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         vZip.close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         SetOfBits wBA = new SetOfBits(fixedArraySize);  // cr�e un vecteur vide
         byte[] empty = wBA.getZip();
         //msg("empty.length:"+empty.length);
@@ -263,7 +268,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         }
     }
 
-    /**  cherche la valeur � la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la i�me valeur   */
     public final boolean get(int pos, int i) {
         cacheR.lock();
         try {
@@ -274,7 +279,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         }
     }
 
-    /**  cherche le vecteur complet � la position pos  */
+    /**  cherche le vecteur complet à la position pos  */
     public final SetOfBits get(int pos) {
         cacheR.lock();
         try {
@@ -289,7 +294,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         return size;
     }
 
-    /**  retourne la taille du vecteur � la position pos*/
+    /**  retourne la taille du vecteur à la position pos*/
     public final int length(int pos) {
         cacheR.lock();
         try {
@@ -304,7 +309,8 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "Bit Array Vector with cache statistics -> " + pathName + "/" + fileName
                 + "\n  size: " + size

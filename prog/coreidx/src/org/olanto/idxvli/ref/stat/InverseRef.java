@@ -26,14 +26,36 @@ import java.util.Vector;
 /** pour traiter une référence inverse
  */
 public class InverseRef {
+
+    /**
+     *
+     */
     public String docref;
+
+    /**
+     *
+     */
     public List<String> ref=new Vector<String>();
+
+    /**
+     *
+     */
     public float pcttotword;
     
+    /**
+     *
+     * @param docname
+     */
     public InverseRef(String docname){
         docref=docname;
         pcttotword=0;
     }
+
+    /**
+     *
+     * @param n
+     * @param pct
+     */
     public void addRef(int n, float pct){
         pcttotword+=pct;
         ref.add(""+n);

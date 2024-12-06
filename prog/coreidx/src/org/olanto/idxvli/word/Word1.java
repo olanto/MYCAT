@@ -47,14 +47,23 @@ public class Word1 implements WordManager {
     public Word1() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+     * @param _ManagerImplementation
+     * @param _path
+     * @param _idxName
+     * @param _lengthString
+     * @param _maxSize */
     public final WordManager create(implementationMode _ManagerImplementation,
             String _path, String _idxName, int _maxSize, int _lengthString) {
         return (new Word1(_ManagerImplementation,
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path */
+    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+     * @param _ManagerImplementation
+     * @param _RW
+     * @param _idxName
+     * @param _path */
     public final WordManager open(implementationMode _ManagerImplementation,
             readWriteMode _RW, String _path, String _idxName) {
         return (new Word1(_ManagerImplementation,
@@ -120,7 +129,8 @@ public class Word1 implements WordManager {
     private final Lock dictionnaryR = dictionnaryRW.readLock();
     private final Lock dictionnaryW = dictionnaryRW.writeLock();
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt*/
+    /**  ajoute un document au gestionnaire retourne le numï¿½ro du document
+     * @param d document name*/
     public final int put(String d) {
         dictionnaryW.lock();
         try {
@@ -132,7 +142,8 @@ public class Word1 implements WordManager {
         }
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param d */
     public final int get(String d) {
         dictionnaryR.lock();
         try {

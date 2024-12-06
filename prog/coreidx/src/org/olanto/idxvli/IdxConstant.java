@@ -30,18 +30,27 @@ import org.olanto.idxvli.server.PreProcessingService;
 import org.olanto.idxvli.server.PreProcessingService_Default;
 
 /**
- * Une classe pour déclarer des constants.
+ * Une classe pour déclarer des constants de l'index.
  *
  *
  */
 public class IdxConstant {
 
+    /** Version du module */
     public static final String VERSION = "3.2.3";
+    /** exp régulière avant le token*/
     public static String REGEX_EXACT_BEFORE_TOKEN = "([^\\p{L}\\p{N}]|^)";
+     /** exp régulière après  le token*/
     public static String REGEX_EXACT_AFTER_TOKEN = "([^\\p{L}\\p{N}]|$)";
-    public static boolean FULL_LOAD = true; // // évite de charger les doc et les idx for classification
+
+    /** évite de charger les doc et les idx for classification*/
+    public static boolean FULL_LOAD = true;
+    
+    /**
+     *constante pour être compatible avec la version du classifieur
+     */
     public static boolean CHECK_CONSISTENT = false;
-    // constante pour être compatible avec la version du classifieur
+    // 
     /**
      * nom du fichier pour les documents non-indexables
      */
@@ -55,7 +64,15 @@ public class IdxConstant {
     // ------------------------------------------------------------------- 
     // valeurs pour des structures de bas niveaux 
     // les valeurs sont celles par défaut de ces strucrures
+    
+    /**
+     * max par défaut
+     */
     public static int BitArrayVector_ZIP_WithCache_MAXINCACHE = 16;
+    
+    /**
+     * min par défaut
+     */
     public static int ByteArrayVector_OnDisk_MININIT = 128;
     // -------------------------------------------------------------------   
 
@@ -172,10 +189,26 @@ public class IdxConstant {
      * pas sp�cifi�e, elle est calcul�e en mots index�s
      */
     public static int NEAR_DISTANCE = 15;
+
+    /**
+     * max par défaut
+     */
     public static int MAX_CITATION = 100;
+
+    /**
+     * max par défaut
+     */
     public static int MAX_RESPONSE = 1000;
+
+    /**
+     *  max par défaut
+     */
     public static int MAX_QUERY_IN_CACHE = 1000;  //taille en byte approx MAX_QUERY_IN_CACHE*WINDOW_SIZE*2*1000 ?
-    public static boolean CACHE_QUERY = true;  // active cacheQuery
+
+    /**
+     * active cacheQuery if true
+     */
+    public static boolean CACHE_QUERY = true;  // 
     /**
      * **********************************************************************************
      */
@@ -236,6 +269,10 @@ public class IdxConstant {
      * modification du nom du fichier
      */
     public static RenameOption FILE_EXTENTION_CASE = RenameOption.NOCHANGE;
+
+    /**
+     * valeur par défaut du dossier glossaire
+     */
     public static String GLOSS_NAME = "Glossaries";
     /**
      * adding a parameter to modify the order_by_name
@@ -246,7 +283,7 @@ public class IdxConstant {
      */
     public static boolean IDX_SAVE_POSITION = true;
     /**
-     * cr�e des doc bag => classification & knn
+     * cr�e des doc bag -- classification and knn
      */
     public static boolean IDX_WITHDOCBAG = false;
     /**
@@ -498,10 +535,30 @@ public class IdxConstant {
      * ajoute les statisques dans myQuote
      */
     public static boolean SKIP_LINE_QUOTE_DECTECTOR = false;
+
+    /**
+     * génére les stat QD
+     */
     public static boolean MYQUOTE_STAT = true;
+
+    /**
+     * marque d'ouverture ref
+     */
     public static String OPEN_REF_BEG = "[R";
+
+    /**
+     * marque de fermeture ref
+     */
     public static String OPEN_REF_END = "]";
+
+    /**
+     * marque de début de fermeture
+     */
     public static String CLOSE_REF_BEG = "[E";
+
+    /**
+     * marque de fin de fermeture
+     */
     public static String CLOSE_REF_END = "]";
     /**
      * **********************************************************************************
@@ -620,12 +677,24 @@ public class IdxConstant {
      * to forge an url for original
      */
     public static String ORIGINAL_HOST = "localhost";
+
+    /**
+     * port d'origine par defaut
+     */
     public static String ORIGINAL_PORT = "5555";
+
+    /**
+     * http d'origine par defaut
+     */
     public static String ORIGINAL_FULL_URL = "HTTP";
     /**
      * définition de la notion d'url originale
      */
     public static String ORIGINAL_CODE = "org.olanto.idxvli.server.OriginalService_Default";
+
+    /**
+     * service par defaut
+     */
     public static OriginalService ORIGINAL_DEFINITION = new OriginalService_Default();
     /**
      * **********************************************************************************
@@ -634,13 +703,29 @@ public class IdxConstant {
      * définition de la notion d'url originale
      */
     public static String PRE_PROCESSING_CODE = "org.olanto.idxvli.server.PreProcessingService_Default";
+
+    /**
+     * pré-processing par defaut
+     */
     public static PreProcessingService PRE_PROCESSING = new PreProcessingService_Default();
+
+    /**
+     * fréquence de pré-processing en seconde
+     */
     public static int PRE_PROCESSING_INTERVAL = 3600;
     /**
      * Path to the file containing all the SERVER messages
      */
     public static String SERVER_MESSAGE_PATH = "C:/MYCAT/config/messages/interface/initserver";
+
+    /**
+     * langue par défaut du serveur
+     */
     public static String SERVER_MESSAGE_LANG = "";
+
+    /**
+     * gestionnaire par défaut des messages
+     */
     public static ConstStringManager MSG;
 
     /**
@@ -785,6 +870,9 @@ public class IdxConstant {
 
     }
 
+    /**
+     * fermer le log manager
+     */
     public static void closeLogger() {
         COMLOG.info("CLOSE Common Log File ---------------------------------------------------------");
         DETLOG.info("CLOSE Detail Log File ---------------------------------------------------------");

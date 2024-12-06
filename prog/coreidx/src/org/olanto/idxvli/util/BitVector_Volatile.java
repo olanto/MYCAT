@@ -48,12 +48,19 @@ public class BitVector_Volatile implements BitVector {
     public BitVector_Volatile() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize (path et filename sont pas utilis�s! */
+    /**  cr�e un vecteur de taille 2^_maxSize (path et filename sont pas utilis�s!
+     * @param _pathName
+     * @param _fileName
+     * @param _maxSize
+     * @return valeur */
     public final BitVector create(String _pathName, String _fileName, int _maxSize) {
         return (new BitVector_Volatile(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path, not implemented */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path, not implemented
+     * @param _pathName
+     * @param _fileName
+     * @return valeur */
     public final BitVector open(String _pathName, String _fileName) {
         error("not implemented");
         return null;
@@ -74,14 +81,16 @@ public class BitVector_Volatile implements BitVector {
         initFirstTime();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         if ((size % 32) != 0) {
             error_fatal("BitVector_InMemory size must be a multiple of 32");
         }
         b = new int[size / 32];
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, boolean val) {
         if (val) {
             b[pos / 32] |= mask[pos % 32];
@@ -91,17 +100,21 @@ public class BitVector_Volatile implements BitVector {
         }
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final boolean get(int pos) {
         return (b[pos >> 5] & mask[pos % 32]) == mask[pos % 32]; // >>5 divise par 32 
     }
 
-    /**  cherche le vecteur entier  */
+    /**  cherche le vecteur entier
+     * @return valeur */
     public final SetOfBits get() {
         return new SetOfBits(b);
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
@@ -111,7 +124,8 @@ public class BitVector_Volatile implements BitVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "BitVector_Volatile: " + "statistics -> "
                 + "\n  size: " + size;

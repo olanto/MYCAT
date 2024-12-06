@@ -48,12 +48,20 @@ public class IntArrayVector_InMemory implements IntArrayVector {
     public IntArrayVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _maxSize
+     * @param _fileName
+     * @param _fixedArraySize
+     * @return valeur */
     public final IntArrayVector create(String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         return (new IntArrayVector_InMemory(_pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @return valeur */
     public final IntArrayVector open(String _pathName, String _fileName) {
         return (new IntArrayVector_InMemory(_pathName, _fileName));
     }
@@ -87,7 +95,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         v = new int[size][];
     }
 
@@ -130,7 +138,9 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         msg("fixedArraySize: " + fixedArraySize);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, int[] val) {
         if (val.length <= fixedArraySize) {
             v[pos] = val;
@@ -139,7 +149,10 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         }
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param i
+     * @param val */
     public void set(int pos, int i, int val) {
         if (i < fixedArraySize) {
             if (v[pos] == null) { // pas encore allou�s
@@ -152,12 +165,17 @@ public class IntArrayVector_InMemory implements IntArrayVector {
 
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final int[] get(int pos) {
         return v[pos];
     }
 
-    /**  cherche la valeur � la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la i�me valeur
+     * @param pos
+     * @param i
+     * @return valeur */
     public final int get(int pos, int i) {
         if (v[pos] == null) { // pas encore allou�s
             return 0;
@@ -165,7 +183,8 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         return v[pos][i];
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }

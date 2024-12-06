@@ -33,7 +33,7 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
  * Implémentation standard minimal du coordinateur. Ce coordinateur est mono-thread, donc
  * la lib�ration du cache, se fait sans qu'il y ait des activités dans le cache.
  *
- *   modif 25.1.05  int totidxcnt -> long totidxcnt;  // trop petit!
+ *   modif 25.1.05  int totidxcnt -- long totidxcnt;  // trop petit!
  */
 public class CacheCoordinator_Basic implements CacheCoordinator {
 

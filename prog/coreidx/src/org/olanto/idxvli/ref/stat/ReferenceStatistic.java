@@ -37,8 +37,20 @@ public class ReferenceStatistic {
     private String[] multiref;
     private String[] txt;
     private int[] txtlength;
+
+    /**
+     *
+     */
     public int totword;
+
+    /**
+     *
+     */
     public int totwordref;
+
+    /**
+     *
+     */
     public String pctref = "0%";
     private HashMap<String, InverseRef> invmap = new HashMap<String, InverseRef>(1000);
     private InverseRef[] alldoc;  // la liste des documents
@@ -49,6 +61,15 @@ public class ReferenceStatistic {
     private boolean fast;  // false=remove fantome
     private String removedFile = "no file";
 
+    /**
+     *
+     * @param txtRefOrigin
+     * @param docMultiRef
+     * @param totword
+     * @param removefirst
+     * @param fast
+     * @param removedFile
+     */
     public ReferenceStatistic(List<String> txtRefOrigin, List<String> docMultiRef, int totword, boolean removefirst, boolean fast, String removedFile) {
         this.removefirst = removefirst;
         this.fast = fast;
@@ -71,6 +92,10 @@ public class ReferenceStatistic {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public InverseRef getFirsReference() {
         if (alldoc.length == 0) {
             return null;
@@ -78,6 +103,9 @@ public class ReferenceStatistic {
         return alldoc[0];
     }
 
+    /**
+     *
+     */
     public void computeStatByRef() {
         for (int i = 0; i < txt.length; i++) {
             String[] refs = p.split(multiref[i]);
@@ -100,6 +128,13 @@ public class ReferenceStatistic {
         Arrays.sort(alldoc, new RefComparator());
     }
 
+    /**
+     *
+     * @param fileName
+     * @param Collections
+     * @param min
+     * @return
+     */
     public String getHeaderSat(String fileName, String Collections, int min) {
         StringBuilder res = new StringBuilder("");
         res.append("</p> " + MSG.get("server.qd.MSG_1") + " " + fileName);
@@ -120,6 +155,10 @@ public class ReferenceStatistic {
         return res.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStatByRef() {
         //computeStatByRef();
         StringBuilder res = new StringBuilder("");
@@ -152,6 +191,10 @@ public class ReferenceStatistic {
         return res.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getStatByQuote() {
         StringBuilder res = new StringBuilder("");
         res.append("</p><table BORDER=\"1\">\n");
@@ -179,6 +222,10 @@ public class ReferenceStatistic {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String getXMLStatByQuote() {
         StringBuilder res = new StringBuilder("");
         res.append("<references>\n");
@@ -201,6 +248,11 @@ public class ReferenceStatistic {
 
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String clean4xml(String s) {
         return s.replace("&", "&amp;").replace("<", "&lt;");
 

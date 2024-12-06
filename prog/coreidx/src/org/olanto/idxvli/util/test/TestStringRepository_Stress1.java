@@ -29,11 +29,16 @@ import org.olanto.util.Timer;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository_Stress1 {
 
     static StringRepository o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         o = (new StringTable_HomeHash_OnDisk_DIO_Clue()).create("C:/JG/gigaversion/data/objsto", "test", 27, 32);
         o = (new StringTable_HomeHash_OnDisk_DIO_Clue()).open("C:/JG/gigaversion/data/objsto", "test");

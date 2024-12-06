@@ -53,6 +53,10 @@ import org.olanto.idxvli.server.*;
  */
 public class RunServerWriteFromEmpty {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

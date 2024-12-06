@@ -50,12 +50,19 @@ public class LongVector_DirectIO implements LongVector {
     public LongVector_DirectIO() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _fileName
+     * @param _maxSize
+     * @return valeur */
     public final LongVector create(String _pathName, String _fileName, int _maxSize) {
         return (new LongVector_DirectIO(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @return valeur */
     public final LongVector open(String _pathName, String _fileName) {
         return (new LongVector_DirectIO(_pathName, _fileName));
     }
@@ -88,7 +95,7 @@ public class LongVector_DirectIO implements LongVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         try {
             v = new MappedFile();
             v.open(pathName + "/" + fileName + "_dio", MappingMode.FULL, readWriteMode.rw, slice2n, size * 8);
@@ -136,7 +143,9 @@ public class LongVector_DirectIO implements LongVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, long val) {
         try {
             v.seek(pos << 3); // pos*8
@@ -146,7 +155,9 @@ public class LongVector_DirectIO implements LongVector {
         }
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final long get(int pos) {
         try {
             v.seek(pos << 3); // pos*8
@@ -157,7 +168,8 @@ public class LongVector_DirectIO implements LongVector {
         return -1;
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
@@ -167,7 +179,8 @@ public class LongVector_DirectIO implements LongVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "LongVector_DirectIO: " + pathName + "/" + fileName + "statistics -> "
                 + "\n  size: " + size;

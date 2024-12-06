@@ -31,6 +31,11 @@ import static org.olanto.util.Messages.*;
  */
 public class GetContentService {
 
+    /**
+     *
+     * @param serviceName
+     * @return
+     */
     public static ContentService getServiceCM(String serviceName) {
 
         ContentService is;
@@ -54,6 +59,12 @@ public class GetContentService {
         return null;
     }
 
+    /**
+     *
+     * @param client
+     * @param serviceName
+     * @return
+     */
     public static ContentService runServiceCM(ContentInit client, String serviceName) {
 
         ContentService contentobj;
@@ -78,6 +89,11 @@ public class GetContentService {
 
     }
 
+    /**
+     *
+     * @param serviceName
+     * @return
+     */
     public static IndexService getServiceVLI(String serviceName) {
 
         IndexService is;
@@ -102,6 +118,11 @@ public class GetContentService {
         return null;
     }
 
+    /**
+     *
+     * @param serviceName
+     * @return
+     */
     public static IndexService_MyCat getServiceMYCAT(String serviceName) {
 
         IndexService_MyCat is;

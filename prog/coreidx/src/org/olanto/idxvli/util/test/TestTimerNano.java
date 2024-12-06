@@ -27,9 +27,14 @@ import org.olanto.util.TimerNano;
  * 
  *
  *
+ * @author xtern
  */
 public class TestTimerNano {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         TimerNano t1;
         for (int i = 0; i < 1000; i++) {

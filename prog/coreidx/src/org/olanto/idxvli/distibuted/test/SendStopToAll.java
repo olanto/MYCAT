@@ -29,6 +29,10 @@ import static org.olanto.util.Messages.*;
  */
 public class SendStopToAll {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         int nbidx = 4;

@@ -41,6 +41,12 @@ public class TestClientReferenceWithoutServer extends Thread {
     static UploadedFile up;
     static int NBREF;
 static float y;
+
+    /**
+     *
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
 
         id = new IdxStructure("QUERY", new ConfigurationIndexingGetFromFile(SenseOS.getMYCAT_HOME() + "/config/IDX_fix.xml"));
@@ -62,6 +68,10 @@ static float y;
         System.out.println("ref finish");
     }
 
+    /**
+     *
+     * @param i
+     */
     public void dummy(int i){
                 for (int j = 0; j < 1000000; j++) {
                 y+=(i*j);
@@ -69,6 +79,14 @@ static float y;
     
     }
     
+    /**
+     *
+     * @param fileNameIn
+     * @param fileNameOut
+     * @param collect
+     * @param nbref
+     * @throws FileNotFoundException
+     */
     public static void testref(String fileNameIn, String fileNameOut, String[] collect, int nbref) throws FileNotFoundException {
 
         NBREF = nbref;

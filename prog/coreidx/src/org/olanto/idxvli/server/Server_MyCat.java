@@ -82,6 +82,10 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     private IdxInit clientForRestart;
     private CheckConsistency CheckOpenClose;
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public Server_MyCat() throws RemoteException {
         super();
     }
@@ -319,6 +323,8 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     /**
      * used for myCAT query
+     * @param orderbyocc
+     * @param exact
      */
     @Override
     public QLResultNice evalQLNice(String request, int start, int size, String order, boolean exact, boolean orderbyocc) throws RemoteException {
@@ -341,6 +347,10 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     /**
      * used for myCAT query CLOSE
+     * @param request1
+     * @param request2
+     * @param chardist
+     * @param orderbyocc
      */
     @Override
     public QLResultNice evalQLNice(String request1, String request2, int start, int size, String order, int chardist, boolean orderbyocc) throws RemoteException {
@@ -732,16 +742,41 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         }
     }
 
+    /**
+     *
+     * @param FileName
+     * @param Content
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String createTemp(String FileName, String Content) throws RemoteException {
         return UtilsFiles.String2File(FileName, Content, TEMP_FOLDER);
     }
 
+    /**
+     *
+     * @param FileName
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public byte[] getTemp(String FileName) throws RemoteException {
         return UtilsFiles.file2byte(new File(TEMP_FOLDER + "/" + FileName));
     }
 
+    /**
+     *
+     * @param RefType
+     * @param DocSrc1
+     * @param DocSrc2
+     * @param DocTgt
+     * @param RepTag1
+     * @param RepTag2
+     * @param Color2
+     * @return
+     * @throws RemoteException
+     */
     @Override
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException {
         String mergedRefDoc = "";

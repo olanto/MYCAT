@@ -51,12 +51,17 @@ public class BitArrayVector_ZIP implements BitArrayVector {
     public BitArrayVector_ZIP() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _ManagerImplementation
+     * @param _pathName
+     * @param _fileName */
     public final BitArrayVector create(implementationMode _ManagerImplementation, String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         return (new BitArrayVector_ZIP(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName */
     public final BitArrayVector open(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {
         return (new BitArrayVector_ZIP(_ManagerImplementation, _pathName, _fileName, _RW));
     }
@@ -109,7 +114,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         vZip.close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         SetOfBits wBA = new SetOfBits(fixedArraySize);  // cr�e un vecteur vide
         byte[] empty = wBA.getZip();
         for (int i = 0; i < size; i++) {
@@ -174,13 +179,13 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         vZip.set(pos, v.getZip());
     }
 
-    /**  cherche la valeur � la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la i�me valeur   */
     public final boolean get(int pos, int i) {
         SetOfBits wBA = new SetOfBits(vZip.get(pos), fixedArraySize);  // cr�e un vecteur depuis son zip
         return wBA.get(i);
     }
 
-    /**  cherche le vecteur complet � la position pos  */
+    /**  cherche le vecteur complet à la position pos  */
     public final SetOfBits get(int pos) {
         return new SetOfBits(vZip.get(pos), fixedArraySize);
     }
@@ -190,7 +195,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         return size;
     }
 
-    /**  retourne la taille du vecteur � la position pos*/
+    /**  retourne la taille du vecteur à la position pos*/
     public final int length(int pos) {
         return fixedArraySize;
     }
@@ -200,7 +205,8 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "Bit Array Vector statistics -> " + pathName + "/" + fileName
                 + "\n  size: " + size

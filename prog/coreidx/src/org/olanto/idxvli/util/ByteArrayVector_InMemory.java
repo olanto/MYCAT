@@ -51,12 +51,21 @@ public class ByteArrayVector_InMemory implements ByteArrayVector {
     public ByteArrayVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _fixedArraySize
+     * @param _fileName
+     * @param _maxSize
+     * @return valeur */
     public final ByteArrayVector create(String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         return (new ByteArrayVector_InMemory(_pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @param _RW
+     * @return valeur */
     public final ByteArrayVector open(String _pathName, String _fileName, readWriteMode _RW) {
         return (new ByteArrayVector_InMemory(_pathName, _fileName, _RW));
     }
@@ -91,7 +100,7 @@ public class ByteArrayVector_InMemory implements ByteArrayVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         v = new byte[size][];
     }
 
@@ -142,7 +151,9 @@ public class ByteArrayVector_InMemory implements ByteArrayVector {
         msg("maxUsedlength: " + maxUsedlength);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, byte[] val) {
         // pas de test sur le mode RW, pour acc�l�rer
         if (val.length <= fixedArraySize) {
@@ -156,22 +167,30 @@ public class ByteArrayVector_InMemory implements ByteArrayVector {
         }
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final byte[] get(int pos) {
         return v[pos];
     }
 
-    /**  cherche la valeur � la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la i�me valeur
+     * @param pos
+     * @param i
+     * @return valeur */
     public final byte get(int pos, int i) {
         return v[pos][i];
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
 
-    /**  retourne la taille du vecteur � la position pos*/
+    /**  retourne la taille du vecteur à la position pos n
+     * @param pos 
+     * @return */
     public final int length(int pos) {
         if (v[pos] != null) {
             return v[pos].length;
@@ -179,7 +198,8 @@ public class ByteArrayVector_InMemory implements ByteArrayVector {
         return 0;
     }
 
-    /**  retourne la taille maximum des vecteurs stock�*/
+    /**  retourne la taille maximum des vecteurs stock
+     * @return �*/
     public final int maxUsedlength() {
         return maxUsedlength;
     }

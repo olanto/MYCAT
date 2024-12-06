@@ -24,10 +24,28 @@ import java.util.Comparator;
 /** pour traiter une référence inverse
  */
 public class OrderResult   {
+
+    /**
+     *
+     */
     public String name;
+
+    /**
+     *
+     */
     public int id;
+
+    /**
+     *
+     */
     public long date;
     
+    /**
+     *
+     * @param id
+     * @param name
+     * @param date
+     */
     public OrderResult(int id, String name, long date){
         this.id=id;
         this.name=name;

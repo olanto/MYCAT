@@ -54,7 +54,7 @@ public interface IndexService_MyCat extends Remote {
      * connexion)
      *
      * @return nom du serveur ...
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getInformation() throws RemoteException;
 
@@ -63,7 +63,7 @@ public interface IndexService_MyCat extends Remote {
      * (dans le cas d'une réinitialisation complète)
      *
      * @param client configuration de la structure
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void startANewOne(IdxInit client) throws RemoteException;
 
@@ -72,7 +72,8 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param client configuration de la structure
      * @param mode (QUERY,INCREMENTAL,DIFFERENTIAL)
-     * @throws java.rmi.RemoteException
+     * @param OpenCM
+     * @throws java.rmi.RemoteException execption
      */
     public void getAndInit(IdxInit client, String mode, boolean OpenCM) throws RemoteException;
 
@@ -80,21 +81,21 @@ public interface IndexService_MyCat extends Remote {
      * Pour demander la sauvegarde des modifications (le système repart avec les
      * paramètres initiaux)
      *
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void saveAndRestart() throws RemoteException;
 
     /**
      * pour forcer l'écriture des caches
      *
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void flush() throws RemoteException;
 
     /**
      * pour rendre visible les nouvelles indexations
      *
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void showFullIndex() throws RemoteException;
 
@@ -102,21 +103,21 @@ public interface IndexService_MyCat extends Remote {
      * Pour obtenir les statisques (nb doc, %compression, ...) de l'indexeur
      *
      * @return résultat des stat
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getStatistic() throws RemoteException;
 
     /**
      * pour stopper le serveur
      *
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void quit() throws RemoteException;
 
     /**
      * pour stopper le process
      *
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void stop() throws RemoteException;
 
@@ -124,7 +125,7 @@ public interface IndexService_MyCat extends Remote {
      * pour indexer un répertoire
      *
      * @param path chemin
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void indexdir(String path) throws RemoteException;
 
@@ -133,7 +134,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param path nom du document
      * @param content contenu à indexer
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void indexThisContent(String path, String content) throws RemoteException;
 
@@ -143,7 +144,7 @@ public interface IndexService_MyCat extends Remote {
      * @param path nom du document
      * @param content contenu à indexer
      * @param lang langue du document
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void indexThisContent(String path, String content, String lang) throws RemoteException;
 
@@ -154,7 +155,7 @@ public interface IndexService_MyCat extends Remote {
      * @param content contenu à indexer
      * @param lang langue du document
      * @param collection étiquettes des collections
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void indexThisContent(String path, String content, String lang, String[] collection) throws RemoteException;
 
@@ -163,7 +164,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param request requête
      * @return résultat
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResult evalQL(String request) throws RemoteException;
 
@@ -172,7 +173,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param request requête
      * @return résultat étendu avec le ranking
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultAndRank evalQLMore(String request) throws RemoteException;
 
@@ -180,12 +181,14 @@ public interface IndexService_MyCat extends Remote {
      * évaluation d'une requête
      *
      * @param request file pattern
+     * @param langS
      * @param start depuis
      * @param size taille du résultat
-     * @param arraylist of string (selected collections)
+     * @param collections
      * @param order type de tri
+     * @param onlyOnFileName
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice browseNice(String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName) throws RemoteException;
 
@@ -196,7 +199,7 @@ public interface IndexService_MyCat extends Remote {
      * @param start depuis
      * @param size taille du résultat
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice evalQLNice(String request, int start, int size) throws RemoteException;
 
@@ -207,20 +210,25 @@ public interface IndexService_MyCat extends Remote {
      * @param start depuis
      * @param size taille du résultat
      * @param order critère d'ordre
+     * @param exact
+     * @param orderbyocc
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice evalQLNice(String request, int start, int size, String order, boolean exact, boolean orderbyocc) throws RemoteException;
 
     /**
      * évaluation d'une requête
      *
-     * @param request requête
+     * @param request1 requête 1
+     * @param request2 requête 2
      * @param start depuis
      * @param size taille du résultat
      * @param order critère d'ordre
+     * @param chardist
+     * @param orderbyocc
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice evalQLNice(String request1, String request2, int start, int size, String order, int chardist, boolean orderbyocc) throws RemoteException;
 
@@ -232,7 +240,7 @@ public interface IndexService_MyCat extends Remote {
      * @param start depuis
      * @param size jusqua
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice evalQLNice(String request, String properties, int start, int size) throws RemoteException;
 
@@ -245,7 +253,7 @@ public interface IndexService_MyCat extends Remote {
      * @param start depuis
      * @param size jusqua
      * @return résultat étendu avec snippet
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResultNice evalQLNice(String request, String properties, String profile, int start, int size) throws RemoteException;
 
@@ -255,7 +263,7 @@ public interface IndexService_MyCat extends Remote {
      * @param request requête
      * @param lang propriétés à vérifier
      * @return résultat
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public QLResult evalQL(String lang, String request) throws RemoteException;
 
@@ -264,7 +272,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docList liste d'identifiant
      * @return noms
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String[] getDocName(int[] docList) throws RemoteException;
 
@@ -273,7 +281,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docid identifiant
      * @return nom du document
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getDocName(int docid) throws RemoteException;
 
@@ -282,7 +290,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param doc
      * @return validité
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public boolean docIsValid(int doc) throws RemoteException;
 
@@ -291,7 +299,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docId
      * @return contenu
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getDoc(int docId) throws RemoteException;
 
@@ -300,7 +308,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docName nom
      * @return id
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public int getDocId(String docName) throws RemoteException;
 
@@ -310,6 +318,7 @@ public interface IndexService_MyCat extends Remote {
      * @param doc document
      * @param N nombre de voisins
      * @return réponse
+     * @throws java.rmi.RemoteException execption
      */
     public KNNResult KNNForDoc(int doc, int N) throws RemoteException;
 
@@ -317,6 +326,7 @@ public interface IndexService_MyCat extends Remote {
      * Cherche l'encodage d'un document
      *
      * @return encodage
+     * @throws java.rmi.RemoteException execption
      */
     public String getDOC_ENCODING() throws RemoteException;
 
@@ -325,15 +335,16 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param min borne inférieure
      * @param max borne supérieure
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void exportEntry(long min, long max) throws RemoteException;
 
     /**
      * retourne l'expansion d'un terme comportant des wildchar
      *
+     * @param term
      * @return la liste
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String[] ExpandTerm(String term) throws RemoteException;
 
@@ -341,6 +352,7 @@ public interface IndexService_MyCat extends Remote {
      * récupère le dictionnaire de propriétés
      *
      * @return liste des propriétés actives
+     * @throws java.rmi.RemoteException execption
      */
     public PropertiesList getDictionnary() throws RemoteException;
 
@@ -350,6 +362,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param prefix préfixe des propriétés
      * @return liste des propriétés actives
+     * @throws java.rmi.RemoteException execption
      */
     public PropertiesList getDictionnary(String prefix) throws RemoteException;
 
@@ -358,7 +371,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param txt texte
      * @return langue
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getLanguage(String txt) throws RemoteException;
 
@@ -367,7 +380,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param txt texte
      * @return propriétés
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String[] getCollection(String txt) throws RemoteException;
 
@@ -378,7 +391,7 @@ public interface IndexService_MyCat extends Remote {
      * détermine le chemin du corpus à convertir
      *
      * @return path
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getROOT_CORPUS_SOURCE() throws RemoteException;
 
@@ -386,7 +399,7 @@ public interface IndexService_MyCat extends Remote {
      * détermine le chemin du corpus à indexer
      *
      * @return path
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public String getROOT_CORPUS_TXT() throws RemoteException;
 
@@ -394,7 +407,7 @@ public interface IndexService_MyCat extends Remote {
      * détermine la taille du corpus
      *
      * @return dernier numéro de document enregistré
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public int getSize() throws RemoteException;
 
@@ -404,7 +417,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param properties nom de la propiété
      * @return vector de bits
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public SetOfBits satisfyThisProperty(String properties) throws RemoteException;
 
@@ -413,8 +426,7 @@ public interface IndexService_MyCat extends Remote {
      * collection, state, etc)
      *
      * @param properties nom de la propiété
-     * @return vector de bits
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void clearThisProperty(String properties) throws RemoteException;
 
@@ -423,7 +435,7 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docID id
      * @param properties nom de la propiété
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void setDocumentPropertie(int docID, String properties) throws RemoteException;
 
@@ -432,7 +444,8 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docID id
      * @param properties nom de la propiété
-     * @throws java.rmi.RemoteException
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public boolean getDocumentPropertie(int docID, String properties) throws RemoteException;
     
@@ -442,70 +455,90 @@ public interface IndexService_MyCat extends Remote {
      *
      * @param docID id
      * @param properties nom de la propiété
-     * @throws java.rmi.RemoteException
+     * @throws java.rmi.RemoteException execption
      */
     public void clearDocumentPropertie(int docID, String properties) throws RemoteException;
 
     /**
      * pour récupérer les stops words
      *
-     * @throws java.rmi.RemoteException
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String[] getStopWords() throws RemoteException;
 
     /**
      * pour récupérer les langues des corpus
      *
-     * @throws java.rmi.RemoteException
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String[] getCorpusLanguages() throws RemoteException;
 
     /**
      * pour récupérer le document original
      *
-     * @throws java.rmi.RemoteException
+     * @param docName
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String getOriginalUrl(String docName) throws RemoteException;
 
     /**
      * pour récupérer le path du document original
      *
-     * @throws java.rmi.RemoteException
+     * @param docName
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String getOriginalPath(String docName) throws RemoteException;
 
     /**
      * pour récupérer le contenu d'un fichier
      *
-     * @throws java.rmi.RemoteException
+     * @param d
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public byte[] getByte(String d) throws RemoteException;
 
     /**
      * pour récupérer le contenu du document original
      *
-     * @throws java.rmi.RemoteException
+     * @param docName
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String getOriginalZipName(String docName) throws RemoteException;
 
     /**
      * pour récupérer le path du document original
      *
-     * @throws java.rmi.RemoteException
+     * @param args
+     * @throws java.rmi.RemoteException execption
      */
     public void executePreprocessing(String[] args) throws RemoteException;
 
     /**
      * pour récupérer les propriétés du client
      *
-     * @throws java.rmi.RemoteException
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public HashMap<String, String> getClientProperties() throws RemoteException;
 
     /**
      * pour chercher les références d'un fichier uploaded
      *
-     * @throws java.rmi.RemoteException
+     * @param upfile
+     * @param limit
+     * @param source
+     * @param target
+     * @param selectedCollection
+     * @param fast
+     * @param removefirst
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
             boolean removefirst, boolean fast) throws RemoteException;
@@ -513,7 +546,15 @@ public interface IndexService_MyCat extends Remote {
     /**
      * pour chercher les références d'un fichier uploaded
      *
-     * @throws java.rmi.RemoteException
+     * @param upfile
+     * @param limit
+     * @param target
+     * @param source
+     * @param selectedCollection
+     * @param removefirst
+     * @param fast
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String getHtmlReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
             boolean removefirst, boolean fast) throws RemoteException;
@@ -521,14 +562,51 @@ public interface IndexService_MyCat extends Remote {
     /**
      * pour chercher les références d'un fichier uploaded
      *
-     * @throws java.rmi.RemoteException
+     * @param upfile
+     * @param limit
+     * @param RefType
+     * @param removefirst
+     * @param source
+     * @param selectedCollection
+     * @param fast
+     * @param fromFile
+     * @param target
+     * @param DocSrc
+     * @param DocTgt
+     * @return 
+     * @throws java.rmi.RemoteException execption
      */
     public String getXMLReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
             boolean removefirst, boolean fast, boolean fromFile, String DocSrc, String DocTgt, String RefType) throws RemoteException;
 
+    /**
+     *
+     * @param RefType
+     * @param DocSrc1
+     * @param DocSrc2
+     * @param DocTgt
+     * @param RepTag1
+     * @param RepTag2
+     * @param Color2
+     * @return
+     * @throws RemoteException
+     */
     public String mergeXMLReferences(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) throws RemoteException;
 
+    /**
+     *
+     * @param FileName
+     * @param Content
+     * @return
+     * @throws RemoteException
+     */
     public String createTemp(String FileName, String Content) throws RemoteException;
 
+    /**
+     *
+     * @param FileName
+     * @return
+     * @throws RemoteException
+     */
     public byte[] getTemp(String FileName) throws RemoteException;
 }

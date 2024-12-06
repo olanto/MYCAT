@@ -36,11 +36,19 @@ public class StatOnPropertiesOnIndex {
     static final boolean verboseTitle = false;
     static IndexService id;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         inventoryOf("rmi://localhost/VLI");
     }
 
+    /**
+     *
+     * @param VLIService
+     */
     public static void inventoryOf(String VLIService) {
         msg("");
         msg("");

@@ -56,12 +56,21 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     public ByteArrayVector_OnDisk() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _fileName
+     * @param _maxSize
+     * @param _fixedArraySize
+     * @return valeur */
     public final ByteArrayVector create(String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         return (new ByteArrayVector_OnDisk(_pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _RW
+     * @param _fileName
+     * @return valeur */
     public final ByteArrayVector open(String _pathName, String _fileName, readWriteMode _RW) {
         return (new ByteArrayVector_OnDisk(_pathName, _fileName, _RW));
     }
@@ -107,7 +116,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         }
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         // alloue la totalit� a l'initialisation
         byte[] b = new byte[minInit * fixedDiskSize];
         for (int i = 0; i < size / minInit; i++) {
@@ -164,7 +173,9 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         msg("maxUsedlength: " + maxUsedlength);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, byte[] val) {
         // pas de test sur le mode RW, pour acc�l�rer
         if (val.length <= fixedArraySize) {
@@ -179,14 +190,19 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         }
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final byte[] get(int pos) {
         long posOnDisk = (long) pos * (long) (fixedDiskSize);
         int length = readInt(posOnDisk, rdoc);
         return readBytes(32, posOnDisk + 4, rdoc);
     }
 
-    /**  cherche la valeur � la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la i�me valeur
+     * @param pos
+     * @param i
+     * @return valeur */
     public final byte get(int pos, int i) {
         byte[] b = get(pos);
         if (b == null) {
@@ -200,17 +216,21 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         return b[i];
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
 
-    /**  retourne la taille maximum des vecteurs stock�*/
+    /**  retourne la taille maximum des vecteurs stock
+     * @return �*/
     public final int maxUsedlength() {
         return maxUsedlength;
     }
 
-    /**  retourne la taille du vecteur � la position pos*/
+    /**  retourne la taille du vecteur à la position pos
+     * @param pos
+     * @return */
     public final int length(int pos) {
         // peut devenir une methode de l'interface
         long posOnDisk = (long) pos * (long) (fixedDiskSize);

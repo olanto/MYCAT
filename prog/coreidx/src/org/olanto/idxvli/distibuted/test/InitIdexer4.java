@@ -32,6 +32,10 @@ import org.olanto.idxvli.server.*;
  */
 public class InitIdexer4 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         try {

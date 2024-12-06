@@ -43,11 +43,11 @@ import java.util.regex.*;
  * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire.
  *
  * <pre>
- * query = subquery < query_operator subquery >.
+ * query = subquery &lt; query_operator subquery &gt;.
  * query_operator= "AND" | ("OR"|"|") | ("MINUS"|"-") .
  * subquery = expression [ filter ] [ sortby ] .
  * filter = "IN" "[" exp_property "]" .
- * expression = term < query_operator term > .
+ * expression = term &lt; query_operator term &gt; .
  * term =   qString
  *           | ("NEAR"|"~") "(" qString [","] qString ")"
  *           | "NEXT" "(" qString [","] qString ")"
@@ -55,12 +55,12 @@ import java.util.regex.*;
  *           | "FILE" "(" qString ")"
  *           | "(" query ")".
  * qString = ""STRING"".
- * exp_property = term_property <filter_operator term_property >
+ * exp_property = term_property &lt; filter_operator term_property &gt;
  * filter_operator="ANDL" | "ORL"
  * term_property = [ "NOT" ] ""property_name""
  *               | "LENGTH" rel_operator ""numeric_value""
  *               | "DATE" rel_operator ""date_value"".
- * rel_operator = "<" | ">"
+ * rel_operator = "&lt;" | "&gt;"
  * sortby = "SORT BY" [ "IDX" | "DATE" | "ALPHA"]"
  * </pre>
  *
@@ -89,10 +89,10 @@ import java.util.regex.*;
  * test("tarif IN[\"_FR\"]");
  * test("tarif IN[ NOT \"_FR\"]");
  * test("tarif IN[\"_EN\" OR \"_FR\"]");
- * test("tarif IN[LENGTH > \"1000\"]");
- * test("tarif IN[LENGTH < \"1000\"]");
- * test("tarif IN[DATE < \"09-02-2004\"]");
- * test("((italie AND prenant)IN[\"_FR\"] OR (italy AND undertaking)IN[\"_EN\"]) IN [LENGTH < \"1000\"]");
+ * test("tarif IN[LENGTH &gt; \"1000\"]");
+ * test("tarif IN[LENGTH &lt; \"1000\"]");
+ * test("tarif IN[DATE &lt; \"09-02-2004\"]");
+ * test("((italie AND prenant)IN[\"_FR\"] OR (italy AND undertaking)IN[\"_EN\"]) IN [LENGTH &lt; \"1000\"]");
  * * </pre>
  *
  *
@@ -107,8 +107,20 @@ public class QLCompiler {
     public static final String COMPILER_VERSION = "1.02";
     /** caract�re pour quoter les symboles*/
     public static final char QUOTE_CHAR = '"';
+
+    /**
+     *
+     */
     public static final char MINUS_CHAR = '-';
+
+    /**
+     *
+     */
     public static final char NEAR_CHAR = '~';
+
+    /**
+     *
+     */
     public static final char OR_CHAR = '|';
 
     private static enum Operation {
@@ -130,10 +142,24 @@ public class QLCompiler {
     private IdxStructure z;
     private String properties = "";
     private String profile = "";
+
+    /**
+     *
+     */
     public boolean existAlternative = false;
     /* les termes de la requ�te*/
+
+    /**
+     *
+     */
+
     public List<String> termsOfQuery = new Vector<String>();
     /* la requ�te oups*/
+
+    /**
+     *
+     */
+
     public String oupsQuery = "";
     private static int TT_WORD = StreamTokenizer.TT_WORD;
     private static int TT_NUMBER = StreamTokenizer.TT_NUMBER;
@@ -153,6 +179,7 @@ public class QLCompiler {
     /**
      * Cr�ation d'un compilateur pour une requ�te et son indexeur
      * @param rdr source � compiler
+     * @param properties
      * @param id indexeur de r�f�rence
      */
     public QLCompiler(Reader rdr, String properties, IdxStructure id) {
@@ -164,7 +191,9 @@ public class QLCompiler {
     /**
      * Cr�ation d'un compilateur pour une requête et son indexeur
      * @param rdr source à compiler
+     * @param properties
      * @param id indexeur de référence
+     * @param profile
      */
     public QLCompiler(Reader rdr, String properties, String profile, IdxStructure id) {
         if (verboseparsing) {
@@ -307,6 +336,10 @@ public class QLCompiler {
       return res;
     }
 
+    /**
+     *
+     * @return
+     */
     public String[] getTermsOfQuery() {
         if (termsOfQuery == null) {
             return new String[0];
@@ -318,6 +351,10 @@ public class QLCompiler {
         return res;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getOupsQuery() {
         if (!existAlternative) {
             return null;

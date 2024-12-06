@@ -49,10 +49,14 @@ public class FullIOMap implements IOMap {
     private int maxSlice;
     private long maxLength = (long) Math.pow(2, slice2n + maxSlice2n); // longueur maximum du mapping
 
+    /**
+     *
+     */
     protected FullIOMap() {
     }  // sert pour le get
 
-    /** retourne un gestionnaire de buffer des IO */
+    /** retourne un gestionnaire de buffer des IO
+     * @param _channel */
     public final IOMap get(FileChannel _channel, readWriteMode _RW) throws IOException {
         channel = _channel;
         RW = _RW;

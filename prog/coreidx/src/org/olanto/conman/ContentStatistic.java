@@ -45,18 +45,31 @@ public class ContentStatistic {
         contentSize();
     }
 
+    /**
+     *
+     * @return
+     */
     public String getGlobal() {
         return "Kdoc: " + DOC_MAX / 1024 + "/" + (glue.lastdoc / 1024) + " " + ((glue.lastdoc * 100) / Math.max(DOC_MAX, 1)) + "%";
     }
 
+    /**
+     *
+     */
     public void document() {
         glue.docstable.printStatistic();
     }
 
+    /**
+     *
+     */
     public void content() {
         glue.IO.printContentStatistic();
     }
 
+    /**
+     *
+     */
     public void contentSize() {
         msg("STATISTICS content size:");
         msg("docNow: " + glue.lastdoc);

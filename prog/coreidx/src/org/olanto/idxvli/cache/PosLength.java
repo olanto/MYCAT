@@ -30,8 +30,18 @@ package org.olanto.idxvli.cache;
 public class PosLength {
 
     /* la position */
+
+    /**
+     *
+     */
+
     public int pos;
     /* la longueur */
+
+    /**
+     *
+     */
+
     public int length;
 
     /** crÃ©e une borne

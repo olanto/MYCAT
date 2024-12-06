@@ -49,29 +49,45 @@ import static org.olanto.idxvli.IdxEnum.*;
 /**
  * 
  *
+ * @author xtern
  */
 public class DictionnaryService_BASIC extends UnicastRemoteObject implements DictionnaryService {
 
     private StringRepository dictionnary;
     private readWriteMode RW = readWriteMode.rw;
 
+    /**
+     *
+     * @return
+     * @throws RemoteException
+     */
     public String getInformation() throws RemoteException {
         return "this service is alive ... :DictionnaryService_BASIC";
     }
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open*/
+    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open
+     * @throws java.rmi.RemoteException*/
     public DictionnaryService_BASIC() throws RemoteException {
         super();
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+     * @param _ManagerImplementation
+     * @param _path
+     * @param _lengthString
+     * @param _idxName
+     * @param _maxSize */
     public final void create(implementationMode _ManagerImplementation,
             String _path, String _idxName, int _maxSize, int _lengthString) {
         DictionnaryService_init(_ManagerImplementation,
                 _path, _idxName, _maxSize, _lengthString);
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path */
+    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+     * @param _ManagerImplementation
+     * @param _RW
+     * @param _idxName
+     * @param _path */
     public final void open(implementationMode _ManagerImplementation,
             readWriteMode _RW, String _path, String _idxName) {
         DictionnaryService_init(_ManagerImplementation,
@@ -123,19 +139,25 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         }
     }
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt*/
+    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+     * @param d
+     * @return */
     public final int put(String d) {
         //msg("add this:"+d);
         int id = dictionnary.put(d);
         return id;
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param d
+     * @return valeur */
     public final int get(String d) {
         return dictionnary.get(d);
     }
 
-    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire
+     * @param i 
+     * @return */
     public final String get(int i) {
         return dictionnary.get(i);
     }
@@ -150,7 +172,8 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         msg("");
     }
 
-    /**  retourne le nbr de mots dans le dictionnaire */
+    /**  retourne le nbr de mots dans le dictionnaire
+     * @return valeur */
     public final int getCount() {
         return dictionnary.getCount();
     }

@@ -27,26 +27,80 @@ import static org.olanto.idxvli.IdxEnum.*;
  * 
  * 
  *
+ * @author xtern
  */
 public interface DictionnaryService extends Remote {
 
+    /**
+     *
+     * @return
+     * @throws RemoteException
+     */
     public String getInformation() throws RemoteException;
 
+    /**
+     *
+     * @param implementation
+     * @param path
+     * @param file
+     * @param maxSize
+     * @param maxLengthSizeOfName
+     * @throws RemoteException
+     */
     public void create(implementationMode implementation,
             String path, String file, int maxSize, int maxLengthSizeOfName) throws RemoteException;
 
+    /**
+     *
+     * @param implementation
+     * @param RW
+     * @param path
+     * @param file
+     * @throws RemoteException
+     */
     public void open(implementationMode implementation,
             readWriteMode RW, String path, String file) throws RemoteException;
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public void close() throws RemoteException;
 
+    /**
+     *
+     * @param word
+     * @return
+     * @throws RemoteException
+     */
     public int put(String word) throws RemoteException;
 
+    /**
+     *
+     * @param word
+     * @return
+     * @throws RemoteException
+     */
     public int get(String word) throws RemoteException;
 
+    /**
+     *
+     * @param i
+     * @return
+     * @throws RemoteException
+     */
     public String get(int i) throws RemoteException;
 
+    /**
+     *
+     * @return
+     * @throws RemoteException
+     */
     public int getCount() throws RemoteException;
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public void printStatistic() throws RemoteException;
 }

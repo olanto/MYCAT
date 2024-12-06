@@ -41,6 +41,10 @@ public class CheckConsistency {
     String markName;
     String FN;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {  // only for test
 
         IdxConstant.CHECK_CONSISTENT=true;
@@ -56,6 +60,11 @@ public class CheckConsistency {
 
     }
 
+    /**
+     *
+     * @param rootpath
+     * @param markName
+     */
     public CheckConsistency(String rootpath, String markName) { // empty constructor
         msg("init CheckConsistency:"+IdxConstant.CHECK_CONSISTENT);
         this.rootpath = rootpath;
@@ -63,11 +72,18 @@ public class CheckConsistency {
         FN = rootpath + "/" + markName;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isConsistent() {     
             File f = new File(FN);
             return !f.exists();
       }
 
+    /**
+     *
+     */
     public void markSomeChange() {
         if (IdxConstant.CHECK_CONSISTENT) {
             File f = new File(FN);
@@ -81,6 +97,9 @@ public class CheckConsistency {
         }
     }
 
+    /**
+     *
+     */
     public void clearMark() {
         if (IdxConstant.CHECK_CONSISTENT) {
             File f = new File(FN);

@@ -61,6 +61,8 @@ public interface LexicManager {
     /**
      * crée le gestionnaire avec le fichier donné
      * @param file nom du fichier
+     * @param lang
+     * @param stemName
      * @return un gestionnaire de lexiques
      */
     public LexicManager create(String file, String lang, String stemName);

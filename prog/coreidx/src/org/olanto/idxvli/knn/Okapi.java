@@ -73,6 +73,7 @@ public class Okapi implements KNNManager {
      * @param minocc minimum d'occurences pour �tre dans la pr�s�lection.
      * @param maxlevel maximum d'occurences  en 0/00 du corpus pour �tre dans a pr�s�lection.
      * @param formulaIDF inverse document frequency formula.
+     * @param _offset
      */
     public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose,
             int formulaIDF, int _formulaTF, float _offset) {
@@ -124,10 +125,19 @@ public class Okapi implements KNNManager {
         return null;
     }
 
+    /**
+     *
+     * @param res
+     */
     public final synchronized void showKNNWithName(int[][] res) {
         error("not implemented");
     }
-      public final void showKNNWithContent(int[][] res) {
+
+    /**
+     *
+     * @param res
+     */
+    public final void showKNNWithContent(int[][] res) {
         error("not implemented");     
     }
 
@@ -151,6 +161,11 @@ public class Okapi implements KNNManager {
         return null;
     }
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     public final synchronized float[] getRawKNN(String request) {
         Timer t1 = null;
         if (verbose) {
@@ -172,6 +187,12 @@ public class Okapi implements KNNManager {
 
     }
 
+    /**
+     *
+     * @param request
+     * @param N
+     * @return
+     */
     public final synchronized int[][] getKNN(String request, int N) {
         Timer t1 = null;
         if (verbose) {

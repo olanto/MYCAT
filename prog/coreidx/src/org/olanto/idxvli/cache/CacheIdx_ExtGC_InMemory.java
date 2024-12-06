@@ -29,6 +29,10 @@ public class CacheIdx_ExtGC_InMemory implements CacheIdx {
 
     int maxCache; // size of  cache
     private long actualSize = 0;
+
+    /**
+     *
+     */
     public int[][] v; // cache of idx
 
     /** Creates a new instance of Cache 

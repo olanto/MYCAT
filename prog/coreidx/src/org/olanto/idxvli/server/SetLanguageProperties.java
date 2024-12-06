@@ -37,6 +37,11 @@ public class SetLanguageProperties {
     static String rootTxt;
     static IndexService_MyCat is;
  static boolean verbose=false;
+
+    /**
+     *
+     * @param ispar
+     */
     public static void updateLanguageProperties(IndexService_MyCat ispar) {
 
         is = ispar;
@@ -101,16 +106,33 @@ public class SetLanguageProperties {
         }
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public static String getLangOfDoc(String name) {
         int lenRootTxt = rootTxt.length();
         return name.substring(lenRootTxt + 1, lenRootTxt + 3);
     }
 
+    /**
+     *
+     * @param name
+     * @param Lang
+     * @return
+     */
     public static String getNameOfDocForThisLang(String name, String Lang) {
         int lenRootTxt = rootTxt.length();
         return rootTxt + "/" + Lang + name.substring(lenRootTxt + 3);
     }
 
+    /**
+     *
+     * @param isource
+     * @param name
+     * @param Lang
+     */
     public static void setTargetLang(int isource, String name, String Lang) {
         try {
             String nameTarget = getNameOfDocForThisLang(name, Lang);
@@ -129,6 +151,10 @@ public class SetLanguageProperties {
         }
     }
 
+    /**
+     *
+     * @param setOfLang
+     */
     public static void inventoryOf(String[] setOfLang) {
         msg("");
         msg("");

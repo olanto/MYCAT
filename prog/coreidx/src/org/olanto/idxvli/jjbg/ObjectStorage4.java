@@ -39,33 +39,57 @@ public interface ObjectStorage4 {
      *  les objets plus petits (16) sont stocké dans une structure simplifiée
      *
      *  modification realSize et StoredSize  //21-11-2005
+     * @param implementation
+     * @param path
+     * @param maxSize
+     * @param minBigSize
+     * @return 
      */
     public ObjectStorage4 create(implementationMode implementation, String path, int maxSize, int minBigSize);
 
-    /**  ouvre un ObjectStorage  à l'endroit indiqué par le path */
+    /**  ouvre un ObjectStorage  à l'endroit indiqué par le path
+     * @param implementation
+     * @param path
+     * @param _RW
+     * @return valeur */
     public ObjectStorage4 open(implementationMode implementation, String path, readWriteMode _RW);
 
     /**  ferme un ObjectStorage  (et sauve les modifications*/
     public void close();
 
     /**  ajoute des int a cet objet, si 0 = OK , l'identifiant est imposé de l'exterieur pour le premier append,
-    l'objet sera compressé si nécessaire */
+    l'objet sera compressé si nécessaire
+     * @param b
+     * @param user
+     * @param to
+     * @return valeur */
     public int append(int[] b, int user, int to);
 
     /**  ajoute des bytes a cet objet, si 0 = OK , l'identifiant est imposé de l'exterieur pour le premier append
-    realLength indique la longeur réel de l'objet sans compression, l'objet doit déj? ?tre compressé si l'on veut le compresser*/
+    realLength indique la longeur réel de l'objet sans compression, l'objet doit déj? ?tre compressé si l'on veut le compresse
+     * @param b
+     * @param user
+     * @param realLength
+     * @return */
     public int append(byte[] b, int user, int realLength);
 
-    /**  retourne l'objet stocké completement,si null = erreur*/
+    /**  retourne l'objet stocké completement,si null = erreu
+     * @param user
+     * @return r*/
     public int[] readInt(int user);
 
-    /**  retourne la taille stockée de l'objet*/
+    /**  retourne la taille stockée de l'obje
+     * @param user n
+     * @return t*/
     public int storedSize(int user);
 
-    /**  retourne la taille réel de l'objet sans compression*/
+    /**  retourne la taille réel de l'objet sans compressio
+     * @param user n
+     * @return */
     public int realSize(int user);
 
-    /**  libère un id (ceux vus par les utilisateurs)*/
+    /**  libère un id (ceux vus par les utilisateurs)
+     * @param user n */
     public void releaseId(int user);
 
     /**  imprime les statistiques */
@@ -74,9 +98,11 @@ public interface ObjectStorage4 {
     /**  imprime les statistiques */
     public void resetStatistic();
 
-    /**  imprime les info sur un id (USER) */
+    /**  imprime les info sur un id (USER)
+     * @param user */
     public void printNiceId(int user);
 
-    /**  utilisation en byte de l'espace disque (sans l'overhead) */
+    /**  utilisation en byte de l'espace disque (sans l'overhead)
+     * @return valeur */
     public long getSpace();
 }

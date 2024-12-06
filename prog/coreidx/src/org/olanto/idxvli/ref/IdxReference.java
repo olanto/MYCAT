@@ -153,7 +153,15 @@ public class IdxReference {
             _status = THREADFAIL;
         }
     }
+
+    /**
+     *
+     */
     public static final int MaxIndexedW = 1000000;
+
+    /**
+     *
+     */
     public static final int NotIndexed = -1;
     private static int globalTaskNumber = 0;
     private int taskNumber;
@@ -162,25 +170,73 @@ public class IdxReference {
     private int currentMark = 0;
     private int seqmax = 6;   // borne du seq
     private int seqn = seqmax - 1;   // borne pour les boucles
+
+    /**
+     *
+     */
     public int[] idxW;     // les  mots indexés (numéros)
+
+    /**
+     *
+     */
     public String[] word;  // les mots tokenisés
+
+    /**
+     *
+     */
     public int[] idxpos;   //les positions dans le documents
     private SparseBitSet[] doc;
+
+    /**
+     *
+     */
     public int lastscan;
+
+    /**
+     *
+     */
     public int totwordspacesep;
+
+    /**
+     *
+     */
     protected int lastcp;
     private IdxStructure glue;
     private int[] idxcp;   // index sur le numéro dans le vecteur compacté
     private int[] cpW;     // les  mots indexés (numéros) compacté
+
+    /**
+     *
+     */
     public int[] idxorig;   //l'index dans le vecteur non compacté
     private int[] begM, endM, docM;
+
+    /**
+     *
+     */
     public List<String> docMultiRef;
+
+    /**
+     *
+     */
     public List<String> txtRef;
+
+    /**
+     *
+     */
     public List<String> txtRefOrigin;
+
+    /**
+     *
+     */
     public int nbref;
     private int minlength;
     private SetOfBits sota;  // and of source and target
     private boolean alignsota;
+
+    /**
+     *
+     */
     public int[] posRef;
     private String textforhtml;
     private String[] selectedCollection;
@@ -188,7 +244,15 @@ public class IdxReference {
     private String collectList;
     private boolean removefirst; // true=remove first reference
     private boolean fast;  // false=remove fantome
+
+    /**
+     *
+     */
     public String removedFile = "no file";
+
+    /**
+     *
+     */
     public int removedDoc = -1;
     private boolean lookforfirst = true;
     private boolean secondpass = false;
@@ -212,6 +276,18 @@ public class IdxReference {
         return "Task:" + taskNumber + " ";
     }
 
+    /**
+     *
+     * @param _glue
+     * @param s
+     * @param min
+     * @param source
+     * @param target
+     * @param alignsota
+     * @param _selectedCollection
+     * @param removefirst
+     * @param fast
+     */
     public IdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean removefirst, boolean fast) {
         taskNumber = GetANewTaskId();
@@ -232,6 +308,18 @@ public class IdxReference {
         InitIdxReference(_glue, s, min, source, target, alignsota, _selectedCollection, removefirst, fast);
     }
 
+    /**
+     *
+     * @param _glue
+     * @param s
+     * @param min
+     * @param source
+     * @param target
+     * @param alignsota
+     * @param _selectedCollection
+     * @param _removefirst
+     * @param _fast
+     */
     public void InitIdxReference(IdxStructure _glue, String s, int min, String source, String target, boolean alignsota, String[] _selectedCollection,
             boolean _removefirst, boolean _fast) {
 
@@ -320,10 +408,19 @@ public class IdxReference {
         //this.print();
     }
 
+    /**
+     *
+     * @param fileName
+     */
     public void postInit(String fileName) {
         uploadFileName = fileName;
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String addSpace(String s) {  // traitement du chinois
         StringBuilder res = new StringBuilder("");
         for (int i = 0; i < s.length(); i++) {
@@ -583,10 +680,18 @@ public class IdxReference {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getXMLInfo() {
         return XMLInfo;
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getHTML() {
 
         StringBuilder s = new StringBuilder("");
@@ -614,6 +719,10 @@ public class IdxReference {
         return s.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getREF() {
         //Timer timing = new Timer("--------------------------------Total getXML");
         StringBuilder s = new StringBuilder("");
@@ -631,6 +740,10 @@ public class IdxReference {
         return s.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getSTAT() {
         //Timer timing = new Timer("--------------------------------Total getXML");
 
@@ -663,6 +776,11 @@ public class IdxReference {
         return s.toString();
     }
 
+    /**
+     *
+     * @param rs
+     * @return
+     */
     public final String getXMLInfo(ReferenceStatistic rs) {
         StringBuilder s = new StringBuilder("<Info>\n");
         s.append(rs.getXMLStatByQuote());
@@ -671,6 +789,10 @@ public class IdxReference {
         return s.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public final String getXML() {
         //Timer timing = new Timer("--------------------------------Total getXML");
         StringBuilder s = new StringBuilder("<P>\n");

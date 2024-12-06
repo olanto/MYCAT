@@ -63,12 +63,20 @@ public class StringTable_Direct_InMemory implements StringRepository {
     public StringTable_Direct_InMemory() {
     }
 
-    /**  cr�e une word table de la taille 2^_maxSize par d�faut � l'endroit indiqu� par le path */
+    /**  cr�e une word table de la taille 2^_maxSize par d�faut � l'endroit indiqu� par le path
+     * @param _path
+     * @param _idxName
+     * @param _lengthString
+     * @param _maxSize
+     * @return valeur */
     public final StringRepository create(String _path, String _idxName, int _maxSize, int _lengthString) {
         return (new StringTable_Direct_InMemory(_path, _idxName, "ext", _maxSize));
     }
 
-    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path */
+    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path
+     * @param _path
+     * @param _idxName
+     * @return valeur */
     public final StringRepository open(String _path, String _idxName) {
         return (new StringTable_Direct_InMemory(_path, _idxName));
     }
@@ -102,7 +110,7 @@ public class StringTable_Direct_InMemory implements StringRepository {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         count = 0;
         T = new int[(int) Math.pow(2, maxSize)];
         inverse = new int[(int) Math.pow(2, maxSize)];
@@ -171,7 +179,9 @@ public class StringTable_Direct_InMemory implements StringRepository {
     }
 
     /**  ajoute un terme au gestionnaire retourne le num�ro du terme, retourne EMPTY s'il y a une erreur,
-     * retourne son id s'il existe d�ja 
+     * retourne son id s'il existe d�ja
+     * @param w
+     * @return 
      */
     public final int put(String w) {
         //  System.out.println(w);
@@ -194,7 +204,9 @@ public class StringTable_Direct_InMemory implements StringRepository {
         return inverse[nw];
     }
 
-    /**  cherche le num�ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le num�ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param w
+     * @return valeur */
     public final int get(String w) {
         int nw = getint(w);
         if (nw == EMPTY) {
@@ -203,7 +215,9 @@ public class StringTable_Direct_InMemory implements StringRepository {
         return inverse[nw];
     }
 
-    /**  cherche le terme associ� � un num�ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le terme associ� � un num�ro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
+     * @param i
+     * @return e*/
     public final String get(int i) {
         if (i < 0 || i > utilSize) {
             return NOTINTHIS;
@@ -216,14 +230,16 @@ public class StringTable_Direct_InMemory implements StringRepository {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "String Table statistics :" + pathName + "/" + idxName + " id: " + GENERIC_NAME
                 + "\n  Current version: " + SOFT_VERSION
                 + "\n  count: " + count;
     }
 
-    /**  retourne le nbr de mots dans le dictionnaire */
+    /**  retourne le nbr de mots dans le dictionnaire
+     * @return valeur */
     public final int getCount() {
         //msg("count from :"+count);
         return count;

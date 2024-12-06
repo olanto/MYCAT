@@ -33,34 +33,55 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public interface ByteArrayVector {
 
-    /**  crÃ©e un vecteur 2^_maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), objet=byte[fixedArraySize] */
+    /**  crÃ©e un vecteur 2^_maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), objet=byte[fixedArraySize]
+     * @param _path
+     * @param _file
+     * @param _fixedArraySize
+     * @param _maxSize
+     * @return valeur */
     public ByteArrayVector create(String _path, String _file, int _maxSize, int _fixedArraySize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path */
+    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path
+     * @param _path
+     * @param _RW
+     * @param _file
+     * @return valeur */
     public ByteArrayVector open(String _path, String _file, readWriteMode _RW);
 
     /**  ferme un gestionnaire de vecteurs  (et sauve les modifications*/
     public void close();
 
-    /** mets Ã  jour la position pos avec la valeur val */
+    /** mets Ã  jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public void set(int pos, byte[] val);
 
-    /** Ã©limine le vecteur a la position pos */
+    /** Ã©limine le vecteur a la position pos
+     * @param pos */
     public void clear(int pos);
 
-    /**  cherche la valeur Ã  la position pos  */
+    /**  cherche la valeur Ã  la position pos
+     * @param pos
+     * @return valeur */
     public byte[] get(int pos);
 
-    /**  cherche la valeur Ã  la position pos, la iÃ¨me valeur   */
+    /**  cherche la valeur Ã  la position pos, la iÃ¨me valeur
+     * @param pos
+     * @param i
+     * @return valeur */
     public byte get(int pos, int i);
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public int length();
 
-    /**  retourne la taille du vecteur Ã  la position pos*/
+    /**  retourne la taille du vecteur Ã  la position n
+     * @param pos n
+     * @return */
     public int length(int pos);
 
-    /**  retourne la taille maximum des vecteurs stockÃ©*/
+    /**  retourne la taille maximum des vecteurs stockÃ
+     * @return ©*/
     public int maxUsedlength();
 
     /**  imprime des statistiques */

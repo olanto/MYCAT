@@ -25,9 +25,9 @@ import static org.olanto.idxvli.IdxConstant.*;
 import static org.olanto.util.Messages.*;
 
 /** Une classe pour stocker la s�quence des termes des documents sous forme d'un vecteur d'entier.
- * <pre>
+ * 
  *  Lors de l'indexation, il faut utiliser, un mode qui active la cr�ation
- *  des s�quence de terme -> docMore = true;
+ *  des s�quence de terme -- docMore = true;
  *
  *  l'indexeur construit alors automatiquement les vecteurs de s�quence de termes.
  *
@@ -60,7 +60,7 @@ public class DocSeq {
     }
 
     /**
-     * ajoute un mot � la s�quence (uniquement pour l'indexeur)
+     * ajoute un mot à la s�quence (uniquement pour l'indexeur)
      * @param w mot � ajouter
      */
     public static void addWord(int w) {

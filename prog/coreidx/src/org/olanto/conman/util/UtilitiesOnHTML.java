@@ -33,6 +33,11 @@ public class UtilitiesOnHTML {
     static final String END_MARK = "$$$$$$$$";
     static final boolean verbose = false;
 
+    /**
+     *
+     * @param html
+     * @return
+     */
     public static String getTitle(String html) {
         // try from title
         String title = extract(html, "<title", "</title>") + END_MARK;
@@ -113,6 +118,13 @@ public class UtilitiesOnHTML {
         return first;
     }
 
+    /**
+     *
+     * @param s
+     * @param start
+     * @param end
+     * @return
+     */
     static public String extract(String s, String start, String end) {
         //System.out.println(" start:"+start+" end:"+end);
         int begrec = s.indexOf(start);
@@ -129,7 +141,12 @@ public class UtilitiesOnHTML {
 
     ; 
             
-           public static String html2txt(String html) {
+    /**
+     *
+     * @param html
+     * @return
+     */
+    public static String html2txt(String html) {
         StringBuilder res = new StringBuilder();
         int poschar = 0;
         int end = html.length();
@@ -153,6 +170,11 @@ public class UtilitiesOnHTML {
         return clean(res.toString());
     }
 
+    /**
+     *
+     * @param txt
+     * @return
+     */
     public static String clean(String txt) {
         txt = txt.replace('\r', ' ');
         txt = txt.replace('\n', ' ');

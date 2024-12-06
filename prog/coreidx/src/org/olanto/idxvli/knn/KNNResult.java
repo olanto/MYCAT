@@ -31,14 +31,30 @@ import java.io.*;
 public class KNNResult implements Serializable {
 
     /* les documents r�sultats */
+
+    /**
+     *
+     */
+
     public int[] result;
     /* les scores des r�sultats */
+
+    /**
+     *
+     */
+
     public int[] score;
     /* la dur�e d'ex�cution */
+
+    /**
+     *
+     */
+
     public long duration;
 
     /** cr�e un r�sultat
      * @param result id des documents
+     * @param score
      * @param duration dur�e
      */
     public KNNResult(int[] result, int[] score, long duration) {

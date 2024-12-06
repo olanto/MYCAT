@@ -31,9 +31,14 @@ import static org.olanto.idxvli.IdxEnum.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository_Open {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

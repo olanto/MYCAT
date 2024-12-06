@@ -53,6 +53,7 @@ public class IdxStatistic {
      * <br><b>dist1000</b>: nbr de mots ayant de 100 Ã  999 occurences.
      * <br>etc
      *
+     * @return 
      */
     public String getGlobal() {
         return glue.lastRecordedWord+"\n"+glue.lastRecordedDoc+"\n"
@@ -60,6 +61,9 @@ public class IdxStatistic {
                 + " - KWord: " + WORD_MAX / 1024 + "/" + (glue.lastRecordedWord / 1024) + " " + (int) (((double) glue.lastRecordedWord * (double) 100) / (double) Math.max(WORD_MAX, 1)) + "%";
     }
 
+    /**
+     *
+     */
     public void global() {
         //Timer timing=new Timer("statistics");
         System.out.println("STATISTICS global:");

@@ -32,6 +32,10 @@ import java.util.logging.Logger;
  */
 public class UtilsFiles {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String fileName = "C:/SIMPLE/TEMP/test1.docx";
         File file = new File(fileName);
@@ -40,6 +44,11 @@ public class UtilsFiles {
 
     }
 
+    /**
+     *
+     * @param file
+     * @return
+     */
     public static byte[] file2byte(File file) {
         try {
             //File length
@@ -67,6 +76,12 @@ public class UtilsFiles {
         return null;
     }
 
+    /**
+     *
+     * @param fis
+     * @param size
+     * @return
+     */
     public static byte[] file2byte(InputStream fis, int size) {
         try {
             if (size > Integer.MAX_VALUE) {
@@ -92,6 +107,11 @@ public class UtilsFiles {
         return null;
     }
 
+    /**
+     *
+     * @param bytes
+     * @param fileName
+     */
     public static void byte2file(byte[] bytes, String fileName) {
         FileOutputStream out = null;
         try {
@@ -108,6 +128,12 @@ public class UtilsFiles {
         }
     }
 
+    /**
+     *
+     * @param stream
+     * @param txt_encoding
+     * @return
+     */
     public static final String file2String(InputStream stream, String txt_encoding) {
         StringBuffer txt = new StringBuffer("");
         try {
@@ -127,6 +153,13 @@ public class UtilsFiles {
 
     }
 
+    /**
+     *
+     * @param FileName
+     * @param Content
+     * @param TEMP_FOLDER
+     * @return
+     */
     public static String String2File(String FileName, String Content, String TEMP_FOLDER) {
         try {
             OutputStreamWriter fstream = new OutputStreamWriter(new FileOutputStream(TEMP_FOLDER+ "/" + FileName), "UTF-8");
@@ -139,6 +172,13 @@ public class UtilsFiles {
         }
         return null;
     }
+
+    /**
+     *
+     * @param FilePath
+     * @param Content
+     * @return
+     */
     public static String String2File(String FilePath, String Content) {
         try {
             OutputStreamWriter fstream = new OutputStreamWriter(new FileOutputStream(FilePath), "UTF-8");

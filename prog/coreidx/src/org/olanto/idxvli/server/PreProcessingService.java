@@ -31,6 +31,8 @@ public interface PreProcessingService  {
 
     /**
      * Pour executer un process avant la mise à jour automatique
+     * @param arg
+     * @throws java.rmi.RemoteException
      */
     public void main(String[] arg) throws RemoteException;
 

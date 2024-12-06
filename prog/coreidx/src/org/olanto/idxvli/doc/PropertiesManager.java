@@ -117,6 +117,7 @@ public interface PropertiesManager {
     /**  imprime des statistiques */
     public void printStatistic();
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public String getStatistic();
 }

@@ -28,9 +28,14 @@ import static org.olanto.idxvli.util.SetOperation.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestSetOperation {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         int sl = 1000000;

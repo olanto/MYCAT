@@ -39,28 +39,27 @@ import static org.olanto.idxvli.IdxEnum.*;
  * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire.
  *
  * <pre>
- * query = subquery < query_operator subquery >.
+ * query = subquery &lt; query_operator subquery &gt;.
  * query_operator= "AND" | "OR" | "MINUS" .
  * subquery = expression [ filter ] .
  * filter = "IN" "[" exp_property "]" .
- * expression = term < query_operator term > .
+ * expression = term &lt; query_operator term &gt; .
  * term =   qString
  *           | "near" "(" qString "," qString ")"
  *           | "next" "(" qString "," qString ")"
  *           | QUOTATION "(" qString ")"
  *           | "(" query ")".
  * qString = ""STRING"".
- * exp_property = term_property <filter_operator term_property >
+ * exp_property = term_property &lt; filter_operator term_property &gt;
  * filter_operator="ANDL" | "ORL"
  * term_property = [ "NOT" ] ""property_name""
  *               | "LENGTH" rel_operator ""numeric_value""
  *               | "DATE" rel_operator ""date_value"".
- * rel_operator = "<" || ">"
+ * rel_operator = "&lt;" || "&gt;"
  * </pre>
  *
  * exemples:
  *
- * <pre>
  * test("prenant");
  * test("italie");
  * test("italie AND prenant");
@@ -83,15 +82,15 @@ import static org.olanto.idxvli.IdxEnum.*;
  * test("tarif IN[\"_FR\"]");
  * test("tarif IN[ NOT \"_FR\"]");
  * test("tarif IN[\"_EN\" OR \"_FR\"]");
- * test("tarif IN[LENGTH > \"1000\"]");
- * test("tarif IN[LENGTH < \"1000\"]");
- * test("tarif IN[DATE < \"09-02-2004\"]");
- * test("((italie AND prenant)IN[\"_FR\"] OR (italy AND undertaking)IN[\"_EN\"]) IN [LENGTH < \"1000\"]");
- * * </pre>
+ * test("tarif IN[LENGTH &gt; \"1000\"]");
+ * test("tarif IN[LENGTH &lt; \"1000\"]");
+ * test("tarif IN[DATE &lt; \"09-02-2004\"]");
+ * test("((italie AND prenant)IN[\"_FR\"] OR (italy AND undertaking)IN[\"_EN\"]) IN [LENGTH &lt; \"1000\"]");
+ * 
  *
  *
  * to do:
- *  il reste � implementer les op�rations sur LENGTH ET DATE ...
+ *  il reste à implementer les oérations sur LENGTH ET DATE ...
  *
  *- modification JG : bug on SetOfBits
  */

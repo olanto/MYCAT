@@ -31,12 +31,32 @@ import static org.olanto.util.Messages.*;
 public class QResDistributed {
 
     /* les documents r�sultats tri�s*/
+
+    /**
+     *
+     */
+
     public int[] topdoc;
     /* num�ro du noeud d'�ndexation*/
+
+    /**
+     *
+     */
+
     public int[] topsource;
     /* les noms des documents tri�s*/
+
+    /**
+     *
+     */
+
     public String[] topname;
     /* le degr� de pertinence du r�sultat tri�s*/
+
+    /**
+     *
+     */
+
     public float[] toprank;
     /* le degr� de pertinence du r�sultat tri�s*/
     private QLResultAndRank[] resFromNet;
@@ -51,6 +71,13 @@ public class QResDistributed {
     private boolean[] active;
 
     /* initialise un resultat avec un ranking 0*/
+
+    /**
+     *
+     * @param resFromNet
+     * @param maxToKeep
+     */
+
     public QResDistributed(QLResultAndRank[] resFromNet, int maxToKeep) {
         this.resFromNet = resFromNet;
         this.maxToKeep = maxToKeep;
@@ -58,6 +85,9 @@ public class QResDistributed {
     }
     /* initialise le tri */
 
+    /**
+     *
+     */
     public void initAndSort() {
         if (resFromNet != null) {
             nbNode = resFromNet.length;

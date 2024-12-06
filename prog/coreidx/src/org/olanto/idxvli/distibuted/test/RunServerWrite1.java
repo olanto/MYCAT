@@ -34,6 +34,10 @@ import org.olanto.idxvli.server.*;
  */
 public class RunServerWrite1 {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         int i = 1;

@@ -27,11 +27,16 @@ import org.olanto.idxvli.util.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestLongVector_DirectIO_2 {
 
     static LongVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         int max = 26;

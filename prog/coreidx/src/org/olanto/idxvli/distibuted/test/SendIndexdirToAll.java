@@ -32,6 +32,10 @@ import static org.olanto.util.Messages.*;
 
 public class SendIndexdirToAll {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         int nbidx = 1;

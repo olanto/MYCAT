@@ -33,6 +33,10 @@ public class TestProperties {
 
     static PropertiesManager o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         implementationMode imp = implementationMode.BIG;
         String s;

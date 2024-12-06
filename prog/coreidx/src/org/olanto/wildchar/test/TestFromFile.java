@@ -25,11 +25,16 @@ import org.olanto.wildchar.WildCharExpander;
 /**
  * 
  *
+ * @author xtern
  */
 public class TestFromFile {
 
  static WildCharExpander  expander;
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
    //     expander = new WildCharExpander("C:/SIMPLE/dict/ENorganisation.dic");
       expander = new WildCharExpander("C:/SIMPLE/dict/smalllist.txt");
@@ -47,7 +52,11 @@ public class TestFromFile {
         
     }
 
-     public static void test(String s){
+    /**
+     *
+     * @param s
+     */
+    public static void test(String s){
              
 //         expander.expand(s);
          String[] res=expander.getExpand(s, 20000000);

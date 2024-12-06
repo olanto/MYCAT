@@ -35,34 +35,32 @@ import static org.olanto.idxvli.IdxEnum.*;
  *
  * l'exemple suivant montre une utilisation
  *
- *<pre>
- *    private static void testWrite(DirectIOFile file, String fileName, MappingMode mapMode)
-throws IOException {
-Timer t=new Timer ("----- "+file.getClass().getName());
-file.open(fileName, mapMode, readWriteMode.rw, 10, fileSize);
-file.seek(0);
-for (int i = 0; i < fileSize/4; i++) {
-file.writeInt(i);
-}
-msg("taille max:"+file.getMaxLength());
-file.close();
-t.stop();
-}
-private static void testRead(DirectIOFile file, String fileName, MappingMode mapMode)
-throws IOException {
-Timer t=new Timer ("----- "+file.getClass().getName());
-file.open(fileName, mapMode, readWriteMode.r, 10, fileSize);
-file.seek(0);
-for (int i=0; i<fileSize/4; i++) {
-int res=file.readInt();
-if (res!=i) error("re-read wait:"+i+" read:"+res);
-}
-file.close();
-t.stop();
-}
- *</pre>
- *
  */
+//private static void testWrite(DirectIOFile file, String fileName, MappingMode mapMode)
+//throws IOException {
+//Timer t=new Timer ("----- "+file.getClass().getName());
+//file.open(fileName, mapMode, readWriteMode.rw, 10, fileSize);
+//file.seek(0);
+//for (int i = 0; i < fileSize/4; i++) {
+//file.writeInt(i);
+//}
+//msg("taille max:"+file.getMaxLength());
+//file.close();
+//t.stop();
+//}
+//private static void testRead(DirectIOFile file, String fileName, MappingMode mapMode)
+//throws IOException {
+//Timer t=new Timer ("----- "+file.getClass().getName());
+//file.open(fileName, mapMode, readWriteMode.r, 10, fileSize);
+//file.seek(0);
+//for (int i=0; i<fileSize/4; i++) {
+//int res=file.readInt();
+//if (res!=i) error("re-read wait:"+i+" read:"+res);
+//}
+//file.close();
+//t.stop();
+//}
+
 public interface DirectIOFile {
 
     /**

@@ -35,17 +35,43 @@ import org.olanto.idxvli.util.SetOperation;
 public class QRes {
 
     /* les documents résultats */
+
+    /**
+     *
+     */
+
     public int[] doc;
     /* le degr� de pertinence du r�sultat */
+
+    /**
+     *
+     */
+
     public float[] rank;
     /* les documents résultats triés*/
+
+    /**
+     *
+     */
+
     public int[] topdoc;
     /* le degr� de pertinence du r�sultat tri�s*/
+
+    /**
+     *
+     */
+
     public float[] toprank;
     private float max = Integer.MIN_VALUE;
     private int imax = 0;
 
     /* initialise un resultat avec un ranking 0*/
+
+    /**
+     *
+     * @param doc
+     */
+
     public QRes(int[] doc) {
         this.doc = doc;
         if (doc != null) {
@@ -54,11 +80,21 @@ public class QRes {
     }
     /* initialise un resultat et un ranking */
 
+    /**
+     *
+     * @param doc
+     * @param rank
+     */
     public QRes(int[] doc, float[] rank) {
         this.doc = doc;
         this.rank = rank;
     }
 
+    /**
+     *
+     * @param rankingMode
+     * @param topn
+     */
     public final void topNDoc(RankingMode rankingMode, int topn) { // could be optimise !!!
 //        msg("top ndoc :"+rankingMode.name());
 //        showVector(doc);
@@ -132,6 +168,7 @@ public class QRes {
 
     /**
      * filtre un vecteur avec un bitset
+     * @param rankingMode
      * @return vecteur de documents filtr�
      * @param filter (true=on garde les true, false on garde les false)
      * @param res un vecteur de documents
@@ -184,6 +221,7 @@ public class QRes {
 
     /**
      * profile un vecteur avec un bitset
+     * @param rankingMode
      * @return vecteur de documents filtr�
      * @param res un vecteur de documents
      * @param sob un un profil
@@ -214,6 +252,7 @@ public class QRes {
     /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
+     * @param rankingMode
      * @return intersection de 1 et 2
      */
     public static QRes and(QRes qr1, QRes qr2, RankingMode rankingMode) { // and de deux resultats avec les poids du ranking
@@ -263,6 +302,7 @@ public class QRes {
     /** calcul l'union de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
+     * @param rankingMode
      * @return intersection de 1 et 2
      */
     public static QRes or(QRes qr1, QRes qr2, RankingMode rankingMode) { // or de deux resultats avec les poids du ranking
@@ -338,6 +378,7 @@ public class QRes {
     /** calcul la diff�rence de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
+     * @param rankingMode
      * @return intersection de 1 et 2
      */
     public static QRes minus(QRes qr1, QRes qr2, RankingMode rankingMode) { // minus de deux resultats avec les poids du ranking

@@ -34,7 +34,7 @@ import java.util.Iterator;
 import java.util.List;
 /*
  *
- * Cette classe utilise les composant com.swabunga.spell soumis � la licence suivante:
+ * Cette classe utilise les composant com.swabunga.spell soumis à la licence suivante:
  *
 Jazzy - a Java library for Spell Checking
 Copyright (C) 2001 Mindaugas Idzelis
@@ -66,6 +66,13 @@ public class OupsQuery {
     private static SpellDictionary orgDictionary;
     private static IdxStructure id;
 
+    /**
+     *
+     * @param id
+     * @param dictFile
+     * @param phonetFile
+     * @param orgFile
+     */
     public OupsQuery(IdxStructure id, String dictFile, String phonetFile, String orgFile) {
         this.id = id;
         try {
@@ -85,6 +92,10 @@ public class OupsQuery {
         }
     }
 
+    /**
+     *
+     * @param t
+     */
     public void test(String t) {
         Timer t1 = new Timer("check:" + t);
         if (!spellCheck.isCorrect(t)) {
@@ -106,7 +117,9 @@ public class OupsQuery {
         t1.stop();
     }
 
-    /** calcul une alternative pour un ensemble de mot null sinon*/
+    /** calcul une alternative pour un ensemble de mot null sinon
+     * @param s
+     * @return */
     public String guess(String[] s) {
         String alternative = "";
         boolean existAlternative = false;
@@ -130,7 +143,9 @@ public class OupsQuery {
         }
     }
 
-    /** calcul une alternative pour un mot null sinon*/
+    /** calcul une alternative pour un mot null sino
+     * @param s
+     * @return n*/
     public String guessWord(String s) {
         if (s.length() < MIN_CHAR_SUGGEST) {
             return null;
@@ -204,6 +219,10 @@ public class OupsQuery {
         return null;
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         OupsQuery oq = new OupsQuery(null, "C:/JG/VLI_RW/dict/fr.dic", "C:/JG/VLI_RW/dict/phonet.fr", "C:/JG/VLI_RW/dict/organisation.fr");

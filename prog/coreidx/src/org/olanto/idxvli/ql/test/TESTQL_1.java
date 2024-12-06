@@ -31,12 +31,20 @@ public class TESTQL_1 {
 
     private static IdxStructure id;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         id = new IdxStructure("QUERY", new ConfigurationQL());
         id.Statistic.global();
         test("coconut AND rice");
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void test(String s) {
         int[] res = id.executeRequest(s);
         if (res == null) {

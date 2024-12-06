@@ -28,11 +28,16 @@ import org.olanto.util.Timer;
  * 
  *
  *
+ * @author xtern
  */
 public class TestIntVector_DirectIO_1 {
 
     static IntVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         o = (new IntVector_InMemory()).create("C:/JG/gigaversion/data/objsto", "test", 20);

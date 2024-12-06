@@ -34,6 +34,10 @@ public class TestObjectStore4 {
 
     static ObjectStorage4 o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         implementationMode mode = implementationMode.BIG;

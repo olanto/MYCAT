@@ -48,11 +48,16 @@ import org.olanto.util.Timer;
  * 
  *
  *
+ * @author xtern
  */
 public class TestBitVector {
 
     static BitVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         o = (new BitVector_InMemoryZIP()).create("C:/JG/gigaversion/data/objsto", "test", 1024 * 1024);

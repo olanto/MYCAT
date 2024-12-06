@@ -32,6 +32,11 @@ import java.io.*;
 public class Terms implements Serializable {
 
     /* les termes */
+
+    /**
+     *
+     */
+
     public String[] t;
 
     /** cr�e une liste
@@ -47,6 +52,10 @@ public class Terms implements Serializable {
         this.t = null;
     }
 
+    /**
+     *
+     * @return
+     */
     public String dump() {
         if (t == null) {
             return null;
@@ -58,6 +67,10 @@ public class Terms implements Serializable {
         return s;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void add(String id) {
         if (t == null) {
             t = new String[1];
@@ -73,6 +86,11 @@ public class Terms implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean testIn(String id) {
         if (t == null) {
             return false;

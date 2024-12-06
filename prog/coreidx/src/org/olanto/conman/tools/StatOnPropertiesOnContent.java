@@ -37,12 +37,20 @@ public class StatOnPropertiesOnContent {
     static final boolean verboseTitle = false;
     static ContentService id;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         inventoryOf("rmi://localhost/CM_COLLECT");
         inventoryOf("rmi://localhost/CM_CLEAN");
     }
 
+    /**
+     *
+     * @param CMService
+     */
     public static void inventoryOf(String CMService) {
         msg("");
         msg("");

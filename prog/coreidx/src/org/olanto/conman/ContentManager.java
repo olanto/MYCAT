@@ -60,7 +60,11 @@ public class ContentManager {
 
     /** ajoute un contenu.
      * @param docName identifiant
+     * @param fdate
      * @param content contenu
+     * @param language
+     * @param type
+     * @param collection
      */
     protected void addContent(String docName, long fdate, byte[] content, String language, String type, String collection) {
         //msg("addContent: "+glue.lastdoc+"->"+docName);
@@ -84,6 +88,7 @@ public class ContentManager {
 
     /** r�cup�re un contenu type String.
      * @param doc identifiant
+     * @return 
      */
     protected String getStringContent(int doc) {
         if (glue.docstable.getPropertie(doc, "TYPE.STRING")) {
@@ -103,6 +108,7 @@ public class ContentManager {
 
     /** r�cup�re un contenu type String.
      * @param doc identifiant
+     * @return 
      */
     protected String getStringContentNOCOMP(int doc) {
         if (glue.docstable.getPropertie(doc, "TYPE.STRING")) {
@@ -122,6 +128,9 @@ public class ContentManager {
 
     /** r�cup�re un contenu type String sur un intervalle donn�.
      * @param doc identifiant
+     * @param from
+     * @param to
+     * @return 
      */
     protected String getStringContent(int doc, int from, int to) {
         if (glue.docstable.getPropertie(doc, "TYPE.STRING")) {
@@ -155,6 +164,7 @@ public class ContentManager {
 
     /** r�cup�re un contenu type String.
      * @param docName identifiant
+     * @return 
      */
     protected String getStringContent(String docName) {
         int doc = glue.getIntForDocument(docName);
@@ -167,6 +177,7 @@ public class ContentManager {
 
     /** r�cup�re un contenu type Byte.
      * @param docName identifiant
+     * @return 
      */
     protected byte[] getByteContent(String docName) {
         return getByteContent(glue.getIntForDocument(docName));
@@ -175,6 +186,7 @@ public class ContentManager {
 
     /** r�cup�re un contenu type Byte.
      * @param doc identifiant
+     * @return 
      */
     protected byte[] getByteContent(int doc) {
         byte[] b = glue.IO.loadContent(doc);
@@ -226,6 +238,12 @@ public class ContentManager {
         }
     }
 
+    /**
+     *
+     * @param realSize
+     * @param bb
+     * @return
+     */
     public static final byte[] decompress(int realSize, byte[] bb) {
         if (OBJ_COMPRESSION == Compression.YES) {
             return BytesAndFiles.decompress(realSize, bb);
@@ -234,6 +252,11 @@ public class ContentManager {
         }
     }
 
+    /**
+     *
+     * @param bb
+     * @return
+     */
     public static final byte[] compress(byte[] bb) {
         if (OBJ_COMPRESSION == Compression.YES) {
             return BytesAndFiles.compress(bb);
@@ -245,6 +268,7 @@ public class ContentManager {
     /** distance de kolmogorov entre deux documents.
      * @param d1 document
      * @param d2 document
+     * @param bzip2
      * @return distance
      */
     protected double distOfKolmogorov(int d1, int d2, boolean bzip2) {
@@ -278,6 +302,11 @@ public class ContentManager {
     }
 
     /** distance de kolmogorov entre deux documents.
+     * @param kd1
+     * @param kd2
+     * @param Sd1
+     * @param Sd2
+     * @param bzip2
      * @return distance
      */
     protected double distOfKolmogorov(double kd1, double kd2, String Sd1, String Sd2, boolean bzip2) { // il faut que la compression soit YES
@@ -297,6 +326,12 @@ public class ContentManager {
         return 0;  //
     }
 
+    /**
+     *
+     * @param Sd1
+     * @param bzip2
+     * @return
+     */
     protected double kdlength(String Sd1, boolean bzip2) {
         try {
             if (bzip2) {

@@ -11,22 +11,38 @@ import java.util.*;
  *
  * 
  *
+ * @author xtern
  */
 public class ManyOntologyManager {
 
     static HashMap<String, LexicManager> multiOntology;
 
+    /**
+     *
+     */
     public ManyOntologyManager() {
 
         multiOntology = new HashMap<String, LexicManager>();
     }
 
+    /**
+     *
+     * @param suffix
+     * @param rootOntologyFile
+     * @param src
+     * @param stem
+     */
     public void add(String suffix, String rootOntologyFile, String src, String stem) {
         //LexicManager ontology= (new LexicBasic()).create(rootOntologyFile+src+".txt",src,stem);
         LexicManager ontology = (new LexicBetter()).create(rootOntologyFile + src + ".txt", src, stem);
         multiOntology.put(suffix, ontology);
     }
 
+    /**
+     *
+     * @param suffix
+     * @return
+     */
     public LexicManager get(String suffix) {
         return multiOntology.get(suffix);
     }

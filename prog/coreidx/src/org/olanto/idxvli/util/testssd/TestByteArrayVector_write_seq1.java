@@ -29,11 +29,16 @@ import static org.olanto.idxvli.IdxEnum.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestByteArrayVector_write_seq1 {
 
     static ByteArrayVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String volume = "f:/ajeter";
         int size = 124;

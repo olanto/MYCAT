@@ -28,8 +28,18 @@ package org.olanto.idxvli.extra;
 public class FromTo {
 
     /* la position dï¿½but*/
+
+    /**
+     *
+     */
+
     public int from;
     /* la position fin */
+
+    /**
+     *
+     */
+
     public int to;
 
     /** crï¿½e un intervalle

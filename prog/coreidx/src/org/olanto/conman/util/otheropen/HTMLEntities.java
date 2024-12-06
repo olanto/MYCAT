@@ -3,12 +3,13 @@ package org.olanto.conman.util.otheropen;
 import java.util.HashMap;
 
 /**
- * Collection of static methods to convert special and extended
- * characters into HTML entitities and vice versa.<br/><br/>
+ * Collection of static methods to convert special and extended characters into HTML entitities and vice versa.
+ * 
  * Copyright (c) 2004-2005 Tecnick.com S.r.l (www.tecnick.com) Via Ugo Foscolo
  * n.19 - 09045 Quartu Sant'Elena (CA) - ITALY - www.tecnick.com -
- * info@tecnick.com<br/>
- * Project homepage: <a href="http://htmlentities.sourceforge.net" target="_blank">http://htmlentities.sourceforge.net</a><br/>
+ * info@tecnick.com
+ * Project homepage: href="http://htmlentities.sourceforge.net" target="_blank"
+ * http://htmlentities.sourceforge.net
  * License: http://www.gnu.org/copyleft/lesser.html LGPL
  * @author Nicola Asuni [www.tecnick.com].
  * @version 1.0.004

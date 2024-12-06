@@ -68,23 +68,41 @@ public class IdxIO {
 
     /**
      * g�n�ration des id de objectstore (pour �viter de les stocker)
+     * @param j
+     * @return 
      */
     protected final static int objidx(int j) {
         return 2 * (j / OBJ_NB);
     }    // j/n car n objsto
 
+    /**
+     *
+     * @param j
+     * @return
+     */
     protected final static int objidxOnly(int j) {
         return (j / OBJ_NB);
     }    // j/n car n objsto
 
+    /**
+     *
+     * @param j
+     * @return
+     */
     protected final static int objpos(int j) {
         return 2 * (j / OBJ_NB) + 1;
     }
 
+    /**
+     *
+     */
     protected static void signalAOpeningObjSto() {
         openR.lock();
     }
 
+    /**
+     *
+     */
     synchronized public static void signalAClosingObjSto() {
         try {
 //Il y a un bug lors de la fermeture!!          openR.unlock();
@@ -94,6 +112,10 @@ public class IdxIO {
 
     }
 
+    /**
+     *
+     * @param j
+     */
     protected final void loadVectorWforFull(int j) {
         // msg("loadVectorWforFull:"+j);
         if (IDX_SAVE_POSITION) {
@@ -124,6 +146,11 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     * @param DODO
+     * @return
+     */
     protected final static int[] getDocZID(int[] DODO) {  // pas de filtrage
 
         int[] DD = new int[DODO.length / 2];
@@ -133,6 +160,11 @@ public class IdxIO {
         return DD;
     }
 
+    /**
+     *
+     * @param DODO
+     * @return
+     */
     protected final int[] getDocOcc(int[] DODO) {
         int offset = DODO.length / 2;
         int[] DDOO = new int[2 * offset];
@@ -143,6 +175,11 @@ public class IdxIO {
         return DDOO;
     }
 
+    /**
+     *
+     * @param DODO
+     * @return
+     */
     protected final int[] getDocOccVec(int[] DODO) {
         int offset = DODO.length / 2;
         int[] DDOOVV = new int[3 * offset];
@@ -157,6 +194,10 @@ public class IdxIO {
         return DDOOVV;
     }
 
+    /**
+     *
+     * @param j
+     */
     protected final void loadVectorWforBasic(int j) {
 //        msg("loadVectorWforBasic:"+j+" objsto:"+j%OBJ_NB+" userkey:"+objidx(j));
         if (IDX_SAVE_POSITION) {
@@ -236,6 +277,10 @@ public class IdxIO {
         return -1;
     }
 
+    /**
+     *
+     * @param j
+     */
     protected final void saveVectorW(int j) {  // j est un cacheId
 
         int wordId = glue.idxtrans.getWordId(j);
@@ -302,6 +347,11 @@ public class IdxIO {
         error("not implemented in MIX mode");
     }
 
+    /**
+     *
+     * @param d
+     * @return
+     */
     protected final int[] loadBag(int d) {
         try {
             //msg("Start load bag:"+d);
@@ -322,6 +372,11 @@ public class IdxIO {
         return null;
     }
 
+    /**
+     *
+     * @param d
+     * @param bag
+     */
     protected final void saveBag(int d, int[] bag) {
         int length = 0;
         try {
@@ -341,6 +396,11 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     * @param d
+     * @return
+     */
     protected final int[] loadSeq(int d) {  // acc�der par getSeqOfDoc in IdxStructure
 
         try {
@@ -363,6 +423,11 @@ public class IdxIO {
         return null;
     }
 
+    /**
+     *
+     * @param d
+     * @param seq
+     */
     protected final void saveSeq(int d, int[] seq) {
         int length = 0;
         try {
@@ -381,6 +446,11 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     * @param d
+     * @return
+     */
     protected final int[] loadPosChar(int d) {  // acc�der par getPosCharOfDoc in IdxStructure
 
         try {
@@ -402,6 +472,11 @@ public class IdxIO {
         return null;
     }
 
+    /**
+     *
+     * @param d
+     * @param poschar
+     */
     protected final void savePosChar(int d, int[] poschar) {
         int length = 0;
         try {
@@ -420,6 +495,9 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     */
     protected final void loadindexdoc() {
         try {
             FileInputStream istream = new FileInputStream(COMMON_ROOT + "/" + currentf);
@@ -440,7 +518,7 @@ public class IdxIO {
             }
             if (STEM_KEEP_LIST && WORD_USE_STEMMER) {
                 System.err.println("try to load stemlist");
-                glue.stemList = (TreeSet<String>[]) p.readObject(); // le casting est n�cessaire et g�n�re un warning � la compilation
+                glue.stemList = (TreeSet<String>[]) p.readObject(); // le casting est n�cessaire et g�n�re un warning à la compilation
 
             }
             istream.close();
@@ -563,6 +641,9 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     */
     protected final void saveindexdoc() {
         try {
             FileOutputStream ostream = new FileOutputStream(COMMON_ROOT + "/" + currentf);
@@ -622,6 +703,9 @@ public class IdxIO {
         }
     }
 
+    /**
+     *
+     */
     protected final void closeAllManager() {
         msg("before gc:" + usedMemory());
         glue.docstable.close();

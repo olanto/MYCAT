@@ -26,6 +26,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/**
+ *
+ * Gére des propriétés contenu dans le fichier 
+ */
 public class ConstStringManager {
 
     private Properties prop;
@@ -33,7 +37,7 @@ public class ConstStringManager {
     /**
      * Charge la liste des propriétés contenu dans le fichier spécifié
      *
-     * @param filename le fichier contenant les propriétés
+     * @param property
      * @return un objet Properties contenant les propriétés du fichier
      */
     public String get(String property) {
@@ -45,6 +49,12 @@ public class ConstStringManager {
         return property + "_UNDEFINED";
     }
 
+    /**
+     *
+     * @param filename
+     * @throws IOException
+     * @throws FileNotFoundException
+     */
     public ConstStringManager(String filename) throws IOException, FileNotFoundException {
         prop = new Properties();
         FileInputStream input = new FileInputStream(filename);

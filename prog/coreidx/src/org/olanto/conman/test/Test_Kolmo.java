@@ -34,6 +34,10 @@ public class Test_Kolmo {
     private static ContentStructure id;
     private static Timer t1 = new Timer("global time");
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         id = new ContentStructure("QUERY", new ConfigurationContentManager());

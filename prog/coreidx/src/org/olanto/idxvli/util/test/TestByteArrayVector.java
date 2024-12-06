@@ -29,11 +29,16 @@ import static org.olanto.idxvli.IdxEnum.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestByteArrayVector {
 
     static ByteArrayVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         byte[] val3 = new byte[3];

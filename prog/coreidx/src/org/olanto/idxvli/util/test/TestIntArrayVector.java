@@ -27,11 +27,16 @@ import org.olanto.idxvli.util.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestIntArrayVector {
 
     static IntArrayVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         String s;
         int[] val3 = new int[3];

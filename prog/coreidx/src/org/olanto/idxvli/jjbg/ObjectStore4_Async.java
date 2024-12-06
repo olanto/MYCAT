@@ -122,6 +122,9 @@ public class ObjectStore4_Async implements ObjectStorage4 {
     ObjectStorage4 objsto;  // l'objet ï¿½ mettre ï¿½ jour
     ArrayBlockingQueue<CommandQueue> Q;   // le mï¿½canisme de dï¿½synchronisation
 
+    /**
+     *
+     */
     public ObjectStore4_Async() {
     }
 
@@ -140,7 +143,12 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         createObjectStore(implementation, _pathName, _maxSize, _minBigSize);
     }
 
-    /**  crï¿½e un ObjectStorage de taille 2^maxSize ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un ObjectStorage de taille 2^maxSize ï¿½ l'endroit indiquï¿½ par le path
+     * @param implementation
+     * @param path
+     * @param maxSize
+     * @param minBigSize
+     * @return valeur */
     public final ObjectStorage4 create(implementationMode implementation,
             String path, int maxSize, int minBigSize) {
         return (new ObjectStore4_Async(implementation, path, maxSize, minBigSize));
@@ -151,6 +159,13 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         return (new ObjectStore4_Async(implementation, path, _RW));
     }
 
+    /**
+     *
+     * @param implementation
+     * @param _pathName
+     * @param _maxSize
+     * @param _size_0
+     */
     public final void createObjectStore(
             implementationMode implementation,
             String _pathName,
@@ -206,12 +221,17 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         return objsto.readInt(user);
     }
 
-    /**  retourne la taille de l'objet*/
+    /**  retourne la taille de l'obje
+     * @param user n
+     * @return t
+     */
     public final int storedSize(int user) {
         return objsto.storedSize(user);
     }
 
-    /**  retourne la taille rï¿½el de l'objet sans compression (uniquement en mode 1 passe)*/
+    /**  retourne la taille rï¿½el de l'objet sans compression (uniquement en mode 1 passe
+     * @param user
+     * @return )*/
     public int realSize(int user) {
         return objsto.realSize(user);
     }

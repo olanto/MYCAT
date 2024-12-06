@@ -58,14 +58,27 @@ public class Documents1 implements DocumentManager {
     public Documents1() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+     * @param _ManagerImplementation
+     * @param _keepLanguage
+     * @param _idxName
+     * @param _keepCollection
+     * @param _maxSize
+     * @param _path
+     * @param _lengthString */
     public final DocumentManager create(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             String _path, String _idxName, int _maxSize, int _lengthString) {
         return (new Documents1(_ManagerImplementation, _keepLanguage, _keepCollection,
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path */
+    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+     * @param _ManagerImplementation
+     * @param _keepLanguage
+     * @param _keepCollection
+     * @param _updatingMode
+     * @param _path
+     * @param _idxName */
     public final DocumentManager open(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             IdxMode _updatingMode, String _path, String _idxName) {
         return (new Documents1(_ManagerImplementation, _keepLanguage, _keepCollection,
@@ -212,7 +225,8 @@ public class Documents1 implements DocumentManager {
     private final Lock documentNameR = documentNameRW.readLock();
     private final Lock documentNameW = documentNameRW.writeLock();
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt*/
+    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+     * @param d*/
     public final int put(String d) {
         documentNameW.lock();
         try {
@@ -233,7 +247,8 @@ public class Documents1 implements DocumentManager {
         }
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param d */
     public final int get(String d) {
         documentNameR.lock();
         try {

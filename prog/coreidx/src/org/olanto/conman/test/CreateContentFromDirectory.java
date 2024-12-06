@@ -33,6 +33,10 @@ public class CreateContentFromDirectory {
     private static ContentStructure id;
     private static Timer t1 = new Timer("global time");
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         id = new ContentStructure("NEW", new ConfigurationContentManager());

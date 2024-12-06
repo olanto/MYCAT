@@ -66,6 +66,10 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _maxSize
+     * @param _fileName
+     * @return 
      */
     @Override
     public final ZipVector create(String _pathName, String _fileName, int _maxSize) {
@@ -74,6 +78,10 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * ouvre un vecteur � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @param _RW
+     * @return 
      */
     @Override
     public final ZipVector open(String _pathName, String _fileName, readWriteMode _RW) {
@@ -283,6 +291,8 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * mets à jour la position pos avec la valeur val
+     * @param pos
+     * @param txt
      */
     @Override
     public final void set(int pos, String txt) {
@@ -298,6 +308,9 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * mets à  jour la position pos avec le fichier filename
+     * @param pos
+     * @param filename
+     * @param encoding
      */
     @Override
     public void set(int pos, String filename, String encoding) {
@@ -306,6 +319,8 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * cherche la valeur à la position pos
+     * @param pos
+     * @return 
      */
     @Override
     public final String get(int pos) {
@@ -327,6 +342,7 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * retourne la taille du vecteur
+     * @return 
      */
     @Override
     public final int length() {
@@ -335,6 +351,8 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * retourne la taille du vecteur à la position pos
+     * @param pos
+     * @return 
      */
     @Override
     public final int lengthZip(int pos) {
@@ -346,6 +364,8 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * retourne la taille du vecteur décompressé à  la position pos
+     * @param pos
+     * @return 
      */
     @Override
     public int lengthString(int pos) {
@@ -367,6 +387,7 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
 
     /**
      * retourne la taille total des vecteurs stockés
+     * @return 
      */
     @Override
     public long totalLengthZip() {
@@ -380,7 +401,8 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
     }
 
     ;
-   /**  retourne la taille total des vecteurs stockés*/
+   /**  retourne la taille total des vecteurs stocké
+     * @return s*/
     @Override
     public long totalLengthString() {
         long count = 0;
@@ -411,6 +433,12 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
         zipSize[pos] = 0;
     }
 
+    /**
+     *
+     * @param realSize
+     * @param bb
+     * @return
+     */
     public static byte[] decompress(int realSize, byte[] bb) {
         if (OBJ_COMPRESSION == true) {
             return BytesAndFiles.decompress(realSize, bb);
@@ -419,6 +447,11 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
         }
     }
 
+    /**
+     *
+     * @param bb
+     * @return
+     */
     public static byte[] compress(byte[] bb) {
         if (OBJ_COMPRESSION == true) {
             return BytesAndFiles.compress(bb);

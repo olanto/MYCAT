@@ -32,7 +32,7 @@ import org.olanto.idxvli.IdxEnum.*;
 /** Une classe pour stocker la s�quence des positions des termes dans un document sous forme d'un
  * vecteur d'entier.
  *  Lors de l'indexation, il faut utiliser, un mode qui active la cr�ation
- *  des positions de terme -> docMore = true;
+ *  des positions de terme -- docMore = true;
  *l'indexeur construit alors automatiquement les vecteurs des positions de termes.
  *apr�s coup, on peut recharger la s�quence avec getPosOfDoc dans IdxStructure
  *
@@ -79,7 +79,7 @@ public class DocPosChar {
         return res;
     }
 
-    /** extrait le texte correspondant � la premi�re occurence de w dans le document
+    /** extrait le texte correspondant à la premi�re occurence de w dans le document
      * @param d r�f�rence du document
      * @param glue indexeur de r�f�rence
      * @param w terme dont on cherche le contexte
@@ -100,7 +100,7 @@ public class DocPosChar {
         return plaintext;
     }
 
-    /** extrait l'interval correspondant � la premi�re occurence de w dans le document
+    /** extrait l'interval correspondant à la premi�re occurence de w dans le document
      * @param d r�f�rence du document
      * @param glue indexeur de r�f�rence
      * @param w terme dont on cherche le contexte

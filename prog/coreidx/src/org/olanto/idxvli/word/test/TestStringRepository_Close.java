@@ -30,9 +30,14 @@ import static org.olanto.util.Messages.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository_Close {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

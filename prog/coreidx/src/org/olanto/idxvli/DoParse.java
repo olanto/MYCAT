@@ -47,7 +47,10 @@ public class DoParse {
     // attention les variables sont statiques pour accï¿½lerer mais si des accï¿½s concurrents sont possibles
     // alors il faut protï¿½ger le parsing
     private SetOfWords DontIndexThis;
+
+    /** number of token*/
     public int nbToken = 0;
+    /** pointer to current indexer*/
     public IdxStructure glue;
     /** variable contenant le symbole courant*/
     public  StringBuilder cw = new StringBuilder();
@@ -59,15 +62,19 @@ public class DoParse {
     public  int poschar = 0;
     
     // supporte pas la concurrence
-    public static boolean acceptedToken = true; // pour le Tokeniser
-    public static boolean conceptFound = false; // pour le Tokeniser attention ne supporte pas la concurrence
-    public static boolean wordFound = false; // pour le Tokeniser attention ne supporte pas la concurrence
-    public static boolean wordExternal = false; // pour le Tokeniser attention ne supporte pas la concurrence
+    /** pour le Tokeniser */
+    public static boolean acceptedToken = true; 
+    /** pour le Tokeniser attention ne supporte pas la concurrence */
+    public static boolean conceptFound = false; 
+    /** pour le Tokeniser attention ne supporte pas la concurrence */
+    public static boolean wordFound = false;
+    /** pour le Tokeniser attention ne supporte pas la concurrence */
+    public static boolean wordExternal = false; 
 
-    /** Crï¿½e un analyseur lexical. sur la source (Reader) avec la liste de mots
-     * ï¿½ ne pas indexer SOF. Se place sur la premiï¿½re occurence de la source
-     * @param s chaï¿½ne de caractï¿½res ï¿½ parser
-     * @param SOF la liste de mots ï¿½ ne pas indexer
+    /** Crée un analyseur lexical. sur la source (Reader) avec la liste de mots
+     * à ne pas indexer SOF. Se place sur la première occurence de la source
+     * @param s chaîne de caractères à parser
+     * @param SOF la liste de mots à ne pas indexer
      */
     public DoParse(String s, SetOfWords SOF) {
         //msg("doparse:"+s);
@@ -403,6 +410,13 @@ public class DoParse {
         return request;
     }
 
+    /**
+     *
+     * @param id
+     * @param lang
+     * @param word
+     * @return
+     */
     synchronized public static String stem(IdxStructure id, String lang, String word) {
         if (lang.equals("_EN")) {
             Stemmer.init("english");
@@ -505,6 +519,7 @@ public class DoParse {
     /** utilise ce parseur pour rï¿½cupï¿½rer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
      * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
      * @param id indexeur de rï¿½fï¿½rence
+     * @return 
      *
      */
     synchronized public final int[] scanString(IdxStructure id) {  // utilisï¿½ par QL
@@ -544,6 +559,7 @@ public class DoParse {
     /** utilise ce parseur pour rï¿½cupï¿½rer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
      * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
      * @param id indexeur de rï¿½fï¿½rence
+     * @return 
      *
      */
     synchronized public final String[] tokenizeString(IdxStructure id) {  // utilisï¿½ par QL

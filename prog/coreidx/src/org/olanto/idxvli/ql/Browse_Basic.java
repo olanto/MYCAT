@@ -40,6 +40,18 @@ public class Browse_Basic implements BrowseManager {
     private static long totalTime = 0;
     private static int get = 0;
 
+    /**
+     *
+     * @param id
+     * @param request
+     * @param langS
+     * @param start
+     * @param size
+     * @param collections
+     * @param order
+     * @param onlyOnFileName
+     * @return
+     */
     public final QLResultNice get(IdxStructure id, String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName) {
 
         QLResultNice nice = evalQLNice(id, request, langS, start, size, collections, order, onlyOnFileName);
@@ -58,12 +70,25 @@ public class Browse_Basic implements BrowseManager {
 
     /**
      * retourne des statistiques
+     * @return 
      */
     public final String getStatistic() {
         return "BROWSE cache statistics -> "
                 + " get: " + get + " totalTime for browse: " + totalTime / 1000 + " [s] meanTime: " + totalTime / get + " [ms]";
     }
 
+    /**
+     *
+     * @param id
+     * @param request
+     * @param langS
+     * @param start
+     * @param size
+     * @param collections
+     * @param order
+     * @param onlyOnFileName
+     * @return
+     */
     public QLResultNice evalQLNice(IdxStructure id, String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName) {
         System.out.println("Browse query :"+request);
         QLResultNice res = null;

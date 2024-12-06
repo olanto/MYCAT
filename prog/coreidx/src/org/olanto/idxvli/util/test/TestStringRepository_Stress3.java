@@ -29,11 +29,16 @@ import org.olanto.util.Timer;
  * 
  *
  *
+ * @author xtern
  */
 public class TestStringRepository_Stress3 {
 
     static StringRepository o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         o = (new StringTable_Classic()).create("C:/JG/gigaversion/data/objsto", "test", 21, 8);
         o = (new StringTable_Classic()).open("C:/JG/gigaversion/data/objsto", "test");

@@ -42,7 +42,7 @@ public class TokenAlphaOnly implements TokenDefinition {
 
     /**
      * Cherche le symbole suivant. d�finition symbole= commence avec une lettre
-     * (au sens unicode) et n'est pas dans un tag <> (peut occasioner une erreur
+     * (au sens unicode) et n'est pas dans un tag html (peut occasioner une erreur
      * d'indexation dans les mauvais html) s'arr�te quand on rencontre autre
      * chose qu'une lettre (au sens unicode)
      */

@@ -36,7 +36,7 @@ import org.olanto.idxvli.util.IntVector_InMemory;
 /**
  * Une classe stocker des vecteurs de bytes sur disque.
  *
- * <p>idées: Olanto Foundation Geneva & Joel Borcard
+ * <p>idées: Olanto Foundation Geneva and Joel Borcard
  * <p>
  * 
  *
@@ -175,7 +175,12 @@ public class ObjectStore4 implements ObjectStorage4 {
         // createObjectStore(_pathName,_generic_name,_maxSize,15,4,1,0,8);
     }
 
-    /**  cr�e un ObjectStorage de taille 2^maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un ObjectStorage de taille 2^maxSize � l'endroit indiqu� par le path
+     * @param implementation
+     * @param path
+     * @param maxSize
+     * @param minBigSize
+     * @return valeur */
     public final ObjectStorage4 create(implementationMode implementation, String path, int maxSize, int minBigSize) {
         return (new ObjectStore4(implementation, path, maxSize, minBigSize, "ext"));
     }
@@ -184,6 +189,18 @@ public class ObjectStore4 implements ObjectStorage4 {
         return (new ObjectStore4(implementation, path, _RW));
     }
 
+    /**
+     *
+     * @param implementation
+     * @param _pathName
+     * @param _generic_name
+     * @param _maxSize
+     * @param _max_file
+     * @param _p
+     * @param _q
+     * @param _min_ext
+     * @param _size_0
+     */
     public final void createObjectStore(
             implementationMode implementation,
             String _pathName,
@@ -223,7 +240,7 @@ public class ObjectStore4 implements ObjectStorage4 {
         close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         size = new long[MAX_FILE];
         size[0] = SIZE_0;
         for (int i = 1; i < MAX_FILE; i++) {
@@ -562,6 +579,10 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  ajoute des bytes a cet objet
      *   si 0 = OK
+     * @param b
+     * @param user
+     * @param to
+     * @return 
      */
     public final int append(int[] b, int user, int to) {
         structW.lock();
@@ -586,6 +607,10 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  ajoute des bytes a cet objet
      *   si 0 = OK
+     * @param b
+     * @param user
+     * @param realLength
+     * @return 
      */
     public final int append(byte[] b, int user, int realLength) {
         structW.lock();
@@ -597,6 +622,7 @@ public class ObjectStore4 implements ObjectStorage4 {
     }
 
     /**  lib�re un id (ceux vus par les utilisateurs)
+     * @param user
      */
     public final void releaseId(int user) {
         structW.lock();
@@ -609,6 +635,7 @@ public class ObjectStore4 implements ObjectStorage4 {
     }
 
     /**  pour le debuging, imprime l'id level/block
+     * @param user
      */
     public final void printNiceId(int user) {
         structR.lock();
@@ -629,6 +656,8 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  retourne l'objet stock� completement
      *   si null = erreur
+     * @param user
+     * @return 
      */
     public final int[] readInt(int user) {
         structR.lock();
@@ -655,7 +684,9 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  retourne la taille de l'objet*/
+    /**  retourne la taille de l'obje
+     * @param user n
+     * @return */
     public final int storedSize(int user) {
         structR.lock();
         try {
@@ -672,7 +703,9 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  retourne la taille r�el de l'objet sans compression*/
+    /**  retourne la taille r�el de l'objet sans compressio
+     * @param user
+     * @return n*/
     public final int realSize(int user) {
         structR.lock();
         try {

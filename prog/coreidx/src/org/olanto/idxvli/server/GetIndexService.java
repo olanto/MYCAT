@@ -31,6 +31,11 @@ import static org.olanto.util.Messages.*;
  */
 public class GetIndexService {
 
+    /**
+     *
+     * @param serviceName
+     * @return
+     */
     public static IndexService_MyCat getServiceIDX(String serviceName) {
 
         IndexService_MyCat is;
@@ -54,6 +59,12 @@ public class GetIndexService {
         return null;
     }
 
+    /**
+     *
+     * @param client
+     * @param serviceName
+     * @return
+     */
     public static IndexService_MyCat runServiceIDX(IdxInit client, String serviceName) {
 
         IndexService_MyCat mapobj;

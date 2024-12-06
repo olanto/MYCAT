@@ -50,6 +50,7 @@ public class QueryOperator {
      * - comment: comme pour le next mais sur tout les termes ...
      * @param z  index
      * @param w1  une chaine de caract?res
+     * @param rankType
      * @return vecteur de documents
      */
     public static final QRes getDocforQuotationForW(IdxStructure z, String w1, RankingMode rankType) {
@@ -74,6 +75,7 @@ public class QueryOperator {
 
     /**
      * cherche les documents contenant le terme n
+     * @param rankType
      * @return vecteur de documents
      * @param z index
      * @param n terme
@@ -96,6 +98,7 @@ public class QueryOperator {
 
     /**
      * cherche les documents contenant le terme w
+     * @param rankType
      * @return vecteur de documents
      * @param z index
      * @param w terme
@@ -163,7 +166,7 @@ public class QueryOperator {
                 //msg("log(df/ds)+1:"+((float)Math.log((double)occ[i]/(double)z.docstable.getSize(doc[i]))+1));
                 // old wgt[i]=((float)Math.log((double)occ[i]/(double)z.docstable.getSize(doc[i]))+1)*idf;
 
-                // df/ds * idf   // peut �tre optimis� pour faire toute les divisions des ds � la fin des requ�tes
+                // df/ds * idf   // peut �tre optimis� pour faire toute les divisions des ds à la fin des requ�tes
                 //msg(""+(float)occ[i]/(float)z.docstable.getSize(doc[i]));
                 wgt[i] = (float) occ[i] / (float) z.docstable.getSize(doc[i]) * idf;  //new 
             }
@@ -177,6 +180,12 @@ public class QueryOperator {
         return new QRes(doc, wgt);
     }
 
+    /**
+     *
+     * @param z
+     * @param n
+     * @return
+     */
     public static final QRes getDocforW_BM25(IdxStructure z, int n) {
         z.indexread.lockForBasic(n);
         int nbdoc = z.indexread.getNbDoc(n);
@@ -229,6 +238,12 @@ public class QueryOperator {
         return new QRes(doc, wgt);
     }
 
+    /**
+     *
+     * @param z
+     * @param n
+     * @return
+     */
     public static final QRes getDocforW_BM25Twice(IdxStructure z, int n) {
         z.indexread.lockForBasic(n);
         int nbdocfull = z.indexread.getNbDoc(n);
@@ -289,6 +304,12 @@ public class QueryOperator {
         return new QRes(doc, wgt);
     }
 
+    /**
+     *
+     * @param z
+     * @param n
+     * @return
+     */
     public static final QRes getDocforW_BM25TwiceXXXX(IdxStructure z, int n) {
         z.indexread.lockForBasic(n);
         int nbdoc = z.indexread.getNbDoc(n);

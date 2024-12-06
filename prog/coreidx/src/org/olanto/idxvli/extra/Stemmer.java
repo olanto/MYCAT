@@ -49,6 +49,10 @@ public class Stemmer {
     static HashMap<String, String> InMemory;
     static int countInMemory = 0;
 
+    /**
+     *
+     * @param _lang
+     */
     public static void init(String _lang) {
         lang = _lang;
         String stemName = "net.sf.snowball.ext." + lang + "Stemmer";
@@ -66,6 +70,11 @@ public class Stemmer {
 
     }
 
+    /**
+     *
+     * @param src
+     * @return
+     */
     public static String stemmingOfW(String src) {
         try {
             String stemInMemory = InMemory.get(src);

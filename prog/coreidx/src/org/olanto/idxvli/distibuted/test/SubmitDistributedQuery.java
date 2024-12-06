@@ -35,6 +35,10 @@ public class SubmitDistributedQuery {
     static Remote[] r;
     static IndexService[] nodes;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         connectToNode();
         test("napoléon");
@@ -45,6 +49,9 @@ public class SubmitDistributedQuery {
 
     }
 
+    /**
+     *
+     */
     public static void connectToNode() {
         r = new Remote[nbNode];
         nodes = new IndexService[nbNode];
@@ -65,6 +72,10 @@ public class SubmitDistributedQuery {
         }
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void test(String s) {
         Timer t1 = new Timer("distribute:" + s, false);
         QLResultAndRank[] res = new QLResultAndRank[nbNode];

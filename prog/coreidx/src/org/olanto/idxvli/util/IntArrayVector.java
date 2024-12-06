@@ -31,31 +31,51 @@ package org.olanto.idxvli.util;
  */
 public interface IntArrayVector {
 
-    /**  crÃ©e un vecteur 2^_maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), objet=int[fixedArraySize] */
+    /**  crÃ©e un vecteur 2^_maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), objet=int[fixedArraySize]
+     * @param _path
+     * @param _file
+     * @param _maxSize
+     * @param _fixedArraySize
+     * @return valeur */
     public IntArrayVector create(String _path, String _file, int _maxSize, int _fixedArraySize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path */
+    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path
+     * @param _path
+     * @param _file
+     * @return valeur */
     public IntArrayVector open(String _path, String _file);
 
     /**  ferme un gestionnaire de vecteurs  (et sauve les modifications*/
     public void close();
 
-    /** mets Ã  jour la position pos avec la valeur val */
+    /** mets Ã  jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public void set(int pos, int[] val);
 
-    /** mets Ã  jour la position pos avec la valeur val */
+    /** mets Ã  jour la position pos avec la valeur val
+     * @param pos
+     * @param val
+     * @param i */
     public void set(int pos, int i, int val);
 
-    /** Ã©limine le vecteur a la position pos */
+    /** Ã©limine le vecteur a la position pos
+     * @param pos */
     public void clear(int pos);
 
-    /**  cherche la valeur Ã  la position pos  */
+    /**  cherche la valeur Ã  la position pos
+     * @param pos
+     * @return valeur */
     public int[] get(int pos);
 
-    /**  cherche la valeur Ã  la position pos, la iÃ¨me valeur   */
+    /**  cherche la valeur Ã  la position pos, la iÃ¨me valeur
+     * @param pos
+     * @param i
+     * @return valeur */
     public int get(int pos, int i);
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public int length();
 
     /**  imprime des statistiques */

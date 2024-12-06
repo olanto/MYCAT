@@ -102,6 +102,10 @@ public class TESTQL {
         t1.stop();
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void test(String s) {
         TimerNano t1 = new TimerNano("parse:" + s, false);
 

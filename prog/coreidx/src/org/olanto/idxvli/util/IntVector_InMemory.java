@@ -67,12 +67,19 @@ public class IntVector_InMemory implements IntVector {
     public IntVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _fileName
+     * @param _maxSize
+     * @return valeur */
     public final IntVector create(String _pathName, String _fileName, int _maxSize) {
         return (new IntVector_InMemory(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @return valeur */
     public final IntVector open(String _pathName, String _fileName) {
         return (new IntVector_InMemory(_pathName, _fileName));
     }
@@ -105,7 +112,7 @@ public class IntVector_InMemory implements IntVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         v = new int[size];
     }
 
@@ -145,17 +152,22 @@ public class IntVector_InMemory implements IntVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, int val) {
         v[pos] = val;
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final int get(int pos) {
         return v[pos];
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
@@ -165,7 +177,8 @@ public class IntVector_InMemory implements IntVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "IntVector_InMemory: " + pathName + "/" + fileName + "statistics -> "
                 + "\n  size: " + size;

@@ -30,6 +30,11 @@ import org.olanto.util.Timer;
  */
 public class GetHitsStatsTest {
 
+    /**
+     *
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
         SearchHits sHits = new SearchHits();
         Timer t = new Timer("GetHighlight_Occurrences");

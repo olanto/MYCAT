@@ -102,6 +102,10 @@ public class TESTQL_CLASSIC_1 {
         id.close();
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void test(String s) {
         TimerNano t1 = new TimerNano("parse:" + s, false);
         int start = 0;
@@ -121,6 +125,10 @@ public class TESTQL_CLASSIC_1 {
         //showVector(res);
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void testplus(String s) {
         TimerNano t1 = new TimerNano("parse:" + s, false);
         int start = 5;

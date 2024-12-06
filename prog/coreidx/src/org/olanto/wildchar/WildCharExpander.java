@@ -39,7 +39,15 @@ import static org.olanto.util.Messages.*;
 public class WildCharExpander {
 
     private String target;
+
+    /**
+     *
+     */
     public static final char ITEM_START = '\n';
+
+    /**
+     *
+     */
     public static final char ITEM_STOP = '\r';
 
     /**
@@ -49,14 +57,28 @@ public class WildCharExpander {
         return target;
     }
 
+    /**
+     *
+     * @param fileName
+     */
     public WildCharExpander(String fileName) {
         target = readFromFile(fileName).toString();
     }
 
+    /**
+     *
+     * @param list
+     */
     public WildCharExpander(StringBuilder list) {
         target = list.toString();
     }
 
+    /**
+     *
+     * @param regex
+     * @param maxExpand
+     * @return
+     */
     public String[] getExpand(String regex, int maxExpand) {
 //       System.out.println("---------- target size :" + target.length());
 //           System.out.println("---------- look 0 for :" + regex);
@@ -81,6 +103,15 @@ public class WildCharExpander {
         return res;
     }
 
+    /**
+     *
+     * @param regex
+     * @param langS
+     * @param collections
+     * @param maxExpand
+     * @param onlyOnFileName
+     * @return
+     */
     public String[] getExpand(String regex, String langS, String[] collections, int maxExpand, boolean onlyOnFileName) {  // filtrer par les collections
         String[] matchcoll = null;
         String langMatcher = "/" + langS + "/";
@@ -144,6 +175,10 @@ public class WildCharExpander {
         return false;
     }
 
+    /**
+     *
+     * @param regex
+     */
     public void expand(String regex) {  // only for debug
         // Compile the regex. 
         System.out.println("---------- look 0 for :" + regex);

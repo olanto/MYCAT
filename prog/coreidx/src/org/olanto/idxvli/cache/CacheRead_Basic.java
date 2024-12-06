@@ -38,6 +38,10 @@ public class CacheRead_Basic implements CacheRead {
     private CacheIdx_ExtGC doc;
     private CacheIdx_ExtGC pos;
 
+    /**
+     *
+     * @param maxWord
+     */
     public CacheRead_Basic(int maxWord) {
         //  System.out.println("CacheRead_ExtGC:"+maxWord);
         doc = new CacheIdx_ExtGC(maxWord);

@@ -368,7 +368,7 @@ public class SetOperation {
     }
 
     /** cherche la indice dans un vecteur ordonn� r, de la valeur v, de la position 0 � rl.
-     * rl est souvent associ� � la longeur de r, cependant cette m�thode peut �tre utilis� avec un vecteur partiellement rempli.
+     * rl est souvent associ� à la longeur de r, cependant cette m�thode peut �tre utilis� avec un vecteur partiellement rempli.
      * @param r  vecteur
      * @param length  limite de la recherche
      * @param v  valeur recherch�e

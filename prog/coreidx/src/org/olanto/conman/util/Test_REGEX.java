@@ -33,6 +33,10 @@ public class Test_REGEX {
     private static Pattern p;
     private static Matcher m;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         String s = "ceci     est, une source de chaleur.";
@@ -50,6 +54,11 @@ public class Test_REGEX {
 
     }
 
+    /**
+     *
+     * @param s
+     * @param r
+     */
     public static void test(String s, String r) {
 
         p = Pattern.compile(r);
@@ -62,6 +71,11 @@ public class Test_REGEX {
         }
     }
 
+    /**
+     *
+     * @param s
+     * @param r
+     */
     public static void split(String s, String r) {
 
         p = Pattern.compile(r);

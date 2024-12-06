@@ -94,6 +94,10 @@ public class TESTQL_CLASSIC {
         id.close();
     }
 
+    /**
+     *
+     * @param s
+     */
     public static void test(String s) {
         TimerNano t1 = new TimerNano("parse:" + s, false);
 

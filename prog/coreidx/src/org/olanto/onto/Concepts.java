@@ -34,6 +34,11 @@ import java.io.*;
 public class Concepts implements Serializable {
 
     /* les concepts */
+
+    /**
+     *
+     */
+
     public int[] c;
 
     /** crée une liste
@@ -49,6 +54,14 @@ public class Concepts implements Serializable {
         this.c = null;
     }
 
+    /**
+     *
+     * @param id
+     * @param ontologyLib
+     * @param lang
+     * @param word
+     * @return
+     */
     public static final Concepts getConcept(IdxStructure id, ManyOntologyManager ontologyLib, String lang, String word) {
         LexicManager currentLexic = ontologyLib.get(lang);
         String stemOfWord = DoParse.stem(id, lang, word);
@@ -56,6 +69,10 @@ public class Concepts implements Serializable {
         return concepts;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void add(int id) {
         if (c == null) {
             c = new int[1];
@@ -71,12 +88,20 @@ public class Concepts implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param id
+     */
     public void add(int[] id) {
         for (int i = 0; i < id.length; i++) {
             add(id[i]);
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int length() {
         if (c == null) {
             return 0;
@@ -85,6 +110,11 @@ public class Concepts implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean testIn(int id) {
         if (c == null) {
             return false;

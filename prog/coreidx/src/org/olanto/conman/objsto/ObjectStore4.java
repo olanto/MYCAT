@@ -156,7 +156,12 @@ public class ObjectStore4 implements ObjectStorage4 {
         // createObjectStore(_pathName,_generic_name,_maxSize,15,4,1,0,8);
     }
 
-    /**  crï¿½e un ObjectStorage de taille 2^maxSize ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un ObjectStorage de taille 2^maxSize ï¿½ l'endroit indiquï¿½ par le path
+     * @param implementation
+     * @param path
+     * @param maxSize
+     * @param minBigSize
+     * @return valeur */
     public final ObjectStorage4 create(implementationMode implementation, String path, int maxSize, int minBigSize) {
         return (new ObjectStore4(implementation, path, maxSize, minBigSize, "ext"));
     }
@@ -165,6 +170,18 @@ public class ObjectStore4 implements ObjectStorage4 {
         return (new ObjectStore4(implementation, path, _RW));
     }
 
+    /**
+     *
+     * @param implementation
+     * @param _pathName
+     * @param _generic_name
+     * @param _maxSize
+     * @param _max_file
+     * @param _p
+     * @param _q
+     * @param _min_ext
+     * @param _size_0
+     */
     public final void createObjectStore(
             implementationMode implementation,
             String _pathName,
@@ -519,6 +536,7 @@ public class ObjectStore4 implements ObjectStorage4 {
     }
 
     /**  libï¿½re un id (ceux vus par les utilisateurs)
+     * @param user
      */
     public final void releaseId(int user) {
         releaseBlock(idUser[user]);
@@ -542,6 +560,8 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  lire les bytes de cet objet
      *   si 0 = OK
+     * @param user
+     * @return 
      */
     public final byte[] read(int user) {
         /*long*/ int id = idUser[user];
@@ -566,7 +586,11 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     }
 
-    /**  retourne l'objet stockï¿½ partiellement de from ï¿½ to,si null = erreur*/
+    /**  retourne l'objet stockï¿½ partiellement de from ï¿½ to,si null = erreur
+     * @param user
+     * @param from
+     * @param to
+     * @return */
     public byte[] read(int user, int from, int to) {
         /*long*/ int id = idUser[user];
         //msg("xxxx user:"+user+" id:"+id);
@@ -613,6 +637,10 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  ï¿½crit ou remplace des bytes a cet objet
      *   si 0 = OK
+     * @param b
+     * @param user
+     * @param realLength
+     * @return 
      */
     public final int write(byte[] b, int user, int realLength) {
         incrementRealSize(user, realLength); // adjust realSize
@@ -700,7 +728,9 @@ public class ObjectStore4 implements ObjectStorage4 {
         return status;
     }
 
-    /**  retourne la taille de l'objet*/
+    /**  retourne la taille de l'objet
+     * @param user 
+     * @return */
     public final int storedSize(int user) {
         /*long*/ int id = idUser[user];
         if (id != EMPTY) {  //gros objet
@@ -712,7 +742,9 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  retourne la taille rï¿½el de l'objet sans compression*/
+    /**  retourne la taille rï¿½el de l'objet sans compressio
+     * @param user
+     * @return n*/
     public int realSize(int user) {
         return realSize.get(user);
     }

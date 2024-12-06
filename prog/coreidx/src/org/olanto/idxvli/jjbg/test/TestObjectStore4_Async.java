@@ -35,6 +35,10 @@ public class TestObjectStore4_Async {
 
     static ObjectStorage4 o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         implementationMode mode = implementationMode.BIG;

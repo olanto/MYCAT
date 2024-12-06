@@ -31,30 +31,44 @@ public interface BitVector {
 
     /**  crÃ©e un vecteur _maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), 
      *   _maxSize doit Ãªtre un multiple de 32
+     * @param _path
+     * @param _file
+     * @param _maxSize
+     * @return 
      */
     public BitVector create(String _path, String _file, int _maxSize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path */
+    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path
+     * @param _path
+     * @param _file
+     * @return valeur */
     public BitVector open(String _path, String _file);
 
     /**  ferme un gestionnaire de vecteurs  (et sauve les modifications*/
     public void close();
 
-    /** mets Ã  jour la position pos avec la valeur val */
+    /** mets Ã  jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public void set(int pos, boolean val);
 
-    /**  cherche la valeur Ã  la position pos  */
+    /**  cherche la valeur Ã  la position pos
+     * @param pos
+     * @return valeur */
     public boolean get(int pos);
 
-    /**  cherche le vecteur entier  */
+    /**  cherche le vecteur entier
+     * @return valeur */
     public SetOfBits get();
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public int length();
 
     /**  imprime des statistiques */
     public void printStatistic();
 
-    /**  retourne des statistiques */
+    /**  retourne des statistiques
+     * @return valeur */
     public String getStatistic();
 }

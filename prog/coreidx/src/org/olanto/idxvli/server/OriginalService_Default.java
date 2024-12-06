@@ -37,6 +37,9 @@ public class OriginalService_Default implements OriginalService {
 
     /**
      * Pour demander avoir une url à partir d'un nom de fichier indexé
+     * @param d
+     * @return 
+     * @throws java.rmi.RemoteException 
      */
     @Override
     public String getURL(String d) throws RemoteException {

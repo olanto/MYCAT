@@ -47,7 +47,10 @@ public class LexicBetter implements LexicManager {
     public LexicBetter() {
     }
 
-    /**  crï¿½e un gestionnaire de lexique */
+    /**  crï¿½e un gestionnaire de lexique
+     * @param _path
+     * @param lang
+     * @param stemName */
     public final LexicManager create(String _path, String lang, String stemName) {
         return (new LexicBetter(_path, lang, stemName));
     }

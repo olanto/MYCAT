@@ -29,9 +29,18 @@ import java.util.Arrays;
  */
 public class Utility {
 
+    /**
+     *
+     */
     public Utility() {
     }
 
+    /**
+     *
+     * @param curpos
+     * @param lines
+     * @return
+     */
     public int getInd(int curpos, int[][] lines) {
         boolean notfound = true;
         int pos = 0;
@@ -45,6 +54,12 @@ public class Utility {
         return pos;
     }
 
+    /**
+     *
+     * @param query
+     * @param stopWords
+     * @return
+     */
     public ArrayList<String> getQueryWords(String query, ArrayList<String> stopWords) {
         String Query = query;
         ArrayList<String> hits = new ArrayList<String>();
@@ -78,6 +93,12 @@ public class Utility {
         return hits;
     }
 
+    /**
+     *
+     * @param source
+     * @param cookie
+     * @return
+     */
     public int getIndex(String[] source, String cookie) {
         int i = 0;
         for (int j = 0; j < source.length; j++) {
@@ -89,6 +110,11 @@ public class Utility {
         return i;
     }
     
+    /**
+     *
+     * @param Query
+     * @return
+     */
     public ArrayList<String> getexactWords(String Query) {
         Query = Query.replace("\"", "");
         Query = Query.replace("(", "");

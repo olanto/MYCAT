@@ -46,6 +46,10 @@ public class ContentService_BASIC extends UnicastRemoteObject implements Content
 
     private ContentStructure id;
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public ContentService_BASIC() throws RemoteException {
         super();
     }

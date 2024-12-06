@@ -30,6 +30,11 @@ import java.io.*;
 public class PropertiesList implements Serializable {
 
     /* les propri�t�s r�sultats */
+
+    /**
+     *
+     */
+
     public String[] result;
 
     /** cr�e une propertie List

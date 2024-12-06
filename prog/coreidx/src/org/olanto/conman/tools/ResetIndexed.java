@@ -31,6 +31,10 @@ import static org.olanto.conman.server.GetContentService.*;
  */
 public class ResetIndexed {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         ContentService is = getServiceCM("rmi://localhost/CM_COLLECT");

@@ -27,7 +27,7 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
  * Impl�mente les op�rations de base sur un vecteur de bit de taille fixe n*32.
  * <p>
  * Cette classe est 3 fois plus rapide pour les get que BitSet de Sun (pas de test ?). Les
- * op�rations sont 30% plus lente (sans doute l'utilisation des int � la place des long).
+ * op�rations sont 30% plus lente (sans doute l'utilisation des int à la place des long).
  * La classe permet de r�cup�rer le vecteur zip�.
  * <p>
  * <p>
@@ -92,7 +92,7 @@ public class SetOfBits implements Serializable {
 
     /**
      * crée un vecteur à partir des bit d'un vecteur de int
-     * @param binaryInt les bits des ints deviennent ceux du vecteur de bit
+     * @param s les bits des ints deviennent ceux du vecteur de bit
      */
     public SetOfBits(SetOfBits s) {
         cardinality = s.cardinality;
@@ -135,7 +135,7 @@ public class SetOfBits implements Serializable {
     }
 
     /**
-     * cherche la valeur du bit � la position bitIndex
+     * cherche la valeur du bit à la position bitIndex
      * @param bitIndex position recherch�e
      * @return valeur de la position
      */
@@ -225,6 +225,7 @@ public class SetOfBits implements Serializable {
      * true if all false
      * @param firstbits l'op�ration est restreinte aux premiers bits (ALL=tous)
      * return true if all false
+     * @return 
      */
     public final boolean allFalse(int firstbits) {
         int first = bitsToInts(firstbits);

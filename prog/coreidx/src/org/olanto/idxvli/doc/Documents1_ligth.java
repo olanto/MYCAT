@@ -46,14 +46,27 @@ public class Documents1_ligth implements DocumentManager {
     public Documents1_ligth() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path */
+    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+     * @param _ManagerImplementation
+     * @param _keepLanguage
+     * @param _idxName
+     * @param _path
+     * @param _keepCollection
+     * @param _lengthString
+     * @param _maxSize */
     public final DocumentManager create(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             String _path, String _idxName, int _maxSize, int _lengthString) {
         return (new Documents1_ligth(_ManagerImplementation, _keepLanguage, _keepCollection,
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path */
+    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+     * @param _ManagerImplementation
+     * @param _path
+     * @param _keepCollection
+     * @param _keepLanguage
+     * @param _updatingMode
+     * @param _idxName */
     public final DocumentManager open(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             IdxMode _updatingMode, String _path, String _idxName) {
         return (new Documents1_ligth(_ManagerImplementation, _keepLanguage, _keepCollection,
@@ -114,14 +127,16 @@ public class Documents1_ligth implements DocumentManager {
         }
     }
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt*/
+    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+     * @param d*/
     public final int put(String d) {
         //msg("add this:"+d);
         int id = documentName.put(d);
         return id;
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire  */
+    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+     * @param d */
     public final int get(String d) {
         return documentName.get(d);
     }

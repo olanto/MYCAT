@@ -33,6 +33,10 @@ public class CreateIndex {
     private static IdxStructure id;
     private static Timer t1 = new Timer("global time");
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         id = new IdxStructure("NEW", new ConfigurationNative());

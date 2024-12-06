@@ -36,7 +36,7 @@ import java.util.regex.*;
  */
 public class ContentStructure {
 
-    /** dictionnaire de documents (document->indice) (indice->document)*/
+    /** dictionnaire de documents (document--indice) (indice--document)*/
     public DocumentManager docstable;
     /** la structure comprend un module de statistique*/
     public ContentStatistic Statistic;
@@ -44,7 +44,7 @@ public class ContentStructure {
     public ContentIO IO;
     /** la structure comprend un module de gestion des IO*/
     public ContentManager CM;
-    /** indice du dernier document indexï¿½. attention ï¿½ cela qui est vrai dans l'ancien systï¿½me, Donc les indices partent de for (inti i=1;i < lastdoc ...)*/
+    /** indice du dernier document indexé */
     public int lastdoc = 0;
     /** flag indiquant qu'il n'y pas de document invalide (permet de sauter les filtres */
     public static boolean ZERO_INVALID_DOC = false;
@@ -87,10 +87,18 @@ public class ContentStructure {
     }
 
     /* service IO */
+
+    /**
+     *
+     */
+
     public final void updateLastdoc() {
         lastdoc = docstable.getCount();
     }
 
+    /**
+     *
+     */
     public final void loadContentManager() {
         IO.loadContentManager();
     }
@@ -117,6 +125,7 @@ public class ContentStructure {
 
     /** sauve le contenu
      * @param n terme
+     * @return 
      */
     public byte[] loadContent(int n) {
         return IO.loadContent(n);
@@ -125,6 +134,8 @@ public class ContentStructure {
     /** ajoute un contenu String.
      * @param docName identifiant
      * @param content contenu
+     * @param lang
+     * @param collection
      */
     synchronized public void addContent(String docName, String content, String lang, String collection) {
         try {
@@ -155,6 +166,7 @@ public class ContentStructure {
     /** sauver un contenu
      * @param docID identifiant
      * @param content contenu
+     * @param type
      */
     synchronized public void saveContent(int docID, String content, String type) {
         try {
@@ -169,6 +181,7 @@ public class ContentStructure {
     /** sauver un contenu
      * @param docID identifiant
      * @param content contenu
+     * @param type
      */
     synchronized public void saveContent(int docID, byte[] content, String type) {
         try {
@@ -215,6 +228,7 @@ public class ContentStructure {
      * @param docID identifiant
      * @param from debut
      * @param to fin
+     * @return 
      */
     public String getStringContent(int docID, int from, int to) {
         return CM.getStringContent(docID, from, to);
@@ -248,16 +262,32 @@ public class ContentStructure {
     /** distance de kolmogorov entre deux documents.
      * @param d1 document
      * @param d2 document
+     * @param bzip2
      * @return distance
      */
     public double distOfKolmogorov(int d1, int d2, boolean bzip2) {
         return CM.distOfKolmogorov(d1, d2, bzip2);
     }
 
+    /**
+     *
+     * @param kd1
+     * @param kd2
+     * @param Sd1
+     * @param Sd2
+     * @param bzip2
+     * @return
+     */
     public double distOfKolmogorov(double kd1, double kd2, String Sd1, String Sd2, boolean bzip2) {
         return CM.distOfKolmogorov(kd1, kd2, Sd1, Sd2, bzip2);
     }
 
+    /**
+     *
+     * @param Sd1
+     * @param bzip2
+     * @return
+     */
     public double kdlength(String Sd1, boolean bzip2) {
         return CM.kdlength(Sd1, bzip2);
     }
@@ -343,6 +373,13 @@ public class ContentStructure {
         docstable.clearPropertie(doc, "STATE.INDEXED");
     }
 
+    /**
+     *
+     * @param docName
+     * @param refName
+     * @param title
+     * @param cleantxt
+     */
     public synchronized void setRefDoc(String docName, String refName, String title, String cleantxt) {
         try {
 
@@ -375,6 +412,12 @@ public class ContentStructure {
 //**** application ***** refname,title,context is not ok for this document 169217
 //**** application ***** refname,title,context is not ok for this document 169310
 //**** application ***** refname,title,context is not ok for this document 169310
+
+    /**
+     *
+     * @param docName
+     * @return
+     */
     public String[] getRefDoc(String docName) {
         String[] res = new String[3];
         int id = this.getIntForDocument(docName);
@@ -397,18 +440,40 @@ public class ContentStructure {
         return res;
     }
 
+    /**
+     *
+     * @param docName
+     * @return
+     */
     public String getRefName(String docName) {
         return getRefDoc(docName)[0];
     }
 
+    /**
+     *
+     * @param docName
+     * @return
+     */
     public String getTitle(String docName) {
         return getRefDoc(docName)[1];
     }
 
+    /**
+     *
+     * @param docName
+     * @return
+     */
     public String getCleanText(String docName) {
         return getRefDoc(docName)[2];
     }
 
+    /**
+     *
+     * @param docName
+     * @param from
+     * @param to
+     * @return
+     */
     public String getCleanText(String docName, int from, int to) {
         boolean verbose = false;
         String allcontent = getCleanText(docName);
@@ -424,6 +489,7 @@ public class ContentStructure {
 
     /**
      * crï¿½e un composant d'indexation avec une racine pour les fichiers d'index
+     * @param client
      */
     public void createComponent(ContentInit client) {
         // initialise les constantes et la configuration

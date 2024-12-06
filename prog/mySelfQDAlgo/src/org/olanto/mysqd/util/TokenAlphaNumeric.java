@@ -35,7 +35,7 @@ public class TokenAlphaNumeric implements TokenDefinition {
     /**
      * Cherche le symbole suivant.
      * définition symbole= commence avec une lettre ou des chiffres(au sens unicode)
-     * et n'est pas dans un tag <> (peut occasioner une erreur d'indexation dans les mauvais html)
+     * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
      * s'arr�te quand on rencontre autre chose qu'une lettre (au sens unicode)ou des chiffres ou . ou -
      * pour rendre active cette m�thode, il faut la renommer next !
      */

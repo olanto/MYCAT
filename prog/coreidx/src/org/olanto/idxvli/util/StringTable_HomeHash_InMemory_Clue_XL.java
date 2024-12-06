@@ -70,12 +70,20 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     private RandomAccessFile rdoc;
     private LongVector hdocclue; // on stock un indice pour �viter de lire le string
 
+    /**
+     *
+     */
     public StringTable_HomeHash_InMemory_Clue_XL() {
     }
 
     /**
      * cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu�
      * par le path
+     * @param _pathName
+     * @param _idxName
+     * @param _maxSize
+     * @param _lengthString
+     * @return 
      */
     public final StringRepository create(String _pathName, String _idxName, int _maxSize, int _lengthString) {
         return (new StringTable_HomeHash_InMemory_Clue_XL(_pathName, _idxName, "ext", _maxSize, _lengthString));
@@ -83,6 +91,9 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
 
     /**
      * ouvre un gestionnaire de mots � l'endroit indiqu� par le _path
+     * @param _path
+     * @param _idxName
+     * @return 
      */
     public final StringRepository open(String _path, String _idxName) {
         return (new StringTable_HomeHash_InMemory_Clue_XL(_path, _idxName));
@@ -226,6 +237,8 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     /**
      * ajoute un terme au gestionnaire retourne le num�ro du terme, retourne
      * EMPTY s'il y a une erreur, retourne son id s'il existe d�ja
+     * @param w
+     * @return 
      */
     public final int put(String w) {
         //  msg(w);
@@ -315,6 +328,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
 
     /**
      * imprime des statistiques
+     * @return 
      */
     public final String getStatistic() {
         return "String Table statistics :" + pathName + "/" + idxName + " id: " + GENERIC_NAME
@@ -324,6 +338,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
 
     /**
      * retourne le nbr de mots dans le dictionnaire
+     * @return 
      */
     public final int getCount() {
         return count;

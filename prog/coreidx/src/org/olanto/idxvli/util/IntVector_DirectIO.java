@@ -50,12 +50,19 @@ public class IntVector_DirectIO implements IntVector {
     public IntVector_DirectIO() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path */
+    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _fileName
+     * @param _maxSize
+     * @return valeur */
     public final IntVector create(String _pathName, String _fileName, int _maxSize) {
         return (new IntVector_DirectIO(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path */
+    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+     * @param _pathName
+     * @param _fileName
+     * @return valeur */
     public final IntVector open(String _pathName, String _fileName) {
         return (new IntVector_DirectIO(_pathName, _fileName));
     }
@@ -88,7 +95,7 @@ public class IntVector_DirectIO implements IntVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, � la cr�ation
+    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
         try {
             v = new MappedFile();
             v.open(pathName + "/" + fileName + "_dio", MappingMode.FULL, readWriteMode.rw, slice2n, size * 4);
@@ -138,7 +145,9 @@ public class IntVector_DirectIO implements IntVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val */
+    /** mets � jour la position pos avec la valeur val
+     * @param pos
+     * @param val */
     public final void set(int pos, int val) {
         try {
             v.seek(pos << 2); // pos*4
@@ -148,7 +157,9 @@ public class IntVector_DirectIO implements IntVector {
         }
     }
 
-    /**  cherche la valeur � la position pos  */
+    /**  cherche la valeur à la position pos
+     * @param pos
+     * @return valeur */
     public final int get(int pos) {
         try {
             v.seek(pos << 2); // pos*4
@@ -159,7 +170,8 @@ public class IntVector_DirectIO implements IntVector {
         return -1;
     }
 
-    /**  retourne la taille du vecteur */
+    /**  retourne la taille du vecteur
+     * @return valeur */
     public final int length() {
         return size;
     }
@@ -169,7 +181,8 @@ public class IntVector_DirectIO implements IntVector {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "IntVector_DirectIO: " + pathName + "/" + fileName + "statistics -> "
                 + "\n  size: " + size;

@@ -30,6 +30,10 @@ public class CacheTranslate_OneOne implements CacheTranslate {
 
     static int cacheSize;
 
+    /**
+     *
+     * @param _cacheSize
+     */
     public CacheTranslate_OneOne(int _cacheSize) {
         cacheSize = _cacheSize;
     }

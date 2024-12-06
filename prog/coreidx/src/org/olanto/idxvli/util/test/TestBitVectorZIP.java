@@ -30,11 +30,16 @@ import static org.olanto.idxvli.IdxEnum.*;
  * 
  *
  *
+ * @author xtern
  */
 public class TestBitVectorZIP {
 
     static BitArrayVector o;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         implementationMode imp = implementationMode.BIG;
         String s;

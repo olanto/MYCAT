@@ -31,16 +31,25 @@ public interface OriginalService  {
 
     /**
      * Pour demander avoir une url à partir d'un nom de fichier indexé
+     * @param fname
+     * @return 
+     * @throws java.rmi.RemoteException
      */
     public String getURL(String fname) throws RemoteException;
 
     /**
      * Pour demander avoir un path à partir d'un nom de fichier indexé
+     * @param fname
+     * @return 
+     * @throws java.rmi.RemoteException
      */
     public String getPath(String fname) throws RemoteException;
 
      /**
      * Pour demander un nom de fichier à sauver dans le zip à partir d'un nom de fichier indexé
+     * @param fname
+     * @return 
+     * @throws java.rmi.RemoteException
      */
     public String getSaveZipName(String fname) throws RemoteException;
 }

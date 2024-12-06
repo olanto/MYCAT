@@ -94,11 +94,11 @@ public class IdxStructure {
      */
     public SetOfWords dontIndexThis;
     /**
-     * dictionnaire de mots (mot->indice) et (indice->mot)
+     * dictionnaire de mots (mot--indice) et (indice--mot)
      */
     public WordManager wordstable;
     /**
-     * dictionnaire de mots (indice->liste des mots sans lemmatisation ayant la
+     * dictionnaire de mots (indice -- liste des mots sans lemmatisation ayant la
      * m�me racine)
      */
     public TreeSet<String>[] stemList;
@@ -141,25 +141,25 @@ public class IdxStructure {
     public WildCharExpander docNameExpander;
     /**
      * position de l'index des mots et des freq d'un document <br>
-     * rdnbag[i]->information sur l'indexation du i-�me documement
+     * rdnbag[i] -- information sur l'indexation du i-�me documement
      */
     protected long[] rdnbag;
     /**
      * position de l'index des mots en s�quence d'un document <br>
-     * rdnseq[i]->s�equence des mots du i-�me documement
+     * rdnseq[i]--s�equence des mots du i-�me documement
      */
     protected long[] rdnseq;
     /**
      * position de l'index des position des mots en s�quence d'un document <br>
-     * rdnposchar[i]->s�equence des positions des mots du i-�me documement
+     * rdnposchar[i] -- �equence des positions des mots du i-�me documement
      */
     protected long[] rdnposchar;
     /**
-     * dictionnaire de documents (document->indice) (indice->document)
+     * dictionnaire de documents (document-indice) (indice-document)
      */
     public DocumentManager docstable;
     /**
-     * dictionnaire de documents (document->indice) (indice->document)
+     * dictionnaire de documents (document--indice) (indice--document)
      */
     public ZipVector zipCache;
     /**
@@ -656,7 +656,7 @@ public class IdxStructure {
     }
 
     /**
-     * retourne la liste des documents valides correspondants � la requ�te,
+     * retourne la liste des documents valides correspondants à la requ�te,
      * (null) si erreur.
      *
      * @param request requ�te
@@ -667,7 +667,7 @@ public class IdxStructure {
     }
 
     /**
-     * retourne la liste des documents valides correspondants � la requ�te,
+     * retourne la liste des documents valides correspondants à la requ�te,
      * (null) si erreur.
      *
      * @param request requ�te
@@ -750,7 +750,7 @@ public class IdxStructure {
     }
 
     /**
-     * indique si les caches d�passent la taille IDXSIZETOFREE & allocate
+     * indique si les caches d�passent la taille IDXSIZETOFREE and allocate
      *
      * @return true=d�passe les capacit�s
      */
@@ -770,29 +770,86 @@ public class IdxStructure {
     /**
      * permet de browser le corpus indexé par les noms des documents
      *
+     * @param request
+     * @param collections
+     * @param langS
+     * @param size
+     * @param start
+     * @param order
+     * @param onlyOnFileName
      * @return une hitlist de documents
      */
     public QLResultNice browseNice(String request, String langS, int start, int size, String[] collections, String order, boolean onlyOnFileName) {
         return browser.get(this, request, langS, start, size, collections, order, onlyOnFileName);
     }
 
+    /**
+     *
+     * @param cs
+     * @param request
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public QLResultNice evalQLNice(ContentService cs, String request, int start, int size, boolean fullresult) {
         return executor.get(this, cs, request, start, size, fullresult);
     }
 
+    /**
+     *
+     * @param cs
+     * @param request1
+     * @param request2
+     * @param start
+     * @param size1
+     * @param size2
+     * @return
+     */
     public QLResultNice evalQLNice(ContentService cs, String request1,
             String request2, int start, int size1, int size2) {
         return executor.get(this, cs, request1, request2, start, size1, size2);
     }
 
+    /**
+     *
+     * @param cs
+     * @param request
+     * @param properties
+     * @param start
+     * @param size
+     * @return
+     */
     public QLResultNice evalQLNice(ContentService cs, String request, String properties, int start, int size) {
         return executor.get(this, cs, request, properties, start, size);
     }
 
+    /**
+     *
+     * @param cs
+     * @param request
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public QLResultNice evalQLNice(ContentService cs, String request, String properties, String profile, int start, int size, boolean fullresult) {
         return executor.get(this, cs, request, properties, profile, start, size, fullresult);
     }
 
+    /**
+     *
+     * @param upfile
+     * @param limit
+     * @param source
+     * @param target
+     * @param selectedCollection
+     * @param removefirst
+     * @param fast
+     * @return
+     */
     public REFResultNice getReferences(UploadedFile upfile, int limit, String source, String target, String[] selectedCollection,
             boolean removefirst, boolean fast) {
 //        if (upfile.isTxt()) {// text case
@@ -810,6 +867,11 @@ public class IdxStructure {
 //        return null;
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     */
     public void exportEntry(long min, long max) {
         long count = 0;
         try {
@@ -906,6 +968,7 @@ public class IdxStructure {
      *
      * @param docID identifiant
      * @param properties nom de la propriété
+     * @return 
      */
     public boolean getDocumentPropertie(int docID, String properties) {
         return docstable.getPropertie(docID, properties);
@@ -927,11 +990,17 @@ public class IdxStructure {
 
     /**
      * pour r�cup�rer les stops words
+     * @return 
      */
     public String[] getStopWords() {
         return dontIndexThis.getListOfWords();
     }
 
+    /**
+     *
+     * @param txt
+     * @return
+     */
     public String getLanguage(String txt) {
         if (IDX_MARKER) {
             return marker.getLanguage(txt);
@@ -939,6 +1008,11 @@ public class IdxStructure {
         return null; // pas actif;
     }
 
+    /**
+     *
+     * @param txt
+     * @return
+     */
     public String[] getCollection(String txt) {
         if (IDX_MARKER) {
             return marker.getCollectionFromName(txt);
@@ -948,6 +1022,7 @@ public class IdxStructure {
 
     /**
      * cr�e un composant d'indexation sans les fichiers d'index
+     * @param client
      */
     public void initComponent(IdxInit client) {
         // initialise les constantes et la configuration
@@ -966,6 +1041,7 @@ public class IdxStructure {
 
     /**
      * cr�e un composant d'indexation avec une racine pour les fichiers d'index
+     * @param client
      */
     public void createComponent(IdxInit client) {
         // initialise les constantes et la configuration
@@ -1052,7 +1128,7 @@ public class IdxStructure {
             rdnposchar = new long[DOC_MAX];
         }
         if (STEM_KEEP_LIST && WORD_USE_STEMMER) { // seulement si l'on veut des info suppl�mentaires sur la lemmatisation
-            stemList = new TreeSet[WORD_MAX];  // g�n�re un warning � la compilation voir "Generics in the Java Programming Language" de Gilad Bracha" July 5, 2004
+            stemList = new TreeSet[WORD_MAX];  // g�n�re un warning à la compilation voir "Generics in the Java Programming Language" de Gilad Bracha" July 5, 2004
         }
         if (IDX_WITHDOCBAG) {
             for (int j = 0; j < DOC_MAX; j++) {
@@ -1063,7 +1139,12 @@ public class IdxStructure {
 
     }
 
-        public String getDoc(int docId)  {
+    /**
+     *
+     * @param docId
+     * @return
+     */
+    public String getDoc(int docId)  {
         if (IDX_ZIP_CACHE) {
 //           msg("Zip decompress id doc: " + docId );
                 return zipCache.get(docId+1);
@@ -1076,6 +1157,10 @@ public class IdxStructure {
     
     /**
      * check if a expression is content in a document
+     * @param exactExpression
+     * @param docid
+     * @param fname
+     * @return 
      */
     public boolean isExactExpInDoc(String exactExpression, int docid, String fname) {
         if (IDX_ZIP_CACHE) {
@@ -1089,6 +1174,12 @@ public class IdxStructure {
         }
     }
 
+    /**
+     *
+     * @param exactExpression
+     * @param content
+     * @return
+     */
     public boolean matchExact(String exactExpression, String content) {
         String regex = REGEX_EXACT_BEFORE_TOKEN + Pattern.quote(exactExpression) + REGEX_EXACT_AFTER_TOKEN;
         Pattern p = Pattern.compile(regex);
@@ -1102,6 +1193,10 @@ public class IdxStructure {
 
     /**
      * check if a expression is content in a document
+     * @param exactExpression
+     * @param docid
+     * @param fname
+     * @return 
      */
     public List<Integer> idxOfExpInDoc(String exactExpression, int docid, String fname) {
         String content;

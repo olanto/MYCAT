@@ -36,6 +36,10 @@ public class SetCollectionProperties {
     static IndexService_MyCat is;
     static final int MAX_LEVEL = 4;
 
+    /**
+     *
+     * @param ispar
+     */
     public static void updateCollectionProperties(IndexService_MyCat ispar) {
 
         is = ispar;
@@ -85,6 +89,9 @@ public class SetCollectionProperties {
         }
     }
 
+    /**
+     *
+     */
     public static void inventoryOf() {
         msg("");
         msg("");

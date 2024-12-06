@@ -39,6 +39,10 @@ public class GetHostList {
     static HashMap<String, Integer> url2int = new HashMap<String, Integer>();
     static HashMap<Integer, String> int2url = new HashMap<Integer, String>();
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         ContentService is = getServiceCM("rmi://localhost/CM_COLLECT");

@@ -33,12 +33,18 @@ public class ContentIndex {
     ContentStructure cm;
     IdxStructure id;
 
+    /**
+     *
+     * @param cm ContentStructure
+     * @param id IdxStructure
+     */
     public ContentIndex(ContentStructure cm, IdxStructure id) {
         this.cm = cm;
         this.id = id;
     }
 
-    /** Affiche dans la console des statistiques sur l'indexeur.
+    /** 
+     * Affiche dans la console des statistiques sur l'indexeur.
      */
     public void indexAll() {
 

@@ -36,6 +36,10 @@ public class CollectPDFAndClean {
 
     static final boolean verboseTitle = true;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         ContentService cmCollect = getServiceCM("rmi://localhost/CM_COLLECT");
         ContentService cmClean = getServiceCM("rmi://localhost/CM_CLEAN");

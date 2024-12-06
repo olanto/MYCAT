@@ -41,12 +41,21 @@ public class ZipManager {
     private static int[] zipSize;
     private static int last = 0;
 
+    /**
+     *
+     * @param sizeMAX
+     */
     public ZipManager(int sizeMAX) {
         zip = new byte[sizeMAX][];
         zipSize = new int[sizeMAX];
 
     }
 
+    /**
+     *
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
 
         ZipManager ZM = new ZipManager(1000000);
@@ -75,6 +84,11 @@ public class ZipManager {
 
     }
 
+    /**
+     *
+     * @param pos
+     * @param content
+     */
     protected void addContent(int pos, byte[] content) {
         //msg("addContent: "+glue.lastdoc+"->"+docName);
 
@@ -88,7 +102,8 @@ public class ZipManager {
     /**
      * r�cup�re un contenu type String.
      *
-     * @param doc identifiant
+     * @param pos
+     * @return 
      */
     protected String getStringContent(int pos) {
 
@@ -107,8 +122,6 @@ public class ZipManager {
      * r�cu�re le contenu d'un r�pertoire.
      *
      * @param pathName r�pertoire
-     * @param language langage de la collection
-     * @param collection nom de la collection
      * @param txt_encoding encodage des textes
      */
     protected void getFromDirectory(String pathName, String txt_encoding) {
@@ -147,6 +160,12 @@ public class ZipManager {
         }
     }
 
+    /**
+     *
+     * @param realSize
+     * @param bb
+     * @return
+     */
     public static final byte[] decompress(int realSize, byte[] bb) {
         if (OBJ_COMPRESSION == Compression.YES) {
             return BytesAndFiles.decompress(realSize, bb);
@@ -155,6 +174,11 @@ public class ZipManager {
         }
     }
 
+    /**
+     *
+     * @param bb
+     * @return
+     */
     public static final byte[] compress(byte[] bb) {
         if (OBJ_COMPRESSION == Compression.YES) {
             return BytesAndFiles.compress(bb);

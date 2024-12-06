@@ -43,7 +43,10 @@ public class LexicBasic implements LexicManager {
     public LexicBasic() {
     }
 
-    /**  crï¿½e un gestionnaire de lexique */
+    /**  crï¿½e un gestionnaire de lexique
+     * @param _path
+     * @param stemName
+     * @param lang */
     public final LexicManager create(String _path, String lang, String stemName) {
         return (new LexicBasic(_path, lang, stemName));
     }

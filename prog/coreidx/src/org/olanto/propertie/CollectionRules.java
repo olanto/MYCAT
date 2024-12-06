@@ -59,7 +59,8 @@ public class CollectionRules {
     private static Pattern p;
     private static String SEPARATOR = "\\s";
 
-    /** Creates a new instance of Rule */
+    /** Creates a new instance of Rule
+     * @param fname */
     public CollectionRules(String fname) {
         collectionfilename = fname;
         collections = new ArrayList<String[]>();
@@ -92,6 +93,11 @@ public class CollectionRules {
         }
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public String[] eval(String s) {
         //msg(s);
         for (int i = 0; i < collections.size(); i++) {
@@ -108,6 +114,10 @@ public class CollectionRules {
         return null;
     }
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) { // pour les tests
         CollectionRules ar = new CollectionRules("C:/JG/VLI_RW/data/urlcollection.txt");
         showVector(ar.eval("http://cui.unige.ch/index.html"));

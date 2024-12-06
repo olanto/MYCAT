@@ -57,15 +57,26 @@ public class StringTable_HomeHash_OnDisk_DIO_Clue_2I implements StringRepository
     private IntVector hdoc;
     private IntVector clue; // on stock un indice pour �viter de lire le string
 
+    /**
+     *
+     */
     public StringTable_HomeHash_OnDisk_DIO_Clue_2I() {
     }
 
-    /**  cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu� par le path */
+    /**  cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu� par le path
+     * @param _pathName
+     * @param _idxName
+     * @param _maxSize
+     * @param _lengthString
+     * @return valeur */
     public final StringRepository create(String _pathName, String _idxName, int _maxSize, int _lengthString) {
         return (new StringTable_HomeHash_OnDisk_DIO_Clue_2I(_pathName, _idxName, "ext", _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path */
+    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path
+     * @param _path
+     * @param _idxName
+     * @return valeur */
     public final StringRepository open(String _path, String _idxName) {
         return (new StringTable_HomeHash_OnDisk_DIO_Clue_2I(_path, _idxName));
     }
@@ -196,6 +207,8 @@ public class StringTable_HomeHash_OnDisk_DIO_Clue_2I implements StringRepository
 
     /**  ajoute un terme au gestionnaire retourne le num�ro du terme, retourne EMPTY s'il y a une erreur,
      * retourne son id s'il existe d�ja
+     * @param w
+     * @return 
      */
     public final int put(String w) {
         //  msg(w);
@@ -273,14 +286,16 @@ public class StringTable_HomeHash_OnDisk_DIO_Clue_2I implements StringRepository
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return "String Table statistics :" + pathName + "/" + idxName + " id: " + GENERIC_NAME
                 + "\n  Current version: " + SOFT_VERSION
                 + "\n  utilSize: " + utilSize + " count: " + count + " collision: " + collision;
     }
 
-    /**  retourne le nbr de mots dans le dictionnaire */
+    /**  retourne le nbr de mots dans le dictionnaire
+     * @return valeur */
     public final int getCount() {
         return count;
     }

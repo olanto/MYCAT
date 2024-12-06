@@ -39,6 +39,10 @@ public class Proto1 {
     static int last = 0;
     static int lastzero = 0;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

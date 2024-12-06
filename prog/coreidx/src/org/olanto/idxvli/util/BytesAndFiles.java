@@ -83,8 +83,8 @@ public class BytesAndFiles {
     }
 
     /**
-     * stocke w encod� � la position pos du fichier r (si n'exc�de pas
-     * maxLengthString) et retourne 0 si ok sinon <0
+     * stocke w encod� à la position pos du fichier r (si n'exc�de pas
+     * maxLengthString) et retourne 0 si ok sinon plus petit que 0
      *
 
      *
@@ -118,7 +118,7 @@ public class BytesAndFiles {
     }
 
     /**
-     * lit w � la position pos du fichier r
+     * lit w à la position pos du fichier r
      *
      * @param pos position
      * @param encode encodage
@@ -140,7 +140,7 @@ public class BytesAndFiles {
     }
 
     /**
-     * stocke n � cette position et retourne 0 si ok sinon <0
+     * stocke n � cette position et retourne 0 si ok sinon plus petit que 0
      *
 
      *
@@ -159,7 +159,7 @@ public class BytesAndFiles {
     }
 
     /**
-     * stock sur le disk ces bytes � cette position retourne 0 si ok sinon <0
+     * stock sur le disk ces bytes � cette position retourne 0 si ok sinon plus petit que 0
      *
 
      *
@@ -184,7 +184,7 @@ public class BytesAndFiles {
     }
 
     /**
-     * read int � la position pos il est �vident que le status ne peut �tre
+     * read int à la position pos il est �vident que le status ne peut �tre
      * test� si on travaille avec -1 !!!
      *
      * @param pos position
@@ -502,6 +502,7 @@ public class BytesAndFiles {
      * compresser un int[] Variable Int
      *
      * @param bi le vecteur a compresser
+     * @param to
      * @return le vecteur de byte compress�
      */
     public static final byte[] compressVInt(int[] bi, int to) { //

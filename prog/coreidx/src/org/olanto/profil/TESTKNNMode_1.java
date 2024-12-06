@@ -107,6 +107,11 @@ public class TESTKNNMode_1 {
         t1.stop(false);
     }
 
+    /**
+     *
+     * @param p
+     * @param min
+     */
     public final static void showSIM(float[] p, float min) {
         if (p != null) {
             int l = p.length;
@@ -123,6 +128,10 @@ public class TESTKNNMode_1 {
         }
     }
 
+    /**
+     *
+     * @param p
+     */
     public final static void showDIST(float[] p) {
         if (p != null) {
             int l = p.length;

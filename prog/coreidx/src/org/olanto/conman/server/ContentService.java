@@ -226,6 +226,7 @@ public interface ContentService extends Remote {
     /**
      *  r�cup�re le dictionnaire de propri�t�s actives du conteneur
      * @return liste des propri�t�s actives
+     * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary() throws RemoteException;
 
@@ -233,6 +234,7 @@ public interface ContentService extends Remote {
      *  pour r�cup�rer le dictionnaire de propri�t�s pour un groupe de propri�t� (COLECT., LANG.)
      * @param prefix pr�fixe du groupe des propri�t�s
      * @return liste des propri�t�s actives
+     * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary(String prefix) throws RemoteException;
 
@@ -273,6 +275,8 @@ public interface ContentService extends Remote {
     /**
      * pour r�cup�rer le texte d'un contenu structur�
      * @param docName id
+     * @param from
+     * @param to
      * @return le texte
      * @throws java.rmi.RemoteException
      */

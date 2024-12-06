@@ -31,6 +31,10 @@ public class GetWord {
 
     private static IdxStructure id;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         id = new IdxStructure("QUERY", new ConfigurationNative());
         id.Statistic.global();

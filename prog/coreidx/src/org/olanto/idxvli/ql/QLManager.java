@@ -34,22 +34,74 @@ import org.olanto.idxvli.server.*;
 public interface QLManager {
 
     /**
-     * retourne la liste des documents valides correspondants � la requ�te, (null) si erreur.
+     * retourne la liste des documents valides correspondants à la requ�te, (null) si erreur.
      * @param request requ�te
      * @param id indexeur de r�f�rence
      * @return la liste des documents valides
      */
     public int[] get(String request, IdxStructure id);
 
+    /**
+     *
+     */
     public void initCache();
     
+    /**
+     *
+     * @param request
+     * @param id
+     * @return
+     */
     public QLResultAndRank getMore(String request, IdxStructure id);
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public QLResultNice get(IdxStructure id, ContentService cs, String request, int start, int size, boolean fullresult);
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request1
+     * @param request2
+     * @param start
+     * @param size1
+     * @param size2
+     * @return
+     */
     public QLResultNice get(IdxStructure id, ContentService cs, String request1, String request2, int start, int size1, int size2);
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param properties
+     * @param start
+     * @param size
+     * @return
+     */
     public QLResultNice get(IdxStructure id, ContentService cs, String request, String properties, int start, int size);
 
+    /**
+     *
+     * @param id
+     * @param cs
+     * @param request
+     * @param properties
+     * @param profile
+     * @param start
+     * @param size
+     * @param fullresult
+     * @return
+     */
     public QLResultNice get(IdxStructure id, ContentService cs, String request, String properties, String profile, int start, int size, boolean fullresult);
 }

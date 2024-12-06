@@ -33,12 +33,17 @@ import org.olanto.util.Timer;
  *
  *
  *
+ * @author xtern
  */
 public class TestZipVector_InMemory {
 
     static ZipVector o;
     static int last = 0;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
     /*    String s0 = "0";
         String s1 = "s1s1s1";
@@ -148,9 +153,7 @@ public class TestZipVector_InMemory {
     /**
      * récupère le contenu d'un répertoire.
      *
-     * @param pathName répertoire
-     * @param language langage de la collection
-     * @param collection nom de la collection
+     * @param pathName nom de la collection
      * @param txt_encoding encodage des textes
      */
     protected static void getFromDirectory(String pathName, String txt_encoding) {

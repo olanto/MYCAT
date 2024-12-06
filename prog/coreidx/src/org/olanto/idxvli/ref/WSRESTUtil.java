@@ -40,6 +40,10 @@ public class WSRESTUtil {
 
     static String organisationTemplate = null;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 //        byte[] bytes = null;
 //        System.out.println(convertFileWithRMI("C:\\MYCAT\\corpus\\docs\\small-collection\\UNO\\A_RES_53_144_EN.pdf"));
@@ -83,18 +87,43 @@ public class WSRESTUtil {
         }
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String unCommentRefDoc(String s) {
         s = s.replace("<!--", "</htmlstartcomment>");
         s = s.replace("-->", "</htmlendcomment>");
         return s;
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String reCommentRefDoc(String s) {
         s = s.replace("</htmlstartcomment>", "<!--");
         s = s.replace("</htmlendcomment>", "-->");
         return s;
     }
 
+    /**
+     *
+     * @param msg
+     * @param TxtSrc
+     * @param RefType
+     * @param DocSrc
+     * @param DocTgt
+     * @param LngSrc
+     * @param LngTgt
+     * @param Filter
+     * @param MinLen
+     * @param RemFirst
+     * @param Fast
+     * @return
+     */
     public static String niceXMLParameters(String msg, String TxtSrc, String RefType, String DocSrc, String DocTgt,
             String LngSrc, String LngTgt, String[] Filter, Integer MinLen, Boolean RemFirst, Boolean Fast) {
 
@@ -120,6 +149,17 @@ public class WSRESTUtil {
 
     }
 
+    /**
+     *
+     * @param RefType
+     * @param DocSrc1
+     * @param DocSrc2
+     * @param DocTgt
+     * @param RepTag1
+     * @param RepTag2
+     * @param Color2
+     * @return
+     */
     public static String niceXMLParams(String RefType, String DocSrc1, String DocSrc2, String DocTgt, String RepTag1, String RepTag2, String Color2) {
 
         return "<params>\n"
@@ -133,6 +173,15 @@ public class WSRESTUtil {
                 + "</params>\n";
     }
 
+    /**
+     *
+     * @param RefDocFullName
+     * @param RefDocType
+     * @param RefDocLng
+     * @param RefDocPerCent
+     * @param RefDocOccurences
+     * @return
+     */
     public static String niceXMLInfo(String RefDocFullName, String RefDocType,
             String RefDocLng, String RefDocPerCent, String RefDocOccurences) {
 
@@ -160,6 +209,11 @@ public class WSRESTUtil {
 
     }
 
+    /**
+     *
+     * @param fileName
+     * @return
+     */
     public static String convertFileWithRMI(String fileName) {
         String ret = "Conversion Error";
         System.out.println("Request to convert file from WebService: " + fileName);
@@ -185,6 +239,13 @@ public class WSRESTUtil {
         return ret;
     }
 
+    /**
+     *
+     * @param doc1
+     * @param doc2
+     * @param tgtDoc
+     * @return
+     */
     public static String CheckIfFilesExist(String doc1, String doc2, String tgtDoc) {
         String response = "Input Files Exist and are valid";
         File f1 = new File(doc1);
@@ -205,6 +266,12 @@ public class WSRESTUtil {
         return response;
     }
 
+    /**
+     *
+     * @param doc1
+     * @param doc2
+     * @return
+     */
     public static String validateInputs(Document doc1, Document doc2) {
         String response = "Documents are Valid.\n";
         if ((doc1.getDocumentElement().getElementsByTagName("origText") == null) || (doc1.getDocumentElement().getElementsByTagName("origText").item(0) == null)
@@ -223,6 +290,12 @@ public class WSRESTUtil {
         }
     }
 
+    /**
+     *
+     * @param doc1
+     * @param doc2
+     * @return
+     */
     public static String mergeXMLParameters(Document doc1, Document doc2) {
         StringBuilder res = new StringBuilder("");
         res.append("<parameters>\n")
@@ -323,6 +396,12 @@ public class WSRESTUtil {
         return res.toString();
     }
 
+    /**
+     *
+     * @param doc1
+     * @param doc2
+     * @return
+     */
     public static String mergeXMLStatistics(Document doc1, Document doc2) {
         String organization = "";
         NodeList nodes = doc1.getDocumentElement().getElementsByTagName("organisation");
@@ -406,6 +485,19 @@ public class WSRESTUtil {
         return res.toString();
     }
 
+    /**
+     *
+     * @param docSource1
+     * @param docSource2
+     * @param doc1
+     * @param doc2
+     * @param repTag1
+     * @param repTag2
+     * @param color2
+     * @param start
+     * @param totalRefs
+     * @return
+     */
     public static String mergeHTMLContentAndGenerateInfo(String docSource1, String docSource2, Document doc1, Document doc2, String repTag1, String repTag2, String color2, int start, int totalRefs) {
         String origText = doc1.getDocumentElement().getElementsByTagName("origText").item(0).getTextContent();
         StringBuilder res = new StringBuilder("");
@@ -448,10 +540,20 @@ public class WSRESTUtil {
                 + getInfoForDocument(references);
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static String clean4xml(String s) {
         return s.replace("&", "&amp;").replace("<", "&lt;");
     }
 
+    /**
+     *
+     * @param refs
+     * @return
+     */
     public static String getInfoForDocument(List<Reference> refs) {
         String references = "<references>\n";
 

@@ -31,6 +31,10 @@ import static org.olanto.util.Messages.*;
  */
 public class IndexDirectory {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 
@@ -51,6 +55,10 @@ public class IndexDirectory {
         }
     }
 
+    /**
+     *
+     * @param is
+     */
     public static void updateIndex(IndexService_MyCat is) {
        try {
             String s = is.getInformation();

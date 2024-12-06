@@ -31,6 +31,10 @@ import static org.olanto.util.Messages.*;
  */
 public class StressClientRead {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
 

@@ -27,7 +27,10 @@ package org.olanto.conman;
  */
 public class ContentConstant extends org.olanto.idxvli.IdxConstant {
 
-    public static final String SEPARATOR = "<::::....---->";  // une chaine improbable (sauf dans ce programme!)
+    /**
+     * une chaine improbable (sauf dans ce programme!)
+     */
+    public static final String SEPARATOR = "<::::....---->";  
     /*************************************************************************************/
     /** path de la racine des fichiers communs */
     public static String COMMON_ROOT = "C:/JG/VLI_RW/data/conman";

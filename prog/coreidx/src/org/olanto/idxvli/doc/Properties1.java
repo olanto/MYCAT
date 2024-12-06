@@ -50,14 +50,18 @@ public class Properties1 implements PropertiesManager {
     public Properties1() {
     }
 
-    /**  cr�e une word table (la taille et la longueur) � l'endroit indiqu� par le path */
+    /**  cr�e une word table (la taille et la longueur) � l'endroit indiqu� par le path
+     * @param _ManagerImplementation
+     * @param _idxName */
     public final PropertiesManager create(implementationMode _ManagerImplementation,
             String _path, String _idxName, int _maxPropertie, int _lengthString, int _maxDoc) {
         return (new Properties1(_ManagerImplementation,
                 _path, _idxName, _maxPropertie, _lengthString, _maxDoc));
     }
 
-    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path */
+    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path
+     * @param _ManagerImplementation
+     * @param _idxName */
     public final PropertiesManager open(implementationMode _ManagerImplementation,
             String _path, String _idxName, readWriteMode _RW) {
         return (new Properties1(_ManagerImplementation, _path, _idxName, _RW));
@@ -199,7 +203,8 @@ public class Properties1 implements PropertiesManager {
         msg(getStatistic());
     }
 
-    /**  imprime des statistiques */
+    /**  imprime des statistiques
+     * @return valeur */
     public final String getStatistic() {
         return propertieName.getStatistic()
                 + "\n" + propertiesRef.getStatistic();

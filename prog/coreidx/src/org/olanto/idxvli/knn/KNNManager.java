@@ -49,6 +49,12 @@ public interface KNNManager {
      */
     public int[][] getKNNForDoc(int doc, int N);
 
+    /**
+     *
+     * @param doc
+     * @param N
+     * @return
+     */
     public KNNResult KNNForDoc(int doc, int N);
 
     /** Chercher les N premiers voisins du texte request, sans formattage.
@@ -66,8 +72,19 @@ public interface KNNManager {
      */
     public KNNResult getKNNinTopic(int[] topic, String request, int N);
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     public float[] getRawKNN(String request);
 
+    /**
+     *
+     * @param request
+     * @param N
+     * @return
+     */
     public int[][] getKNN(String request, int N);
 
     /** Chercher la pondÃ©ration des documents
@@ -81,8 +98,16 @@ public interface KNNManager {
      */
     public void showKNN(int[][] res);
 
+    /**
+     *
+     * @param res
+     */
     public void showKNNWithName(int[][] res);
     
+    /**
+     *
+     * @param res
+     */
     public void showKNNWithContent(int[][] res);
 
     /** Chercher les N premiers voisins du texte request

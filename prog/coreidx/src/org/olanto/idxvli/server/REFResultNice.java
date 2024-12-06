@@ -29,28 +29,87 @@ import java.io.*;
  */
 public class REFResultNice implements Serializable {
 
+    /**
+     *
+     */
     public static final String DOC_REF_SEPARATOR = "|";
     /* la position en caractères depuis le début de la référence */
+
+    /**
+     *
+     */
+
     public int[] posref;
     /* la liste des documents contenant le texte de la référence */
+
+    /**
+     *
+     */
+
     public String[] listofref;
     /* la liste du texte référencé */
+
+    /**
+     *
+     */
+
     public String[] reftext;
     /* visualisation des ref en html */
+
+    /**
+     *
+     */
+
     public String htmlref;
    /* visualisation des info en xml */
+
+    /**
+     *
+     */
+
     public String xmlInfo;
     /* nbr de références */
+
+    /**
+     *
+     */
+
     public int nbref;
     /* la durée d'exécution */
+
+    /**
+     *
+     */
+
     public long duration;  // en ms
-   public int XMLtotword;
+
+    /**
+     *
+     */
+    public int XMLtotword;
+
+    /**
+     *
+     */
     public int XMLtotwordref;
+
+    /**
+     *
+     */
     public String XMLpctref;
     
     /** crée un résultat
-     * @param result id des documents
+     * @param posref
+
+     * @param listofref
+     * @param reftext
+     * @param htmlref
      * @param duration durée
+     * @param nbref
+     * @param xmlInfo
+     * @param XMLtotword
+     * @param XMLtotwordref
+     * @param XMLpctref
      */
     public REFResultNice(int[] posref, String[] listofref, String[] reftext, String htmlref, String xmlInfo, int nbref, long duration,
                int XMLtotword, int XMLtotwordref, String XMLpctref) {
