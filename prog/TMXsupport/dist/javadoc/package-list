@@ -1,0 +1,12 @@
+org.olanto.mycat.tmx.common
+org.olanto.mycat.tmx.dgt2014
+org.olanto.mycat.tmx.dgt2014.extract
+org.olanto.mycat.tmx.dgt2014.extractor
+org.olanto.mycat.tmx.experiments
+org.olanto.mycat.tmx.extractor
+org.olanto.mycat.tmx.generic
+org.olanto.mycat.tmx.multiun
+org.olanto.mycat.tmx.multiun.extract
+org.olanto.mycat.tmx.multiun.extractor
+org.olanto.mycat.tmx.support
+org.olanto.mycat.tmx.wiki.extractcorpus

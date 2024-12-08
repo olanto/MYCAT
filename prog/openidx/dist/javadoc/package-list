@@ -1,0 +1,7 @@
+com.swabunga.spell.engine
+com.swabunga.spell.event
+com.swabunga.spell.examples
+com.swabunga.util
+net.sf.snowball
+net.sf.snowball.ext
+org.apache.tools.bzip2

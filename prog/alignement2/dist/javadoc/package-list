@@ -1,0 +1,12 @@
+org.olanto.mapman
+org.olanto.mapman.mapper
+org.olanto.mapman.server
+org.olanto.mapman.test
+org.olanto.zahir.align
+org.olanto.zahir.align.bitext
+org.olanto.zahir.align.comparable
+org.olanto.zahir.create.bitext
+org.olanto.zahir.parallel.runable
+org.olanto.zahir.parallel.testjoinfork
+org.olanto.zahir.run.bitext
+org.olanto.zahir.run.comparable
