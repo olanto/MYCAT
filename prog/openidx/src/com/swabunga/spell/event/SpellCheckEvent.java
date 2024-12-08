@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * This event is fired off by the SpellChecker and is passed to the
  * registered SpellCheckListeners
- * <p/>
+ * 
  * As far as I know, we will only require one implementation of the SpellCheckEvent
  * (BasicSpellCheckEvent) but I have defined this interface just in case. The
  * BasicSpellCheckEvent implementation is currently package private.

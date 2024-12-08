@@ -118,7 +118,11 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
 	private boolean blockRandomised;
 
 	private int bytesIn;
-	public int bytesOut;
+
+    /**
+     *
+     */
+    public int bytesOut;
 	private int bsBuff;
 	private int bsLive;
 	private CRC mCrc = new CRC();
@@ -172,7 +176,11 @@ public class CBZip2InputStream extends InputStream implements BZip2Constants {
 	int j2;
 	char z;
 
-	public CBZip2InputStream(InputStream zStream) {
+    /**
+     *
+     * @param zStream
+     */
+    public CBZip2InputStream(InputStream zStream) {
 		ll8 = null;
 		tt = null;
 		bsSetStream(zStream);

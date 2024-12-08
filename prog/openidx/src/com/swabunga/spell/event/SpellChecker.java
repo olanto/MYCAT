@@ -32,7 +32,7 @@ import java.util.*;
 /**
  * This is the main class for spell checking (using the new event based spell
  * checking). 
- * <p/>
+ * 
  * By default, the class makes a user dictionary to accumulate added words.
  * Since this user directory has no file assign to persist added words, they
  * will be retained for the duration of the spell checker instance.
@@ -358,6 +358,7 @@ public class SpellChecker {
   /**
    * Indicates if a word is in the list of ignored words
    * @param word The text of the word check
+     * @return 
    */
   public boolean isIgnored(String word){
   	return ignoredWords.contains(word);
@@ -455,7 +456,7 @@ public class SpellChecker {
   /**
    * This method is called to check the spelling of the words that are returned
    * by the WordTokenizer.
-   * <p/>
+   * 
    * For each invalid word the action listeners will be informed with a new 
    * SpellCheckEvent.<p>
    *

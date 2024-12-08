@@ -46,7 +46,7 @@ public interface SpellDictionary {
    * If the word is correctly spelled, then this method
    * could return just that one word, or it could still return a list
    * of words with similar spellings.
-   * <br/>
+   * 
    * Each suggested word has a score, which is an integer
    * that represents how different the suggested word is from the sourceWord.
    * If the words are the exactly the same, then the score is 0.
@@ -70,7 +70,7 @@ public interface SpellDictionary {
    * If the word is correctly spelled, then this method
    * could return just that one word, or it could still return a list
    * of words with similar spellings.
-   * <br/>
+//   * 
    * Each suggested word has a score, which is an integer
    * that represents how different the suggested word is from the sourceWord.
    * If the words are the exactly the same, then the score is 0.
@@ -80,7 +80,7 @@ public interface SpellDictionary {
    * <p>
    * @param sourceWord the string that we want to get a list of spelling suggestions for
    * @param scoreThreshold Any words that have score less than this number are returned.
-   * @param Two dimensional int array used to calculate edit distance. Allocating 
+     * @param matrix dimensional int array used to calculate edit distance. Allocating  
    * this memory outside of the function will greatly improve efficiency.   
    * @return List a List of suggested words
    * @see com.swabunga.spell.engine.Word

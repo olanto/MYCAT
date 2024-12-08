@@ -81,10 +81,10 @@ public class SpellDictionaryDisk extends SpellDictionaryASpell {
    * changed, added or deleted before the call to the constructor, the process 
    * of producing new or updated <code>words.db</code> and 
    * <code>words.idx</code> files is started again.
-   * <p/>
+   * 
    * The spellchecking process is then worked upon the <code>words.db</code>
    * and <code>words.idx</code> files.
-   * <p/>
+   * 
    * 
    * NOTE: Do *not* create two instances of this class pointing to the same <code>base</code> unless
    * you are sure that a new dictionary does not have to be created. In the future, some sort of
@@ -141,6 +141,8 @@ public class SpellDictionaryDisk extends SpellDictionaryASpell {
   /**
    * Builds the file words database file and the contents file for the on
    * disk dictionary.
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
    */
   protected void buildNewDictionaryDatabase() throws FileNotFoundException, IOException {
     /* combine all dictionary files into one sorted file */
@@ -360,6 +362,7 @@ public class SpellDictionaryDisk extends SpellDictionaryASpell {
   /**
    * Loads the index file from disk. The index file accelerates words lookup
    * into the dictionary db file.
+     * @throws java.io.IOException
    */
   protected void loadIndex() throws IOException {
     index = new HashMap();

@@ -27,7 +27,6 @@ import static org.olanto.util.Messages.*;
 
 /** Test
  *
- *<p
  */
 public class TestClientServices {
 

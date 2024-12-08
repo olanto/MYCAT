@@ -603,7 +603,11 @@ public class porterStemmer extends SnowballProgram {
             return true;
         }
 
-        public boolean stem() {
+    /**
+     *
+     * @return
+     */
+    public boolean stem() {
             int v_1;
             int v_2;
             int v_3;

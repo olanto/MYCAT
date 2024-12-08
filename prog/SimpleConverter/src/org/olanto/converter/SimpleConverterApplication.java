@@ -52,7 +52,8 @@ public class SimpleConverterApplication {
     /**
      *
      * @param source source folder or file
-     * @param toCovertPath directory
+     * @param target target folder or file
+     * @param badfilesPath  bad directory for error
      */
     public void convertObject(final Document source, final Document target, final String badfilesPath) {
 

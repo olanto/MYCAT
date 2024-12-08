@@ -29,25 +29,25 @@ import java.util.*;
 /**
  * Container for various methods that any <code>SpellDictionary</code> will use.
  * This class is based on the original Jazzy aspell port.
- * <p/>
+ * 
  * Derived classes will need words list files as spell checking reference. 
  * Words list file is a dictionary with one word per line. There are many 
  * open source dictionary files, see: 
  * <a href="http://wordlist.sourceforge.net/">
  * http://wordlist.sourceforge.net/</a>
- * <p/>
+ * 
  * You can choose words lists form <a href="http://aspell.net/">aspell</a> 
  * many differents languages dictionaries. To grab some, install 
  * <code>aspell</code> and the dictionaries you require. Then run aspell 
  * specifying the name of the dictionary and the words list file to dump it 
  * into, for example:
  * <pre>
- * aspell --master=fr-40 dump master > fr-40.txt
+ * aspell --master=fr-40 dump master - fr-40.txt
  * </pre>
  * Note: the number following the language is the size indicator. A bigger
  * number gives a more extensive language coverage. Size 40 is more than 
  * adequate for many usages.
- * <p/>
+ * 
  * For some languages, Aspell can also supply you with the phonetic file. 
  * On Windows, go into aspell <code>data</code> directory and copy the 
  * phonetic file corresponding to your language, for example the 

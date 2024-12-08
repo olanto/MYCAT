@@ -24,6 +24,10 @@ public class Test_String {
     private static final int BUFFER_SIZE = 1024*1024; // 1 Mega
     private static final String BZIP2_HEADER = "BZ";
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
                 compress("c:/ajeter.rar");

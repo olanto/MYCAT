@@ -46,7 +46,9 @@ public class JG_test  {
     
     private static SpellChecker spellCheck = null;
     
-    
+    /**
+     *
+     */
     public JG_test() {
         SpellDictionary dictionary=null;
         try {
@@ -95,8 +97,11 @@ public class JG_test  {
         t1.stop();
     }
 
-
-public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
     new JG_test();
 }
 }

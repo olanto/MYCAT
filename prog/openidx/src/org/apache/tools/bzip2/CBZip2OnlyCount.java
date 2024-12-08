@@ -72,12 +72,36 @@ import java.io.IOException;
  * TODO:    Update to BZip2 1.0.1
  */
 public class CBZip2OnlyCount  implements BZip2Constants {
-	protected static final int SETMASK = (1 << 21);
-	protected static final int CLEARMASK = (~SETMASK);
-	protected static final char GREATER_ICOST = 15;
-	protected static final char LESSER_ICOST = 0;
-	protected static final int SMALL_THRESH = 20;
-	protected static final int DEPTH_THRESH = 10;//40--obscure bug!;//20;//10; -- slightly faster
+
+    /**
+     *
+     */
+    protected static final int SETMASK = (1 << 21);
+
+    /**
+     *
+     */
+    protected static final int CLEARMASK = (~SETMASK);
+
+    /**
+     *
+     */
+    protected static final char GREATER_ICOST = 15;
+
+    /**
+     *
+     */
+    protected static final char LESSER_ICOST = 0;
+
+    /**
+     *
+     */
+    protected static final int SMALL_THRESH = 20;
+
+    /**
+     *
+     */
+    protected static final int DEPTH_THRESH = 10;//40--obscure bug!;//20;//10; -- slightly faster
 
 	/*
 	  If you are ever unlucky/improbable enough
@@ -87,6 +111,11 @@ public class CBZip2OnlyCount  implements BZip2Constants {
 	  stack go above 27 elems, so the following
 	  limit (1000) seems very generous.
 	*/
+
+    /**
+     *
+     */
+
 	protected static final int QSORT_STACK_SIZE = 200;	// 1000 -- pdflr/01Hydrotight.pdf has 114
 
 	/* => assertions
@@ -106,7 +135,14 @@ public class CBZip2OnlyCount  implements BZip2Constants {
 		}
 	}
 
-	protected final static void hbMakeCodeLengths(char[] len, int[] freq,
+    /**
+     *
+     * @param len
+     * @param freq
+     * @param alphaSize
+     * @param maxLen
+     */
+    protected final static void hbMakeCodeLengths(char[] len, int[] freq,
 											int alphaSize, int maxLen) {
 		/*
 		  Nodes and heap entries run from 1.  Entry 0
@@ -322,11 +358,20 @@ public class CBZip2OnlyCount  implements BZip2Constants {
 	private int currentChar = -1;
 	private int runLength = 0;
 
-	public CBZip2OnlyCount() throws IOException {
+    /**
+     *
+     * @throws IOException
+     */
+    public CBZip2OnlyCount() throws IOException {
 		this(1);
 	}
 
-	public CBZip2OnlyCount( int inBlockSize) throws IOException {
+    /**
+     *
+     * @param inBlockSize
+     * @throws IOException
+     */
+    public CBZip2OnlyCount( int inBlockSize) throws IOException {
 //		block = null;
 //		zptr = null;
 
@@ -343,6 +388,11 @@ public class CBZip2OnlyCount  implements BZip2Constants {
 	 *
 	 * modified by Olanto Foundation at Geneva 11-04-2006
 	 *
+     * @param b
+     * @param len
+     * @param off
+     * @return 
+     * @throws java.io.IOException
 	 */
        
     public final int getLength(byte b[], int off, int len) throws IOException {

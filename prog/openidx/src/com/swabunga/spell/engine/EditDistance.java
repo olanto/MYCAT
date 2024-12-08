@@ -29,10 +29,10 @@ import java.io.InputStreamReader;
  * swapping characters, adding a character, deleting a character, and substituting a character.
  * The resulting distance is the sum of these operations weighted by their cost, which can be set in the Configuration object.
  * When there are multiple ways to convert one word into the other, the lowest cost distance is returned.
- * <br/>
+ * 
  * Another way to think about this: what are the cheapest operations that would have to be done on the "original" word to end up
  * with the "similar" word? Each operation has a cost, and these are added up to get the distance.
- * <br/>
+ * 
  *
  * @see com.swabunga.spell.engine.Configuration#COST_REMOVE_CHAR
  * @see com.swabunga.spell.engine.Configuration#COST_INSERT_CHAR
@@ -74,6 +74,7 @@ public class EditDistance {
    * 
    * @param word One word to evaluates
    * @param similar The other word to evaluates
+     * @param matrix
    * @return a number representing how easy or complex it is to transform on
    * word into a similar one.
    */

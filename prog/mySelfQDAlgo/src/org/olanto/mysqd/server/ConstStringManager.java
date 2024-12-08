@@ -33,7 +33,7 @@ public class ConstStringManager {
     /**
      * Charge la liste des propriétés contenu dans le fichier spécifié
      *
-     * @param filename le fichier contenant les propriétés
+     * @param property nom de la propriété
      * @return un objet Properties contenant les propriétés du fichier
      */
     public String get(String property) {

@@ -92,12 +92,12 @@ public interface WordTokenizer {
   /**
    * Replaces the current word token
    *
-   * <p/>
+   * 
    * When a word is replaced care should be taken that the WordTokenizer
    * repositions itself such that the words that were added aren't rechecked.
    * Of course this is not mandatory, maybe there is a case when an
    * application doesn't need to do this.
-   * <p/>
+   * 
    * @param newWord the string which should replace the current word.
    * @throws WordNotFoundException current word has not yet been set.
    */

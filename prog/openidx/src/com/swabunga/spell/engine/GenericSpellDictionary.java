@@ -126,6 +126,8 @@ public class GenericSpellDictionary extends SpellDictionaryASpell {
    * <p>
    * This is a very slow function. On my machine it takes quite a while to
    * load the data in. I suspect that we could speed this up quite allot.
+     * @param in
+     * @throws java.io.IOException
    */
   protected void createDictionary(BufferedReader in) throws IOException {
     String line = "";
@@ -140,6 +142,7 @@ public class GenericSpellDictionary extends SpellDictionaryASpell {
 
   /**
    * Allocates a word in the dictionary
+     * @param word
    */
   protected void putWord(String word) {
     String code = getCode(word);

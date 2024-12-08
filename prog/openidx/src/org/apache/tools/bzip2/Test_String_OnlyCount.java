@@ -24,6 +24,10 @@ public class Test_String_OnlyCount {
     static byte[] buffer;
     static String s;
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
                     s="ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ";
             for (int i=0;i<5;i++)s=s+s;

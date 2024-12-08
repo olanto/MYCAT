@@ -34,7 +34,6 @@ public interface TokenDefinition {
     public void next(DoParse a);
 
     /** normalise le mot.
-     * @param id l'indexeur de référence
      * @param w le mot à normaliser
      * @return un mot normalisé
      */

@@ -27,19 +27,19 @@ package com.swabunga.spell.engine;
  * only seems to be concerned with one, making the "double" part erroneous.
  * <br>
  * source code for the original C++ can be found
- * here: <a href="http://aspell.sourceforge.net/metaphone/"/>http://aspell.sourceforge.net/metaphone/</a>
+ * here: a href="http://aspell.sourceforge.net/metaphone/"/  http://aspell.sourceforge.net/metaphone/
  * DoubleMetaphone does some processing, such as uppercasing, on the input string first to normalize it. Then, to
  * create the key, the function traverses the input string in a while loop, sending successive characters into a giant
  * switch statement. Before determining the appropriate pronunciation, the algorithm considers the context
  * surrounding each character within the input string.
  * <p>
  * Things that were changed:
- *   <br/>The alternate flag could be set to true but was never checked so why bother with it. REMOVED
- *   <br/>Why was this class serializable?
- *   <br/>The primary, in, length and last variables could be initialized and local to the
+ *   The alternate flag could be set to true but was never checked so why bother with it. REMOVED
+ *   Why was this class serializable?
+ *   The primary, in, length and last variables could be initialized and local to the
  *   process method and references passed around the appropriate methods. As such there are
  *   no class variables and this class becomes firstly threadsafe and secondly could be static final.
- *   <br/>The function call SlavoGermaic was called repeatedly in the process function, it is now only called once.
+ *   The function call SlavoGermaic was called repeatedly in the process function, it is now only called once.
  *
  */
 public class DoubleMeta implements Transformator {

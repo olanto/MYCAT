@@ -33,10 +33,25 @@ import java.util.*;
 public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
     
     // Only used for testing to measure the effectiveness of the cache.
+
+    /**
+     *
+     */
     static public int hits=0;
+
+    /**
+     *
+     */
     static public int codes=0;
 
+    /**
+     *
+     */
     public static final String JAZZY_DIR=".jazzy";
+
+    /**
+     *
+     */
     public static final String PRE_CACHE_FILE_EXT=".pre";
 
     private static int  MAX_CACHED=10000;
@@ -47,6 +62,9 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
 
     /**
      * Dictionary Convienence Constructor.
+     * @param wordList
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public SpellDictionaryCachedDichoDisk(File wordList)
                                      throws FileNotFoundException, IOException {
@@ -56,6 +74,10 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
     
     /**
      * Dictionary Convienence Constructor.
+     * @param wordList
+     * @param encoding
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public SpellDictionaryCachedDichoDisk(File wordList, String encoding)
                                      throws FileNotFoundException, IOException {
@@ -66,6 +88,10 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
     /**
      * Dictionary constructor that uses an aspell phonetic file to
      * build the transformation table.
+     * @param wordList
+     * @param phonetic
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
 
     public SpellDictionaryCachedDichoDisk(File wordList, File phonetic)
@@ -77,6 +103,11 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
     /**
      * Dictionary constructor that uses an aspell phonetic file to
      * build the transformation table.
+     * @param wordList
+     * @param phonetic
+     * @param encoding
+     * @throws java.io.FileNotFoundException
+     * @throws java.io.IOException
      */
     public SpellDictionaryCachedDichoDisk(File wordList, File phonetic, String encoding)
                                      throws FileNotFoundException, IOException {
@@ -101,6 +132,7 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
 
     /**
      * Returns a list of strings (words) for the code.
+     * @return 
      */
     public List getWords(String code) {
         List list;
@@ -193,6 +225,7 @@ public class SpellDictionaryCachedDichoDisk extends SpellDictionaryDichoDisk {
 
     /**
      * Saves the current cache to file.
+     * @throws java.io.IOException
      */
     public void saveCache() throws IOException{
         String              code;

@@ -2,7 +2,15 @@
 package net.sf.snowball;
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ *
+ * @author xtern
+ */
 public class SnowballProgram {
+
+    /**
+     *
+     */
     protected SnowballProgram()
     {
 	current = new StringBuffer();
@@ -11,6 +19,7 @@ public class SnowballProgram {
 
     /**
      * Set the current string.
+     * @param value
      */
     public void setCurrent(String value)
     {
@@ -24,6 +33,7 @@ public class SnowballProgram {
 
     /**
      * Get the current string.
+     * @return 
      */
     public String getCurrent()
     {
@@ -31,14 +41,41 @@ public class SnowballProgram {
     }
 
     // current string
+
+    /**
+     *
+     */
     protected StringBuffer current;
 
+    /**
+     *
+     */
     protected int cursor;
+
+    /**
+     *
+     */
     protected int limit;
+
+    /**
+     *
+     */
     protected int limit_backward;
+
+    /**
+     *
+     */
     protected int bra;
+
+    /**
+     *
+     */
     protected int ket;
 
+    /**
+     *
+     * @param other
+     */
     protected void copy_from(SnowballProgram other)
     {
 	current          = other.current;
@@ -49,6 +86,13 @@ public class SnowballProgram {
 	ket              = other.ket;
     }
 
+    /**
+     *
+     * @param s
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean in_grouping(char [] s, int min, int max)
     {
 	if (cursor >= limit) return false;
@@ -60,6 +104,13 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param s
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean in_grouping_b(char [] s, int min, int max)
     {
 	if (cursor <= limit_backward) return false;
@@ -71,6 +122,13 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param s
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean out_grouping(char [] s, int min, int max)
     {
 	if (cursor >= limit) return false;
@@ -87,6 +145,13 @@ public class SnowballProgram {
 	return false;
     }
 
+    /**
+     *
+     * @param s
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean out_grouping_b(char [] s, int min, int max)
     {
 	if (cursor <= limit_backward) return false;
@@ -103,6 +168,12 @@ public class SnowballProgram {
 	return false;
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean in_range(int min, int max)
     {
 	if (cursor >= limit) return false;
@@ -112,6 +183,12 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean in_range_b(int min, int max)
     {
 	if (cursor <= limit_backward) return false;
@@ -121,6 +198,12 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean out_range(int min, int max)
     {
 	if (cursor >= limit) return false;
@@ -130,6 +213,12 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param min
+     * @param max
+     * @return
+     */
     protected boolean out_range_b(int min, int max)
     {
 	if (cursor <= limit_backward) return false;
@@ -139,6 +228,12 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param s_size
+     * @param s
+     * @return
+     */
     protected boolean eq_s(int s_size, String s)
     {
 	if (limit - cursor < s_size) return false;
@@ -150,6 +245,12 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param s_size
+     * @param s
+     * @return
+     */
     protected boolean eq_s_b(int s_size, String s)
     {
 	if (cursor - limit_backward < s_size) return false;
@@ -161,15 +262,31 @@ public class SnowballProgram {
 	return true;
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     protected boolean eq_v(StringBuffer s)
     {
 	return eq_s(s.length(), s.toString());
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     protected boolean eq_v_b(StringBuffer s)
     {   return eq_s_b(s.length(), s.toString());
     }
 
+    /**
+     *
+     * @param v
+     * @param v_size
+     * @return
+     */
     protected int find_among(Among v[], int v_size)
     {
 	int i = 0;
@@ -243,6 +360,13 @@ public class SnowballProgram {
     }
 
     // find_among_b is for backwards processing. Same comments apply
+
+    /**
+     *
+     * @param v
+     * @param v_size
+     * @return
+     */
     protected int find_among_b(Among v[], int v_size)
     {
 	int i = 0;
@@ -314,6 +438,15 @@ public class SnowballProgram {
     /* to replace chars between c_bra and c_ket in current by the
      * chars in s.
      */
+
+    /**
+     *
+     * @param c_bra
+     * @param c_ket
+     * @param s
+     * @return
+     */
+
     protected int replace_s(int c_bra, int c_ket, String s)
     {
 	int adjustment = s.length() - (c_ket - c_bra);
@@ -324,6 +457,9 @@ public class SnowballProgram {
 	return adjustment;
     }
 
+    /**
+     *
+     */
     protected void slice_check()
     {
 	if (bra < 0 ||
@@ -341,22 +477,39 @@ public class SnowballProgram {
 	}
     }
 
+    /**
+     *
+     * @param s
+     */
     protected void slice_from(String s)
     {
 	slice_check();
 	replace_s(bra, ket, s);
     }
 
+    /**
+     *
+     * @param s
+     */
     protected void slice_from(StringBuffer s)
     {
         slice_from(s.toString());
     }
 
+    /**
+     *
+     */
     protected void slice_del()
     {
 	slice_from("");
     }
 
+    /**
+     *
+     * @param c_bra
+     * @param c_ket
+     * @param s
+     */
     protected void insert(int c_bra, int c_ket, String s)
     {
 	int adjustment = replace_s(c_bra, c_ket, s);
@@ -364,12 +517,25 @@ public class SnowballProgram {
 	if (c_bra <= ket) ket += adjustment;
     }
 
+    /**
+     *
+     * @param c_bra
+     * @param c_ket
+     * @param s
+     */
     protected void insert(int c_bra, int c_ket, StringBuffer s)
     {
 	insert(c_bra, c_ket, s.toString());
     }
 
     /* Copy the slice into the supplied StringBuffer */
+
+    /**
+     *
+     * @param s
+     * @return
+     */
+
     protected StringBuffer slice_to(StringBuffer s)
     {
 	slice_check();
@@ -378,6 +544,11 @@ public class SnowballProgram {
 	return s;
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     protected StringBuffer assign_to(StringBuffer s)
     {
 	s.replace(0, s.length(), current.substring(0, limit));

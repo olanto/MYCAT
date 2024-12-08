@@ -101,7 +101,6 @@ public class TokenAlphaNumeric implements TokenDefinition {
      * - mis en minuscule<br>
      * - tronquer à la longueur fixée.<br>
      * - lemmatiser si le stemming est actif.<br>
-     * @param id l'indexeur de référence
      * @param w le mot à normaliser
      * @return un mot normalisé
      */

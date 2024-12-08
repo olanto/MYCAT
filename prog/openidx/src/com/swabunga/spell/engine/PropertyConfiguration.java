@@ -56,6 +56,7 @@ public class PropertyConfiguration extends Configuration {
   }
 
   /**
+     * @return 
    * @see com.swabunga.spell.engine.Configuration#getBoolean(String)
    */
   public boolean getBoolean(String key) {
@@ -63,6 +64,7 @@ public class PropertyConfiguration extends Configuration {
   }
 
   /**
+     * @return 
    * @see com.swabunga.spell.engine.Configuration#getInteger(String)
    */
   public int getInteger(String key) {

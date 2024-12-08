@@ -22,8 +22,6 @@ package org.olanto.termscorrelation.servlet;
 
 /**
  * Une classe pour initialiser les constantes.
- * <p>
- * >
  *
  * Une classe pour initialiser les constantes. Cette classe doit peut être implémentée pour chaque application
  */

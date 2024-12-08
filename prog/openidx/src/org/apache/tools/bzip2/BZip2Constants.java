@@ -68,17 +68,59 @@ package org.apache.tools.bzip2;
  */
 public interface BZip2Constants {
 
+    /**
+     *
+     */
     int baseBlockSize = 1000000;   // 100'000 trop grand pour notre cas !! J. guyot'
+
+    /**
+     *
+     */
     int MAX_ALPHA_SIZE = 258;
+
+    /**
+     *
+     */
     int MAX_CODE_LEN = 23;
+
+    /**
+     *
+     */
     int RUNA = 0;
+
+    /**
+     *
+     */
     int RUNB = 1;
+
+    /**
+     *
+     */
     int N_GROUPS = 6;
+
+    /**
+     *
+     */
     int G_SIZE = 50;
+
+    /**
+     *
+     */
     int N_ITERS = 4;
+
+    /**
+     *
+     */
     int MAX_SELECTORS = (2 + (900000 / G_SIZE));
+
+    /**
+     *
+     */
     int NUM_OVERSHOOT_BYTES = 20;
 
+    /**
+     *
+     */
     int[] rNums = {
         619, 720, 127, 481, 931, 816, 813, 233, 566, 247,
         985, 724, 205, 454, 863, 491, 741, 242, 949, 214,

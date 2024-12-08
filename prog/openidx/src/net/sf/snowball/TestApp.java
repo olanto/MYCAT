@@ -12,7 +12,17 @@ import java.io.OutputStreamWriter;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 
+/**
+ *
+ * @author xtern
+ */
 public class TestApp {
+
+    /**
+     *
+     * @param args
+     * @throws Throwable
+     */
     public static void main(String [] args) throws Throwable {
 	Class stemClass = Class.forName("net.sf.snowball.ext." +
 					args[0] + "Stemmer");

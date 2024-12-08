@@ -22,12 +22,30 @@ package com.swabunga.util;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ *
+ * @author xtern
+ */
 public class VectorUtility {
-  public static List addAll(List dest, List src) {
+
+    /**
+     *
+     * @param dest
+     * @param src
+     * @return
+     */
+    public static List addAll(List dest, List src) {
     return addAll(dest, src, true);
   }
 
-  public static List addAll(List dest, List src, boolean allow_duplicates) {
+    /**
+     *
+     * @param dest
+     * @param src
+     * @param allow_duplicates
+     * @return
+     */
+    public static List addAll(List dest, List src, boolean allow_duplicates) {
     for (Iterator e = src.iterator(); e.hasNext();) {
       Object o = e.next();
       if (allow_duplicates || !dest.contains(o))

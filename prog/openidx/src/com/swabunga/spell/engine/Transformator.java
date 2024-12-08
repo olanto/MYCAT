@@ -40,14 +40,14 @@ public interface Transformator {
    * in order to try to find more suggestions.
    * In general, this list represents all of the unique phonetic characters
    * for this Transformator.
-   * <p/>
+   * 
    * The replace list is used in the getSuggestions method.
    * All of the letters in the misspelled word are replaced with the characters from
    * this list to try and generate more suggestions, which implies l*n tries,
    * if l is the size of the string, and n is the size of this list.
-   * <p/>
+   * 
    * In addition to that, each of these letters is added to the misspelled word.
-   * <p/>
+   * 
    * @return char[] misspelled words should try replacing with these characters to get more suggestions
    */
   public char[] getReplaceList();

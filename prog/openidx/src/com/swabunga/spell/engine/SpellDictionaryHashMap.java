@@ -31,15 +31,15 @@ import java.util.Vector;
 
 /**
  * The SpellDictionaryHashMap holds the dictionary
- * <p/>
+ * 
  * This class is thread safe. Derived classes should ensure that this preserved.
- * <p/>
+ * 
  * There are many open source dictionary files. For just a few see:
  * http://wordlist.sourceforge.net/
- * <p/>
+ * 
  * This dictionary class reads words one per line. Make sure that your word list
  * is formatted in this way (most are).
- * <p/>
+ * 
  * Note that you must create the dictionary with a word list for the added
  * words to persist.
  */
@@ -178,6 +178,7 @@ public class SpellDictionaryHashMap extends SpellDictionaryASpell {
   /**
    * Add a word permanently to the dictionary (and the dictionary file).
    * <p>This needs to be made thread safe (synchronized)</p>
+     * @param word
    */
   public void addWord(String word) {
     putWord(word);
@@ -201,6 +202,8 @@ public class SpellDictionaryHashMap extends SpellDictionaryASpell {
    * <p>
    * This is a very slow function. On my machine it takes quite a while to
    * load the data in. I suspect that we could speed this up quite allot.
+     * @param in
+     * @throws java.io.IOException
    */
   protected void createDictionary(BufferedReader in) throws IOException {
     String line = "";
@@ -225,6 +228,8 @@ public class SpellDictionaryHashMap extends SpellDictionaryASpell {
    * through all the words that use the phonetic code.
    * If the vector-based implementation is important, it may be better
    * to subclass for the cases where duplicates are bad.
+     * @param in
+     * @throws java.io.IOException
    */
   protected void addDictionaryHelper(BufferedReader in) throws IOException {
 
@@ -290,6 +295,8 @@ public class SpellDictionaryHashMap extends SpellDictionaryASpell {
 
   /**
    * Returns a list of strings (words) for the code.
+     * @param code
+     * @return 
    */
   public List getWords(String code) {
     //Check the main dictionary.
@@ -301,6 +308,8 @@ public class SpellDictionaryHashMap extends SpellDictionaryASpell {
 
   /**
    * Returns true if the word is correctly spelled against the current word list.
+     * @param word
+     * @return 
    */
   public boolean isCorrect(String word) {
     List possible = getWords(getCode(word));

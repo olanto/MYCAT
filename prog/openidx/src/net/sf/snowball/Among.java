@@ -3,7 +3,20 @@ package net.sf.snowball;
 
 import java.lang.reflect.Method;
 
+/**
+ *
+ * @author xtern
+ */
 public class Among {
+
+    /**
+     *
+     * @param s
+     * @param substring_i
+     * @param result
+     * @param methodname
+     * @param methodobject
+     */
     public Among (String s, int substring_i, int result,
 		  String methodname, SnowballProgram methodobject) {
         this.s_size = s.length();
@@ -24,11 +37,34 @@ public class Among {
 	}
     }
 
+    /**
+     *
+     */
     public int s_size; /* search string */
+
+    /**
+     *
+     */
     public String s; /* search string */
+
+    /**
+     *
+     */
     public int substring_i; /* index to longest matching substring */
+
+    /**
+     *
+     */
     public int result;      /* result of the lookup */
+
+    /**
+     *
+     */
     public Method method; /* method to use if substring matches */
+
+    /**
+     *
+     */
     public SnowballProgram methodobject; /* object to invoke method on */
    
 };

@@ -30,7 +30,7 @@ import java.util.Vector;
  * <a href="http://aspell.net/man-html/Phonetic-Code.html">
  * aspell phonetics file</a> and constructs some sort of transformation 
  * table using the inner class TransformationRule.
- * </p>
+ * 
  * Basically, each transformation rule represent a line in the phonetic file.
  * One line contains two groups of characters separated by white space(s).
  * The first group is the <em>match expression</em>. 

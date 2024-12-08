@@ -24,6 +24,10 @@ public class Test {
     private static final int BUFFER_SIZE = 1024*1024; // 1 Mega
     private static final String BZIP2_HEADER = "BZ";
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         if (args.length == 0)
@@ -87,6 +91,12 @@ public class Test {
         }
     }
  
+    /**
+     *
+     * @param fileName
+     * @param outFileName
+     * @param skip
+     */
     public static void decompressAndShow(String fileName, String outFileName, int skip) {
         long nb=-1;
                 long start = System.currentTimeMillis();
@@ -118,6 +128,9 @@ public class Test {
 
     /**
      * un test de rapidité
+     * @param fileName
+     * @param outFileName
+     * @param skip
      */
     public static void decompressInternal(String fileName, String outFileName, int skip) {
         long nb=-1;
@@ -148,7 +161,13 @@ public class Test {
         }
     }
 
-      public static void decompress(String fileName, String outFileName, int skip) {
+    /**
+     *
+     * @param fileName
+     * @param outFileName
+     * @param skip
+     */
+    public static void decompress(String fileName, String outFileName, int skip) {
         try {
             BufferedInputStream in = new BufferedInputStream(new FileInputStream(fileName));
            info("Skipping " + in.read(new byte[skip]) +" bytes.");
