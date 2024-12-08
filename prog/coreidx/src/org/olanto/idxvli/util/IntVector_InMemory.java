@@ -44,7 +44,7 @@ import java.io.*;
 import static org.olanto.util.Messages.*;
 
 /**
- *  Comportements d'un vecteur de Int charg� en m�moire.
+ *  Comportements d'un vecteur de Int chargé en mémoire.
  *
  * 
  *
@@ -56,18 +56,18 @@ public class IntVector_InMemory implements IntVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String fileName;
     private int[] v;
     private int size = 0;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public IntVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _fileName
      * @param _maxSize
@@ -76,7 +76,7 @@ public class IntVector_InMemory implements IntVector {
         return (new IntVector_InMemory(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @return valeur */
@@ -90,7 +90,7 @@ public class IntVector_InMemory implements IntVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private IntVector_InMemory(String _pathName, String _fileName) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -98,7 +98,7 @@ public class IntVector_InMemory implements IntVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private IntVector_InMemory(String _pathName, String _fileName, int _maxSize) {
         createIntVector_InMemory(_pathName, _fileName, _maxSize);
     }
@@ -112,7 +112,7 @@ public class IntVector_InMemory implements IntVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         v = new int[size];
     }
 
@@ -120,7 +120,7 @@ public class IntVector_InMemory implements IntVector {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeInt(size);
             p.writeObject(v);
             System.out.println("save Int Vector: " + pathName + "/" + fileName);
@@ -152,7 +152,7 @@ public class IntVector_InMemory implements IntVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, int val) {

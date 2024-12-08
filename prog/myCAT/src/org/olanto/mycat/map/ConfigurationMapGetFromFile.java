@@ -41,7 +41,7 @@ public class ConfigurationMapGetFromFile implements MapArchiveInit {
     Properties prop;
 
     /**
-     * cr�e l'attache de cette classe.
+     * crée l'attache de cette classe.
      */
     public ConfigurationMapGetFromFile() {
     }
@@ -72,7 +72,7 @@ public class ConfigurationMapGetFromFile implements MapArchiveInit {
 
     /**
      * initialisation permanante des constantes. Ces constantes choisies
-     * d�finitivement pour toute la dur�e de la vie de l'index.
+     * définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -176,7 +176,7 @@ public class ConfigurationMapGetFromFile implements MapArchiveInit {
 
     /**
      * initialisation des constantes de configuration (modifiable). Ces
-     * constantes choisies d�finitivement pour toute la dur�e de la vie du
+     * constantes choisies définitivement pour toute la durée de la vie du
      * processus.
      */
     public void InitConfiguration() {

@@ -26,13 +26,13 @@ package org.olanto.idxvli.cache;
  *
  *
  * Comportement d'un cache d'index.
- * Les indices des termes sont ceux utilisÃ©s par l'implÃ©mentation du cache
+ * Les indices des termes sont ceux utilisés par l'implémentation du cache
  * (donc par forcemment ceux du dictionnaire de termes)
  */
 public interface CacheIdx {
 
     /**
-     * retourne une rÃ©fÃ©rence sur le cache du terme i. On travaille donc directement dans le cache!
+     * retourne une référence sur le cache du terme i. On travaille donc directement dans le cache!
      * @param i terme
      * @return veteur original
      */
@@ -46,7 +46,7 @@ public interface CacheIdx {
     public int[] getCopyOf(int i);
 
     /**
-     * retourne la valeur du cache du terme i Ã  la position j
+     * retourne la valeur du cache du terme i à  la position j
      * @param i terme
      * @param j position
      * @return valeur
@@ -54,7 +54,7 @@ public interface CacheIdx {
     public int v(int i, int j);
 
     /**
-     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnÃ©e
+     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnée
      * @param i terme
      * @param from position
      * @param length longeur
@@ -63,7 +63,7 @@ public interface CacheIdx {
     public int[] getv(int i, int from, int length);
 
     /**
-     * assigne une valeur au cache du terme i Ã  la position j
+     * assigne une valeur au cache du terme i à  la position j
      * @param i terme
      * @param j position
      * @param value valeur
@@ -71,7 +71,7 @@ public interface CacheIdx {
     public void setv(int i, int j, int value);
 
     /**
-     * incrÃ©mente la valeur du cache du terme i Ã  la position j
+     * incrémente la valeur du cache du terme i à  la position j
      * @param i terme
      * @param j position
      */
@@ -84,14 +84,14 @@ public interface CacheIdx {
     public long getCurrentSize();
 
     /**
-     * dÃ©termine si le terme i est pas dans le cache
+     * détermine si le terme i est pas dans le cache
      * @param i terme
      * @return true=le terme i est pas dans le cache
      */
     public boolean isNotLoaded(int i);
 
     /**
-     * dÃ©termine si le terme i est  dans le cache
+     * détermine si le terme i est  dans le cache
      * @param i terme
      * @return true=le terme i est  dans le cache
      */
@@ -119,7 +119,7 @@ public interface CacheIdx {
     public void registerVector(int i, int[] reg);
 
     /**
-     * libÃ¨re le terme i dans le cache
+     * libère le terme i dans le cache
      * @param i terme
      */
     public void releaseVector(int i);

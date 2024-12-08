@@ -28,8 +28,8 @@ import org.olanto.idxvli.IdxEnum.readWriteMode;
 import static org.olanto.util.Messages.*;
 
 /**
- * Comportements d'un vecteur de byte[fixedArraySize] charg� enti�rement en
- * m�moire. <p>
+ * Comportements d'un vecteur de byte[fixedArraySize] chargé entièrement en
+ * mémoire. <p>
  *
  *
  */
@@ -45,11 +45,11 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
      */
     private String VERSION;
     /**
-     * definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore
+     * definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore
      */
     private String pathName;
     /**
-     * definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore
+     * definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore
      */
     private String fileName;
     private byte[][] v;
@@ -59,13 +59,13 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
     private readWriteMode RW = readWriteMode.rw;
 
     /**
-     * cr�er une nouvelle instance de repository pour effectuer les create, open
+     * créer une nouvelle instance de repository pour effectuer les create, open
      */
     public ZipVector_InMemory_FastLoad() {
     }
 
     /**
-     * cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+     * crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _maxSize
      * @param _fileName
@@ -77,7 +77,7 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
     }
 
     /**
-     * ouvre un vecteur � l'endroit indiqu� par le _path
+     * ouvre un vecteur à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @param _RW
@@ -109,7 +109,7 @@ public class ZipVector_InMemory_FastLoad implements ZipVector {
     }
 
     /**
-     * cr�er une nouvelle instance de WordTable
+     * créer une nouvelle instance de WordTable
      */
     private ZipVector_InMemory_FastLoad(String _pathName, String _fileName, int _maxSize) {
         createZipVector_InMemory(_pathName, _fileName, _maxSize);

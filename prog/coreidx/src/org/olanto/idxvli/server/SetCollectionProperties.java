@@ -90,7 +90,7 @@ public class SetCollectionProperties {
     }
 
     /**
-     *
+     * get an inventory of properties List
      */
     public static void inventoryOf() {
         msg("");

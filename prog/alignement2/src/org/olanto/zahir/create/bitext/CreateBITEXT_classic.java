@@ -40,6 +40,10 @@ public class CreateBITEXT_classic {
     private static LexicalTranslation s2t;
     private static CreateASetOfBiTexts alignSet;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         CreateBiTextInit client = new ConfigurationCreateBiTextFromFile(SenseOS.getMYPREP_HOME() + "/config/BITEXT_fix.xml");

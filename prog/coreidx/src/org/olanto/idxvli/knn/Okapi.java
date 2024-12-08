@@ -28,12 +28,12 @@ import org.olanto.util.Timer;
 import org.olanto.idxvli.extra.DocBag;
 
 /**
- * Une classe pour effectuer le calcul de la distance entre les documents (compl�te).
+ * Une classe pour effectuer le calcul de la distance entre les documents (complète).
  * 
 
  *
  *
- *  impl�mente les cosinus ...
+ *  implémente les cosinus ...
  *
  * ATTENTION CETTE VERSION NECESSITE INDEXATION AVEC LES POSITIONS!! UN PROBLEME POUR LA LECTURE DES OCCURENCES
  *
@@ -61,17 +61,17 @@ public class Okapi implements KNNManager {
     private static float[] cumul;
     static boolean verbose;
 
-    /** cr�e une classe pour les recheches KNN*/
+    /** crée une classe pour les recheches KNN*/
     public Okapi() {
     }
 
     /**
-     * Pr�pare une structure de calcul de KNN.
-     * @param _formulaTF formule de la fr�quence des termes
+     * Prépare une structure de calcul de KNN.
+     * @param _formulaTF formule de la fréquence des termes
      * @param _verbose pour le debuging (true)
-     * @param _glue indexation de r�f�rence
-     * @param minocc minimum d'occurences pour �tre dans la pr�s�lection.
-     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour �tre dans a pr�s�lection.
+     * @param _glue indexation de référence
+     * @param minocc minimum d'occurences pour être dans la présélection.
+     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour être dans a présélection.
      * @param formulaIDF inverse document frequency formula.
      * @param _offset
      */
@@ -79,8 +79,8 @@ public class Okapi implements KNNManager {
             int formulaIDF, int _formulaTF, float _offset) {
         Timer t1 = null;
         glue = _glue;
-        lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incr�mentale
-        lastword = glue.lastUpdatedWord;  // ??? plus possible ???  il faut un initialisation incr�mentale
+        lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incrémentale
+        lastword = glue.lastUpdatedWord;  // ??? plus possible ???  il faut un initialisation incrémentale
         indexread = glue.indexread;
         verbose = _verbose;
         formulaTF = _formulaTF;
@@ -109,11 +109,11 @@ public class Okapi implements KNNManager {
 
     }
 
-    /** Chercher les N premiers voisins du document d, sans formattage. N'est pas impl�ment� dans cette classe (voir TFxIDF_ONE)
-     * utilise boostedTopNDoc qui n�cessite des r�glages selon la collection.
+    /** Chercher les N premiers voisins du document d, sans formattage. N'est pas implémenté dans cette classe (voir TFxIDF_ONE)
+     * utilise boostedTopNDoc qui nécessite des réglages selon la collection.
      * @param doc document
      * @param N nombre de voisins
-     * @return r�ponse
+     * @return réponse
      */
     public final int[][] getKNNForDoc(int doc, int N) {
         error("not implemented");
@@ -144,7 +144,7 @@ public class Okapi implements KNNManager {
     /** Chercher les N premiers voisins du texte request, sans formattage.
      * @param doc id doc
      * @param N nombre de voisins
-     * @return r�ponse
+     * @return réponse
      */
     public final KNNResult KNNForDoc(int doc, int N) {
         error("not implemented");
@@ -224,8 +224,8 @@ public class Okapi implements KNNManager {
         return knndoc;
     }
 
-    /** visualiser le r�sultat d'une r�ponse knn
-     * @param res R�sultat d'une requ�te KNN (getKNN)
+    /** visualiser le résultat d'une réponse knn
+     * @param res résultat d'une requéte KNN (getKNN)
      */
     public final void showKNN(int[][] res) {
         for (int i = 0; i < res.length; i++) {
@@ -234,7 +234,7 @@ public class Okapi implements KNNManager {
     }
 
     /** Chercher les N premiers voisins du texte request
-     * @param request texte de r�f�rence
+     * @param request texte de référence
      * @param N nombre de voisins
      * @return XML format
      */
@@ -255,13 +255,13 @@ public class Okapi implements KNNManager {
         return r;
     }
 
-    /** formatage XML d'une ligne de r�ponse
+    /** formatage XML d'une ligne de réponse
      * @param fn nom du fichier
      * @param doc document
-     * @param score niveau de similarit�
+     * @param score niveau de similarité
      * @return XML format
      */
-    public final String XMLrefFNWithScore(String fn, int doc, int score) {  // inspir� de celle de IdxQuery
+    public final String XMLrefFNWithScore(String fn, int doc, int score) {  // inspiré de celle de IdxQuery
 
         return "<P_small><URL target=\"document\" href=\"" + cleanValue(fn) + "\">" + cleanValue(fn) + "</URL>(" + score + ")</P_small>";
     }
@@ -277,7 +277,7 @@ public class Okapi implements KNNManager {
             float wtdid = 1;
             //if(verbose)System.out.println(glue.getTermOfW(wordinDB)+"("+weightinDB+")");
             if (KNNFilter[wordinDB]) {
-                int lastwi = wi[wordinDB].length; // # doc poss�dant le mot i
+                int lastwi = wi[wordinDB].length; // # doc possédant le mot i
                 for (int j = 0; j < lastwi; j++) { // pour chaque document commun de ce mot i
                     cumul[wi[wordinDB][j]] += wtd[wordinDB][j] * weightinDB;
                     //wdb += weightinDB * weightinDB;
@@ -333,7 +333,7 @@ public class Okapi implements KNNManager {
         return res;
     }
 
-    private final void buildFilterKNN(int minocc, int maxlevel) {  // maxlevel est signifiant en o/oo  - on filtre les mots trop et peu fr�quents
+    private final void buildFilterKNN(int minocc, int maxlevel) {  // maxlevel est signifiant en o/oo  - on filtre les mots trop et peu fréquents
         KNNFilter = new boolean[lastword];
         KNNused = 0;
         for (int i = 0; i < lastword; i++) {
@@ -384,7 +384,7 @@ public class Okapi implements KNNManager {
                 wtd[i] = new float[lastwi];  // weighs
                 wi[i] = new int[lastwi];     // documents
                 glue.indexread.lockForFull(i);  // load index of j can be optimise (no need of position)
-                // zone prot�g�e
+                // zone protégée
                 int[] occ = glue.indexread.getvDoc(i, lastwi, lastwi);// les occurences de i
                 double nbdt = (double) lastwi;
                 for (int j = 0; j < lastwi; j++) {

@@ -36,8 +36,8 @@ import static org.olanto.mapman.MapArchiveConstant.*;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - Ã©crivain en exclusion avec tous
- *  doit Ãªtre le point d'accÃ¨s pour toutes les structures utilisÃ©es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accès pour toutes les structures utilisées !
  *  </pre>
  *   */
 public class MapService_BASIC extends UnicastRemoteObject implements MapService {
@@ -46,6 +46,10 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
     private MapArchiveInit clientForRestart;
     private String modeForRestart;
 
+    /**
+     *
+     * @throws RemoteException
+     */
     public MapService_BASIC() throws RemoteException {
         super();
     }
@@ -53,7 +57,7 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
     public String getInformation() throws RemoteException {
         return "this service is alive ... :MapService_BASIC";
     }
-    /** opÃ©ration sur documentName verrous ------------------------------------------*/
+    /** opération sur documentName verrous ------------------------------------------*/
     private final ReentrantReadWriteLock serverRW = new ReentrantReadWriteLock();
     private final Lock serverR = serverRW.readLock();
     private final Lock serverW = serverRW.writeLock();
@@ -154,8 +158,10 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
 
     /** ajoute une map.
      * @param map map
-     * @param docid la rÃ©fÃ©rence du document
-     * @param lang lanque (pivot/cette langue)
+     * @param docid la référence du document
+     * @param langfrom
+     * @param langto
+     * @throws java.rmi.RemoteException
      */
     public void addMap(IntMap map, int docid, String langfrom, String langto) throws RemoteException {
         serverW.lock();
@@ -167,9 +173,12 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
 
     }
 
-    /** rÃ©cupÃ¨re une map.
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+    /** récupère une map.
+     * @param docid
+     * @param langfrom lanque (pivot/cette langue)
+     * @param langto
+     * @return 
+     * @throws java.rmi.RemoteException 
      */
     public IntMap getMap(int docid, String langfrom, String langto) throws RemoteException {
         serverR.lock();
@@ -180,9 +189,11 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
         }
     }
 
-    /** rÃ©cupÃ¨re une map.
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+    /** récupère une map.
+     * @param langfrom lanque (pivot/cette langue)
+     * @param langto
+     * @return 
+     * @throws java.rmi.RemoteException 
      */
     public boolean existMap(int docid, String langfrom, String langto) throws RemoteException {
         serverR.lock();
@@ -195,6 +206,8 @@ public class MapService_BASIC extends UnicastRemoteObject implements MapService 
     }
      /** skip line ?.
      * 
+     * @return 
+     * @throws java.rmi.RemoteException
      */
     public boolean isSkipLine() throws RemoteException{
         return SKIP_LINE;

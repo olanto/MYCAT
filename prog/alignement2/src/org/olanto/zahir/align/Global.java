@@ -26,8 +26,23 @@ package org.olanto.zahir.align;
  */
 public class Global {
 
+    /**
+     *
+     */
     public static boolean REDUCE;
+
+    /**
+     *
+     */
     public static boolean NUMBERS;
+
+    /**
+     *
+     */
     public static boolean FILTERS;
+
+    /**
+     *
+     */
     public static int TEST_IDENT_LIMIT;
 }

@@ -39,7 +39,7 @@ public class Terms implements Serializable {
 
     public String[] t;
 
-    /** cr�e une liste
+    /** crée une liste
      * @param t une liste externe
      */
     public Terms(String[] t) {

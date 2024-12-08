@@ -38,18 +38,18 @@ public class IdxQuery {
     IdxStructure glue; // local ref to index
 
     /** utilisation interne seulement
-     * @param id index de rÃ©fÃ©rence
+     * @param id index de référence
      */
     IdxQuery(IdxStructure id) {
         glue = id;
     }
 
-    /** analyseur simple de requÃªte et formatage en XML du rÃ©sultat (conservÃ©e seulement pour la compatibilitÃ©).
-     * Cette mÃ©thode est Ã  utiliser lors d'appel par un noeud LAZY
+    /** analyseur simple de requête et formatage en XML du résultat (conservée seulement pour la compatibilité).
+     * Cette méthode est à  utiliser lors d'appel par un noeud LAZY
      * @param command SINGLE,AND,NEAR,NEXT
-     * @param p1 premier terme de la requï¿½te
-     * @param p2 second terme de la requï¿½te
-     * @return liste de rÃ©fÃ©rence en XML
+     * @param p1 premier terme de la requête
+     * @param p2 second terme de la requête
+     * @return liste de référence en XML
      */
     public final String parseQuery(String command, String p1, String p2) { // from servlet
         if (command.equals("NEAR")) {
@@ -165,11 +165,11 @@ public class IdxQuery {
     }
 
     /**
-     * nettoye les caractÃ¨res pas supportÃ©s dans XML
-     * @param s chaine Ã  nettoyer
+     * nettoye les caractères pas supportés dans XML
+     * @param s chaine à  nettoyer
      * @return une chaine plus propre
      */
-    protected final static String cleanValue(String s) {  // Ã©liminie les & et x pour ï¿½tre xml compatible
+    protected final static String cleanValue(String s) {  // éliminie les & et x pour être xml compatible
         int ix = 0;
         while ((ix = s.indexOf("&", ix)) > -1) {
             s = s.substring(0, ix) + "&amp;" + s.substring(ix + 1, s.length());

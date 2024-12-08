@@ -45,7 +45,7 @@ public class TESTQueryMode {
     public static void main(String[] args) {
 
         id = new IdxStructure("QUERY");
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new Configuration());
 
         // charge l'index (si il n'existe pas alors il est vide)

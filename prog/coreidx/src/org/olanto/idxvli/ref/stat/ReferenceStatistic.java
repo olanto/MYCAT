@@ -104,7 +104,7 @@ public class ReferenceStatistic {
     }
 
     /**
-     *
+     * compute statistic by ref
      */
     public void computeStatByRef() {
         for (int i = 0; i < txt.length; i++) {

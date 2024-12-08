@@ -44,7 +44,7 @@ public class PosLength {
 
     public int length;
 
-    /** crÃ©e une borne
+    /** crée une borne
      * @param pos position
      * @param length longueur
      */

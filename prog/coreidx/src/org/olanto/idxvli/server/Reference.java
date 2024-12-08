@@ -42,7 +42,7 @@ public class Reference implements Comparable<Reference> {
     private List<String> referencedDocs;
 
     /**
-     *
+     * create a new ref
      */
     public Reference() {
         this.localIDX = 0;

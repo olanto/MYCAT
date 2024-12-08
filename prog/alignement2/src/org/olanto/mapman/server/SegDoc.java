@@ -38,15 +38,46 @@ import org.olanto.util.StringManipulation;
  */
 public class SegDoc {
 
+    /**
+     *
+     */
     public String[] lines;
+
+    /**
+     *
+     */
     public int[][] positions;
+
+    /**
+     *
+     */
     public int nblines;
+
+    /**
+     *
+     */
     public String content;
+
+    /**
+     *
+     */
     public String uri;
+
+    /**
+     *
+     */
     public String lang;
+
+    /**
+     *
+     */
     public String txt_encoding = "UTF-8";
     static StringManipulation stringManip = new StringManipulation();
 
+    /**
+     *
+     * @param s
+     */
     public void dump(String s) {
         System.out.println("--------------------------------------------");
         System.out.println(s);
@@ -65,6 +96,13 @@ public class SegDoc {
         }
     }
 
+    /**
+     *
+     * @param is
+     * @param fname
+     * @param lang
+     * @param remSpace
+     */
     public SegDoc(IndexService_MyCat is, String fname, String lang, boolean remSpace) {
         uri = fname;
         this.lang = lang;
@@ -105,6 +143,9 @@ public class SegDoc {
 
     /**
      * used to initialise a error msg
+     * @param fname
+     * @param fromstring
+     * @param lang
      */
     public SegDoc(String fname, String fromstring, String lang) {
         uri = fname;
@@ -113,6 +154,10 @@ public class SegDoc {
         init(content);
     }
 
+    /**
+     *
+     * @param document
+     */
     public void init(String document) {
         nblines = countLines(document);
         //("nblines:"+nblines);
@@ -120,6 +165,11 @@ public class SegDoc {
 
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static int countLines(String s) {
         int count = 0;
         try {
@@ -140,6 +190,12 @@ public class SegDoc {
         return count;
     }
 
+    /**
+     *
+     * @param s
+     * @param nblines
+     * @return
+     */
     public static String[] getLines(String s, int nblines) {
         String[] l = new String[nblines];
         int count = 0;

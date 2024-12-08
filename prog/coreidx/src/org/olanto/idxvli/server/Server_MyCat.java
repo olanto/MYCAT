@@ -68,8 +68,8 @@ import org.xml.sax.SAXException;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - ï¿½crivain en exclusion avec tous
- *  doit être le point d'accï¿½s pour toutes les structures utilisï¿½es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accés pour toutes les structures utilisées !
  * </pre>
  *
  */
@@ -77,7 +77,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
 
     private IdxStructure id;
     private KNNManager KNN;
-    private ContentService cs;  // service associï¿½
+    private ContentService cs;  // service associé
     private String modeForRestart;
     private IdxInit clientForRestart;
     private CheckConsistency CheckOpenClose;
@@ -95,7 +95,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         return "this service is alive ... :IndexService_BASIC";
     }
     /**
-     * opï¿½ration sur documentName verrous
+     * opération sur documentName verrous
      * ------------------------------------------
      */
     private final ReentrantReadWriteLock serverRW = new ReentrantReadWriteLock();
@@ -243,7 +243,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
         }
     }
 
-    // ces deux mï¿½thodes doivent ï¿½tre en exclusion mutuelle
+    // ces deux méthodes doivent être en exclusion mutuelle
     @Override
     public synchronized void indexdir(String path) throws RemoteException {
         msg("current indexer is indexing ...");
@@ -545,7 +545,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     /**
-     * dï¿½termine le chemin du corpus ï¿½ convertir
+     * détermine le chemin du corpus à convertir
      *
      * @return path
      * @throws java.rmi.RemoteException
@@ -556,7 +556,7 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     /**
-     * dï¿½termine le chemin du corpus ï¿½ indexer
+     * détermine le chemin du corpus à indexer
      *
      * @return path
      * @throws java.rmi.RemoteException
@@ -567,9 +567,9 @@ public class Server_MyCat extends UnicastRemoteObject implements IndexService_My
     }
 
     /**
-     * dï¿½termine la taille du corpus
+     * détermine la taille du corpus
      *
-     * @return dernier numï¿½ro de document enregistrï¿½
+     * @return dernier numéro de document enregistré
      * @throws java.rmi.RemoteException
      */
     @Override

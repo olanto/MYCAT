@@ -48,7 +48,7 @@ import org.olanto.util.Timer;
  * 
  *
  *
- * Test de l'indexeur, crï¿½ation d'un nouvel index
+ * Test de l'indexeur, création d'un nouvel index
  */
 public class CreateIndexFIle {
 
@@ -68,7 +68,7 @@ public class CreateIndexFIle {
         id = new IdxStructure(
                 "NEW", // mode
                 "dont forget to clean directories before");
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new ConfigurationForKNN());
         // charge l'index (si il n'existe pas alors il est vide)
         id.loadIndexDoc();

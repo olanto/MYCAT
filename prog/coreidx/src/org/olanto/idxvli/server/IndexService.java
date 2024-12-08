@@ -46,7 +46,7 @@ permission java.security.AllPermission;
 public interface IndexService extends Remote {
 
     /**
-     * Pour demander des informations sur le serveur (pour v�rifier la connexion)
+     * Pour demander des informations sur le serveur (pour vérifier la connexion)
      * @return nom du serveur ...
      * @throws java.rmi.RemoteException
      */
@@ -54,7 +54,7 @@ public interface IndexService extends Remote {
 
     /**
      * Pour demander la construction de nouvelles structures pour l'indexeur 
-     * (dans le cas d'une r�initialisation compl�te)
+     * (dans le cas d'une réinitialisation complète)
      * @param client configuration de la structure
      * @throws java.rmi.RemoteException
      */
@@ -70,7 +70,7 @@ public interface IndexService extends Remote {
     public void getAndInit(IdxInit client, String mode, boolean OpenCM) throws RemoteException;
 
     /**
-     * pour forcer l'�criture des caches
+     * pour forcer l'écriture des caches
      * @throws java.rmi.RemoteException
      */
     public void flush() throws RemoteException;
@@ -83,7 +83,7 @@ public interface IndexService extends Remote {
 
     /**
      * Pour obtenir les statisques (nb doc, %compression, ...) de l'indexeur
-     * @return r�sultat des stat
+     * @return résultat des stat
      * @throws java.rmi.RemoteException
      */
     public String getStatistic() throws RemoteException;
@@ -100,7 +100,7 @@ public interface IndexService extends Remote {
      */
     public void stop() throws RemoteException;
    /**
-     * pour indexer un r�pertoire 
+     * pour indexer un répertoire 
      * @param path chemin
      * @throws java.rmi.RemoteException
      */
@@ -109,7 +109,7 @@ public interface IndexService extends Remote {
     /**
      * pour indexer un contenu
      * @param path nom du document
-     * @param content contenu � indexer
+     * @param content contenu à indexer
      * @throws java.rmi.RemoteException
      */
     public void indexThisContent(String path, String content) throws RemoteException;
@@ -117,7 +117,7 @@ public interface IndexService extends Remote {
     /**
      * pour indexer un contenu
      * @param path nom du document
-     * @param content contenu � indexer
+     * @param content contenu à indexer
      * @param lang langue du document
      * @throws java.rmi.RemoteException
      */
@@ -126,67 +126,67 @@ public interface IndexService extends Remote {
     /**
      * pour indexer un contenu
      * @param path nom du document
-     * @param content contenu � indexer
+     * @param content contenu à indexer
      * @param lang langue du document
-     * @param collection �tiquettes des collections
+     * @param collection étiquettes des collections
      * @throws java.rmi.RemoteException
      */
     public void indexThisContent(String path, String content, String lang, String[] collection) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
-     * @return r�sultat
+     * évaluation d'une requête
+     * @param request requête
+     * @return résultat
      * @throws java.rmi.RemoteException
      */
     public QLResult evalQL(String request) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
-     * @return r�sultat �tendu avec le ranking
+     * évaluation d'une requête
+     * @param request requête
+     * @return résultat étendu avec le ranking
      * @throws java.rmi.RemoteException
      */
     public QLResultAndRank evalQLMore(String request) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
+     * évaluation d'une requête
+     * @param request requête
      * @param start depuis
-     * @param size taille du r�sultat 
-     * @return r�sultat �tendu avec snippet
+     * @param size taille du résultat 
+     * @return résultat étendu avec snippet
      * @throws java.rmi.RemoteException
      */
     public QLResultNice evalQLNice(String request, int start, int size) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
-     * @param properties propri�t�s � v�rifier
+     * évaluation d'une requête
+     * @param request requête
+     * @param properties propriétés à vérifier
      * @param start depuis
      * @param size jusqua 
-     * @return r�sultat �tendu avec snippet
+     * @return résultat étendu avec snippet
      * @throws java.rmi.RemoteException
      */
     public QLResultNice evalQLNice(String request, String properties, int start, int size) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
-     * @param properties propri�t�s � v�rifier
-     * @param profile profil � v�rifier
+     * évaluation d'une requête
+     * @param request requête
+     * @param properties propriétés à vérifier
+     * @param profile profil à vérifier
      * @param start depuis
      * @param size jusqua 
-     * @return r�sultat �tendu avec snippet
+     * @return résultat étendu avec snippet
      * @throws java.rmi.RemoteException
      */
     public QLResultNice evalQLNice(String request, String properties, String profile, int start, int size) throws RemoteException;
 
     /**
-     * �valuation d'une requ�te
-     * @param request requ�te
-     * @param lang propri�t�s � v�rifier
-     * @return r�sultat
+     * évaluation d'une requête
+     * @param request requête
+     * @param lang propriétés à vérifier
+     * @return résultat
      * @throws java.rmi.RemoteException
      */
     public QLResult evalQL(String lang, String request) throws RemoteException;
@@ -200,9 +200,9 @@ public interface IndexService extends Remote {
     public String[] getDocName(int[] docList) throws RemoteException;
 
     /**
-     * �tablir la validit� d'un document
+     * établir la validité d'un document
      * @param doc
-     * @return validit�
+     * @return validité
      * @throws java.rmi.RemoteException
      */
     public boolean docIsValid(int doc) throws RemoteException;
@@ -226,7 +226,7 @@ public interface IndexService extends Remote {
     /** Chercher les N premiers voisins du document d, sans formattage.
      * @param doc document
      * @param N nombre de voisins
-     * @return r�ponse
+     * @return réponse
      * @throws java.rmi.RemoteException
      */
     public KNNResult KNNForDoc(int doc, int N) throws RemoteException;
@@ -239,29 +239,29 @@ public interface IndexService extends Remote {
 
     /**
      * export le vocabulaire de l'index
-     * @param min borne inf�rieure
-     * @param max borne sup�rieure
+     * @param min borne inférieure
+     * @param max borne supérieure
      * @throws java.rmi.RemoteException
      */
     public void exportEntry(long min, long max) throws RemoteException;
 
     /**
-     *  r�cup�re le dictionnaire de propri�t�s
-     * @return liste des propri�t�s actives
+     *  récupère le dictionnaire de propriétés
+     * @return liste des propriétés actives
      * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary() throws RemoteException;
 
     /**
-     *  r�cup�re le dictionnaire de propri�t�s ayant un certain pr�fix (COLECT., LANG.)
-     * @param prefix pr�fixe des propri�t�s
-     * @return liste des propri�t�s actives
+     *  récupère le dictionnaire de propriétés ayant un certain préfix (COLECT., LANG.)
+     * @param prefix préfixe des propriétés
+     * @return liste des propriétés actives
      * @throws java.rmi.RemoteException
      */
     public PropertiesList getDictionnary(String prefix) throws RemoteException;
 
     /**
-     * d�termine la langue (actuellement Markov)
+     * détermine la langue (actuellement Markov)
      * @param txt texte
      * @return langue
      * @throws java.rmi.RemoteException
@@ -269,9 +269,9 @@ public interface IndexService extends Remote {
     public String getLanguage(String txt) throws RemoteException;
 
     /**
-     * d�termine les propri�t�s d'un document
+     * détermine les propriétés d'un document
      * @param txt texte
-     * @return propri�t�s
+     * @return propriétés
      * @throws java.rmi.RemoteException
      */
     public String[] getCollection(String txt) throws RemoteException;

@@ -23,26 +23,26 @@ package org.olanto.idxvli.util;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 
 /**
- * Classe g�rant des op�rations logiques basiques.
+ * Classe gérant des opérations logiques basiques.
  * <p>
  * 
  *
  *
- * Classe g�rant les acc�s de bas niveau dans les fichiers � acc�s al�atoire
+ * Classe gérant les accés de bas niveau dans les fichiers à accés aléatoire
  */
 public class SetOperation {
 
     /**
      * filtre un vecteur avec un bitset
-     * @return vecteur de documents filtr�
+     * @return vecteur de documents filtré
      * @param filter (true=on garde les true, false on garde les false)
      * @param res un vecteur de documents
-     * @param sob une propri�t�
+     * @param sob une propriété
      */
     public final static int[] filtering(int[] res, SetOfBits sob, boolean filter) {
         if (res == null) {
             //msg ("filtering: res is empty");
-            return res;  // rien � filtrer
+            return res;  // rien à filtrer
         }
         if (sob == null) {
             //msg ("filtering: sob is null");
@@ -52,18 +52,18 @@ public class SetOperation {
         int last = 0;
         for (int i = 0; i < res.length; i++) {
             //msg("filter doc:"+res[i]+"="+sob.get(res[i]));
-            if (sob.get(res[i]) == filter) { // il poss�de la propri�t�
+            if (sob.get(res[i]) == filter) { // il possède la propriété
                 DD[last] = res[i];
                 last++;
             }
         }
         if (last == DD.length) {
             return DD;
-        } // ils poss�dent tous la propri�t�
+        } // ils possèdent tous la propriété
         return copyVector(last, DD); // ajuste la taille
     }
 
-    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param r1 vecteur1
      * @param r2 vecteur2
      * @return intersection de 1 et 2
@@ -100,7 +100,7 @@ public class SetOperation {
         return copyVector(id, doc);
     }
 
-    /** calcul l'union de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'union de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param r1 vecteur1
      * @param r2 vecteur2
      * @return intersection de 1 et 2
@@ -159,7 +159,7 @@ public class SetOperation {
         return copyVector(id, doc);
     }
 
-    /** calcul la diff�rence de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul la différence de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param r1 vecteur1
      * @param r2 vecteur2
      * @return intersection de 1 et 2
@@ -208,7 +208,7 @@ public class SetOperation {
         return copyVector(id, doc);
     }
 
-    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param r1 vecteur1
      * @param r2 vecteur2
      * @return intersection de 1 et 2
@@ -217,11 +217,11 @@ public class SetOperation {
         return andVector(r1, r1.length, r2, r2.length);
     }
 
-    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param r1 vecteur1
-     * @param il1 longueur de l'op�ration sur vecteur1
+     * @param il1 longueur de l'opération sur vecteur1
      * @param r2 vecteur2
-     * @param il2  longueur de l'op�ration sur vecteur2
+     * @param il2  longueur de l'opération sur vecteur2
      * @return intersection de 1 et 2
      */
     public final static int[] andVector(int[] r1, int il1, int[] r2, int il2) {
@@ -259,8 +259,8 @@ public class SetOperation {
                 /* debug and */ // if(verbose)msg("end 1 id:"+id);
                 return id;
             }
-        } else { // plus de 1 �l�ment
-            int halfr1 = (wc1 + il1) / 2;  // calcul l'�l�ment milieu
+        } else { // plus de 1 élément
+            int halfr1 = (wc1 + il1) / 2;  // calcul l'élément milieu
             int halfr2 = getValue(r2, wc2, il2, r1[halfr1]);
             if (halfr2 == -1) {
                 /* debug and */ // if(verbose)msg("cut -1 id:"+id);
@@ -308,7 +308,7 @@ public class SetOperation {
             } else {
                 return -1;
             }
-        }  // fait d�border
+        }  // fait déborder
         while (true) {
             i = (min + max) / 2;  // divise par 2
             //System.out.println("min:"+min+" i:"+i+" max:"+max+"  r[i]:"+r[i]);
@@ -333,11 +333,11 @@ public class SetOperation {
     }
 
     /**
-     * calcul la proximit� de deux entiers dans les vecteur. (des positions, par exemple), les vecteurs doivent �tre ordonn�s.
+     * calcul la proximité de deux entiers dans les vecteur. (des positions, par exemple), les vecteurs doivent être ordonnés.
      * @param p1 vecteur1 vecteur1
      * @param p2 vecteur2 vecteur2
      * @param nearvalue distance maximale entre les entiers
-     * @return entiers satisfaisant la propri�t� de proximit�
+     * @return entiers satisfaisant la propriété de proximité
      */
     public final static boolean nearTest(int[] p1, int[] p2, int nearvalue) {
         if (p1.length <= p2.length) {
@@ -367,12 +367,12 @@ public class SetOperation {
         } // while
     }
 
-    /** cherche la indice dans un vecteur ordonn� r, de la valeur v, de la position 0 � rl.
-     * rl est souvent associ� à la longeur de r, cependant cette m�thode peut �tre utilis� avec un vecteur partiellement rempli.
+    /** cherche la indice dans un vecteur ordonné r, de la valeur v, de la position 0 à rl.
+     * rl est souvent associé à la longeur de r, cependant cette méthode peut être utilisé avec un vecteur partiellement rempli.
      * @param r  vecteur
      * @param length  limite de la recherche
-     * @param v  valeur recherch�e
-     * @return indice (-1=pas trouv�)
+     * @param v  valeur recherchée
+     * @return indice (-1=pas trouvé)
      */
     public final static int getIdxOfValue(int[] r, int length, int v) {// search v in vector r of length rl
         //System.out.println("search for :"+v);

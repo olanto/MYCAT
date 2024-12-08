@@ -57,6 +57,7 @@ public class MapProcess implements Runnable {
 
     /**
      * utiliser cette méthode pour lancer un alignement (celui de iddoc)
+     * @param iddoc
      */
     public MapProcess(int iddoc) {
         alignThis = iddoc; // impossible
@@ -64,6 +65,10 @@ public class MapProcess implements Runnable {
 
     /**
      * utiliser cette méthode pour initialiser les var statiques
+     * @param _is
+     * @param _ms
+     * @param _source
+     * @param _target
      */
     public static void init(IndexService_MyCat _is, MapService _ms, String _source, String _target) {
         is = _is;
@@ -91,6 +96,9 @@ public class MapProcess implements Runnable {
         }
     }
 
+    /**
+     *
+     */
     public static void statistic() {
         System.out.println("\nnew:" + newmap.intValue() + " old:" + oldmap.intValue() + " nomap:" + nomap.intValue());
     }
@@ -136,6 +144,12 @@ public class MapProcess implements Runnable {
 
     }
 
+    /**
+     *
+     * @param name
+     * @param Lang
+     * @return
+     */
     public static String getNameOfDocForThisLang(String name, String Lang) {
         int lenRootTxt = rootTxt.length();
         return rootTxt + "/" + Lang + name.substring(lenRootTxt + 3);

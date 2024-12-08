@@ -34,7 +34,7 @@ public class ConfigurationCreateBiTextFromFile implements CreateBiTextInit {
     String fileName = "to be initialised";
     Properties prop;
 
-    /** cr�e l'attache de cette classe.
+    /** crée l'attache de cette classe.
      */
     public ConfigurationCreateBiTextFromFile() {
     }
@@ -63,13 +63,13 @@ public class ConfigurationCreateBiTextFromFile implements CreateBiTextInit {
     }
 
     /** initialisation permanante des constantes.
-     * Ces constantes choisies d�finitivement pour toute la dur�e de la vie de l'index.
+     * Ces constantes choisies définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
     }
 
     /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies d�finitivement pour toute la dur�e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration() {
         // les directoire

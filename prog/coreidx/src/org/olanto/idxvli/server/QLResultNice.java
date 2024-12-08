@@ -115,8 +115,9 @@ public class QLResultNice implements Serializable, Cloneable {
     private boolean exactDone;
 
     /**
-     * crée un résultat
+     * crée un clone du résultat
      *
+     * @return the clone
      */
     @Override
     public QLResultNice clone() {
@@ -163,7 +164,7 @@ public class QLResultNice implements Serializable, Cloneable {
      * @param result id des documents
      * @param properties
      * @param profile
-     * @param duration dur�e
+     * @param duration durée
      * @param docname
      * @param termsOfQuery
      * @param clue
@@ -213,7 +214,7 @@ public class QLResultNice implements Serializable, Cloneable {
      * @return
      */
     public static String showTerm(String s, String term) {
-        if (s != null && term.length() > 2) // au moins trois caract�res
+        if (s != null && term.length() > 2) // au moins trois caractères
         {
             return s.replace(term, "<b>" + term + "</b>");
         }
@@ -539,12 +540,12 @@ public class QLResultNice implements Serializable, Cloneable {
         if (!fullresult) {
             boolean contentservice = cs != null;
             Timer time = new Timer(request, true);
-            if (result == null) {// rien � faire
+            if (result == null) {// rien à faire
                 return;
-            } else { // il a des r�sultats
+            } else { // il a des résultats
                 //msg("nb res:"+result.length);
                 for (int i = Math.max(0, start); i < Math.min(start + size, result.length); i++) {
-                    if (docname[i] == null) { // par encore �valu�
+                    if (docname[i] == null) { // par encore évalué
                         String currentRef = id.getFileNameForDocument(result[i]);
                         if (contentservice) {
                             try {
@@ -557,7 +558,7 @@ public class QLResultNice implements Serializable, Cloneable {
                         clue[i] = "";
                         for (int j = 0; j < termsOfQuery.length; j++) {
                             if (termsOfQuery[j].length() > 2) { // marque pas les trop petits
-                                // on doit aussi �liminer les termes des la requ�te AND .... � faire !!!!!!!!!!!!!!!!!!!!!
+                                // on doit aussi éliminer les termes des la requête AND .... à faire !!!!!!!!!!!!!!!!!!!!!
                                 FromTo fromto = DocPosChar.extractIntervalForW(result[i], id, termsOfQuery[j], 4);
                                 if (fromto != null) {
                                     if (contentservice) {

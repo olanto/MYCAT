@@ -27,7 +27,7 @@ import org.olanto.idxvli.server.*;
  */
 
 /*
- * �Djava.security.policy=policy.all 
+ * -Djava.security.policy=policy.all 
  */
 public class InitIdexer1 {
 

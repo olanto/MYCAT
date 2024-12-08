@@ -62,7 +62,7 @@ class MapArchiveIO {
      * @param j ième contenu
      * @return taille
      */
-    protected final int storeSizeOfContent(int j) { // taille stock�e du contenu
+    protected final int storeSizeOfContent(int j) { // taille stockée du contenu
         return objsto[j % OBJ_NB].storedSize(j / OBJ_NB);  // lit depuis objstore ,
     }
 
@@ -103,7 +103,7 @@ class MapArchiveIO {
                     //ObjectStorage4 objsto0=(new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
                     ObjectStorage4 objsto0 = (new ObjectStore4()).create(OBJ_IMPLEMENTATION,
                             OBJ_ROOT[i], DOC_MAXBIT - OBJ_PW2, OBJ_SMALL_SIZE);  //  car la langue pivot ne produit pas plus de langue que le nbr de documents
-                    objsto0 = null; // fuite m�moire
+                    objsto0 = null; // fuite mémoire
                 }
                 MODE_IDX = IdxMode.INCREMENTAL; // maintenant on peut passer dans ce mode
             } else {
@@ -143,14 +143,14 @@ class MapArchiveIO {
             // fermer la gestion des doc
             glue.mapid.set(DOC_MAX - 1, LANGPAIR_MAX - 1, glue.lastmap);
             glue.mapid.close();
-            glue.mapid = null;  // pour �viter les fuites m�moires
+            glue.mapid = null;  // pour éviter les fuites mémoires
 
             for (int i = 0; i < OBJ_NB; i++) {
                 msg("close objsto " + i);
                 objsto[i].close();
             }
             msg("before gc:" + usedMemory());
-            System.gc(); // fait le m�nage avant s'attaquer la phase 2
+            System.gc(); // fait le ménage avant s'attaquer la phase 2
             msg("after gc:" + usedMemory());
             closeLogger();
 

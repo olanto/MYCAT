@@ -27,6 +27,9 @@ import org.olanto.senseos.SenseOS;
  */
 public class AlignComparableConstant {
 
+    /**
+     *
+     */
     public static final int NOT_FOUND = -1;
     /** un méga */
     public static final long MEGA = 1024 * 1024;
@@ -37,10 +40,30 @@ public class AlignComparableConstant {
     /*************************************************************************************/
     /** path de la racine des fichiers communs */
     public static String FOLDER_SEGMENTED = SenseOS.getMYCAT_HOME() + "/corpus/txt";
+
+    /**
+     *
+     */
     public static String FOLDER_COMPARABLE_RESULT = SenseOS.getMYPREP_HOME() + "/COMP";
+
+    /**
+     *
+     */
     public static String IDX_DONTINDEXTHIS = SenseOS.getMYCAT_HOME() + "/config/dontindexthiswords.txt";
+
+    /**
+     *
+     */
     public static String LIST_OF_COMPARABLE_LANG = "XXYY XXYYY";
+
+    /**
+     *
+     */
     public static String[] COMPARABLE;
+
+    /**
+     *
+     */
     public static float MIN_DICT_LEVEL =0.1f;
 
     /*************************************************************************************/

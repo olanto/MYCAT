@@ -37,8 +37,20 @@ import static org.olanto.util.Messages.*;
 public class CreateASetOfBiTexts {
 
     static Vector<String> fileList;
+
+    /**
+     *
+     */
     public int begin;
+
+    /**
+     *
+     */
     public int end;
+
+    /**
+     *
+     */
     public int size;
     static boolean auto, verbose, writefile;
   //  static IdxStructure id;
@@ -51,6 +63,21 @@ public class CreateASetOfBiTexts {
     static String SO, TA;
     private static OutputStreamWriter out;
 
+    /**
+     *
+     * @param _SO
+     * @param _TA
+     * @param _auto
+     * @param _verbose
+     * @param _fromfile
+     * @param _tofile
+     * @param _encoding
+     * @param _limit
+     * @param _s2t
+     * @param _TMX
+     * @param _writefile
+     * @param _EXT
+     */
     public CreateASetOfBiTexts(String _SO, String _TA, boolean _auto, boolean _verbose,  String _fromfile, String _tofile, String _encoding,
             float _limit, LexicalTranslation _s2t, String _TMX, boolean _writefile, String _EXT) {
         SO = _SO;
@@ -79,6 +106,12 @@ public class CreateASetOfBiTexts {
         }
     }
 
+    /**
+     *
+     * @param fileList
+     * @param _begin
+     * @param _end
+     */
     public CreateASetOfBiTexts(Vector<String> fileList, int _begin, int _end) {
         //fileList = fileList;
         begin = _begin;
@@ -86,8 +119,10 @@ public class CreateASetOfBiTexts {
         size = end - begin + 1;
     }
 
-
-     public void createBiTextMethod() {
+    /**
+     *
+     */
+    public void createBiTextMethod() {
         //System.out.println("align SEQ:" + begin + ".." + end);
         for (int i = begin; i <= end; i++) {
             if (count % 100 == 0) {
@@ -127,12 +162,20 @@ public class CreateASetOfBiTexts {
     }
     }   
     
-    
+    /**
+     *
+     * @param counttested
+     * @param countTMX
+     */
     public synchronized void updateCount(long counttested, int countTMX) {
         totcounttested += counttested;
         totcountTMX += countTMX;
     }
 
+    /**
+     *
+     * @param s
+     */
     public synchronized void log(String s) {
         try {
             out.write(s + "\n");
@@ -142,6 +185,12 @@ public class CreateASetOfBiTexts {
 
     }
 
+    /**
+     *
+     * @param subbegin
+     * @param subend
+     * @return
+     */
     public CreateASetOfBiTexts subProblem(int subbegin, int subend) {
         return new CreateASetOfBiTexts(fileList, subbegin, subend);
     }
@@ -150,6 +199,9 @@ public class CreateASetOfBiTexts {
         indexdir(f);
     }
 
+    /**
+     *
+     */
     public void close() {
         try {
             msg("totAlign:" + totcountTMX);
@@ -159,10 +211,18 @@ public class CreateASetOfBiTexts {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInfo() {
         return "size:" + size;
     }
 
+    /**
+     *
+     * @param path
+     */
     public void indexdir(String path) {
         File f = new File(path);
         if (f.isFile()) {
@@ -179,6 +239,10 @@ public class CreateASetOfBiTexts {
         }
     }
 
+    /**
+     *
+     * @param name
+     */
     public void process(String name) {
         fileList.add(name);
     }

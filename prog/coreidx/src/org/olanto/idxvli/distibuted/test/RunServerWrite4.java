@@ -30,7 +30,7 @@ import org.olanto.idxvli.server.*;
  */
 
 /*
- * �Djava.security.policy=policy.all 
+ * -Djava.security.policy=policy.all 
  */
 public class RunServerWrite4 {
 
@@ -56,7 +56,7 @@ public class RunServerWrite4 {
             String name = "rmi://localhost/VLI" + i;
             System.out.println("name:" + name);
             Naming.rebind(name, idxobj);
-            System.out.println("Serveur lanc� " + i);
+            System.out.println("Serveur lancé " + i);
 
 
         } catch (Exception e) {

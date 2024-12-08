@@ -34,14 +34,14 @@ public interface CacheTranslate {
     public int registerCacheId(int wordId);
 
     /**
-     * retourne le CacheId associÃ© Ã  un WordID
+     * retourne le CacheId associé à  un WordID
      * @param wordId word
      * @return CacheId
      */
     public int getCacheId(int wordId);
 
     /**
-     * retourne le retourne WordID associÃ© Ã  un CacheId
+     * retourne le retourne WordID associé à  un CacheId
      * @param CacheId interne au cache
      * @return WordID
      */
@@ -51,13 +51,13 @@ public interface CacheTranslate {
     public void resetCache();
 
     /**
-     * retourne la capacitÃ© du gestionnaire
-     * @return la capacitÃ© du gestionnaire
+     * retourne la capacité du gestionnaire
+     * @return la capacité du gestionnaire
      */
     public int capacity();
 
     /**
-     * retourne le nombre d'association enregistrÃ©es
+     * retourne le nombre d'association enregistrées
      * @return nombre d'association
      */
     public int allocate();

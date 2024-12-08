@@ -28,7 +28,7 @@ import org.olanto.util.Timer;
  * 
  *
  *
- * Test de l'indexeur, mode incrï¿½mental et diffï¿½rentiel
+ * Test de l'indexeur, mode incrémental et diffèrentiel
  */
 public class TESTIndexFile_2 {
 
@@ -50,11 +50,11 @@ public class TESTIndexFile_2 {
                 "DIFFERENTIAL" // mode
                 );
 
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new Configuration());
         // charge l'index
         id.loadIndexDoc();
-        // indexation du dossier spï¿½cifiï¿½
+        // indexation du dossier spécifié
         //id.indexdir("C:/jdk1.5_old/docs/relnotes");
         id.indexdir("C:/OMC_corpus/BISD/S01");
         id.flushIndexDoc();

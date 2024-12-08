@@ -24,7 +24,7 @@ import java.io.*;
 import static org.olanto.util.Messages.*;
 
 /**
- *  Comportements d'un vecteur de int[fixedArraySize] charg� en m�moire.
+ *  Comportements d'un vecteur de int[fixedArraySize] chargé en mémoire.
  *
  * 
  *
@@ -36,19 +36,19 @@ public class IntArrayVector_InMemory implements IntArrayVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String fileName;
     private int[][] v;
     private int size = 0;
     private int fixedArraySize;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public IntArrayVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _maxSize
      * @param _fileName
@@ -58,7 +58,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         return (new IntArrayVector_InMemory(_pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @return valeur */
@@ -72,7 +72,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private IntArrayVector_InMemory(String _pathName, String _fileName) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -80,7 +80,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private IntArrayVector_InMemory(String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         createIntVector_InMemory(_pathName, _fileName, _maxSize, _fixedArraySize);
     }
@@ -95,7 +95,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         v = new int[size][];
     }
 
@@ -103,7 +103,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeInt(size);
             p.writeInt(fixedArraySize);
             p.writeObject(v);
@@ -138,7 +138,7 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         msg("fixedArraySize: " + fixedArraySize);
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, int[] val) {
@@ -149,13 +149,13 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         }
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param i
      * @param val */
     public void set(int pos, int i, int val) {
         if (i < fixedArraySize) {
-            if (v[pos] == null) { // pas encore allou�s
+            if (v[pos] == null) { // pas encore alloués
                 v[pos] = new int[fixedArraySize];
             }
             v[pos][i] = val;
@@ -172,12 +172,12 @@ public class IntArrayVector_InMemory implements IntArrayVector {
         return v[pos];
     }
 
-    /**  cherche la valeur à la position pos, la i�me valeur
+    /**  cherche la valeur à la position pos, la ième valeur
      * @param pos
      * @param i
      * @return valeur */
     public final int get(int pos, int i) {
-        if (v[pos] == null) { // pas encore allou�s
+        if (v[pos] == null) { // pas encore alloués
             return 0;
         }
         return v[pos][i];

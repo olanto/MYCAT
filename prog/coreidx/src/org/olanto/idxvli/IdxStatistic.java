@@ -37,20 +37,20 @@ public class IdxStatistic {
 
     /** Affiche dans la console des statistiques sur l'indexeur.
      * <br><br><b>Wordmax</b>: nbr maximum de mots indexables.
-     * <br><b>Wordnow</b>: nbr de mots indexÃ©s.
+     * <br><b>Wordnow</b>: nbr de mots indexés.
      * <br><b>used</b>: % d'utilisation.
      * <br><br><b>Documax</b>: nbr maximum de documents indexables.
-     * <br><b>Docunow</b>: nbr de documents indexÃ©s.
+     * <br><b>Docunow</b>: nbr de documents indexés.
      * <br><b>used</b>: % d'utilisation.
-     * <br><br><b>totidx</b>: nbr d'entrÃ©es total dans l'index.
-     * <br><b>totidxld</b>: nbr d'entrÃ©es chargÃ©es dans l'indexeur.
-     * <br><b>load</b>: % des entrÃ©es en mÃ©moire.
-     * <br><br><b>totidx</b>: nbr d'entrÃ©es total dans l'index.
-     * <br><b>docunow</b>: nbr d'entrÃ©es dans le fichier.
+     * <br><br><b>totidx</b>: nbr d'entrées total dans l'index.
+     * <br><b>totidxld</b>: nbr d'entrées chargées dans l'indexeur.
+     * <br><b>load</b>: % des entrées en mémoire.
+     * <br><br><b>totidx</b>: nbr d'entrées total dans l'index.
+     * <br><b>docunow</b>: nbr d'entrées dans le fichier.
      * <br><b>used</b>: % d'utilisation du fichier.
-     * <br><br><b>dist10</b>: nbr de mots ayant de 1 Ã  9 occurences.
-     * <br><b>dist100</b>: nbr de mots ayant de 10 Ã  99 occurences.
-     * <br><b>dist1000</b>: nbr de mots ayant de 100 Ã  999 occurences.
+     * <br><br><b>dist10</b>: nbr de mots ayant de 1 à  9 occurences.
+     * <br><b>dist100</b>: nbr de mots ayant de 10 à  99 occurences.
+     * <br><b>dist1000</b>: nbr de mots ayant de 100 à  999 occurences.
      * <br>etc
      *
      * @return 
@@ -62,7 +62,7 @@ public class IdxStatistic {
     }
 
     /**
-     *
+     * get statistic
      */
     public void global() {
         //Timer timing=new Timer("statistics");
@@ -132,9 +132,9 @@ public class IdxStatistic {
     }
 
     /**
-     * Affiche dans la console des statistiques sur les mots les plus indexÃ©s dans le corpus.
+     * Affiche dans la console des statistiques sur les mots les plus indexés dans le corpus.
      * <br>affiche le mot et la longeur de son index.
-     * @param limitlength les mots doivent avoir une longueur d'index dÃ©passant cette limite
+     * @param limitlength les mots doivent avoir une longueur d'index dépassant cette limite
      */
     public void topIndexByLength(int limitlength) {
         System.out.println("TOP (length) index (word,nbdoc,length):");
@@ -152,8 +152,8 @@ public class IdxStatistic {
     }
 
     /**
-     * Affiche dans la console des statistiques sur les mots les plus indexÃ©s dans les documents.
-     * <br>Affiche le mot et le nbr de documents dans lequel il apparaÃ®t.
+     * Affiche dans la console des statistiques sur les mots les plus indexés dans les documents.
+     * <br>Affiche le mot et le nbr de documents dans lequel il apparaît.
      * @param limitdoc les mots doivent un certain pourcentage de documents (par ex 80%)
      */
     public void topIndexByDoc(int limitdoc) {

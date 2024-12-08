@@ -30,14 +30,14 @@ import java.io.*;
  */
 public class QLResult implements Serializable {
 
-    /* les documents r�sultats */
+    /* les documents résultats */
 
     /**
      *
      */
 
     public int[] result;
-    /* la dur�e d'ex�cution */
+    /* la durée d'exécution */
 
     /**
      *
@@ -45,9 +45,9 @@ public class QLResult implements Serializable {
 
     public long duration;  // en ms
 
-    /** cr�e un r�sultat
+    /** crée un résultat
      * @param result id des documents
-     * @param duration dur�e
+     * @param duration durée
      */
     public QLResult(int[] result, long duration) {
         this.result = result;

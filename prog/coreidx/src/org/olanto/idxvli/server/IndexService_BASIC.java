@@ -41,8 +41,8 @@ import static org.olanto.conman.server.GetContentService.*;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - ï¿½crivain en exclusion avec tous
- *  doit ï¿½tre le point d'accï¿½s pour toutes les structures utilisï¿½es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accés pour toutes les structures utilisées !
  *  </pre>
  *   
  */
@@ -50,7 +50,7 @@ public class IndexService_BASIC extends UnicastRemoteObject implements IndexServ
 
     private IdxStructure id;
     private KNNManager KNN;
-    private ContentService cs;  // service associï¿½
+    private ContentService cs;  // service associé
 
     /**
      *
@@ -63,7 +63,7 @@ public class IndexService_BASIC extends UnicastRemoteObject implements IndexServ
     public String getInformation() throws RemoteException {
         return "this service is alive ... :IndexService_BASIC";
     }
-    /** opï¿½ration sur documentName verrous ------------------------------------------*/
+    /** opération sur documentName verrous ------------------------------------------*/
     private final ReentrantReadWriteLock serverRW = new ReentrantReadWriteLock();
     private final Lock serverR = serverRW.readLock();
     private final Lock serverW = serverRW.writeLock();
@@ -124,7 +124,7 @@ public class IndexService_BASIC extends UnicastRemoteObject implements IndexServ
 //            KNN.initialize(id,    // Indexeur
 //                    5,     // Min occurence d'un mot dans le corpus (nbr de documents)
 //                    50,    // Max en o/oo d'apparition dans le corpus (par mille!)
-//                    true,   // montre les dï¿½tails
+//                    true,   // montre les détails
 //                    1,        // formule IDF (1,2)
 //                    1       // formule TF (1,2,3) toujours 1
 //                    );
@@ -182,11 +182,11 @@ public class IndexService_BASIC extends UnicastRemoteObject implements IndexServ
         }
     }
 
-    // ces deux mï¿½thodes doivent ï¿½tre en exclusion mutuelle
+    // ces deux méthodes doivent être en exclusion mutuelle
     public synchronized void indexdir(String path) throws RemoteException {
         msg("current indexer is indexing ...");
         id.indexdir(path);
-        id.flushIndexDoc(); // dï¿½charge les caches
+        id.flushIndexDoc(); // décharge les caches
 
         msg("current indexer is waiting for more documents...");
     }

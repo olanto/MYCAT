@@ -30,16 +30,29 @@ import java.io.Serializable;
  */
 public class IntMap implements Serializable {
 
+    /**
+     *
+     */
     public int[] from;
+
+    /**
+     *
+     */
     public int[] to;
 
+    /**
+     *
+     * @param from
+     * @param to
+     */
     public IntMap(int[] from, int[] to) {
         this.from = from;
         this.to = to;
     }
 
     /**
-     * construit une map identitÃ©
+     * construit une map identité
+     * @param size
      */
     public IntMap(int size) {
         from = new int[size];
@@ -52,6 +65,8 @@ public class IntMap implements Serializable {
 
     /**
      * construit une map identité
+     * @param sizefrom
+     * @param sizeto
      */
     public IntMap(int sizefrom, int sizeto) {
         from = new int[sizefrom];
@@ -66,6 +81,7 @@ public class IntMap implements Serializable {
 
     /**
      * modify map to skip line between paragraph
+     * @return 
      */
     public IntMap skipLine() {
         IntMap skipmap = new IntMap(
@@ -90,6 +106,8 @@ public class IntMap implements Serializable {
 
     /**
      * construit une map transitive
+     * @param sopi
+     * @param pita
      */
     public IntMap(IntMap sopi, IntMap pita) {
         from = new int[sopi.from.length];
@@ -104,6 +122,7 @@ public class IntMap implements Serializable {
 
     /**
      * pour échanger les map
+     * @return 
      */
     public IntMap swap() {
 
@@ -113,6 +132,10 @@ public class IntMap implements Serializable {
         return this;
     }
 
+    /**
+     *
+     * @param s
+     */
     public void dump(String s) {
         
         System.out.println(s);

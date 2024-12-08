@@ -42,6 +42,10 @@ public class AlignCOMPARABLE_classic {
     private static AlignASetOfComparables alignSet;
     private static CollectAndSave saveFile;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         ComparableInit client = new ConfigurationAlignComparableFromFile(SenseOS.getMYPREP_HOME() + "/config/COMP_fix.xml");

@@ -38,8 +38,8 @@ import org.olanto.idxvli.doc.*;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - Ã©crivain en exclusion avec tous
- *  doitÃªtre le point d'accÃ¨s pour toutes les structures utilisÃ©es !
+ *   - écrivain en exclusion avec tous
+ *  doitêtre le point d'accès pour toutes les structures utilisées !
  *  </pre>
  *   */
 public class ContentService_BASIC extends UnicastRemoteObject implements ContentService {
@@ -57,7 +57,7 @@ public class ContentService_BASIC extends UnicastRemoteObject implements Content
     public String getInformation() throws RemoteException {
         return "this service is alive ... :ContentService_BASIC";
     }
-    /** opï¿½ration sur documentName verrous ------------------------------------------*/
+    /** opération sur documentName verrous ------------------------------------------*/
     private final ReentrantReadWriteLock serverRW = new ReentrantReadWriteLock();
     private final Lock serverR = serverRW.readLock();
     private final Lock serverW = serverRW.writeLock();
@@ -181,7 +181,7 @@ public class ContentService_BASIC extends UnicastRemoteObject implements Content
             //msg("debug getDocID:"+docName);
             if (docId == -1) {
                 return null;
-            } // pas trouvï¿½
+            } // pas trouvé
             return id.getStringContent(docId);
         } finally {
             serverR.unlock();
@@ -203,7 +203,7 @@ public class ContentService_BASIC extends UnicastRemoteObject implements Content
             int docId = id.getIntForDocument(docName);
             if (docId == -1) {
                 return null;
-            } // pas trouvï¿½
+            } // pas trouvé
             return id.getByteContent(docId);
         } finally {
             serverR.unlock();

@@ -27,7 +27,7 @@ package org.olanto.idxvli.extra;
  */
 public class FromTo {
 
-    /* la position dï¿½but*/
+    /* la position début*/
 
     /**
      *
@@ -42,7 +42,7 @@ public class FromTo {
 
     public int to;
 
-    /** crï¿½e un intervalle
+    /** crée un intervalle
      * @param from debut
      * @param to fin
      */

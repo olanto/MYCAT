@@ -44,19 +44,19 @@ public class IdxEnum {
 
         /**nouvelle indexation */
         NEW,
-        /**On ajoute des documents (ou �ventuellement on remplace des documents*/
-        INCREMENTAL, /**On ajoute des documents, remplace et �limine les documents absents */
+        /**On ajoute des documents (ou éventuellement on remplace des documents*/
+        INCREMENTAL, /**On ajoute des documents, remplace et élimine les documents absents */
         DIFFERENTIAL,
-        /**interrogation de l'index, pas de mise � jour */
+        /**interrogation de l'index, pas de mise à jour */
         QUERY
     };
 
     /** Mode Mix. */
     public static enum ContinueMode {
 
-        /** en lecture et en �criture simultan� */
+        /** en lecture et en écriture simultané */
         MIX,
-        /** en lecture ou en �criture */
+        /** en lecture ou en écriture */
         ALT
     };
 
@@ -65,25 +65,25 @@ public class IdxEnum {
 
         /**lecture seulement */
         r,
-        /**lecture/�criture */
+        /**lecture/écriture */
         rw
     };
 
-    /** strat�gie d'impl�mentation */
+    /** stratégie d'implémentation */
     public static enum implementationMode {
 
-        /**privil�gie la rapidit� et les noms des fichiers sont des num�ros (pour le content manager) */
+        /**privilégie la rapidité et les noms des fichiers sont des numéros (pour le content manager) */
         DIRECT,
-        /**privil�gie les volumes de grande taille */
-        FAST, /**privil�gie les volumes de grande taille */
+        /**privilégie les volumes de grande taille */
+        FAST, /**privilégie les volumes de grande taille */
         BIG,
-        /**privil�gie les volumes de grande taille avec un acc�s disque au string */
+        /**privilégie les volumes de grande taille avec un accés disque au string */
         XL,
-        /**privil�gie les volumes de tr�s grande taille */
+        /**privilégie les volumes de trés grande taille */
         XXL
     };
 
-    /** conserve des propri�t�s de langage */
+    /** conserve des propriétés de langage */
     public static enum LanguageMode {
 
         /**oui*/
@@ -92,7 +92,7 @@ public class IdxEnum {
         NO
     };
 
-    /** conserve des propri�t�s de collection */
+    /** conserve des propriétés de collection */
     public static enum CollectionMode {
 
         /**oui*/
@@ -101,7 +101,7 @@ public class IdxEnum {
         NO
     };
 
-    /** la compression est activ�e */
+    /** la compression est activée */
     public static enum Compression {
 
         /**oui*/
@@ -121,12 +121,12 @@ public class IdxEnum {
         CACHE
     };
 
-    /** �tat d'un verrouillage  */
+    /** état d'un verrouillage  */
     public static enum StateMark {
 
         /** verrouiller */
         LOCK,
-        /** d�verrouiller */
+        /** déverrouiller */
         UNLOCK
     };
 
@@ -137,7 +137,7 @@ public class IdxEnum {
         BASIC,
         /** complet (avec les positions) */
         FULL,
-        /** pas utilis�*/
+        /** pas utilisé*/
         UNUSED
     };
     /** rename option  */
@@ -154,7 +154,7 @@ public class IdxEnum {
     /** type de stockage de l'index */
     public static enum PassMode {
 
-        /** en une passe, on indexe et on stocke simultan�ment */
+        /** en une passe, on indexe et on stocke simultanément */
         ONE,
         /** en une passe, on indexe et on stocke successivement */
         TWO

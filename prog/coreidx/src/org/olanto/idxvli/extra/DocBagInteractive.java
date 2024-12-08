@@ -39,8 +39,8 @@ public class DocBagInteractive {
     int differentWords;
 
     /**
-     * crÃ©e un sac pour une saisie depuis l'interface.
-     * @param _glue indexeur associÃ©
+     * crée un sac pour une saisie depuis l'interface.
+     * @param _glue indexeur associé
      */
     public DocBagInteractive(IdxStructure _glue) {
         glue = _glue;
@@ -52,7 +52,7 @@ public class DocBagInteractive {
 
     /**
      * ajoute un mot au sac (uniquement pour l'indexeur)
-     * @param w mot Ã  ajouter
+     * @param w mot à  ajouter
      */
     public void addWord(int w) {
         if (bagOfWords[w] == NOT_FOUND) {
@@ -65,8 +65,8 @@ public class DocBagInteractive {
         }
     }
 
-    /** retourne le sac de mots compactÃ© (uniquement pour l'indexeur. Les indices ne sont pris que dans l'intervalle de lecture
-     * @return le sac de mots compactÃ©
+    /** retourne le sac de mots compacté (uniquement pour l'indexeur. Les indices ne sont pris que dans l'intervalle de lecture
+     * @return le sac de mots compacté
      */
     public int[] compact() {
         int nextempty = 0;

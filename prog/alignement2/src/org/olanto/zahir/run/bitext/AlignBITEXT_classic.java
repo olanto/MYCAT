@@ -39,6 +39,10 @@ public class AlignBITEXT_classic {
     private static LexicalTranslation s2t;
     private static AlignASetOfBiTexts alignSet;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         BiTextInit client = new ConfigurationAlignBiTextFromFile(SenseOS.getMYPREP_HOME() + "/config/ALN_fix.xml");

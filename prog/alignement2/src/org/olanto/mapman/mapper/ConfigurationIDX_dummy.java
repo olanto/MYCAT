@@ -26,17 +26,17 @@ import static org.olanto.mapman.MapArchiveConstant.*;
 /**
  * Une classe pour initialiser les constantes POUR LE PARSING UNIQUEMENT.
  * 
- * Une classe pour initialiser les constantes. Cette classe doit Ãªtre implÃ©mentÃ©e pour chaque application
+ * Une classe pour initialiser les constantes. Cette classe doit être implémentée pour chaque application
  */
 public class ConfigurationIDX_dummy implements IdxInit {
 
-    /** crÃ©e l'attache de cette classe.
+    /** crée l'attache de cette classe.
      */
     public ConfigurationIDX_dummy() {
     }
 
     /** initialisation permanante des constantes.
-     * Ces constantes choisies dï¿½finitivement pour toute la durï¿½e de la vie de l'index.
+     * Ces constantes choisies définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -48,7 +48,7 @@ public class ConfigurationIDX_dummy implements IdxInit {
     }
 
     /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies dï¿½finitivement pour toute la durï¿½e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration() {
     }

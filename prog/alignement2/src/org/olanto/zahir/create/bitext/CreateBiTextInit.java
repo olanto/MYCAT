@@ -22,8 +22,6 @@ package org.olanto.zahir.create.bitext;
 
 /**
  * Une classe pour initialiser les constantes.
- * <p>
- * >
  *
  * Une classe pour initialiser les constantes. Cette classe doit peut être implémentée pour chaque application
  */
@@ -35,7 +33,7 @@ public interface CreateBiTextInit {
     public void InitPermanent();
 
     /** initialisation des constantes de configuration (modifiable). 
-     * Ces constantes choisies définitivement pour toute la durï¿½e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration();
 }

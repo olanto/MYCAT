@@ -64,7 +64,7 @@ public class SearchHits {
     static ArrayList<String> stopWords;
 
     /**
-     *
+     * get stop word
      */
     public SearchHits() {
         stopWords = getStopWords();

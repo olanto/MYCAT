@@ -20,7 +20,7 @@
 
 package org.olanto.idxvli.word.test;
 
-/* g�n�rique test pour les diff�rentes impl�menations remplacer le nom de l'impl�mentation .... */
+/* générique test pour les différentes implémenations remplacer le nom de l'implémentation .... */
 import org.olanto.util.Timer;
 import java.rmi.*;
 import org.olanto.idxvli.word.*;
@@ -52,7 +52,7 @@ public class TestStringRepository_Stress_Get {
             if (r instanceof DictionnaryService) {
                 DictionnaryService is = ((DictionnaryService) r);
                 String s = is.getInformation();
-                System.out.println("cha�ne renvoy�e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 Timer t0 = new Timer("global get");
                 Timer t1 = new Timer("get 0");
                 int max = 1000000000;

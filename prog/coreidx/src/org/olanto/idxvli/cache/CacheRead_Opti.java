@@ -32,7 +32,7 @@ import org.olanto.util.TimerNano;
  *
  * <p>
  * Cette classe est une quasi implémentation de CacheRead. Pour des raisons de performance,
- * et de sécurité elle n'est pas une impl�menation. et les méthodes release sont private.
+ * et de sécurité elle n'est pas une implémenation. et les méthodes release sont private.
  *
  * <p>
  * par rapport à CacheRead_Basic, elle gère parfaitement les caches, les gc pendant son utilisation
@@ -74,8 +74,8 @@ public class CacheRead_Opti /* implements CacheRead */ {
 
     //  static Lock protectMark=new ReentrantLock();
     /**
-     * cr�e un dictionnaire de cache pouvant allou� _maxSize termes et ayant une taille de _cacheSize
-     * @param idx indexeur de r�f�rence
+     * crée un dictionnaire de cache pouvant alloué _maxSize termes et ayant une taille de _cacheSize
+     * @param idx indexeur de référence
      * @param _maxSize nbre de termes max dans le cache
      * @param _cacheSize taille total du cache
      */
@@ -98,7 +98,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne une r�f�rence sur le cache du terme i. On travaille donc directement dans le cache!
+     * retourne une référence sur le cache du terme i. On travaille donc directement dans le cache!
      * @param i terme
      * @return veteur original
      */
@@ -136,7 +136,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donn�e
+     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnée
      * @param i terme
      * @param from position
      * @param length longeur
@@ -147,7 +147,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * d�termine si le terme i est pas dans le cache
+     * détermine si le terme i est pas dans le cache
      * @param i terme
      * @return true=le terme i est pas dans le cache
      */
@@ -156,7 +156,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * d�termine si le terme i est  dans le cache
+     * détermine si le terme i est  dans le cache
      * @param i terme
      * @return true=le terme i est  dans le cache
      */
@@ -192,7 +192,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * lib�re le terme i dans le cache
+     * libére le terme i dans le cache
      * @param i terme
      */
     private final void releaseVectorDoc(int wordId) {
@@ -200,7 +200,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne une r�f�rence sur le cache du terme i. On travaille donc directement dans le cache!
+     * retourne une référence sur le cache du terme i. On travaille donc directement dans le cache!
      * @param i terme
      * @return veteur original
      */
@@ -238,7 +238,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donn�e
+     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnée
      * @param i terme
      * @param from position
      * @param length longeur
@@ -249,7 +249,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * d�termine si le terme i est pas dans le cache
+     * détermine si le terme i est pas dans le cache
      * @param i terme
      * @return true=le terme i est pas dans le cache
      */
@@ -258,7 +258,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * d�termine si le terme i est  dans le cache
+     * détermine si le terme i est  dans le cache
      * @param i terme
      * @return true=le terme i est  dans le cache
      */
@@ -285,7 +285,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * lib�re le terme i dans le cache
+     * libére le terme i dans le cache
      * @param i terme
      */
     private final void releaseVectorPos(int wordId) {
@@ -309,7 +309,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * place un verrou pour une utilisation compl�te (avec les positions) pour le terme n
+     * place un verrou pour une utilisation complète (avec les positions) pour le terme n
      * @param n terme
      */
     public final void lockForFull(int n) {
@@ -317,14 +317,14 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * lib�re le verrou pour le terme n
+     * libére le verrou pour le terme n
      * @param n terme
      */
     public final void unlock(int n) {
         mark(n, StateMark.UNLOCK, UsageMark.UNUSED);
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final int nextCacheId() {
         if (nextCacheId == maxSize) {  // on a besoin du gc sur le cache
             gc("from nextCacheId");
@@ -339,7 +339,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
         return nextCacheId; // on a le bon candidat
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final int registerCacheId(int wordId) {
         Integer res = wc.get(wordId);
         if (res == null) {
@@ -352,8 +352,8 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * retourne le cacheId associ� au WordId. Ceci est indispensable pour travailler avec
-     * les m�thodes ....Direct
+     * retourne le cacheId associé au WordId. Ceci est indispensable pour travailler avec
+     * les méthodes ....Direct
      * @param wordId terme
      * @return cacheId
      */
@@ -399,7 +399,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
 //            protectMark.unlock();
 //        }
 //    }
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final void load(int wordid, UsageMark _usage) {
         loadAsk++;
 //        TimerNano t1=new TimerNano("load index for:"+wordid,false);
@@ -420,11 +420,11 @@ public class CacheRead_Opti /* implements CacheRead */ {
 //t1.stop(false);
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final void basicLoad(int wordid) {
 //        msg("basicLoad:"+wordid);
         switch (usage[wc.get(wordid)]) {
-            case BASIC:  // rien � faire
+            case BASIC:  // rien à faire
                 loadFoundInCache++;
                 break;
             case FULL:   // qui peut le plus peut le moins
@@ -436,12 +436,12 @@ public class CacheRead_Opti /* implements CacheRead */ {
                 z.loadVectorWforBasic(wordid);
                 switch (MODE_RANKING) {
                     case NO:
-                        nbDoc[wc.get(wordid)] = lengthDoc(wordid);  // seul les documents sont charg�s
+                        nbDoc[wc.get(wordid)] = lengthDoc(wordid);  // seul les documents sont chargés
                         break;
                     case IDFxTDF:
                     case BM25:
                     case BM25TWICE:
-                        nbDoc[wc.get(wordid)] = lengthDoc(wordid) / 2;  // seul les documents et occ sont charg�s
+                        nbDoc[wc.get(wordid)] = lengthDoc(wordid) / 2;  // seul les documents et occ sont chargés
                         break;
                 }
                 usage[wc.get(wordid)] = UsageMark.BASIC;
@@ -453,7 +453,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
 
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final void fullLoad(int wordid) {
         switch (usage[wc.get(wordid)]) {
             case BASIC:  //
@@ -464,7 +464,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
                 nbDoc[wc.get(wordid)] = lengthDoc(wordid) / 3;
                 usage[wc.get(wordid)] = UsageMark.FULL;
                 break;
-            case FULL:   // rien � faire
+            case FULL:   // rien à faire
                 loadFoundInCache++;
                 break;
             case UNUSED:
@@ -480,15 +480,15 @@ public class CacheRead_Opti /* implements CacheRead */ {
         }
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final void checkOverFlow() {
         //msg("checkOverFlow:"+getCurrentSize()+">"+cacheSize);
         if (getCurrentSize() > cacheSize) {
-            gc("from checkOverFlow");  // r�cup�re de l'espace
+            gc("from checkOverFlow");  // récupère de l'espace
         }
     }
 
-    /** doit �tre appel�e depuis mark qui est prot�g� */
+    /** doit être appelée depuis mark qui est protégé */
     private final void gc(String callby) {
         int countlocked = 0;
         int countunlocked = 0;
@@ -496,23 +496,23 @@ public class CacheRead_Opti /* implements CacheRead */ {
         for (int i = 0; i < maxSize; i++) {
             if (lock[i] == 0) {
 
-                if (usage[i] != UsageMark.UNUSED && countUsage[i] < 2) {  // � lib�rer
+                if (usage[i] != UsageMark.UNUSED && countUsage[i] < 2) {  // à libérer
                     doc.releaseVector(i);
                     pos.releaseVector(i);
                     usage[i] = UsageMark.UNUSED;
                     nbDoc[i] = 0;
-                    int wordId = cw.get(i);  // cherche la r�f�rence lib�r�e
+                    int wordId = cw.get(i);  // cherche la référence libérée
                     cw.remove(i);
                     wc.remove(wordId);
                     countUsage[i] = 0;
                     countunlocked++;
                 } else {
                     if (usage[i] != UsageMark.UNUSED) {
-                        countUsage[i] /= 2;  // diminue l'utilisation /2 => diminue l'importance des importants qui ne sont plus utilis�s'
+                        countUsage[i] /= 2;  // diminue l'utilisation /2 => diminue l'importance des importants qui ne sont plus utilisés'
                         countkeep++;
                     }
                 }
-            } else if (lock[i] > 0) {  // � garder
+            } else if (lock[i] > 0) {  // à garder
                 countlocked++;
                 countUsage[i] = 1;
             } else { // mauvaise utilisation des lock - unlock
@@ -546,8 +546,8 @@ public class CacheRead_Opti /* implements CacheRead */ {
         return res;
     }
 
-    /** test si le terme n1 appara�t dans le document d à la position p
-     * ! Doit-�tre utilis� sur un terme prot�g�
+    /** test si le terme n1 apparaét dans le document d à la position p
+     * ! Doit-être utilisé sur un terme protégé
      * @param n1 terme
      * @param d  document
      * @param p  position
@@ -559,8 +559,8 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /**
-     * test si le terme n1 appara�t dans le document d à la position p
-     * ! Doit-�tre utilis� sur un terme prot�g�
+     * test si le terme n1 apparaét dans le document d à la position p
+     * ! Doit-être utilisé sur un terme protégé
      * @return vrai si ...
      * @param cacheId terme
      * @param d document
@@ -617,7 +617,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
     }
 
     /** retourne les bornes des positions du terme wordId pour le documenti.
-     * ! Doit-�tre utilis� sur un terme prot�g�
+     * ! Doit-être utilisé sur un terme protégé
      * @param wordId terme
      * @param i document
      * @return vecteur de positions
@@ -629,7 +629,7 @@ public class CacheRead_Opti /* implements CacheRead */ {
 
     /**
      * retourne les bornes des positions du cache cacheId pour le document i.
-     * ! Doit-�tre utilis� sur un terme prot�g�
+     * ! Doit-être utilisé sur un terme protégé
      * @return vecteur de positions
      * @param i document
      * @param cacheId terme dans le cache

@@ -43,6 +43,12 @@ public class LexicalTranslation {
     int count;
     int countso;
 
+    /**
+     *
+     * @param source
+     * @param sourceEncoding
+     * @param limit
+     */
     public LexicalTranslation(String source, String sourceEncoding, float limit) {
         BufferedReader input = null;
         try {
@@ -63,14 +69,14 @@ public class LexicalTranslation {
                     lexmap.put(efv[0] + " " + efv[1], (float) x);
  //                   System.out.println(efv[0]+ " " + efv[1]+" " + x);
                     Integer soid = lexentryso.get(efv[0]);
-                    if (soid == null) { // ajoute une entrÃ©e
+                    if (soid == null) { // ajoute une entrée
                         lexentryso.put(efv[0], countso);
                         lexidso.put(countso, efv[0]);
                         soid = countso;
                         countso++;
                     }
                     ArrayList talist = lexreverse.get(efv[1]);
-                    if (talist == null) { // ajoute une entrÃ©e
+                    if (talist == null) { // ajoute une entrée
                         ArrayList nl = new ArrayList<Double>(2);
                         nl.add((double) soid + x); // stock id et le score (entre 0.999 et limit) limit!=0;
                         lexreverse.put(efv[1], nl);
@@ -105,6 +111,11 @@ public class LexicalTranslation {
         }
     }
 
+    /**
+     *
+     * @param v
+     * @return
+     */
     public String display(int[] v) {
         String s = "";
         for (int i = 0; i < v.length; i++) {

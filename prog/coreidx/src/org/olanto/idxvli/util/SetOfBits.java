@@ -24,11 +24,11 @@ import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 
 /**
- * Impl�mente les op�rations de base sur un vecteur de bit de taille fixe n*32.
+ * implémente les opérations de base sur un vecteur de bit de taille fixe n*32.
  * <p>
  * Cette classe est 3 fois plus rapide pour les get que BitSet de Sun (pas de test ?). Les
- * op�rations sont 30% plus lente (sans doute l'utilisation des int à la place des long).
- * La classe permet de r�cup�rer le vecteur zip�.
+ * opérations sont 30% plus lente (sans doute l'utilisation des int à la place des long).
+ * La classe permet de récupérer le vecteur zipé.
  * <p>
  * <p>
  * 
@@ -36,7 +36,7 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
  */
 public class SetOfBits implements Serializable {
 
-    /** effectue une op�ration sur tous les bits (voir and, or ) */
+    /** effectue une opération sur tous les bits (voir and, or ) */
     public static final int ALL = -1;
     /** mask pour chaque bit d'un int */
     static final int[] mask = {1, 1 << 1, 1 << 2, 1 << 3, 1 << 4, 1 << 5, 1 << 6, 1 << 7, 1 << 8, 1 << 9,
@@ -50,7 +50,7 @@ public class SetOfBits implements Serializable {
     private int cardinality = 0;
     /** taille interne du vecteur */
     private int internalSize;
-    /** vecteur de int repr�sentant les bits du vecteur */
+    /** vecteur de int représentant les bits du vecteur */
     private int[] binaryInt;
 
     private void writeObject(java.io.ObjectOutputStream out)
@@ -68,8 +68,8 @@ public class SetOfBits implements Serializable {
     }
 
     /**
-     * cr�e un vecteur vide (false),
-     * ne g�re pas les tailles inf�rieur non divisible par 32
+     * crée un vecteur vide (false),
+     * ne gère pas les tailles inférieur non divisible par 32
      * @param nbits taille du vecteur de bits
      */
     public SetOfBits(int nbits) {
@@ -82,7 +82,7 @@ public class SetOfBits implements Serializable {
     }
 
     /**
-     * cr�e un vecteur � partir des bit d'un vecteur de int
+     * crée un vecteur à partir des bit d'un vecteur de int
      * @param binaryInt les bits des ints deviennent ceux du vecteur de bit
      */
     public SetOfBits(int[] binaryInt) {
@@ -100,7 +100,7 @@ public class SetOfBits implements Serializable {
        binaryInt = s.binaryInt.clone();
     }
 
-    /** cr�e un vecteur � partir d'un zip dont les nombre de bits �tait initialement nbits
+    /** crée un vecteur à partir d'un zip dont les nombre de bits était initialement nbits
      * @param bZip zip sous forme de byte
      *  @param nbits taille du vecteur de bits
      */
@@ -119,9 +119,9 @@ public class SetOfBits implements Serializable {
     }
 
     /**
-     * mets � jour la position bitIndex avec la valeur value
-     * @param bitIndex position � mettre � jour
-     * @param value valeur de la mise � jour
+     * mets à jour la position bitIndex avec la valeur value
+     * @param bitIndex position à mettre à jour
+     * @param value valeur de la mise à jour
      */
     public final void set(int bitIndex, boolean value) {
         //msg("bitIntdex:"+bitIndex);
@@ -136,7 +136,7 @@ public class SetOfBits implements Serializable {
 
     /**
      * cherche la valeur du bit à la position bitIndex
-     * @param bitIndex position recherch�e
+     * @param bitIndex position recherchée
      * @return valeur de la position
      */
     public final boolean get(int bitIndex) {
@@ -158,7 +158,7 @@ public class SetOfBits implements Serializable {
     }
 
     /**
-     * retourne le vecteur compress�
+     * retourne le vecteur compressé
      * @return zip du vecteur de bits
      */
     public final byte[] getZip() {
@@ -176,7 +176,7 @@ public class SetOfBits implements Serializable {
     /**
      * convertit les nbits en nInts
      * @param nbits taille en bits
-     * @return taille en repr�sentation interne
+     * @return taille en représentation interne
      */
     private final int bitsToInts(int nbits) {
         if (nbits != ALL) {
@@ -188,8 +188,8 @@ public class SetOfBits implements Serializable {
 
     /**
      * this = this AND operand
-     * @param operand pour effectuer l'op�ration
-     * @param firstbits l'op�ration est restreinte aux premiers bits (ALL=tous)
+     * @param operand pour effectuer l'opération
+     * @param firstbits l'opération est restreinte aux premiers bits (ALL=tous)
      */
     public final void and(SetOfBits operand, int firstbits) {
         int first = bitsToInts(firstbits);
@@ -200,8 +200,8 @@ public class SetOfBits implements Serializable {
 
     /**
      * this = this OR operand
-     * @param operand pour effectuer l'op�ration
-     * @param firstbits l'op�ration est restreinte aux premiers bits (ALL=tous)
+     * @param operand pour effectuer l'opération
+     * @param firstbits l'opération est restreinte aux premiers bits (ALL=tous)
      */
     public final void or(SetOfBits operand, int firstbits) {
         int first = bitsToInts(firstbits);
@@ -212,7 +212,7 @@ public class SetOfBits implements Serializable {
 
     /**
      * this = NOT (this)
-     * @param firstbits l'op�ration est restreinte aux premiers bits (ALL=tous)
+     * @param firstbits l'opération est restreinte aux premiers bits (ALL=tous)
      */
     public final void not(int firstbits) {
         int first = bitsToInts(firstbits);
@@ -223,7 +223,7 @@ public class SetOfBits implements Serializable {
 
     /**
      * true if all false
-     * @param firstbits l'op�ration est restreinte aux premiers bits (ALL=tous)
+     * @param firstbits l'opération est restreinte aux premiers bits (ALL=tous)
      * return true if all false
      * @return 
      */

@@ -27,7 +27,7 @@ public class TokenAlphaNumeric implements TokenDefinition {
 
     static final int EOF = -1;
 
-    /** Cr�e une attache
+    /** crée une attache
      */
     public TokenAlphaNumeric() {
     }
@@ -36,8 +36,8 @@ public class TokenAlphaNumeric implements TokenDefinition {
      * Cherche le symbole suivant.
      * définition symbole= commence avec une lettre ou des chiffres(au sens unicode)
      * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
-     * s'arr�te quand on rencontre autre chose qu'une lettre (au sens unicode)ou des chiffres ou . ou -
-     * pour rendre active cette m�thode, il faut la renommer next !
+     * s'arrête quand on rencontre autre chose qu'une lettre (au sens unicode)ou des chiffres ou . ou -
+     * pour rendre active cette méthode, il faut la renommer next !
      */
     public final void next(DoParse a) {
         int c = 0;
@@ -99,11 +99,11 @@ public class TokenAlphaNumeric implements TokenDefinition {
 
     /** normalise le mot. actuellement<br>
      * - mis en minuscule<br>
-     * - tronquer � la longueur fix�e.<br>
+     * - tronquer à la longueur fixée.<br>
      * - lemmatiser si le stemming est actif.<br>
-     * @param id l'indexeur de r�f�rence
-     * @param w le mot � normaliser
-     * @return un mot normalis�
+     * @param id l'indexeur de référence
+     * @param w le mot à normaliser
+     * @return un mot normalisé
      */
     public final String normaliseWord(String w) {
         //System.out.print(w+"-->");

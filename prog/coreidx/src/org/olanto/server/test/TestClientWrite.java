@@ -50,14 +50,14 @@ public class TestClientWrite {
             if (r instanceof IndexService) {
                 IndexService is = ((IndexService) r);
                 String s = is.getInformation();
-                System.out.println("chaï¿½ne renvoyï¿½e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 System.out.println("client send a directory to be indexed ... could take time");
                 //is.indexdir("C:/AAA/WIPO/EN");
                 //is.indexdir("C:/jdk1.5");
                 is.indexdir("C:/AAA/BILANG/DOC");
                 is.flush();
                 is.showFullIndex();
-                //is.checkpoint();  ï¿½ faire
+                //is.checkpoint();  à faire
                 msg("end ...");
             }
 

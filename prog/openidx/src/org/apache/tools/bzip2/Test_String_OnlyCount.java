@@ -25,7 +25,7 @@ public class Test_String_OnlyCount {
     static String s;
     
     public static void main(String[] args) {
-                    s="ceci est texte ├а compresser, ceci est texte ├а compresser, ceci est texte ├а compresser, ceci est texte ├а compresser, ";
+                    s="ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ";
             for (int i=0;i<5;i++)s=s+s;
              buffer= s.getBytes();
         System.out.println("length to be compressed = "+buffer.length);

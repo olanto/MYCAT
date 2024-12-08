@@ -30,11 +30,14 @@ import org.olanto.mycat.tmx.common.FormatHtmlResult;
 import org.olanto.mycat.tmx.common.NgramAndCorrelation;
 
 /**
- *
- * @author simple
+ * Servlet pour l'application How2Say
  */
 public class How2Say extends HttpServlet {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {  //only to debug
 NgramAndCorrelation.initIS();
         ServletProcess.init();

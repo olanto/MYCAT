@@ -30,9 +30,21 @@ public class StatSimilarity {
 
     private static long getincache, get;
 
+    /**
+     *
+     */
     public StatSimilarity() {
     }
 
+    /**
+     *
+     * @param lex
+     * @param fromSeq
+     * @param toSeq
+     * @param ratioline
+     * @param verbose
+     * @return
+     */
     public static float statSimilar(LexicalTranslation lex, String[] fromSeq, String[] toSeq, float ratioline, boolean verbose) {
         float sum = 0;
         //System.out.println("fromSeq.length:"+fromSeq.length+"  toSeq.length:"+toSeq.length);
@@ -56,6 +68,14 @@ public class StatSimilarity {
         return 2 * sum / (float) (fromSeq.length + toSeq.length);
     }
 
+    /**
+     *
+     * @param lex
+     * @param iwsource
+     * @param iwcible
+     * @param verbose
+     * @return
+     */
     public static float statWSWC(LexicalTranslation lex, String iwsource, String iwcible, boolean verbose) {
         get++;
 
@@ -71,6 +91,9 @@ public class StatSimilarity {
         return val;
     }
 
+    /**
+     *
+     */
     public static void statistic() {
         msg("Statistic from StatSimilarity:");
         msg("tested :" + get + " getinLex:" + getincache + " findinLex:" + ((float) getincache / (float) get) + "%");

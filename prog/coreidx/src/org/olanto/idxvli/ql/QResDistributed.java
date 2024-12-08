@@ -24,41 +24,41 @@ import org.olanto.idxvli.server.QLResultAndRank;
 import static org.olanto.util.Messages.*;
 
 /**
- * Classe stockant les  r�sultats d'une requ�te distribu�e sur plusieurs indexeurs.
+ * Classe stockant les  résultats d'une requête distribuée sur plusieurs indexeurs.
  * 
  *
  */
 public class QResDistributed {
 
-    /* les documents r�sultats tri�s*/
+    /* les documents résultats triés*/
 
     /**
      *
      */
 
     public int[] topdoc;
-    /* num�ro du noeud d'�ndexation*/
+    /* numéro du noeud d'éndexation*/
 
     /**
      *
      */
 
     public int[] topsource;
-    /* les noms des documents tri�s*/
+    /* les noms des documents triés*/
 
     /**
      *
      */
 
     public String[] topname;
-    /* le degr� de pertinence du r�sultat tri�s*/
+    /* le degré de pertinence du résultat triés*/
 
     /**
      *
      */
 
     public float[] toprank;
-    /* le degr� de pertinence du r�sultat tri�s*/
+    /* le degré de pertinence du résultat triés*/
     private QLResultAndRank[] resFromNet;
     private int maxToKeep = Integer.MAX_VALUE;
     /* les compteurs */
@@ -86,18 +86,18 @@ public class QResDistributed {
     /* initialise le tri */
 
     /**
-     *
+     * init and sort all results
      */
     public void initAndSort() {
         if (resFromNet != null) {
             nbNode = resFromNet.length;
-            for (int i = 0; i < nbNode; i++) { // calcul le nombre noeud ayant donn� une r�ponse
+            for (int i = 0; i < nbNode; i++) { // calcul le nombre noeud ayant donné une réponse
 
                 if (resFromNet[i] != null && resFromNet[i].result != null && resFromNet[i].result.length != 0) {
                     nbNodeNotNull++;
                 }
             }
-            for (int i = 0; i < nbNode; i++) { // calcul le nombre de r�ponses
+            for (int i = 0; i < nbNode; i++) { // calcul le nombre de réponses
 
                 if (resFromNet[i] != null && resFromNet[i].result != null && resFromNet[i].result.length != 0) {
                     nbRes += resFromNet[i].result.length;

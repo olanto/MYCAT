@@ -56,9 +56,9 @@ public class StringTable_Classic implements StringRepository {
     /* variables d'un gestionnaire du dictionaire -------------------------------------- */
     /** definit la version */
     String VERSION;
-    /** definit le nom gï¿½nï¿½rique des fichiers */
+    /** definit le nom générique des fichiers */
     String GENERIC_NAME;
-    /** definit le path pour l'ensemble des fichiers dï¿½pendant de ce Dictionnaire */
+    /** definit le path pour l'ensemble des fichiers dépendant de ce Dictionnaire */
     String pathName;
     /** definit le fichier */
     String idxName;
@@ -69,11 +69,11 @@ public class StringTable_Classic implements StringRepository {
     /** nbr de mots actuellement dans le dictionnaire */
     private int count = 0;
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public StringTable_Classic() {
     }
 
-    /**  crï¿½e une word table (la taille et la longueur max ne sont pas utilisï¿½s) par dï¿½faut ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée une word table (la taille et la longueur max ne sont pas utilisés) par défaut à l'endroit indiqué par le path
      * @param _path
      * @param _idxName
      * @param _maxSize
@@ -83,7 +83,7 @@ public class StringTable_Classic implements StringRepository {
         return (new StringTable_Classic(_path, _idxName, "ext", _maxSize));
     }
 
-    /**  ouvre un gestionnaire de mots  ï¿½ l'endroit indiquï¿½ par le _path
+    /**  ouvre un gestionnaire de mots  à l'endroit indiqué par le _path
      * @param _path
      * @param _idxName
      * @return valeur */
@@ -97,7 +97,7 @@ public class StringTable_Classic implements StringRepository {
         msg("--- StringTable is closed now ");
     }
 
-    /** crï¿½er une nouvelle instance de StringTable ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de StringTable à partir des données existantes*/
     private StringTable_Classic(String _pathName, String _idxName) {  // recharge un gestionnaire
         pathName = _pathName;
         idxName = _idxName;
@@ -105,7 +105,7 @@ public class StringTable_Classic implements StringRepository {
         //printMasterFile();
     }
 
-    /** crï¿½er une nouvelle instance de StringTable*/
+    /** créer une nouvelle instance de StringTable*/
     private StringTable_Classic(String _pathName, String _idxName, String _generic_name, int _maxSize) {
         createStringTable(_pathName, _idxName, _generic_name, _maxSize);
     }
@@ -119,7 +119,7 @@ public class StringTable_Classic implements StringRepository {
         saveMasterFile();
     }
 
-    private final void initFirstTime(int _maxSize) { // n'utiliser que la premiï¿½re fois, ï¿½ la crï¿½ation
+    private final void initFirstTime(int _maxSize) { // n'utiliser que la première fois, à la création
         count = 0;
         words = new Hashtable<String, Integer>();
         wordsinv = new Hashtable<Integer, String>();
@@ -129,7 +129,7 @@ public class StringTable_Classic implements StringRepository {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + idxName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // ï¿½crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeObject(GENERIC_NAME);
             p.writeInt(count);
             p.writeObject(words);
@@ -150,8 +150,8 @@ public class StringTable_Classic implements StringRepository {
             VERSION = (String) p.readObject();
             GENERIC_NAME = (String) p.readObject();
             count = p.readInt();
-            words = ((Hashtable<String, Integer>) p.readObject());  // le casting est nï¿½cessaire et gï¿½nï¿½re un warning ï¿½ la compilation
-            wordsinv = (Hashtable<Integer, String>) p.readObject(); // le casting est nï¿½cessaire et gï¿½nï¿½re un warning ï¿½ la compilation
+            words = ((Hashtable<String, Integer>) p.readObject());  // le casting est nécessaire et génère un warning é la compilation
+            wordsinv = (Hashtable<Integer, String>) p.readObject(); // le casting est nécessaire et génère un warning é la compilation
             System.out.println("load Master String Table File for: " + pathName + "/" + idxName + " id: " + GENERIC_NAME);
             istream.close();
         } catch (Exception e) {
@@ -168,13 +168,13 @@ public class StringTable_Classic implements StringRepository {
         msg("count: " + count);
     }
 
-    /**  ajoute un terme au gestionnaire retourne le numï¿½ro du terme, retourne EMPTY s'il y a une erreur
+    /**  ajoute un terme au gestionnaire retourne le numéro du terme, retourne EMPTY s'il y a une erreur
      * @param w
      * @return valeur */
     public final int put(String w) {
         if ((words.get(w)) != null) {
             return words.get(w);
-        }  // existe dï¿½jï¿½
+        }  // existe déjé
         //System.out.println("put:"+w);
         words.put(w, count);
         wordsinv.put(count, w);
@@ -182,7 +182,7 @@ public class StringTable_Classic implements StringRepository {
         return count - 1;
     }
 
-    /**  cherche le numï¿½ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param w
      * @return valeur */
     public final int get(String w) {
@@ -193,7 +193,7 @@ public class StringTable_Classic implements StringRepository {
         return n.intValue();
     }
 
-    /**  cherche le terme associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
+    /**  cherche le terme associé é un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
      * @param i
      * @return e*/
     public final String get(int i) {

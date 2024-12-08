@@ -49,7 +49,7 @@ import org.olanto.idxvli.server.*;
 * 
   *
  *
- * ï¿½Djava.security.policy=policy.all 
+ * éDjava.security.policy=policy.all 
  */
 public class RunServerWriteFromEmpty {
 
@@ -72,7 +72,7 @@ public class RunServerWriteFromEmpty {
             String name = "rmi://localhost/VLI";
             System.out.println("name:" + name);
             Naming.rebind(name, idxobj);
-            System.out.println("Serveur lancï¿½");
+            System.out.println("Serveur lancé");
 
         } catch (Exception e) {
             error("Serveur Idx", e);

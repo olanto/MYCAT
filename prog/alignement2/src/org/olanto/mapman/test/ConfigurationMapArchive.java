@@ -28,11 +28,11 @@ import static org.olanto.mapman.MapArchiveConstant.*;
 /**
  * Une classe pour initialiser les constantes.
  * 
- * Une classe pour initialiser les constantes. Cette classe doit Ãªtre implÃ©mentÃ©e pour chaque application
+ * Une classe pour initialiser les constantes. Cette classe doit être implémentée pour chaque application
  */
 public class ConfigurationMapArchive implements MapArchiveInit {
 
-    /** crÃ©e l'attache de cette classe.
+    /** crée l'attache de cette classe.
      */
     public ConfigurationMapArchive() {
     }
@@ -107,7 +107,7 @@ public class ConfigurationMapArchive implements MapArchiveInit {
     }
 
     /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies dÃ©finitivement pour toute la durÃ©e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration() {
 
@@ -118,6 +118,6 @@ public class ConfigurationMapArchive implements MapArchiveInit {
         MAP_ROOT = root;
         SetObjectStoreRoot(root0, 0);
 
-        // paramÃ¨tre de fonctionnement
+        // paramètre de fonctionnement
     }
 }

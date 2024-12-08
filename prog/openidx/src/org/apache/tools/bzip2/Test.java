@@ -117,7 +117,7 @@ public class Test {
     }
 
     /**
-     * un test de rapiditÃ©
+     * un test de rapidité
      */
     public static void decompressInternal(String fileName, String outFileName, int skip) {
         long nb=-1;

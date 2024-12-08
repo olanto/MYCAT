@@ -33,11 +33,11 @@ import static org.olanto.idxvli.IdxConstant.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 
 /**
- * ex�cuteur de requ�te. <p>
+ * exécuteur de requête. <p>
  *
  *
  *
- * ex�cuteur de requ�te.
+ * exécuteur de requête.
  */
 public class QL_Basic implements QLManager {
 
@@ -49,8 +49,8 @@ public class QL_Basic implements QLManager {
     private static long totalTime = 0;
 
     /**
-     * retourne la liste des documents valides correspondants à la requ�te pour
-     * rester compatible avec les versions pr�cendentes
+     * retourne la liste des documents valides correspondants à la requête pour
+     * rester compatible avec les versions précendentes
      */
     public final int[] get(String request, IdxStructure id) {
         return (new QLCompiler_simple(new StringReader(request), id)).execute();
@@ -175,7 +175,7 @@ public class QL_Basic implements QLManager {
         if (nice != null) { // dans le cache
 
             getInCache++;
-            nice.update(id, cs, request1, start, size2, false);  // met � jour la fen�tre
+            nice.update(id, cs, request1, start, size2, false);  // met à jour la fenêtre
 
         } else { // pas dans le cache
 
@@ -285,7 +285,7 @@ public class QL_Basic implements QLManager {
                     clue[i] = "";
                     for (int j = 0; j < termsOfQuery.length; j++) {
                         if (termsOfQuery[j].length() > 2) { // marque pas les trop petits
-                            // on doit aussi �liminer les termes des la requ�te AND .... � faire !!!!!!!!!!!!!!!!!!!!!
+                            // on doit aussi éliminer les termes des la requête AND .... à faire !!!!!!!!!!!!!!!!!!!!!
 
                             FromTo fromto = DocPosChar.extractIntervalForW(doc[i], id, termsOfQuery[j], 4);
                             if (fromto != null) {
@@ -336,18 +336,18 @@ public class QL_Basic implements QLManager {
         QLCompiler compiler = new QLCompiler(new StringReader(request1), properties, profile, id);
         int[] doc = compiler.execute();
 
-        if (doc == null) {// forme une r�ponse vide
+        if (doc == null) {// forme une réponse vide
             res = new QLResultNice(request1, properties, profile, null, new int[0], null, null, null, time.stop(true) / 1000, null);
             return res;
-        } else { // il a des r�sultats pour la premi�re requ�te.
+        } else { // il a des résultats pour la première requête.
             int[] firstdoc = copyVector(size1, doc);
-            Arrays.sort(firstdoc); // on trie � nouveau les documents pour les join ...
+            Arrays.sort(firstdoc); // on trie à nouveau les documents pour les join ...
             id.resQ1 = firstdoc;  // assigne le vecteur (retour au common du fortan, ... il faut revoir cela ...)
             if (IdxConstant.MODE_RANKING != IdxEnum.RankingMode.BM25) {
                 error("must be in RankingMode.BM25");
                 return null;
             }
-            IdxConstant.MODE_RANKING = IdxEnum.RankingMode.BM25TWICE; // pr�pare la r��valuation
+            IdxConstant.MODE_RANKING = IdxEnum.RankingMode.BM25TWICE; // prépare la réévaluation
             QLCompiler compiler2 = new QLCompiler(new StringReader(request2), properties, profile, id);
             int[] doc2 = compiler2.execute();
             String[] termsOfQuery2 = compiler2.getTermsOfQuery();
@@ -370,7 +370,7 @@ public class QL_Basic implements QLManager {
                     clue[i] = "";
                     for (int j = 0; j < termsOfQuery2.length; j++) {
                         if (termsOfQuery2[j].length() > 2) { // marque pas les trop petits
-                            // on doit aussi �liminer les termes des la requ�te AND .... � faire !!!!!!!!!!!!!!!!!!!!!
+                            // on doit aussi éliminer les termes des la requête AND .... à faire !!!!!!!!!!!!!!!!!!!!!
 
                             FromTo fromto = DocPosChar.extractIntervalForW(doc[i], id, termsOfQuery2[j], 4);
                             if (fromto != null) {

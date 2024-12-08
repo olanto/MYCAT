@@ -31,7 +31,7 @@ import java.util.Vector;
 import static org.olanto.util.Messages.*;
 
 /**
- * Classe impl�mentant la mesure de similarit� de Lesk
+ * Classe implémentant la mesure de similarité de Lesk
  * 
 
  *<p>
@@ -84,7 +84,7 @@ public class LeskMeasure {
         return wgtRef;
     }
 
-    /** Mode pour la pond�ration des mots */
+    /** Mode pour la pondération des mots */
     public static enum LeskMode {
 
         /**pas de ranking */
@@ -126,7 +126,7 @@ public class LeskMeasure {
                 int nbStart = e.pos.size();
                 double keep = 0;
                 AlignSegment keepAs = null;
-                for (int k = 0; k < nbStart; k++) { // pour chaque point de d�part
+                for (int k = 0; k < nbStart; k++) { // pour chaque point de départ
                     AlignSegment as = getAlignSegment(doc, i, e, k);
                     if (as != null) {
                         if (keep < as.wgt) { // garde seulement l'alignement le plus significatif
@@ -193,7 +193,7 @@ public class LeskMeasure {
             if (ref[i] != -1) {
                 System.out.print(" " + id.getStringforW(ref[i]));
                 Entry e = hr.get(ref[i]);
-                if (e != null) {  // existe d�ja
+                if (e != null) {  // existe déja
                     e.pos.add(i); // ajoute une nouvelle occurence
                 } else {
                     switch (leskmode) {

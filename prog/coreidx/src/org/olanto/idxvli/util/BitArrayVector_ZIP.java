@@ -26,7 +26,7 @@ import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.idxvli.IdxConstant.*;
 
 /**
- * Comportements d'un tableau de bit[2^maxSize][fixedArraySize] Zipp�.
+ * Comportements d'un tableau de bit[2^maxSize][fixedArraySize] Zippé.
  * 
  *
  */
@@ -37,9 +37,9 @@ public class BitArrayVector_ZIP implements BitArrayVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String fileName;
     private byte[][] v;
     private int size = 0;
@@ -47,11 +47,11 @@ public class BitArrayVector_ZIP implements BitArrayVector {
     private ByteArrayVector vZip;
     private readWriteMode RW = readWriteMode.rw;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public BitArrayVector_ZIP() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _pathName
      * @param _fileName */
@@ -59,7 +59,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         return (new BitArrayVector_ZIP(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName */
     public final BitArrayVector open(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {
@@ -73,7 +73,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private BitArrayVector_ZIP(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -90,7 +90,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private BitArrayVector_ZIP(implementationMode _ManagerImplementation, String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         createBitArrayVector_ZIP(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize);
     }
@@ -114,12 +114,12 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         vZip.close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
-        SetOfBits wBA = new SetOfBits(fixedArraySize);  // cr�e un vecteur vide
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
+        SetOfBits wBA = new SetOfBits(fixedArraySize);  // crée un vecteur vide
         byte[] empty = wBA.getZip();
         for (int i = 0; i < size; i++) {
             vZip.set(i, empty);
-        } //initialise tous les vecteurs � vide
+        } //initialise tous les vecteurs à vide
     }
 
     private final void saveMasterFile() {  // sauver les informations persistante du gestionnaire
@@ -127,7 +127,7 @@ public class BitArrayVector_ZIP implements BitArrayVector {
             try {
                 FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
                 ObjectOutputStream p = new ObjectOutputStream(ostream);
-                p.writeObject(VERSION); // �crire les flags
+                p.writeObject(VERSION); // écrire les flags
                 p.writeInt(size);
                 p.writeInt(fixedArraySize);
                 msg("save Bit Vector: " + pathName + "/" + fileName);
@@ -163,10 +163,10 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         msg("fixedArraySize: " + fixedArraySize);
     }
 
-    /** mets � jour la position pos avec la valeur val, la i�me valeur  */
+    /** mets à jour la position pos avec la valeur val, la ième valeur  */
     public final void set(int pos, int i, boolean val) {
         if (RW == readWriteMode.rw) {
-            SetOfBits wBA = new SetOfBits(vZip.get(pos), fixedArraySize);  // cr�e un vecteur depuis son zip
+            SetOfBits wBA = new SetOfBits(vZip.get(pos), fixedArraySize);  // crée un vecteur depuis son zip
             wBA.set(i, val);
             vZip.set(pos, wBA.getZip());
         } else {
@@ -174,14 +174,14 @@ public class BitArrayVector_ZIP implements BitArrayVector {
         }
     }
 
-    /** mets � jour la position pos avec le vecteur complet*/
+    /** mets à jour la position pos avec le vecteur complet*/
     public final void set(int pos, SetOfBits v) {
         vZip.set(pos, v.getZip());
     }
 
-    /**  cherche la valeur à la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la ième valeur   */
     public final boolean get(int pos, int i) {
-        SetOfBits wBA = new SetOfBits(vZip.get(pos), fixedArraySize);  // cr�e un vecteur depuis son zip
+        SetOfBits wBA = new SetOfBits(vZip.get(pos), fixedArraySize);  // crée un vecteur depuis son zip
         return wBA.get(i);
     }
 

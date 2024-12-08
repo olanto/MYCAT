@@ -54,6 +54,10 @@ public class MapAll {
     private static BiSentence d;
     static MapService ms;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         try {
@@ -68,12 +72,19 @@ public class MapAll {
 
     }
 
+    /**
+     *
+     * @param _ms
+     */
     public static void updateMap(MapService _ms) {
         ms = _ms;
         //   updateMapSEQ();
         updateMapPAR();
     }
 
+    /**
+     *
+     */
     public static void updateMapPAR() {
         try {
             System.out.println("connect to serveur");
@@ -112,6 +123,9 @@ public class MapAll {
 
     }
 
+    /**
+     *
+     */
     public static void updateMapSEQ() {
 
 
@@ -153,6 +167,11 @@ public class MapAll {
 
     }
 
+    /**
+     *
+     * @param source
+     * @param target
+     */
     public static void createMap(String source, String target) {
         int newmap = 0;
         int oldmap = 0;
@@ -205,16 +224,33 @@ public class MapAll {
         }
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public static String getLangOfDoc(String name) {
         int lenRootTxt = rootTxt.length();
         return name.substring(lenRootTxt + 1, lenRootTxt + 3);
     }
 
+    /**
+     *
+     * @param name
+     * @param Lang
+     * @return
+     */
     public static String getNameOfDocForThisLang(String name, String Lang) {
         int lenRootTxt = rootTxt.length();
         return rootTxt + "/" + Lang + name.substring(lenRootTxt + 3);
     }
 
+    /**
+     *
+     * @param isource
+     * @param name
+     * @param Lang
+     */
     public static void setTargetLang(int isource, String name, String Lang) {
         try {
             String nameTarget = getNameOfDocForThisLang(name, Lang);
@@ -227,6 +263,9 @@ public class MapAll {
         }
     }
 
+    /**
+     *
+     */
     public static void inventoryOf() {
         msg("");
         msg("");

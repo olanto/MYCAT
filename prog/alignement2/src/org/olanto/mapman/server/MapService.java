@@ -42,7 +42,7 @@ public interface MapService extends Remote {
 
     /**
      * Pour demander la construction de nouvelles structures pour le mappeur
-     * (dans le cas d'une réinitialisation compl�te)
+     * (dans le cas d'une réinitialisation complète)
      *
      * @param client configuration de la structure
      * @throws java.rmi.RemoteException
@@ -69,7 +69,7 @@ public interface MapService extends Remote {
     /**
      * Pour obtenir les statisques (nb doc, %compression, ...) du mappeur
      *
-     * @return r�sultat des stat
+     * @return résultat des stat
      * @throws java.rmi.RemoteException
      */
     public String getStatistic() throws RemoteException;
@@ -101,29 +101,39 @@ public interface MapService extends Remote {
      *
      * @param map map
      * @param docid la référence du document
-     * @param lang lanque (pivot/cette langue)
+     * @param langfrom
+     * @param langto
+     * @throws java.rmi.RemoteException
      */
     public void addMap(IntMap map, int docid, String langfrom, String langto) throws RemoteException;
 
     /**
      * récupère une map.
      *
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+     * @param docid
+     * @param langfrom
+     * @param langto
+     * @return 
+     * @throws java.rmi.RemoteException
      */
     public IntMap getMap(int docid, String langfrom, String langto) throws RemoteException;
 
     /**
      * récupère une map.
      *
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+     * @param docid
+     * @param langfrom
+     * @param langto
+     * @return 
+     * @throws java.rmi.RemoteException 
      */
     public boolean existMap(int docid, String langfrom, String langto) throws RemoteException;
 
     /**
      * skip line ?.
      *
+     * @return 
+     * @throws java.rmi.RemoteException 
      */
     public boolean isSkipLine() throws RemoteException;
 }

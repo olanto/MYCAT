@@ -32,21 +32,51 @@ import static org.olanto.util.Messages.*;
  * Une classe pour stocker un document sous forme de phrase.
  *   * 
  */
+
+/**
+ *
+ * @author xtern
+ */
+
 public class DocumentSentence {
 
+    /**
+     *
+     */
     public Sentence[] lines;
  //   IdxStructure glue;
+
+    /**
+     *
+     */
     public int nblines;
+
+    /**
+     *
+     */
     public int totNumbers;
 
+    /**
+     *
+     * @param document
+     */
     public DocumentSentence(String document) {
         init(document);
     }
 
+    /**
+     *
+     * @param fname
+     * @param txt_encoding
+     */
     public DocumentSentence(String fname, String txt_encoding) {
         init(file2String(fname, txt_encoding));
     }
 
+    /**
+     *
+     * @param document
+     */
     public void init(String document) {
         nblines = Sentence.countLines(document);
         // msg("nblines:"+nblines);
@@ -59,7 +89,7 @@ public class DocumentSentence {
     }
 
     /**
-     * lit le contenu d'un fichier texte encodÃ©
+     * lit le contenu d'un fichier texte encodé
      * @param fname nom du fichier
      * @param txt_encoding encodage
      * @return le contenu du fichier
@@ -83,6 +113,10 @@ public class DocumentSentence {
 
     }
 
+    /**
+     *
+     * @param lex
+     */
     public void convert2id(LexicalTranslation lex) {
         for (int i = 0; i < lines.length; i++) {
             lines[i].convert2id(lex);
@@ -90,6 +124,10 @@ public class DocumentSentence {
         //  lines[0].dump();
     }
 
+    /**
+     *
+     * @param lex
+     */
     public void convert2idWithScore(LexicalTranslation lex) {
         for (int i = 0; i < lines.length; i++) {
             lines[i].convert2idWithScore(lex);
@@ -97,6 +135,9 @@ public class DocumentSentence {
         //   lines[0].dump();
     }
 
+    /**
+     *
+     */
     public void dumpNumbers() {
         msg("totNumbers:" + totNumbers);
         for (int i = 0; i < lines.length; i++) {
@@ -104,6 +145,9 @@ public class DocumentSentence {
         }
     }
 
+    /**
+     *
+     */
     public void sumNumbers() {
         totNumbers = 0;
         for (int i = 0; i < lines.length; i++) {

@@ -25,13 +25,13 @@ package org.olanto.idxvli.cache;
  * 
  *
  * Comportement d'un cache d'index en lecture uniquement.
- * Les indices des termes sont ceux utilisÃ©s par le dictionnaire 
+ * Les indices des termes sont ceux utilisés par le dictionnaire 
  * (donc par forcemment ceux du cache de termes).
  * <p>
- * Dans cette version le GC doit ï¿½tre organisï¿½ ï¿½ l'extï¿½rieur, aucune translation n'est prï¿½vue.
+ * Dans cette version le GC doit être organisé à l'extérieur, aucune translation n'est prévue.
  * donc cacheSize = maxWord
  *
- * pour l'essentiel, cette classe crï¿½e une facade de CacheIdx sur les documents et sur les positions.
+ * pour l'essentiel, cette classe crée une facade de CacheIdx sur les documents et sur les positions.
  */
 public class CacheRead_Basic implements CacheRead {
 

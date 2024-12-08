@@ -23,28 +23,28 @@ package org.olanto.idxvli.knn;
 import java.io.*;
 
 /**
- * Classe stockant les  r�sultats d'une requ�te KNN.
+ * Classe stockant les  résultats d'une requête KNN.
  * 
 
  *
  */
 public class KNNResult implements Serializable {
 
-    /* les documents r�sultats */
+    /* les documents résultats */
 
     /**
      *
      */
 
     public int[] result;
-    /* les scores des r�sultats */
+    /* les scores des résultats */
 
     /**
      *
      */
 
     public int[] score;
-    /* la dur�e d'ex�cution */
+    /* la durée d'exécution */
 
     /**
      *
@@ -52,10 +52,10 @@ public class KNNResult implements Serializable {
 
     public long duration;
 
-    /** cr�e un r�sultat
+    /** crée un résultat
      * @param result id des documents
      * @param score
-     * @param duration dur�e
+     * @param duration durée
      */
     public KNNResult(int[] result, int[] score, long duration) {
         this.result = result;

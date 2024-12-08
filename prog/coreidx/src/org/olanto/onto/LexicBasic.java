@@ -39,11 +39,11 @@ public class LexicBasic implements LexicManager {
     private boolean stemActive = true;
     private final boolean verbose = false;
 
-    /** crï¿½er une nouvelle instance de gestionnaire*/
+    /** créer une nouvelle instance de gestionnaire*/
     public LexicBasic() {
     }
 
-    /**  crï¿½e un gestionnaire de lexique
+    /**  crée un gestionnaire de lexique
      * @param _path
      * @param stemName
      * @param lang */
@@ -51,7 +51,7 @@ public class LexicBasic implements LexicManager {
         return (new LexicBasic(_path, lang, stemName));
     }
 
-    private LexicBasic(String _path, String lang, String stemName) {  // crï¿½e un gestionnaire
+    private LexicBasic(String _path, String lang, String stemName) {  // crée un gestionnaire
         tc = new HashMap<String, Concepts>();
         ct = new HashMap<Integer, Terms>();
         if (stemName == null) {
@@ -99,7 +99,7 @@ public class LexicBasic implements LexicManager {
 
     /**
      * ajoute un mot au gestionnaire
-     * retourne son id s'il existe dï¿½ja
+     * retourne son id s'il existe déja
      * @param word mot
      * @param id id
      */
@@ -117,7 +117,7 @@ public class LexicBasic implements LexicManager {
             c = new Concepts();
             c.add(id);
             tc.put(word, c);
-        } else { // existe dï¿½jï¿½
+        } else { // existe déjé
             c.add(id);
         }
     }
@@ -128,7 +128,7 @@ public class LexicBasic implements LexicManager {
             t = new Terms();
             t.add(word);
             ct.put(id, t);
-        } else { // existe dï¿½jï¿½
+        } else { // existe déjé
             t.add(word);
         }
     }
@@ -154,8 +154,8 @@ public class LexicBasic implements LexicManager {
     }
 
     /**
-     * cherche les mot associï¿½ ï¿½ un identifiant de concepts.
-     * @param i numï¿½ro du concepts
+     * cherche les mot associé à un identifiant de concepts.
+     * @param i numéro du concepts
      * @return la liste des termes
      */
     public Terms get(int i) {
@@ -163,8 +163,8 @@ public class LexicBasic implements LexicManager {
     }
 
     /**
-     * cherche les mots sans stemming associï¿½s ï¿½ un identifiant de concepts.
-     * @param i numï¿½ro du concepts
+     * cherche les mots sans stemming associés à un identifiant de concepts.
+     * @param i numéro du concepts
      * @return la liste des termes
      */
     public Terms getw(int i) {

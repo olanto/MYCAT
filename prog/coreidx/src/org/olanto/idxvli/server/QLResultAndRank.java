@@ -29,28 +29,28 @@ import java.io.*;
  */
 public class QLResultAndRank implements Serializable {
 
-    /* les documents r�sultats */
+    /* les documents résultats */
 
     /**
      *
      */
 
     public int[] result;
-    /* les poids des r�sultats */
+    /* les poids des résultats */
 
     /**
      *
      */
 
     public float[] rank;
-    /* les poids des r�sultats */
+    /* les poids des résultats */
 
     /**
      *
      */
 
     public String[] docName;
-    /* la dur�e d'ex�cution */
+    /* la durée d'exécution */
 
     /**
      *
@@ -58,10 +58,10 @@ public class QLResultAndRank implements Serializable {
 
     public long duration;  // en ms
 
-    /** cr�e un r�sultat
+    /** crée un résultat
      * @param result id des documents
      * @param rank poids des documents
-     * @param duration dur�e
+     * @param duration durée
      */
     public QLResultAndRank(int[] result, float[] rank, long duration) {
         this.result = result;

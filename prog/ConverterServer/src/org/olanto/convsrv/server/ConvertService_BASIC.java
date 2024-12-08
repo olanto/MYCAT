@@ -44,8 +44,8 @@ import org.olanto.converter.Constants;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - Ã©crivain en exclusion avec tous
- *  doit Ãªtre le point d'accÃ©s pour toutes les structures utilisÃ©es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accés pour toutes les structures utilisées !
  * </pre>
  *
  */
@@ -70,7 +70,7 @@ public class ConvertService_BASIC extends UnicastRemoteObject implements Convert
         return "this service is alive ... :ConverterService_BASIC";
     }
     /**
-     * opÃ©ration sur les verrous ------------------------------------------
+     * opération sur les verrous ------------------------------------------
      */
     private final ReentrantReadWriteLock serverRW = new ReentrantReadWriteLock();
     private final Lock serverR = serverRW.readLock();

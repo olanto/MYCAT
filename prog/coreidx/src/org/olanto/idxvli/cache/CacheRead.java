@@ -26,17 +26,17 @@ package org.olanto.idxvli.cache;
  *
  *
  * Comportement d'un cache d'index en lecture uniquement.
- * Les indices des termes sont ceux utilisÃ©s par le dictionnaire 
+ * Les indices des termes sont ceux utilisés par le dictionnaire 
  * (donc par forcemment ceux du cache de termes).
  *
- * Dans cette version le GC doit Ãªtre organisÃ©e Ã  l'extÃ©rieur.
+ * Dans cette version le GC doit être organisée à  l'extérieur.
  *
- * pour l'essentiel, cette classe crÃ©e une facade de CacheIdx sur les documents et sur les positions.
+ * pour l'essentiel, cette classe crée une facade de CacheIdx sur les documents et sur les positions.
  */
 public interface CacheRead {
 
     /**
-     * retourne une rÃ©fÃ©rence sur le cache du terme i. On travaille donc directement dans le cache!
+     * retourne une référence sur le cache du terme i. On travaille donc directement dans le cache!
      * @param i terme
      * @return veteur original
      */
@@ -50,7 +50,7 @@ public interface CacheRead {
     public int[] getCopyOfDoc(int i);
 
     /**
-     * retourne la valeur du cache du terme i ï¿½ la position j
+     * retourne la valeur du cache du terme i à la position j
      * @param i terme
      * @param j position
      * @return valeur
@@ -58,7 +58,7 @@ public interface CacheRead {
     public int vDoc(int i, int j);
 
     /**
-     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnï¿½e
+     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnée
      * @param i terme
      * @param from position
      * @param length longeur
@@ -67,14 +67,14 @@ public interface CacheRead {
     public int[] getvDoc(int i, int from, int length);
 
     /**
-     * dï¿½termine si le terme i est pas dans le cache
+     * détermine si le terme i est pas dans le cache
      * @param i terme
      * @return true=le terme i est pas dans le cache
      */
     public boolean isNotLoadedDoc(int i);
 
     /**
-     * dï¿½termine si le terme i est  dans le cache
+     * détermine si le terme i est  dans le cache
      * @param i terme
      * @return true=le terme i est  dans le cache
      */
@@ -95,13 +95,13 @@ public interface CacheRead {
     public void registerVectorDoc(int i, int[] reg);
 
     /**
-     * libï¿½re le terme i dans le cache
+     * libère le terme i dans le cache
      * @param i terme
      */
     public void releaseVectorDoc(int i);
 
     /**
-     * retourne une rï¿½fï¿½rence sur le cache du terme i. On travaille donc directement dans le cache!
+     * retourne une référence sur le cache du terme i. On travaille donc directement dans le cache!
      * @param i terme
      * @return veteur original
      */
@@ -115,7 +115,7 @@ public interface CacheRead {
     public int[] getCopyOfPos(int i);
 
     /**
-     * retourne la valeur du cache du terme i ï¿½ la position j
+     * retourne la valeur du cache du terme i à la position j
      * @param i terme
      * @param j position
      * @return valeur
@@ -123,7 +123,7 @@ public interface CacheRead {
     public int vPos(int i, int j);
 
     /**
-     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnï¿½e
+     * retourne le vecteur des valeurs du cache du terme i de from sur la longueur donnée
      * @param i terme
      * @param from position
      * @param length longeur
@@ -132,14 +132,14 @@ public interface CacheRead {
     public int[] getvPos(int i, int from, int length);
 
     /**
-     * dï¿½termine si le terme i est pas dans le cache
+     * détermine si le terme i est pas dans le cache
      * @param i terme
      * @return true=le terme i est pas dans le cache
      */
     public boolean isNotLoadedPos(int i);
 
     /**
-     * dï¿½termine si le terme i est  dans le cache
+     * détermine si le terme i est  dans le cache
      * @param i terme
      * @return true=le terme i est  dans le cache
      */
@@ -160,7 +160,7 @@ public interface CacheRead {
     public void registerVectorPos(int i, int[] reg);
 
     /**
-     * libï¿½re le terme i dans le cache
+     * libère le terme i dans le cache
      * @param i terme
      */
     public void releaseVectorPos(int i);

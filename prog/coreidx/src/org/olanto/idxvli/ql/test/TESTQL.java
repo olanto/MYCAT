@@ -79,10 +79,10 @@ public class TESTQL {
 
         test("((italie AND prenant)IN[\"_FR\"] OR (italy AND undertaking)IN[\"_EN\"]) IN [LENGTH < \"1000\"]");
 
-        // limitï¿½ filtering aux documents indexï¿½s.!!!!!!!!!!!!!!!!!!!!!!
+        // limité filtering aux documents indexés.!!!!!!!!!!!!!!!!!!!!!!
 
 
-        System.out.println("id ï¿½galement:" + id.getIntForW("ï¿½galement"));
+        System.out.println("id également:" + id.getIntForW("également"));
         ////         id.indexread.lockForBasic(427);
         ////         showVector(id.indexread.getCopyOfDoc(427));
         ////         //showVector(id.indexread.getCopyOfPos(165));

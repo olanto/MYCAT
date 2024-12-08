@@ -20,7 +20,7 @@
 
 package org.olanto.idxvli.word.test;
 
-/* g�n�rique test pour les diff�rentes impl�menations remplacer le nom de l'impl�mentation .... */
+/* générique test pour les différentes implémenations remplacer le nom de l'implémentation .... */
 import java.rmi.*;
 import org.olanto.idxvli.word.*;
 import static org.olanto.util.Messages.*;
@@ -53,7 +53,7 @@ public class TestStringRepository_Open {
             if (r instanceof DictionnaryService) {
                 DictionnaryService is = ((DictionnaryService) r);
                 String s = is.getInformation();
-                System.out.println("cha�ne renvoy�e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 msg("open");
                 is.open(implementationMode.XL, readWriteMode.rw, "C:/JG/VLI_RW/data/dictio", "test");
                 msg("is opend now");

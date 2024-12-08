@@ -41,7 +41,7 @@ public class TokenNative implements ParseTokenDefinition {
     /**
      * Cherche le symbole suivant.
      * définition symbole= commence avec une lettre (au sens unicode)
-     * et n'est pas dans un tag <> (peut occasioner une erreur d'indexation dans les mauvais html)
+     * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
      * s'arrète quand on rencontre autre chose qu'une lettre (au sens unicode)
      */
     @Override
@@ -80,9 +80,8 @@ public class TokenNative implements ParseTokenDefinition {
 
     /** normalise le mot. actuellement<br>
      * - mis en minuscule<br>
-     * - tronquerà la longueur fix�e.<br>
+     * - tronquerà la longueur fixée.<br>
      * - lemmatiser si le stemming est actif.<br>
-     * @param id l'indexeur de r�f�rence
      * @param w le mot à normaliser
      * @return un mot normalisé
      */

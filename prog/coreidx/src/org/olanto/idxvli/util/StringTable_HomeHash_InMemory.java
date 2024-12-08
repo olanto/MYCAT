@@ -24,14 +24,14 @@ import java.io.*;
 import static org.olanto.util.Messages.*;
 
 /**
- * gestionaire de mots charg� en m�moire.
+ * gestionaire de mots chargé en mémoire.
  * <p>
  * 
  *
  *  <pre>
  *  concurrence 
  *  get est // pour les lecteurs (pas de pbr?)
- *  les autres doivent �tre prot�g� par un �crivain (externe)
+ *  les autres doivent être protégé par un écrivain (externe)
  *  </pre>
  */
 public class StringTable_HomeHash_InMemory implements StringRepository {
@@ -41,15 +41,15 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
     /* variables d'un gestionnaire du dictionaire -------------------------------------- */
     /** definit la version */
     String VERSION;
-    /** definit le nom g�n�rique des fichiers */
+    /** definit le nom générique des fichiers */
     String GENERIC_NAME;
-    /** definit le path pour l'ensemble des fichiers d�pendant de ce Dictionnaire */
+    /** definit le path pour l'ensemble des fichiers dépendant de ce Dictionnaire */
     String pathName;
     /** definit le fichier */
     String idxName;
     /** defini la taille maximum du dictionaire 2^maxSize, (maximum=2^31) */
     private int maxSize = 10;
-    /** defini un compl�ment pour des op�rations sur les int */
+    /** defini un complément pour des opérations sur les int */
     private int comp32 = 32 - maxSize;
     /** defini la table de mot */
     private String[] T = new String[(int) Math.pow(2, maxSize)];
@@ -59,14 +59,14 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
     private int utilSize = (int) Math.pow(2, maxSize) - 1;
     /** nbr de mots actuellement dans le dictionnaire */
     private int count = 0;
-    /** nbr de collisions enregistr�es */
+    /** nbr de collisions enregistrées */
     private long collision = 0;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public StringTable_HomeHash_InMemory() {
     }
 
-    /**  cr�e une word table de la taille 2^_maxSize par d�faut � l'endroit indiqu� par le path
+    /**  crée une word table de la taille 2^_maxSize par défaut à l'endroit indiqué par le path
      * @param _path
      * @param _idxName
      * @param _maxSize
@@ -76,7 +76,7 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         return (new StringTable_HomeHash_InMemory(_path, _idxName, "ext", _maxSize));
     }
 
-    /**  ouvre un gestionnaire de mots  � l'endroit indiqu� par le _path
+    /**  ouvre un gestionnaire de mots  à l'endroit indiqué par le _path
      * @param _path
      * @param _idxName
      * @return valeur */
@@ -90,7 +90,7 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         msg("--- StringTable is closed now ");
     }
 
-    /** cr�er une nouvelle instance de StringTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de StringTable à partir des données existantes*/
     private StringTable_HomeHash_InMemory(String _pathName, String _idxName) {  // recharge un gestionnaire
         pathName = _pathName;
         idxName = _idxName;
@@ -98,7 +98,7 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de StringTable*/
+    /** créer une nouvelle instance de StringTable*/
     private StringTable_HomeHash_InMemory(String _pathName, String _idxName, String _generic_name, int _maxSize) {
         createStringTable(_pathName, _idxName, _generic_name, _maxSize);
     }
@@ -113,7 +113,7 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         comp32 = 32 - maxSize;
         count = 0;
         collision = 0;
@@ -129,7 +129,7 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + idxName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeObject(GENERIC_NAME);
             p.writeInt(maxSize);
             p.writeInt(comp32);
@@ -180,8 +180,8 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         msg("collision: " + collision);
     }
 
-    /**  ajoute un terme au gestionnaire retourne le num�ro du terme, retourne EMPTY s'il y a une erreur,
-     * retourne son id s'il existe d�ja
+    /**  ajoute un terme au gestionnaire retourne le numéro du terme, retourne EMPTY s'il y a une erreur,
+     * retourne son id s'il existe déja
      * @param w
      * @return 
      */
@@ -195,37 +195,37 @@ public class StringTable_HomeHash_InMemory implements StringRepository {
         // System.out.println(w+" h init:"+h);
         while (indirect[h] != -1 && !w.equals(T[indirect[h]])) { // cherche un trou
             h = ((h + 1) << comp32) >>> comp32;
-            collision++;  // est pas tout � fait juste si plusieurs occurences similaires
+            collision++;  // est pas tout à fait juste si plusieurs occurences similaires
         }
         if (indirect[h] != -1) {
             return indirect[h];
-        }   // existe d�j�  bug 11.12.2005!
-        //  on a trouv� un trou
+        }   // existe déjà  bug 11.12.2005!
+        //  on a trouvé un trou
         indirect[h] = count;
         T[indirect[h]] = w;
         count++;
         return indirect[h];
     }
 
-    /**  cherche le num�ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param w
      * @return valeur */
     public final int get(String w) {
         int h = hash(w);
         //System.out.println(w+" h init:"+h);
-        while (indirect[h] != -1 && !w.equals(T[indirect[h]])) { // cherche un trou ou �gal
+        while (indirect[h] != -1 && !w.equals(T[indirect[h]])) { // cherche un trou ou égal
             h = ((++h) << comp32) >>> comp32;
-            //collision++;  // est pas tout � fait juste si plusieurs occurences similaires
+            //collision++;  // est pas tout à fait juste si plusieurs occurences similaires
         }
         if (indirect[h] == -1) {
             return EMPTY;
-        } // pas trouv�
+        } // pas trouvé
         else {
             return indirect[h];
         }
     }
 
-    /**  cherche le terme associ� � un num�ro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
+    /**  cherche le terme associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnair
      * @param i
      * @return e*/
     public final String get(int i) {

@@ -58,14 +58,14 @@ public class JG_test  {
         spellCheck = new SpellChecker(dictionary);
         
         test("frase");
-        test("faclultÃ©");
-        test("faKultÃ©");
+        test("faclulté");
+        test("faKulté");
         test("jauli");
         test("filozofie");
         test("filozofi");
         test("fisik");
         test("ortograf");
-        test("dÃ©mocrassie");
+        test("démocrassie");
         test("cui");
         test("cour");
         test("benzineb");

@@ -32,13 +32,13 @@ import org.olanto.idxvli.IdxIO;
  *
  *
  *
- * cette version implï¿½mente une mise ï¿½ jour asynchrone, il est supposï¿½ que seul la
- * sï¿½quence create, put, .... put, close est valide
+ * cette version implémente une mise à jour asynchrone, il est supposé que seul la
+ * séquence create, put, .... put, close est valide
  *
- * la dï¿½synchronisation est assurï¿½e par une queue et un thread qui consome la queue,
+ * la désynchronisation est assurée par une queue et un thread qui consome la queue,
  * si la queue est pleine, le producteur est mis en attente (voir put and take)
  *
- * donc les mï¿½thodes get, printstatistique, ... ne donne pas de rï¿½sultat
+ * donc les méthodes get, printstatistique, ... ne donne pas de résultat
  *
  * v4.0
  *  modification realSize et StoredSize  //21-11-2005
@@ -57,8 +57,8 @@ public class ObjectStore4_Async implements ObjectStorage4 {
 
         int id;
         int[] value;
-        int size; // taille rï¿½el du int 
-        int realsize; // taille rï¿½el du byte sans compression 
+        int size; // taille réel du int 
+        int realsize; // taille réel du byte sans compression 
         byte[] rawValue;
 
         CommandQueue(int[] value, int id, int size) {
@@ -74,7 +74,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         }
     }
 
-    // classe chargï¿½e de la consommation de la queue
+    // classe chargée de la consommation de la queue
     class Consummer extends Thread {
 
         ArrayBlockingQueue<CommandQueue> Q;
@@ -119,16 +119,16 @@ public class ObjectStore4_Async implements ObjectStorage4 {
             IdxIO.signalAClosingObjSto();
         }
     }
-    ObjectStorage4 objsto;  // l'objet ï¿½ mettre ï¿½ jour
-    ArrayBlockingQueue<CommandQueue> Q;   // le mï¿½canisme de dï¿½synchronisation
+    ObjectStorage4 objsto;  // l'objet à mettre à jour
+    ArrayBlockingQueue<CommandQueue> Q;   // le mécanisme de désynchronisation
 
     /**
-     *
+     * an objectstore with async behaviour
      */
     public ObjectStore4_Async() {
     }
 
-    /** crï¿½er une nouvelle instance de ObjectStore ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de ObjectStore à partir des données existantes*/
     private ObjectStore4_Async(implementationMode implementation,
             String _pathName, readWriteMode _RW) {  // recharge un gestionnaire
         path = _pathName;
@@ -136,14 +136,14 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         initThread();
     }
 
-    /** crï¿½er une nouvelle instance de ObjectStore */
+    /** créer une nouvelle instance de ObjectStore */
     private ObjectStore4_Async(implementationMode implementation,
             String _pathName, int _maxSize, int _minBigSize) {  //
         path = _pathName;
         createObjectStore(implementation, _pathName, _maxSize, _minBigSize);
     }
 
-    /**  crï¿½e un ObjectStorage de taille 2^maxSize ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée un ObjectStorage de taille 2^maxSize à l'endroit indiqué par le path
      * @param implementation
      * @param path
      * @param maxSize
@@ -174,7 +174,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         objsto = (new ObjectStore4()).create(implementation, _pathName, _maxSize, _size_0);
     }
 
-    private final void initThread() { // n'utiliser que la premiï¿½re fois, ï¿½ la crï¿½ation
+    private final void initThread() { // n'utiliser que la première fois, à la création
         Q = new ArrayBlockingQueue<CommandQueue>(OBJ_STORE_MAX_QUEUE);
         Thread c = (Thread) new Consummer(Q, objsto);
         c.start();
@@ -183,7 +183,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
 
     public final void close() {
         try {
-            CommandQueue cmd = new CommandQueue((byte[]) null, -1, 0);  // -1 est la commande d'arrï¿½t
+            CommandQueue cmd = new CommandQueue((byte[]) null, -1, 0);  // -1 est la commande d'arrét
             System.out.println("Ask for closing Object store");
             Q.put(cmd);
         } catch (Exception e) {
@@ -207,7 +207,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         objsto.printStatistic();
     }
 
-    // pas implï¿½mentï¿½, car en mode ï¿½criture seulement
+    // pas implémenté, car en mode écriture seulement
     public final void printNiceId(int user) {
         //error("printNiceId not implemented");
         objsto.printNiceId(user);
@@ -229,7 +229,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         return objsto.storedSize(user);
     }
 
-    /**  retourne la taille rï¿½el de l'objet sans compression (uniquement en mode 1 passe
+    /**  retourne la taille réel de l'objet sans compression (uniquement en mode 1 passe
      * @param user
      * @return )*/
     public int realSize(int user) {
@@ -251,7 +251,7 @@ public class ObjectStore4_Async implements ObjectStorage4 {
         error("resetStatistic not implemented");
     }
 
-    public final long getSpace() { // calcule en byte l'espace occupï¿½
+    public final long getSpace() { // calcule en byte l'espace occupé
         error("getSpace not implemented");
         return -1;
     }

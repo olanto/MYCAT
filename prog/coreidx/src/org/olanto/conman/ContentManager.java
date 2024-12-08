@@ -86,7 +86,7 @@ public class ContentManager {
 
     }
 
-    /** r�cup�re un contenu type String.
+    /** récupère un contenu type String.
      * @param doc identifiant
      * @return 
      */
@@ -106,7 +106,7 @@ public class ContentManager {
         return null;
     }
 
-    /** r�cup�re un contenu type String.
+    /** récupère un contenu type String.
      * @param doc identifiant
      * @return 
      */
@@ -126,7 +126,7 @@ public class ContentManager {
         return null;
     }
 
-    /** r�cup�re un contenu type String sur un intervalle donn�.
+    /** récupère un contenu type String sur un intervalle donné.
      * @param doc identifiant
      * @param from
      * @param to
@@ -162,7 +162,7 @@ public class ContentManager {
         return "";
     }
 
-    /** r�cup�re un contenu type String.
+    /** récupère un contenu type String.
      * @param docName identifiant
      * @return 
      */
@@ -175,7 +175,7 @@ public class ContentManager {
         return null;
     }
 
-    /** r�cup�re un contenu type Byte.
+    /** récupère un contenu type Byte.
      * @param docName identifiant
      * @return 
      */
@@ -184,7 +184,7 @@ public class ContentManager {
 
     }
 
-    /** r�cup�re un contenu type Byte.
+    /** récupère un contenu type Byte.
      * @param doc identifiant
      * @return 
      */
@@ -199,8 +199,8 @@ public class ContentManager {
         }
     }
 
-    /** r�cu�re le contenu d'un r�pertoire.
-     * @param pathName r�pertoire
+    /** récupère le contenu d'un répertoire.
+     * @param pathName répertoire
      * @param language langage de la collection
      * @param collection nom de la collection
      * @param txt_encoding encodage des textes
@@ -208,14 +208,14 @@ public class ContentManager {
     protected void getFromDirectory(String pathName, String language, String collection, String txt_encoding) {
         File f = new File(pathName);
         if (f.isFile()) {
-            long fdate = f.lastModified(); // date de la derni�re modification
+            long fdate = f.lastModified(); // date de la dernière modification
             if (glue.docstable.IndexThisDocument(pathName, fdate)) {
                 if (pathName.endsWith(".htm") || pathName.endsWith(".txt") || pathName.endsWith(".TXT") || pathName.endsWith(".html") || pathName.endsWith(".xls") || pathName.endsWith(".java") || pathName.endsWith(".sql") || pathName.endsWith(".lzy")) {  // du texte
                     processATextFile(f, pathName, fdate, language, collection, txt_encoding);
                 } else {
                     //onePassIndexdocManyFile(path,fdate);
                 }
-            } else { // on ne fait rien car d�j� charg�
+            } else { // on ne fait rien car déjà chargé
             }
         } else {
             msg("indexdir:" + pathName);

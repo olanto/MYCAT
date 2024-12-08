@@ -23,7 +23,7 @@ package org.olanto.conman.test;
 import org.olanto.conman.*;
 import org.olanto.util.Timer;
 
-/** Test de content manager, cr�ation d'un nouveau content manager
+/** Test de content manager, création d'un nouveau content manager
  * *
  * 
  *

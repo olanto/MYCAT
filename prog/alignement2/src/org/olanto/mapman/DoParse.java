@@ -35,37 +35,56 @@ import static org.olanto.mapman.MapArchiveConstant.SOF;
  * On peut changer le tokenizer en modifiant l'initialisation de WORD_DEF
  * et associant le bon code.<br>
  *
- * On peut penser que chaque client a un mÃ©thode next() et normalise () et dÃ©finir un type
- * associÃ© Ã  un case pour sÃ©lectionner le bon next et normalise (Ã  faire)
+ * On peut penser que chaque client a un méthode next() et normalise () et définir un type
+ * associé à  un case pour sélectionner le bon next et normalise (à  faire)
  *
  */
 public class DoParse {
 
     static final int EOF = -1;
-    // attention les variables sont statiques pour accï¿½lerer mais si des accï¿½s concurrents sont possibles
-    // alors il faut protï¿½ger le parsing
+    // attention les variables sont statiques pour accélerer mais si des accés concurrents sont possibles
+    // alors il faut protéger le parsing
     private ParseSetOfWords DontIndexThis;
+
+    /**
+     *
+     */
     public int nbToken = 0;
 //    public IdxStructure glue;
     /** variable contenant le symbole courant*/
     public  StringBuilder cw = new StringBuilder();
-    /** la source de caractï¿½re ï¿½ parser */
+    /** la source de caractère à parser */
     public  Reader in;
     /** indique si la fin du fichier est atteinte */
     public  boolean EOFflag = true;
-    /** posistion dans la source de caractï¿½re */
+    /** posistion dans la source de caractère */
     public  int poschar = 0;
     
     // supporte pas la concurrence
+
+    /**
+     *
+     */
     public static boolean acceptedToken = true; // pour le Tokeniser
+
+    /**
+     *
+     */
     public static boolean conceptFound = false; // pour le Tokeniser attention ne supporte pas la concurrence
+
+    /**
+     *
+     */
     public static boolean wordFound = false; // pour le Tokeniser attention ne supporte pas la concurrence
+
+    /**
+     *
+     */
     public static boolean wordExternal = false; // pour le Tokeniser attention ne supporte pas la concurrence
 
-    /** Crï¿½e un analyseur lexical. sur la source (Reader) avec la liste de mots
-     * ï¿½ ne pas indexer SOF. Se place sur la premiï¿½re occurence de la source
-     * @param s chaï¿½ne de caractï¿½res ï¿½ parser
-     * @param SOF la liste de mots ï¿½ ne pas indexer
+    /** crée un analyseur lexical. sur la source (Reader) avec la liste de mots
+     * à ne pas indexer SOF. Se place sur la première occurence de la source
+     * @param s chaîne de caractères à parser
      */
     public DoParse(String s) {
         //msg("doparse:"+s);
@@ -87,12 +106,13 @@ public class DoParse {
 
 
 
-    /** utilise ce parseur pour rï¿½cupï¿½rer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** utilise ce parseur pour récupérer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+
+     * @return 
      *
      */
-    synchronized public final String[] tokenizeString() {  // utilisï¿½ par QL
+    synchronized public final String[] tokenizeString() {  // utilisé par QL
         int MAXWORD = 1000;
         String word;
         int lastscan = 0, n;

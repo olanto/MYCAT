@@ -32,9 +32,20 @@ public class AlignService {
     private static Timer t1 = new Timer("global time");
     private static BiSentence d;
 
+    /**
+     *
+     */
     public AlignService() {
     }
 
+    /**
+     *
+     * @param fileSO
+     * @param fileTA
+     * @param langSO
+     * @param langTA
+     * @return
+     */
     public static IntMap getAlign(String fileSO, String fileTA, String langSO, String langTA) {
 
 //        id = new IdxStructure(); // indexeur vide

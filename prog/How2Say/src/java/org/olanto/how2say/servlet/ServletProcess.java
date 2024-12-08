@@ -18,16 +18,33 @@ import org.olanto.mycat.tmx.common.LangMap;
 import org.olanto.senseos.SenseOS;
 
 /**
- *
- * @author simple
+ * Service de la servlet
  */
 public class ServletProcess {
 
+    /**
+     *
+     */
     public static String listLang = "NO LANG";
+
+    /**
+     *
+     */
     public static boolean initOK = false;
+
+    /**
+     *
+     */
     public static boolean verboseContent = true;
+
+    /**
+     *
+     */
     public static boolean useCache = false;
 
+    /**
+     *
+     */
     public static void init() {
         if (!initOK) {
 
@@ -45,6 +62,13 @@ public class ServletProcess {
         }
     }
 
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     public static void processQery(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         long starttime = System.currentTimeMillis();
@@ -79,6 +103,13 @@ public class ServletProcess {
         }
     }
 
+    /**
+     *
+     * @param query
+     * @param langso
+     * @param langta
+     * @return
+     */
     public static String getQueryForm(String query, String langso, String langta) {
         StringBuilder s = new StringBuilder("");
         // heades
@@ -96,6 +127,13 @@ public class ServletProcess {
         return s.toString();
     }
 
+    /**
+     *
+     * @param name
+     * @param options
+     * @param languageSelect
+     * @return
+     */
     public static String buildSelector(String name, String[] options, String languageSelect) {
         String res = "<select name=\"" + name + "\">";
         for (int i = 0; i < options.length; i++) {
@@ -106,6 +144,12 @@ public class ServletProcess {
         return res;
     }
 
+    /**
+     *
+     * @param selectorName
+     * @param selected
+     * @return
+     */
     public static String buildLangSelector(String selectorName, String selected) {
         try {
             String[] languages = null;
@@ -118,6 +162,15 @@ public class ServletProcess {
         return "<p>ERROR</p>";
     }
 
+    /**
+     *
+     * @param action
+     * @param typeNode
+     * @param request
+     * @param session
+     * @param response
+     * @return
+     */
     public static String query(
             String action,
             String typeNode,
@@ -180,6 +233,9 @@ CacheQuery.info();
      * **********************************
      *
      * OUT PRE
+     * @param a
+     * @param typeNode
+     * @return 
      */
     public static String outPre(String a, String typeNode) {
         StringBuffer out = new StringBuffer("");
@@ -214,6 +270,9 @@ CacheQuery.info();
      * **********************************
      *
      * OUT POST
+     * @param a
+     * @param typeNode
+     * @return 
      */
     public static String outPost(String a, String typeNode) {
         StringBuffer out = new StringBuffer("");

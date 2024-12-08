@@ -23,7 +23,7 @@ package org.olanto.idxvli.ql.test;
 import org.olanto.idxvli.*;
 import org.olanto.util.Timer;
 
-/** Test de l'indexeur, cr�ation d'un nouvel index
+/** Test de l'indexeur, création d'un nouvel index
  * <p>
  * 
  *
@@ -40,9 +40,9 @@ public class CreateIndexForTest1 {
     public static void main(String[] args) {
 
         id = new IdxStructure("NEW", new ConfigurationQL());
-        //id.indexdir("C:/OMC_corpus/BISD/S02");// indexation du dossier sp�cifi�
-        //id.indexdir("C:/OMC_corpus/");// indexation du dossier sp�cifi�
-        id.indexdir("C:/AAA/RECIPE/DOC/");// indexation du dossier sp�cifi�
+        //id.indexdir("C:/OMC_corpus/BISD/S02");// indexation du dossier spécifié
+        //id.indexdir("C:/OMC_corpus/");// indexation du dossier spécifié
+        id.indexdir("C:/AAA/RECIPE/DOC/");// indexation du dossier spécifié
         id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();

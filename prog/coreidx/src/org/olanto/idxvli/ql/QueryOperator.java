@@ -62,7 +62,7 @@ public class QueryOperator {
 //        showVector(tosearch);
         if (tosearch == null || tosearch.length == 0) {
             return new QRes(null);
-        } // rien � chercher
+        } // rien à chercher
         if (tosearch.length == 1) {
             return getDocforW(z, tosearch[0], rankType);
         } // seulement un terme
@@ -123,7 +123,7 @@ public class QueryOperator {
     }
 
     /**
-     * cherche les documents contenant le terme index� par n
+     * cherche les documents contenant le terme indexé par n
      * @return vecteur de documents
      * @param z index
      * @param n terme
@@ -138,7 +138,7 @@ public class QueryOperator {
     }
 
     /**
-     * cherche les documents contenant le terme index� par n
+     * cherche les documents contenant le terme indexé par n
      * @return vecteur de documents
      * @param z index
      * @param n terme
@@ -166,7 +166,7 @@ public class QueryOperator {
                 //msg("log(df/ds)+1:"+((float)Math.log((double)occ[i]/(double)z.docstable.getSize(doc[i]))+1));
                 // old wgt[i]=((float)Math.log((double)occ[i]/(double)z.docstable.getSize(doc[i]))+1)*idf;
 
-                // df/ds * idf   // peut �tre optimis� pour faire toute les divisions des ds à la fin des requ�tes
+                // df/ds * idf   // peut être optimisé pour faire toute les divisions des ds à la fin des requêtes
                 //msg(""+(float)occ[i]/(float)z.docstable.getSize(doc[i]));
                 wgt[i] = (float) occ[i] / (float) z.docstable.getSize(doc[i]) * idf;  //new 
             }
@@ -200,13 +200,13 @@ public class QueryOperator {
 //        msg("  occ:"+occ.length);
 //        showVector(occ);
 
-        float idf = (float) Math.log((double) z.lastUpdatedDoc / (double) nbdoc);  //calcule idf !! cette formule est simplifi�e par rapport a la BM25 mais il n'y pas de vrai difff�rence (test� sur la collection ENG de clef) 
-        //float idf=(float)Math.log(((double)z.lastUpdatedDoc-(double)nbdoc+0.5)/((double)nbdoc+0.5));  //calcule idf , BM25 non simplifi�e
+        float idf = (float) Math.log((double) z.lastUpdatedDoc / (double) nbdoc);  //calcule idf !! cette formule est simplifiée par rapport a la BM25 mais il n'y pas de vrai diffférence (testé sur la collection ENG de clef) 
+        //float idf=(float)Math.log(((double)z.lastUpdatedDoc-(double)nbdoc+0.5)/((double)nbdoc+0.5));  //calcule idf , BM25 non simplifiée
 //        msg("idf:"+idf);
         float[] wgt = new float[nbdoc];
 
 
-        //!!! doit �tre mis en constante pour optimiser !!!!
+        //!!! doit être mis en constante pour optimiser !!!!
         float avgl = 1000;
         if (z.cntpos != 0) {
             avgl = z.cntpos / z.lastUpdatedDoc; // longueur moyenne des documents
@@ -260,13 +260,13 @@ public class QueryOperator {
 //        msg("  occ:"+occ.length);
 //        showVector(occ);
 
-        //float idf = (float) Math.log((double) z.lastUpdatedDoc / (double) nbdoc);  //calcule idf !! cette formule est simplifi�e par rapport a la BM25 mais il n'y pas de vrai difff�rence (test� sur la collection ENG de clef) 
-        float idf = (float) Math.log(((double) z.resQ1.length - (double) nbdoc + 0.5) / ((double) nbdoc + 0.5));  //calcule idf , BM25 non simplifi�e
+        //float idf = (float) Math.log((double) z.lastUpdatedDoc / (double) nbdoc);  //calcule idf !! cette formule est simplifiée par rapport a la BM25 mais il n'y pas de vrai diffférence (testé sur la collection ENG de clef) 
+        float idf = (float) Math.log(((double) z.resQ1.length - (double) nbdoc + 0.5) / ((double) nbdoc + 0.5));  //calcule idf , BM25 non simplifiée
 //        msg("idf:"+idf);
         float[] wgt = new float[nbdoc];
 
 
-        //!!! doit �tre mis en constante pour optimiser !!!!
+        //!!! doit être mis en constante pour optimiser !!!!
         float avgl = 1000;
         if (z.cntpos != 0) {
             avgl = z.cntpos / z.lastUpdatedDoc; // longueur moyenne des documents
@@ -324,22 +324,22 @@ public class QueryOperator {
         int[] occ = z.indexread.getvDoc(n, nbdoc, nbdoc);  // les occurences
 //        msg("  occ:"+occ.length);
 //        showVector(occ);
-        //int totalCorpus=z.resQ1.length;  // recalcule la taille du corpus ramen� au r�sultat de la premi�re question
-        int totalCorpus = z.lastUpdatedDoc;  // recalcule la taille du corpus ramen� au r�sultat de la premi�re question
-        //int[] docInQ1=andVector(z.resQ1,doc); // restreint la r�ponse � Q1        
+        //int totalCorpus=z.resQ1.length;  // recalcule la taille du corpus ramenè au résultat de la première question
+        int totalCorpus = z.lastUpdatedDoc;  // recalcule la taille du corpus ramenè au résultat de la première question
+        //int[] docInQ1=andVector(z.resQ1,doc); // restreint la réponse à Q1        
         int[] docInQ1 = copyVector(nbdoc, z.indexread.getReferenceOnDoc(n));
-        int nbdocInQ1 = docInQ1.length; // nb de r�ponses restreint  � Q1
+        int nbdocInQ1 = docInQ1.length; // nb de réponses restreint  à Q1
 
-        float idf = (float) Math.log((double) totalCorpus / (double) nbdocInQ1);  //calcule idf !! cette formule est simplifi�e pas test�e encore dans le cas restreint
-        //float idf=(float)Math.log(((double)totalCorpus-(double)nbdocInQ1+0.5)/((double)nbdocInQ1+0.5));  //calcule idf , BM25 non simplifi�e
+        float idf = (float) Math.log((double) totalCorpus / (double) nbdocInQ1);  //calcule idf !! cette formule est simplifiée pas testée encore dans le cas restreint
+        //float idf=(float)Math.log(((double)totalCorpus-(double)nbdocInQ1+0.5)/((double)nbdocInQ1+0.5));  //calcule idf , BM25 non simplifiée
 //        msg("idf:"+idf);
         float[] wgt = new float[nbdocInQ1];
 
 
-        //!!! doit �tre mis en constante pour optimiser !!!!
+        //!!! doit être mis en constante pour optimiser !!!!
         float avgl = 1000;
         if (z.cntpos != 0) {
-            avgl = z.lastUpdatedDoc / totalCorpus; // longueur moyenne des documents, on admet que c'est la m�me
+            avgl = z.lastUpdatedDoc / totalCorpus; // longueur moyenne des documents, on admet que c'est la même
         }//       msg("z.cntpos:"+z.cntpos);
 //        msg("z.lastUpdatedDoc:"+z.lastUpdatedDoc);
         float k1 = 2.0f;
@@ -374,7 +374,7 @@ public class QueryOperator {
         return new QRes(docInQ1, wgt);
     }
 
-    /** cherche les documents contenant le terme w1 et le terme w2 ( sans limite sur le r�sultat)
+    /** cherche les documents contenant le terme w1 et le terme w2 ( sans limite sur le résultat)
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
@@ -384,15 +384,15 @@ public class QueryOperator {
         return getDocforWandW(z, w1, w2, Integer.MAX_VALUE);
     } // no limit
 
-    /** cherche les documents contenant le terme w1 et le terme w2 (limite sur le r�sultat)
+    /** cherche les documents contenant le terme w1 et le terme w2 (limite sur le résultat)
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
-     * @param maxResult  limite la taille de la r�ponse
+     * @param maxResult  limite la taille de la réponse
      * @return vecteur de documents
      */
     public static final QRes getDocforWandW(IdxStructure z, String w1, String w2, int maxResult) { // migrate
-        // initialise les r�f�rences locales � l'index
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
         //
         int n1 = z.getIntForW(w1);
@@ -403,13 +403,13 @@ public class QueryOperator {
             indexread.lockForBasic(n1);
             indexread.lockForBasic(n2);
 
-            // zone prot�g�e pour n1 et n2
+            // zone protégée pour n1 et n2
             /**time*/ // TimerNano t=new TimerNano(w1+" and "+w2,true);
             int[] res = andVector(indexread.getReferenceOnDoc(n1), indexread.getNbDoc(n1),
                     indexread.getReferenceOnDoc(n2), indexread.getNbDoc(n2));
             if (res.length > maxResult) {
                 res = copyVector(maxResult, res);
-            } // tronque le r�sultat
+            } // tronque le résultat
             /**time*/ // t.stop(false);
             /**time*/ // msg("res length "+res.length);
             // fin de zone
@@ -423,7 +423,7 @@ public class QueryOperator {
     }
 
     /** cherche les documents contenant le terme w1 proche du terme terme w2.
-     * La distance est fix�e par la constante nearDistance de IdxStructure
+     * La distance est fixée par la constante nearDistance de IdxStructure
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
@@ -433,16 +433,16 @@ public class QueryOperator {
         return getDocforWnearW(z, w1, w2, Integer.MAX_VALUE, NEAR_DISTANCE);
     } // no limit
 
-    /** cherche les documents contenant le terme w1 proche du terme terme w2 en fixant la proximit�
+    /** cherche les documents contenant le terme w1 proche du terme terme w2 en fixant la proximité
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
-     * @param maxResult  limite max du r�sultat
-     * @param nearvalue  limite max s�parant w1 et w2
+     * @param maxResult  limite max du résultat
+     * @param nearvalue  limite max séparant w1 et w2
      * @return vecteur de documents
      */
     public static final QRes getDocforWnearW(IdxStructure z, String w1, String w2, int maxResult, int nearvalue) {
-        // initialise les r�f�rences locales � l'index
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
         //
         int n1 = z.getIntForW(w1);
@@ -454,7 +454,7 @@ public class QueryOperator {
         if ((n1 != NOT_FOUND) & (n2 != NOT_FOUND)) {
             indexread.lockForFull(n1);
             indexread.lockForFull(n2);
-            // zone prot�g�e pour n1 et n2
+            // zone protégée pour n1 et n2
 
             //TimerNano t = new TimerNano(w1+" near "+w2,true);
             if (indexread.getNbDoc(n1) > indexread.getNbDoc(n2)) {  // permute n1,n2 , ATTENTION LES LIBELLES W1,W2 NE SONT PAS PERMUTES
@@ -505,7 +505,7 @@ public class QueryOperator {
                             pc2++;
                         }
                     } // while
-//                    if (nearTest(z.getWposition(n1,wc1),z.getWposition(n2,wc2),nearvalue)) { // code non optimis� remplac� par le while audessus!
+//                    if (nearTest(z.getWposition(n1,wc1),z.getWposition(n2,wc2),nearvalue)) { // code non optimisé remplacé par le while audessus!
 //                        doc[id] = r1[wc1]; // the first operand stay the reference for occurrences
 //                        id++;
 //                    }
@@ -532,7 +532,7 @@ public class QueryOperator {
         }
     }
 
-    /** cherche les documents contenant le terme w2 succ�de au terme w1.
+    /** cherche les documents contenant le terme w2 succède au terme w1.
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
@@ -542,11 +542,11 @@ public class QueryOperator {
         return getDocforWnextW(z, w1, w2, Integer.MAX_VALUE);
     } // no limit
 
-    /** cherche les documents contenant le terme w2 succ�de au terme w1 (en limitant le r�sultat)
+    /** cherche les documents contenant le terme w2 succède au terme w1 (en limitant le résultat)
      * @param z  index
      * @param w1  terme1
      * @param w2  terme1
-     * @param maxResult  limite max du r�sultat
+     * @param maxResult  limite max du résultat
      * @return vecteur de documents
      */
     public final static QRes getDocforWnextW(IdxStructure z, String w1, String w2, int maxResult) {
@@ -555,16 +555,16 @@ public class QueryOperator {
         return getDocforWnextW(z, n1, n2, maxResult);
     }
 
-    /** cherche les documents contenant le terme n2 succ�de au terme n1 (en limitant le r�sultat)
+    /** cherche les documents contenant le terme n2 succède au terme n1 (en limitant le résultat)
      * @param z  index
      * @param n1  terme1
      * @param n2  terme1
-     * @param maxResult  limite max du r�sultat
+     * @param maxResult  limite max du résultat
      * @return vecteur de documents
      */
     public final static QRes getDocforWnextW(IdxStructure z, int n1, int n2, int maxResult) {  // modification 8.5.2006 JG
-        // doit �tre optimis� pour ne pas travailler sur les copies comme le NEAR !!!!!
-        // initialise les r�f�rences locales � l'index
+        // doit être optimisé pour ne pas travailler sur les copies comme le NEAR !!!!!
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
 
         int pc1, pc2, pl1, pl2;
@@ -572,7 +572,7 @@ public class QueryOperator {
         if ((n1 != NOT_FOUND) & (n2 != NOT_FOUND)) {
             indexread.lockForFull(n1);
             indexread.lockForFull(n2);
-            // zone prot�g�e pour n1 et n2
+            // zone protégée pour n1 et n2
 
             //TimerNano t = new TimerNano(n1 + " next " + n2, true);
             int id = 0;
@@ -593,9 +593,9 @@ public class QueryOperator {
                 //System.out.println("merge2 "+wc1+", "+r1[wc1]+", "+wc2+", "+r2[wc2]);
                 if (r1[wc1] == r2[wc2]) { // and ok
                     p1 = z.getWPosLength(n1, wc1);
-                    pl1 = p1.pos + p1.length;// doit �tre optimis� pour ne pas travailler sur les copies
+                    pl1 = p1.pos + p1.length;// doit être optimisé pour ne pas travailler sur les copies
                     p2 = z.getWPosLength(n2, wc2);
-                    pl2 = p2.pos + p2.length;// doit �tre optimis� pour ne pas travailler sur les copies
+                    pl2 = p2.pos + p2.length;// doit être optimisé pour ne pas travailler sur les copies
                     pc1 = p1.pos;
                     pc2 = p2.pos;
                     while (true) { // initialize a new merge sort  r1 and r2 must be ordered !!!!!
@@ -636,7 +636,7 @@ public class QueryOperator {
         }
     }
 
-    /** cherche les documents contenant la s�quence de termes w1,w2,w3
+    /** cherche les documents contenant la séquence de termes w1,w2,w3
      * @param z  index
      * @param w1 terme1
      * @param w2 terme2
@@ -651,7 +651,7 @@ public class QueryOperator {
         return getDocforWseqW3(z, n1, n2, n3);
     }
 
-    /** cherche les documents contenant la s�quence de termes n1,n2,n3
+    /** cherche les documents contenant la séquence de termes n1,n2,n3
      * @param z  index
      * @param n1 terme1
      * @param n2 terme2
@@ -659,7 +659,7 @@ public class QueryOperator {
      * @return vecteur de documents
      */
     public static final int[] getDocforWseqW3(IdxStructure z, int n1, int n2, int n3)  {
-        // initialise les r�f�rences locales � l'index
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
         int pc1, pc2, pl1, pl2;
         //  PosLength p1, p2;
@@ -671,7 +671,7 @@ public class QueryOperator {
             int cid2 = indexread.getCacheId(n2);
             indexread.lockForFull(n3);
             int cid3 = indexread.getCacheId(n3);
-             // zone prot�g�e
+             // zone protégée
 
             //TimerNano t=new TimerNano(" seq3 "+n1+","+n2+","+n3,true);
             int id = 0;
@@ -743,7 +743,7 @@ public class QueryOperator {
         }
     }
 //    public static final int[] getDocforWseqW3(IdxStructure z, int n1, int n2, int n3) {
-//        // initialise les r�f�rences locales � l'index
+//        // initialise les références locales à l'index
 //        CacheRead_Opti indexread = z.indexread;
 //        int pc1, pc2, pl1, pl2;
 //        PosLength p1, p2;
@@ -751,7 +751,7 @@ public class QueryOperator {
 //            indexread.lockForFull(n1);
 //            indexread.lockForFull(n2);
 //            indexread.lockForFull(n3);
-//            // zone prot�g�e
+//            // zone protégée
 //
 //            /**time*/ //TimerNano t=new TimerNano(" seq3 "+n1+","+n2+","+n3,true);
 //            int id = 0;
@@ -812,8 +812,8 @@ public class QueryOperator {
 //        }
 //    }
 
-    /* seule cette m�thode est optimis�e pour ne pas copier des vecteurs mais travailler sur le cache !*/
-    /** pour le r�f�renceur, s�quence sur 6 termes
+    /* seule cette méthode est optimisée pour ne pas copier des vecteurs mais travailler sur le cache !*/
+    /** pour le référenceur, séquence sur 6 termes
      * @param z  index
      * @param n1 terme1
      * @param n2 terme2
@@ -824,7 +824,7 @@ public class QueryOperator {
      * @return vecteur de documents
      */
     public static final int[] getDocforWseqW6(IdxStructure z, int n1, int n2, int n3, int n4, int n5, int n6) {
-        // initialise les r�f�rences locales � l'index
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
         int pc1, pc2, pl1, pl2;
         //  PosLength p1, p2;
@@ -842,7 +842,7 @@ public class QueryOperator {
             int cid5 = indexread.getCacheId(n5);
             indexread.lockForFull(n6);
             int cid6 = indexread.getCacheId(n6);
-            // zone prot�g�e
+            // zone protégée
 
             //TimerNano t=new TimerNano(" seq3 "+n1+","+n2+","+n3,true);
             int id = 0;
@@ -917,14 +917,14 @@ public class QueryOperator {
         }
     }
 
-    /* seule cette m�thode est optimis�e pour ne pas copier des vecteurs mais travailler sur le cache !*/
-    /** pour le r�f�renceur, s�quence sur n termes
+    /* seule cette méthode est optimisée pour ne pas copier des vecteurs mais travailler sur le cache !*/
+    /** pour le référenceur, séquence sur n termes
      * @param z  index
      * @param n vecteur de termes
      * @return vecteur de documents
      */
     public static final QRes getDocforWseqWN(IdxStructure z, int[] n) {
-        // initialise les r�f�rences locales � l'index
+        // initialise les références locales à l'index
         CacheRead_Opti indexread = z.indexread;
         int pc1, pc2, pl1, pl2;
         PosLength p1, p2;
@@ -945,9 +945,9 @@ public class QueryOperator {
             cid[i] = indexread.getCacheId(n[i]);
         }
         int n1 = n[0];
-        int cid1 = cid[0];   // optimise les r�f�rences
+        int cid1 = cid[0];   // optimise les références
         int n2 = n[1];
-        int cid2 = cid[1];   // optimise les r�f�rences
+        int cid2 = cid[1];   // optimise les références
         //TimerNano t=new TimerNano(" seq3 "+n1+","+n2+","+n3,true);
         int id = 0;
         int r1[] = indexread.getReferenceOnDoc(n1);
@@ -1022,10 +1022,10 @@ public class QueryOperator {
     }
 
     /**
-     * �limine les documents invalides (effac�s).
+     * élimine les documents invalides (effacés).
      * @return vecteur de documents valides
      * @param docstable le gestionnaire de corpus
-     * @param res le vecteur de documens � nettoyer
+     * @param res le vecteur de documens à nettoyer
      */
     public static final int[] removeInvalid(DocumentManager docstable, int[] res) {
         // filtrage des invalides

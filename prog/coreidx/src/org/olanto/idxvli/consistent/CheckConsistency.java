@@ -82,7 +82,7 @@ public class CheckConsistency {
       }
 
     /**
-     *
+     * create a file associated with a mark
      */
     public void markSomeChange() {
         if (IdxConstant.CHECK_CONSISTENT) {
@@ -98,7 +98,7 @@ public class CheckConsistency {
     }
 
     /**
-     *
+     * clear the mark (delete file)
      */
     public void clearMark() {
         if (IdxConstant.CHECK_CONSISTENT) {

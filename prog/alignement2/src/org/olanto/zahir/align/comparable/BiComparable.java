@@ -55,18 +55,103 @@ import org.olanto.zahir.align.SimInformation;
  */
 public class BiComparable {
 
+    /**
+     *
+     */
     public String encoding;
-    public String fromfile, tofile, savefile;
-    public DocumentSentence fromdoc, todoc;
-    public int fromnblines, tonblines;
+
+    /**
+     *
+     */
+    public String fromfile,
+
+    /**
+     *
+     */
+    tofile,
+
+    /**
+     *
+     */
+    savefile;
+
+    /**
+     *
+     */
+    public DocumentSentence fromdoc,
+
+    /**
+     *
+     */
+    todoc;
+
+    /**
+     *
+     */
+    public int fromnblines,
+
+    /**
+     *
+     */
+    tonblines;
+
+    /**
+     *
+     */
     public int countTMX = 0;
+
+    /**
+     *
+     */
     public boolean verbose = true;
+
+    /**
+     *
+     */
     public boolean writefile = true;
+
+    /**
+     *
+     */
     public LexicalTranslation s2t;
+
+    /**
+     *
+     */
     public CollectAndSave saveFile;
-    public int countalign, countloop1, iddoc;
+
+    /**
+     *
+     */
+    public int countalign,
+
+    /**
+     *
+     */
+    countloop1,
+
+    /**
+     *
+     */
+    iddoc;
+
+    /**
+     *
+     */
     public long counttested;
 
+    /**
+     *
+     * @param iddoc
+     * @param _verbose
+     * @param fromfile
+     * @param tofile
+     * @param encoding
+     * @param limit
+     * @param _s2t
+     * @param saveFile
+     * @param writefile
+     */
     public BiComparable(int iddoc, boolean _verbose, String fromfile, String tofile, String encoding,
             float limit, LexicalTranslation _s2t, CollectAndSave saveFile, boolean writefile) {
         verbose = _verbose;
@@ -89,6 +174,10 @@ public class BiComparable {
 
     }
 
+    /**
+     *
+     * @param limit
+     */
     public void scanfromGetPair3(float limit) {
         counttested = 0;
         SimInformation[] resAlign = new SimInformation[fromnblines];
@@ -138,6 +227,9 @@ public class BiComparable {
 
     }
 
+    /**
+     *
+     */
     public void getInfo() {
         msg("___________________________________");
         msg("From:" + fromfile + " #line:" + fromnblines);
@@ -145,6 +237,10 @@ public class BiComparable {
         msg("One-one:" + countTMX + " - " + (countTMX * 100) / Math.min(fromnblines, tonblines) + " %");
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInformation() {
         return fromfile + "\t#line:\t" + fromnblines + "\tTo:\t" + tofile + "\t#line:\t" + tonblines + "\tOne-one:\t" + countTMX + "\t-\t" + (countTMX * 100) / Math.min(fromnblines, tonblines) + "\t%";
     }

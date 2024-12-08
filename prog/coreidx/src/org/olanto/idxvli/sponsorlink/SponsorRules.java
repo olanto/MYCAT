@@ -64,7 +64,7 @@ public class SponsorRules {
                         for (int j = 0; j < links.length; j++) {
                             links[j] = items[j + 1];
                         }
-                        sponsors.put(items[0], links);  // on doit ajouter du code pour v�rifier les doublons !!!!!!
+                        sponsors.put(items[0], links);  // on doit ajouter du code pour vérifier les doublons !!!!!!
                     } else {
                         msg("ERROR in line " + count + " : " + w);
                     }
@@ -98,7 +98,7 @@ public class SponsorRules {
         SponsorRules ar = new SponsorRules("C:/JG/VLI_RW/data/urlsponsor.txt");
         showVector(ar.eval("java"));
         showVector(ar.eval("informatique"));
-        showVector(ar.eval("m�decine"));
+        showVector(ar.eval("médecine"));
         showVector(ar.eval("kjlkjlk"));
 
     }

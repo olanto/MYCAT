@@ -32,10 +32,10 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public interface ObjectStorage4 {
 
-    /**  cr�e un ObjectStorage de taille 2^maxSize � l'endroit indiqu� par le path,
-     *  ObjectStore ne prend en consid�ration que des objets de la minBigSize  exprim� (2^n) en byte,
-     *  Exemple create("ici",20,32) cr�e 2^20 id avec un stockage minimum de 32 bytes au premier niveau soit 8 entiers,
-     *  les objets plus petits (16) sont stock� dans une structure simplifi�e
+    /**  crée un ObjectStorage de taille 2^maxSize à l'endroit indiqué par le path,
+     *  ObjectStore ne prend en considération que des objets de la minBigSize  exprimé (2^n) en byte,
+     *  Exemple create("ici",20,32) crée 2^20 id avec un stockage minimum de 32 bytes au premier niveau soit 8 entiers,
+     *  les objets plus petits (16) sont stocké dans une structure simplifiée
      *
      *  modification realSize et StoredSize  //21-11-2005
      * @param implementation
@@ -46,7 +46,7 @@ public interface ObjectStorage4 {
      */
     public ObjectStorage4 create(implementationMode implementation, String path, int maxSize, int minBigSize);
 
-    /**  ouvre un ObjectStorage  � l'endroit indiqu� par le path
+    /**  ouvre un ObjectStorage  à l'endroit indiqué par le path
      * @param implementation
      * @param path
      * @param _RW
@@ -56,37 +56,37 @@ public interface ObjectStorage4 {
     /**  ferme un ObjectStorage  (et sauve les modifications*/
     public void close();
 
-    /**  �crit des bytes a cet objet, si 0 = OK , l'identifiant est impos� de l'exterieur pour le premier
-    realLength indique la longeur r�el de l'objet sans compression, l'objet doit d�j? ?tre compress� si l'on veut le compresser
+    /**  écrit des bytes a cet objet, si 0 = OK , l'identifiant est imposé de l'exterieur pour le premier
+    realLength indique la longeur réel de l'objet sans compression, l'objet doit déjà être compressé si l'on veut le compresser
      * @param b
      * @param user
      * @param realLength
      * @return */
     public int write(byte[] b, int user, int realLength);
 
-    /**  retourne l'objet stock� completement,si null = erreu
+    /**  retourne l'objet stocké completement,si null = erreu
      * @param user
      * @return r*/
     public byte[] read(int user);
 
-    /**  retourne l'objet stock� partiellement de from � to,si null = erreur
+    /**  retourne l'objet stocké partiellement de from .. to,si null = erreur
      * @param user
      * @param from
      * @param to
      * @return */
     public byte[] read(int user, int from, int to);
 
-    /**  retourne la taille stock�e de l'obje
+    /**  retourne la taille stockée de l'obje
      * @param user
      * @return t*/
     public int storedSize(int user);
 
-    /**  retourne la taille r�el de l'objet sans compressio
+    /**  retourne la taille réel de l'objet sans compressio
      * @param user
      * @return n*/
     public int realSize(int user);
 
-    /**  lib�re un id (ceux vus par les utilisateurs
+    /**  libére un id (ceux vus par les utilisateurs
      * @param user)*/
     public void releaseId(int user);
 

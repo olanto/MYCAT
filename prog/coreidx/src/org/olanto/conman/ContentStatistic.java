@@ -54,21 +54,21 @@ public class ContentStatistic {
     }
 
     /**
-     *
+     * get statistics on documents
      */
     public void document() {
         glue.docstable.printStatistic();
     }
 
     /**
-     *
+     * get statistics on contents
      */
     public void content() {
         glue.IO.printContentStatistic();
     }
 
     /**
-     *
+     * get statistics on size contents
      */
     public void contentSize() {
         msg("STATISTICS content size:");

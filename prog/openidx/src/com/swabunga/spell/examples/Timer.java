@@ -29,10 +29,10 @@ private long start;
 private String activity;
 
 /**
-* crï¿½e un chronomï¿½tre. Et puis le dÃ©marre et affiche dans 
-* la console le commentaire associÃ©
+* crée un chronomètre. Et puis le démarre et affiche dans 
+* la console le commentaire associé
 * 
-* @param s le commentaire associÃ© au chrono. 
+* @param s le commentaire associé au chrono. 
 */
   public Timer(String s){
 	   activity=s;
@@ -41,8 +41,8 @@ private String activity;
 	}
 
 /**
-* stope le chronomÃ¨tre. Et affiche dans la console le commentaire associÃ©
-* et le temps mesurÃ© en milliseconde
+* stope le chronomètre. Et affiche dans la console le commentaire associé
+* et le temps mesuré en milliseconde
 * 
 */ 
 
@@ -51,8 +51,8 @@ private String activity;
 		 System.out.println("STOP: "+activity+" - "+start+" ms");
 	}
    /**
-    * redÃ©marre le chronomÃ¨tre. Et affiche dans la console le commentaire associÃ©
-    * @param s le commentaire associÃ© avec le chronomÃ¨tre
+    * redémarre le chronomètre. Et affiche dans la console le commentaire associé
+    * @param s le commentaire associé avec le chronomètre
     */ 
 	public void  restart(String s) {
 	   activity=s;

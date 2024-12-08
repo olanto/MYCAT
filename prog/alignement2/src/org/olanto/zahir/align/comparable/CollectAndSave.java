@@ -35,19 +35,30 @@ import org.olanto.zahir.align.SimInformation;
  */
 public class CollectAndSave {
 
-
+    /**
+     *
+     */
     public String savefile;
     static OutputStreamWriter out;
     private int countline = 0;
     private int countfile = 0;
 
+    /**
+     *
+     * @param savefile
+     */
     public CollectAndSave(String savefile) {
  
         this.savefile = savefile;
     
     }
 
- 
+    /**
+     *
+     * @param score
+     * @param from
+     * @param to
+     */
     public synchronized void  save(SimInformation score, String from, String to) {
         try {
             if (countline % 100000 == 0) {
@@ -74,12 +85,18 @@ public class CollectAndSave {
 
     }
 
+    /**
+     *
+     */
     public void reset(){
         close();
        countline = 0;
        countfile = 0;
     }
     
+    /**
+     *
+     */
     public void close(){
         if (out!=null){
         try {

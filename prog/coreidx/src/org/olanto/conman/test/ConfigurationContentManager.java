@@ -30,13 +30,13 @@ import static org.olanto.conman.ContentConstant.*;
  */
 public class ConfigurationContentManager implements ContentInit {
 
-    /** crï¿½e l'attache de cette classe.
+    /** crée l'attache de cette classe.
      */
     public ConfigurationContentManager() {
     }
 
     /** initialisation permanante des constantes.
-     * Ces constantes choisies dï¿½finitivement pour toute la durï¿½e de la vie de l'index.
+     * Ces constantes choisies définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -61,7 +61,7 @@ public class ConfigurationContentManager implements ContentInit {
     }
 
     /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies dï¿½finitivement pour toute la durï¿½e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration() {
 
@@ -78,6 +78,6 @@ public class ConfigurationContentManager implements ContentInit {
 //        SetObjectStoreRoot(root2,2);
 //        SetObjectStoreRoot(root3,3);
 
-        // paramï¿½tre de fonctionnement
+        // paramètre de fonctionnement
     }
 }

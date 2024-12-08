@@ -28,15 +28,15 @@ import static org.olanto.idxvli.IdxEnum.*;
 
 /**
  *
- * utilise la struture standard des RandomAccessFile (version de r�f�rence pour comparer la performance).
+ * utilise la struture standard des RandomAccessFile (version de référence pour comparer la performance).
  * 
 
  *
  *
- * dans cette impl�mentation:
+ * dans cette implémentation:
  * <pre> 
  *  - NOMAP: utilise les randomfile
- *  - CACHE et FULL sont impl�ment�s avec les IO_Map
+ *  - CACHE et FULL sont implémentés avec les IO_Map
  *
  * </pre>
  */
@@ -66,7 +66,7 @@ public class MappedFile implements DirectIOFile {
             int _slice2n, long _maxLength) throws IOException {
         mapType = _mapType;
         RW = _RW;
-        currentPosition = 0;   // la premi�re lecture ou �criture doit se faire � 0 si aucun seek n'est fait
+        currentPosition = 0;   // la première lecture ou écriture doit se faire à 0 si aucun seek n'est fait
         file = new RandomAccessFile(fileName, RW.name());
         if (mapType != MappingMode.NOMAP) { // il existe un mapping
             channel = file.getChannel();
@@ -78,7 +78,7 @@ public class MappedFile implements DirectIOFile {
         if (mapType != MappingMode.NOMAP) { // il existe un mapping
             map.close(); // map=null; attention le close est trop lent -> erreurs
             channel.close();// channel = null;
-            //System.gc();  //actuellement c'est le seul moyen pour rendre les buffeurs (v�rifier l'�volution chez SUN!!)
+            //System.gc();  //actuellement c'est le seul moyen pour rendre les buffeurs (vérifier l'évolution chez SUN!!)
         }
         file.close();//file = null;
     }
@@ -112,7 +112,7 @@ public class MappedFile implements DirectIOFile {
         } // pas de mapping
     }
 
-    /** �crire un int */
+    /** écrire un int */
     public final void writeInt(int data) throws IOException {
         if (mapType != MappingMode.NOMAP) { // il existe un mapping
             map.writeInt(data, currentPosition);
@@ -133,7 +133,7 @@ public class MappedFile implements DirectIOFile {
         } // pas de mapping
     }
 
-    /** �crire un long */
+    /** écrire un long */
     public final void writeLong(long data) throws IOException {
         if (mapType != MappingMode.NOMAP) { // il existe un mapping
             map.writeLong(data, currentPosition);

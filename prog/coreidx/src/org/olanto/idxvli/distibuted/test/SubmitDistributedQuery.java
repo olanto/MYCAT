@@ -50,7 +50,7 @@ public class SubmitDistributedQuery {
     }
 
     /**
-     *
+     * connect to the service node
      */
     public static void connectToNode() {
         r = new Remote[nbNode];
@@ -64,7 +64,7 @@ public class SubmitDistributedQuery {
                 if (r[i] instanceof IndexService) {
                     nodes[i] = ((IndexService) r[i]);
                     String s = nodes[i].getInformation();
-                    System.out.println("cha�ne renvoy�e par " + name + " = " + s);
+                    System.out.println("chaîne renvoyée par " + name + " = " + s);
                 }
             }
         } catch (Exception e) {
@@ -79,7 +79,7 @@ public class SubmitDistributedQuery {
     public static void test(String s) {
         Timer t1 = new Timer("distribute:" + s, false);
         QLResultAndRank[] res = new QLResultAndRank[nbNode];
-        for (int i = 0; i < nbNode; i++) {  // cette partie doit �tre revue pour �tre parall�le et asynchrone !!!!!!
+        for (int i = 0; i < nbNode; i++) {  // cette partie doit être revue pour être paralléle et asynchrone !!!!!!
             try {
                 res[i] = nodes[i].evalQLMore(s);
                 if (res[i] != null && res[i].result != null) {

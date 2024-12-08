@@ -59,7 +59,7 @@ public class BitextWidget extends Composite {
     public int indexHS = 0;
     private int indexS = 0;
     private int indexT = 0;
-    // indexes de la dernière occurence du mot recherchÃ© dans le contenu du codument
+    // indexes de la dernière occurence du mot recherché dans le contenu du codument
     private int curIndS = 0;
     private int curIndT = 0;
     private TranslateServiceAsync rpcS;

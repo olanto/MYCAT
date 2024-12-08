@@ -94,7 +94,7 @@ public class IdxConstant {
      */
     public static boolean COMLOG_FORMAT_XML = false;
     /**
-     * fichier associ� au logger
+     * fichier associé au logger
      */
     private static FileHandler handler_COMLOG;
     /**
@@ -114,7 +114,7 @@ public class IdxConstant {
      */
     public static boolean DETLOG_FORMAT_XML = false;
     /**
-     * fichier associ� au logger
+     * fichier associé au logger
      */
     private static FileHandler handler_DETLOG;
     /* correction ortografic ! */
@@ -131,7 +131,7 @@ public class IdxConstant {
      */
     public static String ORG_FILE = "C:/JG/VLI_RW/dict/organisation.dic";
     /**
-     * r�gles phon�tiques
+     * règles phonétiques
      */
     public static String PHONET_FILE = "C:/JG/VLI_RW/dict/phonet.en";
     /**
@@ -143,16 +143,16 @@ public class IdxConstant {
      */
     public static int MAX_SUGGESTION = 6;
     /**
-     * facteur de d�croissance entre deux suggestions
+     * facteur de décroissance entre deux suggestions
      */
     public static int DECREASE_NEXT_SUGGESTION = 2;
     /**
-     * en cas de z�ro r�ponse essaye de sugg�r� une alternative (m�me si peu de
-     * r�ponse)
+     * en cas de zéro réponse essaye de suggéré une alternative (même si peu de
+     * réponse)
      */
     public static boolean SUGGEST_MANDATORY_IF_ZERO = true;
     /**
-     * la suggestion doit amener un facteur mininum de r�ponses suppl�mentaire
+     * la suggestion doit amener un facteur mininum de réponses supplémentaire
      */
     public static int MIN_FACTOR_SUGGESTION = 5;
     /* MODE DEFINITION */
@@ -161,19 +161,19 @@ public class IdxConstant {
      */
     public static IdxMode MODE_IDX;
     /**
-     * mode de continuit�
+     * mode de continuité
      */
     public static ContinueMode MODE_CONTINUE = ContinueMode.MIX;
     /**
-     * mode de ranking des requ�te
+     * mode de ranking des requête
      */
     public static RankingMode MODE_RANKING = RankingMode.IDFxTDF;
     /**
-     * valeur rapport�e si on ne trouve pas
+     * valeur rapportée si on ne trouve pas
      */
     public static final int NOT_FOUND = -1;
     /**
-     * un m�ga
+     * un méga
      */
     public static final long MEGA = 1024 * 1024;
     /**
@@ -185,8 +185,8 @@ public class IdxConstant {
      */
     public static boolean VERBOSE_IO = false;
     /**
-     * maximum de distance entre deux mots pour l'op�rateur NEAR, si elle n'est
-     * pas sp�cifi�e, elle est calcul�e en mots index�s
+     * maximum de distance entre deux mots pour l'opérateur NEAR, si elle n'est
+     * pas spécifiée, elle est calculée en mots indexés
      */
     public static int NEAR_DISTANCE = 15;
 
@@ -225,11 +225,11 @@ public class IdxConstant {
      */
     public static String IDX_DONTINDEXTHIS = "C:/JG/VLI_RW/data/dontindexthiswords.txt";
     /**
-     * nom du fichier racine pour la d�tection des langues
+     * nom du fichier racine pour la détection des langues
      */
     public static String LANGUAGE_TRAINING = "C:/JG/VLI_RW/TrainingDTK/";
     /**
-     * nom du fichier racine pour la d�tection des langues
+     * nom du fichier racine pour la détection des langues
      */
     public static String COLLECTION_DOMAIN = "C:/JG/VLI_RW/data/urlcollection.txt";
     /**
@@ -237,7 +237,7 @@ public class IdxConstant {
      */
     public static String TEMP_FOLDER = "C:/MYCAT/TEMP";
     /**
-     * racine pour le corpus � convertir
+     * racine pour le corpus à convertir
      */
     public static String ROOT_CORPUS_SOURCE = "";
     /**
@@ -283,7 +283,7 @@ public class IdxConstant {
      */
     public static boolean IDX_SAVE_POSITION = true;
     /**
-     * cr�e des doc bag -- classification and knn
+     * crée des doc bag -- classification and knn
      */
     public static boolean IDX_WITHDOCBAG = false;
     /**
@@ -291,7 +291,7 @@ public class IdxConstant {
      */
     public static String IDX_MFLF_ENCODING = "UTF-8";
     /**
-     * cr�e des info suppl�mentaire sur les documents
+     * crée des info supplémentaire sur les documents
      */
     public static boolean IDX_MORE_INFO = false;
     /**
@@ -320,29 +320,29 @@ public class IdxConstant {
      */
     public static boolean DO_DOCRECORD = true;
     /**
-     * ne cr�e pas d'index dans l'objectstore count les mots seulement marche
+     * ne crée pas d'index dans l'objectstore count les mots seulement marche
      * avec les options en deux passes et la compression !!!
      */
     public static boolean NO_IDX_ONLY_COUNT = false;
     /**
-     * ne cr�e pas d'index dans l'objectstore count les mots seulement marche
+     * ne crée pas d'index dans l'objectstore count les mots seulement marche
      * avec les options en une passe et la compression !!!
      */
     public static boolean MODIFY_IDX = true;
     /**
-     * Twopass indexation pour fixer le vocabulaire (acc�l�re les classifieurs)
+     * Twopass indexation pour fixer le vocabulaire (accélére les classifieurs)
      */
     public static boolean WORD_TWOPASS = false;
     /**
-     * nbr mininum de documents poss�dant ce terme (pour le garder)
+     * nbr mininum de documents possédant ce terme (pour le garder)
      */
     public static int WORD_MINOCCKEEP = 24;  // pour une indexation en deux passes
     /**
-     * nbr maximum de documents poss�dant ce terme (en pour mille)
+     * nbr maximum de documents possédant ce terme (en pour mille)
      */
     public static int WORD_MAXOCCDOCKEEP = 50;  // pour une indexation en deux passes
     /**
-     * liste pour fixer le vocabulaire (acc�l�re les classifieurs) annule minocc
+     * liste pour fixer le vocabulaire (accélére les classifieurs) annule minocc
      * et maxocc
      */
     public static boolean WORD_LIST = false;
@@ -356,11 +356,11 @@ public class IdxConstant {
      */
     public static implementationMode DOC_IMPLEMENTATION = implementationMode.FAST;
     /**
-     * conserve les propi�tes de langage du document
+     * conserve les propiétes de langage du document
      */
     public static LanguageMode DOC_LANGUAGE = LanguageMode.NO;   // pour le content manager =No
     /**
-     * conserve les propi�tes de collection du document
+     * conserve les propiétes de collection du document
      */
     public static CollectionMode DOC_COLLECTION = CollectionMode.NO; // pour le content manager =No
     /**
@@ -392,20 +392,20 @@ public class IdxConstant {
      */
     public static int DOC_MAXBIT = 10;
     /**
-     * nombre de propri�t�s maximum
+     * nombre de propriétés maximum
      */
     public static int DOC_PROPERTIES_MAXBIT = 12;  // 2^8
     /**
-     * longueur maximum d'une propri�t�
+     * longueur maximum d'une propriété
      */
     public static int DOC_PROPERTIES_MAX_LENGHT = 256;
     /**
-     * facteur de compression esp�r�, utilis� dans les impl�mentations BIG, !
+     * facteur de compression espéré, utilisé dans les implémentations BIG, !
      * allocation fixe
      */
     public static int HOPE_COMPRESSION = 64;
     /**
-     * maximum en cache, utilis� dans les impl�mentations BIG, ! allocation fixe
+     * maximum en cache, utilisé dans les implémentations BIG, ! allocation fixe
      */
     public static final int MAX_IN_ZIP_CACHE = 64;
     /**
@@ -424,8 +424,8 @@ public class IdxConstant {
      */
     public static String WORD_NAME = "WORD";
     /**
-     * taille du cache pour les mots consult�s (actuellement la m�me valeur est
-     * utilis� pour les documents!)
+     * taille du cache pour les mots consultés (actuellement la même valeur est
+     * utilisé pour les documents!)
      */
     public static int WORD_CACHE_COUNT = 1 * (int) MEGA;
     /**
@@ -437,15 +437,15 @@ public class IdxConstant {
      */
     public static int WORD_MAXBIT = 10;
     /**
-     * longueur minimum d'un mot � indexer
+     * longueur minimum d'un mot à indexer
      */
     public static int WORD_MINLENGTH = 3;
     /**
-     * longueur maximum d'un mot � indexer (tronquer)
+     * longueur maximum d'un mot à indexer (tronquer)
      */
     public static int WORD_MAXLENGTH = 20;
     /**
-     * nbr maximum de mots � indexer par document
+     * nbr maximum de mots à indexer par document
      */
     public static int WORD_NFIRSTOFDOC = 10000000;
     /**
@@ -564,7 +564,7 @@ public class IdxConstant {
      * **********************************************************************************
      */
     /**
-     * implementation des objects store. l'impl�mentation est directement li�e �
+     * implementation des objects store. l'implémentation est directement liée à
      * la taille du dictionnaire
      */
     /**
@@ -572,8 +572,8 @@ public class IdxConstant {
      */
     public static implementationMode OBJ_IMPLEMENTATION = WORD_IMPLEMENTATION;
     /**
-     * taille des objets consid�r�s comme petits en byte. Doit �tre un mutiple
-     * de 4, pour g�rer des int
+     * taille des objets considérés comme petits en byte. Doit être un mutiple
+     * de 4, pour gérer des int
      */
     public static int OBJ_SMALL_SIZE = 16 * 4;
     /**
@@ -593,7 +593,7 @@ public class IdxConstant {
      */
     public static int OBJ_STORE_MAX_THREAD = 16;
     /**
-     * d�fini si le mode est asynchrone
+     * défini si le mode est asynchrone
      */
     public static boolean OBJ_STORE_ASYNC = true;
     /**
@@ -624,8 +624,7 @@ public class IdxConstant {
      */
     public static long INDEXING_CACHE_SIZE = 256 * MEGA;
     /**
-     * part en % a essayer de conserver dans le cache lors d'un nettoyage [0 �
-     * 99].
+     * part en % a essayer de conserver dans le cache lors d'un nettoyage [0 à 99].
      */
     public static int KEEP_IN_CACHE = 0;
     /**
@@ -633,7 +632,7 @@ public class IdxConstant {
      */
     public static int IDX_CACHE_COUNT = 128 * KILO;
     /**
-     * taille maximum de mots diff�rents pour un seul document
+     * taille maximum de mots différents pour un seul document
      */
     public static int IDX_RESERVE = 64 * KILO;
     /**
@@ -729,7 +728,7 @@ public class IdxConstant {
     public static ConstStringManager MSG;
 
     /**
-     * affiche les param�tres. (� compl�ter pour tout voir)
+     * affiche les paramètres. (à compléter pour tout voir)
      */
     public static void show() {
         COMLOG.info(

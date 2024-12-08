@@ -40,7 +40,12 @@ public class WriteTMX {
      BufferedWriter  out ;
      String srcLanguage,targetLanguage;
     
-    
+    /**
+     *
+     * @param fname
+     * @param _srcLanguage
+     * @param _targetLanguage
+     */
     public WriteTMX (String fname, String _srcLanguage, String _targetLanguage) {
         srcLanguage=_srcLanguage;
         targetLanguage=_targetLanguage;
@@ -57,6 +62,11 @@ public class WriteTMX {
         } catch (Exception e) { error("IO error savetmx",e);}
     }
     
+    /**
+     *
+     * @param src
+     * @param target
+     */
     public  void add2Sentence(String src, String target){
         try{
         out.write("<tu>\n");
@@ -67,7 +77,12 @@ public class WriteTMX {
         } catch (Exception e) { error("IO error add tmx",e);} 
     }
 
-     public static String cleanSpaceAndTab(String s) {
+    /**
+     *
+     * @param s
+     * @return
+     */
+    public static String cleanSpaceAndTab(String s) {
 //        System.out.println("-------cst:"+s);
 //        for (int i=0; i<s.length();i++){
 //            int v=s.charAt(i);
@@ -134,6 +149,9 @@ public class WriteTMX {
         return cleanSpaceAndTab(s);       
     }
      
+    /**
+     *
+     */
     public  void tmxClose() {
         
         try{

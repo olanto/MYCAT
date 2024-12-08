@@ -26,7 +26,7 @@ import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.IdxEnum.*;
 
 /**
- *  Comportements d'un vecteur de Long bufferis� avec des IO Map.
+ *  Comportements d'un vecteur de Long bufferisé avec des IO Map.
  *
  * 
  *
@@ -38,19 +38,19 @@ public class LongVector_DirectIO implements LongVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de ce gestionnaire */
+    /** definit le path pour l'ensemble des fichiers dépendant de ce gestionnaire */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de ce gestionnaire */
+    /** definit le path pour l'ensemble des fichiers dépendant de ce gestionnaire */
     private String fileName;
     private DirectIOFile v;
     private int size = 0;
     private int slice2n = 20;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public LongVector_DirectIO() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _fileName
      * @param _maxSize
@@ -59,7 +59,7 @@ public class LongVector_DirectIO implements LongVector {
         return (new LongVector_DirectIO(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @return valeur */
@@ -73,7 +73,7 @@ public class LongVector_DirectIO implements LongVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private LongVector_DirectIO(String _pathName, String _fileName) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -81,7 +81,7 @@ public class LongVector_DirectIO implements LongVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private LongVector_DirectIO(String _pathName, String _fileName, int _maxSize) {
         createLongVector_InMemory(_pathName, _fileName, _maxSize);
     }
@@ -95,12 +95,12 @@ public class LongVector_DirectIO implements LongVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         try {
             v = new MappedFile();
             v.open(pathName + "/" + fileName + "_dio", MappingMode.FULL, readWriteMode.rw, slice2n, size * 8);
 //         v.seek(size*4-4);
-//         v.writeInt(0); // marque la derni�re place
+//         v.writeInt(0); // marque la dernière place
         } catch (IOException e) {
             error("IO error in LongVector_DirectIO.initFirstTime", e);
         }
@@ -110,7 +110,7 @@ public class LongVector_DirectIO implements LongVector {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeInt(size);
             System.out.println("save Int Vector: " + pathName + "/" + fileName);
             p.flush();
@@ -143,7 +143,7 @@ public class LongVector_DirectIO implements LongVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, long val) {

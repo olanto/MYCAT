@@ -27,7 +27,7 @@ import static org.olanto.idxvli.IdxEnum.*;
 import org.olanto.idxvli.util.SetOperation;
 
 /**
- * Classe stockant les  r�sultats d'une requ�te.
+ * Classe stockant les  résultats d'une requête.
  * <p>
  * 
  *
@@ -41,7 +41,7 @@ public class QRes {
      */
 
     public int[] doc;
-    /* le degr� de pertinence du r�sultat */
+    /* le degré de pertinence du résultat */
 
     /**
      *
@@ -55,7 +55,7 @@ public class QRes {
      */
 
     public int[] topdoc;
-    /* le degr� de pertinence du r�sultat tri�s*/
+    /* le degré de pertinence du résultat triés*/
 
     /**
      *
@@ -138,13 +138,13 @@ public class QRes {
 
                 if (imax == topn) {
                     max = rank[topn - 1];
-                } // d�finit le niveau pour entrer dans la liste
+                } // définit le niveau pour entrer dans la liste
                 //msg("imax:"+imax+" max:"+max);
             }
         } else { // pleine
             //msg("plein");
-            insertInTop(doc[i], rank[i], imax - 1); // le dernier est pouss�
-            max = rank[topn - 1]; // d�finit le niveau pour entrer dans la liste
+            insertInTop(doc[i], rank[i], imax - 1); // le dernier est poussé
+            max = rank[topn - 1]; // définit le niveau pour entrer dans la liste
         }
     }
 
@@ -169,15 +169,15 @@ public class QRes {
     /**
      * filtre un vecteur avec un bitset
      * @param rankingMode
-     * @return vecteur de documents filtr�
+     * @return vecteur de documents filtré
      * @param filter (true=on garde les true, false on garde les false)
      * @param res un vecteur de documents
-     * @param sob une propri�t�
+     * @param sob une propriété
      */
     public final static QRes filtering(QRes res, SetOfBits sob, boolean filter, RankingMode rankingMode) {
         if (res == null || res.doc == null) {
             //msg ("filtering: res is empty");
-            return res;  // rien � filtrer
+            return res;  // rien à filtrer
         }
         if (sob == null) {
             //msg ("filtering: sob is null");
@@ -189,7 +189,7 @@ public class QRes {
             int last = 0;
             for (int i = 0; i < res.doc.length; i++) {
                 //msg("filter doc:"+res[i]+"="+sob.get(res[i]));
-                if (sob.get(res.doc[i]) == filter) { // il poss�de la propri�t�
+                if (sob.get(res.doc[i]) == filter) { // il posséde la propriété
                     DD[last] = res.doc[i];
                     RR[last] = res.rank[i];
                     last++;
@@ -197,7 +197,7 @@ public class QRes {
             }
             if (last == DD.length) {
                 return new QRes(DD, RR);
-            } // ils poss�dent tous la propri�t�
+            } // ils possèdent tous la propriété
             return new QRes(
                     copyVector(last, DD),
                     copyVector(last, RR)); // ajuste la taille
@@ -206,14 +206,14 @@ public class QRes {
             int last = 0;
             for (int i = 0; i < res.doc.length; i++) {
                 //msg("filter doc:"+res[i]+"="+sob.get(res[i]));
-                if (sob.get(res.doc[i]) == filter) { // il poss�de la propri�t�
+                if (sob.get(res.doc[i]) == filter) { // il posséde la propriété
                     DD[last] = res.doc[i];
                     last++;
                 }
             }
             if (last == DD.length) {
                 return new QRes(DD);
-            } // ils poss�dent tous la propri�t�
+            } // ils possèdent tous la propriété
             return new QRes(
                     copyVector(last, DD)); // ajuste la taille
         }
@@ -222,14 +222,14 @@ public class QRes {
     /**
      * profile un vecteur avec un bitset
      * @param rankingMode
-     * @return vecteur de documents filtr�
+     * @return vecteur de documents filtré
      * @param res un vecteur de documents
      * @param sob un un profil
      */
     public final static QRes profiling(QRes res, SetOfBits sob, RankingMode rankingMode) {
         if (res.doc == null) {
             msg("profiling: res is empty");
-            return res;  // rien � profiler
+            return res;  // rien à profiler
         }
         if (sob == null) {
             msg("profiling: sob is null");
@@ -249,7 +249,7 @@ public class QRes {
         }
     }
 
-    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'intersection de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
      * @param rankingMode
@@ -299,7 +299,7 @@ public class QRes {
         }
     }
 
-    /** calcul l'union de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul l'union de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
      * @param rankingMode
@@ -375,7 +375,7 @@ public class QRes {
         }
     }
 
-    /** calcul la diff�rence de deux vecteurs. (de documents, par exemple), les vecteurs doivent �tre ordonn�s.
+    /** calcul la différence de deux vecteurs. (de documents, par exemple), les vecteurs doivent être ordonnés.
      * @param qr1 vecteur1
      * @param qr2 vecteur2
      * @param rankingMode

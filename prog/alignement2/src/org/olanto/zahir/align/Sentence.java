@@ -33,17 +33,48 @@ import static org.olanto.util.Messages.*;
  */
 public class Sentence {
 
+    /**
+     *
+     */
     public String s;
+
+    /**
+     *
+     */
     public String[] iw;
+
+    /**
+     *
+     */
     public int[] id;
+
+    /**
+     *
+     */
     public float[] score;
+
+    /**
+     *
+     */
     public String numbers;
+
+    /**
+     *
+     */
     public int countNumbers;
 
+    /**
+     *
+     * @param s
+     */
     public Sentence(String s) {
         parse(s);
     }
 
+    /**
+     *
+     * @param s
+     */
     public void parse(String s) {
         this.s = s;
         DoParse a = new DoParse(s + " .");
@@ -58,18 +89,21 @@ public class Sentence {
 
     }
 
+    /**
+     *
+     */
     public void reduce() {
 
 //        dump();
-        Arrays.sort(iw);  // triÃ©e
+        Arrays.sort(iw);  // triée
         int countdiff = iw.length;
-        for (int i = 1; i < iw.length; i++) {  // compte les diffÃ©rents
+        for (int i = 1; i < iw.length; i++) {  // compte les différents
             if (iw[i - 1].equals(iw[i])) {
                 countdiff--;
             }
         }
         if (countdiff == iw.length) {
-            return; // pas de diffÃ©rent
+            return; // pas de différent
         } else {
             String[] old = iw;
             iw = new String[countdiff];
@@ -86,6 +120,10 @@ public class Sentence {
         }
     }
 
+    /**
+     *
+     * @param lex
+     */
     public void convert2id(LexicalTranslation lex) {
         int[] conv = new int[iw.length];
         int countconv = 0;
@@ -102,6 +140,10 @@ public class Sentence {
         }
     }
 
+    /**
+     *
+     * @param lex
+     */
     public void convert2idWithScore(LexicalTranslation lex) {
         ArrayList[] conv = new ArrayList[iw.length];
         int countconv = 0;
@@ -126,7 +168,7 @@ public class Sentence {
             }
         }
         Arrays.sort(d); // trie
-        id = new int[sizeid]; // sÃ©pare id et score
+        id = new int[sizeid]; // sépare id et score
         score = new float[sizeid];
         for (int i = 0; i < sizeid; i++) {
             id[i] = (int) d[i];
@@ -134,6 +176,10 @@ public class Sentence {
         }
     }
 
+    /**
+     *
+     * @param s
+     */
     public void getNumbers(String s) {
         numbers = "";
         countNumbers = 0;
@@ -155,6 +201,9 @@ public class Sentence {
         }
     }
 
+    /**
+     *
+     */
     public void dump() {
         msg("Sentence:" + s);
         showVector(iw);
@@ -163,11 +212,19 @@ public class Sentence {
 
     }
 
+    /**
+     *
+     */
     public void dumpNumbers() {
         msg("#" + countNumbers + " " + numbers);
 
     }
 
+    /**
+     *
+     * @param s
+     * @return
+     */
     public static int countLines(String s) {
         int count = 0;
         try {
@@ -189,7 +246,13 @@ public class Sentence {
         return count;
     }
 
-    public synchronized static Sentence[] getLines(String s, int nblines) {  // doit Ãªtre exclusif !
+    /**
+     *
+     * @param s
+     * @param nblines
+     * @return
+     */
+    public synchronized static Sentence[] getLines(String s, int nblines) {  // doit être exclusif !
         Sentence[] l = new Sentence[nblines];
         int count = 0;
         try {

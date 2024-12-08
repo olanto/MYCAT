@@ -36,16 +36,16 @@ public class TokenNative implements TokenDefinition {
     static final int EOF = -1;
 
     
-    /** Cr�e une attache
+    /** crée une attache
      */
     public TokenNative() {
     }
     
         /**
      * Cherche le symbole suivant.
-     * d�finition symbole= commence avec une lettre (au sens unicode)
-     * et n'est pas dans un tag <> (peut occasioner une erreur d'indexation dans les mauvais html)
-     * s'arr�te quand on rencontre autre chose qu'une lettre (au sens unicode)
+     * définition symbole= commence avec une lettre (au sens unicode)
+     * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
+     * s'arrête quand on rencontre autre chose qu'une lettre (au sens unicode)
      */
 
     public final void next(DoParse a) {
@@ -80,11 +80,11 @@ public class TokenNative implements TokenDefinition {
      
     /** normalise le mot. actuellement<br>
      * - mis en minuscule<br>
-     * - tronquer � la longueur fix�e.<br>
+     * - tronquer à la longueur fixée.<br>
      * - lemmatiser si le stemming est actif.<br>
-     * @param id l'indexeur de r�f�rence
-     * @param w le mot � normaliser
-     * @return un mot normalis�
+     * @param id l'indexeur de référence
+     * @param w le mot à normaliser
+     * @return un mot normalisé
      */
     public final  String normaliseWord(IdxStructure id, String w){
         //   System.out.print(w+"-->");

@@ -27,7 +27,7 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
 import static org.olanto.idxvli.IdxEnum.*;
 
 /**
- *  Comportements d'un vecteur de byte[fixedArraySize] g�r� sur disque.
+ *  Comportements d'un vecteur de byte[fixedArraySize] géré sur disque.
  * 
  *
  */
@@ -39,9 +39,9 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit les fichiers d�pendant de cet ObjectStore */
+    /** definit les fichiers dépendant de cet ObjectStore */
     private String fileName;
     private byte[][] v;
     private int size = 0;
@@ -51,11 +51,11 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     private RandomAccessFile rdoc;
     private readWriteMode RW = readWriteMode.rw;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public ByteArrayVector_OnDisk() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _fileName
      * @param _maxSize
@@ -65,7 +65,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         return (new ByteArrayVector_OnDisk(_pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @param _RW
@@ -85,7 +85,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private ByteArrayVector_OnDisk(String _pathName, String _fileName, readWriteMode _RW) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -94,7 +94,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private ByteArrayVector_OnDisk(String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         createByteArrayVector_OnDisk(_pathName, _fileName, _maxSize, _fixedArraySize);
     }
@@ -115,8 +115,8 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         }
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
-        // alloue la totalit� a l'initialisation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
+        // alloue la totalité a l'initialisation
         System.out.println("---------debug properties");
         
         System.out.println("pathName: "+pathName);
@@ -182,11 +182,11 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         msg("maxUsedlength: " + maxUsedlength);
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, byte[] val) {
-        // pas de test sur le mode RW, pour acc�l�rer
+        // pas de test sur le mode RW, pour accélérer
         if (val.length <= fixedArraySize) {
             if (val.length > maxUsedlength) {
                 maxUsedlength = val.length;
@@ -207,7 +207,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
         return readBytes(readInt(posOnDisk, rdoc), posOnDisk + 4, rdoc);
     }
 
-    /**  cherche la valeur à la position pos, la i�me valeur
+    /**  cherche la valeur à la position pos, la ième valeur
      * @param pos
      * @param i
      * @return valeur */
@@ -231,7 +231,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     }
 
     /**  retourne la taille maximum des vecteurs stock
-     * @return �*/
+     * @return à*/
     public final int maxUsedlength() {
         return maxUsedlength;
     }
@@ -246,7 +246,7 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     }
 
     private final int countNotEmpty() {
-        // ceci peut �tre couteux � lire sur le disque !!!!!!!
+        // ceci peut être couteux à lire sur le disque !!!!!!!
         int count = 0;
         for (int i = 0; i < size; i++) {
             if (length(i) != 0) {
@@ -260,13 +260,13 @@ public class ByteArrayVector_OnDisk implements ByteArrayVector {
     public final void printStatistic() {
         msg("ByteArrayVector " + pathName + "/" + fileName + "statistics -> ");
         msg(" size: " + size);
-        msg(" not Empty: " + countNotEmpty()); // ceci peut �tre couteux � lire sur le disque !!!!!!!
+        msg(" not Empty: " + countNotEmpty()); // ceci peut être couteux à lire sur le disque !!!!!!!
         msg("fixedArraySize: " + fixedArraySize);
         msg("maxUsedlength: " + maxUsedlength);
     }
 
     public final void clear(int pos) {
-        byte[] b = new byte[fixedDiskSize];  // tout � 0
+        byte[] b = new byte[fixedDiskSize];  // tout à 0
         writeBytes(b, (long) pos * (long) b.length, rdoc); // marque vide
     }
 }

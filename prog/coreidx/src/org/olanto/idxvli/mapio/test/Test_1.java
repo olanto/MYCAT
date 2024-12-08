@@ -27,7 +27,7 @@ import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 
-/**tests de base (�criture lecture de 1 caract�re).
+/**tests de base (écriture lecture de 1 caractère).
  *  
  *
  * 

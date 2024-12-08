@@ -31,7 +31,7 @@ import static org.olanto.idxvli.util.BytesAndFiles.*;
  *
  *
  * Implémentation standard minimal du coordinateur. Ce coordinateur est mono-thread, donc
- * la lib�ration du cache, se fait sans qu'il y ait des activités dans le cache.
+ * la libération du cache, se fait sans qu'il y ait des activités dans le cache.
  *
  *   modif 25.1.05  int totidxcnt -- long totidxcnt;  // trop petit!
  */
@@ -43,11 +43,11 @@ public class CacheCoordinator_Basic implements CacheCoordinator {
     private CacheTranslate idxtrans;
     private long segcnt;
     private long initStart;
-    private long totidxcnt;  // total des termes index�s
+    private long totidxcnt;  // total des termes indexés
 
     /**
-     * Cr�ation du coordinateur de cache de l'indexeur (mode mise � jour).
-     * @param idx indexeur de r�f�rence
+     * création du coordinateur de cache de l'indexeur (mode mise à jour).
+     * @param idx indexeur de référence
      * @param indexdoc cache des documents/occurences
      * @param indexpos cache des positions
      * @param idxtrans cache des translations d'identifiants
@@ -90,8 +90,8 @@ public class CacheCoordinator_Basic implements CacheCoordinator {
 
     private final void freecachepartial() {
         if (IDX_CACHE_COUNT <= allocate()) {
-            freecacheFull();  // lib�re les entr�es du dictionnaire de translation
-        } else {  // juste chercher les entr�es les plus grandes
+            freecacheFull();  // libére les entrées du dictionnaire de translation
+        } else {  // juste chercher les entrées les plus grandes
             Date starttime = new Date();
             long timer1 = starttime.getTime();
             int cnt = 0;
@@ -121,11 +121,11 @@ public class CacheCoordinator_Basic implements CacheCoordinator {
     }
 
     public final void freecacheFull() {
-        /* la lib�ration du cache devrait se faire dans l'ordre des mots
-         * afin de favoriser un acc�s sequentiel dans l'object store
+        /* la libération du cache devrait se faire dans l'ordre des mots
+         * afin de favoriser un accés sequentiel dans l'object store
          * ici on le fait dans l'ordre d'allocation du cache (pour les nouveaux mots,
          * l'ordre est respecter pour les autres, c'est le chaos ...
-         * (� essayer)
+         * (à essayer)
          */
 
         Date starttime = new Date();

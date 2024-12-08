@@ -43,11 +43,11 @@ public class LexicBetter implements LexicManager {
     private boolean stemActive = true;
     private final boolean verbose = false;
 
-    /** crï¿½er une nouvelle instance de gestionnaire*/
+    /** créer une nouvelle instance de gestionnaire*/
     public LexicBetter() {
     }
 
-    /**  crï¿½e un gestionnaire de lexique
+    /**  crée un gestionnaire de lexique
      * @param _path
      * @param lang
      * @param stemName */
@@ -55,7 +55,7 @@ public class LexicBetter implements LexicManager {
         return (new LexicBetter(_path, lang, stemName));
     }
 
-    private LexicBetter(String _path, String lang, String stemName) {  // crï¿½e un gestionnaire
+    private LexicBetter(String _path, String lang, String stemName) {  // crée un gestionnaire
         tc = new HashMap<String, Concepts>();
         ct = new HashMap<Integer, Terms>();
         cw = new HashMap<Integer, Terms>();
@@ -104,7 +104,7 @@ public class LexicBetter implements LexicManager {
 
     /**
      * ajoute un mot au gestionnaire
-     * retourne son id s'il existe dï¿½ja
+     * retourne son id s'il existe déja
      * @param word mot
      * @param id id
      */
@@ -126,7 +126,7 @@ public class LexicBetter implements LexicManager {
             c = new Concepts();
             c.add(id);
             tc.put(word, c);
-        } else { // existe dï¿½jï¿½
+        } else { // existe déjé
             c.add(id);
         }
     }
@@ -137,7 +137,7 @@ public class LexicBetter implements LexicManager {
             t = new Terms();
             t.add(word);
             ct.put(id, t);
-        } else { // existe dï¿½jï¿½
+        } else { // existe déjé
             t.add(word);
         }
     }
@@ -148,14 +148,14 @@ public class LexicBetter implements LexicManager {
             t = new Terms();
             t.add(word);
             cw.put(id, t);
-        } else { // existe dï¿½jï¿½
+        } else { // existe déjé
             t.add(word);
         }
     }
 
     /**
      * cherche les concepts du mot, retourne NULL s'il n'est pas dans le dictionnaire
-     * @param word stemming dï¿½jï¿½ appliquï¿½
+     * @param word stemming déjé appliqué
      * @return un vecteur de concepts
      */
     public final Concepts get(String word) {
@@ -201,8 +201,8 @@ public class LexicBetter implements LexicManager {
     }
 
     /**
-     * cherche les mots associï¿½s ï¿½ un identifiant de concepts.
-     * @param i numï¿½ro du concepts
+     * cherche les mots associés à un identifiant de concepts.
+     * @param i numéro du concepts
      * @return la liste des termes
      */
     public Terms get(int i) {
@@ -210,8 +210,8 @@ public class LexicBetter implements LexicManager {
     }
 
     /**
-     * cherche les mots sans stemming associï¿½s ï¿½ un identifiant de concepts.
-     * @param i numï¿½ro du concepts
+     * cherche les mots sans stemming associés à un identifiant de concepts.
+     * @param i numéro du concepts
      * @return la liste des termes
      */
     public Terms getw(int i) {

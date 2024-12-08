@@ -42,7 +42,7 @@ import org.olanto.wildchar.WildCharExpander;
 public class IdxIO {
 
     /**
-     * derni�re position utilis�e dans le fichier stockant l'index
+     * dernière position utilisée dans le fichier stockant l'index
      */
     static final long startpos = 1;// Integer.MAX_VALUE-100000;//1; // dont use 0 = notinMemory
     private long lastbag = startpos; // dont use 0 = notinMemory
@@ -54,7 +54,7 @@ public class IdxIO {
     private RandomAccessFile pcf;
     static IdxStructure glue;
     /**
-     * pour signaler que tous les objstos sont ferm�s verrous
+     * pour signaler que tous les objstos sont fermés verrous
      * ------------------------------------------
      */
     private static final ReentrantReadWriteLock openRW = new ReentrantReadWriteLock();
@@ -67,7 +67,7 @@ public class IdxIO {
     }
 
     /**
-     * g�n�ration des id de objectstore (pour �viter de les stocker)
+     * génération des id de objectstore (pour éviter de les stocker)
      * @param j
      * @return 
      */
@@ -94,14 +94,14 @@ public class IdxIO {
     }
 
     /**
-     *
+     * lock OpenR
      */
     protected static void signalAOpeningObjSto() {
         openR.lock();
     }
 
     /**
-     *
+     * unlock OpenR
      */
     synchronized public static void signalAClosingObjSto() {
         try {
@@ -250,7 +250,7 @@ public class IdxIO {
     /**
      * nombre de documents dans lesquels apparait le terme j
      *
-     * @param j i�me terme
+     * @param j ième terme
      * @return nbr de documents
      */
     protected final int getOccOfW(int j) { // Count in how many documents word j appears
@@ -316,7 +316,7 @@ public class IdxIO {
                 objsto[wordId % OBJ_NB].append(glue.indexpos.getReferenceOn(j), objpos(wordId), glue.indexpos.getCountOf(j));
 
                 glue.cntpos += glue.indexpos.getCountOf(j); //compteur global
-                // release fait le travail !! glue.indexpos.setCountOf(j,0);  // remet � z�ro le pointeur de position
+                // release fait le travail !! glue.indexpos.setCountOf(j,0);  // remet à zéro le pointeur de position
 
             } else { // sauve sans les positions
 
@@ -336,8 +336,8 @@ public class IdxIO {
                 }
 
             }
-            //glue.totsaveidx[j]+=glue.indexdoc.getCountOf(j); // met � jour le compteur global
-            // release fait le travail !! glue.indexdoc.setCountOf(j,0); // remet � z�ro le pointeur d'index
+            //glue.totsaveidx[j]+=glue.indexdoc.getCountOf(j); // met à jour le compteur global
+            // release fait le travail !! glue.indexdoc.setCountOf(j,0); // remet à zéro le pointeur d'index
             glue.indexdoc.releaseVector(j);
             glue.indexpos.releaseVector(j);
         }
@@ -401,7 +401,7 @@ public class IdxIO {
      * @param d
      * @return
      */
-    protected final int[] loadSeq(int d) {  // acc�der par getSeqOfDoc in IdxStructure
+    protected final int[] loadSeq(int d) {  // accéder par getSeqOfDoc in IdxStructure
 
         try {
             //msg("Start load seq:"+d);
@@ -451,7 +451,7 @@ public class IdxIO {
      * @param d
      * @return
      */
-    protected final int[] loadPosChar(int d) {  // acc�der par getPosCharOfDoc in IdxStructure
+    protected final int[] loadPosChar(int d) {  // accéder par getPosCharOfDoc in IdxStructure
 
         try {
             //msg("Start load poschar:"+d);
@@ -496,7 +496,7 @@ public class IdxIO {
     }
 
     /**
-     *
+     * Load index 
      */
     protected final void loadindexdoc() {
         try {
@@ -518,7 +518,7 @@ public class IdxIO {
             }
             if (STEM_KEEP_LIST && WORD_USE_STEMMER) {
                 System.err.println("try to load stemlist");
-                glue.stemList = (TreeSet<String>[]) p.readObject(); // le casting est n�cessaire et g�n�re un warning à la compilation
+                glue.stemList = (TreeSet<String>[]) p.readObject(); // le casting est nécessaire et génére un warning à la compilation
 
             }
             istream.close();
@@ -538,13 +538,13 @@ public class IdxIO {
                             ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
                                     OBJ_ROOT[i], WORD_MAXBIT + 1 - OBJ_PW2, OBJ_SMALL_SIZE);  // +1 car idx+pos -OBJ_PW2 car 2^n obsto
 
-                            objsto0 = null; // fuite m�moire
+                            objsto0 = null; // fuite mémoire
 
                         } else {
                             ObjectStorage4 objsto0 = (new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
                                     OBJ_ROOT[i], WORD_MAXBIT + 0 - OBJ_PW2, OBJ_SMALL_SIZE);  // +0 car seulement idx -OBJ_PW2 car 2^n obsto
 
-                            objsto0 = null; // fuite m�moire
+                            objsto0 = null; // fuite mémoire
 
                         }
                     }
@@ -642,7 +642,7 @@ public class IdxIO {
     }
 
     /**
-     *
+     * save index
      */
     protected final void saveindexdoc() {
         try {
@@ -704,22 +704,22 @@ public class IdxIO {
     }
 
     /**
-     *
+     * close manager and release ressources
      */
     protected final void closeAllManager() {
         msg("before gc:" + usedMemory());
         glue.docstable.close();
-        glue.docstable = null;  // pour �viter les fuites m�moires
+        glue.docstable = null;  // pour éviter les fuites mémoires
 
         glue.wordstable.close();
-        glue.wordstable = null;  // pour �viter les fuites m�moires
+        glue.wordstable = null;  // pour éviter les fuites mémoires
 
         for (int i = 0; i < OBJ_NB; i++) {  // open objectstore
 
             objsto[i].close();
             objsto[i] = null;
         }
-        System.gc(); // fait le m�nage avant s'attaquer la phase 2
+        System.gc(); // fait le ménage avant s'attaquer la phase 2
 
         msg("after gc:" + usedMemory());
 

@@ -37,15 +37,15 @@ import static org.olanto.idxvli.IdxConstant.*;
  * On peut changer le tokenizer en modifiant l'initialisation de WORD_DEF
  * et associant le bon code.<br>
  *
- * On peut penser que chaque client a un mÃ©thode next() et normalise () et dÃ©finir un type
- * associÃ© Ã  un case pour sÃ©lectionner le bon next et normalise (Ã  faire)
+ * On peut penser que chaque client a un méthode next() et normalise () et définir un type
+ * associé à  un case pour sélectionner le bon next et normalise (à  faire)
  *
  */
 public class DoParse {
 
     static final int EOF = -1;
-    // attention les variables sont statiques pour accï¿½lerer mais si des accï¿½s concurrents sont possibles
-    // alors il faut protï¿½ger le parsing
+    // attention les variables sont statiques pour incréerer mais si des accés concurrents sont possibles
+    // alors il faut protéger le parsing
     private SetOfWords DontIndexThis;
 
     /** number of token*/
@@ -54,11 +54,11 @@ public class DoParse {
     public IdxStructure glue;
     /** variable contenant le symbole courant*/
     public  StringBuilder cw = new StringBuilder();
-    /** la source de caractï¿½re ï¿½ parser */
+    /** la source de caractère à parser */
     public  Reader in;
     /** indique si la fin du fichier est atteinte */
     public  boolean EOFflag = true;
-    /** posistion dans la source de caractï¿½re */
+    /** posistion dans la source de caractère */
     public  int poschar = 0;
     
     // supporte pas la concurrence
@@ -92,10 +92,10 @@ public class DoParse {
     }
 
     /**
-     * Crï¿½e un analyseur lexical. sur la source (Reader) avec la liste de mots
-     * ï¿½ ne pas indexer SOF. Se place sur la premiï¿½re occurence de la source
-     * @param rdr la source ï¿½ analyser
-     * @param SOF la liste de mots ï¿½ ne pas indexer
+     * crée un analyseur lexical. sur la source (Reader) avec la liste de mots
+     * à ne pas indexer SOF. Se place sur la première occurence de la source
+     * @param rdr la source à analyser
+     * @param SOF la liste de mots à ne pas indexer
      */
     public DoParse(Reader rdr, SetOfWords SOF) {
         try {
@@ -112,11 +112,11 @@ public class DoParse {
     }
 
     /**
-     * cette mï¿½thode est utilisï¿½e pour ï¿½tablir le coï¿½t minimum du parsing.Les indices ne sont pris que dans l'intervalle total
+     * cette méthode est utilisée pour établir le coût minimum du parsing.Les indices ne sont pris que dans l'intervalle total
     String word="";
      * pas de minuscule, pas de normalisation, ...
      * pour l'utiliser, il faut la renommer start !
-     * @param glue l'indexeur de rï¿½fï¿½rence
+     * @param glue l'indexeur de référence
      */
     protected final void start_quick(IdxStructure glue) {
         String word = "";
@@ -147,8 +147,8 @@ public class DoParse {
     }
 
     /**
-     * commence le parsing, et indexe. n'est pas synchronisï¿½e! Les indices ne sont pris que dans l'intervalle total
-     * @param id l'indexeur de rï¿½fï¿½rence
+     * commence le parsing, et indexe. n'est pas synchronisée! Les indices ne sont pris que dans l'intervalle total
+     * @param id l'indexeur de référence
      */
     protected final void start(IdxStructure id) {
         glue = id;
@@ -172,7 +172,7 @@ public class DoParse {
                 //                    word=Stemmer.stemmingOfW(word);}
                 cntword++;
                 // ici word est NORMALISE
-                if (WORD_TWOPASS) {// two pass, on ajoute plus de terme, ils sont sï¿½lectionnï¿½s dans la passe 1, pour la classification 
+                if (WORD_TWOPASS) {// two pass, on ajoute plus de terme, ils sont sélectionnés dans la passe 1, pour la classification 
 
                     n = id.wordstable.get(word);
                     if (n != -1) { // existing word
@@ -215,9 +215,9 @@ public class DoParse {
 
     }
 
-    /** construit un doc bag a partir de l'entrï¿½e du parseur. Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** construit un doc bag a partir de l'entrée du parseur. Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
      * @return vecteur au format DocBag
      *
      */
@@ -258,9 +258,9 @@ public class DoParse {
         return dbi.compact();
     }
 
-    /** construit un doc bag a partir de l'entrï¿½e du pareur. Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** construit un doc bag a partir de l'entrée du pareur. Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
      * @return vecteur au format DocBag
      *
      */
@@ -343,9 +343,9 @@ public class DoParse {
         return dbi.compact();
     }
 
-    /** construit une requï¿½te a partir de l'entrï¿½e du parseur. Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** construit une requête a partir de l'entrée du parseur. Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
      * @return une requete QL
      *
      */
@@ -474,13 +474,13 @@ public class DoParse {
         return res;
     }
 
-    /** utilise ce parseur pour le compte d'un rï¿½fï¿½renceur (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
-     * @param s le rï¿½fï¿½renceur faisant la demande
+    /** utilise ce parseur pour le compte d'un référenceur (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
+     * @param s le référenceur faisant la demande
      *
      */
-    /*synchronized*/ public final void scanString(IdxStructure id, IdxReference s) {  // utilisï¿½ par le rï¿½fï¿½renceur
+    /*synchronized*/ public final void scanString(IdxStructure id, IdxReference s) {  // utilisé par le référenceur
 
         String word;
         int n;
@@ -516,13 +516,13 @@ public class DoParse {
 
     }
 
-    /** utilise ce parseur pour rï¿½cupï¿½rer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** utilise ce parseur pour récupérer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
      * @return 
      *
      */
-    synchronized public final int[] scanString(IdxStructure id) {  // utilisï¿½ par QL
+    synchronized public final int[] scanString(IdxStructure id) {  // utilisé par QL
 
         String word;
         int lastscan = 0, n;
@@ -545,7 +545,7 @@ public class DoParse {
                     } // get the ref}
 
                 } else {
-                    return null; // on a trouvï¿½ un terme impossible (JG 16.06.2011)
+                    return null; // on a trouvé un terme impossible (JG 16.06.2011)
                 }
             }
             WORD_DEFINITION.next(this);
@@ -556,13 +556,13 @@ public class DoParse {
         return res;
     }
 
-    /** utilise ce parseur pour rï¿½cupï¿½rer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
-     * la mï¿½thode est protï¿½gï¿½e pour sï¿½quentialiser les parsing concurrent
-     * @param id indexeur de rï¿½fï¿½rence
+    /** utilise ce parseur pour récupérer une liste d'id de termes (construire la liste des mots). Les indices ne sont pris que dans l'intervalle de lecture
+     * la méthode est protégée pour séquentialiser les parsing concurrent
+     * @param id indexeur de référence
      * @return 
      *
      */
-    synchronized public final String[] tokenizeString(IdxStructure id) {  // utilisï¿½ par QL
+    synchronized public final String[] tokenizeString(IdxStructure id) {  // utilisé par QL
         int MAXWORD = 1000;
         String word;
         int lastscan = 0, n;

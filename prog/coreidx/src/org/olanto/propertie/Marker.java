@@ -80,7 +80,7 @@ public class Marker implements MarkerManager {
 
     /**
      *  retourne la langue d'un document
-     * @param txt �chantillon du document (1000 caract�res par exemple)
+     * @param txt échantillon du document (1000 caractères par exemple)
      * @return code de la langue (FR,EN,...)
      */
     public String getLanguage(String txt) {

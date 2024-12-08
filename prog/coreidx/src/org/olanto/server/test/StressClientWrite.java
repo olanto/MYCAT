@@ -50,7 +50,7 @@ public class StressClientWrite {
             if (r instanceof IndexService) {
                 IndexService is = ((IndexService) r);
                 String s = is.getInformation();
-                System.out.println("chaï¿½ne renvoyï¿½e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 while (true) {
                     System.out.println("client send a directory to be indexed ... could take time");
                     is.indexdir("C:/AAA/BILANG/DOC");

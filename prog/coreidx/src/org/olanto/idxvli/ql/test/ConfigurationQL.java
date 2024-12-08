@@ -29,17 +29,17 @@ import static org.olanto.idxvli.IdxConstant.*;
  * 
  *
  *
- * Une classe pour initialiser les constantes. Cette classe doit Ãªtre implÃ©mentÃ©e pour chaque application
+ * Une classe pour initialiser les constantes. Cette classe doit être implémentée pour chaque application
  */
 public class ConfigurationQL implements IdxInit {
 
-    /** crÃ©e l'attache de cette classe.
+    /** crée l'attache de cette classe.
      */
     public ConfigurationQL() {
     }
 
     /** initialisation permanante des constantes.
-     * Ces constantes choisies dÃ©finitivement pour toute la durÃ©e de la vie de l'index.
+     * Ces constantes choisies définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -61,7 +61,7 @@ public class ConfigurationQL implements IdxInit {
     }
 
     /** initialisation des constantes de configuration (modifiable).
-     * Ces constantes choisies dÃ©finitivement pour toute la durÃ©e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration() {
 
@@ -79,7 +79,7 @@ public class ConfigurationQL implements IdxInit {
         SetObjectStoreRoot(root2, 2);
         SetObjectStoreRoot(root3, 3);
 
-        // paramÃ¨tre de fonctionnement
+        // paramètre de fonctionnement
         CACHE_IMPLEMENTATION_INDEXING = implementationMode.FAST;
         CACHE_IMPLEMENTATION_READ = implementationMode.FAST;
         KEEP_IN_CACHE = 80;

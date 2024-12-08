@@ -35,7 +35,7 @@ public class SegmentationEnum {
         BY_FOLDER
     };
 
-    /** conserve des propri�t�s de collection */
+    /** conserve des propriétés de collection */
     public static enum CollectionMode {
 
         /**oui*/
@@ -44,7 +44,7 @@ public class SegmentationEnum {
         NO
     };
 
-    /** la compression est activ�e */
+    /** la compression est activée */
     public static enum Compression {
 
         /**oui*/
@@ -64,12 +64,12 @@ public class SegmentationEnum {
         CACHE
     };
 
-    /** �tat d'un verrouillage  */
+    /** état d'un verrouillage  */
     public static enum StateMark {
 
         /** verrouiller */
         LOCK,
-        /** d�verrouiller */
+        /** déverrouiller */
         UNLOCK
     };
 
@@ -80,14 +80,14 @@ public class SegmentationEnum {
         BASIC,
         /** complet (avec les positions) */
         FULL,
-        /** pas utilis�*/
+        /** pas utilisé*/
         UNUSED
     };
 
     /** type de stockage de l'index */
     public static enum PassMode {
 
-        /** en une passe, on indexe et on stocke simultan�ment */
+        /** en une passe, on indexe et on stocke simultanément */
         ONE,
         /** en une passe, on indexe et on stocke successivement */
         TWO

@@ -31,6 +31,11 @@ import static org.olanto.util.Messages.*;
  */
 public class GetMapService {
 
+    /**
+     *
+     * @param serviceName
+     * @return
+     */
     public static MapService getServiceMAP(String serviceName) {
 
         MapService is;
@@ -54,6 +59,12 @@ public class GetMapService {
         return null;
     }
 
+    /**
+     *
+     * @param client
+     * @param serviceName
+     * @return
+     */
     public static MapService runServiceMAP(MapArchiveInit client, String serviceName) {
 
         MapService mapobj;

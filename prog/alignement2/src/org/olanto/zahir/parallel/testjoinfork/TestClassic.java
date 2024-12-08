@@ -27,6 +27,10 @@ public class TestClassic {
     
     static final int MAX=40_000_000;
     
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args){
         SelectMax m=new SelectMax(MAX);
         long start=System.nanoTime();

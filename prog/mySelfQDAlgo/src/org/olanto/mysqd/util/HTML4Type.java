@@ -47,8 +47,8 @@ public class HTML4Type {
         {new String("&Aring;"), new Integer(197), new Boolean(false)}, //symbol: &Aring; = Å
         {new String("&aring;"), new Integer(229), new Boolean(false)}, //symbol: &aring; = å
         {new String("&asymp;"), new Integer(8776), new Boolean(true)}, //symbol: &asymp; = ≈
-        {new String("&Atilde;"), new Integer(195), new Boolean(false)}, //symbol: &Atilde; = Ã
-        {new String("&atilde;"), new Integer(227), new Boolean(false)}, //symbol: &atilde; = ã
+        {new String("&Atilde;"), new Integer(195), new Boolean(false)}, //symbol: &Atilde; = à
+        {new String("&atilde;"), new Integer(227), new Boolean(false)}, //symbol: &atilde; = à
         {new String("&Auml;"), new Integer(196), new Boolean(false)}, //symbol: &Auml; = Ä
         {new String("&auml;"), new Integer(228), new Boolean(false)}, //symbol: &auml; = ä
         {new String("&bdquo;"), new Integer(8222), new Boolean(true)}, //symbol: &bdquo; = „

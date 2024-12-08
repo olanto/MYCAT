@@ -23,13 +23,13 @@ package org.olanto.idxvli.doc;
 import java.io.*;
 
 /**
- * Classe stockant une liste de propri�ts.
+ * Classe stockant une liste de propriéts.
  * 
  *
  */
 public class PropertiesList implements Serializable {
 
-    /* les propri�t�s r�sultats */
+    /* les propriétés résultats */
 
     /**
      *
@@ -37,7 +37,7 @@ public class PropertiesList implements Serializable {
 
     public String[] result;
 
-    /** cr�e une propertie List
+    /** crée une propertie List
      * @param result id des documents
      */
     public PropertiesList(String[] result) {

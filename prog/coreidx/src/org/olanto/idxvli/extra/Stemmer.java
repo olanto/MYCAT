@@ -84,7 +84,7 @@ public class Stemmer {
                 stemmer.setCurrent(src);
                 stemMethod.invoke(stemmer, emptyArgs);
                 String res = stemmer.getCurrent();
-                if (countInMemory > STEM_CACHE_COUNT) { // dï¿½passement de capacitï¿½
+                if (countInMemory > STEM_CACHE_COUNT) { // dépassement de capacité
                     countInMemory = 0;
                     InMemory = new HashMap<String, String>();
                     msg("reset stemming cache:" + lang);

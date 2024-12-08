@@ -79,7 +79,6 @@ public class ParseSetOfWords {
     }
 
     /** vérifie si un terme appartient à la liste.
-     * @param w terme à vérifier
      * @return vrai si dans la liste
      */
     public final String[] getListOfWords() {

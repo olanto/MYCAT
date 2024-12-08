@@ -43,7 +43,7 @@ import org.olanto.idxvli.util.IntVector_InMemory;
  *
  * v2.2
  * - elimination du READWRITE mod
- * -�limination cas de la continuit� (pour �liminer un seek, ca marche pas!)
+ * -élimination cas de la continuité (pour éliminer un seek, ca marche pas!)
  * - nettoyage et adaption aux classes Messages et BytesAndFiles
  *
  * v3.0
@@ -56,7 +56,7 @@ import org.olanto.idxvli.util.IntVector_InMemory;
  *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - �crivain en exclusion avec tous
+ *   - écrivain en exclusion avec tous
  *  </pre>
  */
 public class ObjectStore4 implements ObjectStorage4 {
@@ -70,55 +70,55 @@ public class ObjectStore4 implements ObjectStorage4 {
     static final int FIRSTNBSET = 128; // pour l'initialisation de nbSet
     static final int MINNBSET = 1; // taille minimum de nbSet
     static final boolean proportional = true; // extention proportionnel
-    static final int nextsetpercent = 5; // % d�termine la taille de l'extension si proportional=true
-    static final int MAX_BLOCKID = 27; // 2^MAX_BLOCKID est le nombre max d'id � un niveau donn�
-    static final int MAX_BLOCKID_COMP = 32 - MAX_BLOCKID; // d�calage compl�mentaire 32->64 si long, 2^MAX_BLOCKID_COMP>maxlevel    static final int IDINCREMENTSIZE=IDFIRSTSIZE; // incr�ment du vecteur d'id (doit �tre grand pour �viter des copies)
+    static final int nextsetpercent = 5; // % détermine la taille de l'extension si proportional=true
+    static final int MAX_BLOCKID = 27; // 2^MAX_BLOCKID est le nombre max d'id à un niveau donné
+    static final int MAX_BLOCKID_COMP = 32 - MAX_BLOCKID; // décalage complémentaire 32->64 si long, 2^MAX_BLOCKID_COMP>maxlevel    static final int IDINCREMENTSIZE=IDFIRSTSIZE; // incrément du vecteur d'id (doit être grand pour éviter des copies)
     static final byte[] MARK = new byte[1];  // un marqueur de longueur 1
-    static final boolean MARKSPACE = false;  // r�serve les blocs des fichiers au moment de l'allocation si = true (true +++)
+    static final boolean MARKSPACE = false;  // réserve les blocs des fichiers au moment de l'allocation si = true (true +++)
     // =true -> MINNBSET petit < 8 par exemple
-    static final boolean SAVE = true;  // sauve r�ellement les donn�es si = true
+    static final boolean SAVE = true;  // sauve réellement les données si = true
     static boolean verbose = false;
     /* constantes d'un gestionnaire d'objet -------------------------------------- */
     /** nombre maximum de niveau d'extension */
     private int MAX_FILE;
-    /** definit le ratio d'extension P/Q (chaque niveau est augment� de ce facteur)*/
+    /** definit le ratio d'extension P/Q (chaque niveau est augmenté de ce facteur)*/
     private int P;
-    /** definit le ratio d'extension P/Q (chaque niveau est augment� de ce facteur)
+    /** definit le ratio d'extension P/Q (chaque niveau est augmenté de ce facteur)
      *  P>Q (progression exponentielle)
      *  P=Q (progression lineaire)
      */
     private int Q;
-    /** definit un increment additif � chaque extention >=0*/
+    /** definit un increment additif à chaque extention >=0*/
     private int MIN_EXT;
-    /** definit la taille du niveau 0 (celui de d�part), le niveau suivant � une taille
+    /** definit la taille du niveau 0 (celui de départ), le niveau suivant à une taille
      *  size(k)=size(k-1)*P/Q+MIN_EXT
      */
     private int SIZE_0;
     /** definit la version */
     String VERSION;
-    /** definit le nom g�n�rique des fichiers */
+    /** definit le nom générique des fichiers */
     String GENERIC_NAME;
     /* ---------------------------------------------------------------------------*/
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     String pathName;
-    /** definit les tailles � chaque niveau */
+    /** definit les tailles à chaque niveau */
     private long[] size;
-    /** d�finit l'utilisation des blocs a chaque niveau
-     * la valeur >= 0 d�finit la longueur r�ellement utilis�e
-     * la valeur -1 d�finit que le bloc est vide
+    /** définit l'utilisation des blocs a chaque niveau
+     * la valeur >= 0 définit la longueur réellement utilisée
+     * la valeur -1 définit que le bloc est vide
      */
     private int[][] blockAllocation;
     /** premier canditat possible dans blockAllocation qui est un bloc vide
-     *  il est certain que tous les blocs inf�rieurs sont allou�s
+     *  il est certain que tous les blocs inférieurs sont alloués
      */
     private int[] firstEmptyBlock;
-    /** nombre de blocs allou�s sur les disques pour chaque niveau */
+    /** nombre de blocs alloués sur les disques pour chaque niveau */
     private int[] nbBlock;
-    /** nombre de blocs allou�s sur les disques pour chaque niveau � chaque extension */
+    /** nombre de blocs alloués sur les disques pour chaque niveau à chaque extension */
     private int[] nbSet;
     /** vecteur des id */
     private /*long*/ int[] idUser;   // sans doute un int peut suffir dans beaucoup de cas (nblevel*nbmaxbloc)
-    /** fichier associ� avec chaque niveau */
+    /** fichier associé avec chaque niveau */
     private RandomAccessFile[] rfc;
     /** pour la gestion d'une allocation fixe, avec gestion externe des id */
     private int maxSize = 0; // puissance de 2
@@ -136,17 +136,17 @@ public class ObjectStore4 implements ObjectStorage4 {
     /** la structure pour les petits objets */
     private ByteArrayVector smallObject;
     private final String SMALL_EXT = "_SMALL";
-    /** la structure la taille r�elle des objets */
+    /** la structure la taille réelle des objets */
     private IntVector realSize;
     private final String REALSIZE_EXT = "_REALSIZE";
     /* mode lecture ou mise a jour */
     private readWriteMode RW = readWriteMode.rw;
 
-    /** cr�er une nouvelle instance de ObjectStore pour effectuer les create, open*/
+    /** créer une nouvelle instance de ObjectStore pour effectuer les create, open*/
     public ObjectStore4() {  // recharge un gestionnaire
     }
 
-    /** cr�er une nouvelle instance de ObjectStore � partir des donn�es existantes*/
+    /** créer une nouvelle instance de ObjectStore à partir des données existantes*/
     private ObjectStore4(implementationMode implementation, String _pathName, readWriteMode _RW) {  // recharge un gestionnaire
         pathName = _pathName;
         RW = _RW;
@@ -169,13 +169,13 @@ public class ObjectStore4 implements ObjectStorage4 {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de ObjectStore avec des valeurs par defaut*/
+    /** créer une nouvelle instance de ObjectStore avec des valeurs par defaut*/
     private ObjectStore4(implementationMode implementation, String _pathName, int _maxSize, int _minBigSize, String _generic_name) {
         createObjectStore(implementation, _pathName, _generic_name, _maxSize, 31, 2, 1, 0, _minBigSize);
         // createObjectStore(_pathName,_generic_name,_maxSize,15,4,1,0,8);
     }
 
-    /**  cr�e un ObjectStorage de taille 2^maxSize � l'endroit indiqu� par le path
+    /**  crée un ObjectStorage de taille 2^maxSize à l'endroit indiqué par le path
      * @param implementation
      * @param path
      * @param maxSize
@@ -240,7 +240,7 @@ public class ObjectStore4 implements ObjectStorage4 {
         close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         size = new long[MAX_FILE];
         size[0] = SIZE_0;
         for (int i = 1; i < MAX_FILE; i++) {
@@ -254,10 +254,10 @@ public class ObjectStore4 implements ObjectStorage4 {
         idUser = new /*long*/ int[utilSize];
         for (int i = 0; i < utilSize; i++) {
             idUser[i] = EMPTY;
-        } // initialise les id � vide
+        } // initialise les id à vide
     }
 
-    private final void initNbSet() { // initialise heuristiquement nbSet - peut �tre red�finit par une extension proportionnelle
+    private final void initNbSet() { // initialise heuristiquement nbSet - peut être redéfinit par une extension proportionnelle
         int setSize = FIRSTNBSET;
         for (int i = 0; i < MAX_FILE; i++) {
             nbSet[i] = setSize;
@@ -293,7 +293,7 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     }
 
-    public final long getSpace() { // calcule en byte l'espace occup�
+    public final long getSpace() { // calcule en byte l'espace occupé
         long tot = 0;
         for (int i = 0; i < MAX_FILE; i++) {
             tot += size[i] * nbBlock[i];
@@ -341,7 +341,7 @@ public class ObjectStore4 implements ObjectStorage4 {
             if (RW == readWriteMode.rw) {
                 FileOutputStream ostream = new FileOutputStream(pathName + "/" + MASTER_FILE);
                 ObjectOutputStream p = new ObjectOutputStream(ostream);
-                p.writeObject(VERSION); // �crire les flags
+                p.writeObject(VERSION); // écrire les flags
                 p.writeObject(GENERIC_NAME);
                 p.writeInt(MAX_FILE);
                 p.writeInt(P);
@@ -409,21 +409,21 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  stocke b avec un identifiant impos�,
-     * cette option est � utilis� avec le  create(String path,int maxSize) */
+    /**  stocke b avec un identifiant imposé,
+     * cette option est à utilisé avec le  create(String path,int maxSize) */
     private final int write(int user, byte[] b) {
         if (SAVE) {
             if (user < utilSize) {
                 cntwrite++;
                 bytewrite += b.length;
-                if (b.length > SIZE_0 / 2) {  // cas ou l'on condid�re que l'on a un gros objet
+                if (b.length > SIZE_0 / 2) {  // cas ou l'on condidére que l'on a un gros objet
                     /*long*/ int id = getIdForNBytes(b.length);  // cherche l'id du block
                     //msg("write 1");showVector(b);
 
                     int status = storeNBytes(b, id); // a tester si erreur
-                    idUser[user] = id; // met � jour le id du user ...
+                    idUser[user] = id; // met à jour le id du user ...
                     return status; // on pourrai retourner une erreur ...
-                } else { // cas ou l'on condid�re que l'on a un petit objet
+                } else { // cas ou l'on condidére que l'on a un petit objet
                     smallObject.set(user, b);
                     return STATUS_OK;
                 }
@@ -436,11 +436,11 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    //    /**  attribue un identifiant � un objet pour le retrouver
+    //    /**  attribue un identifiant à un objet pour le retrouver
     //     */
     //    private int getIdUser() {
-    //        // on ne r�cup�re pas les identifiants pour le moment
-    //        // on peut impl�menter le systeme des first pour le faire ...
+    //        // on ne récupère pas les identifiants pour le moment
+    //        // on peut implémenter le systeme des first pour le faire ...
     //        if (nextIdUser>=idUser.length){ // il manque des id, on agrandit le vecteur
     //            int oldSize = idUser.length;
     //            int newSize = oldSize +IDINCREMENTSIZE;
@@ -452,17 +452,17 @@ public class ObjectStore4 implements ObjectStorage4 {
     //        nextIdUser++;
     //        return nextIdUser-1;
     //    }
-    /**  stock sur le disk ces bytes � cet id  et met � jour la longueur utilis�e
+    /**  stock sur le disk ces bytes à cet id  et met à jour la longueur utilisée
      * retourne 0 si ok sinon <0
      */
     private final int storeNBytes(byte[] b, /*long*/ int id) {
-        // ici on devrait tester la validit� de l'id (comment?)
+        // ici on devrait tester la validité de l'id (comment?)
         // constistance de la taille et du niveau ...
         int level = getLevelForThisId(id);
         int blockid = getBlockForThisId(id);
         //msg("storeNBytes 1");showVector(b);
         int status = writeBytes(b, (long) blockid * (long) size[level], rfc[level]);
-        blockAllocation[level][blockid] = b.length; // met � jour la longueur
+        blockAllocation[level][blockid] = b.length; // met à jour la longueur
         if (verbose) {
             msg("write in  block no:" + blockid + ", " + b.length + " bytes at level " + level);
         }
@@ -480,7 +480,7 @@ public class ObjectStore4 implements ObjectStorage4 {
 
     /**  cherche le niveau pour b bytes */
     private final int getLevelForNBytes(int b) {
-        // doit �tre optimis� par une recherche dichotomique (pour 32 niveaux, cela reste ok)
+        // doit être optimisé par une recherche dichotomique (pour 32 niveaux, cela reste ok)
         for (int i = 0; i < MAX_FILE; i++) {
             if (size[i] >= b) {
                 return i;
@@ -493,27 +493,27 @@ public class ObjectStore4 implements ObjectStorage4 {
     /**  cherche un block vide a ce niveau */
     private final int getEmptyBlockAtThisLevel(int level) {
         try {
-            if (nbBlock[level] == 0) { // premi�re allocation � ce niveau
+            if (nbBlock[level] == 0) { // première allocation à ce niveau
                 if (verbose) {
                     msg("first allocation of " + nbSet[level] + " blocks (" + size[level] + " bytes) at level " + level);
                 }
                 blockAllocation[level] = new int[nbSet[level]]; // alloue le vecteur
                 for (int i = 0; i < nbSet[level]; i++) {
                     blockAllocation[level][i] = EMPTY;
-                } // init � vide
+                } // init à vide
                 if (MARKSPACE) {
                     long reserveSpace = ((long) nbSet[level] * (long) size[level]) - 1;
                     rfc[level].seek(reserveSpace);
-                    rfc[level].write(MARK); // marque la derni�re place
+                    rfc[level].write(MARK); // marque la dernière place
                 }
                 firstEmptyBlock[level] = 0; // le premier block est vide
                 nbBlock[level] = nbSet[level]; // init nbBlock;
             }
-            // pas la premi�re fois
+            // pas la première fois
             for (int i = firstEmptyBlock[level]; i < nbBlock[level]; i++) { // cherche un block vide dans la liste
                 // msg("test blk:"+i);
                 if (blockAllocation[level][i] == EMPTY) {
-                    blockAllocation[level][i] = 0;  // 0 byte dans ce block mais maintenant il est r�serv�
+                    blockAllocation[level][i] = 0;  // 0 byte dans ce block mais maintenant il est réservé
                     firstEmptyBlock[level] = i + 1;
                     return i;
                 }
@@ -521,30 +521,30 @@ public class ObjectStore4 implements ObjectStorage4 {
             // plus de block vide ...
             if (proportional) {
                 nbSet[level] = (blockAllocation[level].length * nextsetpercent / 100) + 1;
-            } // �tend de 5%
+            } // étend de 5%
             if (verbose) {
                 msg("new allocation of " + nbSet[level] + " blocks (" + size[level] + " bytes) at level " + level);
             }
-            blockAllocation[level] = incrementSize(blockAllocation[level], nbSet[level]); // �tend le vecteur
+            blockAllocation[level] = incrementSize(blockAllocation[level], nbSet[level]); // étend le vecteur
             firstEmptyBlock[level] = nbBlock[level]; // le premier block du nouveau set est vide
-            nbBlock[level] += nbSet[level];         // ajoute le nombre de block allou�s
+            nbBlock[level] += nbSet[level];         // ajoute le nombre de block alloués
             for (int i = firstEmptyBlock[level]; i < nbBlock[level]; i++) {
                 blockAllocation[level][i] = EMPTY;
-            } // init � vide les nouveaux block
+            } // init à vide les nouveaux block
             if (MARKSPACE) {
                 long reserveSpace = ((long) nbBlock[level] * (long) size[level]) - 1;
                 rfc[level].seek(reserveSpace);
-                rfc[level].write(MARK); // marque la derni�re place
+                rfc[level].write(MARK); // marque la dernière place
             }
             firstEmptyBlock[level]++; // ajoute 1 car on va ramener ce block
-            return firstEmptyBlock[level] - 1;  // on ram�ne le premier bock du nouveau set
+            return firstEmptyBlock[level] - 1;  // on raméne le premier bock du nouveau set
         } catch (Exception e) {
             error("IO error in getEmptyBlockAtThisLevel()", e);
             return STATUS_ERROR;  // en erreur
         }
     }
 
-    /* ces m�thodes peuvent �tre pass�e en mode long si 2^MAX_BLOCKID*nblevel > 32 bit
+    /* ces méthodes peuvent être passée en mode long si 2^MAX_BLOCKID*nblevel > 32 bit
     private /*long*/ final int forgeId(int level, int blockId) {
         return ((/*long*/int) level << MAX_BLOCKID) + blockId;
     }
@@ -557,22 +557,22 @@ public class ObjectStore4 implements ObjectStorage4 {
         return (int) ((id << (MAX_BLOCKID_COMP)) >>> MAX_BLOCKID_COMP);
     }
 
-    /**  lib�re un block
+    /**  libère un block
      */
     private final void releaseBlock(/*long*/int id) {
-        // il serait possible de remettre � z�ro le fichier si n�cessaire  ?
+        // il serait possible de remettre à zéro le fichier si nécessaire  ?
         int level = getLevelForThisId(id);
         int blockid = getBlockForThisId(id);
         if (verbose) {
             msg("release block no: " + blockid + "  (" + size[level] + " bytes) at level " + level);
         }
-        blockAllocation[level][blockid] = EMPTY; // marque � vide le block rendu
+        blockAllocation[level][blockid] = EMPTY; // marque à vide le block rendu
         if (blockid < firstEmptyBlock[level]) {
             firstEmptyBlock[level] = blockid;
         } // le premier block est le block rendu
     }
-    /** op�ration sur documentName verrous ------------------------------------------
-     * les sections prot�g�es ne doivent pas s'appeler entre-elle -> deadlock*/
+    /** opération sur documentName verrous ------------------------------------------
+     * les sections protégées ne doivent pas s'appeler entre-elle -> deadlock*/
     private final ReentrantReadWriteLock structRW = new ReentrantReadWriteLock();
     private final Lock structR = structRW.readLock();
     private final Lock structW = structRW.writeLock();
@@ -621,7 +621,7 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  lib�re un id (ceux vus par les utilisateurs)
+    /**  libère un id (ceux vus par les utilisateurs)
      * @param user
      */
     public final void releaseId(int user) {
@@ -654,7 +654,7 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  retourne l'objet stock� completement
+    /**  retourne l'objet stocké completement
      *   si null = erreur
      * @param user
      * @return 
@@ -662,7 +662,7 @@ public class ObjectStore4 implements ObjectStorage4 {
     public final int[] readInt(int user) {
         structR.lock();
         try {
-            /**  retourne l'objet stock� completement
+            /**  retourne l'objet stocké completement
              *   si null = erreur
              */
             // msg("readInt:"+user);
@@ -703,7 +703,7 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /**  retourne la taille r�el de l'objet sans compressio
+    /**  retourne la taille réel de l'objet sans compressio
      * @param user
      * @return n*/
     public final int realSize(int user) {
@@ -715,11 +715,11 @@ public class ObjectStore4 implements ObjectStorage4 {
         }
     }
 
-    /** partie priv�e ------------------------------------------------------------ */
+    /** partie privée ------------------------------------------------------------ */
     /**  lire les bytes de cet objet
      *   si 0 = OK
      */
-    /**  retourne la taille r�el de l'objet sans compression*/
+    /**  retourne la taille réel de l'objet sans compression*/
     private final int internalRealSize(int user) {
         structR.lock();
         try {
@@ -778,19 +778,19 @@ public class ObjectStore4 implements ObjectStorage4 {
             int level = getLevelForThisId(id);
             int blockid = getBlockForThisId(id);
             int newSize = blockAllocation[level][blockid] + b.length; // calcule la nouvelle taille de l'objet
-            if (newSize > size[level]) { // on d�passe, il faut migrer
-                // version r�cursive si next level est vraiment le prochain niveau
+            if (newSize > size[level]) { // on dépasse, il faut migrer
+                // version récursive si next level est vraiment le prochain niveau
                 if (verbose) {
                     msg("move block no:" + blockid + ", " + blockAllocation[level][blockid] + " bytes at level " + level);
                 }
-                moveToNextLevel(user, b.length);  // d�place le bloc d�finit par cet id au niveau suivant, on ne teste pas l'erreur possible
+                moveToNextLevel(user, b.length);  // déplace le bloc définit par cet id au niveau suivant, on ne teste pas l'erreur possible
                 return internalAppend(b, user);         // essaye de faire l'append maintenant
             }
-            // il y a de la place on concat�ne
+            // il y a de la place on concaténe
             cntappend++;
             byteappend += b.length;
             int status = writeBytes(b, (long) blockid * (long) size[level] + (long) blockAllocation[level][blockid], rfc[level]);
-            blockAllocation[level][blockid] += b.length; // met � jour la longueur
+            blockAllocation[level][blockid] += b.length; // met à jour la longueur
             if (verbose) {
                 msg("append to block no:" + blockid + ", " + b.length + " bytes at level " + level);
             }
@@ -800,19 +800,19 @@ public class ObjectStore4 implements ObjectStorage4 {
             if (verbose) {
                 msg("append small blk");
             }//showVector(b);
-            byte[] first = read(user);  // relit les bytes d�ja stock�s
+            byte[] first = read(user);  // relit les bytes déja stockés
             int newSize = first.length + b.length; // calcule la nouvelle taille de l'objet
             byte[] res = new byte[newSize];
             System.arraycopy(first, 0, res, 0, first.length); // copie first
             System.arraycopy(b, 0, res, first.length, b.length); // copie first
             //msg("new vector");showVector(res);
-            smallObject.clear(user); // �limine l'ancien vecteur
+            smallObject.clear(user); // élimine l'ancien vecteur
             int status = write(user, res); // peut le migrer ou le laisser dans smallObject
             return status;
         }
     }
 
-    /**  d�place le bloc d�finit par cet id au niveau suivant n�cessaire,
+    /**  déplace le bloc définit par cet id au niveau suivant nécessaire,
      *  on peut donc sauter plusieurs niveaux
      * si o=ok sinon <0
      */
@@ -820,10 +820,10 @@ public class ObjectStore4 implements ObjectStorage4 {
         cntmove++;
         bytemove += increment;
         byte[] blocktomove = read(user);
-        releaseBlock(idUser[user]);     // lib�re le block actuel
-        /*long*/ int id = getIdForNBytes(blocktomove.length + increment);  // cherche l'id du block demand� (avec l'incr�ment)
+        releaseBlock(idUser[user]);     // libère le block actuel
+        /*long*/ int id = getIdForNBytes(blocktomove.length + increment);  // cherche l'id du block demandé (avec l'incrément)
         int status = storeNBytes(blocktomove, id); // recopie le block a tester si erreur
-        idUser[user] = id; // met � jour le id du user ...
+        idUser[user] = id; // met à jour le id du user ...
         return status;
     }
 }

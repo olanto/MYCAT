@@ -57,7 +57,7 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      */
     public static boolean COMLOG_FORMAT_XML = false;
     /**
-     * fichier associ� au logger
+     * fichier associé au logger
      */
     private static FileHandler handler_COMLOG;
     /**
@@ -77,18 +77,18 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      */
     public static boolean DETLOG_FORMAT_XML = false;
     /**
-     * fichier associ� au logger
+     * fichier associé au logger
      */
     private static FileHandler handler_DETLOG;
     /**
-     * valeur rapport�e si on ne trouve pas
+     * valeur rapportée si on ne trouve pas
      */
     /**
      * **********************************************************************************
      */
     public static final int NOT_FOUND = -1;
     /**
-     * un m�ga
+     * un méga
      */
     public static final long MEGA = 1024 * 1024;
     /**
@@ -129,6 +129,10 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      * extention des noms du document manager
      */
     public static String MAP_NAME = "MAP";
+
+    /**
+     *
+     */
     public static String[] LANGID = new String[LANGPAIR_MAX];
     /**
      * nbr maximum de documents indexables
@@ -158,7 +162,7 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      * **********************************************************************************
      */
     /**
-     * implementation des objects store. l'impl�mentation est directement li�e �
+     * implementation des objects store. l'implémentation est directement liée à
      * la taille du dictionnaire
      */
     /**
@@ -166,8 +170,8 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      */
     public static implementationMode OBJ_IMPLEMENTATION = implementationMode.FAST;
     /**
-     * taille des objets consid�r�s comme petits en byte. Doit �tre un mutiple
-     * de 4, pour g�rer des int
+     * taille des objets considérés comme petits en byte. Doit être un mutiple
+     * de 4, pour gérer des int
      */
     public static int OBJ_SMALL_SIZE = 16 * 4;
     /**
@@ -213,17 +217,21 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
      */
     public static ParseSetOfWords SOF = null;
     /**
-     * longueur minimum d'un mot � indexer
+     * longueur minimum d'un mot à indexer
      */
     public static int WORD_MINLENGTH = 1;
     /**
-     * longueur maximum d'un mot � indexer (tronquer)
+     * longueur maximum d'un mot à indexer (tronquer)
      */
     public static int WORD_MAXLENGTH = 40;
     /**
      * définition de la notion de terme
      */
     public static ParseTokenDefinition WORD_DEFINITION = new TokenNative();
+
+    /**
+     *
+     */
     public static String GLOSS_NAME = "Glossaries";
     /**
      * **********************************************************************************
@@ -289,6 +297,9 @@ public class MapArchiveConstant {//extends org.olanto.idxvli.IdxConstant {
 
     }
 
+    /**
+     *
+     */
     public static void closeLogger() {
         COMLOG.info("CLOSE Common Log File ---------------------------------------------------------");
         DETLOG.info("CLOSE Detail Log File ---------------------------------------------------------");

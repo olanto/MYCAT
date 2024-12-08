@@ -24,7 +24,7 @@ import java.io.*;
 import static org.olanto.util.Messages.*;
 
 /**
- *  Comportements d'un vecteur de bit charg� enti�rement en m�moire.
+ *  Comportements d'un vecteur de bit chargé entièrement en mémoire.
  * 
  *
  */
@@ -35,9 +35,9 @@ public class BitVector_InMemory implements BitVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String fileName;
     private int[] b;
     private int size = 0;
@@ -47,11 +47,11 @@ public class BitVector_InMemory implements BitVector {
         1 << 30, 1 << 31
     };
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public BitVector_InMemory() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _pathName
      * @param _fileName
      * @param _maxSize
@@ -60,7 +60,7 @@ public class BitVector_InMemory implements BitVector {
         return (new BitVector_InMemory(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _pathName
      * @param _fileName
      * @return valeur */
@@ -74,7 +74,7 @@ public class BitVector_InMemory implements BitVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance de WordTable � partir des donn�es existantes*/
+    /** créer une nouvelle instance de WordTable à partir des données existantes*/
     private BitVector_InMemory(String _pathName, String _fileName) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -82,7 +82,7 @@ public class BitVector_InMemory implements BitVector {
         //printMasterFile();
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private BitVector_InMemory(String _pathName, String _fileName, int _maxSize) {
         createBitVector_InMemory(_pathName, _fileName, _maxSize);
     }
@@ -96,7 +96,7 @@ public class BitVector_InMemory implements BitVector {
         saveMasterFile();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         if ((size % 32) != 0) {
             error_fatal("BitVector_InMemory size must be a multiple of 32");
         }
@@ -107,7 +107,7 @@ public class BitVector_InMemory implements BitVector {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeInt(size);
             p.writeObject(b);
             System.out.println("save Bit Vector: " + pathName + "/" + fileName);
@@ -139,7 +139,7 @@ public class BitVector_InMemory implements BitVector {
         msg("size: " + size);
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, boolean val) {

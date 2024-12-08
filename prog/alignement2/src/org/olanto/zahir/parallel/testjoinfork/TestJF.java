@@ -33,6 +33,10 @@ public class TestJF extends RecursiveAction {
     SelectMax m;
     int result;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         SelectMax m = new SelectMax(MAX);
         compare(m, 2, 4);
@@ -46,10 +50,19 @@ public class TestJF extends RecursiveAction {
         compare(m, 4, 32);
     }
 
+    /**
+     *
+     * @param m
+     */
     public TestJF(SelectMax m) {
         this.m = m;
     }
 
+    /**
+     *
+     * @param m
+     * @param SMALL
+     */
     public TestJF(SelectMax m, int SMALL) {
         this.m = m;
         this.SMALL = SMALL;
@@ -68,6 +81,12 @@ public class TestJF extends RecursiveAction {
         }
     }
 
+    /**
+     *
+     * @param m
+     * @param nbThread
+     * @param smallRatio
+     */
     public static void compare(SelectMax m, int nbThread, int smallRatio) {
         double tFJ = (double) FJMethod(m, nbThread, smallRatio);
         double tSEQ = (double) SEQMethod(m);
@@ -75,6 +94,13 @@ public class TestJF extends RecursiveAction {
 
     }
 
+    /**
+     *
+     * @param m
+     * @param nbThread
+     * @param smallRatio
+     * @return
+     */
     public static long FJMethod(SelectMax m, int nbThread, int smallRatio) {
         TestJF init = new TestJF(m, m.size / smallRatio);
         long start = System.nanoTime();
@@ -85,6 +111,11 @@ public class TestJF extends RecursiveAction {
         return duration;
     }
 
+    /**
+     *
+     * @param m
+     * @return
+     */
     public static long SEQMethod(SelectMax m) {
         long start = System.nanoTime();
         int max = m.maxOfSeqMethod();

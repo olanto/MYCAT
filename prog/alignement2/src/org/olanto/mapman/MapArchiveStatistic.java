@@ -45,18 +45,31 @@ public class MapArchiveStatistic {
         msg("Map for mapmax: " + DOC_MAX + ", Map now: " + (glue.lastmap) + ", used: " + ((glue.lastmap * 100) / DOC_MAX) + "%");
     }
 
+    /**
+     *
+     * @return
+     */
     public String getGlobal() {
         return "KMap: " + DOC_MAX / 1024 + "/" + (glue.lastmap / 1024) + " " + ((glue.lastmap * 100) / DOC_MAX) + "%";
     }
 
+    /**
+     *
+     */
     public void mapid() {
         glue.mapid.printStatistic();
     }
 
+    /**
+     *
+     */
     public void content() {
         glue.IO.printContentStatistic();
     }
 
+    /**
+     *
+     */
     public void contentSize() {
         msg("STATISTICS map content size:");
         msg("mapNow: " + glue.lastmap);

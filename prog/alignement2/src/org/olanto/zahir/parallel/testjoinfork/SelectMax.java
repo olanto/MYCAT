@@ -26,10 +26,26 @@ package org.olanto.zahir.parallel.testjoinfork;
 public class SelectMax {
 
     private final int[] v;
+
+    /**
+     *
+     */
     public final int begin;
+
+    /**
+     *
+     */
     public final int end;
+
+    /**
+     *
+     */
     public final int size;
 
+    /**
+     *
+     * @param size
+     */
     public SelectMax(int size) {
         this.size = size;
         v = new int[size];
@@ -38,6 +54,12 @@ public class SelectMax {
         init();
     }
 
+    /**
+     *
+     * @param v
+     * @param begin
+     * @param end
+     */
     public SelectMax(int[] v, int begin, int end) {
         this.v = v;
         this.begin = begin;
@@ -45,6 +67,10 @@ public class SelectMax {
         size = end - begin;
     }
 
+    /**
+     *
+     * @return
+     */
     public int maxOfSeqMethod() {
         int res = -1;
         for (int i = begin; i < end; i++) {
@@ -55,6 +81,12 @@ public class SelectMax {
         return res;
     }
 
+    /**
+     *
+     * @param subbegin
+     * @param subend
+     * @return
+     */
     public SelectMax subProblem(int subbegin, int subend) {
         return new SelectMax(v, subbegin, subend);
     }

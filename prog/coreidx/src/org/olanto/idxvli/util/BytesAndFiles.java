@@ -26,11 +26,11 @@ import java.util.zip.*;
 import static org.olanto.util.Messages.*;
 
 /**
- * Classe g�rant des op�rations courante (fichiers, copie, compression, etc).
+ * Classe gérant des opérations courante (fichiers, copie, compression, etc).
  *
  *
  *
- * Classe g�rant des op�rations courante (fichiers, copie, compression, etc).
+ * Classe gérant des opérations courante (fichiers, copie, compression, etc).
  */
 public class BytesAndFiles {
 
@@ -53,7 +53,7 @@ public class BytesAndFiles {
     private static Inflater inf2 = new Inflater(nowrapboolean);
 
     /**
-     * lit le contenu d'un fichier texte encod�
+     * lit le contenu d'un fichier texte encodé
      *
      * @param fname nom du fichier
      * @param txt_encoding encodage
@@ -83,12 +83,12 @@ public class BytesAndFiles {
     }
 
     /**
-     * stocke w encod� à la position pos du fichier r (si n'exc�de pas
+     * stocke w encodé à la position pos du fichier r (si n'excède pas
      * maxLengthString) et retourne 0 si ok sinon plus petit que 0
      *
 
      *
-     * @param w cha�ne � �crire
+     * @param w chaîne à écrire
      * @param pos position
      * @param encode encodage
      * @param maxLengthString longueur max du string converti en bytes
@@ -100,13 +100,13 @@ public class BytesAndFiles {
         if (bw.length > maxLengthString) {
             error("*** error name too long '" + w + "' maxbyteslength:" + maxLengthString);
             //System.exit(1);
-            writeString("!", pos, encode, maxLengthString, r); // on �crit une marque d'erreur
+            writeString("!", pos, encode, maxLengthString, r); // on écrit une marque d'erreur
             return STATUS_ERROR;
         }
         try {
-            r.seek(pos); // position la t�te sur le d�but du block
+            r.seek(pos); // position la tête sur le début du block
 
-            r.writeInt(bw.length); // �crit la longueur du string
+            r.writeInt(bw.length); // écrit la longueur du string
 
             r.write(bw);
             return STATUS_OK;
@@ -123,11 +123,11 @@ public class BytesAndFiles {
      * @param pos position
      * @param encode encodage
      * @param r fichier
-     * @return cha�ne lue
+     * @return chaîne lue
      */
     public static final synchronized String readString(long pos, String encode, RandomAccessFile r) {
         try {
-            r.seek(pos); // position la t�te sur le d�but du block
+            r.seek(pos); // position la tête sur le début du block
 
             byte[] bw = new byte[r.readInt()];
             r.read(bw);
@@ -140,11 +140,11 @@ public class BytesAndFiles {
     }
 
     /**
-     * stocke n � cette position et retourne 0 si ok sinon plus petit que 0
+     * stocke n à cette position et retourne 0 si ok sinon plus petit que 0
      *
 
      *
-     * @param n entier � �crire
+     * @param n entier à écrire
      * @param pos position
      * @param r fichier
      * @return status
@@ -159,18 +159,18 @@ public class BytesAndFiles {
     }
 
     /**
-     * stock sur le disk ces bytes � cette position retourne 0 si ok sinon plus petit que 0
+     * stock sur le disk ces bytes à cette position retourne 0 si ok sinon plus petit que 0
      *
 
      *
-     * @param b byte � �crire
+     * @param b byte à écrire
      * @param pos position
      * @param r fichier
      * @return status
      */
     public static final int writeBytes(byte[] b, long pos, RandomAccessFile r) {
         try {
-            r.seek(pos); // position la t�te sur le d�but du block
+            r.seek(pos); // position la tête sur le début du block
 
             r.write(b); // ecrit le vecteur
             //msg("write "+b.length+" Bytes at "+pos+" in "+r);showVector(b);
@@ -184,8 +184,8 @@ public class BytesAndFiles {
     }
 
     /**
-     * read int à la position pos il est �vident que le status ne peut �tre
-     * test� si on travaille avec -1 !!!
+     * read int à la position pos il est évident que le status ne peut être
+     * testé si on travaille avec -1 !!!
      *
      * @param pos position
      * @param r fichier
@@ -207,9 +207,9 @@ public class BytesAndFiles {
     }
 
     /**
-     * lire n bytes � cette position retourne le vecteur si ok sinon null
+     * lire n bytes à cette position retourne le vecteur si ok sinon null
      *
-     * @param n nombres de bytes � lire
+     * @param n nombres de bytes à lire
      * @param pos position
      * @param r fichier
      * @return valeurs
@@ -221,12 +221,12 @@ public class BytesAndFiles {
         try {
             byte[] byteidx = new byte[n];
 //            TimerNano trSEEK= new TimerNano("read byte",true);
-            r.seek(pos); // position la t�te sur le d�but du block
+            r.seek(pos); // position la tête sur le début du block
 //            long readtimeseek=trSEEK.stop(true);
 //            msg("pos :"+pos+" length:"+byteidx.length+" : time "+readtimeseek+"[us]");
 //            TimerNano trPOS= new TimerNano("read byte",true);
 //        Runtime runtime = Runtime.getRuntime();
-//        msg("memory alloc/free: " + (runtime.totalMemory()/1024/1024)+" / "+(runtime.freeMemory()/1024/1024)); //la m�moire actuellement utilis�e
+//        msg("memory alloc/free: " + (runtime.totalMemory()/1024/1024)+" / "+(runtime.freeMemory()/1024/1024)); //la mémoire actuellement utilisée
 
             r.read(byteidx); // lire le vecteur
 //            long readtime=trPOS.stop(true);
@@ -243,7 +243,7 @@ public class BytesAndFiles {
     /**
      * converti de byte en String avec un encodage 'UTF-8' par exemple
      *
-     * @param bs bytes � convertir
+     * @param bs bytes à convertir
      * @param encode encodage
      * @return valeur convertie
      */
@@ -262,7 +262,7 @@ public class BytesAndFiles {
     /**
      * converti de String en byte avec un encodage 'UTF-8' par exemple
      *
-     * @param s cha�ne � convertir
+     * @param s chaîne à convertir
      * @param encode encodage
      * @return bytes
      */
@@ -327,15 +327,15 @@ public class BytesAndFiles {
     }
 
     /**
-     * incr�mente la taille d'un vecteur et recopie la totalit� si plus grand,
-     * si l'incr�ment est n�gatif seul les n premiers bytes sont copi�s
+     * incrémente la taille d'un vecteur et recopie la totalité si plus grand,
+     * si l'incrément est négatif seul les n premiers bytes sont copiés
      *
      * @param v vecteur d'entier
      * @param increment +ajout/-troncation
      * @return nouveau vecteur
      */
     public static final int[] incrementSize(int[] v, int increment) {
-        // si l'incr�ment est n�gatif seul les n premiers bytes sont copi�s
+        // si l'incrément est négatif seul les n premiers bytes sont copiés
         int oldSize = v.length;
         int newSize = oldSize + increment;
         int[] it = new int[newSize];
@@ -349,8 +349,8 @@ public class BytesAndFiles {
 
     /**
      * copier le vecteur p dans un nouveau vecteur de longueur l. Si p est plus
-     * petit que l alors la fin sera remplie de z�ro. Si p est plus grand alors
-     * la fin de p sera tronqu�e.
+     * petit que l alors la fin sera remplie de zéro. Si p est plus grand alors
+     * la fin de p sera tronquée.
      *
      * @param p vecteur
      * @param l longueur du nouveau vecteur
@@ -366,8 +366,8 @@ public class BytesAndFiles {
 
     /**
      * copier le vecteur p dans un nouveau vecteur de longueur l. Si p est plus
-     * petit que l alors la fin sera remplie de z�ro. Si p est plus grand alors
-     * la fin de p sera tronqu�e.
+     * petit que l alors la fin sera remplie de zéro. Si p est plus grand alors
+     * la fin de p sera tronquée.
      *
      * @param p vecteur
      * @param l longueur du nouveau vecteur
@@ -383,8 +383,8 @@ public class BytesAndFiles {
 
     /**
      * copier le vecteur p dans un nouveau vecteur de longueur l. Si p est plus
-     * petit que l alors la fin sera remplie de z�ro. Si p est plus grand alors
-     * la fin de p sera tronqu�e.
+     * petit que l alors la fin sera remplie de zéro. Si p est plus grand alors
+     * la fin de p sera tronquée.
      *
      * @param p vecteur
      * @param l longueur du nouveau vecteur
@@ -402,7 +402,7 @@ public class BytesAndFiles {
      * compresser un int[], genre ZIP
      *
      * @param bi le vecteur a compresser
-     * @return le vecteur de byte compress�
+     * @return le vecteur de byte compressé
      */
     public synchronized static final byte[] compress(int[] bi) { // partage un compresseur commun en cas de //
 
@@ -425,11 +425,11 @@ public class BytesAndFiles {
      * compresser un byte[], genre ZIP
      *
      * @param bb le vecteur a compresser
-     * @return le vecteur de byte compress�
+     * @return le vecteur de byte compressé
      */
     public synchronized static final byte[] compress(byte[] bb) { // partage un compresseur commun en cas de //
 
-        byte[] bytecomp = new byte[bb.length + 100];  // pour les petites choses la compression peut �tre plus grande
+        byte[] bytecomp = new byte[bb.length + 100];  // pour les petites choses la compression peut être plus grande
 
         def.setInput(bb);
         def.finish();
@@ -446,11 +446,11 @@ public class BytesAndFiles {
      * compresser un int[] Variable Int
      *
      * @param bi le vecteur a compresser
-     * @return le vecteur de byte compress�
+     * @return le vecteur de byte compressé
      */
     public static final byte[] compressVInt(int[] bi) { //
 
-        byte[] bb = new byte[bi.length * 4];  // normalement doit �tre *5, on esp�re une compression peut donc g�n�rer des erreurs si pas adapt�!!!
+        byte[] bb = new byte[bi.length * 4];  // normalement doit être *5, on espère une compression peut donc générer des erreurs si pas adapté!!!
 
         int k = 0;
         for (int j = 0; j < bi.length; j++) {
@@ -470,11 +470,11 @@ public class BytesAndFiles {
     }
 
     /**
-     * d�compresser un int[] Variable Int
+     * décompresser un int[] Variable Int
      *
-     * @param bb le vecteur a d�compresser
+     * @param bb le vecteur a décompresser
      * @param maxSize la taille maximum du vecteur attendu
-     * @return le vecteur de int d�compress�
+     * @return le vecteur de int décompressé
      */
     public static final int[] decompressVInt(byte[] bb, int maxSize) {
         //  TimerNano trPOS= new TimerNano("decompress",true);
@@ -503,11 +503,11 @@ public class BytesAndFiles {
      *
      * @param bi le vecteur a compresser
      * @param to
-     * @return le vecteur de byte compress�
+     * @return le vecteur de byte compressé
      */
     public static final byte[] compressVInt(int[] bi, int to) { //
 
-        byte[] bb = new byte[to * 4];  // normalement doit �tre *5, on esp�re une compression peut donc g�n�rer des erreurs si pas adapt�!!!
+        byte[] bb = new byte[to * 4];  // normalement doit être *5, on espère une compression peut donc générer des erreurs si pas adapté!!!
 
         int k = 0;
         for (int j = 0; j < to; j++) {
@@ -527,11 +527,11 @@ public class BytesAndFiles {
     }
 
     /**
-     * d�compresser un byte[]
+     * décompresser un byte[]
      *
-     * @param bb le vecteur a d�compresser
+     * @param bb le vecteur a décompresser
      * @param maxSize la taille maximum du vecteur attendu
-     * @return le vecteur de int d�compress�
+     * @return le vecteur de int décompressé
      */
     public synchronized static final int[] decompress(byte[] bb, int maxSize) { // partage un compresseur commun en cas de //
         //msg("bb length:"+bb.length);
@@ -553,11 +553,11 @@ public class BytesAndFiles {
     }
 
     /**
-     * d�compresser un byte[]
+     * décompresser un byte[]
      *
-     * @param bb le vecteur a d�compresser
+     * @param bb le vecteur a décompresser
      * @param realSize la taille maximum du vecteur attendu
-     * @return le vecteur de int d�compress�
+     * @return le vecteur de int décompressé
      */
     public synchronized static final byte[] decompress(int realSize, byte[] bb) { // partage un compresseur commun en cas de //
 
@@ -575,31 +575,31 @@ public class BytesAndFiles {
     }
 
     /**
-     * indique la m�moire utilis�e par l'indexeur
+     * indique la mémoire utilisée par l'indexeur
      *
-     * @return la m�moire utilis�e
+     * @return la mémoire utilisée
      */
     public static long usedMemory() {
         Runtime runtime = Runtime.getRuntime();
-        return runtime.totalMemory() - runtime.freeMemory(); //la m�moire actuellement utilis�e
+        return runtime.totalMemory() - runtime.freeMemory(); //la mémoire actuellement utilisée
 
     }
 
     /**
-     * affiche la m�moire utilis�e par l'indexeur
+     * affiche la mémoire utilisée par l'indexeur
      *
-     * @param s libell� de l'affichage
+     * @param s libellé de l'affichage
      */
     public static void usedMemory(String s) {
         Runtime runtime = Runtime.getRuntime();
-        msg(s + ": " + (runtime.totalMemory() - runtime.freeMemory())); //la m�moire actuellement utilis�e
+        msg(s + ": " + (runtime.totalMemory() - runtime.freeMemory())); //la mémoire actuellement utilisée
 
     }
 
     /**
-     * Compacte la m�moire et affiche la m�moire utilis�e par l'indexeur
+     * Compacte la mémoire et affiche la mémoire utilisée par l'indexeur
      *
-     * @param s libell� de l'affichage
+     * @param s libellé de l'affichage
      */
     public static void compactMemory(String s) {
         usedMemory("Before GC " + s);

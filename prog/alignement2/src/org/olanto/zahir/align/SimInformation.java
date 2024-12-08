@@ -27,14 +27,49 @@ import static org.olanto.util.Messages.*;
 /*  Calcul de la similiratité
  i* 
  */
+
+/**
+ *
+ * @author xtern
+ */
+
 public final class SimInformation {
 
+    /**
+     *
+     */
     public float similarity;
+
+    /**
+     *
+     */
     public int sourceCnt;
+
+    /**
+     *
+     */
     public int targetCnt;
+
+    /**
+     *
+     */
     public int countIdent;
+
+    /**
+     *
+     */
     public int countNoIdent;
 
+    /**
+     *
+     * @param fromSeq
+     * @param toSeq
+     * @param fromId
+     * @param toId
+     * @param score
+     * @param verbose
+     * @param s2t
+     */
     public SimInformation(String[] fromSeq, String[] toSeq, int[] fromId, int[] toId, float[] score, boolean verbose, LexicalTranslation s2t) {
 
         float sum = 0;
@@ -117,13 +152,24 @@ public final class SimInformation {
 
     }
 
+    /**
+     *
+     * @param s
+     * @param t
+     */
     public void addSimilarityOnNumbers(String s, String t) {
       //  System.out.println(s + ", " + t);
         if (s.equals(t)) {
             similarity += 0.1;
         }
     }
-        public void addSimilarityOnSentence(String s, String t) {
+
+    /**
+     *
+     * @param s
+     * @param t
+     */
+    public void addSimilarityOnSentence(String s, String t) {
       //  System.out.println(s + ", " + t);
         if (s.equals(t)) {
             similarity += 0.2;

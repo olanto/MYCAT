@@ -45,7 +45,7 @@ public class TESTKNNMode_1 {
     public static void main(String[] args) {
 
         id = new IdxStructure("QUERY");
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new Configuration());
 
         // charge l'index (si il n'existe pas alors il est vide)
@@ -61,7 +61,7 @@ public class TESTKNNMode_1 {
         KNN.initialize(id, // Indexeur
                 5, // Min occurence d'un mot dans le corpus (nbr de documents)
                 50, // Max en o/oo d'apparition dans le corpus (par mille!)
-                true, // montre les dï¿½tails
+                true, // montre les détails
                 1, // formule IDF (1,2)
                 1, // formule TF (1,2,3) toujours 1
                 0.005f);
@@ -77,14 +77,14 @@ public class TESTKNNMode_1 {
                 + "Broadcast, Merge, and Composite  types,  where  the  Connection  Point  (CP) "
                 + "denotes the leaf. For the Full Multipoint connection,  the  MPCP  denotes  a "
                 + "hybrid Root/Leaf. Note that the directionality refers only  to  the  traffic "
-                + "flow, the OAM flow are for further study(seeï¿½ITU-T Rec. I.610).", 3);
+                + "flow, the OAM flow are for further study(see ITU-T Rec. I.610).", 3);
 
         t2 = new Timer("init KNN FULL");
         KNN = new TFxIDF();
         KNN.initialize(id, // Indexeur
                 5, // Min occurence d'un mot dans le corpus (nbr de documents)
                 50, // Max en o/oo d'apparition dans le corpus (par mille!)
-                true, // montre les dï¿½tails
+                true, // montre les détails
                 1, // formule IDF (1,2)
                 1, // formule TF (1,2,3) toujours 1
                 0.005f);
@@ -100,7 +100,7 @@ public class TESTKNNMode_1 {
                 + "Broadcast, Merge, and Composite  types,  where  the  Connection  Point  (CP) "
                 + "denotes the leaf. For the Full Multipoint connection,  the  MPCP  denotes  a "
                 + "hybrid Root/Leaf. Note that the directionality refers only  to  the  traffic "
-                + "flow, the OAM flow are for further study(seeï¿½ITU-T Rec. I.610).", 3);
+                + "flow, the OAM flow are for further study(see ITU-T Rec. I.610).", 3);
 
 
         t1.stop();

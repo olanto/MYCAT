@@ -22,21 +22,21 @@ package org.olanto.idxvli.doc;
 
 /**
  *
- * classe pour la manipulation et l'extraction des propri�t�s.
+ * classe pour la manipulation et l'extraction des propriétés.
  *
  * 
  *
- * classe pour la manipulation et l'extraction des propri�t�s. 
- * Cette classe est modifi�e en fonction des besoins du client et de la structure des documents
+ * classe pour la manipulation et l'extraction des propriétés. 
+ * Cette classe est modifiée en fonction des besoins du client et de la structure des documents
  *
  */
 public class KeepProperties {
 
     /**
-     * d�termine la propri�t� de language d'un document.
+     * détermine la propriété de language d'un document.
      * @param fname nom du fichier
      * @param idDoc document
-     * @param PM gestionnaire de propri�t�
+     * @param PM gestionnaire de propriété
      */
     public static void keepLanguageOfDoc(String fname, int idDoc, PropertiesManager PM) {
         //msg("keepLanguageOfDoc:"+fname);
@@ -96,10 +96,10 @@ public class KeepProperties {
     }
 
     /**
-     * d�termine la ou les collections d'un document.
+     * détermine la ou les collections d'un document.
      * @param fname nom du fichier
      * @param idDoc document
-     * @param PM gestionnaire de propri�t�
+     * @param PM gestionnaire de propriété
      */
     public static void keepCollectionOfDoc(String fname, int idDoc, PropertiesManager PM) {
         //msg("keepLanguageOfDoc:"+fname);

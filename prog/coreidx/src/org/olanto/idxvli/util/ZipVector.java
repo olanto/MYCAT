@@ -40,7 +40,7 @@ public interface ZipVector {
      * @return valeur */
     public ZipVector create(String _path, String _file, int _maxSize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiqué par le path
+    /**  ouvre un vecteur à  l'endroit indiqué par le path
      * @param _path
      * @param _RW
      * @param _file

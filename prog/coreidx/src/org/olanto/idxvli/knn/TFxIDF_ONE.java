@@ -29,15 +29,15 @@ import org.olanto.util.TimerNano;
 import org.olanto.idxvli.extra.DocBag;
 
 /**
- * Une classe pour effectuer le calcul de la distance entre les documents (optimis�e). Cette classe est une version simplifi�e de TFxIDF
+ * Une classe pour effectuer le calcul de la distance entre les documents (optimisée). Cette classe est une version simplifiée de TFxIDF
  * - avec wtd=1
- * - on supprime le filtre, car on a minocc d�ja filtrant
+ * - on supprime le filtre, car on a minocc déja filtrant
  * 
  * 
 
  *
  *
- *  impl�mente les cosinus ...
+ *  implémente les cosinus ...
  */
 public class TFxIDF_ONE implements KNNManager {
 
@@ -69,22 +69,22 @@ public class TFxIDF_ONE implements KNNManager {
     public static void setOffset(float aOffset) {
         offset = aOffset;
     }
-    /** cr�e une classe pour les recheches KNN*/
+    /** crée une classe pour les recheches KNN*/
     public TFxIDF_ONE() {
     }
 
     /**
-     * Pr�pare une structure de calcul de KNN.
-     * On pr�calcul les poids IDF et TF.
-     * On pr�s�lectionne les termes
-     * @param _glue indexation de r�f�rence
-     * @param minocc minimum d'occurences pour �tre dans la pr�s�lection. (ce param�tre est purement formel, pour des raisons de compatibilit�)
-     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour �tre dans a pr�s�lection. (ce param�tre est purement formel, pour des raisons de compatibilit�)
-     * @param _verbose montre les d�tails
+     * Prépare une structure de calcul de KNN.
+     * On précalcul les poids IDF et TF.
+     * On présélectionne les termes
+     * @param _glue indexation de référence
+     * @param minocc minimum d'occurences pour être dans la présélection. (ce paramètre est purement formel, pour des raisons de compatibilité)
+     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour être dans a présélection. (ce paramètre est purement formel, pour des raisons de compatibilité)
+     * @param _verbose montre les détails
      * @param formulaIDF inverse document frequency formula.
      *       1 -- ln(1+N/f(t));
      *       2 -- ln(N/f(t)-1)
-     * @param formulaTF toujours � 1. (ce param�tre est purement formel, pour des raisons de compatibilit�)
+     * @param formulaTF toujours à 1. (ce paramètre est purement formel, pour des raisons de compatibilité)
      * @param _offset
      */
     public final void initialize(IdxStructure _glue, int minocc, int maxlevel, boolean _verbose, int formulaIDF, int formulaTF, float _offset) {
@@ -92,9 +92,9 @@ public class TFxIDF_ONE implements KNNManager {
         offset=_offset;
         glue = _glue;
         
-        lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incr�mentale
+        lastdoc = glue.lastUpdatedDoc; // ??? plus possible ???  il faut un initialisation incrémentale
 
-        lastword = glue.lastUpdatedWord; // ??? plus possible ???   il faut un initialisation incr�mentale
+        lastword = glue.lastUpdatedWord; // ??? plus possible ???   il faut un initialisation incrémentale
 
         indexread = glue.indexread;  ///  attention !!! si modif
 
@@ -124,10 +124,10 @@ public class TFxIDF_ONE implements KNNManager {
     }
 
     /** Chercher les N premiers voisins du document d, sans formattage.
-     * utilise boostedTopNDoc qui n�cessite des r�glages selon la collection.
+     * utilise boostedTopNDoc qui nécessite des réglages selon la collection.
      * @param doc document
      * @param N nombre de voisins
-     * @return r�ponse
+     * @return réponse
      */
     public final int[][] getKNNForDoc(int doc, int N) {
         //Timer t1=new Timer("getKNNForDoc:");
@@ -158,11 +158,11 @@ public class TFxIDF_ONE implements KNNManager {
     }
 
     /** Chercher les N premiers voisins du texte request, sans formattage.
-     * Cette m�thode est synchronis�e car elle utilise cumul qui est static, donc le
-     * calcul du KNN doit �tre prot�g�.
-     * @param request texte de r�f�rence
+     * Cette méthode est synchronisée car elle utilise cumul qui est static, donc le
+     * calcul du KNN doit être protégé.
+     * @param request texte de référence
      * @param N nombre de voisins
-     * @return r�ponse
+     * @return réponse
      */
     public final KNNResult getKNN1(String request, int N) {
         TimerNano time = new TimerNano("knn", true);
@@ -274,8 +274,8 @@ public class TFxIDF_ONE implements KNNManager {
         return cumul;
     }
 
-    /** visualiser le r�sultat d'une r�ponse knn
-     * @param res R�sultat d'une requ�te KNN (getKNN)
+    /** visualiser le résultat d'une réponse knn
+     * @param res résultat d'une requête KNN (getKNN)
      */
     public final void showKNN(int[][] res) {
         for (int i = 0; i < res.length; i++) {
@@ -283,8 +283,8 @@ public class TFxIDF_ONE implements KNNManager {
         }
     }
 
-    /** visualiser le r�sultat d'une r�ponse knn
-     * @param res R�sultat d'une requ�te KNN (getKNN)
+    /** visualiser le résultat d'une réponse knn
+     * @param res résultat d'une requête KNN (getKNN)
      */
     public final void showKNNWithName(int[][] res) {
         for (int i = 0; i < res.length; i++) {
@@ -304,7 +304,7 @@ public class TFxIDF_ONE implements KNNManager {
  
     
     /** Chercher les N premiers voisins du texte request
-     * @param request texte de r�f�rence
+     * @param request texte de référence
      * @param N nombre de voisins
      * @return XML format
      */
@@ -326,13 +326,13 @@ public class TFxIDF_ONE implements KNNManager {
         return r;
     }
 
-    /** formatage XML d'une ligne de r�ponse
+    /** formatage XML d'une ligne de réponse
      * @param fn nom du fichier
      * @param doc document
-     * @param score niveau de similarit�
+     * @param score niveau de similarité
      * @return XML format
      */
-    public final String XMLrefFNWithScore(String fn, int doc, int score) {  // inspir� de celle de IdxQuery
+    public final String XMLrefFNWithScore(String fn, int doc, int score) {  // inspiré de celle de IdxQuery
 
         //      return "<P_small><URL target=\"document\" href=\"" + cleanValue(fn) + "\">" + cleanValue(fn) + "</URL>(" + score + ")</P_small>";
         return fn + " (" + score + ")\n";
@@ -347,7 +347,7 @@ public class TFxIDF_ONE implements KNNManager {
         for (int i = 0; i < docbag.length; i++) {  //pour chaque mot du docbag
 
             int wordinDB = docbag[i] / DocBag.MAXOCCINDOC;
-            if (KNNFilter[wordinDB]) {  // pas filtr�
+            if (KNNFilter[wordinDB]) {  // pas filtré
                 System.out.println("knn word "+wordinDB+" - "+glue.getStringforW(wordinDB));
 
                // int weightinDB = docbag[i] % DocBag.MAXOCCINDOC; not used
@@ -356,7 +356,7 @@ public class TFxIDF_ONE implements KNNManager {
 
                 int[] doc = glue.indexread.getReferenceOnDoc(wordinDB);
 
-                //System.out.println("# doc by method:"+glue.indexread.getNbDoc(wordinDB)); // # doc poss�dant le mot i
+                //System.out.println("# doc by method:"+glue.indexread.getNbDoc(wordinDB)); // # doc possèdant le mot i
                 int lastwi = doc.length/2;
                 System.out.println("# doc by legnth:"+lastwi);
 
@@ -501,7 +501,7 @@ public class TFxIDF_ONE implements KNNManager {
         }
     }
 
-    private final void buildFilterKNN(int minocc, int maxlevel) {  // maxlevel est signifiant en o/oo  - on filtre les mots trop et peu fr�quents
+    private final void buildFilterKNN(int minocc, int maxlevel) {  // maxlevel est signifiant en o/oo  - on filtre les mots trop et peu fréquents
 
         KNNFilter = new boolean[lastword];
         int KNNused = 0;

@@ -28,7 +28,7 @@ import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 
 /**
- * <p>tests de base (�criture lecture des int ).
+ * <p>tests de base (écriture lecture des int ).
  * 
 
  * 

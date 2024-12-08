@@ -31,6 +31,10 @@ import org.olanto.mapman.server.AlignBiText;
  */
 public class TestAlignBiText {
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         //AlignBiText align = new AlignBiText("EN/small-collection¦WIPO¦WO_GA¦wo_ga_31_1.doc.txt", "EN", "EN", null, 53, 28);
         AlignBiText align = new AlignBiText("EN/Glossaries¦External¦Product classification¦Documents¦Customs Tariffs¦Philippines¦Philippines2003.pdf.txt", "EN", "EN", null, 53, 28, false);

@@ -51,12 +51,12 @@ public class ContentStructure {
     /** sliper de texte */
     Pattern p = Pattern.compile(SEPARATOR);
 
-    /** Crï¿½e une structure d'indexation
+    /** crée une structure d'indexation
      */
     public ContentStructure() {
     }
 
-    /** Crï¿½e une structure d'indexation . Permet de dï¿½composer l'initalisation.
+    /** crée une structure d'indexation . Permet de décomposer l'initalisation.
      * @param _mode (QUERY,INCREMENTAL,DIFFERENTIAL,)
      */
     public ContentStructure(String _mode) {
@@ -64,9 +64,9 @@ public class ContentStructure {
     }
 
     /**
-     * crï¿½ation d'une structure d'indexation. Permet de dï¿½composer l'initalisation.
+     * création d'une structure d'indexation. Permet de décomposer l'initalisation.
      * @param _mode (NEW_INDEXATION)
-     * @param name  (pas utilisï¿½)
+     * @param name  (pas utilisé)
      *
      */
     public ContentStructure(String _mode, String name) {
@@ -76,7 +76,7 @@ public class ContentStructure {
         MODE_IDX = IdxMode.valueOf(_mode);
     }
 
-    /** Crï¿½e une structure d'indexation et initialise la.
+    /** crée une structure d'indexation et initialise la.
      * @param _mode (NEW,QUERY,INCREMENTAL,DIFFERENTIAL,)
      * @param client la configuration client
      */
@@ -89,34 +89,33 @@ public class ContentStructure {
     /* service IO */
 
     /**
-     *
+     * update lastdoc var
      */
-
     public final void updateLastdoc() {
         lastdoc = docstable.getCount();
     }
 
     /**
-     *
+     * load content manager
      */
     public final void loadContentManager() {
         IO.loadContentManager();
     }
 
-    /** sauvegarder les donnï¿½es encore dans les caches et ferme l'un index
+    /** sauvegarder les données encore dans les caches et ferme l'un index
      */
     public final void close() {
         IO.saveContentManager();
     }
 
-    /** rï¿½cupï¿½re le nom de la racine de la structure d'indexation
+    /** récupère le nom de la racine de la structure d'indexation
      * @return dossier racine
      */
     public final String getIdxRootName() {
         return COMMON_ROOT;
     }
 
-    /** rï¿½cupï¿½re le nom de l'index actuellement actif
+    /** récupère le nom de l'index actuellement actif
      * @return sac nom de fichier
      */
     public final String getIdxName() {
@@ -192,7 +191,7 @@ public class ContentStructure {
         }
     }
 
-    /** rï¿½cuper un contenu String.
+    /** récuper un contenu String.
      * @param docName identifiant
      * @return  contenu
      */
@@ -200,7 +199,7 @@ public class ContentStructure {
         return CM.getStringContent(docName);
     }
 
-    /** rï¿½cuper un contenu Byte.
+    /** récuper un contenu Byte.
      * @param docName identifiant
      * @return  contenu
      */
@@ -208,7 +207,7 @@ public class ContentStructure {
         return CM.getByteContent(docName);
     }
 
-    /** rï¿½cuper un contenu String.
+    /** récuper un contenu String.
      * @param docID identifiant
      * @return  contenu
      */
@@ -216,7 +215,7 @@ public class ContentStructure {
         return CM.getStringContent(docID);
     }
 
-    /** rï¿½cuper un contenu Byte.
+    /** récuper un contenu Byte.
      * @param docID identifiant
      * @return  contenu
      */
@@ -224,7 +223,7 @@ public class ContentStructure {
         return CM.getByteContent(docID);
     }
 
-    /** rï¿½cupï¿½re un contenu type String sur un intervalle donnï¿½.
+    /** récupère un contenu type String sur un intervalle donné.
      * @param docID identifiant
      * @param from debut
      * @param to fin
@@ -234,15 +233,15 @@ public class ContentStructure {
         return CM.getStringContent(docID, from, to);
     }
 
-    /** rï¿½cupï¿½re le contenu d'un rï¿½pertoire.
-     * @param pathName rï¿½pertoire
+    /** récupère le contenu d'un répertoire.
+     * @param pathName répertoire
      */
     synchronized public void getFromDirectory(String pathName) {
         CM.getFromDirectory(pathName, "NODEF", "NODEF", "ISO-8859-1");
     }
 
-    /** rï¿½cuï¿½re le contenu d'un rï¿½pertoire.
-     * @param pathName rï¿½pertoire
+    /** récupère le contenu d'un répertoire.
+     * @param pathName répertoire
      * @param language langage de la collection
      * @param collection nom de la collection
      * @param txt_encoding encodage des textes
@@ -253,7 +252,7 @@ public class ContentStructure {
 
     /** longeur d'un document.
      * @param d document
-     * @return nbr de termes indexï¿½s
+     * @return nbr de termes indexés
      */
     public int getLengthOfD(int d) {
         return docstable.getSize(d);
@@ -293,41 +292,41 @@ public class ContentStructure {
     }
 
     /** nom du fichier du document i
-     * @param d iï¿½me document
+     * @param d ième document
      * @return nom de fichier
      */
     public String getFileNameForDocument(int d) {
         return docstable.get(d);
     }
 
-    /** numï¿½ro du document ayant le libellï¿½ s
+    /** numéro du document ayant le libellé s
      * @param s nom du fichier
-     * @return numï¿½ro du document (-1 = pas trouvï¿½)
+     * @return numéro du document (-1 = pas trouvé)
      */
     public int getIntForDocument(String s) {
         return docstable.get(s);
     }
 
-    /** tout les documents satisfaisants une propriï¿½tï¿½
-     * @param properties nom de la propriï¿½tï¿½
+    /** tout les documents satisfaisants une propriété
+     * @param properties nom de la propriété
      * @return set de bits
      */
     public SetOfBits satisfyThisProperty(String properties) {
         return docstable.satisfyThisProperty(properties);
     }
 
-    /** dï¿½finir une  propriï¿½tï¿½ pour un document
+    /** définir une  propriété pour un document
      * @param docID identifiant
-     * @param properties nom de la propriï¿½tï¿½
+     * @param properties nom de la propriété
      */
     public void setDocumentPropertie(int docID, String properties) {
         docstable.setPropertie(docID, properties);
 
     }
 
-    /** ï¿½liminer une  propriï¿½tï¿½ pour un document
+    /** éliminer une  propriété pour un document
      * @param docID identifiant
-     * @param properties nom de la propriï¿½tï¿½
+     * @param properties nom de la propriété
      */
     public void clearDocumentPropertie(int docID, String properties) {
         docstable.clearPropertie(docID, properties);
@@ -335,17 +334,17 @@ public class ContentStructure {
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary() {
         return docstable.getDictionnary();
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s ayant un certain prï¿½fix (COLECT., LANG.)
-     * @param prefix prï¿½fixe des propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés ayant un certain préfix (COLECT., LANG.)
+     * @param prefix préfixe des propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary(String prefix) {
         return docstable.getDictionnary(prefix);
@@ -359,14 +358,14 @@ public class ContentStructure {
         return docstable.getPropertie(doc, "TYPE.INDEXABLE") && !docstable.getPropertie(doc, "STATE.INDEXED");
     }
 
-    /** dï¿½termine que le document est indexï¿½.
+    /** détermine que le document est indexé.
      * @param doc identifiant
      */
     public void setIndexed(int doc) {
         docstable.setPropertie(doc, "STATE.INDEXED");
     }
 
-    /** dï¿½termine que le document n'est pas indexï¿½.
+    /** détermine que le document n'est pas indexé.
      * @param doc identifiant
      */
     public void clearIndexed(int doc) {
@@ -385,7 +384,7 @@ public class ContentStructure {
 
             String refdoc = refName + SEPARATOR + title + SEPARATOR + cleantxt;
             byte[] content = refdoc.getBytes(CONTENT_ENCODING);
-            int idcontent = docstable.put(docName); // enregistre le numï¿½ro de la rï¿½fï¿½rence
+            int idcontent = docstable.put(docName); // enregistre le numéro de la référence
             updateLastdoc();
             docstable.setPropertie(idcontent, "TYPE.REFDOC");
             docstable.setPropertie(idcontent, "TYPE.INDEXABLE");
@@ -488,7 +487,7 @@ public class ContentStructure {
     }
 
     /**
-     * crï¿½e un composant d'indexation avec une racine pour les fichiers d'index
+     * crée un composant d'indexation avec une racine pour les fichiers d'index
      * @param client
      */
     public void createComponent(ContentInit client) {

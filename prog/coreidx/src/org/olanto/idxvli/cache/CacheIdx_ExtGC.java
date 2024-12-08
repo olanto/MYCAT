@@ -32,12 +32,12 @@ public class CacheIdx_ExtGC implements CacheWrite {
     private int[][] v; // cache of idx
     private int[] countOf;  // coumpteur sur le remplissage partiel
 
-    /** il est admis que l'on travaille sur un vecteur chargÃ© ( pas de test!).
+    /** il est admis que l'on travaille sur un vecteur chargé ( pas de test!).
      *
      * <p>
-     * L'alternative consistant Ã  travailler sur des copies (getCopyOf) est prohibitive, par la taille des vecteurs et la
-     * frÃ©quence dans ref, par exemple. les temps sont 8x plus lents. Dans ces tests, chekforWatPinD et getWposition
-     * avaient Ã©tÃ© adaptï¿½s pour travailler sur les copies.
+     * L'alternative consistant à  travailler sur des copies (getCopyOf) est prohibitive, par la taille des vecteurs et la
+     * fréquence dans ref, par exemple. les temps sont 8x plus lents. Dans ces tests, chekforWatPinD et getWposition
+     * avaient été adaptés pour travailler sur les copies.
      *<p>
      *<pre>
      *     final int[] getCopyOfv(int i){

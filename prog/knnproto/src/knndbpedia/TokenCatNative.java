@@ -11,11 +11,11 @@ import org.olanto.idxvli.extra.Stemmer;
 
 
 /**
- * Une classe pour d�finir les token (une d�finition alpha num�rique).
+ * Une classe pour définir les token (une définition alpha numérique).
  * <p>author: Jacques Guyot
  * <p>copyright Jacques Guyot 2004
- * <p>l'utilisation de cette classe est strictement limit�e au groupe ISI et � MetaRead
- * dans le cadre de l'�tude pr�liminaire pour le parlement europ�en
+ * <p>l'utilisation de cette classe est strictement limitée au groupe ISI et à MetaRead
+ * dans le cadre de l'étude préliminaire pour le parlement européen
  *
  *<p>
  *
@@ -27,16 +27,16 @@ public class TokenCatNative implements TokenDefinition {
     static final int EOF = -1;
 
     
-    /** Cr�e une attache
+    /** crée une attache
      */
     public TokenCatNative() {
     }
     
         /**
      * Cherche le symbole suivant.
-     * d�finition symbole= commence avec une lettre (au sens unicode)
+     * définition symbole= commence avec une lettre (au sens unicode)
      * et n'est pas dans un tag html (peut occasioner une erreur d'indexation dans les mauvais html)
-     * s'arr�te quand on rencontre autre chose qu'une lettre (au sens unicode)
+     * s'arrête quand on rencontre autre chose qu'une lettre (au sens unicode)
      */
 
     public  final void next(DoParse a) {
@@ -69,11 +69,11 @@ public class TokenCatNative implements TokenDefinition {
      
     /** normalise le mot. actuellement<br>
      * - mis en minuscule<br>
-     * - tronquer � la longueur fix�e.<br>
+     * - tronquer à la longueur fixée.<br>
      * - lemmatiser si le stemming est actif.<br>
-     * @param id l'indexeur de r�f�rence
-     * @param w le mot � normaliser
-     * @return un mot normalis�
+     * @param id l'indexeur de référence
+     * @param w le mot à normaliser
+     * @return un mot normalisé
      */
     public final  String normaliseWord(IdxStructure id, String w){
         //   System.out.print(w+"-->");

@@ -27,15 +27,15 @@ package org.olanto.idxvli.cache;
  */
 public interface CacheCoordinator {
 
-    /** dÃ©marre le timing pour les mesures de performance
+    /** démarre le timing pour les mesures de performance
      */
     public void startTimer();
 
-    /** incrÃ©mente le total des termes indexÃ©s
+    /** incrémente le total des termes indexés
      */
     public void incTotalIdx();
 
-    /** retourne la taille total des caches coordonsÃ©s
+    /** retourne la taille total des caches coordonsés
      * @return 
      */
     public long cacheCurrentSize();
@@ -45,16 +45,16 @@ public interface CacheCoordinator {
      */
     public int allocate();
 
-    /** indique si les caches sont Ã  nettoyer
+    /** indique si les caches sont à  nettoyer
      * @return 
      */
     public boolean cacheOverFlow();
 
-    /** libÃ¨re partiellement les caches
+    /** libère partiellement les caches
      */
     public void freecache();
 
-    /** libÃ¨re complÃ¨tement les caches
+    /** libère complètement les caches
      */
     public void freecacheFull();
 }

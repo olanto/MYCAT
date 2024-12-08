@@ -31,11 +31,11 @@ import org.olanto.idxvli.*;
 public interface KNNManager {
 
     /**
-     * PrÃ©pare une structure de calcul de KNN.
+     * Prépare une structure de calcul de KNN.
      * @param _verbose pour le debuging (true)
-     * @param _glue indexation de rÃ©fÃ©rence
-     * @param minocc minimum d'occurences pour Ãªtre dans la prÃ©sÃ©lection.
-     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour Ãªtre dans a prÃ©sÃ©lection.
+     * @param _glue indexation de référence
+     * @param minocc minimum d'occurences pour être dans la présélection.
+     * @param maxlevel maximum d'occurences  en 0/00 du corpus pour être dans a présélection.
      * @param formulaIDF inverse document frequency formula.
      * @param formulaTF terme frequency formula.
      * @param offset valeur to boost the topN.
@@ -45,7 +45,7 @@ public interface KNNManager {
     /** Chercher les N premiers voisins du document d, sans formattage.
      * @param doc document
      * @param N nombre de voisins
-     * @return rÃ©ponse
+     * @return réponse
      */
     public int[][] getKNNForDoc(int doc, int N);
 
@@ -58,17 +58,17 @@ public interface KNNManager {
     public KNNResult KNNForDoc(int doc, int N);
 
     /** Chercher les N premiers voisins du texte request, sans formattage.
-     * @param request texte de rÃ©fÃ©rence
+     * @param request texte de référence
      * @param N nombre de voisins
-     * @return rÃ©ponse
+     * @return réponse
      */
     public KNNResult getKNN1(String request, int N);
 
-    /** Chercher les N premiers voisins du texte request, sans formattage, avec une liste prÃ©dÃ©finie de document.
+    /** Chercher les N premiers voisins du texte request, sans formattage, avec une liste prédéfinie de document.
      * @param topic liste de doc
-     * @param request texte de rÃ©fÃ©rence
+     * @param request texte de référence
      * @param N nombre de voisins
-     * @return rÃ©ponse
+     * @return réponse
      */
     public KNNResult getKNNinTopic(int[] topic, String request, int N);
 
@@ -87,14 +87,14 @@ public interface KNNManager {
      */
     public int[][] getKNN(String request, int N);
 
-    /** Chercher la pondÃ©ration des documents
-     * @param request texte de rÃ©fÃ©rence
-     * @return rÃ©ponse
+    /** Chercher la pondération des documents
+     * @param request texte de référence
+     * @return réponse
      */
     public float[] getSimilarity(String request);
 
-    /** visualiser le rÃ©sultat d'une rÃ©ponse knn
-     * @param res RÃ©sultat d'une requÃªte KNN (getKNN)
+    /** visualiser le résultat d'une réponse knn
+     * @param res Résultat d'une requête KNN (getKNN)
      */
     public void showKNN(int[][] res);
 
@@ -111,16 +111,16 @@ public interface KNNManager {
     public void showKNNWithContent(int[][] res);
 
     /** Chercher les N premiers voisins du texte request
-     * @param request texte de rÃ©fÃ©rence
+     * @param request texte de référence
      * @param N nombre de voisins
      * @return XML format
      */
     public String searchforKNN(String request, int N);
 
-    /** formatage XML d'une ligne de rÃ©ponse
+    /** formatage XML d'une ligne de réponse
      * @param fn nom du fichier
      * @param doc document
-     * @param score niveau de similaritÃ©
+     * @param score niveau de similarité
      * @return XML format
      */
     public String XMLrefFNWithScore(String fn, int doc, int score);

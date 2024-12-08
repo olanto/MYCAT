@@ -32,8 +32,20 @@ import org.olanto.zahir.align.LexicalTranslation;
 public class AlignASetOfComparables {
 
     static Vector<String> fileList;
+
+    /**
+     *
+     */
     public int begin;
+
+    /**
+     *
+     */
     public int end;
+
+    /**
+     *
+     */
     public int size;
     static boolean  verbose, writefile;
     static String fromfile, tofile, encoding, EXT;
@@ -43,6 +55,18 @@ public class AlignASetOfComparables {
     static long totcounttested;
     static long count, start;
 
+    /**
+     *
+     * @param _verbose
+     * @param _fromfile
+     * @param _tofile
+     * @param _encoding
+     * @param _limit
+     * @param _s2t
+     * @param _saveFile
+     * @param _writefile
+     * @param _EXT
+     */
     public AlignASetOfComparables(
             boolean _verbose,
             String _fromfile,
@@ -70,6 +94,12 @@ public class AlignASetOfComparables {
         size = fileList.size();
     }
 
+    /**
+     *
+     * @param fileList
+     * @param _begin
+     * @param _end
+     */
     public AlignASetOfComparables(Vector<String> fileList, int _begin, int _end) {
         //fileList = fileList;
         begin = _begin;
@@ -77,6 +107,9 @@ public class AlignASetOfComparables {
         size = end - begin + 1;
     }
 
+    /**
+     *
+     */
     public void alignSeqMethod() {
         //System.out.println("align SEQ:" + begin + ".." + end);
         for (int i = begin; i <= end; i++) {
@@ -109,10 +142,20 @@ public class AlignASetOfComparables {
         }
     }
 
+    /**
+     *
+     * @param count
+     */
     public synchronized void updateCount(long count) {
         totcounttested += count;
     }
 
+    /**
+     *
+     * @param subbegin
+     * @param subend
+     * @return
+     */
     public AlignASetOfComparables subProblem(int subbegin, int subend) {
         return new AlignASetOfComparables(fileList, subbegin, subend);
     }
@@ -121,10 +164,18 @@ public class AlignASetOfComparables {
         indexdir(f);
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInfo() {
         return "size:" + size;
     }
 
+    /**
+     *
+     * @param path
+     */
     public void indexdir(String path) {
         File f = new File(path);
         if (f.isFile()) {
@@ -141,6 +192,10 @@ public class AlignASetOfComparables {
         }
     }
 
+    /**
+     *
+     * @param name
+     */
     public void process(String name) {
         fileList.add(name);
     }

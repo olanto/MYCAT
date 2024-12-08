@@ -28,7 +28,7 @@ import org.olanto.util.Timer;
  * 
  *
  *
- * Test de l'indexeur, crï¿½ation d'un nouvel index
+ * Test de l'indexeur, création d'un nouvel index
  */
 public class TESTIndexFile_1 {
 
@@ -48,11 +48,11 @@ public class TESTIndexFile_1 {
         id = new IdxStructure(
                 "NEW", // mode
                 "dont forget to clean directories before");
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new Configuration());
         // charge l'index (si il n'existe pas alors il est vide)
         id.loadIndexDoc();
-        // indexation du dossier spï¿½cifiï¿½
+        // indexation du dossier spécifié
         //id.Indexer.indexdir("C:/jdk1.5_old/docs/guide");
 
         //id.indexdir("C:/D");

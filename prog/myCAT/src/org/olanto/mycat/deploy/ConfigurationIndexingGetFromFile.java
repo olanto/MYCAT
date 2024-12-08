@@ -42,7 +42,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
     Properties prop;
 
     /**
-     * cr�e l'attache de cette classe.
+     * crée l'attache de cette classe.
      */
     public ConfigurationIndexingGetFromFile() {
     }
@@ -73,7 +73,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
 
     /**
      * initialisation permanante des constantes. Ces constantes choisies
-     * d�finitivement pour toute la dur�e de la vie de l'index.
+     * définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent() {
 
@@ -118,7 +118,7 @@ public class ConfigurationIndexingGetFromFile implements IdxInit {
 
     /**
      * initialisation des constantes de configuration (modifiable). Ces
-     * constantes choisies d�finitivement pour toute la dur�e de la vie du
+     * constantes choisies définitivement pour toute la durée de la vie du
      * processus.
      */
     public void InitConfiguration() {
@@ -259,7 +259,7 @@ IDX_XML_ORGANISATION_TEMPLATE=prop.getProperty("IDX_XML_ORGANISATION_TEMPLATE", 
         DETLOG_FILE = prop.getProperty("DETLOG_FILE", "C:/SIMPLE/data/defaultdetail.log");
 
 
-        // param�tre de fonctionnement
+        // paramètre de fonctionnement
 
         CACHE_IMPLEMENTATION_INDEXING = implementationMode.valueOf(prop.getProperty("CACHE_IMPLEMENTATION_INDEXING", "FAST"));
         IDX_CACHE_COUNT = Integer.parseInt(prop.getProperty("NEAR_DISTANCE", "1")) * (int) MEGA;
@@ -349,7 +349,7 @@ IDX_XML_ORGANISATION_TEMPLATE=prop.getProperty("IDX_XML_ORGANISATION_TEMPLATE", 
                 SetObjectStoreRoot(OBJ_ROOT_7, 7);
             } else {
                 error_fatal("You must defined a directory for OBJ_ROOT_7");
-                // param�tre de fonctionnement
+                // paramètre de fonctionnement
             }
         }
 

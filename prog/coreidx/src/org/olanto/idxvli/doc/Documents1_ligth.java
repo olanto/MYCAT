@@ -30,8 +30,8 @@ import static org.olanto.idxvli.IdxEnum.*;
 /**
  * gestionnaire de documents.
  * 
- * gestionnaire de documents. cette version est allÃ©gÃ©e pour ne pas tenir compte des dates, des properties, des ...
- * seul les noms des documents sont conservï¿½s et donc le mode IdxMode.INCREMENTAL;
+ * gestionnaire de documents. cette version est allégée pour ne pas tenir compte des dates, des properties, des ...
+ * seul les noms des documents sont conservés et donc le mode IdxMode.INCREMENTAL;
  */
 public class Documents1_ligth implements DocumentManager {
 
@@ -42,11 +42,11 @@ public class Documents1_ligth implements DocumentManager {
 //    private LanguageMode keepLanguage;
 //    private CollectionMode keepCollection;
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public Documents1_ligth() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée un gestionnaire de documents (la taille et la longueur) à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _keepLanguage
      * @param _idxName
@@ -60,7 +60,7 @@ public class Documents1_ligth implements DocumentManager {
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+    /**  ouvre un gestionnaire de documents  à l'endroit indiqué par le _path
      * @param _ManagerImplementation
      * @param _path
      * @param _keepCollection
@@ -81,7 +81,7 @@ public class Documents1_ligth implements DocumentManager {
         msg("--- DocumentManager is closed now ");
     }
 
-    /** crï¿½er une nouvelle instance de DocumentManager ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de DocumentManager à partir des données existantes*/
     private Documents1_ligth(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             IdxMode _updatingMode, String _pathName, String _idxName) {  // recharge un gestionnaire
         if (updatingMode == IdxMode.DIFFERENTIAL) {
@@ -107,7 +107,7 @@ public class Documents1_ligth implements DocumentManager {
 
     }
 
-    /** crï¿½er une nouvelle instance de Document Manager*/
+    /** créer une nouvelle instance de Document Manager*/
     private Documents1_ligth(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             String _pathName, String _idxName, int _maxSize, int _lengthString) {
         switch (_ManagerImplementation) {
@@ -122,12 +122,12 @@ public class Documents1_ligth implements DocumentManager {
                 break;
             case XXL:
                 documentName = (new StringTable_OnDisk_WithCache_XXL()).create(_pathName, _idxName + "_name", _maxSize + 1, _lengthString);
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 break;
         }
     }
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+    /**  ajoute un document au gestionnaire retourne le numéro du docuemnt
      * @param d*/
     public final int put(String d) {
         //msg("add this:"+d);
@@ -135,13 +135,13 @@ public class Documents1_ligth implements DocumentManager {
         return id;
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param d */
     public final int get(String d) {
         return documentName.get(d);
     }
 
-    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le document associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
     public final String get(int i) {
         return documentName.get(i);
     }
@@ -183,18 +183,18 @@ public class Documents1_ligth implements DocumentManager {
     }
 
     /**
-     * enregistre la propiï¿½tï¿½ pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propirï¿½tï¿½
+     * enregistre la propiété pour le document i
+     * @param i numéro du document
+     * @param properties propirété
      */
     public void setPropertie(int i, String properties) {
         // rien faire documentProperties.put(properties,i);
     }
 
     /**
-     * ï¿½limine la propiï¿½tï¿½ pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propirï¿½tï¿½
+     * élimine la propiété pour le document i
+     * @param i numéro du document
+     * @param properties propirété
      */
     public void clearPropertie(int i, String properties) {
         // rien faire documentProperties.clear(properties,i);
@@ -202,21 +202,21 @@ public class Documents1_ligth implements DocumentManager {
 
     /**
      * Retourne la taille pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propriï¿½tï¿½
-     * @return la valeur de cette propiï¿½tï¿½
+     * @param i numéro du document
+     * @param properties propriété
+     * @return la valeur de cette propiété
      */
     public boolean getPropertie(int i, String properties) {
         return false;// rien faire documentProperties.get(properties,i);
     }
 
-    /**  verifie si le document est ï¿½ indexer (nom diffï¿½rent, date diffï¿½rente */
+    /**  verifie si le document est à indexer (nom diffèrent, date diffèrente */
     public final boolean IndexThisDocument(String fname, long date) {
 //        msg("test:"+fname);
         if (dontIndexThisDocuments.check(fname)) {
             return false; // ne pas indexer
         }
-        int id = get(fname);  // cherche si le document est dï¿½jï¿½ indexï¿½
+        int id = get(fname);  // cherche si le document est déjé indexé
         if (id == StringRepository.EMPTY) {
             return true; // un nouveau document
         }
@@ -238,33 +238,33 @@ public class Documents1_ligth implements DocumentManager {
         return documentName.getCount();
     }
 
-    /**  cherche toutes les documents possï¿½dant une propriï¿½tï¿½s*/
+    /**  cherche toutes les documents possédant une propriétés*/
     public final SetOfBits satisfyThisProperty(String properties) {
         return null; // rien faire    
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary() {
         return null;
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s ayant un certain prï¿½fix (COLECT., LANG.)
-     * @param prefix prï¿½fixe des propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés ayant un certain préfix (COLECT., LANG.)
+     * @param prefix préfixe des propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary(String prefix) {
         return null;
     }
 
     /**
-     * propage l'invaliditï¿½ des documents dans les propriï¿½tï¿½s
+     * propage l'invalidité des documents dans les propriétés
      */
     public void propagateInvalididy() {
-        // pour ï¿½tre conforme ï¿½ l'interface
-        // pas de protection spï¿½ciale pour la concurrence
+        // pour être conforme à l'interface
+        // pas de protection spéciale pour la concurrence
     }
 }

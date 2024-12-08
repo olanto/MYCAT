@@ -34,7 +34,7 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public class MapArchiveStructure {
 
-    /** dictionnaire de maps (document->indice ligne) (indice colonne->paire de langue)*/
+    /** dictionnaire de maps (document-&gt;indice ligne) (indice colonne-&gt; paire de langue)*/
     public IntArrayVector mapid;
     /** la structure comprend un module de statistique*/
     public MapArchiveStatistic Statistic;
@@ -74,7 +74,8 @@ public class MapArchiveStructure {
     /** ajoute une map.
      * @param map map
      * @param docid la référence du document
-     * @param lang lanque (pivot/cette langue)
+     * @param langfrom
+     * @param langto
      */
     synchronized public void addMap(IntMap map, int docid, String langfrom, String langto) {
         if (langfrom.equals(LANGID[0])) {
@@ -85,8 +86,10 @@ public class MapArchiveStructure {
     }
 
     /** récupère une map.
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+     * @param docid
+     * @param langfrom
+     * @param langto
+     * @return 
      */
     synchronized public IntMap getMap(int docid, String langfrom, String langto) {
         if (langfrom.equals(LANGID[0])) {  // la langue source est la langue pivot
@@ -110,8 +113,10 @@ public class MapArchiveStructure {
     }
 
     /** récupère une map.
-     * @param map map
-     * @param lang lanque (pivot/cette langue)
+     * @param docid
+     * @param langfrom
+     * @param langto
+     * @return 
      */
     synchronized public boolean existMap(int docid, String langfrom, String langto) {
         if (langfrom.equals(LANGID[0])) {
@@ -124,6 +129,7 @@ public class MapArchiveStructure {
 
     /**
      * crée un composant d'archivage avec une racine pour les fichiers d'archive
+     * @param client
      */
     public void createComponent(MapArchiveInit client) {
         // initialise les constantes et la configuration

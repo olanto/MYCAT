@@ -65,13 +65,13 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         return "this service is alive ... :DictionnaryService_BASIC";
     }
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open
+    /** créer une nouvelle instance de repository pour effectuer les create, open
      * @throws java.rmi.RemoteException*/
     public DictionnaryService_BASIC() throws RemoteException {
         super();
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée un gestionnaire de documents (la taille et la longueur) à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _path
      * @param _lengthString
@@ -83,7 +83,7 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
                 _path, _idxName, _maxSize, _lengthString);
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+    /**  ouvre un gestionnaire de documents  à l'endroit indiqué par le _path
      * @param _ManagerImplementation
      * @param _RW
      * @param _idxName
@@ -100,7 +100,7 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         msg("--- WordManager is closed now ");
     }
 
-    /** crï¿½er une nouvelle instance de WordManager ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de WordManager à partir des données existantes*/
     private void DictionnaryService_init(implementationMode _ManagerImplementation,
             readWriteMode _RW, String _pathName, String _idxName) {  // recharge un gestionnaire
         RW = _RW;
@@ -120,7 +120,7 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         }
     }
 
-    /** crï¿½er une nouvelle instance de Word Manager*/
+    /** créer une nouvelle instance de Word Manager*/
     private void DictionnaryService_init(implementationMode _ManagerImplementation,
             String _pathName, String _idxName, int _maxSize, int _lengthString) {
         switch (_ManagerImplementation) {
@@ -131,7 +131,7 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
                 dictionnary = (new StringTable_OnDisk_WithCache_MapIO()).create(_pathName, _idxName + "_dict", _maxSize + 1, _lengthString); // on double la taille pour les collisions
                 break;
             case XL:
-                dictionnary = (new StringTable_OnDisk_WithCache_MapIO_XL()).create(_pathName, _idxName + "_dict", _maxSize, _lengthString); // on accepte plus de collision pas doublï¿½ !!!
+                dictionnary = (new StringTable_OnDisk_WithCache_MapIO_XL()).create(_pathName, _idxName + "_dict", _maxSize, _lengthString); // on accepte plus de collision pas doublé !!!
                 break;
             case XXL:
                 dictionnary = (new StringTable_OnDisk_WithCache_XXL()).create(_pathName, _idxName + "_dict", _maxSize + 1, _lengthString); // on double la taille pour les collisions
@@ -139,7 +139,7 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         }
     }
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+    /**  ajoute un document au gestionnaire retourne le numéro du docuemnt
      * @param d
      * @return */
     public final int put(String d) {
@@ -148,14 +148,14 @@ public class DictionnaryService_BASIC extends UnicastRemoteObject implements Dic
         return id;
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param d
      * @return valeur */
     public final int get(String d) {
         return dictionnary.get(d);
     }
 
-    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire
+    /**  cherche le document associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire
      * @param i 
      * @return */
     public final String get(int i) {

@@ -8,17 +8,15 @@ package org.olanto.onto;
 import java.util.*;
 
 /**
+ * Multiple ontologies manager
  *
- * 
- *
- * @author xtern
  */
 public class ManyOntologyManager {
 
     static HashMap<String, LexicManager> multiOntology;
 
     /**
-     *
+     * default constructor
      */
     public ManyOntologyManager() {
 

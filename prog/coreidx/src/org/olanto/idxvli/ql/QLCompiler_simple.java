@@ -31,12 +31,12 @@ import static org.olanto.idxvli.IdxConstant.*;
 import static org.olanto.idxvli.IdxEnum.*;
 
 /**
- * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire version simple et verbose.
+ * Compilateur pour un langage de requête d'interrogation pour une recherche documentaire version simple et verbose.
  * 
  * 
  *
  *
- * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire.
+ * Compilateur pour un langage de requête d'interrogation pour une recherche documentaire.
  *
  * <pre>
  * query = subquery &lt; query_operator subquery &gt;.
@@ -98,7 +98,7 @@ public class QLCompiler_simple {
 
     /** version du compilateur */
     public static final String COMPILER_VERSION = "1.02";
-    /** caract�re pour quoter les symboles*/
+    /** caractère pour quoter les symboles*/
     public static final char QUOTE_CHAR = '"';
 
     private static enum Operation {
@@ -122,9 +122,9 @@ public class QLCompiler_simple {
     private static int TT_EOF = StreamTokenizer.TT_EOF;
 
     /**
-     * Cr�ation d'un compilateur pour une requ�te et son indexeur
-     * @param rdr source � compiler
-     * @param id indexeur de r�f�rence
+     * création d'un compilateur pour une requête et son indexeur
+     * @param rdr source à compiler
+     * @param id indexeur de référence
      */
     public QLCompiler_simple(Reader rdr, IdxStructure id) {
         z = id;
@@ -179,28 +179,28 @@ public class QLCompiler_simple {
     ////////////////////////////// Parser ///////////////////////////////
     //query = subquery < query_operator subquery >.
     /**
-     * Calcule la requ�te sur le corpus index�.
-     * @return une liste de num�ro de documents
+     * Calcule la requête sur le corpus indexé.
+     * @return une liste de numéro de documents
      */
     public final int[] execute() {
         int[] res = query().topdoc;
         if (sym.ttype != TT_EOF) {
             msg("truncated parsing");
-        } // il reste encore des caract�res
+        } // il reste encore des caractères
 
         return res;
     }
 
     /**
-     * Calcule la requ�te sur le corpus index�.
-     * @return une liste de num�ro de documents et le ranking
+     * Calcule la requête sur le corpus indexé.
+     * @return une liste de numéro de documents et le ranking
      */
     public final QLResultAndRank executeMore() {
         msg("executeMore:");
         QRes res = query();
         if (sym.ttype != TT_EOF) {
             msg("truncated parsing");
-        } // il reste encore des caract�res
+        } // il reste encore des caractères
         if (res == null) {
             return null;
         }
@@ -240,7 +240,7 @@ public class QLCompiler_simple {
         //showVector(res1);
         SetOfBits invalid = z.docstable.satisfyThisProperty(z.docstable.INVALID_NAME);
         //msg("invalid:"+invalid.length());
-        QRes res = QRes.filtering(res1, invalid, false, MODE_RANKING);  // �limine les documents effac�s (invalid=true)
+        QRes res = QRes.filtering(res1, invalid, false, MODE_RANKING);  // élimine les documents effacés (invalid=true)
         //       msg("sort results");
 
         if (res != null) {
@@ -414,9 +414,9 @@ public class QLCompiler_simple {
                 msg("near : " + term1 + ", " + term2);
             }
             //TimerNano t1=new TimerNano("QL exec getDocforWnearW:",false);
-            // l'op�rateur getDocforWnearW demande une optimisation (il travaille avec des copies ...)
+            // l'opérateur getDocforWnearW demande une optimisation (il travaille avec des copies ...)
             QRes res = getDocforWnearW(z, term1, term2);
-            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // �value les poids par les and, �vite d'int�grer dans la m�thode positionnelle les poids'
+            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // évalue les poids par les and, évite d'intégrer dans la méthode positionnelle les poids'
 
                 res = QRes.and(res, getDocforW(z, term1, MODE_RANKING), MODE_RANKING); // recopie les poids du term1
 
@@ -464,7 +464,7 @@ public class QLCompiler_simple {
                 msg("next : " + term1 + ", " + term2);
             }
             QRes res = getDocforWnextW(z, term1, term2);
-            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // �value les poids par les and, �vite d'int�grer dans la m�thode positionnelle les poids'
+            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // évalue les poids par les and, évite d'intégrer dans la méthode positionnelle les poids'
 
                 res = QRes.and(res, getDocforW(z, term1, MODE_RANKING), MODE_RANKING); // recopie les poids du term1
 

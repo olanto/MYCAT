@@ -44,7 +44,7 @@ public class ADD_DIR {
         //id.checkIntegrityOfW("nana",true);
         //testref();
 
-        id.indexdir("X:/wiki/en");// indexation du dossier spï¿½cifiï¿½
+        id.indexdir("X:/wiki/en");// indexation du dossier spécifié
         id.flushIndexDoc();  //  vide les buffers       
         id.Statistic.global();
         id.close();

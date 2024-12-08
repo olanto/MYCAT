@@ -33,7 +33,7 @@ import static org.olanto.util.Messages.*;
  */
 public class TESTQueryConcurrent {
 
-    // classe chargï¿½e de stresser les query
+    // classe chargée de stresser les query
     private static IdxStructure id;
     private static Timer t1 = new Timer("global time");
 
@@ -44,7 +44,7 @@ public class TESTQueryConcurrent {
     public static void main(String[] args) {
 
         id = new IdxStructure("QUERY");
-        // crï¿½ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new ConfigurationNative());
 
         // charge l'index (si il n'existe pas alors il est vide)

@@ -49,7 +49,7 @@ public class StressClientRead {
             if (r instanceof IndexService) {
                 IndexService is = ((IndexService) r);
                 String s = is.getInformation();
-                System.out.println("chaï¿½ne renvoyï¿½e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 int count = 0;
                 while (true) {
                     count++;

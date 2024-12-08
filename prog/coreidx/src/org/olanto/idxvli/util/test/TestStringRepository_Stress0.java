@@ -20,7 +20,7 @@
 
 package org.olanto.idxvli.util.test;
 
-/* g�n�rique test pour les diff�rentes impl�menations remplacer le nom de l'impl�mentation .... */
+/* générique test pour les différentes implémenations remplacer le nom de l'implémentation .... */
 import org.olanto.idxvli.util.*;
 import org.olanto.util.Timer;
 

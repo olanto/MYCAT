@@ -76,8 +76,7 @@ public interface ConvertService extends Remote {
 
     /**
      * Pour convertir un fichier dont on le format (PDF,DOC,...) vers un autre format
-     * @param Format de la source (PDF,DOC,...)
-     * @param Format de la target (PDF,DOC,...)  dans les limites des formats accepter par open office
+     * @param targetFormat de la target (PDF,DOC,...)  dans les limites des formats accepter par open office
      * @return le fichier converti
      * @throws java.rmi.RemoteException
      */

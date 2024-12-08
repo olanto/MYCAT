@@ -27,7 +27,7 @@ import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.util.Messages.*;
 import org.olanto.util.Timer;
 
-/** tests de base (�criture lecture de blocs d�bordant les slices).
+/** tests de base (écriture lecture de blocs débordant les slices).
  * 
  * 
  *
@@ -91,7 +91,7 @@ public class Test_1a {
 //    private static void test3(MappedIOFile file, String fileName)
 //            throws IOException {
 //        System.out.println();
-//        System.out.println("lecture al�atoire");
+//        System.out.println("lecture aléatoire");
 //        long tm = System.currentTimeMillis();
 //        file.open(fileName,fileSize);
 //        for (int n = 0; n < 100000; n += 1) {
@@ -109,7 +109,7 @@ public class Test_1a {
 //    private static void test4(MappedIOFile file, String fileName)
 //            throws IOException {
 //        System.out.println();
-//        System.out.println("lecture/�criture al�atoire");
+//        System.out.println("lecture/écriture aléatoire");
 //        long tm = System.currentTimeMillis();
 //        file.open(fileName,fileSize);
 //        for (int n = 0; n < 1000000; n += 1) {

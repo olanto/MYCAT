@@ -41,7 +41,7 @@ import org.olanto.idxvli.util.BytesAndFiles;
 class IdxIndexer {
 
     /**
-     * indice du dernier caractï¿½re lu dans le mfl
+     * indice du dernier caractère lu dans le mfl
      */
     private long lastposinmfl = 0;
     /* variables pour mesurer la performance de l'indexeur */
@@ -51,13 +51,13 @@ class IdxIndexer {
      */
     private static long timer1;
     /**
-     * frï¿½quence de la mesure du timer1 actuellement 10000 mots en n ms
+     * fréquence de la mesure du timer1 actuellement 10000 mots en n ms
      */
     private static final int nbstatidx = 1000000;
     IdxStructure glue;
 
     /**
-     * crï¿½e une instance d'indexation. Cette instance est associï¿½e ï¿½ la
+     * crée une instance d'indexation. Cette instance est associée à la
      * structure racine
      *
      * @param id structure racine
@@ -71,7 +71,7 @@ class IdxIndexer {
      * indexe tous les documents se trouvant dans le directoire (inclus ceux des
      * sous-dossiers)
      *
-     * @param path directoire ï¿½ indexer
+     * @param path directoire à indexer
      */
     protected final void indexdir(String path) {
         Date starttime = new Date();
@@ -82,7 +82,7 @@ class IdxIndexer {
         File f = new File(path);
         if (f.isFile()) {
             // f.setReadOnly();  // marque le fichier en lecture seulement, mis en commentaire car ralentit
-            long fdate = f.lastModified(); // date de la derniï¿½re modification
+            long fdate = f.lastModified(); // date de la dernière modification
             //long fdate = f.lastModified() + (long) (100000L * Math.random()); // provoque des  modifications
 
             String newName = path;
@@ -203,7 +203,7 @@ class IdxIndexer {
                         }
                     } else {
                         glue.lastRecordedDoc++;
-                    }  // avance le compteur de doc quand mï¿½me
+                    }  // avance le compteur de doc quand même
                     //msg("file:" + f + ", total words=" + glue.lastword);
                     //msg("doc:"+glue.lastdoc+" actual size:"+glue.indexCoord.cacheCurrentSize());
 
@@ -267,7 +267,7 @@ class IdxIndexer {
                 glue.lastRecordedDoc = glue.docstable.getCount();
             } else {
                 glue.lastRecordedDoc++;
-            }  // avance le compteur de doc quand mï¿½me
+            }  // avance le compteur de doc quand même
 
             if (glue.indexCoord.cacheOverFlow()) {
                 glue.indexCoord.freecache();
@@ -309,7 +309,7 @@ class IdxIndexer {
             glue.lastRecordedDoc = glue.docstable.getCount();
         } else {
             glue.lastRecordedDoc++;
-        }  // avance le compteur de doc quand mï¿½me
+        }  // avance le compteur de doc quand même
 
         if (glue.indexCoord.cacheOverFlow()) {
             glue.indexCoord.freecache();
@@ -366,7 +366,7 @@ class IdxIndexer {
             } else {
 
                 glue.lastRecordedDoc++;
-            }// avance le compteur de doc quand mï¿½me
+            }// avance le compteur de doc quand même
 
             if (glue.indexCoord.cacheOverFlow()) {
                 glue.indexCoord.freecache();
@@ -465,10 +465,10 @@ class IdxIndexer {
             int pa, //  position absolu
             int poschar //  position of char in file
             ) {
-        CacheWrite indexdoc = glue.indexdoc;  // crï¿½e une rï¿½fï¿½rence locale
+        CacheWrite indexdoc = glue.indexdoc;  // crée une référence locale
 
         CacheWrite indexpos = glue.indexpos;
-        int iw = glue.idxtrans.registerCacheId(iwreal);  // on continue ï¿½ travailler avec l'index du cache !
+        int iw = glue.idxtrans.registerCacheId(iwreal);  // on continue à travailler avec l'index du cache !
         //msg("iwreal:"+iwreal+" iw:"+iw);
 
         glue.indexCoord.incTotalIdx();   // count a new occurence
@@ -590,7 +590,7 @@ class IdxIndexer {
                             indexdoc.setv(iw, il, id); // il is already minus one !!!
 
                             indexdoc.setv(iw, il + 1, 1);
-                        } else {  // juste incrï¿½menter
+                        } else {  // juste incrémenter
 
                             indexdoc.incv(iw, il - 1); //inc occ count
 

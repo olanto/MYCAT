@@ -30,36 +30,143 @@ import org.olanto.zahir.align.Map;
 import org.olanto.zahir.align.SimInformation;
 
 /**
- * Classe stockant la carte des positions entre deux traductions. init -> add
- * wordpos -> compact -> translate charpos
+ * Classe stockant la carte des positions entre deux traductions. init -&gt; add
+ * wordpos -&gt; compact -&gt; translate charpos
  */
 public class CreateBiSentence {
 
+    /**
+     *
+     */
     public String encoding;
-    public int windows, windows2, minauto, autopct;
-    public float ratiofromto, ratiotofrom;
+
+    /**
+     *
+     */
+    public int windows,
+
+    /**
+     *
+     */
+    windows2,
+
+    /**
+     *
+     */
+    minauto,
+
+    /**
+     *
+     */
+    autopct;
+
+    /**
+     *
+     */
+    public float ratiofromto,
+
+    /**
+     *
+     */
+    ratiotofrom;
     private float lastsim;  // global
-    public String fromfile, tofile;
-    public DocumentSentence fromdoc, todoc;
-    public int fromnblines, tonblines;
+
+    /**
+     *
+     */
+    public String fromfile,
+
+    /**
+     *
+     */
+    tofile;
+
+    /**
+     *
+     */
+    public DocumentSentence fromdoc,
+
+    /**
+     *
+     */
+    todoc;
+
+    /**
+     *
+     */
+    public int fromnblines,
+
+    /**
+     *
+     */
+    tonblines;
+
+    /**
+     *
+     */
     public int countTMX = 0;
+
+    /**
+     *
+     */
     public Map map0;
+
+    /**
+     *
+     */
     public Map map1;
+
+    /**
+     *
+     */
     public Map map2;
+
+    /**
+     *
+     */
     public boolean error = false;
 //    public static float RATIOMAX=1.6f;
 //    public static float RATIOMIN=1/RATIOMAX;
+
+    /**
+     *
+     */
     public static float RATIOMAX = 2.5f;  //english
+
+    /**
+     *
+     */
     public static float RATIOMIN = 0.57f;
 //    public static float RATIOMAX = 100.0f;  //english
 //    public static float RATIOMIN = 0.1f;
+
+    /**
+     *
+     */
     public static int MIN_LENGTH_TORATIO = 20;
     static boolean ontoalign = false;
     static boolean verbose = false;
     static boolean auto = false;
     static LexicalTranslation s2t;
+
+    /**
+     *
+     */
     public long counttested;
 
+    /**
+     *
+     * @param _auto
+     * @param autopct
+     * @param minauto
+     * @param _verbose
+     * @param fromfile
+     * @param tofile
+     * @param encoding
+     * @param windows
+     * @param windows2
+     * @param _s2t
+     */
     public CreateBiSentence(
             boolean _auto, // taille automatique de la fenêtre d'exploration
             int autopct, // en pour cent de la taille du document (4%)
@@ -117,6 +224,10 @@ public class CreateBiSentence {
     }
 
 //
+
+    /**
+     *
+     */
     public void getInfo() {
         msg("___________________________________");
         msg("From:" + fromfile + " #line:" + fromnblines);
@@ -124,10 +235,17 @@ public class CreateBiSentence {
         msg("One-one:" + countTMX + " - " + (countTMX * 100) / Math.min(fromnblines, tonblines) + " %");
     }
 
+    /**
+     *
+     * @return
+     */
     public String getInformation() {
         return windows + "\t" + fromfile + "\t#line:\t" + fromnblines + "\tTo:\t" + tofile + "\t#line:\t" + tonblines + "\tOne-one:\t" + countTMX + "\t-\t" + (countTMX * 100) / Math.min(fromnblines, tonblines) + "\t%";
     }
 
+    /**
+     *
+     */
     public void buildMap() {
         map1 = new Map(fromnblines, tonblines);
         map2 = new Map(fromnblines, tonblines);
@@ -154,6 +272,12 @@ public class CreateBiSentence {
         }
     }
 
+    /**
+     *
+     * @param fname
+     * @param _srcLanguage
+     * @param _targetLanguage
+     */
     public void buildCertainMap(String fname, String _srcLanguage, String _targetLanguage) {
 
         WriteBITEXT tmx = new WriteBITEXT(fname, _srcLanguage, _targetLanguage);
@@ -179,10 +303,9 @@ public class CreateBiSentence {
             tmx.tmxClose();
         }
 
- 
- 
-    
-
+    /**
+     *
+     */
     public void adjustWindow() {
 
 
@@ -233,6 +356,9 @@ public class CreateBiSentence {
 
     }
 
+    /**
+     *
+     */
     public void buildMapFrom() {
 
         //Timer t1 = new Timer("build map FROM-->TO");
@@ -254,6 +380,9 @@ public class CreateBiSentence {
         // StatSimilarity.statistic();
     }
 
+    /**
+     *
+     */
     public void buildMap2From() {
 
         //Timer t1 = new Timer("build map2 FROM-->TO");
@@ -274,6 +403,11 @@ public class CreateBiSentence {
         // StatSimilarity.statistic();
     }
 
+    /**
+     *
+     * @param fromline
+     * @return
+     */
     public int getmaxfrom(int fromline) {
         boolean verbose = false;
         lastsim = -1;
@@ -312,6 +446,12 @@ public class CreateBiSentence {
         return maxline;
     }
 
+    /**
+     *
+     * @param fromline
+     * @param mapping
+     * @return
+     */
     public int getmaxfrom(int fromline, int mapping) {
         lastsim = -1;
         int maxline = 0;
@@ -336,6 +476,9 @@ public class CreateBiSentence {
         return maxline;
     }
 
+    /**
+     *
+     */
     public void buildMapTo() {
 
         //Timer t1 = new Timer("build map TO-->FROM");
@@ -356,6 +499,9 @@ public class CreateBiSentence {
         //StatSimilarity.statistic();
     }
 
+    /**
+     *
+     */
     public void buildMap2To() {
 
         //Timer t1 = new Timer("build map2 TO-->FROM");
@@ -376,6 +522,11 @@ public class CreateBiSentence {
         //StatSimilarity.statistic();
     }
 
+    /**
+     *
+     * @param toline
+     * @return
+     */
     public int getmaxto(int toline) {
         lastsim = -1;
         int maxline = 0;
@@ -402,6 +553,12 @@ public class CreateBiSentence {
         return maxline;
     }
 
+    /**
+     *
+     * @param toline
+     * @param mapping
+     * @return
+     */
     public int getmaxto(int toline, int mapping) {
         lastsim = -1;
         int maxline = 0;
@@ -428,6 +585,12 @@ public class CreateBiSentence {
         return maxline;
     }
 
+    /**
+     *
+     * @param linesrc
+     * @param linetarget
+     * @return
+     */
     public boolean similarlength(int linesrc, int linetarget) {
 
         if (fromdoc.lines[linesrc].s.length() < MIN_LENGTH_TORATIO && todoc.lines[linetarget].s.length() < MIN_LENGTH_TORATIO) {  // trop petit pour un ratio
@@ -445,6 +608,12 @@ public class CreateBiSentence {
         }
     }
 
+    /**
+     *
+     * @param linesrc
+     * @param linetarget
+     * @return
+     */
     public float ratioLength(int linesrc, int linetarget) {
         float ratioline = (float) fromdoc.lines[linesrc].s.length() / (float) todoc.lines[linetarget].s.length();
         if (ratioline > 1.0) {

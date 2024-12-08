@@ -36,9 +36,24 @@ import org.olanto.util.Timer;
  */
 public class AlignBiText {
 
+    /**
+     *
+     */
     public SegDoc source;
+
+    /**
+     *
+     */
     public SegDoc target;
+
+    /**
+     *
+     */
     public IntMap map;
+
+    /**
+     *
+     */
     public String query;
     static IndexService_MyCat is;
     static MapService ms;
@@ -46,6 +61,16 @@ public class AlignBiText {
     static boolean skipLine;
     static String gloss_name;
 
+    /**
+     *
+     * @param fileso
+     * @param langso
+     * @param langta
+     * @param query
+     * @param w
+     * @param h
+     * @param remSpace
+     */
     public AlignBiText(String fileso, String langso, String langta, String query, int w, int h, Boolean remSpace) {
 if (is == null) {
             is = org.olanto.conman.server.GetContentService.getServiceMYCAT("rmi://localhost/VLI");
@@ -113,7 +138,7 @@ if (is == null) {
 
         target.positions = getLineStat(target.lines, w, h, target.content.length());
         try {
-            // chercher le numÃ©ro du doc pivot
+            // chercher le numéro du doc pivot
             int docpivot = is.getDocId(filepivot);
             if (docpivot != -1) { // existe un docpivot
                 //System.out.println(" doc id :"+docso);
@@ -143,12 +168,21 @@ if (is == null) {
 
     }
 
+    /**
+     *
+     */
     public void dump() {
         source.dump("source");
         target.dump("target");
         map.dump("map");
     }
 
+    /**
+     *
+     * @param name
+     * @param Lang
+     * @return
+     */
     public static String getNameOfDocForThisLang(String name, String Lang) {
         int lenRootTxt = rootTxt.length();
         return rootTxt + "/" + Lang + name.substring(lenRootTxt + 3);
@@ -156,6 +190,14 @@ if (is == null) {
 // renommer les variables et ajouter des commentaires dans tout le code
 // Matrice (nombre de lignes, position du top, correction, position en pixel)
 
+    /**
+     *
+     * @param lines
+     * @param w
+     * @param h
+     * @param length
+     * @return
+     */
     public static int[][] getLineStat(String[] lines, int w, int h, int length) {
         boolean verbose = false;
         int[][] calc = new int[lines.length][5];
@@ -215,6 +257,13 @@ if (is == null) {
         return calc;
     }
 
+    /**
+     *
+     * @param line
+     * @param taWidth
+     * @param Split
+     * @return
+     */
     public static int getLineNumbers(String line, int taWidth, String Split) {
         boolean verbose = false;
         int curLine = 0;

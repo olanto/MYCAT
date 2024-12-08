@@ -34,6 +34,10 @@ public class UpdateMapArchive {
     private static MapArchiveStructure id;
     private static Timer t1 = new Timer("global time");
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         id = new MapArchiveStructure("INCREMENTAL", new ConfigurationMapArchive());

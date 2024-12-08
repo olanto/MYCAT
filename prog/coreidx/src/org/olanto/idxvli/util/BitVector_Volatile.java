@@ -23,7 +23,7 @@ package org.olanto.idxvli.util;
 import static org.olanto.util.Messages.*;
 
 /**
- *  Comportements d'un vecteur de bit charg� enti�rement en m�moire (sans sauvegarde).
+ *  Comportements d'un vecteur de bit chargé entièrement en mémoire (sans sauvegarde).
  * <p>
  * 
  *<p>
@@ -31,9 +31,9 @@ import static org.olanto.util.Messages.*;
  */
 public class BitVector_Volatile implements BitVector {
     /* constantes d'un gestionnaire  -------------------------------------- */
-//    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+//    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
 //    private String pathName;
-//    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+//    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
 //    private String fileName;
 
     private int[] b;
@@ -44,11 +44,11 @@ public class BitVector_Volatile implements BitVector {
         1 << 30, 1 << 31
     };
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public BitVector_Volatile() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize (path et filename sont pas utilis�s!
+    /**  crée un vecteur de taille 2^_maxSize (path et filename sont pas utilisés!
      * @param _pathName
      * @param _fileName
      * @param _maxSize
@@ -57,7 +57,7 @@ public class BitVector_Volatile implements BitVector {
         return (new BitVector_Volatile(_pathName, _fileName, _maxSize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path, not implemented
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path, not implemented
      * @param _pathName
      * @param _fileName
      * @return valeur */
@@ -71,7 +71,7 @@ public class BitVector_Volatile implements BitVector {
         error("not implemented");
     }
 
-    /** cr�er une nouvelle instance de WordTable*/
+    /** créer une nouvelle instance de WordTable*/
     private BitVector_Volatile(String _pathName, String _fileName, int _maxSize) {
         createBitVector_Volatile(_pathName, _fileName, _maxSize);
     }
@@ -81,14 +81,14 @@ public class BitVector_Volatile implements BitVector {
         initFirstTime();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
         if ((size % 32) != 0) {
             error_fatal("BitVector_InMemory size must be a multiple of 32");
         }
         b = new int[size / 32];
     }
 
-    /** mets � jour la position pos avec la valeur val
+    /** mets à jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public final void set(int pos, boolean val) {

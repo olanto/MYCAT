@@ -6,8 +6,7 @@ import net.sf.ehcache.Element;
 import org.olanto.senseos.SenseOS;
 
 /**
- *
- * @author x
+ * Un cache pour stocker les queries déjà effectuées
  */
 public class CacheQuery {
 
@@ -36,22 +35,41 @@ public class CacheQuery {
         info();
      }
 
+    /**
+     *
+     * @param fileName
+     * @param cacheName
+     */
     public static void init(String fileName, String cacheName) {
         System.out.println("Open Cache:" + fileName);
         manager = CacheManager.newInstance(fileName);
         cache = manager.getCache("how2sayCache");
     }
     
-      public static String get(String key) {
+    /**
+     *
+     * @param key
+     * @return
+     */
+    public static String get(String key) {
           Element x=cache.get(key);
           if (x==null)return null;
           return (String)x.getObjectValue();     
     }
-        public static void put(String key, String value) {
+
+    /**
+     *
+     * @param key
+     * @param value
+     */
+    public static void put(String key, String value) {
            Element element = new Element(key, value);
             cache.put(element);  
     }
 
+    /**
+     *
+     */
     public static void info() {
                 System.out.println("HeapSize =" + cache.getStatistics().getLocalHeapSize()
                +", HeapSizeInBytes =" + cache.getStatistics().getLocalHeapSizeInBytes()

@@ -70,7 +70,7 @@ public class TestClientRead {
             if (r instanceof IndexService) {
                 IndexService is = ((IndexService) r);
                 String s = is.getInformation();
-                System.out.println("chaï¿½ne renvoyï¿½e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
                 QLResult res = is.evalQL("russie");
                 msg("time:" + res.duration);
                 String[] docname = is.getDocName(res.result);

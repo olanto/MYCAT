@@ -27,13 +27,13 @@ import static org.olanto.idxvli.IdxEnum.*;
 import static org.olanto.util.Messages.*;
 
 /**
- * g�re une structure de fichiers directement mapp� en m�moire.
+ * gère une structure de fichiers directement mappè en mémoire.
  * 
 
  *
  *
- * g�re des fichiers � travers les buffers (impl�mentation de base).
- * cette impl�mentation est FULL.
+ * gère des fichiers à travers les buffers (implémentation de base).
+ * cette implémentation est FULL.
  *
  */
 public class FullIOMap implements IOMap {
@@ -50,7 +50,7 @@ public class FullIOMap implements IOMap {
     private long maxLength = (long) Math.pow(2, slice2n + maxSlice2n); // longueur maximum du mapping
 
     /**
-     *
+     * Un gestionnnaire des IO (MapIO de Java)
      */
     protected FullIOMap() {
     }  // sert pour le get
@@ -68,7 +68,7 @@ public class FullIOMap implements IOMap {
         return this;
     }
 
-    /** retourne un gestionnaire de buffer des IO, sp�cifiant les param�tres du mapping*/
+    /** retourne un gestionnaire de buffer des IO, spécifiant les paramètres du mapping*/
     public final IOMap get(FileChannel _channel, readWriteMode _RW,
             int _slice2n, long _maxLength) throws IOException {
         slice2n = _slice2n;
@@ -83,7 +83,7 @@ public class FullIOMap implements IOMap {
                 msg("FullIOMap close i:" + i);
                 if (RW == readWriteMode.rw) {
                     mapping[i].force();
-                } // force l'�criture
+                } // force l'écriture
                 mapping[i] = null;
             }
         }
@@ -94,11 +94,11 @@ public class FullIOMap implements IOMap {
     }
 
     private final int getRelPos(long pos) {
-        return ((int) pos) << comp32 >>> comp32;  // peut �tre optimis� avec un masque !!!
+        return ((int) pos) << comp32 >>> comp32;  // peut être optimisé avec un masque !!!
     }
 
     private final void forceInMemory(int slice) throws IOException {
-        if (mapping[slice] != null) {// d�ja en m�moire
+        if (mapping[slice] != null) {// déja en mémoire
             return;
         } else {  // map la tranche
             switch (RW) {
@@ -112,7 +112,7 @@ public class FullIOMap implements IOMap {
         }
     }
 
-    /**  lire ces bytes � cette position*/
+    /**  lire ces bytes à cette position*/
     public final void read(byte[] data, long pos) throws IOException {
         int readed = 0;
         while (data.length - readed != 0) {
@@ -121,13 +121,13 @@ public class FullIOMap implements IOMap {
             if (verbose) {
                 msg("read pos:" + pos + " slice:" + s + " rel:" + r + " readed:" + readed);
             }
-            int maxInThisSlice = sliceSize - r;  // maximum que l'on peut �crire dans cette tranche
-            int lengthReaded = Math.min(maxInThisSlice, data.length - readed); // longueur � �crire dans cette tranche
+            int maxInThisSlice = sliceSize - r;  // maximum que l'on peut écrire dans cette tranche
+            int lengthReaded = Math.min(maxInThisSlice, data.length - readed); // longueur à écrire dans cette tranche
             if (verbose) {
                 msg("   maxInThisSlice:" + maxInThisSlice + " lengthReaded:" + lengthReaded);
             }
             get(data, readed, lengthReaded, s, r);
-            readed += lengthReaded;  // ajuste la longueur �crite;
+            readed += lengthReaded;  // ajuste la longueur écrite;
             pos += lengthReaded; // ajuste la position
         }
     }
@@ -139,7 +139,7 @@ public class FullIOMap implements IOMap {
         mapping[slice].get(data, from, length);
     }
 
-    /** �crire  ces bytes � cette position*/
+    /** écrire  ces bytes à cette position*/
     public final void write(byte[] data, long pos) throws IOException {
         int written = 0;
         while (data.length - written != 0) {
@@ -148,25 +148,25 @@ public class FullIOMap implements IOMap {
             if (verbose) {
                 msg("write pos:" + pos + " slice:" + s + " rel:" + r + " written:" + written);
             }
-            int maxInThisSlice = sliceSize - r;  // maximum que l'on peut �crire dans cette tranche
-            int lengthWritten = Math.min(maxInThisSlice, data.length - written); // longueur � �crire dans cette tranche
+            int maxInThisSlice = sliceSize - r;  // maximum que l'on peut écrire dans cette tranche
+            int lengthWritten = Math.min(maxInThisSlice, data.length - written); // longueur à écrire dans cette tranche
             if (verbose) {
                 msg("   maxInThisSlice:" + maxInThisSlice + " lengthWritten:" + lengthWritten);
             }
             put(data, written, lengthWritten, s, r);
-            written += lengthWritten;  // ajuste la longueur �crite;
+            written += lengthWritten;  // ajuste la longueur écrite;
             pos += lengthWritten; // ajuste la position
         }
     }
 
-    /** �crire data[from,from + length] dans la tranche slice depuis la position rel*/
+    /** écrire data[from,from + length] dans la tranche slice depuis la position rel*/
     private final void put(byte[] data, int from, int length, int slice, int rel) throws IOException {
         forceInMemory(slice);
         mapping[slice].position(rel);
         mapping[slice].put(data, from, length);
     }
 
-    /**  lire un int � cette position*/
+    /**  lire un int à cette position*/
     public final int readInt(long pos) throws IOException {
         int s = getSlice(pos);
         int r = getRelPos(pos);
@@ -177,11 +177,11 @@ public class FullIOMap implements IOMap {
             return mapping[s].getInt();
         } else {
             error_fatal("not align, int across two slice");
-        } // pas alig�
+        } // pas aligé
         return 0;
     }
 
-    /** �crire un int � cette position*/
+    /** écrire un int à cette position*/
     public final void writeInt(int data, long pos) throws IOException {
         int s = getSlice(pos);
         int r = getRelPos(pos);
@@ -193,11 +193,11 @@ public class FullIOMap implements IOMap {
             mapping[s].putInt(data);
         } else {
             error_fatal("not align, int across two slice pos:" + pos + " r:" + r + " maxInThisSlice:" + maxInThisSlice);
-        } // pas alig�
+        } // pas aligé
 
     }
 
-    /**  lire un long � cette position*/
+    /**  lire un long à cette position*/
     public final long readLong(long pos) throws IOException {
         int s = getSlice(pos);
         int r = getRelPos(pos);
@@ -208,11 +208,11 @@ public class FullIOMap implements IOMap {
             return mapping[s].getLong();
         } else {
             error_fatal("not align, int across two slice");
-        } // pas alig�
+        } // pas aligé
         return 0;
     }
 
-    /** �crire un long � cette position*/
+    /** écrire un long à cette position*/
     public final void writeLong(long data, long pos) throws IOException {
         int s = getSlice(pos);
         int r = getRelPos(pos);
@@ -224,7 +224,7 @@ public class FullIOMap implements IOMap {
             mapping[s].putLong(data);
         } else {
             error_fatal("not align, int across two slice pos:" + pos + " r:" + r + " maxInThisSlice:" + maxInThisSlice);
-        } // pas alig�
+        } // pas aligé
 
     }
 

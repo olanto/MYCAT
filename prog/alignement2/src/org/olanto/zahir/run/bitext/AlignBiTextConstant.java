@@ -27,6 +27,9 @@ import org.olanto.senseos.SenseOS;
  */
 public class AlignBiTextConstant {
 
+    /**
+     *
+     */
     public static final int NOT_FOUND = -1;
     /** un méga */
     public static final long MEGA = 1024 * 1024;
@@ -37,12 +40,40 @@ public class AlignBiTextConstant {
     /*************************************************************************************/
     /** path de la racine des fichiers communs */
     public static String FOLDER_SEGMENTED = SenseOS.getMYCAT_HOME() + "/corpus/txt";
+
+    /**
+     *
+     */
     public static String FOLDER_TMX = SenseOS.getMYPREP_HOME() + "/TMX";
+
+    /**
+     *
+     */
     public static String IDX_DONTINDEXTHIS = SenseOS.getMYCAT_HOME() + "/config/dontindexthiswords.txt";
+
+    /**
+     *
+     */
     public static String LIST_OF_BITEXT_LANG = "XXYY XXYYY";
+
+    /**
+     *
+     */
     public static String[] BITEXT;
+
+    /**
+     *
+     */
     public static float MIN_DICT_LEVEL =0.1f;
+
+    /**
+     *
+     */
     public static float MIN_SIM_LEVEL =0.2f;
+
+    /**
+     *
+     */
     public static boolean DONT_CHECK_LENGTH =false;
 
     /*************************************************************************************/

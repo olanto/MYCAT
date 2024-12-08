@@ -54,7 +54,7 @@ public class DictionnaryServer {
             String name = "rmi://jg4/TERMDICT";
             System.out.println("name:" + name);
             Naming.rebind(name, idxobj);
-            System.out.println("Serveur lancï¿½");
+            System.out.println("Serveur lancé");
 
         } catch (Exception e) {
             error("Serveur Idx", e);

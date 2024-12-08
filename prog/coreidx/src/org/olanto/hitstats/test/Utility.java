@@ -30,7 +30,7 @@ import java.util.Arrays;
 public class Utility {
 
     /**
-     *
+     * some utilities
      */
     public Utility() {
     }

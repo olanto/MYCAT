@@ -100,7 +100,7 @@ public class ZipManager {
     }
 
     /**
-     * r�cup�re un contenu type String.
+     * récupère un contenu type String.
      *
      * @param pos
      * @return 
@@ -119,9 +119,9 @@ public class ZipManager {
     }
 
     /**
-     * r�cu�re le contenu d'un r�pertoire.
+     * récupère le contenu d'un répertoire.
      *
-     * @param pathName r�pertoire
+     * @param pathName répertoire
      * @param txt_encoding encodage des textes
      */
     protected void getFromDirectory(String pathName, String txt_encoding) {

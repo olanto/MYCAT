@@ -25,24 +25,24 @@ import org.olanto.conman.server.*;
 import org.olanto.idxvli.server.*;
 
 /**
- * Comportement d'un ex�cuteur de requ�te.
+ * Comportement d'un exécuteur de requête.
  * 
  *
  *
- * Comportement d'un ex�cuteur de requ�te.
+ * Comportement d'un exécuteur de requête.
  */
 public interface QLManager {
 
     /**
-     * retourne la liste des documents valides correspondants à la requ�te, (null) si erreur.
-     * @param request requ�te
-     * @param id indexeur de r�f�rence
+     * retourne la liste des documents valides correspondants à la requête, (null) si erreur.
+     * @param request requête
+     * @param id indexeur de référence
      * @return la liste des documents valides
      */
     public int[] get(String request, IdxStructure id);
 
     /**
-     *
+     * Init Cache
      */
     public void initCache();
     

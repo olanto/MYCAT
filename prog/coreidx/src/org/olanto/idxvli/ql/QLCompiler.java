@@ -35,12 +35,12 @@ import java.util.regex.*;
  */
 
 /**
- * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire.
+ * Compilateur pour un langage de requête d'interrogation pour une recherche documentaire.
  *
  * 
  *
  *
- * Compilateur pour un langage de requ�te d'interrogation pour une recherche documentaire.
+ * Compilateur pour un langage de requête d'interrogation pour une recherche documentaire.
  *
  * <pre>
  * query = subquery &lt; query_operator subquery &gt;.
@@ -97,7 +97,7 @@ import java.util.regex.*;
  *
  *
  * to do:
- *  il reste � implementer les op�rations sur LENGTH ET DATE ...
+ *  il reste à implementer les opérations sur LENGTH ET DATE ...
  *
  * - modification JG : bug on SetOfBits
 */
@@ -105,7 +105,7 @@ public class QLCompiler {
 
     /** version du compilateur */
     public static final String COMPILER_VERSION = "1.02";
-    /** caract�re pour quoter les symboles*/
+    /** caractère pour quoter les symboles*/
     public static final char QUOTE_CHAR = '"';
 
     /**
@@ -147,14 +147,14 @@ public class QLCompiler {
      *
      */
     public boolean existAlternative = false;
-    /* les termes de la requ�te*/
+    /* les termes de la requête*/
 
     /**
      *
      */
 
     public List<String> termsOfQuery = new Vector<String>();
-    /* la requ�te oups*/
+    /* la requête oups*/
 
     /**
      *
@@ -167,9 +167,9 @@ public class QLCompiler {
     private static int TT_EOF = StreamTokenizer.TT_EOF;
 
     /**
-     * Cr�ation d'un compilateur pour une requ�te et son indexeur
-     * @param rdr source � compiler
-     * @param id indexeur de r�f�rence
+     * création d'un compilateur pour une requête et son indexeur
+     * @param rdr source à compiler
+     * @param id indexeur de référence
      */
     public QLCompiler(Reader rdr, IdxStructure id) {
         z = id;
@@ -177,10 +177,10 @@ public class QLCompiler {
     }
 
     /**
-     * Cr�ation d'un compilateur pour une requ�te et son indexeur
-     * @param rdr source � compiler
+     * création d'un compilateur pour une requête et son indexeur
+     * @param rdr source à compiler
      * @param properties
-     * @param id indexeur de r�f�rence
+     * @param id indexeur de référence
      */
     public QLCompiler(Reader rdr, String properties, IdxStructure id) {
         z = id;
@@ -189,7 +189,7 @@ public class QLCompiler {
     }
 
     /**
-     * Cr�ation d'un compilateur pour une requête et son indexeur
+     * création d'un compilateur pour une requête et son indexeur
      * @param rdr source à compiler
      * @param properties
      * @param id indexeur de référence
@@ -225,7 +225,7 @@ public class QLCompiler {
             sym.nextToken();
             if (term("AND")) {
                 next();
-            } // �limine les  AND car implicite et aussi certaines erreurs
+            } // élimine les  AND car implicite et aussi certaines erreurs
 
         } catch (IOException e) {
             error("IO error in QL compiler", e);
@@ -256,7 +256,7 @@ public class QLCompiler {
         }
         if (sym.ttype == QUOTE_CHAR) {
             oupsQuery += " \"" + sym.sval + "\"";
-            String[] quoteWord = p.split(sym.sval); // d�compose la citation en mot
+            String[] quoteWord = p.split(sym.sval); // décompose la citation en mot
 
             if (quoteWord != null) {
                 for (int i = 0; i < quoteWord.length; i++) {
@@ -302,8 +302,8 @@ public class QLCompiler {
     ////////////////////////////// Parser ///////////////////////////////
     //query = subquery < query_operator subquery >.
     /**
-     * Calcule la requ�te sur le corpus index�.
-     * @return une liste de num�ro de documents
+     * Calcule la requête sur le corpus indexé.
+     * @return une liste de numéro de documents
      */
     public final int[] execute() {
         int[] res = query().topdoc;
@@ -311,7 +311,7 @@ public class QLCompiler {
 //        showVector(res);
       if (sym.ttype != TT_EOF) {
             msg("truncated parsing at :" + sym.sval + "-" + sym.ttype);
-        } // il reste encore des caract�res
+        } // il reste encore des caractères
 
         if (verboseparsing) {
             msg("oups found:" + existAlternative);
@@ -332,7 +332,7 @@ public class QLCompiler {
 //        showVector(res);
       if (sym.ttype != TT_EOF) {
             msg("truncated parsing at :" + sym.sval + "-" + sym.ttype);
-        } // il reste encore des caract�res
+        } // il reste encore des caractères
       return res;
     }
 
@@ -388,7 +388,7 @@ public class QLCompiler {
 //        showVector(res1.doc);
         SetOfBits invalid = z.docstable.satisfyThisProperty(z.docstable.INVALID_NAME);
 //        msg("invalid:"+invalid.length());
-        QRes res = QRes.filtering(res1, invalid, false, MODE_RANKING);  // �limine les documents effac�s (invalid=true)
+        QRes res = QRes.filtering(res1, invalid, false, MODE_RANKING);  // élimine les documents effacés (invalid=true)
 
         msg("filtering by properties:" + properties);
         if (!properties.equals("")) {
@@ -396,14 +396,14 @@ public class QLCompiler {
             for (int i = 0; i < prop.length; i++) {
                 msg("   properties :" + prop[i]);
                 SetOfBits propSOB = z.docstable.satisfyThisProperty(prop[i]);
-                res = QRes.filtering(res1, propSOB, true, MODE_RANKING);  // �limine les documents effac�s (keep=true)
+                res = QRes.filtering(res1, propSOB, true, MODE_RANKING);  // élimine les documents effacés (keep=true)
 
             }
         }
         msg("profiling by profile:" + profile);
         if (!profile.equals("")) {
             SetOfBits profileSOB = z.docstable.satisfyThisProperty(profile);
-            res = QRes.profiling(res1, profileSOB, MODE_RANKING);  // �limine les documents effac�s (invalid=true)
+            res = QRes.profiling(res1, profileSOB, MODE_RANKING);  // élimine les documents effacés (invalid=true)
 
         }
 //        msg("ranking before sorting:");showVector(res.rank);
@@ -469,7 +469,7 @@ public class QLCompiler {
             if (verboseparsing) {
                 msg("query_operator: AND (default)" + sym.sval + "-" + sym.ttype);
             }
-            // pas  copy();next(); le symbole est utilis� plus loin
+            // pas  copy();next(); le symbole est utilisé plus loin
             return Operation.AND;
         } else {
             msg("waiting for AND, OR, MINUS receive:" + sym.sval + "-" + sym.ttype);
@@ -644,9 +644,9 @@ public class QLCompiler {
                 msg("near : " + term1 + ", " + term2);
             }
             //TimerNano t1=new TimerNano("QL exec getDocforWnearW:",false);
-            // l'op�rateur getDocforWnearW demande une optimisation (il travaille avec des copies ...)
+            // l'opérateur getDocforWnearW demande une optimisation (il travaille avec des copies ...)
             QRes res = getDocforWnearW(z, term1, term2);
-            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // �value les poids par les and, �vite d'int�grer dans la m�thode positionnelle les poids'
+            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // évalue les poids par les and, évite d'intégrer dans la méthode positionnelle les poids'
 
                 res = QRes.and(res, getDocforW(z, term1, MODE_RANKING), MODE_RANKING); // recopie les poids du term1
 
@@ -697,7 +697,7 @@ public class QLCompiler {
                 msg("next : " + term1 + ", " + term2);
             }
             QRes res = getDocforWnextW(z, term1, term2);
-            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // �value les poids par les and, �vite d'int�grer dans la m�thode positionnelle les poids'
+            if (res.doc != null && MODE_RANKING != RankingMode.NO) { // évalue les poids par les and, évite d'intégrer dans la méthode positionnelle les poids'
 
                 res = QRes.and(res, getDocforW(z, term1, MODE_RANKING), MODE_RANKING); // recopie les poids du term1
 

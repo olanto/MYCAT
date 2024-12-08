@@ -24,17 +24,17 @@ package org.olanto.idxvli;
  * Une classe pour initialiser les constantes.
  * 
  *
- * Une classe pour initialiser les constantes. Cette classe doit Ãªtre implÃ©mentÃ©e pour chaque application
+ * Une classe pour initialiser les constantes. Cette classe doit être implémentée pour chaque application
  */
 public interface IdxInit {
 
     /** initialisation permanante des constantes. 
-     * Ces constantes choisies dÃ©finitivement pour toute la durÃ©e de la vie de l'index.
+     * Ces constantes choisies définitivement pour toute la durée de la vie de l'index.
      */
     public void InitPermanent();
 
     /** initialisation des constantes de configuration (modifiable). 
-     * Ces constantes choisies dÃ©finitivement pour toute la durÃ©e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration();
 }

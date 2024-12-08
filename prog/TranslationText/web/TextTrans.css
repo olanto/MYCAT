@@ -140,7 +140,7 @@ span.highlight {
     text-align: center;
 }
 
-/*ce ci est le style relatif � la zone html (si vous voulez enlever la bordure c'est ici)*/
+/*ce ci est le style relatif à la zone html (si vous voulez enlever la bordure c'est ici)*/
 .TextBlock {
     font-family:arial; font-size:10px;
     line-height:20px; text-align:justify;
@@ -154,7 +154,7 @@ span.highlight {
     background-color: #ffffff;
 }
 /* cette classe pour la background de la partie 
-sup�rieure de la page de recherche*/
+supérieure de la page de recherche*/
 .searchHeader{
     background-color: #4058A1;
 }

@@ -26,7 +26,7 @@ import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
 
 /**
- * gestionaire de mots g�r� sur disque avec des IO Map avec 2 hash (stock� dans
+ * gestionaire de mots géré sur disque avec des IO Map avec 2 hash (stocké dans
  * un long). <p>
  *
  *
@@ -37,25 +37,25 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     /* constantes d'un gestionnaire du dictionaire -------------------------------------- */
     static final String SOFT_VERSION = "StringTable_HomeHash_InMemory_Clue_XL 2.1";
     static final int minSize = 10;  // 2^n; taille des blocs d'initialisation
-    static final String ENCODE = "UTF-8";   // encodage utilis�
+    static final String ENCODE = "UTF-8";   // encodage utilisé
     /* variables d'un gestionnaire du dictionaire -------------------------------------- */
     /**
      * definit la version
      */
     String VERSION;
     /**
-     * definit le nom g�n�rique des fichiers
+     * definit le nom générique des fichiers
      */
     String GENERIC_NAME;
     /**
-     * definit le path pour l'ensemble des fichiers d�pendant de ce Dictionnaire
+     * definit le path pour l'ensemble des fichiers dépendant de ce Dictionnaire
      */
     String pathName;
     /**
      * definit le fichier
      */
     String idxName;
-    private int lengthString = 128;  // longueur fixe occup�e par un String
+    private int lengthString = 128;  // longueur fixe occupée par un String
     private int maxSize = 12; //  2^n;
     private int comp32 = 32 - maxSize;
     private int utilSize = (int) Math.pow(2, maxSize) - 1;
@@ -65,19 +65,19 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
      */
     private int count = 0;
     /**
-     * fichier associ� avec les documents
+     * fichier associé avec les documents
      */
     private RandomAccessFile rdoc;
-    private LongVector hdocclue; // on stock un indice pour �viter de lire le string
+    private LongVector hdocclue; // on stock un indice pour éviter de lire le string
 
     /**
-     *
+     * default constructor
      */
     public StringTable_HomeHash_InMemory_Clue_XL() {
     }
 
     /**
-     * cr�e une word table de taille 2^_maxsize par d�faut � l'endroit indiqu�
+     * crée une word table de taille 2^_maxsize par défaut à l'endroit indiqué
      * par le path
      * @param _pathName
      * @param _idxName
@@ -90,7 +90,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     }
 
     /**
-     * ouvre un gestionnaire de mots � l'endroit indiqu� par le _path
+     * ouvre un gestionnaire de mots à l'endroit indiqué par le _path
      * @param _path
      * @param _idxName
      * @return 
@@ -100,14 +100,14 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     }
 
     /**
-     * cr�er une nouvelle instance de StringTable
+     * créer une nouvelle instance de StringTable
      */
     private StringTable_HomeHash_InMemory_Clue_XL(String _pathName, String _idxName, String _generic_name, int _maxSize, int _lengthString) {
         createStringTable_HomeHash_InMemory_Clue_XL(_pathName, _idxName, _generic_name, _maxSize, _lengthString);
     }
 
     /**
-     * cr�er une nouvelle instance de StringTable � partir des donn�es existantes
+     * créer une nouvelle instance de StringTable à partir des données existantes
      */
     private StringTable_HomeHash_InMemory_Clue_XL(String _pathName, String _idxName) {  // recharge un gestionnaire
         pathName = _pathName;
@@ -169,7 +169,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
         try {
             FileOutputStream ostream = new FileOutputStream(pathName + "/" + idxName);
             ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(VERSION); // �crire les flags
+            p.writeObject(VERSION); // écrire les flags
             p.writeObject(GENERIC_NAME);
             p.writeInt(maxSize);
             p.writeInt(lengthString);
@@ -235,8 +235,8 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
     }
 
     /**
-     * ajoute un terme au gestionnaire retourne le num�ro du terme, retourne
-     * EMPTY s'il y a une erreur, retourne son id s'il existe d�ja
+     * ajoute un terme au gestionnaire retourne le numéro du terme, retourne
+     * EMPTY s'il y a une erreur, retourne son id s'il existe déja
      * @param w
      * @return 
      */
@@ -245,7 +245,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
         int iget = get(w);
         if (iget != EMPTY) {
             return iget;
-        }  // existe d�j�
+        }  // existe déjà
 
         if (count >= utilSize) { // on doit garder un trou pour le get()
             error("*** error StringTable is full");
@@ -258,9 +258,9 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
         while (indirecth != -1) { // cherche un trou
             h = ((h + 1) << comp32) >>> comp32; //addition circulaire
             indirecth = hdoc(hdocclue.get(h));
-            collision++;  // est pas tout � fait juste si plusieurs occurences similaires
+            collision++;  // est pas tout à fait juste si plusieurs occurences similaires
         }
-        // on a trouv� un trou
+        // on a trouvé un trou
         //msg(w+" h final:"+h);
 
         //msg("trace count:"+count+"="+hdoc(hdocclue(count,cluew)));
@@ -286,7 +286,7 @@ public class StringTable_HomeHash_InMemory_Clue_XL implements StringRepository {
         }
         if (indirecth == -1) {
             return EMPTY;
-        } // pas trouv�
+        } // pas trouvé
         else {
             return indirecth;
         }

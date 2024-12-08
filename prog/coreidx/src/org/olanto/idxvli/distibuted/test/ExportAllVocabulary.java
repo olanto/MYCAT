@@ -31,7 +31,7 @@ import static org.olanto.util.Messages.*;
  */
 public class ExportAllVocabulary {
 
-    // classe charg�e de stresser les query
+    // classe chargée de stresser les query
     private static IdxStructure id;
     private static Timer t1 = new Timer("global time");
 
@@ -42,7 +42,7 @@ public class ExportAllVocabulary {
     public static void main(String[] args) {
 
         id = new IdxStructure("QUERY");
-        // cr�ation de la racine de l'indexation
+        // création de la racine de l'indexation
         id.createComponent(new ConfigurationNative1());
 
         // charge l'index (si il n'existe pas alors il est vide)

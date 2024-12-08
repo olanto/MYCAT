@@ -33,7 +33,7 @@ import static org.olanto.idxvli.IdxEnum.*;
  */
 public interface ByteArrayVector {
 
-    /**  crÃ©e un vecteur 2^_maxSize par dÃ©faut Ã  l'endroit indiquÃ© par le path, (maximum=2^31), objet=byte[fixedArraySize]
+    /**  crée un vecteur 2^_maxSize par défaut à  l'endroit indiqué par le path, (maximum=2^31), objet=byte[fixedArraySize]
      * @param _path
      * @param _file
      * @param _fixedArraySize
@@ -41,7 +41,7 @@ public interface ByteArrayVector {
      * @return valeur */
     public ByteArrayVector create(String _path, String _file, int _maxSize, int _fixedArraySize);
 
-    /**  ouvre un vecteur Ã  l'endroit indiquÃ© par le path
+    /**  ouvre un vecteur à  l'endroit indiqué par le path
      * @param _path
      * @param _RW
      * @param _file
@@ -51,21 +51,21 @@ public interface ByteArrayVector {
     /**  ferme un gestionnaire de vecteurs  (et sauve les modifications*/
     public void close();
 
-    /** mets Ã  jour la position pos avec la valeur val
+    /** mets à  jour la position pos avec la valeur val
      * @param pos
      * @param val */
     public void set(int pos, byte[] val);
 
-    /** Ã©limine le vecteur a la position pos
+    /** élimine le vecteur a la position pos
      * @param pos */
     public void clear(int pos);
 
-    /**  cherche la valeur Ã  la position pos
+    /**  cherche la valeur à  la position pos
      * @param pos
      * @return valeur */
     public byte[] get(int pos);
 
-    /**  cherche la valeur Ã  la position pos, la iÃ¨me valeur
+    /**  cherche la valeur à  la position pos, la ième valeur
      * @param pos
      * @param i
      * @return valeur */
@@ -75,12 +75,12 @@ public interface ByteArrayVector {
      * @return valeur */
     public int length();
 
-    /**  retourne la taille du vecteur Ã  la position n
+    /**  retourne la taille du vecteur à  la position n
      * @param pos n
      * @return */
     public int length(int pos);
 
-    /**  retourne la taille maximum des vecteurs stockÃ
+    /**  retourne la taille maximum des vecteurs stockà
      * @return ©*/
     public int maxUsedlength();
 

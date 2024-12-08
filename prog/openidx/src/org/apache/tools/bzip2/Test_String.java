@@ -38,7 +38,7 @@ public class Test_String {
     private static void compress(String outFileName) {
         BufferedOutputStream out = null;
         try {
-            String s="ceci est texte ├а compresser, ceci est texte ├а compresser, ceci est texte ├а compresser, ceci est texte ├а compresser, ";
+            String s="ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ceci est texte ра compresser, ";
             byte[] buffer = s.getBytes();
             out = new BufferedOutputStream(new FileOutputStream(outFileName));
             out.write(BZIP2_HEADER.getBytes());

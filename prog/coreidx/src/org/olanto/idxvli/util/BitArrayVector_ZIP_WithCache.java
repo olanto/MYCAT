@@ -28,14 +28,14 @@ import java.util.concurrent.locks.*;
 import org.olanto.idxvli.IdxConstant;
 
 /**
- * Comportements d'un tableau de bit[2^maxSize][fixedArraySize] Zipp� avec un cache.
+ * Comportements d'un tableau de bit[2^maxSize][fixedArraySize] Zippé avec un cache.
  *
  * 
  *
  * <pre>
  *  concurrence
- *  get est synchronis� pour les lecteurs sur le cache
- *  les autres doivent �tre prot�g� par un �crivain (externe)
+ *  get est synchronisé pour les lecteurs sur le cache
+ *  les autres doivent être protégé par un écrivain (externe)
  *  </pre>
  * 
  * modification JG: ajout de la méthode getCopyFromCache
@@ -47,9 +47,9 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
     /* variables du gestionnaire  -------------------------------------- */
     /** definit la version */
     private String VERSION;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String pathName;
-    /** definit le path pour l'ensemble des fichiers d�pendant de cet ObjectStore */
+    /** definit le path pour l'ensemble des fichiers dépendant de cet ObjectStore */
     private String fileName;
     private byte[][] v;
     private int size = 0;
@@ -63,11 +63,11 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
     private int countOp = 0;
     private int countOpInCache = 0;
 
-    /** cr�er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public BitArrayVector_ZIP_WithCache() {
     }
 
-    /**  cr�e un vecteur de taille 2^_maxSize � l'endroit indiqu� par le path
+    /**  crée un vecteur de taille 2^_maxSize à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _fileName
      * @param _pathName */
@@ -75,7 +75,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         return (new BitArrayVector_ZIP_WithCache(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize));
     }
 
-    /**  ouvre un vecteur  � l'endroit indiqu� par le _path
+    /**  ouvre un vecteur  à l'endroit indiqué par le _path
      * @param _fileName
      * @param _pathName */
     public final BitArrayVector open(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {
@@ -92,7 +92,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         msg("--- vector is closed now:" + fileName);
     }
 
-    /** cr�er une nouvelle instance du gestionnaire � partir des donn�es existantes*/
+    /** créer une nouvelle instance du gestionnaire à partir des données existantes*/
     private BitArrayVector_ZIP_WithCache(implementationMode _ManagerImplementation, String _pathName, String _fileName, readWriteMode _RW) {  // recharge un gestionnaire
         pathName = _pathName;
         fileName = _fileName;
@@ -115,7 +115,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         printMasterFile();
     }
 
-    /** cr�er une nouvelle instance du gestionnaire*/
+    /** créer une nouvelle instance du gestionnaire*/
     private BitArrayVector_ZIP_WithCache(implementationMode _ManagerImplementation, String _pathName, String _fileName, int _maxSize, int _fixedArraySize) {
         initCache();
         createBitArrayVector_ZIP_WithCache(_ManagerImplementation, _pathName, _fileName, _maxSize, _fixedArraySize);
@@ -158,13 +158,13 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         vZip.close();
     }
 
-    private final void initFirstTime() { // n'utiliser que la premi�re fois, à la cr�ation
-        SetOfBits wBA = new SetOfBits(fixedArraySize);  // cr�e un vecteur vide
+    private final void initFirstTime() { // n'utiliser que la première fois, à la création
+        SetOfBits wBA = new SetOfBits(fixedArraySize);  // crée un vecteur vide
         byte[] empty = wBA.getZip();
         //msg("empty.length:"+empty.length);
         for (int i = 0; i < size; i++) {
             vZip.set(i, empty);
-        } //initialise tous les vecteurs � vide
+        } //initialise tous les vecteurs à vide
     }
 
     private final void saveMasterFile() {  // sauver les informations persistante du gestionnaire
@@ -173,7 +173,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
                 getStatistic();
                 FileOutputStream ostream = new FileOutputStream(pathName + "/" + fileName);
                 ObjectOutputStream p = new ObjectOutputStream(ostream);
-                p.writeObject(VERSION); // �crire les flags
+                p.writeObject(VERSION); // écrire les flags
                 p.writeInt(size);
                 p.writeInt(fixedArraySize);
                 System.out.println("save Int Vector: " + pathName + "/" + fileName);
@@ -221,12 +221,12 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
                 msg("flush the properties cache, countOpInCache:"+countOpInCache+ " countRefresh:"+countRefresh);
                 if (RW == readWriteMode.rw) {
                     saveCache();
-                } // sauver le cache, si on est en mode de mise � jour
-                initCache(); // remet � z�ro le cache
+                } // sauver le cache, si on est en mode de mise à jour
+                initCache(); // remet à zéro le cache
                 countRefresh++;
             }
             SetOfBits sob = new SetOfBits(vZip.get(pos), fixedArraySize);
-            inMemory.put(pos, sob);  // cr�e un vecteur depuis son zip
+            inMemory.put(pos, sob);  // crée un vecteur depuis son zip
         } else {
             countOpInCache++;
         }
@@ -253,7 +253,7 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
         }
     }
 
-    /** mets � jour la position pos avec le vecteur complet*/
+    /** mets à jour la position pos avec le vecteur complet*/
     public final void set(int pos, SetOfBits v) {
         //msg("============================set from cache:"+pos+", set");
         cacheW.lock();
@@ -261,14 +261,14 @@ public class BitArrayVector_ZIP_WithCache implements BitArrayVector {
             // msg("set propertie Zip:"+pos);
             //for (int i=0;i<200;i++){if(v.get(i))System.out.print(1); else System.out.print(0);}System.out.println();
             inMemory.remove(pos);
-            inMemory.put(pos, new SetOfBits(v.getIntStructure()));  // cr�e un vecteur depuis son SOB
+            inMemory.put(pos, new SetOfBits(v.getIntStructure()));  // crée un vecteur depuis son SOB
             //for (int i=0;i<200;i++){if(get(pos,i))System.out.print(1); else System.out.print(0);}System.out.println();
         } finally {
             cacheW.unlock();
         }
     }
 
-    /**  cherche la valeur à la position pos, la i�me valeur   */
+    /**  cherche la valeur à la position pos, la ième valeur   */
     public final boolean get(int pos, int i) {
         cacheR.lock();
         try {

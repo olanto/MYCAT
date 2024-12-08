@@ -43,19 +43,19 @@ class ContentIO {
         glue = id;
     }
 
-    /** taille r�el du contenu
-     * @param j i�me contenu
+    /** taille réel du contenu
+     * @param j ième contenu
      * @return taille
      */
     protected final int realSizeOfContent(int j) { // taille du contenu
         return objsto[j % OBJ_NB].realSize(j / OBJ_NB);  // lit depuis objstore ,
     }
 
-    /** taille stock�e du contenu
-     * @param j i�me contenu
+    /** taille stockée du contenu
+     * @param j ième contenu
      * @return taille
      */
-    protected final int storeSizeOfContent(int j) { // taille stock�e du contenu
+    protected final int storeSizeOfContent(int j) { // taille stockée du contenu
         return objsto[j % OBJ_NB].storedSize(j / OBJ_NB);  // lit depuis objstore ,
     }
 
@@ -95,7 +95,7 @@ class ContentIO {
                     //ObjectStorage4 objsto0=(new ObjectStore4_Async()).create(OBJ_IMPLEMENTATION,
                     ObjectStorage4 objsto0 = (new ObjectStore4()).create(OBJ_IMPLEMENTATION,
                             OBJ_ROOT[i], DOC_MAXBIT + 0 - OBJ_PW2, OBJ_SMALL_SIZE);  // +0 car seulement idx -OBJ_PW2 car 2^n obsto
-                    objsto0 = null; // fuite m�moire
+                    objsto0 = null; // fuite mémoire
                 }
                 MODE_IDX = IdxMode.INCREMENTAL; // maintenant on peut passer dans ce mode
             } else {
@@ -136,14 +136,14 @@ class ContentIO {
 
             // fermer la gestion des doc
             glue.docstable.close();
-            glue.docstable = null;  // pour �viter les fuites m�moires
+            glue.docstable = null;  // pour éviter les fuites mémoires
 
             for (int i = 0; i < OBJ_NB; i++) {
                 msg("close objsto " + i);
                 objsto[i].close();
             }
             msg("before gc:" + usedMemory());
-            System.gc(); // fait le m�nage avant s'attaquer la phase 2
+            System.gc(); // fait le ménage avant s'attaquer la phase 2
             msg("after gc:" + usedMemory());
             closeLogger();
 

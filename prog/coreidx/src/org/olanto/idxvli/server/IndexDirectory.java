@@ -62,7 +62,7 @@ public class IndexDirectory {
     public static void updateIndex(IndexService_MyCat is) {
        try {
             String s = is.getInformation();
-            //System.out.println("chaï¿½ne renvoyï¿½e = " + s);
+            //System.out.println("chaîne renvoyée = " + s);
             System.out.println("client send a directory to be indexed ... could take time");
             System.out.println("corpus txt = " + is.getROOT_CORPUS_TXT());
             int lastdocBeforeIdx = is.getSize();

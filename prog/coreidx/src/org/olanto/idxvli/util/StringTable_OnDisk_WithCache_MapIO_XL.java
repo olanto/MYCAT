@@ -41,12 +41,12 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
     //private Hashtable<String,Integer> InMemory;
 
     /**
-     *
+     * default constructor
      */
     public StringTable_OnDisk_WithCache_MapIO_XL() {
     }
 
-    /**  crï¿½e une word table de la taille 2^_maxSize par dï¿½faut ï¿½ l'endroit indiquï¿½ par le path, (maximum=2^31),
+    /**  crée une word table de la taille 2^_maxSize par défaut à l'endroit indiqué par le path, (maximum=2^31),
      * avec des string de longueur max _lengthStrin
      * @param _path
      * @param _name
@@ -62,7 +62,7 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
         onDisk = new StringTable_HomeHash_InMemory_Clue_XL().create(_path, _name, _maxSize, _lengthString);
     }
 
-    /**  ouvre un gestionnaire de mots  ï¿½ l'endroit indiquï¿½ par le path
+    /**  ouvre un gestionnaire de mots  à l'endroit indiqué par le path
      * @param _path
      * @param _name
      * @return valeur */
@@ -85,8 +85,8 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
         onDisk.close();
     }
 
-    /**  ajoute un terme au gestionnaire retourne le numï¿½ro du terme, retourne EMPTY s'il y a une erreur,
-     * retourne son id s'il existe dï¿½ja
+    /**  ajoute un terme au gestionnaire retourne le numéro du terme, retourne EMPTY s'il y a une erreur,
+     * retourne son id s'il existe déja
      * @param w
      * @return 
      */
@@ -94,7 +94,7 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
         return onDisk.put(w);
     }
 
-    /**  cherche le numï¿½ro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du terme, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param w
      * @return valeur */
     synchronized public final int get(String w) { // rafraichir tout le cache
@@ -111,7 +111,7 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
 //            return n;
 //        } else{
 //            int fromDisk=onDisk.get(w);
-//            if (fromDisk==EMPTY) return EMPTY; // cas on a pas trouvï¿½
+//            if (fromDisk==EMPTY) return EMPTY; // cas on a pas trouvé
 //            InMemory.put(w,fromDisk);
 //            count++;
 //            return fromDisk;
@@ -119,7 +119,7 @@ public class StringTable_OnDisk_WithCache_MapIO_XL implements StringRepository {
 //        
     }
 
-    /**  cherche le terme associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire
+    /**  cherche le terme associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire
      * @param i
      * @return */
     public final String get(int i) {

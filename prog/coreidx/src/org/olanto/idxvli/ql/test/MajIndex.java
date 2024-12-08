@@ -23,7 +23,7 @@ package org.olanto.idxvli.ql.test;
 import org.olanto.idxvli.*;
 import org.olanto.util.Timer;
 
-/**Test de l'indexeur, mode incr�mental et diff�rentiel
+/**Test de l'indexeur, mode incrémental et différentiel
  * *
  * <p>
  * 

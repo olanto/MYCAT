@@ -50,7 +50,7 @@ public class StressClientRead {
             if (r instanceof IndexService) {
                 IndexService is = ((IndexService) r);
                 String s = is.getInformation();
-                System.out.println("chaÃ®ne renvoyÃ©e = " + s);
+                System.out.println("chaîne renvoyée = " + s);
 
                 test("agyegyamdetention       ", is);
                 test("ï¿½gyptische              ", is);
@@ -125,7 +125,7 @@ public class StressClientRead {
                 test("ajourna                 ", is);
                 test("ajoutais                ", is);
                 test("ajoutï¿½t                 ", is);
-                test("ajoutï¿½rent              ", is);
+                test("ajoutèrent              ", is);
                 test("ajpostrofhv             ", is);
                 test("ajustables              ", is);
                 test("ajustages               ", is);
@@ -465,7 +465,7 @@ public class StressClientRead {
                 test("althoen                 ", is);
                 test("althought               ", is);
                 test("althusser               ", is);
-                test("altiï¿½re                 ", is);
+                test("altière                 ", is);
                 test("altimï¿½trique            ", is);
                 test("altiner                 ", is);
                 test("altough                 ", is);
@@ -539,7 +539,7 @@ public class StressClientRead {
                 test("amenemhat               ", is);
                 test("amenhotep               ", is);
                 test("amerandcont             ", is);
-                test("amï¿½rement               ", is);
+                test("amèrement               ", is);
                 test("americam                ", is);
                 test("americamilitary         ", is);
                 test("americani               ", is);
@@ -650,7 +650,7 @@ public class StressClientRead {
                 test("amphores                ", is);
                 test("ampicillin              ", is);
                 test("amplifi                 ", is);
-                test("amplifiï¿½rent            ", is);
+                test("amplifièrent            ", is);
                 test("amplioribus             ", is);
                 test("amplissimam             ", is);
                 test("amplius                 ", is);

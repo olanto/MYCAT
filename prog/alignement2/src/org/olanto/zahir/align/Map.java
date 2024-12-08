@@ -29,24 +29,144 @@ import static org.olanto.util.Messages.*;
 public class Map {
 
     /* les maps  en sentence*/
+
+    /**
+     *
+     */
+
     public int[] fromMap;
+
+    /**
+     *
+     */
     public int[] toMap;
+
+    /**
+     *
+     */
     public float[] fromSimil;
+
+    /**
+     *
+     */
     public float[] toSimil;
-    public int[] fromShift, fromCharLength, fromNbWords, fromIncrement;
-    public int[] fromtoCharLength, fromtoNbWords, fromMapping;
+
+    /**
+     *
+     */
+    public int[] fromShift,
+
+    /**
+     *
+     */
+    fromCharLength,
+
+    /**
+     *
+     */
+    fromNbWords,
+
+    /**
+     *
+     */
+    fromIncrement;
+
+    /**
+     *
+     */
+    public int[] fromtoCharLength,
+
+    /**
+     *
+     */
+    fromtoNbWords,
+
+    /**
+     *
+     */
+    fromMapping;
+
+    /**
+     *
+     */
     public int fromCountOne;
+
+    /**
+     *
+     */
     public boolean[] fromCertainMap;
+
+    /**
+     *
+     */
     public boolean[] fromFullMap;
+
+    /**
+     *
+     */
     public int[] start;
+
+    /**
+     *
+     */
     public int[]  end;
+
+    /**
+     *
+     */
     public String[]  mapRules;
-    public int[] toShift, toCharLength, toNbWords, toIncrement;
-    public int[] tofromCharLength, tofromNbWords, toMapping;
+
+    /**
+     *
+     */
+    public int[] toShift,
+
+    /**
+     *
+     */
+    toCharLength,
+
+    /**
+     *
+     */
+    toNbWords,
+
+    /**
+     *
+     */
+    toIncrement;
+
+    /**
+     *
+     */
+    public int[] tofromCharLength,
+
+    /**
+     *
+     */
+    tofromNbWords,
+
+    /**
+     *
+     */
+    toMapping;
+
+    /**
+     *
+     */
     public int toCountOne;
+
+    /**
+     *
+     */
     public int fullcount;
     static boolean verbose=false;
 
+    /**
+     *
+     * @param fromSize
+     * @param toSize
+     */
     public Map(int fromSize, int toSize) {
         fromMap = new int[fromSize];
         toMap = new int[toSize];
@@ -70,6 +190,16 @@ public class Map {
         toMapping = new int[toSize];
     }
 
+    /**
+     *
+     * @param src
+     * @param target
+     * @param score
+     * @param srccharlength
+     * @param srcnbwords
+     * @param targcharlength
+     * @param targnbwords
+     */
     public final void addFromPos(int src, int target, float score, int srccharlength, int srcnbwords, int targcharlength, int targnbwords) {
         fromMap[src] = target;
         fromSimil[src] = score;
@@ -80,6 +210,16 @@ public class Map {
 
     }
 
+    /**
+     *
+     * @param src
+     * @param target
+     * @param score
+     * @param srccharlength
+     * @param srcnbwords
+     * @param targcharlength
+     * @param targnbwords
+     */
     public final void addToPos(int src, int target, float score, int srccharlength, int srcnbwords, int targcharlength, int targnbwords) {
         toMap[src] = target;
         toSimil[src] = score;
@@ -89,8 +229,10 @@ public class Map {
         tofromNbWords[src] = targnbwords;
     }
 
-    
-     public final void computeFullMap() {
+    /**
+     *
+     */
+    public final void computeFullMap() {
          fromFullMap= fromCertainMap.clone();
          start= new int[fromFullMap.length];
          end= new int[fromFullMap.length];
@@ -230,13 +372,16 @@ public class Map {
         }
      }
      
+    /**
+     *
+     */
     public final void compute() {
 
         //FROM
         for (int i = 0; i < fromMap.length; i++) {// shift entre les deux phrases
             fromShift[i] = i - fromMap[i];
         }
-        fromIncrement[0] = fromMap[0] + 1; // incrï¿½ment dans la cible pour chaque ligne (attendu =1)
+        fromIncrement[0] = fromMap[0] + 1; // incrément dans la cible pour chaque ligne (attendu =1)
         for (int i = 1; i < fromMap.length; i++) {
             fromIncrement[i] = fromMap[i] - fromMap[i - 1]; // shift entre les deux phrases
         }
@@ -250,7 +395,7 @@ public class Map {
         for (int i = 0; i < toMap.length; i++) {// shift entre les deux phrases
             toShift[i] = i - toMap[i];
         }
-        toIncrement[0] = toMap[0] + 1; // incrï¿½ment dans la cible pour chaque ligne (attendu =1)
+        toIncrement[0] = toMap[0] + 1; // incrément dans la cible pour chaque ligne (attendu =1)
         for (int i = 1; i < toMap.length; i++) {
             toIncrement[i] = toMap[i] - toMap[i - 1]; // shift entre les deux phrases
         }
@@ -295,8 +440,9 @@ public class Map {
         
     }
     
-    
-
+    /**
+     *
+     */
     public void dump() {
         boolean verbose=true;
         if(verbose){

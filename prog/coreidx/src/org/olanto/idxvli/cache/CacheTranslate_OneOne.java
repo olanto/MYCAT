@@ -24,7 +24,7 @@ package org.olanto.idxvli.cache;
  * implémentation trivial sans translation.
  * 
  *
- * Cette impl�mentation est utilis�e dans les stratégies FAST qui peuvent tenir en mémoire.
+ * Cette implémentation est utilisée dans les stratégies FAST qui peuvent tenir en mémoire.
  */
 public class CacheTranslate_OneOne implements CacheTranslate {
 
@@ -59,5 +59,5 @@ public class CacheTranslate_OneOne implements CacheTranslate {
 
     public final int allocate() {
         return 0;
-    } // ne peut pas d�border
+    } // ne peut pas déborder
 }

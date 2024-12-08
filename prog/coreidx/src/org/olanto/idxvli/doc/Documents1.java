@@ -37,8 +37,8 @@ import java.util.concurrent.locks.*;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - ï¿½crivain en exclusion avec tous
- *  doit ï¿½tre le point d'accï¿½s pour toutes les structures utilisï¿½es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accés pour toutes les structures utilisées !
  *  </pre>
  *
  */
@@ -54,11 +54,11 @@ public class Documents1 implements DocumentManager {
     private LanguageMode keepLanguage;
     private CollectionMode keepCollection;
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public Documents1() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée un gestionnaire de documents (la taille et la longueur) à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _keepLanguage
      * @param _idxName
@@ -72,7 +72,7 @@ public class Documents1 implements DocumentManager {
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+    /**  ouvre un gestionnaire de documents  à l'endroit indiqué par le _path
      * @param _ManagerImplementation
      * @param _keepLanguage
      * @param _keepCollection
@@ -101,7 +101,7 @@ public class Documents1 implements DocumentManager {
         DETLOG.info("--- DocumentManager is closed now ");
     }
 
-    /** crï¿½er une nouvelle instance de DocumentManager ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de DocumentManager à partir des données existantes*/
     private Documents1(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             IdxMode _updatingMode, String _pathName, String _idxName) {  // recharge un gestionnaire
         updatingMode = _updatingMode;
@@ -122,21 +122,21 @@ public class Documents1 implements DocumentManager {
                 break;
             case BIG:
                 documentName = (new StringTable_HomeHash_OnDisk_DIO()).open(_pathName, _idxName + "_name");
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).open(_pathName, _idxName + "_size");
                 documentDate = (new LongVector_InMemory()).open(_pathName, _idxName + "_date");
                 documentInvalid = (new BitVector_InMemoryZIP()).open(_pathName, _idxName + "_invalid");
                 break;
             case XL:
                 documentName = (new StringTable_OnDisk_WithCache_MapIO_XL()).open(_pathName, _idxName + "_name");
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).open(_pathName, _idxName + "_size");
                 documentDate = (new LongVector_InMemory()).open(_pathName, _idxName + "_date");
                 documentInvalid = (new BitVector_InMemoryZIP()).open(_pathName, _idxName + "_invalid");
                 break;
             case XXL:
                 documentName = (new StringTable_OnDisk_WithCache_XXL()).open(_pathName, _idxName + "_name");
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).open(_pathName, _idxName + "_size");
                 documentDate = (new LongVector_InMemory()).open(_pathName, _idxName + "_date");
                 documentInvalid = (new BitVector_InMemoryZIP()).open(_pathName, _idxName + "_invalid");
@@ -157,7 +157,7 @@ public class Documents1 implements DocumentManager {
 
     }
 
-    /** crï¿½er une nouvelle instance de Document Manager*/
+    /** créer une nouvelle instance de Document Manager*/
     private Documents1(implementationMode _ManagerImplementation, LanguageMode _keepLanguage, CollectionMode _keepCollection,
             String _pathName, String _idxName, int _maxSize, int _lengthString) {
         keepLanguage = _keepLanguage;
@@ -177,21 +177,21 @@ public class Documents1 implements DocumentManager {
                 break;
             case BIG:
                 documentName = (new StringTable_HomeHash_OnDisk_DIO()).create(_pathName, _idxName + "_name", _maxSize, _lengthString);
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).create(_pathName, _idxName + "_size", _maxSize);
                 documentDate = (new LongVector_InMemory()).create(_pathName, _idxName + "_date", _maxSize);
                 documentInvalid = (new BitVector_InMemoryZIP()).create(_pathName, _idxName + "_invalid", (int) Math.pow(2, _maxSize));
                 break;
             case XL:
                 documentName = (new StringTable_OnDisk_WithCache_MapIO_XL()).create(_pathName, _idxName + "_name", _maxSize, _lengthString);
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).create(_pathName, _idxName + "_size", _maxSize);
                 documentDate = (new LongVector_InMemory()).create(_pathName, _idxName + "_date", _maxSize);
                 documentInvalid = (new BitVector_InMemoryZIP()).create(_pathName, _idxName + "_invalid", (int) Math.pow(2, _maxSize));
                 break;
             case XXL:
                 documentName = (new StringTable_OnDisk_WithCache_XXL()).create(_pathName, _idxName + "_name", _maxSize, _lengthString);
-                // doit ï¿½tre remplacï¿½ par une implementation sur disque
+                // doit être remplacé par une implementation sur disque
                 documentSize = (new IntVector_InMemory()).create(_pathName, _idxName + "_size", _maxSize);
                 documentDate = (new LongVector_InMemory()).create(_pathName, _idxName + "_date", _maxSize);
                 documentInvalid = (new BitVector_InMemoryZIP()).create(_pathName, _idxName + "_invalid", (int) Math.pow(2, _maxSize));
@@ -220,19 +220,19 @@ public class Documents1 implements DocumentManager {
                 + "\n\nPROPERTIES STRUCTURE:"
                 + documentProperties.getStatistic());
     }
-    /** opï¿½ration sur documentName verrous ------------------------------------------*/
+    /** opération sur documentName verrous ------------------------------------------*/
     private final ReentrantReadWriteLock documentNameRW = new ReentrantReadWriteLock();
     private final Lock documentNameR = documentNameRW.readLock();
     private final Lock documentNameW = documentNameRW.writeLock();
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du docuemnt
+    /**  ajoute un document au gestionnaire retourne le numéro du docuemnt
      * @param d*/
     public final int put(String d) {
         documentNameW.lock();
         try {
             //msg("add this:"+d);
             int id = documentName.put(d);
-            if (updatingMode == IdxMode.DIFFERENTIAL) { // marque ce document car il existe dans le corpus ï¿½ indexer
+            if (updatingMode == IdxMode.DIFFERENTIAL) { // marque ce document car il existe dans le corpus à indexer
                 documentIndexed.set(id, true);
             }
             if (keepLanguage == LanguageMode.YES) {
@@ -247,7 +247,7 @@ public class Documents1 implements DocumentManager {
         }
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param d */
     public final int get(String d) {
         documentNameR.lock();
@@ -258,7 +258,7 @@ public class Documents1 implements DocumentManager {
         }
     }
 
-    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le document associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
     public final String get(int i) {
         documentNameR.lock();
         try {
@@ -277,7 +277,7 @@ public class Documents1 implements DocumentManager {
             documentNameR.unlock();
         }
     }
-    /** opï¿½ration sur documentDate verrous ------------------------------------------*/
+    /** opération sur documentDate verrous ------------------------------------------*/
     private final ReentrantReadWriteLock documentDateRW = new ReentrantReadWriteLock();
     private final Lock documentDateR = documentDateRW.readLock();
     private final Lock documentDateW = documentDateRW.writeLock();
@@ -301,7 +301,7 @@ public class Documents1 implements DocumentManager {
             documentDateR.unlock();
         }
     }
-    /** opï¿½ration sur documentSize verrous ------------------------------------------*/
+    /** opération sur documentSize verrous ------------------------------------------*/
     private final ReentrantReadWriteLock documentSizeRW = new ReentrantReadWriteLock();
     private final Lock documentSizeR = documentSizeRW.readLock();
     private final Lock documentSizeW = documentSizeRW.writeLock();
@@ -325,15 +325,15 @@ public class Documents1 implements DocumentManager {
             documentSizeR.unlock();
         }
     }
-    /** opï¿½ration sur documentProperties verrous ------------------------------------------*/
+    /** opération sur documentProperties verrous ------------------------------------------*/
     private final ReentrantReadWriteLock documentPropertiesRW = new ReentrantReadWriteLock();
     private final Lock documentPropertiesR = documentPropertiesRW.readLock();
     private final Lock documentPropertiesW = documentPropertiesRW.writeLock();
 
     /**
-     * enregistre la propiï¿½tï¿½ pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propirï¿½tï¿½
+     * enregistre la propiété pour le document i
+     * @param i numéro du document
+     * @param properties propirété
      */
     public void setPropertie(int i, String properties) {
         documentPropertiesW.lock();
@@ -345,9 +345,9 @@ public class Documents1 implements DocumentManager {
     }
 
     /**
-     * ï¿½limine la propiï¿½tï¿½ pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propirï¿½tï¿½
+     * élimine la propiété pour le document i
+     * @param i numéro du document
+     * @param properties propirété
      */
     public void clearPropertie(int i, String properties) {
         documentPropertiesW.lock();
@@ -360,9 +360,9 @@ public class Documents1 implements DocumentManager {
 
     /**
      * Retourne la taille pour le document i
-     * @param i numï¿½ro du document
-     * @param properties propriï¿½tï¿½
-     * @return la valeur de cette propiï¿½tï¿½
+     * @param i numéro du document
+     * @param properties propriété
+     * @return la valeur de cette propiété
      */
     public boolean getPropertie(int i, String properties) {
         documentPropertiesR.lock();
@@ -374,13 +374,13 @@ public class Documents1 implements DocumentManager {
     }
 
     /**
-     * propage l'invaliditï¿½ des documents dans les propriï¿½tï¿½s
+     * propage l'invalidité des documents dans les propriétés
      */
     public void propagateInvalididy() {
-        PutInvalidDocLikeAPropertie();  // pas de protection spï¿½ciale pour la concurrence
+        PutInvalidDocLikeAPropertie();  // pas de protection spéciale pour la concurrence
     }
 
-    /** le status d'invaliditï¿½ est normalisï¿½ comme une propriï¿½tï¿½ */
+    /** le status d'invalidité est normalisé comme une propriété */
     private final void PutInvalidDocLikeAPropertie() {
         //msg("===================== PutInvalidDocLikeAPropertie");
         if (documentProperties != null) {
@@ -388,7 +388,7 @@ public class Documents1 implements DocumentManager {
         }
     }
 
-    /**  cherche toutes les documents possï¿½dant une propriï¿½tï¿½s*/
+    /**  cherche toutes les documents possédant une propriétés*/
     public final SetOfBits satisfyThisProperty(String properties) {
         //msg("===================== satisfyThisProperty");
         if (documentProperties != null) {
@@ -399,39 +399,39 @@ public class Documents1 implements DocumentManager {
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary() {
         return documentProperties.getDictionnary();
     }
 
     /**
-     *  rï¿½cupï¿½re le dictionnaire de propriï¿½tï¿½s ayant un certain prï¿½fix (COLECT., LANG.)
-     * @param prefix prï¿½fixe des propriï¿½tï¿½s
-     * @return liste des propriï¿½tï¿½s actives
+     *  récupère le dictionnaire de propriétés ayant un certain préfix (COLECT., LANG.)
+     * @param prefix préfixe des propriétés
+     * @return liste des propriétés actives
      */
     public List<String> getDictionnary(String prefix) {
         return documentProperties.getDictionnary(prefix);
     }
 
-    /** opï¿½ration pour indexer ------------------------------------------*/
-    /**  verifie si le document est ï¿½ indexer (nom diffï¿½rent, date diffï¿½rente,
-     * si il rï¿½pond vrai, alors il faut indexer le document (car il a peut-ï¿½tre invalidï¿½ un document dï¿½ja existant)
-    , pas protï¿½gï¿½ le processus appelant doit rendre exclusif les appels
+    /** opération pour indexer ------------------------------------------*/
+    /**  verifie si le document est é indexer (nom diffèrent, date diffèrente,
+     * si il répond vrai, alors il faut indexer le document (car il a peut-être invalidé un document déja existant)
+    , pas protégé le processus appelant doit rendre exclusif les appels
      */
     public final boolean IndexThisDocument(String fname, long date) {
-        int id = get(fname);  // cherche si le document est dï¿½jï¿½ indexï¿½
+        int id = get(fname);  // cherche si le document est déjé indexé
         if (id == StringRepository.EMPTY) {
             return true;
         } // un nouveau document
         long fdate = getDate(id);
-        if (fdate != date) { // une mise ï¿½ jour
+        if (fdate != date) { // une mise à jour
             msg("IndexThisDocument maj:" + fname + " fdate " + fdate + " newdate " + date);
             invalid(id);
             return true;
         }
-        if (updatingMode == IdxMode.DIFFERENTIAL) { // marque ce document car il existe dans le corpus ï¿½ indexer
+        if (updatingMode == IdxMode.DIFFERENTIAL) { // marque ce document car il existe dans le corpus à indexer
             documentIndexed.set(id, true);
         }
 
@@ -439,24 +439,24 @@ public class Documents1 implements DocumentManager {
     }
 
     /**  rend invalide le document i 
-    , pas protï¿½gï¿½ le processus appelant doit rendre exclusif les appels
+    , pas protégé le processus appelant doit rendre exclusif les appels
      */
     public final void invalid(int i) {
         documentDate.set(i, INVALID_DATE); // marque la date avec une valeur impossible
-        String fname = get(i); // rï¿½cupï¿½re l'ancien nom'
-        documentName.modify(i, INVALID_NAME + fname);  // ajoute une prï¿½fixe impossible
+        String fname = get(i); // récupère l'ancien nom'
+        documentName.modify(i, INVALID_NAME + fname);  // ajoute une préfixe impossible
         documentInvalid.set(i, true);
     }
 
     /**  test si le document i  est valide 
-    , pas protï¿½gï¿½ le processus appelant doit rendre exclusif les appels
+    , pas protégé le processus appelant doit rendre exclusif les appels
      */
     public final boolean isValid(int i) {
         return !documentInvalid.get(i);
     }
 
     /**  le nombre de document valides
-    , pas protï¿½gï¿½ le processus appelant doit rendre exclusif les appels
+    , pas protégé le processus appelant doit rendre exclusif les appels
      */
     public final int countValid() {
         int size = documentName.getCount();
@@ -469,8 +469,8 @@ public class Documents1 implements DocumentManager {
         return count;
     }
 
-    /** rend invalide tous les documents qui ne sont pas indexï¿½ 
-    , pas protï¿½gï¿½ le processus appelant doit rendre exclusif les appels
+    /** rend invalide tous les documents qui ne sont pas indexé 
+    , pas protégé le processus appelant doit rendre exclusif les appels
      */
     private final void DeleteAllNonIndexedDoc() {
         int size = documentName.getCount();

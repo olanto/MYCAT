@@ -82,7 +82,7 @@ public class ConfigurationGetFromFile implements How2SayInit {
 
     /**
      * initialisation des constantes de configuration (modifiable). Ces
-     * constantes choisies d�finitivement pour toute la dur�e de la vie du
+     * constantes choisies définitivement pour toute la durée de la vie du
      * processus.
      */
     public void InitConfiguration() {

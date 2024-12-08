@@ -42,7 +42,12 @@ public class WriteBITEXT {
      String srcLanguage,targetLanguage;
      int idcount=0;
     
-    
+    /**
+     *
+     * @param fname
+     * @param _srcLanguage
+     * @param _targetLanguage
+     */
     public WriteBITEXT (String fname, String _srcLanguage, String _targetLanguage) {
         srcLanguage=_srcLanguage;
         targetLanguage=_targetLanguage;
@@ -58,6 +63,13 @@ public class WriteBITEXT {
         } catch (Exception e) { error("IO error savexml",e);}
     }
     
+    /**
+     *
+     * @param src
+     * @param target
+     * @param nfrom
+     * @param nto
+     */
     public  void add2Sentence(String src, String target,int nfrom, int nto){
          idcount++;
         try{
@@ -93,6 +105,9 @@ public class WriteBITEXT {
         return s;       
     }
      
+    /**
+     *
+     */
     public  void tmxClose() {
         
         try{

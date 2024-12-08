@@ -35,7 +35,7 @@ public interface TermsCorrelationInit {
     public void InitPermanent();
 
     /** initialisation des constantes de configuration (modifiable). 
-     * Ces constantes choisies définitivement pour toute la durï¿½e de la vie du processus.
+     * Ces constantes choisies définitivement pour toute la durée de la vie du processus.
      */
     public void InitConfiguration();
 }

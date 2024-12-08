@@ -41,6 +41,7 @@ public class MapArchiveManager {
 
     /** ajoute une map.
      * @param map map
+     * @param docid
      * @param lang lanque (pivot/cette langue)
      */
     protected void addMap(IntMap map, int docid, String lang) {
@@ -75,8 +76,9 @@ public class MapArchiveManager {
     }
 
     /** récupère une map.
-     * @param map map
+     * @param docid
      * @param lang lanque (pivot/cette langue)
+     * @return 
      */
     public boolean existMap(int docid, String lang) {
         int langid = getLangID(lang);
@@ -96,8 +98,9 @@ public class MapArchiveManager {
     }
 
     /** récupère une map.
-     * @param map map
+     * @param docid
      * @param lang lanque (pivot/cette langue)
+     * @return 
      */
     synchronized public IntMap getMap(int docid, String lang) {
 
@@ -137,6 +140,11 @@ public class MapArchiveManager {
 
     }
 
+    /**
+     *
+     * @param lang
+     * @return
+     */
     public int getLangID(String lang) {
         for (int i = 0; i
                 < LANGPAIR_MAX; i++) {
@@ -151,6 +159,12 @@ public class MapArchiveManager {
 
     }
 
+    /**
+     *
+     * @param realSize
+     * @param bb
+     * @return
+     */
     public static final byte[] decompress(int realSize, byte[] bb) {
         if (MAP_COMPRESSION == Compression.YES) {
             return BytesAndFiles.decompress(realSize, bb);
@@ -163,6 +177,11 @@ public class MapArchiveManager {
         }
     }
 
+    /**
+     *
+     * @param bb
+     * @return
+     */
     public static final byte[] compress(byte[] bb) {
         if (MAP_COMPRESSION == Compression.YES) {
             return BytesAndFiles.compress(bb);

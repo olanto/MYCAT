@@ -3,10 +3,18 @@ package org.olanto.zahir.parallel.runable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ *
+ * @author xtern
+ */
 public class MainRun {
   private static final int NTHREDS = 4;
 
-  public static void main(String[] args) {
+    /**
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
     ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
     for (int i = 0; i < 500; i++) {
       Runnable worker = new RunableProcess(1000000000L + i);

@@ -34,8 +34,8 @@ import java.util.concurrent.locks.*;
  * *  <pre>
  *  concurrence:
  *   - // pour les lecteurs
- *   - ï¿½crivain en exclusion avec tous
- *  doit ï¿½tre le point d'accï¿½s pour toutes les structures utilisï¿½es !
+ *   - écrivain en exclusion avec tous
+ *  doit être le point d'accés pour toutes les structures utilisées !
  *  </pre>
  *   */
 public class Word1 implements WordManager {
@@ -43,11 +43,11 @@ public class Word1 implements WordManager {
     private StringRepository dictionnary;
     private readWriteMode RW = readWriteMode.rw;
 
-    /** crï¿½er une nouvelle instance de repository pour effectuer les create, open*/
+    /** créer une nouvelle instance de repository pour effectuer les create, open*/
     public Word1() {
     }
 
-    /**  crï¿½e un gestionnaire de documents (la taille et la longueur) ï¿½ l'endroit indiquï¿½ par le path
+    /**  crée un gestionnaire de documents (la taille et la longueur) à l'endroit indiqué par le path
      * @param _ManagerImplementation
      * @param _path
      * @param _idxName
@@ -59,7 +59,7 @@ public class Word1 implements WordManager {
                 _path, _idxName, _maxSize, _lengthString));
     }
 
-    /**  ouvre un gestionnaire de documents  ï¿½ l'endroit indiquï¿½ par le _path
+    /**  ouvre un gestionnaire de documents  à l'endroit indiqué par le _path
      * @param _ManagerImplementation
      * @param _RW
      * @param _idxName
@@ -76,7 +76,7 @@ public class Word1 implements WordManager {
         msg("--- WordManager is closed now ");
     }
 
-    /** crï¿½er une nouvelle instance de WordManager ï¿½ partir des donnï¿½es existantes*/
+    /** créer une nouvelle instance de WordManager à partir des données existantes*/
     private Word1(implementationMode _ManagerImplementation,
             readWriteMode _RW, String _pathName, String _idxName) {  // recharge un gestionnaire
         RW = _RW;
@@ -96,7 +96,7 @@ public class Word1 implements WordManager {
         }
     }
 
-    /** crï¿½er une nouvelle instance de Word Manager*/
+    /** créer une nouvelle instance de Word Manager*/
     private Word1(implementationMode _ManagerImplementation,
             String _pathName, String _idxName, int _maxSize, int _lengthString) {
         switch (_ManagerImplementation) {
@@ -124,12 +124,12 @@ public class Word1 implements WordManager {
         dictionnary.printStatistic();
         msg("");
     }
-    /** opï¿½ration sur documentName verrous ------------------------------------------*/
+    /** opération sur documentName verrous ------------------------------------------*/
     private final ReentrantReadWriteLock dictionnaryRW = new ReentrantReadWriteLock();
     private final Lock dictionnaryR = dictionnaryRW.readLock();
     private final Lock dictionnaryW = dictionnaryRW.writeLock();
 
-    /**  ajoute un document au gestionnaire retourne le numï¿½ro du document
+    /**  ajoute un document au gestionnaire retourne le numéro du document
      * @param d document name*/
     public final int put(String d) {
         dictionnaryW.lock();
@@ -142,7 +142,7 @@ public class Word1 implements WordManager {
         }
     }
 
-    /**  cherche le numï¿½ro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
+    /**  cherche le numéro du document, retourne EMPTY s'il n'est pas dans le dictionnaire
      * @param d */
     public final int get(String d) {
         dictionnaryR.lock();
@@ -153,7 +153,7 @@ public class Word1 implements WordManager {
         }
     }
 
-    /**  cherche le document associï¿½ ï¿½ un numï¿½ro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
+    /**  cherche le document associé à un numéro, retourne NOTINTHIS s'il n'est pas dans le dictionnaire*/
     public final String get(int i) {
         dictionnaryR.lock();
         try {

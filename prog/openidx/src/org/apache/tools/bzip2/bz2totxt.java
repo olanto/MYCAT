@@ -15,7 +15,7 @@ import java.io.*;
  */
 public class bz2totxt {
     
-    private static final int BUFFER_SIZE = 1024*1024; // 1 MÃ©ga
+    private static final int BUFFER_SIZE = 1024*1024; // 1 Méga
     private static final String BZIP2_HEADER = "BZ";
     
     public static void main(String[] args) {

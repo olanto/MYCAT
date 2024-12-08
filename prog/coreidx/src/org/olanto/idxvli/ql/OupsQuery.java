@@ -52,8 +52,8 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
-/** cette classe d�termine des alternatives à la requête
- * Normalement cette classe devrait tenir compte de la langue ... � voir pour une nouvelle version
+/** cette classe détermine des alternatives à la requête
+ * Normalement cette classe devrait tenir compte de la langue ... à voir pour une nouvelle version
  * 
  */
 public class OupsQuery {
@@ -165,7 +165,7 @@ public class OupsQuery {
             int[] countOfSuggest = new int[Math.min(nbsuggest, MAX_SUGGESTION)];
             int count = 0;
             int decrease = 1;
-            // pond�re les suggestions
+            // pondére les suggestions
             for (Iterator suggestedWord = suggest.iterator(); suggestedWord.hasNext();) {/// on doit ajouter un max pour optimiser
                 String sw = ((Word) suggestedWord.next()).toString();
                 suggestion[count] = sw;
@@ -194,22 +194,22 @@ public class OupsQuery {
                     bestSuggest = i;
                 }
             }
-            //�valuation
+            //évaluation
             if (bestSuggest == -1) {
                 return null;
             } // pas de meilleure suggestion
-            if (countOfS == 0) {// pas de r�ponse pour s
+            if (countOfS == 0) {// pas de réponse pour s
                 if (SUGGEST_MANDATORY_IF_ZERO) {
                     return suggestion[bestSuggest];
                 } // au minimun 1
-                if (bestLevel >= MIN_FACTOR_SUGGESTION) // un minimun de r�ponse
+                if (bestLevel >= MIN_FACTOR_SUGGESTION) // un minimun de réponse
                 {
                     return suggestion[bestSuggest];
                 } else {
                     return null;
                 } // pas de meilleure suggestion
 
-            } else // il existe des r�ponses pour s
+            } else // il existe des réponses pour s
             if ((bestLevel / countOfS) >= MIN_FACTOR_SUGGESTION) {
                 return suggestion[bestSuggest];
             } else {
@@ -227,14 +227,14 @@ public class OupsQuery {
 
         OupsQuery oq = new OupsQuery(null, "C:/JG/VLI_RW/dict/fr.dic", "C:/JG/VLI_RW/dict/phonet.fr", "C:/JG/VLI_RW/dict/organisation.fr");
 //        oq.test("frase");
-//        oq.test("faclult�");
-//        oq.test("faKult�");
+//        oq.test("faclulté");
+//        oq.test("faKulté");
 //        oq.test("jauli");
 //        oq.test("filozofie");
 //        oq.test("filozofi");
 //        oq.test("fisik");
 //        oq.test("ortograf");
-        oq.test("d�mocrassie");
+        oq.test("démocrassie");
         oq.test("axion");
 //        oq.test("cui");
 //        oq.test("cour");
