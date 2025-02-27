@@ -20,6 +20,7 @@ prog/*/nbbuild/
 prog/*/dist/*.war
 prog/*/dist/*.jar
 prog/*/dist/lib/
+prog/*/dist/javadoc/
 prog/*/store/
 prog/*/nbdist/
 prog/*/nbactions.xml
