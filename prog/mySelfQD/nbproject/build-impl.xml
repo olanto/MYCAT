@@ -1524,7 +1524,6 @@ exists or setup the property manually. For example like this:
         <echo level="info" message="To delete all files undeploy the module from Server Registry in Runtime tab and then use Clean again."/>
     </target>
     <target depends="init" if="netbeans.home" name="undeploy-clean">
-        <nbundeploy failOnError="false" startServer="false"/>
     </target>
     <target name="-post-clean">
         <!-- Empty placeholder for easier customization. -->

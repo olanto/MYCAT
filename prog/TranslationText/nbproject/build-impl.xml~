@@ -1053,6 +1053,8 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.util.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.alignement2.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <copyfiles files="${file.reference.coreidx.jar}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.JAX-RS_1.1.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
+        <copyfiles files="${libs.Jersey_1.8__JAX-RS-RI_.classpath}" iftldtodir="${build.web.dir}/WEB-INF" todir="${dist.ear.dir}/lib"/>
         <mkdir dir="${build.web.dir}/META-INF"/>
         <manifest file="${build.web.dir}/META-INF/MANIFEST.MF" mode="update"/>
     </target>
@@ -1087,6 +1089,8 @@ exists or setup the property manually. For example like this:
         <copyfiles files="${file.reference.util.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.alignement2.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
         <copyfiles files="${file.reference.coreidx.jar}" todir="${build.web.dir}/WEB-INF/lib"/>
+        <copyfiles files="${libs.JAX-RS_1.1.classpath}" todir="${build.web.dir}/WEB-INF/classes"/>
+        <copyfiles files="${libs.Jersey_1.8__JAX-RS-RI_.classpath}" todir="${build.web.dir}/WEB-INF/classes"/>
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>
@@ -1517,7 +1521,7 @@ exists or setup the property manually. For example like this:
         <echo level="info" message="To delete all files undeploy the module from Server Registry in Runtime tab and then use Clean again."/>
     </target>
     <target depends="init" if="netbeans.home" name="undeploy-clean">
-     </target>
+</target>
     <target name="-post-clean">
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->

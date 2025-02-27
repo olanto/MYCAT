@@ -189,4 +189,3 @@ pip-log.txt
 .DS_Store
 *.properties
 *.properties
-/prog/knnproto/knnproto/dist/
