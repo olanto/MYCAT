@@ -23,6 +23,7 @@ package org.olanto.idxvli.util;
 import java.io.*;
 import static org.olanto.util.Messages.*;
 import static org.olanto.idxvli.util.BytesAndFiles.*;
+import static org.olanto.idxvli.util.StringTable_Hash_Util.clueHash;
 
 /**
  * gestionaire de mots géré sur disque avec des IO Map avec 2 hash (stocké dans un long).
@@ -276,19 +277,8 @@ public class StringTable_HomeHash_OnDisk_DIO_Clue implements StringRepository {
     private final int hash(String s) {  // ok
         return (s.hashCode() << comp32) >>> comp32;
     }
-
-    //        private final int clueHash(String s) {  // ok
-    //        return s.hashCode();
-    //    }
-    private final int clueHash(String s) {  // ok
-        String s1 = s;
-        if (s.length() > 1) {
-            s1 = s.substring(1) + s.substring(0, 1);
-        }
-        // msg(s+","+s1);
-        return s1.hashCode();
-    }
-
+   
+    
     /**  imprime des statistiques */
     public final void printStatistic() {
         msg(getStatistic());
