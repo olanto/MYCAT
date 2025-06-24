@@ -29,7 +29,7 @@ public class StringTable_Hash_Util {
      autorise un autre valeur de hash
      on manipule le string de base
      */
-    public static final int clueHash(String s) {  // ok
+    public static final int clueHash(String s) {  // new version with less collision
         StringBuilder s1 = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             s1.append(s.charAt(i)).append(s.charAt(s.length() - i - 1)); //entrelace and inverse string

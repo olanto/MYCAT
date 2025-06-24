@@ -190,3 +190,4 @@ pip-log.txt
 .DS_Store
 *.properties
 *.properties
+/prog/xmlconvert/dist/
