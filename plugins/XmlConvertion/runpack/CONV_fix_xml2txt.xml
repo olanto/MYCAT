@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<converter>
+    <common>
+        <targetFormat>txt</targetFormat>
+        <badPath>C:/MYCAT/corpus/bad</badPath>
+        <docPath>C:/MYCAT/corpus/docs</docPath>
+        <sourcePath>C:/MYCAT/corpus/source</sourcePath>
+        <tempPath>C:/MYCAT/TEMP</tempPath>
+        <maxRetry>2</maxRetry>
+        <keepExtension>true</keepExtension>
+		<shortTempoName>false</shortTempoName>
+        <outputEncoding>UTF-8</outputEncoding>
+    </common> 
+	<!-- examples of plugins -->
+    <plugins>
+         <plugin>
+            <plugName>xml2txt</plugName>
+            <plugCommand>C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  %source% %target%</plugCommand>
+            <plugProcessWindows>xxxxxx.exe</plugProcessWindows>               
+        </plugin>
+        <maps>
+             <ext>
+                <extName>xml</extName>
+                <conv>xml2txt</conv>
+                <builtin>no</builtin>
+            </ext>
+        </maps>
+    </plugins>
+
+</converter>

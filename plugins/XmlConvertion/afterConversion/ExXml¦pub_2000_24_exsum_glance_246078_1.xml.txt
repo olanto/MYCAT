@@ -1,0 +1,131 @@
+GII 2024 at a glance The Global Innovation Index 2024 captures the innovation ecosystem performance of 133 economies and tracks the most recent global innovation trends.
+Global leaders in innovation, 2024 Notes: World Bank Income Group Classification (July 2023).
+Year-on-year changes in GII rank are influenced by performance and methodological considerations (see Appendix I).
+Source: Global Innovation Index Database, WIPO, 2024.
+Global Innovation Index 2024 rankings Source: Global Innovation Index Database, WIPO, 2024.
+Innovation performance at different income levels, 2024 Source: Global Innovation Index Database, WIPO, 2024.
+Key takeaways What is the current state of global innovation?
+Is innovation accelerating or slowing down?
+How is innovation coping in the face of higher interest rates and geopolitical conflicts?
+Results of the Global Innovation Tracker 2024 The Global Innovation Tracker 2024 provides a comprehensive analysis of the current state of global innovation.
+Findings highlight progress as well as challenges across four key stages of the innovation cycle: science and innovation investment, technological progress, technology adoption, and the socioeconomic impact of innovation.
+1. Innovation investments witnessed a major downturn in 2023, a reversal of the 2020–2022 boom Following a boom between 2020 and 2022, science and innovation investment experienced a significant downturn in 2023 (see the Global Innovation Tracker Dashboard).
+Global Innovation Tracker Dashboard Notes: See the Data notes at the end of this section for a definition of the indicators and their data sources.
+Long-term annual growth refers to the compound annual growth rate(CAGR) over the indicated period.
+Historic data may have been updated and might differ from last year’s Global Innovation Tracker.
+Figures are rounded.
+Estimates or incomplete data are indicated by an asterisk (*). n.a. indicates not available.
+Short-term rates for Moore's Law and the Cost of genome sequencing refer to the CAGR between 2021 and 2023.
+Source: Global Innovation Index Database, WIPO, 2024.
+Scientific publications dropped by 5 percent in 2023, following growth rates above 8 percent annually in 2020 and 2021, and a slowdown in 2022.
+Global R&D grew at a rate of 5 percent in 2022 – slightly down from 2021 – but is projected to slow to about 3 percent in 2023 (all in real terms).
+Worldwide, R&D expenditure by the highest R&D-spending corporations grew by around 6 percent in real terms in 2023, below the long-term growth rate for the last 6 years (around 8 percent) and down strongly from peaks of 10 to 13 percent between 2019–2021, and also from pre-pandemic growth rates (all in real terms).
+Venture capital (VC) and scientific publications have declined sharply back to pre-pandemic levels, with a pronounced impact on emerging regions such as Latin America and Africa.
+Reflecting a deteriorating climate for risk finance, the value of VC investments has been falling from the exceptionally high levels of 2021, with a 36 percent drop in 2022 followed by a further 39 percent drop in 2023.
+The number of VC deals has also decreased, experiencing a downturn of 9.5 percent in 2023.
+International patent filings – which had stagnated since 2021 – saw a decline of 1.8 percent in 2023, marking the first such decline since 2009.
+Looking forward, while some central banks have started cutting interest rates, tighter conditions for innovation finance might continue to weigh on innovation investment in the near term.
+2. Technology continues to progress rapidly, technology adoption is growing, and the socioeconomic impact of innovation has mostly turned positive again.
+However, green technology and environmental indicators have either been progressing more slowly than before or have declined.
+Technological progress remained strong in 2023, particularly in health-related fields such as genome sequencing, as well as computing power and electric batteries.
+However, the rate of progress in green technologies lagged behind average growth for the decade, highlighting the challenge in reducing supercomputers' energy consumption and a slower reduction in renewable energy prices.
+Technology adoption increased across all indicators in 2023, especially in 5G, robotics, and electric vehicles.
+Overall penetration levels have increased compared to a decade ago, but there are exceptions, for example, the rate of adoption of safe sanitation has also significantly slowed.
+In terms of the socioeconomic impact of innovation , the situation is starting to look more positive again.
+Many indicators have returned to growth relative to what was reported in the 2023 GII edition, but some have yet to return to pre-pandemic levels.
+Labor productivity has seen an increase, albeit at a rate below the average for the past decade.
+Significant progress has been made in reducing poverty, with the number of people in extreme poverty in 2022 being half what is was in 2005.
+However, levels of poverty are still higher than those recorded in 2018.
+Life expectancy saw a rise in 2022, but nonetheless remains at 2015 levels.
+On environmental impact, though, the world is falling behind.
+Carbon emissions are growing once again after a temporary COVID-19 hiatus. 2023 was the hottest year on record, underlining the need for urgent and effective climate action.
+Results of the Global Innovation Index 2024 rankings 3.
+Switzerland, Sweden, the United States, Singapore, and the United Kingdom lead the GII 2024; China, Türkiye, India, Viet Nam, the Philippines, Indonesia, the Islamic Republic of Iran and Morocco are the middle-income economies that have climbed the fastest in the GII ranking since 2013.
+Switzerland ranks first in the GII for the 14 th consecutive year.
+Sweden and the United States (US) maintain 2 nd and 3 rd positions, respectively.
+Singapore (4 th ) moves further into the top 5, followed by the United Kingdom (UK) (5 th ).
+China – still the only middle-income economy within the GII top 30 – moves up the ranking to edge closer to the top 10, reaching 11 th position.
+Japan remains firm in 13 th – a position it has held since 2021.
+Canada rises up the rankings to 14 th position, its best rank since 2014, and representing a comeback.
+Ireland (19 th ) and Luxembourg (20 th ) enter the top 20, climbing three ranks and one rank, respectively.
+Australia (23 rd ) and New Zealand (25 th ) continue moving ahead within and, respectively, towards the top 25.
+European Union (EU) economies the Czech Republic (30 th ) enters, and Cyprus (27 th ) and Spain (28 th ) move up within the top 30, while Poland (40 th ) enters the top 40.
+There are only four other middle-income economies, apart from China, among the top 40 economies, namely, Malaysia (33 rd ), Türkiye (37 th ), Bulgaria (38 th ), and India (39 th ).
+However, Thailand (41 st ) and Viet Nam (44 th ) move closer too.
+Brazil (50 th ) remains in the top 50 in 2024.
+Saudi Arabia (47 th ) and Qatar (49 th ) continue climbing up in the top 50; the two economies in the Middle East that have moved up the rankings this year.
+The Philippines (53 rd ) and Indonesia (54 th ) move closer to the top 50, with Indonesia making one of the strongest GII upward spurts recorded over the last three years.
+Morocco (66 th ) in Northern Africa and Western Asia moves ahead in the top 70.
+Beyond the top 100, Tajikistan (107 th ), Algeria (115 th ) and Burundi (127 th ) have progressed the most in the rankings.
+In the last five years, Indonesia, Mauritius (55 th ), Saudi Arabia, Qatar, Brazil and Pakistan (91 st ) have climbed most in the GII, in terms of rank progression.
+China, India, Indonesia, the Islamic Republic of Iran (64 th ), the Philippines, Türkiye, Viet Nam and Morocco are the middle-income economies within the GII top 70 that have climbed the most in the GII ranking since 2013.
+4. Singapore, the United States and China score best in particular innovation indicators Singapore takes the lead in 2024 in terms of number of GII innovation indicators for which it ranks top globally, ranking 1 st in the world on 14 out of 78 indicators.
+The United States (9 out of 78 indicators) and China (8 out of 78) follow.
+Select middle- and low-income economies excelled in various domains.
+Relative to GDP, trade or population, the Plurinational State of Bolivia, Cambodia and Nepal, for example, rank 1 st in Loans from microfinance institutions, Malaysia in Graduates in science and engineering, and Mexico in Creative goods exports.
+Relatively, Morocco leads in Industrial designs, the Islamic Republic of Iran in Trademarks, and Namibia in Expenditure on education.
+5. The regional GII leaders in innovation are Switzerland, the United States, Brazil, India, Singapore, Israel, and Mauritius; India and Rwanda continue to lead their income groups.
+Türkiye and the Philippines are newcomers to the top 3 for their income group.
+In the South East Asia, East Asia and Oceania (SEAO) regions, Singapore, the Republic of Korea (6 th ) and China (11 th ) lead.
+Four additional SEAO economies are world innovation leaders ranking in the top 25, namely, Japan (13 th ), Hong Kong, China (18 th ), Australia (23 rd ) and New Zealand (25 th ).
+In Northern Africa and Western Asia, Israel (15 th ) leads the region and is followed by Cyprus (27 th ), the United Arab Emirates (32 nd ) and Türkiye (37 th ).
+Eight economies within the region move up the ranking.
+Saudi Arabia (47 th ) and Qatar (49 th ) each move ahead one spot to consolidate themselves in the top 50.
+Georgia moves up to 57 th place, entering the top 60, while Armenia (63 rd ) enters and Morocco (66 th ) consolidates its position in the top 70.
+In Latin America and the Caribbean, the regional top three remains unchanged: Brazil (50 th ) maintains top position, followed by Chile (51 st , up by one rank) and Mexico (56 th , up by two ranks).
+Seven additional economies within the region also improved their ranking: Colombia (61 st ) – one of the largest jumps in the region, matched only by Paraguay (93 rd ), Uruguay (62 nd ), Costa Rica (70 th ), Peru (75 th ), Panama (82 nd ) and Honduras (114 th ).
+In Central and Southern Asia, India continues to lead, moving one place forward to 39 th  position, the Islamic Republic of Iran (64 th ), Kazakhstan (78 th ) and Uzbekistan (83 rd ) come next.
+In addition to India and Kazakhstan, three additional economies within the region go up in the ranking: Sri Lanka (89 th ), Kyrgyzstan (99 th ) and Tajikistan (107 th ).
+In Sub-Saharan Africa, Mauritius (55 th ) is followed by South Africa (69 th ), Botswana (87 th ), Cabo Verde (90 th ) and Senegal (92 nd ).
+Kenya (96 th ) gains four places in the ranking, consolidating its position within the top 100.
+Zambia (116 th ), Benin (119 th ), Mauritania (126 th ), and Burundi (127 th ) also move up the GII ranking.
+In the GII 2024, Türkiye enters the top 3 for the upper middle-income group, behind China and Malaysia (33 rd ).
+India leads the lower middle-income group, followed by Viet Nam (44 th ) and the Philippines (53 rd ) – a newcomer to this income group’s top 3.
+Rwanda (104 th ) leads the low-income group, followed by Madagascar (110 th ), Togo (117 th ) and Uganda (121 st ).
+6. Several developing economies are performing above expectation on innovation relative to their level of economic development.
+In the GII 2024, 19 economies outperform on innovation relative to their level of development, the majority still located in Sub-Saharan Africa and South East Asia, East Asia, and Oceania.
+India, the Republic of Moldova (68 th ), and Viet Nam continue to lead as the longest-standing innovation overperformers, for a 14 th consecutive year.
+Indonesia, Pakistan, and Uzbekistan maintain their overperformer status for a third consecutive year, and Brazil for a fourth.
+Conversely, 41 economies are performing below expectation on innovation, the majority from Latin America and the Caribbean and Sub-Saharan Africa.
+Results of the global top 100 S&T cluster rankings 7.
+The world’s five biggest science and technology clusters are all located in East Asia; Tokyo–Yokohama is the biggest S&T cluster globally, Cambridge the most S&T-intensive Tokyo–Yokohama (Japan) continues to lead, followed by Shenzhen–Hong Kong–Guangzhou (China and Hong Kong, China), Beijing (China), Seoul (Republic of Korea) and Shanghai–Suzhou (China).
+China, for a second consecutive year, leads with the most clusters (26) in the top 100.
+The United States follows, with 20 clusters, then Germany with eight.
+São Paulo (Brazil); newcomer Cairo (Egypt); Bengaluru, Delhi, Chennai and Mumbai (India); Tehran (Islamic Republic of Iran); Kuala Lumpur and Singapore; Istanbul and Ankara (Türkiye); and Moscow (Russian Federation) are the only middle-income economy clusters outside of China.
+Cambridge in the United Kingdom and San Jose–San Francisco, CA, in the United States are the two most S&T-intensive clusters relative to population density.
+Eindhoven (Kingdom of the Netherlands), Oxford (United Kingdom) and Boston–Cambridge, MA (United States) follow.
+In the Republic of Korea, Daejeon ranks the seventh most S&T-intensive cluster and is the only Asian cluster in the top 10 by intensity.
+Munich (Germany) maintains its rank as the 10 th most S&T-intensive cluster globally.
+The GII 2024 identifies the top African S&T clusters within Africa beyond the global top 100.
+Egypt has the most clusters (11), followed by South Africa (8), Morocco (5), Nigeria (4), Tunisia (4), Ethiopia (2), Ghana (2) and Kenya (1) , with others following.
+These clusters are strong in scientific publications but weaker in international patenting, thus they continue to be more science rather than full-blown S&T clusters.
+Top S&T cluster by economy or cross-boarder region ranked among the top 100, 2024 Note: Circles with dotted borders indicate the number of total clusters in that economy, for economies with three or more top 100 S&T clusters.
+Source: Global Innovation Index Database, WIPO, 2024.
+Results of the Special theme – Unlocking the promise of social entrepreneurship 8.
+This year’s special GII theme looks to the future of social entrepreneurship and asks: What will it take for social entrepreneurship to catalyze transformative innovation and societal impact?
+The special theme "Unlocking the promise of social entrepreneurship" emphasizes the rise and significance of social entrepreneurship as a global phenomenon aimed at addressing critical social and environmental issues through innovative business models.
+Social entrepreneurs aim to develop and fund solutions that address societal challenges while generating revenue within the confines of a market economy.
+This approach has gained momentum among young inventors and innovators seeking to align their work with positive social change, especially in areas overlooked by traditional businesses and governments.
+Current estimates suggest there are between 10 and 11 million social enterprises and up to 30 million social entrepreneurs globally, contributing roughly USD 2 trillion to global GDP.
+Social enterprises tackle various issues that include poverty, environmental sustainability and social injustice.
+For instance, Bandhu Tech in India provides housing for migrant workers using an AI-enhanced platform; Green Bio Energy in Uganda produces eco-friendly briquettes; Peek Vision offers mobile eye-health services in low-resource settings; Thaki refurbishes laptops for refugee education; and in India the Community Design Agency involves low-income communities in housing projects.
+Despite their impact made by these enterprises, traditional innovation models and policies have largely ignored such community-based ventures.
+Social entrepreneurship operates within diverse definitions and legal frameworks, reflecting the regional histories and policy environments in which they exist.
+These enterprises often face competing demands between social impact and financial success, beneficiaries and investors, and long-term systemic change versus short-term survival.
+However, such tensions also serve to drive their innovation potential, by combining aspects of the social sector and the market.
+Social enterprises create impact through various pathways, including customer-focused models that provide essential services to underserved populations, employee-focused models that hire and train marginalized individuals, product/service-focused models that develop sustainable products, and ecosystem-focused models that mobilize diverse stakeholders in order to effect systemic change.
+Examples include SOIL in Haiti, which provides sanitation services; iKure in India, offering primary health care through a hub-and-spoke model; Eco Femme in India, producing reusable menstrual pads; and WeRobotics in Switzerland, which connects local drone and AI experts with global organizations.
+Innovation in social entrepreneurship often involves process and product innovations tailored to fit local contexts, emphasizing collaboration and open-source strategies.
+Intellectual property (IP) activity varies, with some enterprises securing patents and trademarks.
+The report identifies several barriers to social entrepreneurship, including limited legal frameworks, financing challenges, and inadequate impact measurement.
+Policy recommendations include developing supportive legal and regulatory environments, investing in education and training programs, promoting data collection, assisting social entrepreneurs in reaching underserved communities, incubating social enterprise networks, and creating incentives for private investment.
+Public and private sector collaboration is crucial for addressing these barriers and unlocking the full potential of social entrepreneurship.
+At the same time, the onus for action and change is not only on the actors that surround social entrepreneurs.
+There is also scope for social entrepreneurs themselves to more actively drive innovation in their ventures.
+To some extent, this is a matter of social entrepreneurs recognizing the critical role that innovation plays and directing their attention toward key activities such as R&D, process innovation, and patenting and trademarking.
+But it also involves social entrepreneurs taking concrete actions to embed their enterprises in existing innovation ecosystems.
+They can do this, by tapping existing sources of scientific and technological knowledge, as well as venture capital, R&D tax credits, and other innovation finance tools, and by collaborating with universities, public research organizations and other entrepreneurs.
+Ultimately, social entrepreneurship offers a transformative approach to tackling global challenges, by merging business innovation with social goals.
+By investing in supportive policies, infrastructure and financing, it is possible to create an environment where social enterprises thrive, driving sustainable development and creating lasting positive impacts on a global scale.
+Innovation policy needs to be better designed to support social entrepreneurship, which requires a focus on institutional frameworks, human capital, infrastructure, networks, financing, and measurement.
+The 2024 edition of the GII addresses these gaps by highlighting the state of social entrepreneurship globally and the role of innovation in creating positive impacts, and offers policy recommendations for unlocking the sector's potential.

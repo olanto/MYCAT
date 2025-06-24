@@ -1,0 +1,90 @@
+Getty Images/yourstockbank and Peter Horree/Alamy Stock Photo Do you remember the Peanuts cartoon where Clara drags Snoopy around and, against his will, scrubs him down and dresses him up for tea, all the while singing about "fundamental friend dependability”?
+The world of standard essential patents (SEPs) features a similar dynamic – only it’s not between friends, it’s about FRANDs: fair, reasonable and non-discriminatory licensing terms.
+In a nutshell Standard Essential Patents (SEPs) are all about FRANDs: fair, reasonable and non-discriminatory licensing terms.
+But what makes true FRANDs is often a matter of disagreement.
+Alternative dispute resolution, market-based solutions and a new SEP strategy may offer solutions.
+By András Jókúti , Director, Patent and Technology Law Division, WIPO Patent owners and the implementers of technological standards, such as 5G and Wi-Fi, depend on each other.
+They are licensors and licensees, respectively.
+But when it comes to disputes, both can feel mistreated.
+They each tend to consider themselves Snoopy and feel that their counterpart’s idea of friendship (or FRANDship) is quite different from their own.
+Standardization is an issue of global importance.
+Technological standards are critical for ensuring the safety and interoperability of different products or services made available by various companies.
+In other words, standards allow different devices to work together, communicate with each other and connect to third-party gadgets, as well as to operate safely on the same platforms irrespective of their model or brand.
+Think about the different generations of cellular technology such as 3G and 4G.
+Consider the key connectivity standards, like Bluetooth, USB and Wi-Fi.
+Without those standards, how could manufacturers ensure that our smartphones and other devices operate on the same networks or function in sync with one another?
+Each of those standardized platforms is an enormous achievement of technological convergence.
+And ensuring such achievements requires a great number of intellectual property (IP) transactions.
+In fact, what may appear as single standards actually comprise a broad range of patents and stakeholders.
+We’ll return to Snoopy later.
+Right now, let’s enter the SEP lifecycle.
+Without standards, how could manufacturers ensure that smartphones and other devices operate on the same networks or function in sync with one another?
+Phase 1: standardization Standard-setting organizations enable their members to develop standards together and agree on their technical specifications.
+Such environments support the rapid development of globally relevant standards.
+And with such standards in place, consumers don’t need to worry that their devices won’t perform in line with basic requirements or that they won’t work together.
+All this lays the foundation for a competitive market by enabling consumers to base purchasing decisions on factors other than basic functionalities and compatibility, such as price, additional features or design.
+From this perspective, the collaboration of competitors at standardization bodies can be seen as a success story, which has led to a high degree of innovation and some of the most widely adopted technologies ever.
+There is an inherent friction - the success of standards relies on their broad adoption, whereas the patent system is set up to reward innovation.
+Take, for example, video compression and connectivity standards.
+We watch movies on high-definition TVs that use an MPEG standard and connect our smartphones to our cars via Bluetooth.
+Meanwhile, 5G cellular networks continue to create new opportunities in industries from aviation to medical technology, as well as enable an array of products, including real-time virtual and augmented reality and machine-to-machine communications.
+More products mean more implementers and, as a result, more potential SEP licensees.
+TCD/Prod. DB/Alamy Stock Photo Yet setting standards comes with its own set of challenges.
+Industry players propose to include solutions developed in their own workshops and labs.
+Naturally, they obtain IP rights to them and expect a return on their investment.
+To illustrate: the organizational partners working on mobile broadband standards (starting with 3G in 1998, jointly called 3GPP) committed last year to develop the 6G standard.
+The contributors are already filing patent applications to claim dibs on the elements of the platform that their research teams have come up with.
+SEPs protect inventions that are required to implement technology standards.
+So, if you launch a standard-compliant product, you will inevitably have to use technology that is patented by others, for which you’ll need a license.
+This is where the second phase begins.
+Phase 2: licensing Once a technological standard is finalized and rolled out, the product developers planning to implement it must seek authorization to use the protected tech.
+That goes far beyond smartphone manufacturers.
+For instance, if you produce Bluetooth-enabled headphones or a smart meter that measures electricity consumption via a Wi-Fi connection, you must license the relevant SEP portfolios.
+However, there is an inherent friction here.
+The success of standards depends on their broad adoption, whereas the patent system is set up to reward innovation.
+So, on the one hand, standardized technology is being made available to implementers; on the other, economic incentives are being directed at those who hold the patents.
+Simply put: SEP holders want royalties from those who use their tech, while product manufacturers want to pay as little as possible and steer free of litigation.
+What’s more, one single standard may encompass multiple SEPs – sometimes hundreds or even thousands.
+Those patents are not owned by a single entity but by many companies.
+It comes as no surprise, then, that the terms of commercial SEP licenses are a sensitive issue.
+If the royalties due to the patentees were too high, it would make production too costly, but at the same time innovators need fair revenue to make R&D worth their while.
+So, what’s the solution?
+Solid licensing systems are essential in striking the right balance between the interests of patent holders and those of implementers.
+That is why the IP policies of most standardization bodies require contributors to declare that they are willing to license their SEPs under fair, reasonable and non-discriminatory terms – the FRAND commitment.
+Some organizations even require an itemized list of the patents their owners consider essential to their standard.
+The implications of FRAND commitments are not interpreted on equal terms across jurisdictions.
+Because proprietary technology is used by anyone who deploys standard-compliant products, there is an expectation that licenses will be available and affordable.
+Here, the legitimate interests of SEP holders and standard implementers must be carefully weighed against one another – with the understanding that both parties can, and often do, undertake both roles simultaneously, as licensors of some patents and licensees of others.
+But the enforcement of FRAND undertakings, as well as determining what such terms actually mean, fall outside the purview of standardization bodies.
+Moreover, companies usually self-declare large portfolios as SEPs, often before the standard is finalized.
+That uncertainty in the system, coupled with the lack of an authoritative assessment of true essentiality, results in limited transparency regarding precisely which IP rights must really be licensed when implementing a standard.
+It is also apparent that the implications of FRAND commitments are not interpreted on equal terms across jurisdictions – even the methods used to calculate royalties differ from region to region.
+Therefore, licensing negotiations can be fraught with conflict – or at least diverging views on what is fair and reasonable for a global license covering all the patents in the SEP owner’s portfolio.
+Failure by the parties to agree can lead to a third phase.
+And this is where Clara and Snoopy begin their frantic dance.
+Phase 3: disputes In contentious SEP licensing cases – and consequently in litigation – each party invokes the FRANDly nature of their offer (and the unFRANDliness of the other’s), challenges the essentiality or validity of the SEPs, contests the good faith of its partners, and generally claims that it is the meek puppy falling victim to the abusive conduct of an uncaring Clara.
+The results? Much debate and sky-high transaction costs.
+Implementers fear the threat of injunctions used to extract supra-FRAND royalties, while SEP owners bemoan the implementers’ unlicensed use of their patented tech and their attempts to avoid paying fair license fees.
+Universal Images Group North America LLC/Alamy Stock Photo The stakes are far from peanuts.
+Access to entire markets can be blocked by an injunction and, given the widespread adoption of standards, even one cent per product can result in huge gains or losses – it is no wonder that even adequate royalty bases are hotly debated.
+Consider the magnitude of the smartphone or automotive sectors and you will get the idea.
+Indeed, it makes a huge practical difference whether the FRAND license fee is based on the smallest salable patented component (such as a microchip) or the product itself (like a car).
+To make things more complex, the globalization of value chains – and markets – results in global licensing needs and cross-border disputes, while the convergence of previously separate industry segments in a digital economy causes further problems.
+For example, practices that worked within the information and communications technology (ICT) sector may be disputed when it comes to new players in the connectivity arena, such as car makers.
+Making FRANDs again When opposing parties – who both feel like Snoopy and Clara – cannot align their positions, two things can currently alleviate some of the pain of SEP licensing.
+First, for parties willing to submit their differences to such procedures, the World Intellectual Property Organization (WIPO), among others, offers multiple means of alternative dispute resolution (ADR).
+Second, market-based solutions are emerging with one-stop shops for use cases that offer clear license fees for bundled SEP portfolios.
+That can simplify transactions dramatically.
+Patent pools can cool down competitive markets if enough SEP owners join them, while technology users often accept the terms offered in exchange for peace of mind.
+Jurisdictions with many SEP disputes are exploring policy or legislative options.
+Given the absence thus far of proven governmental interventions, many stakeholders prefer a market-based approach, but policy initiatives and consultations can invigorate the discourse.
+As a bare minimum, increasing transparency in the SEP landscape is vital for market participants.
+TCD/Prod. DB/Alamy Stock Photo Considering the above challenges, there appears to be a growing need for information, guidance, discussion and services at the international level.
+Given the cross-border nature of the implementation of standardized technologies and of SEP licensing, neutral global organizations such as WIPO can complement national and regional policies in this area.
+WIPO recently published its three-year SEP Strategy .
+It identifies four clusters of initiatives on which it will undertake to work with a wide range of stakeholders.
+They include providing a platform for global dialogue; serving as a hub for knowledge and data ; being a venue not only for ADR but also for deal facilitation ; and providing services directly accessible to the relevant stakeholders.
+Where does this leave Snoopy and Clara?
+Well, "fundamental FRAND dependability” may not be such a hollow term after all.
+Industry players do depend on each other to deliver on the promise of consumer benefit via innovation-based standardization.
+It is up to policymakers, alongside intergovernmental organizations, to foster an environment in which everyone can dance (or have tea) because they want to, not because they’ve been dragged along.

@@ -1,0 +1,7 @@
+title	NL
+paragraph	NL
+caption	NL
+box-title	NL
+subheadline-1	NL
+subheadline-2	NL
+copyright	NL

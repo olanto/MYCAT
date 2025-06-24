@@ -1,0 +1,7 @@
+cd C:\MYCAT\plugins\XmlConvertion\runpack
+
+xml2txt.bat "C:\MYCAT\plugins\XmlConvertion\runpack\xml\ex1.xml" "./xml/txt.xml"
+
+xml2txt.bat "C:\MYCAT\plugins\XmlConvertion\runpack\xml\ex1WithError.xml" "./xml/txt.xml"
+
+pause

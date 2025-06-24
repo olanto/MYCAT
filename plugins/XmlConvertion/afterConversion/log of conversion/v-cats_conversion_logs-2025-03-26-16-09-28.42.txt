@@ -1,0 +1,55 @@
+running OS:Windows 7
+**** Clean all soffice.bin
+**** taskkill /F /IM soffice.bin
+**** Clean all soffice.exe
+**** taskkill /F /IM soffice.exe
+new folder: docs
+new folder: ExXml
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml" "C:\MYCAT\corpus\source\ExXml\ex1WithError_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml" "C:\MYCAT\corpus\source\ExXml\ex1WithError_EN.xml.txt" 
+ERROR> [Fatal Error] :1:455: Le type d'élément "error" doit se terminer par la balise de fin correspondante "</error>".
+ERROR> org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 455; Le type d'élément "error" doit se terminer par la balise de fin correspondante "</error>".
+ERROR> 	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+ERROR> 	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+ERROR> 	at javax.xml.parsers.DocumentBuilder.parse(Unknown Source)
+ERROR> 	at xmlconvert.XmlLoaderAndConvertCheckError.extractTextFromXml(XmlLoaderAndConvertCheckError.java:78)
+ERROR> 	at xmlconvert.XmlLoaderAndConvertCheckError.main(XmlLoaderAndConvertCheckError.java:47)
+OUTPUT> Error during conversion... C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml
+Returned value: -1
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml" "C:\MYCAT\corpus\source\ExXml\ex1WithError_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml" "C:\MYCAT\corpus\source\ExXml\ex1WithError_EN.xml.txt" 
+ERROR> [Fatal Error] :1:455: Le type d'élément "error" doit se terminer par la balise de fin correspondante "</error>".
+ERROR> org.xml.sax.SAXParseException; lineNumber: 1; columnNumber: 455; Le type d'élément "error" doit se terminer par la balise de fin correspondante "</error>".
+ERROR> 	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+ERROR> 	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+ERROR> 	at javax.xml.parsers.DocumentBuilder.parse(Unknown Source)
+ERROR> 	at xmlconvert.XmlLoaderAndConvertCheckError.extractTextFromXml(XmlLoaderAndConvertCheckError.java:78)
+ERROR> 	at xmlconvert.XmlLoaderAndConvertCheckError.main(XmlLoaderAndConvertCheckError.java:47)
+OUTPUT> Error during conversion... C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml
+Returned value: -1
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_glance_246078_1_EN.xml" "C:\MYCAT\corpus\source\ExXml\pub_2000_24_exsum_glance_246078_1_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_glance_246078_1_EN.xml" "C:\MYCAT\corpus\source\ExXml\pub_2000_24_exsum_glance_246078_1_EN.xml.txt" 
+Returned value: 0
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_results_246078_EN.xml" "C:\MYCAT\corpus\source\ExXml\pub_2000_24_exsum_results_246078_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_results_246078_EN.xml" "C:\MYCAT\corpus\source\ExXml\pub_2000_24_exsum_results_246078_EN.xml.txt" 
+Returned value: 0
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\web_article_19_2024_256222 (2)_EN.xml" "C:\MYCAT\corpus\source\ExXml\web_article_19_2024_256222 (2)_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\web_article_19_2024_256222 (2)_EN.xml" "C:\MYCAT\corpus\source\ExXml\web_article_19_2024_256222 (2)_EN.xml.txt" 
+Returned value: 0
+[cmd.exe, /C, C:/MYCAT/plugins/XmlConvertion/runpack/xml2txt.bat  "C:\MYCAT\corpus\docs\ExXml\web_article_1_2025_262007_EN.xml" "C:\MYCAT\corpus\source\ExXml\web_article_1_2025_262007_EN.xml.txt"]
+OUTPUT> 
+OUTPUT> C:\MYCAT>java -jar "C:\MYCAT\plugins\XmlConvertion\runpack/xmlconvert.jar" "C:\MYCAT\corpus\docs\ExXml\web_article_1_2025_262007_EN.xml" "C:\MYCAT\corpus\source\ExXml\web_article_1_2025_262007_EN.xml.txt" 
+Returned value: 0
+new folder: Glossaries
+new folder: small-collection
+new folder: UNO
+new folder: WIPO
+new folder: PLT
+new folder: SCT
+new folder: WO_GA
+new folder: WTO

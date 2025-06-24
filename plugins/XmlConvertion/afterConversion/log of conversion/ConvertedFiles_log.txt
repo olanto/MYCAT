@@ -1,0 +1,111 @@
+16:09:30,185 - Start time: 2025.03.26 16:09
+16:09:30,185 - process: C:\MYCAT\corpus\docs\ExXml\ex1WithError_EN.xml
+16:09:32,128 - process: C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_glance_246078_1_EN.xml
+16:09:32,992 - OK
+16:09:32,992 - process: C:\MYCAT\corpus\docs\ExXml\pub_2000_24_exsum_results_246078_EN.xml
+16:09:33,886 - OK
+16:09:33,886 - process: C:\MYCAT\corpus\docs\ExXml\web_article_19_2024_256222 (2)_EN.xml
+16:09:34,723 - OK
+16:09:34,723 - process: C:\MYCAT\corpus\docs\ExXml\web_article_1_2025_262007_EN.xml
+16:09:35,526 - OK
+16:09:35,526 - process: C:\MYCAT\corpus\docs\Glossaries\A_RES_53_144_EN_FR.pdf
+16:09:37,994 - OK
+16:09:37,994 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_53_144_AR.pdf
+16:09:38,401 - OK
+16:09:38,401 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_53_144_EN.pdf
+16:09:38,651 - OK
+16:09:38,651 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_53_144_ES.pdf
+16:09:38,869 - OK
+16:09:38,869 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_53_144_FR.pdf
+16:09:39,088 - OK
+16:09:39,088 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_53_144_ZH.pdf
+16:09:39,307 - OK
+16:09:39,307 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_AR.pdf
+16:09:39,416 - OK
+16:09:39,416 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_EN.pdf
+16:09:39,463 - OK
+16:09:39,463 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_ES.pdf
+16:09:39,494 - OK
+16:09:39,494 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_FR.pdf
+16:09:39,619 - OK
+16:09:39,619 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_RU.pdf
+16:09:39,776 - OK
+16:09:39,776 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_116_ZH.pdf
+16:09:39,854 - OK
+16:09:39,854 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_AR.pdf
+16:09:39,947 - OK
+16:09:39,947 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_EN.pdf
+16:09:40,010 - OK
+16:09:40,010 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_ES.pdf
+16:09:40,057 - OK
+16:09:40,057 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_FR.pdf
+16:09:40,104 - OK
+16:09:40,104 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_RU.pdf
+16:09:40,166 - OK
+16:09:40,166 - process: C:\MYCAT\corpus\docs\small-collection\UNO\A_RES_63_25_ZH.pdf
+16:09:40,307 - OK
+16:09:40,307 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_AR.docx
+16:09:44,957 - OK
+16:09:44,957 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_DE.docx
+16:09:45,270 - OK
+16:09:45,270 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_EN.docx
+16:09:45,629 - OK
+16:09:45,629 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_ES.docx
+16:09:45,910 - OK
+16:09:45,910 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_FR.docx
+16:09:46,176 - OK
+16:09:46,176 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_RU.docx
+16:09:46,442 - OK
+16:09:46,442 - process: C:\MYCAT\corpus\docs\small-collection\UNO\HR_Declaration_ZH.docx
+16:09:46,832 - OK
+16:09:46,832 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\PLT\plt_ce_v_5_EN.doc
+16:09:47,895 - OK
+16:09:47,895 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\PLT\plt_ce_v_5_ES.doc
+16:09:48,660 - OK
+16:09:48,660 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\PLT\plt_ce_v_5_FR.doc
+16:09:49,426 - OK
+16:09:49,426 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\SCT\sct_24_4_EN.PDF
+16:09:50,410 - OK
+16:09:50,410 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\SCT\sct_24_4_ES.pdf
+16:09:51,410 - OK
+16:09:51,410 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\SCT\sct_24_4_FR.pdf
+16:09:52,239 - OK
+16:09:52,239 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_1_EN.doc
+16:09:54,192 - OK
+16:09:54,223 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_1_ES.doc
+16:09:54,395 - OK
+16:09:54,395 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_1_FR.doc
+16:09:54,692 - OK
+16:09:54,692 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_1_RU.doc
+16:09:55,067 - OK
+16:09:55,067 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_1_ZH.doc
+16:09:55,317 - OK
+16:09:55,317 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_AR.doc
+16:09:55,535 - OK
+16:09:55,551 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_EN.doc
+16:09:55,723 - OK
+16:09:55,723 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_ES.doc
+16:09:55,895 - OK
+16:09:55,895 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_FR.doc
+16:09:56,082 - OK
+16:09:56,082 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_RU.doc
+16:09:56,270 - OK
+16:09:56,270 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_4_ZH.doc
+16:09:56,520 - OK
+16:09:56,520 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_5_EN.doc
+16:09:56,707 - OK
+16:09:56,707 - process: C:\MYCAT\corpus\docs\small-collection\WIPO\WO_GA\wo_ga_31_5_RU.doc
+16:09:56,926 - OK
+16:09:56,926 - process: C:\MYCAT\corpus\docs\small-collection\WTO\Final_Act_EN.doc
+16:09:57,129 - OK
+16:09:57,129 - process: C:\MYCAT\corpus\docs\small-collection\WTO\Final_Act_ES.doc
+16:09:57,254 - OK
+16:09:57,254 - process: C:\MYCAT\corpus\docs\small-collection\WTO\Final_Act_FR.doc
+16:09:57,379 - OK
+16:09:57,379 - process: C:\MYCAT\corpus\docs\small-collection\WTO\WTO_Agreement_EN.doc
+16:09:57,582 - OK
+16:09:57,582 - process: C:\MYCAT\corpus\docs\small-collection\WTO\WTO_Agreement_ES.doc
+16:09:57,801 - OK
+16:09:57,801 - process: C:\MYCAT\corpus\docs\small-collection\WTO\WTO_Agreement_FR.doc
+16:09:58,004 - OK
+16:09:58,004 - Stop time: 2025.03.26 16:09

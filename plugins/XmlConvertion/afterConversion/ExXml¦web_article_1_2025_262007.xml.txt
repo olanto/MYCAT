@@ -1,0 +1,90 @@
+Getty Images/PeopleImages Medical technology (medtech) is revolutionizing health care.
+From AI-driven diagnostics to 3D-printed implants, innovative solutions are enhancing patient care but also highlighting the critical role of intellectual property (IP) in bringing such advances to market.
+WIPO Magazine spoke to four companies about their IP strategies and the challenges they face in marketing their innovations.
+In a nutshell Medtech is bringing about a revolution in health care led by small companies.
+In a challenging market, startups need to protect their assets.
+Founders share their key IP strategies and other advantages to consider.
+By Paul Omondi , freelance writer Startups and small and medium-sized enterprises (SMEs) across the healthtech, life sciences and biotech sectors are developing technologies that promise to redefine health care delivery.
+But with the journey from ideation to market fraught with challenges, how can such companies protect and monetize their IP assets?
+ScansX is a Kuwait-based startup founded by Sarah Aboerjaib in 2023.
+The company has developed a handheld scanner powered by artificial intelligence (AI) that uses non-invasive, near-infrared spectroscopy to detect signs of brain injuries.
+To bring it to market, Aboerjaib has had to navigate the complexities of IP management, securing patents and trademarks to protect her invention and enable future growth.
+Innovative entrepreneurs should treat IP as a strategic priority from the outset.
+Founded by brothers Ilker and Soner Hacıhaliloğlu, the Turkish healthtech startup PONS Teknoloji has also used AI to develop a system for portable ultrasound imaging that offers high-quality scans outside hospital settings.
+By securing its IP rights, PONS Teknoloji is positioned to scale up its innovation and make life-saving diagnostics more accessible, especially in remote areas.
+Utilizing the data advantage With AI and data analytics now integral to health care innovation, the importance of protecting IP in this domain has never been greater.
+For medtech companies, data is not just a by-product of their technology, it is a vital asset that drives the effectiveness of AI models and opens up new avenues for licensing and collaboration.
+ScansX’s brain scanner, for example, relies on AI models trained with diverse datasets to accurately detect brain injuries.
+"Our data is as valuable as the technology itself,” says Aboerjaib.
+Protecting that data through robust IP strategies is crucial not only to protecting the innovation but also to capitalizing on its full market potential.
+3D representation of the ScansX AI-powered scanner.
+ScansX PONS Teknoloji shares that approach.
+Its ultrasound system generates vast amounts of data, which are essential for refining its AI algorithms and ensuring diagnostic accuracy.
+"Our system aims to create a diverse data set by capturing medical imaging data across various stages of disease progression, addressing the gap between early-stage and late-stage disease data,” says Soner Hacıhaliloğlu.
+By securing IP rights over its data and algorithms, PONS Teknoloji can explore partnerships with pharmaceutical companies and other stakeholders, expanding its impact in the health-care sector.
+Collaboration is key for innovators Collaboration is fundamental for medtech innovators looking to maximize the value of their IP.
+By partnering with manufacturers, health-care providers and research institutions, companies can accelerate the development and distribution of their technologies while ensuring that their IP is protected and leveraged effectively.
+Thai company Meticuly specializes in 3D-printed bone implants.
+With 36 patents and extensive trademark protection across 10 countries, it has built a formidable IP portfolio that enables it to collaborate confidently with global partners.
+The strategic use of IP has allowed Meticuly to expand its reach and impact, bringing medical solutions to markets worldwide.
+Meticuly craniomaxillofacial mesh and mandibular plate products.
+Meticuly Co., Ltd.
+ScansX and PONS Teknoloji also understand the value of collaboration.
+ScansX plans to enter into licensing agreements that will allow other companies to manufacture and distribute its brain scanner under strict conditions.
+This not only ensures the technology’s quality but also accelerates its global adoption.
+PONS Teknoloji, meanwhile, collaborates with health-care providers in multiple countries, leveraging its IP to secure strategic partnerships that facilitate regulatory approval and market entry.
+Regulatory hurdles For medtech companies, securing IP is only part of the challenge.
+Bringing a medical device to market involves navigating complex regulatory landscapes, which vary significantly across different jurisdictions.
+IP plays an important role in that process, providing a foundation for compliance and market access.
+The advice to startups is to develop an IP strategy that supports business growth, investor confidence and market entry.
+ScansX is in the process of obtaining regulatory approval for its brain scanner in Kuwait and has plans to expand internationally.
+Its IP portfolio, which includes a provisional patent filed with the United States Patent and Trademark Office (USPTO), will be instrumental in securing the necessary approvals and protecting the technology as the company prepares to enter new markets.
+Singapore-based Vivo Surgical , founded by Dr Kevin Koh, is also using its IP to address regulatory challenges.
+The company’s endoscopic robot, developed to assist in surgical operations in the gastrointestinal tract, is in the final stages of animal trials and will enter first-in-human trials shortly.
+With 27 patents and 21 trademarks protecting its technology, Vivo Surgical is well positioned to navigate the rigorous regulatory processes required for its planned market launch in 2027.
+Vivo Surgical ERES endoscopic surgical robot.
+Vivo Surgical PONS Teknoloji’s ultrasound system is undergoing certification for Food and Drug Administration (FDA) and Conformité Européenne (CE) markings for the United States and European Economic Area markets, respectively, ensuring compliance with the strictest regulatory standards.
+The company’s robust IP strategy is backed by successful clinical trials.
+"We have conducted more than 5,000 scans and produced 250,000 images, focusing initially on women’s health and cancer detection,” says Soner Hacıhaliloğlu.
+"In Nigeria, we worked with midwives to scan young pregnant women in rural areas, detecting early-stage pregnancy issues, which markedly improved maternal health care in the country.”
+IP is an asset for funding innovation Access to funding is essential.
+Developing high-precision medical technologies requires substantial investment, and a healthy IP portfolio can be a powerful tool for attracting investors.
+The cost of bringing Vivo Surgical’s endoscopic robot to market is estimated at more than US$30 million.
+The company’s comprehensive IP strategy has been pivotal in securing the necessary funding for development and clinical trials.
+IP is a valuable asset that should be protected … it has significant revenue potential.
+ScansX has faced financial challenges and its brain scanner is still at the minimum viable product (MVP) stage.
+"Developing such advanced technology requires significant investment,” says Aboerjaib.
+"Bringing our invention from concept to market will cost more than US$4 million.”
+Aboerjaib has invested personal funds and taken out loans to cover the initial costs.
+The company’s IP portfolio will be key to attracting investors and partners to support its marketing efforts.
+PONS Teknoloji has taken a different approach, focusing on securing grants rather than venture capital.
+"Initial development costs for our technology were between US$250,000 and US$300,000,” says Soner Hacıhaliloğlu.
+"Our goal was to convert research into a market-ready product.”
+By building a robust IP foundation early on, PONS Teknoloji has been able to attract non-dilutive funding, reducing the financial risks associated with bringing new technologies to market.
+Leveraging IP in medical technology For medtech companies, IP is not just about protection – it is a strategic tool for growth and global impact.
+A well-crafted IP strategy can help companies to navigate the complexities of international markets, secure funding and forge partnerships that drive innovation forward.
+Vivo Surgical is a case in point.
+Its endoscopic robot is an add-on to existing endoscopes on the market.
+By enhancing existing endoscopes rather than creating new ones, the company has simplified development and regulatory processes, allowing it to focus on innovation.
+This approach, combined with a formidable IP portfolio, has positioned Vivo Surgical for success in key markets, including the US, China and the Asia-Pacific region.
+"Innovative entrepreneurs should treat IP as a strategic priority from the outset,” says Dr Koh.
+"Proper IP management can influence a company’s success and reputation in the marketplace.
+Although managing IP can be expensive, it is nonetheless essential.
+Startups should invest in IP and be smart about how they use it to protect and enhance their market position.
+It should be taken seriously at the highest level in organizations.”
+PONS Teknoloji plans to extend its patent protection through WIPO’s Patent Cooperation Treaty (PCT) System , ensuring its technology is protected internationally as it enters new markets.
+"My advice to startups,” says Soner Hacıhaliloğlu, "is to develop an IP strategy that supports business growth, investor confidence and market entry.”
+Comparison of liver ultrasound imaging: traditional ultrasound (left) versus PONS Teknoloji proprietary image enhancement (right), demonstrating improved scan resolution, tissue contrast and noise reduction.
+PONS Teknoloji Aboerjaib, of ScansX, agrees.
+"I advise SMEs and startups to leverage their expertise, networks and motivations,” she says.
+"IP is a valuable asset that should be protected … it has significant revenue potential.”
+Discerning entrepreneurs are using IP not just as a shield but as a spear, driving their innovations to market.
+A robust IP strategy is required to protect innovations and secure funding.
+By using IP effectively, companies like ScansX, PONS Teknoloji and Vivo Surgical are not only advancing health care, but also creating impact on a global scale. –– The companies featured in this article were among the winners of the WIPO Global Awards in 2024.
+The competition is open to SMEs, startups and university spinouts that use IP to create value for their business.
+Apply now for the 2025 WIPO Global Awards .
+This year, for the first time, the best woman and youth entrepreneurs will also be selected from among the winning companies.
+Winners receive tailored mentoring to help them with marketing, access to WIPO resources and more.
+Winners at the 2024 WIPO Global Awards ceremony.
+Violaine Martin, WIPO With regard to health and IP around the world, the aim of the WIPO Global Challenges program is to raise awareness of the complex links between health and access to medical technologies, innovation, technology transfer and trade.
+The final goal is to leverage IP as a tool that contributes to meeting the world’s most pressing health needs.
