@@ -38,4 +38,14 @@ public class StringTable_Hash_Util {
         return s1.hashCode();
     }
 
+//      public static  final int clueHash(String s) {  // ok
+//        String s1 = s;
+//        if (s.length() > 1) {
+//            s1 = s.substring(1) + s.substring(0, 1);
+//        }
+//        // msg(s+","+s1);
+//        return s1.hashCode();
+//    }
+    
+    
 }

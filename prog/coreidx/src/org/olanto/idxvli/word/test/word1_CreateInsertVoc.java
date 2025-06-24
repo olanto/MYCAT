@@ -63,7 +63,7 @@ public class word1_CreateInsertVoc {
         InputStreamReader isr = null;
         try {
             msg("create");
-            is = (new Word1()).create(implementationMode.BIG, "C:/test/dictio", "test", 22, 50);
+            is = (new Word1()).create(implementationMode.BIG, "C:/test/dictio", "test", 21, 50);
             is.printStatistic();
             is.close();
             msg("open");
