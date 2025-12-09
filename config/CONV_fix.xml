@@ -25,6 +25,17 @@
                 <builtin>no</builtin>
             </ext>
         </maps>
-    </plugins>
-
+		<plugin>
+            <plugName>formatted2text</plugName>
+            <plugCommand>C:/MYCAT/plugins/LibreOffice/runpack/bin/formatted2text.bat  %source% %target%</plugCommand>
+            <plugProcessWindows>xxxxxx.exe</plugProcessWindows>               
+        </plugin>  
+        <maps>
+             <ext>
+                <extName>doc</extName>
+                <conv>formatted2text</conv>
+                <builtin>no</builtin>
+            </ext>
+        </maps>
+	</plugins>
 </converter>
