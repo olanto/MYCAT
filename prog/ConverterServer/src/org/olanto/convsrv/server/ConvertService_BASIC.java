@@ -237,11 +237,14 @@ public class ConvertService_BASIC extends UnicastRemoteObject implements Convert
             ret += " File: " + f.getAbsolutePath();
 
             Document src = new Document(f.getAbsolutePath());
-            Document dest = new Document(f.getAbsolutePath() + ".html");
+            // Sortie TXT (pas HTML) : utilise le walker DocxTextWalker patche dans
+            // ConverterFactoryDOCX4J, identique a `conversion.bat`. Le QD travaille
+            // mieux sur du texte propre que sur le HTML brut de HtmlExporterNG2.
+            Document dest = new Document(f.getAbsolutePath() + ".txt");
 
             SimpleConverterApplication converter = SimpleConverterApplication.getInstance();
             converter.setMaxRetry(3);
-            converter.setOutputFormat("html");
+            converter.setOutputFormat("txt");
 
             converter.convertObject(src, dest, null);
             ret = UtilsFiles.file2String(new FileInputStream(dest), "UTF-8");
