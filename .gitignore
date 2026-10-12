@@ -27,6 +27,46 @@ prog/*/nbactions.xml
 prog/*/nb-configuration.xml
 
 #################
+## IDE / outils dev
+#################
+
+.claude/
+.idea/
+
+#################
+## Artefacts de travail 2026 (livraisons, zips, corpus de test, captures)
+#################
+
+/2 jar patché + retour break ligne/
+/PROD SimpleConverter.zip
+/SimpleConverter ACC bkup.zip
+/SimpleConverterACC .zip
+/SimpleConverter.jar
+/comparatif_jar/
+/dist_avec force docx4j/
+/docx4j/
+/docx4j 6.1.2/
+/docx4j-community-8.3.15/
+/docx4j-community-8.3.15.zip
+/from_zip/
+/x4j/*.jar
+/plugins/XmlConvertion 2/
+/plugins/XmlConvertion_26_06_2025.zip
+/config/test/
+/test/
+/testfile/
+/sccr_45_7_230000_AR.zip
+/ar_qd.png
+/ar_txt.png
+/prod wipo.png
+/convertoo4.bat
+/oo4_convert_txt.bat
+/oo4_convert_txt.bat.zip
+/diarise.txt
+/err.txt
+/shared
+
+#################
 ## Eclipse
 #################
 
