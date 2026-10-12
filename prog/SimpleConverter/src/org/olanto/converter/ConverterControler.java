@@ -51,8 +51,9 @@ public class ConverterControler {
             throws UnsupportedExtentionException {
         _logger.debug("Init converter with file extention: " + source.getExtention());
         Document newTarget = new Document(target.getAbsolutePath());
+        final boolean isDocx = source.getExtention().equalsIgnoreCase(Constants.DOCX);
 
-        if (ConfigUtil.hasPluginForExtension(source.getExtention())) {
+        if (!isDocx && ConfigUtil.hasPluginForExtension(source.getExtention())) {
             if (numberOfRetry < iMaxRetry) {
                 usePlugin = true;
                 converterFactory = PluginConverterFactory.getInstance();
@@ -62,13 +63,14 @@ public class ConverterControler {
             }
         }
         if (!usePlugin) {
-            if (source.getExtention().equalsIgnoreCase(Constants.PDF)) {
+            if (isDocx) {
+                converterFactory = ConverterFactoryDOCX4J.getInstance();
+            } else if (source.getExtention().equalsIgnoreCase(Constants.PDF)) {
                 converterFactory = ConverterFactoryPDF.getInstance();
             } else if (source.getExtention().equalsIgnoreCase(Constants.HTML)
                     || source.getExtention().equalsIgnoreCase(Constants.HTM)) {
                 converterFactory = ConverterFactoryHTM.getInstance();
-           } else if (source.getExtention().equalsIgnoreCase(Constants.DOCX) && numberOfRetry == 0
-                    || source.getExtention().equalsIgnoreCase(Constants.DOC)
+           } else if (source.getExtention().equalsIgnoreCase(Constants.DOC)
                      || source.getExtention().equalsIgnoreCase(Constants.RTF)
                     //|| source.getExtention().equalsIgnoreCase(Constants.TXT)
                     //            || source.getExtention().equalsIgnoreCase(Constants.HTML)
@@ -79,8 +81,6 @@ public class ConverterControler {
                 converterFactory = ConverterFactoryDOC.getInstance();
             } else if (source.getExtention().equalsIgnoreCase(Constants.TXT)) {
                 converterFactory = ConverterFactoryTXT.getInstance();
-            } else if (source.getExtention().equalsIgnoreCase(Constants.DOCX) && numberOfRetry < iMaxRetry) {
-                converterFactory = ConverterFactoryDOCX4J.getInstance();
             } else if (source.getExtention().equalsIgnoreCase(Constants.XLS)
                     || source.getExtention().equalsIgnoreCase(Constants.ODS)) {
                 converterFactory = ConverterFactorySpreadsheet.getInstance();
