@@ -90,9 +90,23 @@
       <mkdir dir="${store.dir}"/>
 
       <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
+          <!-- myCAT.jar (mince) produit par `jar` -->
           <zipgroupfileset dir="dist" includes="*.jar"/>
-          <zipgroupfileset dir="dist/lib" includes="*.jar"/>
-            <zipgroupfileset dir="dist/lib" includes="*.zip"/>
+          <!-- foreign-project jars (cascade NetBeans) -->
+          <zipgroupfileset dir="../SimpleConverter/dist" includes="*.jar"/>
+          <zipgroupfileset dir="../ConverterServer/dist" includes="*.jar"/>
+          <zipgroupfileset dir="../coreidx/dist" includes="*.jar"/>
+          <zipgroupfileset dir="../alignement2/dist" includes="*.jar"/>
+          <zipgroupfileset dir="../LineSegmentation/dist" includes="*.jar"/>
+          <zipgroupfileset dir="../openidx/dist" includes="*.jar"/>
+          <!-- util.jar : referencee via file.reference (pas foreign-project),
+               donc ant ne le rebuilde pas en cascade. Build manuel requis :
+               cd ../util && ant jar -->
+          <zipgroupfileset dir="../util/dist" includes="*.jar"/>
+          <!-- libs partagees referencees via project.properties -->
+          <zipgroupfileset dir="../SimpleConverter/libs" includes="*.jar"/>
+          <zipgroupfileset dir="../SimpleConverter/libs" includes="*.zip"/>
+          <zipgroupfileset dir="../lib" includes="*.jar"/>
 
           <manifest>
               <attribute name="Main-Class" value="${main.class}"/>

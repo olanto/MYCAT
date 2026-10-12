@@ -91,8 +91,9 @@
 
         <jar destfile="${store.dir}/temp_final.jar" filesetmanifest="skip">
             <zipgroupfileset dir="dist" includes="*.jar"/>
-            <zipgroupfileset dir="dist/lib" includes="*.jar"/>
-            <zipgroupfileset dir="dist/lib" includes="*.zip"/>
+            <!-- deps: NetBeans met parfois dans dist/lib; ce projet utilise libs/ -->
+            <zipgroupfileset dir="libs" includes="*.jar"/>
+            <zipgroupfileset dir="libs" includes="*.zip"/>
 
             <manifest>
                 <attribute name="Main-Class" value="${main.class}"/>
